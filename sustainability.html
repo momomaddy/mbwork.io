@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adani Sustainability Narrative — Case Study</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --deep: #061A0E; --ink: #0A2010; --green: #1A7A3C; --lime: #4CAF72;
+    --pale: #F2FAF5; --mist: #D8EEE0; --body: #1E3328; --muted: #5A7A65; --cream: #F7FCF9;
+  }
+  body { background: var(--cream); color: var(--body); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  .hero { position: relative; background: var(--deep); min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem 3rem 5rem; overflow: hidden; }
+  .hero-glow { position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(circle at 70% 20%, rgba(26,122,60,0.22) 0%, transparent 55%), radial-gradient(circle at 10% 75%, rgba(76,175,114,0.1) 0%, transparent 45%); }
+  .ring { position: absolute; border-radius: 50%; pointer-events: none; }
+  .r1 { width: 480px; height: 480px; top: -120px; right: -100px; border: 1px solid rgba(26,122,60,0.2); }
+  .r2 { width: 300px; height: 300px; top: -20px; right: 40px; border: 1px solid rgba(76,175,114,0.1); }
+  .r3 { width: 700px; height: 700px; bottom: -250px; left: -200px; border: 1px solid rgba(26,122,60,0.06); }
+
+  .hero-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lime); font-weight: 500; margin-bottom: 2rem; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5vw, 4.6rem); font-weight: 900; line-height: 1.05; color: #EEF7F1; margin-bottom: 1.5rem; max-width: 740px; }
+  .hero-title em { font-style: italic; color: #7ECDA0; }
+  .hero-sub { font-size: 1rem; color: rgba(238,247,241,0.48); max-width: 540px; margin-bottom: 3rem; font-weight: 300; }
+  .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+  .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .meta-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,247,241,0.28); }
+  .meta-val { font-size: 0.87rem; color: #EEF7F1; font-weight: 400; }
+
+  .stat-strip { background: var(--deep); padding: 4rem 3rem; border-top: 1px solid rgba(26,122,60,0.15); }
+  .stat-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 2.5rem; }
+  .stat { display: flex; flex-direction: column; gap: 0.3rem; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: #7ECDA0; line-height: 1; }
+  .stat-desc { font-size: 0.76rem; color: rgba(238,247,241,0.42); line-height: 1.5; max-width: 145px; }
+
+  .biz-strip { background: var(--green); padding: 1rem 3rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+  .biz-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,247,241,0.55); font-weight: 500; white-space: nowrap; }
+  .biz-pill { background: rgba(238,247,241,0.12); border: 1px solid rgba(238,247,241,0.2); color: #EEF7F1; font-size: 0.72rem; letter-spacing: 0.08em; padding: 0.3rem 0.8rem; font-weight: 500; }
+
+  .page { max-width: 920px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 5rem 0; border-bottom: 1px solid rgba(10,32,16,0.07); }
+  section:last-child { border-bottom: none; }
+  .section-tag { font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); font-weight: 500; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
+  .section-tag::after { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--green); opacity: 0.45; }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 1.8rem; }
+  h2 em { font-style: italic; color: var(--green); }
+  p { font-size: 0.96rem; color: #2A4035; margin-bottom: 1.2rem; max-width: 700px; }
+  p:last-child { margin-bottom: 0; }
+
+  .pull-quote { margin: 3rem 0; padding: 2rem 0 2rem 2rem; border-left: 3px solid var(--green); }
+  .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: var(--ink); font-weight: 400; line-height: 1.5; margin-bottom: 0; max-width: 640px; }
+
+  .shift-block { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 2.5rem 0; border: 1px solid var(--mist); }
+  .shift-col { padding: 2rem; }
+  .shift-col:first-child { border-right: 1px solid var(--mist); background: var(--pale); }
+  .shift-label { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 1rem; }
+  .shift-label.active { color: var(--green); }
+  .shift-item { font-size: 0.86rem; color: var(--muted); padding: 0.5rem 0; border-bottom: 1px solid var(--mist); line-height: 1.5; }
+  .shift-item:last-child { border-bottom: none; }
+  .shift-item.active { color: var(--body); font-weight: 400; }
+
+  .translation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2.5rem 0; }
+  .translation-card { border: 1px solid var(--mist); overflow: hidden; }
+  .tc-before { background: var(--pale); padding: 1.2rem 1.4rem; border-bottom: 1px solid var(--mist); }
+  .tc-after { background: #fff; padding: 1.2rem 1.4rem; }
+  .tc-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 500; }
+  .tc-label.after { color: var(--green); }
+  .tc-text { font-size: 0.85rem; color: var(--muted); line-height: 1.5; font-style: italic; }
+  .tc-text.after { color: var(--body); font-style: normal; font-weight: 400; }
+
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2.5rem 0; }
+  .pillar { background: var(--pale); border: 1px solid var(--mist); padding: 1.8rem; }
+  .pillar-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--mist); line-height: 1; margin-bottom: 0.5rem; }
+  .pillar-title { font-size: 0.78rem; font-weight: 500; color: var(--green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.7rem; }
+  .pillar-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+  .sdg-strip { background: var(--pale); border: 1px solid var(--mist); padding: 2rem; margin: 2.5rem 0; }
+  .sdg-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); font-weight: 500; margin-bottom: 1.2rem; }
+  .sdg-goals { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .sdg-goal { background: var(--green); color: #EEF7F1; font-size: 0.7rem; letter-spacing: 0.06em; padding: 0.35rem 0.9rem; font-weight: 500; }
+
+  .award-block { background: var(--deep); padding: 2.5rem; margin: 2.5rem 0; position: relative; overflow: hidden; }
+  .award-block::before { content: ''; position: absolute; top: 0; right: 0; width: 220px; height: 220px; background: radial-gradient(circle, rgba(26,122,60,0.18) 0%, transparent 70%); }
+  .award-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #7ECDA0; font-weight: 700; margin-bottom: 0.5rem; }
+  .award-sub { font-size: 0.84rem; color: rgba(238,247,241,0.5); line-height: 1.6; margin-bottom: 0; max-width: 600px; }
+
+  .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
+  .result-card { background: var(--pale); border: 1px solid var(--mist); padding: 1.5rem; }
+  .result-card-label { font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
+  .result-item { margin-bottom: 0.8rem; }
+  .result-item:last-child { margin-bottom: 0; }
+  .result-num { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--green); line-height: 1; }
+  .result-sub { font-size: 0.76rem; color: var(--muted); line-height: 1.4; margin-top: 0.2rem; }
+
+  .impact-block { background: var(--deep); padding: 2.5rem; margin: 2.5rem 0; position: relative; overflow: hidden; }
+  .impact-block::before { content: ''; position: absolute; top: 0; right: 0; width: 220px; height: 220px; background: radial-gradient(circle, rgba(26,122,60,0.15) 0%, transparent 70%); }
+  .impact-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #7ECDA0; font-weight: 700; margin-bottom: 0.6rem; }
+  .impact-body { font-size: 0.86rem; color: rgba(238,247,241,0.52); line-height: 1.7; margin-bottom: 0; max-width: 620px; }
+
+  footer { background: var(--deep); padding: 3rem; text-align: center; }
+  footer p { font-size: 0.76rem; color: rgba(238,247,241,0.26); margin: 0 auto; }
+  footer span { color: var(--lime); }
+
+  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+  @media (max-width: 700px) {
+    .shift-block, .translation-grid { grid-template-columns: 1fr; }
+    .shift-col:first-child { border-right: none; border-bottom: 1px solid var(--mist); }
+    .pillars { grid-template-columns: 1fr; }
+    .hero { padding: 3rem 1.5rem 4rem; }
+    .stat-strip, .biz-strip { padding: 3rem 1.5rem; }
+    .page { padding: 0 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<nav style="position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(6,26,14,0.96);backdrop-filter:blur(8px);padding:0.9rem 3rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(26,122,60,0.2);">
+  <a href="MourisBashir_AthleteProfile.html" style="font-family:sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#EEF7F1;text-decoration:none;">MB.WORK</a>
+  <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+    <a href="MourisBashir_AthleteProfile.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(238,247,241,0.5);text-decoration:none;">About</a>
+    <a href="about.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(238,247,241,0.5);text-decoration:none;">One Nation</a>
+    <a href="index.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(238,247,241,0.5);text-decoration:none;">Horizon X</a>
+    <a href="HKKDH_Adani_CaseStudy.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(238,247,241,0.5);text-decoration:none;">HKKDH</a>
+    <a href="sustainability.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(238,247,241,0.5);text-decoration:none;">Sustainability</a>
+    <a href="fortune.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(238,247,241,0.5);text-decoration:none;">Fortune</a>
+  </div>
+</nav>
+<div style="height:48px;"></div>
+
+
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+  <div class="hero-label">Case Study · Sustainability & ESG Communication</div>
+  <h1 class="hero-title">Making the<br><em>invisible</em><br>understood.</h1>
+  <p class="hero-sub">How technical sustainability data across seven Adani businesses was translated into public narrative — connecting infrastructure activity to everyday human meaning.</p>
+  <div class="hero-meta">
+    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">Adani Group</span></div>
+    <div class="meta-item"><span class="meta-label">Scope</span><span class="meta-val">Sustainability Narrative · ESG Comms · Digital</span></div>
+    <div class="meta-item"><span class="meta-label">Businesses</span><span class="meta-val">APSEZ · AGEL · ATGL · ATL · APL · AEL · AESL</span></div>
+    <div class="meta-item"><span class="meta-label">Recognition</span><span class="meta-val">ESG Initiative of the Year — ET Energyworld</span></div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-grid">
+    <div class="stat"><div class="stat-num">14M+</div><div class="stat-desc">Views across sustainability content</div></div>
+    <div class="stat"><div class="stat-num">47M+</div><div class="stat-desc">Total reach across platforms</div></div>
+    <div class="stat"><div class="stat-num">4%</div><div class="stat-desc">Average engagement rate across socials</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-desc">Business units aligned under one narrative</div></div>
+    <div class="stat"><div class="stat-num">SDG</div><div class="stat-desc">Aligned to UN Sustainable Development Goals</div></div>
+  </div>
+</div>
+
+<div class="biz-strip">
+  <span class="biz-label">Businesses covered</span>
+  <span class="biz-pill">APSEZ — Ports</span>
+  <span class="biz-pill">AGEL — Renewable Energy</span>
+  <span class="biz-pill">ATGL — City Gas</span>
+  <span class="biz-pill">ATL — Transmission</span>
+  <span class="biz-pill">APL — Power</span>
+  <span class="biz-pill">AEL — Enterprises</span>
+  <span class="biz-pill">AESL — Energy Solutions</span>
+</div>
+
+<div class="page">
+
+  <section>
+    <div class="section-tag">The Problem</div>
+    <h2>Decarbonisation is measurable<br>for engineers. <em>Invisible for everyone else.</em></h2>
+    <p>Across ports, renewable energy, city gas distribution and transmission, Adani Group businesses were making significant environmental progress. The investments were real. The impact was measurable. But for public audiences, the communication was largely technical, disclosure-driven and impossible to relate to.</p>
+    <p>Terms like emissions reduction, net-zero commitments and energy transition carried precise meaning for investors and policymakers. For communities living near these operations, they meant nothing. Without translation, sustainability risked being perceived as corporate reporting — something companies say, not something they do.</p>
+    <div class="pull-quote">
+      <p>"People trust sustainability not when it is claimed, but when they can understand how it affects their lives."</p>
+    </div>
+    <p>Different stakeholders needed different things from the same message: investors needed disclosures, policymakers needed compliance signals, communities needed visible impact, and media needed accountability narratives. The communication was failing all of them by trying to speak to none of them specifically.</p>
+  </section>
+
+  <section>
+    <div class="section-tag">The Strategic Shift</div>
+    <h2>From reporting<br>to <em>human relevance.</em></h2>
+    <p>The core strategic move was to stop treating sustainability as data to be disclosed and start treating it as impact to be explained. This required a shift in both framing and language — applied consistently across seven business units with different audiences and different tones of voice.</p>
+    <div class="shift-block">
+      <div class="shift-col">
+        <div class="shift-label">Before</div>
+        <div class="shift-item">We installed 2.3 GW of solar capacity</div>
+        <div class="shift-item">Emissions reduced by X metric tonnes</div>
+        <div class="shift-item">Net-zero commitment by 2050</div>
+        <div class="shift-item">Energy transition infrastructure</div>
+        <div class="shift-item">Efficiency improvement programs</div>
+      </div>
+      <div class="shift-col">
+        <div class="shift-label active">After</div>
+        <div class="shift-item active">Energy sufficient for 30,000 homes — clean</div>
+        <div class="shift-item active">Cleaner air for the cities we operate in</div>
+        <div class="shift-item active">Building the infrastructure your children inherit</div>
+        <div class="shift-item active">Gas that replaces coal in your kitchen and your city</div>
+        <div class="shift-item active">Less waste, more reach — infrastructure that does more</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">The Translation Method</div>
+    <h2>Technical inputs.<br><em>Human outputs.</em></h2>
+    <p>The most important communication discipline was converting infrastructure metrics into consequences people could picture. Rather than leading with generation numbers, capacity additions or reduction percentages, every piece of communication was reverse-engineered from a human question: what does this mean for someone living near this project?</p>
+
+    <div class="translation-grid">
+      <div class="translation-card">
+        <div class="tc-before">
+          <div class="tc-label">Technical input</div>
+          <div class="tc-text">"1 kW of solar capacity installed"</div>
+        </div>
+        <div class="tc-after">
+          <div class="tc-label after">Public communication</div>
+          <div class="tc-text after">Energy sufficient to power a family home for a year — without a single gram of CO₂</div>
+        </div>
+      </div>
+      <div class="translation-card">
+        <div class="tc-before">
+          <div class="tc-label">Technical input</div>
+          <div class="tc-text">"City gas distribution network expansion"</div>
+        </div>
+        <div class="tc-after">
+          <div class="tc-label after">Public communication</div>
+          <div class="tc-text after">Fewer trucks, less smoke, cleaner air — piped gas replacing cylinders across your city</div>
+        </div>
+      </div>
+      <div class="translation-card">
+        <div class="tc-before">
+          <div class="tc-label">Technical input</div>
+          <div class="tc-text">"Efficiency improvement at port operations"</div>
+        </div>
+        <div class="tc-after">
+          <div class="tc-label after">Public communication</div>
+          <div class="tc-text after">India's trade moving faster, with a lighter footprint on the coastline it crosses</div>
+        </div>
+      </div>
+      <div class="translation-card">
+        <div class="tc-before">
+          <div class="tc-label">Technical input</div>
+          <div class="tc-text">"Net-zero commitment by 2050"</div>
+        </div>
+        <div class="tc-after">
+          <div class="tc-label after">Public communication</div>
+          <div class="tc-text after">The infrastructure we build today is designed for the India your children will live in</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Messaging was also anchored to India's national energy goals and the UN Sustainable Development Goals — connecting operational activity to a framework audiences could recognise and trust.</p>
+  </section>
+
+  <section>
+    <div class="section-tag">Execution</div>
+    <h2>Three pillars.<br><em>Seven businesses.</em></h2>
+    <p>The work was structured around three communication workstreams, each addressing a different dimension of the sustainability story across all business units.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Environmental Responsibility</div>
+        <div class="pillar-desc">Translated renewable energy and city gas transition into relatable public language. Connected project-level activity to air quality, climate and community benefit across AGEL, ATGL, AEL and AESL.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Community Participation</div>
+        <div class="pillar-desc">Communicated the Greenmosphere initiative — plantation drives, school sustainability programs and energy audits — as shared public action rather than corporate CSR. Made environmental responsibility participatory.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Cross-Business Alignment</div>
+        <div class="pillar-desc">Reviewed and aligned sustainability messaging across all seven business units. Ensured that language, tone and narrative were consistent at group level while remaining authentic to each business's specific audience and context.</div>
+      </div>
+    </div>
+
+    <div class="sdg-strip">
+      <div class="sdg-label">Aligned to UN Sustainable Development Goals</div>
+      <div class="sdg-goals">
+        <span class="sdg-goal">SDG 7 — Affordable & Clean Energy</span>
+        <span class="sdg-goal">SDG 11 — Sustainable Cities</span>
+        <span class="sdg-goal">SDG 13 — Climate Action</span>
+        <span class="sdg-goal">SDG 9 — Industry & Infrastructure</span>
+        <span class="sdg-goal">SDG 17 — Partnerships for the Goals</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">Greenmosphere</div>
+    <h2>The campaign that made<br><em>renewable energy visible.</em></h2>
+    <p>Greenmosphere — Adani Total Gas's Low Carbon Society initiative — was the most visible expression of this communication strategy. Renewable energy projects are massive but invisible. People see a solar panel once in a magazine, a windmill on a highway. For most citizens, renewable energy lives as a policy concept, not a lived experience.</p>
+    <p>Greenmosphere was built as a translation project. Rather than communicating megawatts and capacity additions, it spoke about air, community, future generations and everyday life. It reframed environmental responsibility from a corporate claim into a shared community effort — structured around tree plantation, sustainability education in schools, and practical energy conservation guidance for households.</p>
+    <p>Digital communication served as the bridge between on-ground initiatives and public understanding — explaining impact in simple language, connecting activity to SDG goals, and encouraging community participation rather than passive awareness.</p>
+
+    <div class="award-block">
+      <div class="award-title">ESG Initiative of the Year — ET Energyworld Annual Gas Conclave</div>
+      <div class="award-sub">Recognised by The Economic Times Energyworld at one of India's leading energy sector forums, placing Greenmosphere alongside the most significant environmental and sustainability initiatives across India's gas and energy industry.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">Results</div>
+    <h2>Reach, engagement<br>and <em>a shift in how sustainability landed.</em></h2>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-card-label">Content Performance</div>
+        <div class="result-item"><div class="result-num">14M+</div><div class="result-sub">Views across sustainability content</div></div>
+        <div class="result-item"><div class="result-num">47M+</div><div class="result-sub">Total reach across platforms</div></div>
+        <div class="result-item"><div class="result-num">4%</div><div class="result-sub">Average engagement rate across social channels</div></div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-label">Narrative Coherence</div>
+        <div class="result-item"><div class="result-num">7</div><div class="result-sub">Business units aligned under one sustainability narrative</div></div>
+        <div class="result-item"><div class="result-num">5</div><div class="result-sub">UN SDGs explicitly communicated across content</div></div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-label">Recognition</div>
+        <div class="result-item"><div class="result-num">1st</div><div class="result-sub">ESG Initiative of the Year — ET Energyworld Annual Gas Conclave</div></div>
+        <div class="result-item"><div class="result-num">National</div><div class="result-sub">Visibility across India's energy and sustainability media</div></div>
+      </div>
+    </div>
+
+    <div class="impact-block">
+      <div class="impact-title">What this work actually was</div>
+      <div class="impact-body">Infrastructure companies don't just sell products — they must justify their existence socially. This was not marketing. It was legitimacy communication. The work helped move Adani Group's sustainability story from investor disclosure to public understanding, and from corporate claim to community participation — across seven businesses, at national scale.</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>Adani Group · <span>Sustainability Narrative Communication</span> · ESG & Digital · Portfolio Case Study</p>
+</footer>
+
+</body>
+</html>
