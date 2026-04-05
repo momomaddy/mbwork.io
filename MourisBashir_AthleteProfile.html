@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouris Bashir — Profile</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0A0A0A;
+    --off-black: #141414;
+    --white: #F5F5F0;
+    --off-white: #EEEEE8;
+    --red: #C41E1E;
+    --red-dark: #8B1414;
+    --gray: #888880;
+    --rule: rgba(245,245,240,0.1);
+  }
+
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .bg-number {
+    position: absolute;
+    top: -2rem;
+    right: -1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(18rem, 40vw, 32rem);
+    font-weight: 800;
+    color: rgba(245,245,240,0.03);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .red-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: var(--red);
+  }
+
+  .hero-inner {
+    position: relative;
+    padding: 4rem 4rem 4rem 5rem;
+    z-index: 2;
+  }
+
+  .position-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .position-tag::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: var(--red);
+  }
+
+  .hero-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(4rem, 11vw, 9rem);
+    font-weight: 800;
+    line-height: 0.9;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-name span {
+    display: block;
+    color: rgba(245,245,240,0.15);
+  }
+
+  .hero-stats-row {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    padding-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    padding: 0 2.5rem 0 0;
+    margin-right: 2.5rem;
+    border-right: 1px solid var(--rule);
+  }
+
+  .hero-stat:last-child { border-right: none; }
+
+  .hero-stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .hero-stat-num em { color: var(--red); font-style: normal; }
+
+  .hero-stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 0.3rem;
+  }
+
+  /* PROFILE BAND */
+  .profile-band {
+    background: var(--red);
+    padding: 1rem 5rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .profile-band-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .profile-band-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,245,240,0.65);
+  }
+
+  .profile-band-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .band-sep {
+    width: 1px;
+    height: 20px;
+    background: rgba(245,245,240,0.25);
+  }
+
+  /* BODY */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .col-left {
+    padding: 4rem 4rem 4rem 5rem;
+    border-right: 1px solid var(--rule);
+  }
+
+  .col-right {
+    padding: 4rem 4rem 4rem 3rem;
+    background: var(--off-black);
+  }
+
+  .block-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .bio-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: rgba(245,245,240,0.75);
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+    max-width: 520px;
+  }
+
+  .bio-text:first-of-type::first-letter {
+    font-size: 3.5rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.85;
+    margin: 0.1rem 0.15rem 0 0;
+    color: var(--red);
+  }
+
+  /* STAT TABLE */
+  .stat-table { width: 100%; margin-bottom: 2.5rem; }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .stat-row:last-child { border-bottom: none; }
+
+  .stat-key {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .stat-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+
+  .stat-val.accent { color: var(--red); }
+
+  /* MILESTONES */
+  .milestone {
+    display: flex;
+    gap: 1.2rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: flex-start;
+  }
+
+  .milestone:last-child { border-bottom: none; }
+
+  .milestone-year {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.08em;
+    min-width: 36px;
+    padding-top: 0.1rem;
+  }
+
+  .milestone-text {
+    font-size: 0.82rem;
+    color: rgba(245,245,240,0.65);
+    line-height: 1.55;
+  }
+
+  /* QUOTE */
+  .big-quote {
+    margin: 3rem 0 0;
+    padding: 2rem 0;
+    border-top: 2px solid var(--red);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .big-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.55;
+    max-width: 500px;
+  }
+
+  .big-quote cite {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 0.8rem;
+    font-style: normal;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--red);
+    padding: 1.2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .footer-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,245,240,0.6);
+  }
+
+  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+  @media (max-width: 720px) {
+    .body-grid { grid-template-columns: 1fr; }
+    .col-left { padding: 3rem 1.5rem; }
+    .col-right { padding: 3rem 1.5rem; }
+    .hero-inner { padding: 3rem 1.5rem 3rem 2.5rem; }
+    .profile-band { padding: 1rem 1.5rem; }
+    footer { padding: 1.2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<nav style="position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(10,10,10,0.96);backdrop-filter:blur(8px);padding:0.9rem 3rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);">
+  <a href="MourisBashir_AthleteProfile.html" style="font-family:sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#F5F5F0;text-decoration:none;">MB.WORK</a>
+  <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+    <a href="MourisBashir_AthleteProfile.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">About</a>
+    <a href="about.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">One Nation</a>
+    <a href="index.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Horizon X</a>
+    <a href="HKKDH_Adani_CaseStudy.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">HKKDH</a>
+    <a href="sustainability.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Sustainability</a>
+  </div>
+</nav>
+<div style="height:48px;"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="red-bar"></div>
+  <div class="bg-number">10</div>
+  <div class="hero-inner">
+    <div class="position-tag">All-Rounder · Strategic Communicator</div>
+    <h1 class="hero-name">
+      Mouris<br>
+      <span>Bashir</span>
+    </h1>
+    <div class="hero-stats-row">
+      <div class="hero-stat">
+        <div class="hero-stat-num">10<em>+</em></div>
+        <div class="hero-stat-label">Years in play</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">7<em>+</em></div>
+        <div class="hero-stat-label">Organisations</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3<em>×</em></div>
+        <div class="hero-stat-label">Platinum — AVA Awards</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">300<em>M</em></div>
+        <div class="hero-stat-label">Campaign views</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE BAND -->
+<div class="profile-band">
+  <div class="profile-band-item">
+    <span class="profile-band-label">Base</span>
+    <span class="profile-band-val">Gurugram, India</span>
+  </div>
+  <div class="band-sep"></div>
+  <div class="profile-band-item">
+    <span class="profile-band-label">Origin</span>
+    <span class="profile-band-val">Kashmir · Edinburgh</span>
+  </div>
+  <div class="band-sep"></div>
+  <div class="profile-band-item">
+    <span class="profile-band-label">Batting style</span>
+    <span class="profile-band-val">Narrative-first, data-backed</span>
+  </div>
+  <div class="band-sep"></div>
+  <div class="profile-band-item">
+    <span class="profile-band-label">Speciality</span>
+    <span class="profile-band-val">Turns chaos into clarity</span>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body-grid">
+
+  <!-- LEFT -->
+  <div class="col-left">
+    <div class="block-label">Profile</div>
+
+    <p class="bio-text">
+      I sweat the petty things; pet the sweaty things, because they decide outcomes. Not a philosophy — a pattern I noticed after enough campaigns went sideways on a single word.
+    </p>
+
+    <p class="bio-text">
+      Ten years of translating chaos into something people can understand. Sometimes, as a writer. Sometimes as a strategist. Often as the only person in the room who'd read the comments section before the meeting.
+    </p>
+
+    <p class="bio-text">
+      Brands are emotional. They're emotional for consumers. And they're emotional for marketers. My job is to understand what brands mean. What brands can do. What brand experiences inspire action. My real job is to inspire.
+    </p>
+
+    <div class="big-quote">
+      <p>"I contain contradictions. So does good strategy."</p>
+      <cite>— Mouris Bashir</cite>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="col-right">
+
+    <div style="margin-bottom: 3rem;">
+      <div class="block-label">Career Stats</div>
+      <div class="stat-table">
+        <div class="stat-row"><span class="stat-key">Current club</span><span class="stat-val">Adani Group</span></div>
+        <div class="stat-row"><span class="stat-key">Previous</span><span class="stat-val">OYO · Audibene · BMF</span></div>
+        <div class="stat-row"><span class="stat-key">Education</span><span class="stat-val">B.A. Economics, Edinburgh</span></div>
+        <div class="stat-row"><span class="stat-key">Peak campaign</span><span class="stat-val accent">300M+ views</span></div>
+        <div class="stat-row"><span class="stat-key">Conversion record</span><span class="stat-val accent">4×–7× growth</span></div>
+        <div class="stat-row"><span class="stat-key">Awards</span><span class="stat-val accent">5 international</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="block-label">Career Milestones</div>
+      <div class="milestone">
+        <span class="milestone-year">2024</span>
+        <span class="milestone-text">Led HKKDH reputation campaign for Adani Group — 300M+ views, 1.01M community growth</span>
+      </div>
+      <div class="milestone">
+        <span class="milestone-year">2023</span>
+        <span class="milestone-text">5 international award wins across Digies, Hermes, ACEF & afaqs! Foxglove</span>
+      </div>
+      <div class="milestone">
+        <span class="milestone-year">2022</span>
+        <span class="milestone-text">#OneNationBillionCelebrations wins 3× Platinum at AVA Digital Awards — beating Harvard, Deloitte & Dell</span>
+      </div>
+      <div class="milestone">
+        <span class="milestone-year">2021</span>
+        <span class="milestone-text">Horizon X launch for hear.com — 13,000+ units Q1, 119% of projected business performance</span>
+      </div>
+      <div class="milestone">
+        <span class="milestone-year">2018</span>
+        <span class="milestone-text">Joined OYO as Communication Strategist — built narrative systems across hospitality verticals</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Mouris Bashir · mb.work</span>
+  <span class="footer-meta">Marketing & Communications · Ten Years · Several Contradictions</span>
+  <span class="footer-meta"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f
