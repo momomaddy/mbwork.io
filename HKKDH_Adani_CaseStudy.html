@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hum Karke Dikhate Hain — Case Study</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --deep: #0E0A00; --ink: #1A1200; --gold: #C18A2A; --amber: #E8A020;
+    --pale: #FAF6EE; --mist: #EDE8DA; --body: #3A2E1A; --muted: #7A6A4A; --cream: #FDFAF4;
+  }
+  body { background: var(--cream); color: var(--body); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  .hero { position: relative; background: var(--deep); min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem 3rem 5rem; overflow: hidden; }
+  .hero-glow { position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(circle at 72% 22%, rgba(193,138,42,0.2) 0%, transparent 52%), radial-gradient(circle at 12% 78%, rgba(232,160,32,0.1) 0%, transparent 45%); }
+  .ring { position: absolute; border-radius: 50%; pointer-events: none; }
+  .r1 { width: 460px; height: 460px; top: -110px; right: -90px; border: 1px solid rgba(193,138,42,0.18); }
+  .r2 { width: 300px; height: 300px; top: -20px; right: 40px; border: 1px solid rgba(232,160,32,0.1); }
+  .r3 { width: 680px; height: 680px; bottom: -240px; left: -200px; border: 1px solid rgba(193,138,42,0.06); }
+  .hero-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); font-weight: 500; margin-bottom: 2rem; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5.2vw, 4.6rem); font-weight: 900; line-height: 1.05; color: #FBF5E6; margin-bottom: 1.5rem; max-width: 720px; }
+  .hero-title em { font-style: italic; color: #EAC97A; }
+  .hero-sub { font-size: 1rem; color: rgba(251,245,230,0.48); max-width: 520px; margin-bottom: 3rem; font-weight: 300; }
+  .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+  .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .meta-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251,245,230,0.28); }
+  .meta-val { font-size: 0.87rem; color: #FBF5E6; font-weight: 400; }
+
+  .stat-strip { background: var(--deep); padding: 4rem 3rem; border-top: 1px solid rgba(193,138,42,0.12); }
+  .stat-grid { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 2.5rem; }
+  .stat { display: flex; flex-direction: column; gap: 0.3rem; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: #EAC97A; line-height: 1; }
+  .stat-desc { font-size: 0.76rem; color: rgba(251,245,230,0.42); line-height: 1.5; max-width: 145px; }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 5rem 0; border-bottom: 1px solid rgba(26,18,0,0.07); }
+  section:last-child { border-bottom: none; }
+  .section-tag { font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
+  .section-tag::after { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); opacity: 0.45; }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 1.8rem; }
+  h2 em { font-style: italic; color: var(--gold); }
+  p { font-size: 0.96rem; color: #3A2E1A; margin-bottom: 1.2rem; max-width: 700px; }
+  p:last-child { margin-bottom: 0; }
+
+  .pull-quote { margin: 3rem 0; padding: 2rem 0 2rem 2rem; border-left: 3px solid var(--gold); }
+  .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: var(--ink); font-weight: 400; line-height: 1.5; margin-bottom: 0; max-width: 620px; }
+
+  .shift-block { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 2.5rem 0; border: 1px solid var(--mist); }
+  .shift-col { padding: 2rem; }
+  .shift-col:first-child { border-right: 1px solid var(--mist); background: var(--pale); }
+  .shift-label { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 1rem; }
+  .shift-label.active { color: var(--gold); }
+  .shift-item { font-size: 0.86rem; color: var(--muted); padding: 0.5rem 0; border-bottom: 1px solid var(--mist); line-height: 1.5; }
+  .shift-item:last-child { border-bottom: none; }
+  .shift-item.active { color: var(--body); font-weight: 400; }
+
+  .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin: 2.5rem 0; }
+  .pillar { background: var(--pale); border: 1px solid var(--mist); padding: 1.8rem; }
+  .pillar-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--mist); line-height: 1; margin-bottom: 0.5rem; }
+  .pillar-title { font-size: 0.8rem; font-weight: 500; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.7rem; }
+  .pillar-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+
+  .ecosystem { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 2.5rem 0; border: 1px solid var(--mist); }
+  .eco-col { padding: 1.8rem 1.5rem; border-right: 1px solid var(--mist); }
+  .eco-col:last-child { border-right: none; }
+  .eco-label { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
+  .eco-item { font-size: 0.82rem; color: var(--body); padding: 0.35rem 0; border-bottom: 1px solid rgba(237,232,218,0.6); line-height: 1.4; }
+  .eco-item:last-child { border-bottom: none; }
+  .eco-item::before { content: '— '; color: var(--amber); opacity: 0.7; }
+
+  .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
+  .result-card { background: var(--pale); border: 1px solid var(--mist); padding: 1.5rem; }
+  .result-card-label { font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
+  .result-item { margin-bottom: 0.8rem; }
+  .result-item:last-child { margin-bottom: 0; }
+  .result-num { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--gold); line-height: 1; }
+  .result-sub { font-size: 0.76rem; color: var(--muted); line-height: 1.4; margin-top: 0.2rem; }
+
+  .impact-block { background: var(--deep); padding: 2.5rem; margin: 2.5rem 0; position: relative; overflow: hidden; }
+  .impact-block::before { content: ''; position: absolute; top: 0; right: 0; width: 220px; height: 220px; background: radial-gradient(circle, rgba(193,138,42,0.14) 0%, transparent 70%); }
+  .impact-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #EAC97A; font-weight: 700; margin-bottom: 0.6rem; }
+  .impact-body { font-size: 0.86rem; color: rgba(251,245,230,0.52); line-height: 1.7; margin-bottom: 0; max-width: 620px; }
+
+  footer { background: var(--deep); padding: 3rem; text-align: center; }
+  footer p { font-size: 0.76rem; color: rgba(251,245,230,0.26); margin: 0 auto; }
+  footer span { color: var(--amber); }
+
+  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  @media (max-width: 680px) {
+    .shift-block, .pillars { grid-template-columns: 1fr; }
+    .shift-col:first-child { border-right: none; border-bottom: 1px solid var(--mist); }
+    .ecosystem { grid-template-columns: 1fr; }
+    .eco-col { border-right: none; border-bottom: 1px solid var(--mist); }
+    .eco-col:last-child { border-bottom: none; }
+    .hero { padding: 3rem 1.5rem 4rem; }
+    .stat-strip { padding: 3rem 1.5rem; }
+    .page { padding: 0 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<nav style="position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(10,10,10,0.96);backdrop-filter:blur(8px);padding:0.9rem 3rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);">
+  <a href="MourisBashir_AthleteProfile.html" style="font-family:sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#F5F5F0;text-decoration:none;">MB.WORK</a>
+  <div style="display:flex;gap:2rem;">
+    <a href="MourisBashir_AthleteProfile.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">About</a>
+    <a href="about.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">One Nation</a>
+    <a href="index.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Horizon X</a>
+    <a href="HKKDH_Adani_CaseStudy.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">HKKDH</a>
+  </div>
+</nav>
+<div style="height:48px;"></div>
+
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+  <div class="hero-label">Case Study · Reputation & Narrative Strategy</div>
+  <h1 class="hero-title">Hum Karke<br><em>Dikhate Hain.</em></h1>
+  <p class="hero-sub">How a television campaign became a distributed narrative system — shifting a conglomerate from defensive posture to institutional storytelling at national scale.</p>
+  <div class="hero-meta">
+    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">Adani Group</span></div>
+    <div class="meta-item"><span class="meta-label">Scope</span><span class="meta-val">Reputation · Brand · Comms Strategy</span></div>
+    <div class="meta-item"><span class="meta-label">Scale</span><span class="meta-val">10+ Business Units · National</span></div>
+    <div class="meta-item"><span class="meta-label">Agency</span><span class="meta-val">Ogilvy India (TVC) + In-house</span></div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-grid">
+    <div class="stat"><div class="stat-num">300M+</div><div class="stat-desc">Views across platforms and languages</div></div>
+    <div class="stat"><div class="stat-num">1.01M</div><div class="stat-desc">Community growth across channels</div></div>
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-desc">Business units aligned under one narrative</div></div>
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-desc">Vernacular ecosystems activated</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-desc">Media layers unified: paid, earned, owned</div></div>
+  </div>
+</div>
+
+<div class="page">
+
+  <section>
+    <div class="section-tag">The Challenge</div>
+    <h2>The problem wasn't <em>awareness.</em><br>It was legitimacy.</h2>
+    <p>In the wake of intense public and market scrutiny, Adani Group launched a national brand platform — a 100-second TVC developed by Ogilvy India, celebrating 35 years of service and anchoring the Group's identity in resilience, execution, and nation-building.</p>
+    <p>The immediate challenge was not visibility. It was coherence. The Group had diversified into independently governed, market-leading businesses across energy, logistics, airports, materials, and direct-to-consumer — each with its own audience, tone of voice, and credibility expectations. A singular corporate statement, however powerful on television, risked fracturing the moment it touched each vertical.</p>
+    <div class="pull-quote">
+      <p>"The real problem was not: how do we promote a campaign? It was: how do we shift public perception when attention is high and sentiment is volatile?"</p>
+    </div>
+    <p>Traditional PR rebuttal wasn't sufficient. Every message carried reputational risk. The opportunity was to transform a broadcast moment into a sustained, believable public narrative — one that felt consistent at group level while remaining authentic to each business unit.</p>
+  </section>
+
+  <section>
+    <div class="section-tag">The Strategic Shift</div>
+    <h2>From reactive defense<br>to <em>narrative leadership.</em></h2>
+    <p>The core strategic move was to stop treating HKKDH as a one-way campaign and rebuild it as a dynamic narrative system — owned by the brand but carried by communities, business units, and real-world outcomes.</p>
+    <div class="shift-block">
+      <div class="shift-col">
+        <div class="shift-label">From</div>
+        <div class="shift-item">Responding to criticism</div>
+        <div class="shift-item">Broadcast messaging</div>
+        <div class="shift-item">Centralised brand control</div>
+        <div class="shift-item">Fragmented business unit voices</div>
+        <div class="shift-item">Campaign as a moment</div>
+      </div>
+      <div class="shift-col">
+        <div class="shift-label active">To</div>
+        <div class="shift-item active">Owning a larger narrative about impact</div>
+        <div class="shift-item active">Distributed narrative ownership</div>
+        <div class="shift-item active">Community-carried storytelling</div>
+        <div class="shift-item active">One spine, ten authentic voices</div>
+        <div class="shift-item active">Campaign as an ongoing system</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">My Role & Approach</div>
+    <h2>Four pillars of <em>execution.</em></h2>
+    <p>My role was to convert a television campaign into a live communication system operating across paid, earned, and owned media simultaneously. This required four distinct workstreams running in parallel.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Tone Adaptation</div>
+        <div class="pillar-desc">Translated the core campaign voice into the natural language of each business unit. Infrastructure emphasised operational reliability. Airports focused on passenger experience. Consumer products communicated everyday quality. Same idea — different expression for each audience.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Real-Time Narrative Management</div>
+        <div class="pillar-desc">Built a social command centre running continuous listening and sentiment analysis. Identified narrative inflection points and adapted messaging live. Not content scheduling — newsroom-mindset applied to brand communication.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Decentralised Storytelling</div>
+        <div class="pillar-desc">Expanded into 10+ vernacular ecosystems. Activated Tier 2–3 creators. Developed storytelling platforms — Ports of Progress, #Parivartan — that let the narrative be carried by communities, not just the brand.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <div class="pillar-title">Cross-Business Alignment</div>
+        <div class="pillar-desc">Reviewed and aligned communication across 10+ business units, working with internal teams and agency partners. Every operational update, service announcement, and digital story was calibrated to reinforce the platform rather than compete with it.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">The System</div>
+    <h2>One spine.<br><em>Every channel.</em></h2>
+    <p>The execution discipline was integration. Paid, owned, and earned media were not treated as separate channels — they were sequenced as a single encounter. Audiences met the same idea through different interactions rather than repeated ads.</p>
+    <div class="ecosystem">
+      <div class="eco-col">
+        <div class="eco-label">Paid</div>
+        <div class="eco-item">TVC (Ogilvy India, 100 sec)</div>
+        <div class="eco-item">Digital advertising</div>
+        <div class="eco-item">OOH across markets</div>
+        <div class="eco-item">Vernacular media buys</div>
+      </div>
+      <div class="eco-col">
+        <div class="eco-label">Owned</div>
+        <div class="eco-item">Social platforms (group + BU)</div>
+        <div class="eco-item">Corporate channels</div>
+        <div class="eco-item">Ports of Progress</div>
+        <div class="eco-item">#Parivartan storytelling</div>
+      </div>
+      <div class="eco-col">
+        <div class="eco-label">Earned</div>
+        <div class="eco-item">Media relations</div>
+        <div class="eco-item">Public discourse participation</div>
+        <div class="eco-item">Tier 2–3 creator activation</div>
+        <div class="eco-item">Community narrative ownership</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">Results</div>
+    <h2>Scale, coherence, and<br><em>a shift in posture.</em></h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-card-label">Reach & Visibility</div>
+        <div class="result-item">
+          <div class="result-num">300M–350M+</div>
+          <div class="result-sub">Views across platforms</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">National</div>
+          <div class="result-sub">Visibility across TV, digital, OOH and social</div>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-label">Community & Distribution</div>
+        <div class="result-item">
+          <div class="result-num">1.01M</div>
+          <div class="result-sub">Community growth across channels</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">10+</div>
+          <div class="result-sub">Vernacular ecosystems activated</div>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-label">Narrative Coherence</div>
+        <div class="result-item">
+          <div class="result-num">10+</div>
+          <div class="result-sub">Business units aligned under one narrative spine</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">3</div>
+          <div class="result-sub">Media layers unified: paid, earned, owned</div>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-card-label">Strategic Outcome</div>
+        <div class="result-item">
+          <div class="result-num">Defensive → Proactive</div>
+          <div class="result-sub">Brand posture shift from crisis response to institutional storytelling</div>
+        </div>
+        <div class="result-item">
+          <div class="result-num">Fragmented → Unified</div>
+          <div class="result-sub">Multi-business communication aligned under one platform</div>
+        </div>
+      </div>
+    </div>
+    <div class="impact-block">
+      <div class="impact-title">Why This Campaign Matters</div>
+      <div class="impact-body">HKKDH demonstrates three capabilities operating under pressure: strategic thinking when stakes are high and information is incomplete; narrative architecture that connects business, culture, and public sentiment at scale; and an adaptive, feedback-driven communication system that predates — and mirrors — the logic of AI-native marketing. This was not campaign execution. It was reputation infrastructure.</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>Adani Group · <span>Hum Karke Dikhate Hain</span> · Reputation & Narrative Strategy · Portfolio Case Study</p>
+</footer>
+
+</body>
+</html>
