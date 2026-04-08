@@ -21,6 +21,34 @@
   }
 
   body { background: var(--cream); color: var(--body); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(43,0,14,0.96);
+    backdrop-filter: blur(8px);
+    padding: 0.9rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .top-nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .top-nav a {
+    font-family: sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,239,243,0.68);
+    text-decoration: none;
+  }
+  .top-nav .brand {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: #FFEFF3;
+  }
+  .top-nav a.active { color: #FFEFF3; }
 
   .hero { position: relative; background: var(--deep); min-height: 90vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem 3rem 5rem; overflow: hidden; }
   .hero-glow { position: absolute; inset: 0; background-image: radial-gradient(circle at 72% 22%, rgba(233,69,100,0.24) 0%, transparent 52%), radial-gradient(circle at 12% 78%, rgba(194,24,59,0.14) 0%, transparent 45%); }
@@ -63,6 +91,9 @@
   footer p { color: rgba(255,239,243,0.62); font-size: 0.78rem; margin: 0 auto; }
 
   @media (max-width: 700px) {
+    .top-nav { padding: 0.8rem 1rem; }
+    .top-nav-links { gap: 0.8rem 1.2rem; }
+
     .hero { padding: 3rem 1.2rem 4rem; }
     .stat-strip { padding: 2.5rem 1.2rem; }
     .page { padding: 0 1.2rem; }
@@ -71,6 +102,18 @@
 </head>
 <body>
 
+<nav class="top-nav">
+  <a href="MourisBashir_AthleteProfile.html" class="brand">MB.WORK</a>
+  <div class="top-nav-links">
+    <a href="MourisBashir_AthleteProfile.html">About</a>
+    <a href="about.html">One Nation</a>
+    <a href="index.html">Horizon X</a>
+    <a href="OYO_Brand_Marketing_Communication_CaseStudy.html" class="active">OYO Comms</a>
+    <a href="HKKDH_Adani_CaseStudy.html">HKKDH</a>
+    <a href="sustainability.html">Sustainability</a>
+    <a href="fortune.html">Fortune</a>
+  </div>
+</nav>
 <div class="hero">
   <div class="hero-glow"></div>
   <div class="hero-label">Brand · Marketing · Communication Case Study</div>
