@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OYO — Brand, Marketing & Communication Case Study</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --deep: #2B000E;
+    --ink: #3E0A1B;
+    --red: #C2183B;
+    --rose: #E94564;
+    --pale: #FFF4F6;
+    --mist: #F5DCE2;
+    --body: #4C1F2A;
+    --muted: #8A5B68;
+    --cream: #FFF9FA;
+  }
+
+  body { background: var(--cream); color: var(--body); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+
+  .hero { position: relative; background: var(--deep); min-height: 90vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem 3rem 5rem; overflow: hidden; }
+  .hero-glow { position: absolute; inset: 0; background-image: radial-gradient(circle at 72% 22%, rgba(233,69,100,0.24) 0%, transparent 52%), radial-gradient(circle at 12% 78%, rgba(194,24,59,0.14) 0%, transparent 45%); }
+  .hero-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: #FF9AAD; font-weight: 500; margin-bottom: 2rem; position: relative; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 4.6rem); font-weight: 900; line-height: 1.05; color: #FFEFF3; margin-bottom: 1.4rem; max-width: 760px; position: relative; }
+  .hero-title em { font-style: italic; color: #FFB8C6; }
+  .hero-sub { font-size: 1rem; color: rgba(255,239,243,0.65); max-width: 620px; margin-bottom: 2.5rem; position: relative; }
+
+  .hero-meta { display: flex; gap: 2rem; flex-wrap: wrap; position: relative; }
+  .meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+  .meta-label { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,239,243,0.45); }
+  .meta-val { font-size: 0.87rem; color: #FFEFF3; font-weight: 400; }
+
+  .stat-strip { background: var(--deep); border-top: 1px solid rgba(255,154,173,0.2); padding: 3.5rem 3rem; }
+  .stat-grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #FFB8C6; font-weight: 900; line-height: 1; }
+  .stat-desc { font-size: 0.76rem; color: rgba(255,239,243,0.6); margin-top: 0.35rem; }
+
+  .page { max-width: 940px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 4.5rem 0; border-bottom: 1px solid rgba(62,10,27,0.08); }
+  section:last-child { border-bottom: none; }
+  .section-tag { font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 1rem; }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.22; color: var(--ink); margin-bottom: 1.3rem; }
+  h2 em { font-style: italic; color: var(--red); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--ink); margin: 2rem 0 0.8rem; }
+  p { font-size: 0.96rem; color: var(--body); max-width: 760px; margin-bottom: 1rem; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.4rem; }
+  .card { background: var(--pale); border: 1px solid var(--mist); padding: 1.25rem; }
+  .card-title { font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 0.5rem; }
+  .card p { font-size: 0.84rem; color: var(--muted); margin: 0; }
+
+  ul { margin-left: 1.1rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.45rem; }
+
+  .quote { margin: 2rem 0; padding: 1.5rem 0 1.5rem 1.5rem; border-left: 3px solid var(--red); }
+  .quote p { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; color: var(--ink); margin: 0; }
+
+  footer { background: var(--deep); padding: 2rem; text-align: center; margin-top: 3rem; }
+  footer p { color: rgba(255,239,243,0.62); font-size: 0.78rem; margin: 0 auto; }
+
+  @media (max-width: 700px) {
+    .hero { padding: 3rem 1.2rem 4rem; }
+    .stat-strip { padding: 2.5rem 1.2rem; }
+    .page { padding: 0 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-label">Brand · Marketing · Communication Case Study</div>
+  <h1 class="hero-title">For the Love of Love —<br><em>OYO Paints the Town Red</em></h1>
+  <p class="hero-sub">An integrated communication system that repositioned Valentine’s Day from a couples-only moment to a broader celebration of companionship — while also strengthening partner trust, product narrative, and internal alignment.</p>
+
+  <div class="hero-meta">
+    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">OYO</span></div>
+    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Concept · Strategy · Copy · Program Leadership</span></div>
+    <div class="meta-item"><span class="meta-label">Agency</span><span class="meta-val">In-house</span></div>
+    <div class="meta-item"><span class="meta-label">Campaign Tag</span><span class="meta-val">#ValentinesTogetherAlone</span></div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-grid">
+    <div><div class="stat-num">7L+</div><div class="stat-desc">Organic impressions across campaign period</div></div>
+    <div><div class="stat-num">~6,000</div><div class="stat-desc">New followers acquired</div></div>
+    <div><div class="stat-num">~5%</div><div class="stat-desc">Engagement rate during the 14-day run</div></div>
+    <div><div class="stat-num">112%</div><div class="stat-desc">Increase in bookings vs previous year period</div></div>
+    <div><div class="stat-num">120K+</div><div class="stat-desc">Partner users onboarded on CO-OYO/OPEN</div></div>
+  </div>
+</div>
+
+<div class="page">
+  <section>
+    <div class="section-tag">Context</div>
+    <h2>A communication mandate larger than a single campaign.</h2>
+    <p>At OYO, the brand challenge was not just seasonal visibility. It was narrative breadth. The business needed to speak credibly to multiple audiences at once — consumers, hotel partners, media, leadership stakeholders, and employees — without fragmenting the core message.</p>
+    <p>The work was therefore designed as an integrated set of communication systems: market-facing brand storytelling, product and trust communication, partner engagement, and internal clarity architecture.</p>
+  </section>
+
+  <section>
+    <div class="section-tag">Case 01 · Brand Marketing</div>
+    <h2>Valentine’s Day 2019:<br><em>From romance to companionship.</em></h2>
+
+    <h3>Objective</h3>
+    <ul>
+      <li>Reposition Valentine’s Day beyond couples.</li>
+      <li>Normalize celebration with friends, family, and solo travellers.</li>
+      <li>Build emotional affinity and organic social participation.</li>
+    </ul>
+
+    <h3>Execution</h3>
+    <div class="cards">
+      <div class="card"><div class="card-title">Integrated Teams</div><p>Brand, offline marketing, conversions, PR, and OYO Townhouse teams aligned on one message architecture.</p></div>
+      <div class="card"><div class="card-title">Always-on Series</div><p>A 14-day social content sequence across Facebook and Instagram to sustain momentum.</p></div>
+      <div class="card"><div class="card-title">Creator + Community</div><p>Influencer stays at OYO Homes combined with user-generated content amplification.</p></div>
+      <div class="card"><div class="card-title">Data PR</div><p>Launched OYO Love Index 2019 from booking insights to validate the cultural shift with evidence.</p></div>
+    </div>
+
+    <div class="quote"><p>"February 14 is no longer only about couples; it is increasingly a companionship occasion across social groups."</p></div>
+
+    <h3>Performance</h3>
+    <ul>
+      <li>7+ lakh organic impressions.</li>
+      <li>~6,000 new followers.</li>
+      <li>~5% engagement rate.</li>
+      <li>112% increase in bookings vs same period previous year.</li>
+      <li>Booking mix: 63% couples, 22% friends/family (high-growth segment).</li>
+      <li>Goa emerged as top couples destination, followed by Delhi and Bangalore.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-tag">Case 02 · Product Trust Communication</div>
+    <h2>OYO SOS Feature:<br><em>Utility framed through reassurance.</em></h2>
+    <p>For the SOS feature launch, communication strategy focused on a high-clarity narrative: safety utility must feel immediate, practical, and trustworthy for users while remaining aligned with external media and internal stakeholder messaging.</p>
+    <ul>
+      <li>Defined launch narrative and message hierarchy.</li>
+      <li>Aligned internal and external communication tracks.</li>
+      <li>Supported media discoverability through targeted story packaging.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-tag">Case 03 · Partner Communication</div>
+    <h2>OPEN Partner Privilege Program:<br><em>Turning an event into a brand signal.</em></h2>
+    <p>The Partner Privilege Program launch needed more than event management. It required operational readiness, leadership alignment, partner participation, and media coherence under one narrative about relationship-first growth.</p>
+
+    <h3>Execution Scope</h3>
+    <ul>
+      <li>Event design, production flow, and vendor management.</li>
+      <li>Cross-functional leadership alignment (Founders’ Office, business, operations, tech).</li>
+      <li>Media coordination, press interactions, and narrative reinforcement.</li>
+      <li>Partner education communication to support onboarding and product usage.</li>
+      <li>Post-launch coverage tracking and leadership reporting.</li>
+    </ul>
+
+    <h3>Outcomes</h3>
+    <ul>
+      <li>44+ media attendees at launch.</li>
+      <li>60+ quality stories across national, regional, and financial media.</li>
+      <li>Leadership and hotel partner participation at scale.</li>
+      <li>120,000+ partner users onboarded on CO-OYO/OPEN platforms.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-tag">Case 04 · Internal Communication</div>
+    <h2>Building clarity during hypergrowth:<br><em>from scattered updates to architecture.</em></h2>
+    <p>As OYO scaled across geographies and functions, internal communication became inconsistent. The fix was not frequency. It was segmentation and purpose.</p>
+
+    <h3>Communication Architecture</h3>
+    <div class="cards">
+      <div class="card"><div class="card-title">OYO Shorts</div><p>Fast, high-frequency awareness updates on launches, news, and active movement.</p></div>
+      <div class="card"><div class="card-title">OYO Tinyletter</div><p>Readable explainers translating activity into business meaning and progress context.</p></div>
+      <div class="card"><div class="card-title">The OYO Press</div><p>Leadership media-intelligence layer tracking coverage, perception, and narrative direction.</p></div>
+    </div>
+
+    <p>This structure separated awareness, understanding, and executive visibility — improving message clarity across employee, manager, and stakeholder audiences.</p>
+  </section>
+
+  <section>
+    <div class="section-tag">Role Summary</div>
+    <h2>What I led across these initiatives.</h2>
+    <ul>
+      <li>Concept ideation and copywriting across TV, radio, OLV, print, digital, social, OOH, and in-store formats.</li>
+      <li>Communication strategy and messaging architecture across launches and cross-functional programs.</li>
+      <li>Program leadership across stakeholder management, media coordination, operations, and narrative consistency.</li>
+      <li>Integration of data, content, and execution to make communication measurable and culturally resonant.</li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  <p>OYO Brand, Marketing & Communication Case Study · Prepared for portfolio use.</p>
+</footer>
+
+</body>
+</html>
