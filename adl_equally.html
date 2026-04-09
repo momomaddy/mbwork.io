@@ -122,27 +122,68 @@
     .stat-strip { padding: 3rem 1.5rem; }
     .page { padding: 0 1.2rem; }
   }
+
+/* Global hamburger menu */
+.logo{position:fixed;top:1rem;left:1.2rem;z-index:10001;font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#f8f8f6;text-decoration:none;}
+.home-btn{position:fixed;top:1rem;left:6rem;z-index:10001;padding:.35rem .72rem;border:1px solid rgba(248,248,246,.2);border-radius:999px;font-family:'Syne',sans-serif;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:#f8f8f6;text-decoration:none;background:rgba(15,15,15,.35);backdrop-filter:blur(3px);transition:all .2s;}
+.quick-tabs{position:fixed;top:1rem;left:9.25rem;z-index:10001;display:flex;gap:.4rem;}
+.quick-tab{padding:.35rem .65rem;border:1px solid rgba(248,248,246,.16);border-radius:999px;font-family:'Syne',sans-serif;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(248,248,246,.85);text-decoration:none;background:rgba(15,15,15,.25);transition:all .2s;}
+.quick-tab:hover{border-color:#E8180A;color:#fff;background:rgba(232,24,10,.12);}
+.home-btn:hover{border-color:#E8180A;color:#fff;background:rgba(232,24,10,.12);}
+@media(max-width:768px){.home-btn{left:.85rem;top:3rem;}.quick-tabs{left:.85rem;top:4.9rem;}}
+.menu-btn{position:fixed;top:.72rem;right:.95rem;z-index:10001;background:none;border:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;}
+.menu-btn-inner{width:38px;height:38px;position:relative;border:1px solid rgba(248,248,246,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .3s,background .3s;}
+.menu-btn:hover .menu-btn-inner{border-color:#E8180A;background:rgba(232,24,10,.08);}
+.bar{position:absolute;height:1.5px;background:#F8F8F6;transition:all .4s cubic-bezier(.23,1,.32,1);} 
+.bar1{width:12px;top:12px;left:12px;} .bar2{width:16px;top:18px;left:10px;} .bar3{width:10px;top:24px;left:13px;}
+body.menu-open .bar1{transform:rotate(45deg) translate(5px,5px);width:20px;} body.menu-open .bar2{opacity:0;transform:translateX(8px);} body.menu-open .bar3{transform:rotate(-45deg) translate(3px,-3px);width:20px;}
+.menu-arrow{position:absolute;bottom:5px;right:5px;width:7px;height:7px;border-right:1.2px solid #E8180A;border-bottom:1.2px solid #E8180A;transform:rotate(-45deg);transition:transform .4s;}
+body.menu-open .menu-arrow{transform:rotate(135deg);} 
+.overlay{position:fixed;inset:0;z-index:10000;background:rgba(15,15,15,.97);display:flex;flex-direction:column;justify-content:center;padding:0 2.4rem;transform:translateX(100%);transition:transform .55s cubic-bezier(.77,0,.175,1);} 
+.overlay.open{transform:translateX(0);} 
+.overlay-links{list-style:none;max-width:620px;} .overlay-links li{overflow:hidden;margin-bottom:.2rem;}
+.overlay-link{display:block;font-family:'Syne',sans-serif;font-size:clamp(.95rem,2.4vw,1.5rem);font-weight:500;letter-spacing:.04em;color:rgba(248,248,246,.82);text-decoration:none;line-height:1.25;transition:color .25s,transform .45s cubic-bezier(.77,0,.175,1);transform:translateY(100%);} 
+.overlay.open .overlay-link{transform:translateY(0);} .overlay-link:hover{color:#E8180A;} .overlay-link span{color:rgba(232,24,10,.8);font-style:normal;font-size:.62em;font-family:'Syne',sans-serif;vertical-align:baseline;margin-right:.45em;}
+.overlay.open li:nth-child(1) .overlay-link{transition-delay:.1s;} .overlay.open li:nth-child(2) .overlay-link{transition-delay:.15s;} .overlay.open li:nth-child(3) .overlay-link{transition-delay:.2s;} .overlay.open li:nth-child(4) .overlay-link{transition-delay:.25s;} .overlay.open li:nth-child(5) .overlay-link{transition-delay:.3s;} .overlay.open li:nth-child(6) .overlay-link{transition-delay:.35s;} .overlay.open li:nth-child(7) .overlay-link{transition-delay:.4s;}
+.overlay-contact{margin-top:1.4rem;padding-top:1rem;border-top:1px solid rgba(248,248,246,.12);display:flex;gap:.8rem;flex-wrap:wrap;} .overlay-contact a{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(248,248,246,.6);text-decoration:none;transition:color .2s;} .overlay-contact a:hover{color:#E8180A;}
+body.menu-open{overflow:hidden;}
+@media(max-width:768px){.overlay{padding:0 1.15rem;}.logo{left:.85rem;top:.85rem;}.home-btn{left:.85rem;top:3rem;}.quick-tabs{left:.85rem;top:4.9rem;}.menu-btn{right:.55rem;top:.58rem;}}
+
 </style>
 </head>
 <body>
-<nav style="position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(10,10,10,0.96);backdrop-filter:blur(8px);padding:0.9rem 3rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08);">
-  <a href="bio_gq.html" style="font-family:sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#F5F5F0;text-decoration:none;">MB.WORK</a>
-  <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
 
-    <a href="homepage_v1_warm.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">About</a>
-    <a href="about.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">One Nation</a>
-    <a href="index.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Horizon X</a>
-    <a href="HKKDH_Adani_CaseStudy.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">HKKDH</a>
-    <a href="sustainability.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Sustainability</a>
-    <a href="fortune.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Fortune</a>
-    <a href="BookMyForex_Brand_Marketing_Communication_CaseStudy.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">BookMyForex</a>
-    <a href="adl_equally.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">#ADLIsEquAlly</a>
-    <a href="OYO_Brand_Marketing_Communication_CaseStudy.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">OYO</a>
-    <a href="police_scotland.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Police Scotland</a>
-
-
+<a href="homepage_v1_warm.html" class="logo">mb.work</a>
+<a href="homepage_v1_warm.html" class="home-btn">Home</a>
+<div class="quick-tabs"><a href="stories.html" class="quick-tab">Stories</a><a href="bio_gq.html" class="quick-tab">Bio</a></div>
+<button class="menu-btn" id="menuBtn" aria-label="Menu">
+  <div class="menu-btn-inner">
+    <div class="bar bar1"></div><div class="bar bar2"></div><div class="bar bar3"></div><div class="menu-arrow"></div>
   </div>
-</nav>
+</button>
+<div class="overlay" id="overlayMenu">
+  <ul class="overlay-links">
+    <li><a href="homepage_v1_warm.html" class="overlay-link"><span>01</span>Home</a></li>
+    <li><a href="stories.html" class="overlay-link"><span>02</span>Stories</a></li>
+    <li><a href="bio_gq.html" class="overlay-link"><span>03</span>Bio</a></li>
+    <li><a href="momeet_marketing_showcase.html" class="overlay-link"><span>04</span>MoMeet</a></li>
+    <li><a href="HKKDH_Adani_CaseStudy.html" class="overlay-link"><span>05</span>HKKDH</a></li>
+    <li><a href="adl_equally.html" class="overlay-link"><span>06</span>ADL EquAlly</a></li>
+    <li><a href="sustainability.html" class="overlay-link"><span>07</span>Sustainability</a></li>
+    <li><a href="police_scotland.html" class="overlay-link"><span>08</span>Police Scotland</a></li>
+    <li><a href="fortune.html" class="overlay-link"><span>09</span>Fortune</a></li>
+    <li><a href="about.html" class="overlay-link"><span>10</span>One Nation</a></li>
+    <li><a href="FarmPik_CaseStudy.html" class="overlay-link"><span>11</span>FarmPik</a></li>
+    <li><a href="BookMyForex_Brand_Marketing_Communication_CaseStudy.html" class="overlay-link"><span>12</span>BookMyForex</a></li>
+    <li><a href="OYO_Brand_Marketing_Communication_CaseStudy.html" class="overlay-link"><span>13</span>OYO</a></li>
+  </ul>
+  <div class="overlay-contact">
+    <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
+    <a href="tel:9086904444">9086904444</a>
+    <a href="https://www.linkedin.com/in/mouris-bashir/">LinkedIn</a>
+  </div>
+</div>
+
 <div style="height:50px;"></div>
 
 <div class="hero">
@@ -340,5 +381,21 @@
 <footer>
   <p>Adani Digital Labs · <span>#ADLIsEquAlly</span> · Employer Branding · Inclusion Communication · Portfolio Case Study</p>
 </footer>
+
+<script>
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const overlay = document.getElementById('overlayMenu');
+  if(!btn || !overlay) return;
+  const close = () => { document.body.classList.remove('menu-open'); overlay.classList.remove('open'); };
+  btn.addEventListener('click', () => {
+    const open = overlay.classList.toggle('open');
+    document.body.classList.toggle('menu-open', open);
+  });
+  overlay.querySelectorAll('a').forEach((a)=>a.addEventListener('click', close));
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
+})();
+</script>
+
 </body>
 </html>

@@ -29,7 +29,7 @@ body:has(a:hover) .cursor{width:18px;height:18px;background:var(--red2);}
 body:has(a:hover) .cursor-ring{width:54px;height:54px;}
 
 /* ── MENU BUTTON (hamburger × arrow hybrid) ── */
-.menu-btn{position:fixed;top:2rem;right:2rem;z-index:1001;background:none;border:none;cursor:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;}
+.menu-btn{position:fixed;top:.72rem;right:.95rem;z-index:10001;background:none;border:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;}
 .menu-btn-inner{width:44px;height:44px;position:relative;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color 0.3s,background 0.3s;}
 .menu-btn:hover .menu-btn-inner{border-color:var(--red);background:rgba(232,24,10,0.08);}
 .bar{position:absolute;height:1.5px;background:var(--white);transition:all 0.4s cubic-bezier(0.23,1,0.32,1);}
@@ -46,10 +46,10 @@ body:has(a:hover) .cursor-ring{width:54px;height:54px;}
 /* ── OVERLAY MENU ── */
 .overlay{position:fixed;inset:0;z-index:1000;background:var(--off-black);display:flex;flex-direction:column;justify-content:center;padding:0 4rem;transform:translateX(100%);transition:transform 0.7s cubic-bezier(0.77,0,0.175,1);}
 .overlay.open{transform:translateX(0);}
-.overlay-links{list-style:none;}
-.overlay-links li{overflow:hidden;margin-bottom:0.5rem;}
-.overlay-link{display:block;font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,6vw,5rem);font-style:italic;color:rgba(248,248,246,0.15);text-decoration:none;font-weight:400;line-height:1.1;transition:color 0.3s;transform:translateY(100%);transition:transform 0.6s cubic-bezier(0.77,0,0.175,1),color 0.3s;}
-.overlay.open .overlay-link{transform:translateY(0);}
+.overlay-links{list-style:none;max-width:620px;}
+.overlay-links li{overflow:hidden;margin-bottom:.2rem;}
+.overlay-link{display:block;font-family:'Syne',sans-serif;font-size:clamp(.95rem,2.4vw,1.5rem);font-weight:500;letter-spacing:.04em;color:rgba(248,248,246,.82);text-decoration:none;line-height:1.25;transform:translateY(100%);transition:transform .45s cubic-bezier(.77,0,.175,1),color .25s;}
+.overlay.open .overlay-link{transform:translateY(0);} .overlay-link:hover{color:#E8180A;}
 .overlay.open li:nth-child(1) .overlay-link{transition-delay:0.1s;}
 .overlay.open li:nth-child(2) .overlay-link{transition-delay:0.15s;}
 .overlay.open li:nth-child(3) .overlay-link{transition-delay:0.2s;}
@@ -62,7 +62,12 @@ body:has(a:hover) .cursor-ring{width:54px;height:54px;}
 .overlay-contact a:hover{color:var(--red);}
 
 /* ── LOGO ── */
-.logo{position:fixed;top:2rem;left:2rem;z-index:1001;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);text-decoration:none;}
+.logo{position:fixed;top:1rem;left:1.2rem;z-index:10001;font-family:'Syne',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--white);text-decoration:none;}
+.home-btn{position:fixed;top:1rem;left:6rem;z-index:10001;padding:.35rem .72rem;border:1px solid rgba(248,248,246,.2);border-radius:999px;font-family:'Syne',sans-serif;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);text-decoration:none;background:rgba(15,15,15,.35);backdrop-filter:blur(3px);transition:all .2s;}
+.quick-tabs{position:fixed;top:1rem;left:9.25rem;z-index:10001;display:flex;gap:.4rem;}
+.quick-tab{padding:.35rem .65rem;border:1px solid rgba(248,248,246,.16);border-radius:999px;font-family:'Syne',sans-serif;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(248,248,246,.85);text-decoration:none;background:rgba(15,15,15,.25);transition:all .2s;}
+.quick-tab:hover{border-color:#E8180A;color:#fff;background:rgba(232,24,10,.12);}
+.home-btn:hover{border-color:var(--red);color:var(--white);background:rgba(232,24,10,.12);}
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 3rem 5rem;position:relative;overflow:hidden;}
@@ -184,6 +189,9 @@ footer{background:var(--off-black);border-top:1px solid var(--line);padding:2rem
 
 <!-- LOGO -->
 <a href="homepage_v2_split.html" class="logo">mb.work</a>
+<a href="homepage_v1_warm.html" class="home-btn">Home</a>
+<div class="quick-tabs"><a href="stories.html" class="quick-tab">Stories</a><a href="bio_gq.html" class="quick-tab">Bio</a></div>
+<div class="quick-tabs"><a href="stories.html" class="quick-tab">Stories</a><a href="bio_gq.html" class="quick-tab">Bio</a></div>
 
 <!-- MENU BUTTON -->
 <button class="menu-btn" id="menuBtn" aria-label="Menu">
@@ -198,14 +206,19 @@ footer{background:var(--off-black);border-top:1px solid var(--line);padding:2rem
 <!-- OVERLAY -->
 <div class="overlay" id="overlay">
   <ul class="overlay-links">
-    <li><a href="homepage_v1_warm.html" class="overlay-link"><span>00</span>Home</a></li>
-    <li><a href="HKKDH_Adani_CaseStudy.html" class="overlay-link"><span>01</span>HKKDH</a></li>
-    <li><a href="index.html" class="overlay-link"><span>02</span>Horizon X</a></li>
-    <li><a href="about.html" class="overlay-link"><span>03</span>One Nation</a></li>
-    <li><a href="adl_equally.html" class="overlay-link"><span>04</span>ADL EquAlly</a></li>
-    <li><a href="sustainability.html" class="overlay-link"><span>05</span>Sustainability</a></li>
-    <li><a href="oyo_valentines.html" class="overlay-link"><span>06</span>OYO</a></li>
-    <li><a href="police_scotland.html" class="overlay-link"><span>07</span>Police Scotland</a></li>
+    <li><a href="homepage_v1_warm.html" class="overlay-link"><span>01</span>Home</a></li>
+    <li><a href="stories.html" class="overlay-link"><span>02</span>Stories</a></li>
+    <li><a href="bio_gq.html" class="overlay-link"><span>03</span>Bio</a></li>
+    <li><a href="momeet_marketing_showcase.html" class="overlay-link"><span>04</span>MoMeet</a></li>
+    <li><a href="HKKDH_Adani_CaseStudy.html" class="overlay-link"><span>05</span>HKKDH</a></li>
+    <li><a href="adl_equally.html" class="overlay-link"><span>06</span>ADL EquAlly</a></li>
+    <li><a href="sustainability.html" class="overlay-link"><span>07</span>Sustainability</a></li>
+    <li><a href="police_scotland.html" class="overlay-link"><span>08</span>Police Scotland</a></li>
+    <li><a href="fortune.html" class="overlay-link"><span>09</span>Fortune</a></li>
+    <li><a href="about.html" class="overlay-link"><span>10</span>One Nation</a></li>
+    <li><a href="FarmPik_CaseStudy.html" class="overlay-link"><span>11</span>FarmPik</a></li>
+    <li><a href="BookMyForex_Brand_Marketing_Communication_CaseStudy.html" class="overlay-link"><span>12</span>BookMyForex</a></li>
+    <li><a href="OYO_Brand_Marketing_Communication_CaseStudy.html" class="overlay-link"><span>13</span>OYO</a></li>
   </ul>
   <div class="overlay-contact">
     <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
