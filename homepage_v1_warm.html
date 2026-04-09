@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouris Bashir — Marketing & Communications Strategist</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F3EA;
+  --paper2:#F1EAD8;
+  --ink:#1A0E00;
+  --ink2:#3D2A10;
+  --rust:#B84A18;
+  --gold:#9A7020;
+  --rule:rgba(26,14,0,0.1);
+  --cream:#FDFAF4;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);padding:0 3rem;height:52px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:0.04em;}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-links a{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;}
+.nav-links a:hover{opacity:1;}
+.nav-cta{background:var(--ink);color:var(--cream)!important;padding:0.35rem 1rem;opacity:1!important;font-weight:500;}
+
+/* ── HERO ── */
+.hero{padding-top:52px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero-left{background:var(--paper2);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule);}
+.hero-right{background:var(--paper);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-issue{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:3rem;font-weight:500;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(--ink);letter-spacing:-0.02em;}
+.hero-name strong{font-weight:700;display:block;}
+.hero-name em{font-style:italic;color:var(--rust);}
+.hero-role{margin-top:2rem;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink2);opacity:0.6;}
+.hero-statement{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;font-style:italic;line-height:1.5;color:var(--ink2);margin-bottom:3rem;}
+.hero-statement strong{font-style:normal;font-weight:600;color:var(--rust);}
+.hero-meta-row{display:flex;gap:2.5rem;border-top:1px solid var(--rule);padding-top:2rem;}
+.hero-meta-item{display:flex;flex-direction:column;gap:0.2rem;}
+.hero-meta-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink2);opacity:0.5;}
+.hero-meta-val{font-size:0.82rem;color:var(--ink);font-weight:400;}
+.hero-scroll{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink2);opacity:0.4;display:flex;align-items:center;gap:0.5rem;}
+.hero-scroll::before{content:'';display:inline-block;width:24px;height:1px;background:currentColor;}
+
+/* ── TICKER ── */
+.ticker-wrap{background:var(--ink);overflow:hidden;padding:0.7rem 0;white-space:nowrap;}
+.ticker{display:inline-flex;animation:ticker 30s linear infinite;}
+.ticker-item{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(253,250,244,0.5);padding:0 2.5rem;}
+.ticker-item span{color:var(--rust);margin-right:1rem;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ── INTRO ── */
+.intro{max-width:1000px;margin:0 auto;padding:6rem 3rem;display:grid;grid-template-columns:1fr 2px 1.8fr;gap:0 4rem;align-items:start;}
+.intro-rule{background:var(--rule);width:1px;margin:0 auto;}
+.intro-left-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);font-weight:500;margin-bottom:2rem;}
+.intro-stat{margin-bottom:1.5rem;}
+.intro-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--ink);line-height:1;}
+.intro-stat-desc{font-size:0.72rem;color:var(--ink2);opacity:0.6;margin-top:0.2rem;line-height:1.4;}
+.intro-right p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:1.5rem;}
+.intro-right p:first-of-type::first-letter{font-size:3.5rem;font-weight:700;float:left;line-height:0.85;margin:0.15rem 0.2rem 0 0;color:var(--rust);}
+.intro-right strong{font-weight:600;color:var(--ink);}
+
+/* ── WORK ── */
+.work{background:var(--paper2);padding:6rem 3rem;}
+.work-inner{max-width:1000px;margin:0 auto;}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;border-bottom:1px solid var(--rule);padding-bottom:1rem;}
+.section-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);font-weight:500;}
+.section-count{font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-style:italic;color:var(--ink2);opacity:0.5;}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.work-item{padding:2.5rem;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);text-decoration:none;color:inherit;position:relative;transition:background 0.2s;}
+.work-item:hover{background:var(--paper);}
+.work-item:nth-child(even){border-right:none;}
+.work-item:nth-last-child(-n+2){border-bottom:none;}
+.work-tag{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.8rem;}
+.work-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--ink);line-height:1.25;margin-bottom:0.8rem;}
+.work-desc{font-size:0.82rem;color:var(--ink2);opacity:0.7;line-height:1.6;margin-bottom:1.5rem;}
+.work-stat{display:flex;align-items:baseline;gap:0.5rem;}
+.work-stat-num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--rust);}
+.work-stat-label{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink2);opacity:0.5;}
+.work-arrow{position:absolute;top:2.5rem;right:2.5rem;font-size:1.1rem;color:var(--rule);transition:color 0.2s;}
+.work-item:hover .work-arrow{color:var(--rust);}
+
+/* ── DISCIPLINES ── */
+.disciplines{max-width:1000px;margin:0 auto;padding:6rem 3rem;}
+.disc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;border:1px solid var(--rule);}
+.disc-item{padding:1.8rem;border-right:1px solid var(--rule);}
+.disc-item:last-child{border-right:none;}
+.disc-num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--rule);margin-bottom:0.5rem;}
+.disc-name{font-size:0.78rem;font-weight:500;color:var(--ink);line-height:1.4;}
+
+/* ── CTA ── */
+.cta{background:var(--ink);padding:6rem 3rem;text-align:center;}
+.cta-inner{max-width:600px;margin:0 auto;}
+.cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;font-style:italic;color:var(--cream);line-height:1.3;margin-bottom:2rem;}
+.cta h2 strong{font-style:normal;font-weight:700;}
+.cta-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;}
+.cta-link{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(253,250,244,0.5);text-decoration:none;padding:0.6rem 1.8rem;border:1px solid rgba(253,250,244,0.2);transition:all 0.2s;}
+.cta-link:hover{color:var(--cream);border-color:rgba(253,250,244,0.6);}
+.cta-link.primary{background:var(--rust);border-color:var(--rust);color:var(--cream);}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-name{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:rgba(253,250,244,0.5);}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-links a{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,250,244,0.3);text-decoration:none;}
+
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;}
+  .hero-left{padding:5rem 1.5rem 3rem;}
+  .hero-right{padding:3rem 1.5rem 4rem;}
+  .intro{grid-template-columns:1fr;padding:4rem 1.5rem;}
+  .intro-rule{display:none;}
+  .work-grid{grid-template-columns:1fr;}
+  .work-item{border-right:none;}
+  .work-item:nth-last-child(-n+2){border-bottom:1px solid var(--rule);}
+  .work-item:last-child{border-bottom:none;}
+  .disc-grid{grid-template-columns:1fr 1fr;}
+  .disc-item:nth-child(even){border-right:none;}
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">mb.work</a>
+  <div class="nav-links">
+    <a href="MourisBashir_AthleteProfile.html">About</a>
+    <a href="#work">Work</a>
+    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div>
+      <div class="hero-issue">Marketing &amp; Communications Strategist · Gurugram</div>
+      <div class="hero-name">
+        Mouris<br>
+        <strong>Bashir</strong><br>
+        <em>mb.work</em>
+      </div>
+      <div class="hero-role">Ten years · Seven organisations · Eleven campaigns</div>
+    </div>
+    <div class="hero-meta-row">
+      <div class="hero-meta-item"><span class="hero-meta-label">Current</span><span class="hero-meta-val">Adani Group</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Origin</span><span class="hero-meta-val">Kashmir · Edinburgh</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Approach</span><span class="hero-meta-val">Movement over distribution</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div>
+      <div class="hero-statement">
+        "I sweat the petty things; pet the sweaty things —<br>because <strong>they decide outcomes.</strong>"
+      </div>
+      <p style="font-size:0.9rem;color:var(--ink2);opacity:0.7;line-height:1.8;margin-bottom:3rem;max-width:440px;">Ten years translating chaos into something people can understand. Sometimes as a writer. Sometimes as a strategist. Often as the only person in the room who'd read the comments section before the meeting.</p>
+      <div class="hero-scroll">Scroll to explore the work</div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item"><span>290M+</span> Campaign impressions</span>
+    <span class="ticker-item"><span>3×</span> AVA Platinum — beating Harvard, Deloitte &amp; Dell</span>
+    <span class="ticker-item"><span>8→31%</span> Women in tech workforce</span>
+    <span class="ticker-item"><span>112%</span> Booking growth</span>
+    <span class="ticker-item"><span>401K</span> People reached in 4 weeks</span>
+    <span class="ticker-item"><span>119%</span> Of projected target</span>
+    <span class="ticker-item"><span>ESG Initiative of the Year</span> ET Energyworld</span>
+    <span class="ticker-item"><span>Yearbook of Campaigns 2025</span> Page 11 of 621</span>
+    <span class="ticker-item"><span>290M+</span> Campaign impressions</span>
+    <span class="ticker-item"><span>3×</span> AVA Platinum — beating Harvard, Deloitte &amp; Dell</span>
+    <span class="ticker-item"><span>8→31%</span> Women in tech workforce</span>
+    <span class="ticker-item"><span>112%</span> Booking growth</span>
+    <span class="ticker-item"><span>401K</span> People reached in 4 weeks</span>
+    <span class="ticker-item"><span>119%</span> Of projected target</span>
+    <span class="ticker-item"><span>ESG Initiative of the Year</span> ET Energyworld</span>
+    <span class="ticker-item"><span>Yearbook of Campaigns 2025</span> Page 11 of 621</span>
+  </div>
+</div>
+
+<div class="intro">
+  <div>
+    <div class="intro-left-label">By the numbers</div>
+    <div class="intro-stat"><div class="intro-stat-num">10+</div><div class="intro-stat-desc">Years in practice</div></div>
+    <div class="intro-stat"><div class="intro-stat-num">11</div><div class="intro-stat-desc">Case studies in portfolio</div></div>
+    <div class="intro-stat"><div class="intro-stat-num">7+</div><div class="intro-stat-desc">Organisations</div></div>
+    <div class="intro-stat"><div class="intro-stat-num">5</div><div class="intro-stat-desc">International awards</div></div>
+  </div>
+  <div class="intro-rule"></div>
+  <div class="intro-right">
+    <p>Brands are <strong>emotional</strong>. They're emotional for consumers. And they're emotional for marketers. My job is to understand what brands mean — what they can do — what experiences inspire action.</p>
+    <p>I've worked with OYO, Adani Group across Utility Gas, Renewable Energy, FMCG, D2C, Fortune and Ports, BookMyForex, Audibene, AuthBridge, Barclays, Police Scotland and the Scottish Government — across integrated communications, narrative strategy, behavioural marketing and end-to-end communication systems.</p>
+    <p>I contain contradictions. <strong>So does good strategy.</strong></p>
+  </div>
+</div>
+
+<div class="work" id="work">
+  <div class="work-inner">
+    <div class="section-header">
+      <span class="section-label">Selected Work</span>
+      <span class="section-count">11 case studies</span>
+    </div>
+    <div class="work-grid">
+      <a href="HKKDH_Adani_CaseStudy.html" class="work-item">
+        <div class="work-arrow">↗</div>
+        <div class="work-tag">Reputation · Narrative Strategy</div>
+        <div class="work-title">Hum Karke Dikhate Hain</div>
+        <div class="work-desc">How a television campaign became a distributed narrative system. Yearbook of Campaigns 2025.</div>
+        <div class="work-stat"><span class="work-stat-num">290M+</span><span class="work-stat-label">Impressions</span></div>
+      </a>
+      <a href="index.html" class="work-item">
+        <div class="work-arrow">↗</div>
+        <div class="work-tag">Brand · Behaviour Change</div>
+        <div class="work-title">Horizon X — hear.com</div>
+        <div class="work-desc">Repositioned a hearing aid as a lifestyle decision. 13,000+ units sold in first quarter.</div>
+        <div class="work-stat"><span class="work-stat-num">119%</span><span class="work-stat-label">Of target</span></div>
+      </a>
+      <a href="about.html" class="work-item">
+        <div class="work-arrow">↗</div>
+        <div class="work-tag">Integrated Campaign · AVA Platinum ×3</div>
+        <div class="work-title">#OneNationBillionCelebrations</div>
+        <div class="work-desc">United seven airports under one cultural idea. Beat Harvard, Deloitte and Dell.</div>
+        <div class="work-stat"><span class="work-stat-num">12M+</span><span class="work-stat-label">Impressions</span></div>
+      </a>
+      <a href="adl_equally.html" class="work-item">
+        <div class="work-arrow">↗</div>
+        <div class="work-tag">Employer Branding · Inclusion</div>
+        <div class="work-title">ADL Is EquAlly</div>
+        <div class="work-desc">Flipped the questions women dread in interviews. Representation grew from 8% to 31%.</div>
+        <div class="work-stat"><span class="work-stat-num">8→31%</span><span class="work-stat-label">Women in workforce</span></div>
+      </a>
+      <a href="sustainability.html" class="work-item">
+        <div class="work-arrow">↗</div>
+        <div class="work-tag">ESG · Sustainability</div>
+        <div class="work-title">Making the Invisible Understood</div>
+        <div class="work-desc">Translated sustainability data across 7 Adani businesses into public narrative.</div>
+        <div class="work-stat"><span class="work-stat-num">47M+</span><span class="work-stat-label">Reach</span></div>
+      </a>
+      <a href="oyo_valentines.html" class="work-item">
+        <div class="work-arrow">↗</div>
+        <div class="work-tag">Brand Campaign · Organic</div>
+        <div class="work-title">OYO Paints the Town Red</div>
+        <div class="work-desc">Repositioned Valentine's Day beyond couples. 7 lakh organic impressions.</div>
+        <div class="work-stat"><span class="work-stat-num">112%</span><span class="work-stat-label">Booking growth</span></div>
+      </a>
+      <a href="fortune.html" class="work-item">
+        <div class="work-arrow">↗</div>
+        <div class="work-tag">D2C Brand Launch</div>
+        <div class="work-title">#NayeBharatKiNayiDelivery</div>
+        <div class="work-desc">Launched Fortune Online as India's first direct-to-consumer grocery platform.</div>
+        <div class="work-stat"><span class="work-stat-num">450K+</span><span class="work-stat-label">Video views</span></div>
+      </a>
+      <a href="police_scotland.html" class="work-item">
+        <div class="work-arrow">↗</div>
+        <div class="work-tag">Public Safety · Behaviour Change</div>
+        <div class="work-title">#WeCanStopIt</div>
+        <div class="work-desc">Consent awareness campaign. BBC and Guardian coverage. Adopted nationwide.</div>
+        <div class="work-stat"><span class="work-stat-num">401K</span><span class="work-stat-label">Reached in 4 weeks</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="disciplines">
+  <div class="section-header">
+    <span class="section-label">Disciplines</span>
+  </div>
+  <div class="disc-grid">
+    <div class="disc-item"><div class="disc-num">01</div><div class="disc-name">Integrated Communications &amp; Campaign Planning</div></div>
+    <div class="disc-item"><div class="disc-num">02</div><div class="disc-name">Narrative Strategy &amp; Message Architecture</div></div>
+    <div class="disc-item"><div class="disc-num">03</div><div class="disc-name">Behavioural Insight-Led Marketing</div></div>
+    <div class="disc-item"><div class="disc-num">04</div><div class="disc-name">Reputation &amp; Crisis Management</div></div>
+    <div class="disc-item" style="border-top:1px solid var(--rule);"><div class="disc-num">05</div><div class="disc-name">Digital Ecosystems &amp; Social Strategy</div></div>
+    <div class="disc-item" style="border-top:1px solid var(--rule);"><div class="disc-num">06</div><div class="disc-name">Employer Branding</div></div>
+    <div class="disc-item" style="border-top:1px solid var(--rule);"><div class="disc-num">07</div><div class="disc-name">End-to-End Communication Systems</div></div>
+    <div class="disc-item" style="border-top:1px solid var(--rule);border-right:none;"><div class="disc-num">08</div><div class="disc-name">ESG &amp; Sustainability Communication</div></div>
+  </div>
+</div>
+
+<div class="cta">
+  <div class="cta-inner">
+    <h2>"My real job<br>is to <strong>inspire.</strong>"</h2>
+    <div class="cta-links">
+      <a href="MourisBashir_AthleteProfile.html" class="cta-link primary">Read the full profile</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="cta-link">mouris.bashir@hotmail.com</a>
+      <a href="https://linkedin.com" class="cta-link">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-name">Mouris Bashir · mb.work · Gurugram, India</span>
+  <div class="footer-links">
+    <a href="mailto:mouris.bashir@hotmail.com">Email</a>
+    <a href="#">LinkedIn</a>
+    <a href="MourisBashir_AthleteProfile.html">About</a>
+  </div>
+</footer>
+
+</body>
+</html>
