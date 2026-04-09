@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EH5tories — Mouris Bashir</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F5F0E8;
+  --paper2:#EDE7D8;
+  --ink:#1A1208;
+  --ink2:#362C1A;
+  --ink3:#6A5C42;
+  --red:#C8350A;
+  --rule:rgba(26,18,8,0.12);
+  --rule2:rgba(26,18,8,0.06);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;}
+
+/* ── MASTHEAD ── */
+.masthead{border-bottom:2px solid var(--ink);padding:0;background:var(--paper);}
+.masthead-top{display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;border-bottom:1px solid var(--rule);}
+.masthead-date{font-family:'Courier Prime',monospace;font-size:0.72rem;color:var(--ink3);letter-spacing:0.04em;}
+.masthead-nav{display:flex;gap:1.8rem;}
+.masthead-nav a{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);text-decoration:none;transition:color 0.2s;}
+.masthead-nav a:hover{color:var(--red);}
+.masthead-center{padding:2.5rem 3rem 2rem;text-align:center;position:relative;}
+.masthead-center::before{content:'';position:absolute;top:0;left:3rem;right:3rem;height:1px;background:repeating-linear-gradient(90deg,var(--ink) 0,var(--ink) 4px,transparent 4px,transparent 8px);}
+.brand{font-family:'DM Serif Display',serif;font-size:clamp(4rem,10vw,8rem);line-height:0.9;letter-spacing:-0.02em;color:var(--ink);}
+.brand .five{color:var(--red);font-style:italic;}
+.brand-sub{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink3);margin-top:1rem;}
+.masthead-bottom{display:flex;align-items:center;gap:0;border-top:1px solid var(--rule);overflow:hidden;}
+.masthead-tag{flex:1;padding:0.6rem 2rem;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink3);border-right:1px solid var(--rule);text-align:center;}
+.masthead-tag:last-child{border-right:none;}
+.masthead-tag.red{color:var(--red);}
+
+/* ── LAYOUT ── */
+.container{max-width:1100px;margin:0 auto;padding:0 3rem;}
+.grid{display:grid;grid-template-columns:1fr 320px;gap:0;border-top:1px solid var(--rule);}
+.main{border-right:1px solid var(--rule);padding:0;}
+.sidebar{padding:0;}
+
+/* ── HERO POST ── */
+.hero-post{padding:3.5rem 3rem 3rem;border-bottom:2px solid var(--ink);}
+.post-kicker{font-family:'Courier Prime',monospace;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem;}
+.post-kicker::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);}
+.hero-post-title{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:1.05;color:var(--ink);margin-bottom:1.2rem;letter-spacing:-0.01em;}
+.hero-post-title em{font-style:italic;color:var(--red);}
+.hero-post-body{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--ink2);line-height:1.75;font-weight:400;}
+.hero-post-body::first-letter{font-size:3.8rem;float:left;line-height:0.85;margin:0.15rem 0.2rem 0 0;font-family:'DM Serif Display',serif;color:var(--ink);}
+.post-footer{display:flex;align-items:center;justify-content:space-between;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);}
+.post-meta{font-family:'Courier Prime',monospace;font-size:0.68rem;color:var(--ink3);}
+.read-more{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:1px;}
+
+/* ── POST STREAM ── */
+.post-stream{padding:0;}
+.stream-post{padding:2.5rem 3rem;border-bottom:1px solid var(--rule);transition:background 0.2s;}
+.stream-post:hover{background:var(--paper2);}
+.stream-post.short{padding:1.8rem 3rem;}
+.stream-post-title{font-family:'DM Serif Display',serif;font-size:1.45rem;line-height:1.2;color:var(--ink);margin-bottom:0.8rem;letter-spacing:-0.01em;}
+.stream-post-title a{text-decoration:none;color:inherit;}
+.stream-post-title a:hover{color:var(--red);}
+.stream-post-excerpt{font-size:0.9rem;color:var(--ink3);line-height:1.75;margin-bottom:1rem;}
+.stream-post-meta{display:flex;align-items:center;gap:1.5rem;}
+.meta-date{font-family:'Courier Prime',monospace;font-size:0.65rem;color:var(--ink3);}
+.meta-tag{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.2rem 0.6rem;border:1px solid var(--rule);color:var(--ink3);}
+.meta-tag.red{border-color:rgba(200,53,10,0.3);color:var(--red);}
+.meta-len{font-family:'Courier Prime',monospace;font-size:0.6rem;color:var(--ink3);opacity:0.6;}
+
+/* ── FRAGMENT POSTS (short) ── */
+.fragment{padding:1.5rem 3rem;border-bottom:1px solid var(--rule2);background:var(--paper2);}
+.fragment-text{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.05rem;color:var(--ink2);line-height:1.7;border-left:2px solid var(--red);padding-left:1.2rem;}
+.fragment-meta{margin-top:0.8rem;font-family:'Courier Prime',monospace;font-size:0.62rem;color:var(--ink3);}
+
+/* ── SIDEBAR ── */
+.sidebar-block{padding:2rem;border-bottom:1px solid var(--rule);}
+.sidebar-label{font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink3);margin-bottom:1.2rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);}
+.sidebar-bio{font-size:0.85rem;color:var(--ink2);line-height:1.75;margin-bottom:1rem;}
+.sidebar-bio strong{color:var(--ink);font-weight:500;}
+.sidebar-link{display:block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);text-decoration:none;margin-bottom:0.5rem;}
+.sidebar-link::before{content:'→ ';}
+
+/* Issues list */
+.issue-item{display:flex;gap:1rem;align-items:baseline;padding:0.6rem 0;border-bottom:1px solid var(--rule2);}
+.issue-item:last-child{border-bottom:none;}
+.issue-num{font-family:'Courier Prime',monospace;font-size:0.65rem;color:var(--red);min-width:24px;}
+.issue-title{font-size:0.82rem;color:var(--ink2);}
+.issue-date{font-family:'Courier Prime',monospace;font-size:0.6rem;color:var(--ink3);margin-left:auto;white-space:nowrap;}
+
+/* Subscribe */
+.subscribe-block{background:var(--ink);padding:2rem;color:var(--paper);}
+.sub-head{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--paper);margin-bottom:0.5rem;}
+.sub-sub{font-size:0.78rem;color:rgba(245,240,232,0.55);line-height:1.6;margin-bottom:1.5rem;}
+.sub-input-row{display:flex;gap:0;border:1px solid rgba(245,240,232,0.2);}
+.sub-input{background:transparent;border:none;padding:0.7rem 1rem;font-family:'Instrument Sans',sans-serif;font-size:0.8rem;color:var(--paper);flex:1;outline:none;}
+.sub-input::placeholder{color:rgba(245,240,232,0.3);}
+.sub-btn{background:var(--red);border:none;padding:0.7rem 1.2rem;font-family:'Courier Prime',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--paper);cursor:pointer;}
+
+/* Tags cloud */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:0.5rem;}
+.cloud-tag{font-size:0.65rem;letter-spacing:0.08em;padding:0.3rem 0.7rem;border:1px solid var(--rule);color:var(--ink3);cursor:pointer;transition:all 0.2s;}
+.cloud-tag:hover{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+
+/* Quote sidebar */
+.sidebar-quote{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.05rem;color:var(--ink);line-height:1.6;border-left:3px solid var(--red);padding-left:1rem;}
+.sidebar-quote-attr{font-family:'Courier Prime',monospace;font-size:0.62rem;color:var(--ink3);margin-top:0.8rem;font-style:normal;}
+
+/* Footer */
+footer{background:var(--ink);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-brand{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--paper);}
+.footer-brand em{font-style:italic;color:var(--red);}
+.footer-right{display:flex;gap:2rem;}
+.footer-right a{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,232,0.35);text-decoration:none;transition:color 0.2s;}
+.footer-right a:hover{color:var(--red);}
+
+@media(max-width:768px){
+  .masthead-top,.masthead-center,.hero-post,.stream-post,.fragment,.container{padding-left:1.5rem;padding-right:1.5rem;}
+  .grid{grid-template-columns:1fr;}
+  .main{border-right:none;}
+  .masthead-bottom{flex-wrap:wrap;}
+  .masthead-tag{flex:0 0 50%;}
+  footer{padding:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span class="masthead-date" id="dateStamp">Loading...</span>
+    <nav class="masthead-nav">
+      <a href="homepage_v2_split.html">Portfolio</a>
+      <a href="bio_gq.html">About</a>
+      <a href="mailto:mouris.bashir@hotmail.com">Contact</a>
+    </nav>
+  </div>
+  <div class="masthead-center">
+    <div class="brand">EH<span class="five">5</span>tories</div>
+    <div class="brand-sub">A journal by Mouris Bashir &nbsp;·&nbsp; Gurugram &nbsp;·&nbsp; Kashmir &nbsp;·&nbsp; Edinburgh</div>
+  </div>
+  <div class="masthead-bottom">
+    <span class="masthead-tag red">Strategy</span>
+    <span class="masthead-tag">Culture</span>
+    <span class="masthead-tag">Language</span>
+    <span class="masthead-tag">Memory</span>
+    <span class="masthead-tag">Contradiction</span>
+    <span class="masthead-tag red">Work</span>
+  </div>
+</header>
+
+<div class="container">
+  <div class="grid">
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- HERO POST -->
+      <article class="hero-post">
+        <div class="post-kicker">Latest entry</div>
+        <h1 class="hero-post-title">The single word that<br>decides whether a campaign<br><em>lives or dies.</em></h1>
+        <div class="hero-post-body">
+          Not the headline. Not the concept. Not the media spend. One word in the brief — or worse, one word that wasn't in the brief — and the whole thing collapses sideways three weeks before launch. I've watched it happen enough times that I stopped treating copywriting as craft and started treating it as structural engineering. The words are load-bearing. All of them.
+        </div>
+        <div class="post-footer">
+          <span class="post-meta">April 10, 2026 &nbsp;·&nbsp; 6 min read</span>
+          <a href="#" class="read-more">Continue reading</a>
+        </div>
+      </article>
+
+      <!-- STREAM -->
+      <div class="post-stream">
+
+        <article class="stream-post">
+          <h2 class="stream-post-title"><a href="#">On the difference between a strategy and a sentence that sounds like one</a></h2>
+          <p class="stream-post-excerpt">There is a particular kind of deck that fills me with quiet despair. The strategy is beautiful. The insight is real. The platform idea has a name. And then the executions land and you realise nobody asked: what does this actually say to a person at 9am on a Tuesday?</p>
+          <div class="stream-post-meta">
+            <span class="meta-date">Apr 7, 2026</span>
+            <span class="meta-tag red">Strategy</span>
+            <span class="meta-len">4 min</span>
+          </div>
+        </article>
+
+        <!-- FRAGMENT -->
+        <div class="fragment">
+          <div class="fragment-text">
+            "I contain contradictions. So does good strategy. The job is not to resolve them — it is to know which one to lead with."
+          </div>
+          <div class="fragment-meta">Apr 5, 2026 &nbsp;·&nbsp; Fragment #12</div>
+        </div>
+
+        <article class="stream-post">
+          <h2 class="stream-post-title"><a href="#">Kashmir and the particular grammar of growing up in a place that doesn't agree on what it is</a></h2>
+          <p class="stream-post-excerpt">Language was always political where I grew up. Not in the way people use that word now — meaning contentious, or loaded, or requiring a disclaimer. I mean literally. The language you spoke placed you. Your vocabulary was a declaration. Nobody said this out loud. Everybody knew it.</p>
+          <div class="stream-post-meta">
+            <span class="meta-date">Apr 2, 2026</span>
+            <span class="meta-tag">Memory</span>
+            <span class="meta-tag">Language</span>
+            <span class="meta-len">8 min</span>
+          </div>
+        </article>
+
+        <article class="stream-post short">
+          <h2 class="stream-post-title"><a href="#">Why I stopped saying "narrative" in meetings</a></h2>
+          <p class="stream-post-excerpt">It became the word people used when they hadn't done the thinking yet. A placeholder for a concept that hadn't arrived. I now say: what does the audience believe before they see this, and what do you want them to believe after?</p>
+          <div class="stream-post-meta">
+            <span class="meta-date">Mar 29, 2026</span>
+            <span class="meta-tag red">Work</span>
+            <span class="meta-len">2 min</span>
+          </div>
+        </article>
+
+        <!-- FRAGMENT -->
+        <div class="fragment">
+          <div class="fragment-text">
+            "Edinburgh taught me that a city can hold multiple weathers simultaneously. So can a brief."
+          </div>
+          <div class="fragment-meta">Mar 27, 2026 &nbsp;·&nbsp; Fragment #11</div>
+        </div>
+
+        <article class="stream-post">
+          <h2 class="stream-post-title"><a href="#">On croissants, and the things worth doing badly before doing well</a></h2>
+          <p class="stream-post-excerpt">The first batch was flat. The second batch was dense. The third batch tasted like regret with butter. By the sixth I understood that laminating dough is a lesson in patience that no strategy document has ever taught me — the layers only separate if you let the whole thing rest.</p>
+          <div class="stream-post-meta">
+            <span class="meta-date">Mar 24, 2026</span>
+            <span class="meta-tag">Culture</span>
+            <span class="meta-len">5 min</span>
+          </div>
+        </article>
+
+        <article class="stream-post short">
+          <h2 class="stream-post-title"><a href="#">The comments section as primary research</a></h2>
+          <p class="stream-post-excerpt">I have never been in a campaign briefing where someone had read the comments on the brand's last three posts. I have always been that person. The comments tell you what the brand actually means — not what it intends to mean.</p>
+          <div class="stream-post-meta">
+            <span class="meta-date">Mar 20, 2026</span>
+            <span class="meta-tag red">Strategy</span>
+            <span class="meta-len">3 min</span>
+          </div>
+        </article>
+
+        <!-- FRAGMENT -->
+        <div class="fragment">
+          <div class="fragment-text">
+            "Gin over beer. Air over air conditioning. Mountains when there are mountains. The preferences are the biography."
+          </div>
+          <div class="fragment-meta">Mar 18, 2026 &nbsp;·&nbsp; Fragment #10</div>
+        </div>
+
+        <article class="stream-post">
+          <h2 class="stream-post-title"><a href="#">What infrastructure companies can learn from the best kebab shop in your neighbourhood</a></h2>
+          <p class="stream-post-excerpt">It doesn't advertise. It doesn't have a brand strategy. It has been there for eleven years and everyone knows it. Trust is not built through communication — communication can only reflect trust that already exists. The kebab shop understood this. Most infrastructure brands don't.</p>
+          <div class="stream-post-meta">
+            <span class="meta-date">Mar 15, 2026</span>
+            <span class="meta-tag">Strategy</span>
+            <span class="meta-tag">Culture</span>
+            <span class="meta-len">6 min</span>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">About this journal</div>
+        <p class="sidebar-bio">EH5tories is where <strong>Mouris Bashir</strong> writes — about strategy, language, memory, contradiction and the things he notices between campaigns. Published irregularly. Read slowly.</p>
+        <a href="bio_gq.html" class="sidebar-link">Full profile</a>
+        <a href="homepage_v2_split.html" class="sidebar-link">Portfolio</a>
+      </div>
+
+      <div class="subscribe-block">
+        <div class="sub-head">Get new entries.</div>
+        <p class="sub-sub">No newsletter. Just a quiet note when something new goes up.</p>
+        <div class="sub-input-row">
+          <input class="sub-input" type="email" placeholder="your@email.com">
+          <button class="sub-btn">Subscribe</button>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">A quote on rotation</div>
+        <div class="sidebar-quote">
+          "I sweat the petty things; pet the sweaty things, because they decide outcomes."
+          <div class="sidebar-quote-attr">— Mouris Bashir</div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Recent issues</div>
+        <div class="issue-item"><span class="issue-num">014</span><span class="issue-title">The load-bearing word</span><span class="issue-date">Apr 10</span></div>
+        <div class="issue-item"><span class="issue-num">013</span><span class="issue-title">Strategy vs. sentence</span><span class="issue-date">Apr 7</span></div>
+        <div class="issue-item"><span class="issue-num">012</span><span class="issue-title">Fragment: contradictions</span><span class="issue-date">Apr 5</span></div>
+        <div class="issue-item"><span class="issue-num">011</span><span class="issue-title">Kashmir grammar</span><span class="issue-date">Apr 2</span></div>
+        <div class="issue-item"><span class="issue-num">010</span><span class="issue-title">Narrative in meetings</span><span class="issue-date">Mar 29</span></div>
+        <div class="issue-item"><span class="issue-num">009</span><span class="issue-title">Fragment: Edinburgh weathers</span><span class="issue-date">Mar 27</span></div>
+        <div class="issue-item"><span class="issue-num">008</span><span class="issue-title">On croissants</span><span class="issue-date">Mar 24</span></div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-label">Browse by tag</div>
+        <div class="tag-cloud">
+          <span class="cloud-tag">Strategy</span>
+          <span class="cloud-tag">Language</span>
+          <span class="cloud-tag">Memory</span>
+          <span class="cloud-tag">Kashmir</span>
+          <span class="cloud-tag">Edinburgh</span>
+          <span class="cloud-tag">Culture</span>
+          <span class="cloud-tag">Contradiction</span>
+          <span class="cloud-tag">Work</span>
+          <span class="cloud-tag">Fragments</span>
+          <span class="cloud-tag">Copy</span>
+          <span class="cloud-tag">Brands</span>
+          <span class="cloud-tag">Food</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">EH<em>5</em>tories</div>
+  <div class="footer-right">
+    <a href="homepage_v2_split.html">Portfolio</a>
+    <a href="bio_gq.html">About</a>
+    <a href="mailto:mouris.bashir@hotmail.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+const d = new Date();
+const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+document.getElementById('dateStamp').textContent =
+  days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+</script>
+</body>
+</html>
