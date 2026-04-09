@@ -1,821 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>mb.work — Warm. Rebellious. Human-first.</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=DM+Sans:wght@300;400;500;700&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --ink: #12100f;
-    --char: #1d1713;
-    --warm: #f7efe5;
-    --sand: #ead9c5;
-    --amber: #d9892b;
-    --orange: #eb6f2d;
-    --wine: #7d2418;
-    --muted: #786656;
-    --line: rgba(18,16,15,0.1);
-  }
-
-  body {
-    background: linear-gradient(180deg, #fdf7f0 0%, #f7ede2 100%);
-    color: var(--ink);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.65;
-    overflow-x: hidden;
-  }
-
-  .top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background: rgba(253,247,240,0.88);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(18,16,15,0.08);
-    padding: 0.9rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-
-  }
-
-  .brand {
-    text-decoration: none;
-    color: var(--ink);
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  .menu-toggle {
-    border: 1px solid rgba(18,16,15,0.18);
-    background: rgba(255,255,255,0.65);
-    color: var(--ink);
-    font-size: 0.66rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 0.56rem 0.85rem;
-    cursor: pointer;
-    transition: background .2s ease, color .2s ease, border-color .2s ease;
-  }
-
-  .menu-toggle:hover {
-    background: var(--orange);
-    color: #fff;
-    border-color: var(--orange);
-  }
-
-  .menu-overlay {
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle at 80% 10%, rgba(235,111,45,0.14) 0%, transparent 30%), #17110e;
-    color: #f7efe5;
-    z-index: 1200;
-    clip-path: circle(0% at calc(100% - 52px) 46px);
-    transition: clip-path .62s cubic-bezier(.19,1,.22,1);
-    pointer-events: none;
-  }
-
-  .menu-overlay.open {
-    clip-path: circle(145% at calc(100% - 52px) 46px);
-    pointer-events: auto;
-  }
-
-  .menu-shell {
-    max-width: 1080px;
-    margin: 0 auto;
-    min-height: 100%;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-  }
-
-  .menu-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    grid-column: 1 / -1;
-  }
-
-  .menu-close {
-    border: 1px solid rgba(247,239,229,0.25);
-    background: transparent;
-    color: #f7efe5;
-    font-size: 0.66rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 0.54rem 0.82rem;
-    cursor: pointer;
-  }
-
-  .menu-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-  }
-
-  .menu-link {
-    text-decoration: none;
-    color: rgba(247,239,229,0.88);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.4rem, 3.8vw, 3.3rem);
-    line-height: 1.08;
-    display: inline-block;
-    transform: translateY(28px);
-    opacity: 0;
-    transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .35s ease;
-    transition-delay: calc(var(--i) * 80ms);
-  }
-
-  .menu-overlay.open .menu-link {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .menu-link:hover { color: #ffb97a; }
-
-  .menu-note {
-    align-self: end;
-    max-width: 260px;
-    font-size: 0.78rem;
-    color: rgba(247,239,229,0.62);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    line-height: 1.7;
-  }
-
-  .hero {
-    position: relative;
-    padding: 6rem 2rem 4rem;
-    min-height: 70vh;
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-  }
-
-  .hero::before,
-  .hero::after {
-    content: '';
-    position: absolute;
-    pointer-events: none;
-  }
-
-  .hero::before {
-    width: 440px;
-    height: 440px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(235,111,45,0.24) 0%, transparent 72%);
-    top: -170px;
-    right: -110px;
-  }
-
-  .hero::after {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(125,36,24,0.22) 0%, transparent 70%);
-    left: -120px;
-    bottom: -150px;
-  }
-
-  .hero-inner {
-    position: relative;
-    max-width: 980px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-tag {
-    color: var(--wine);
-    font-size: 0.74rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin-bottom: 1.2rem;
-    font-weight: 700;
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 5.2vw, 4.8rem);
-    line-height: 1.08;
-    color: var(--char);
-    max-width: 900px;
-    margin-bottom: 1.2rem;
-  }
-
-  .hero h1 em { color: var(--orange); font-style: italic; }
-
-  .hero-sub {
-    max-width: 700px;
-    color: #4a3a2f;
-    font-size: 1rem;
-    margin-bottom: 1.8rem;
-  }
-
-  .stat-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 0.8rem;
-    max-width: 820px;
-  }
-
-  .stat {
-    border: 1px solid rgba(18,16,15,0.1);
-    background: rgba(255,255,255,0.55);
-    padding: 0.75rem;
-  }
-
-  .stat .num {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    line-height: 1;
-    color: var(--wine);
-    font-weight: 700;
-  }
-
-  .stat .label {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.35rem;
-  }
-
-  .manifesto {
-    background: #15100d;
-    color: #f7efe5;
-    padding: 4rem 2rem;
-    border-top: 4px solid var(--orange);
-    border-bottom: 4px solid var(--amber);
-  }
-
-  .manifesto-wrap {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.05fr;
-    gap: 2.2rem;
-  }
-
-  .manifesto h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.7rem, 3vw, 2.8rem);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-
-  .manifesto h2 em { color: #ffb36f; font-style: italic; }
-
-  .manifesto p {
-    color: rgba(247,239,229,0.8);
-    font-size: 0.95rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .section {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .section-tag {
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--wine);
-    font-weight: 700;
-    margin-bottom: 0.9rem;
-  }
-
-  .section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    color: var(--char);
-    margin-bottom: 1.25rem;
-  }
-
-  .section-intro {
-    max-width: 760px;
-    color: #574638;
-    margin-bottom: 1.8rem;
-  }
-
-  .work-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-
-  .work-card {
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid var(--line);
-    background: linear-gradient(150deg, #fff8ef 0%, #f6e8d8 100%);
-    padding: 1rem;
-    transition: transform .18s ease, box-shadow .18s ease;
-    min-height: 170px;
-  }
-
-  .work-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(23,17,13,0.13);
-  }
-
-  .work-no {
-    font-family: 'Playfair Display', serif;
-    color: var(--orange);
-    font-size: 1.4rem;
-    margin-bottom: 0.55rem;
-  }
-
-  .work-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: var(--char);
-    margin-bottom: 0.45rem;
-  }
-
-  .work-meta {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.45rem;
-  }
-
-  .work-desc {
-    font-size: 0.86rem;
-    color: #5f4d3f;
-  }
-
-  .footer {
-    background: #1d1713;
-    color: rgba(247,239,229,0.78);
-    padding: 1.8rem 2rem;
-    border-top: 1px solid rgba(247,239,229,0.12);
-  }
-
-  .footer-wrap {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  }
-
-  .brand {
-    text-decoration: none;
-    color: var(--ink);
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  .top-nav-links {
-    display: flex;
-    gap: 1.3rem;
-    flex-wrap: wrap;
-  }
-
-  .top-nav-links a {
-    text-decoration: none;
-    color: rgba(18,16,15,0.72);
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .top-nav-links a.active { color: var(--orange); font-weight: 700; }
-
-  .hero {
-    position: relative;
-    padding: 6rem 2rem 4rem;
-    min-height: 70vh;
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-  }
-
-  .hero::before,
-  .hero::after {
-    content: '';
-    position: absolute;
-    pointer-events: none;
-  }
-
-  .hero::before {
-    width: 440px;
-    height: 440px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(235,111,45,0.24) 0%, transparent 72%);
-    top: -170px;
-    right: -110px;
-  }
-
-  .hero::after {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(125,36,24,0.22) 0%, transparent 70%);
-    left: -120px;
-    bottom: -150px;
-  }
-
-  .hero-inner {
-    position: relative;
-    max-width: 980px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-tag {
-    color: var(--wine);
-    font-size: 0.74rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin-bottom: 1.2rem;
-    font-weight: 700;
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 5.2vw, 4.8rem);
-    line-height: 1.08;
-    color: var(--char);
-    max-width: 900px;
-    margin-bottom: 1.2rem;
-  }
-
-  .hero h1 em { color: var(--orange); font-style: italic; }
-
-  .hero-sub {
-    max-width: 700px;
-    color: #4a3a2f;
-    font-size: 1rem;
-    margin-bottom: 1.8rem;
-  }
-
-  .stat-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 0.8rem;
-    max-width: 820px;
-  }
-
-  .stat {
-    border: 1px solid rgba(18,16,15,0.1);
-    background: rgba(255,255,255,0.55);
-    padding: 0.75rem;
-  }
-
-  .stat .num {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    line-height: 1;
-    color: var(--wine);
-    font-weight: 700;
-  }
-
-  .stat .label {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.35rem;
-  }
-
-  .manifesto {
-    background: #15100d;
-    color: #f7efe5;
-    padding: 4rem 2rem;
-    border-top: 4px solid var(--orange);
-    border-bottom: 4px solid var(--amber);
-  }
-
-  .manifesto-wrap {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.05fr;
-    gap: 2.2rem;
-  }
-
-  .manifesto h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.7rem, 3vw, 2.8rem);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-
-  .manifesto h2 em { color: #ffb36f; font-style: italic; }
-
-  .manifesto p {
-    color: rgba(247,239,229,0.8);
-    font-size: 0.95rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .section {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .section-tag {
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--wine);
-    font-weight: 700;
-    margin-bottom: 0.9rem;
-  }
-
-  .section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    color: var(--char);
-    margin-bottom: 1.25rem;
-  }
-
-  .section-intro {
-    max-width: 760px;
-    color: #574638;
-    margin-bottom: 1.8rem;
-  }
-
-  .work-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-
-  .work-card {
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid var(--line);
-    background: linear-gradient(150deg, #fff8ef 0%, #f6e8d8 100%);
-    padding: 1rem;
-    transition: transform .18s ease, box-shadow .18s ease;
-    min-height: 170px;
-  }
-
-  .work-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(23,17,13,0.13);
-  }
-
-  .work-no {
-    font-family: 'Playfair Display', serif;
-    color: var(--orange);
-    font-size: 1.4rem;
-    margin-bottom: 0.55rem;
-  }
-
-  .work-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: var(--char);
-    margin-bottom: 0.45rem;
-  }
-
-  .work-meta {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.45rem;
-  }
-
-  .work-desc {
-    font-size: 0.86rem;
-    color: #5f4d3f;
-  }
-
-  .footer {
-    background: #1d1713;
-    color: rgba(247,239,229,0.78);
-    padding: 1.8rem 2rem;
-    border-top: 1px solid rgba(247,239,229,0.12);
-  }
-
-  .footer-wrap {
-    max-width: 1080px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-
-  .footer small { font-size: 0.75rem; letter-spacing: 0.11em; text-transform: uppercase; }
-
-  @media (max-width: 760px) {
-    .top-nav { padding: 0.8rem 1rem; }
-    .hero { padding: 4.3rem 1rem 3rem; }
-    .manifesto, .section { padding: 3rem 1rem; }
-    .manifesto-wrap { grid-template-columns: 1fr; }
-
-    .menu-shell { padding: 1.2rem 1rem; grid-template-columns: 1fr; }
-    .menu-note { max-width: 100%; }
-
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mouris Bashir — Editorial Cover Story</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=DM+Sans:wght@300;400;500;700&display=swap');
+
+    :root {
+      --ink: #14100d;
+      --charcoal: #1c1613;
+      --cream: #f8f2e9;
+      --sand: #efe2d0;
+      --amber: #d58a2b;
+      --orange: #eb6f2d;
+      --wine: #7e2417;
+      --line: rgba(20, 16, 13, 0.14);
+      --muted: #6d5a4d;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fff9f1 0%, #f5ebde 52%, #f0e3d3 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.06;
+      background-image: radial-gradient(#000 0.35px, transparent 0.35px);
+      background-size: 3px 3px;
+      z-index: 0;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 2rem;
+      border-bottom: 1px solid rgba(20,16,13,0.1);
+      background: rgba(255, 250, 243, 0.86);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .top-nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .top-nav-links a {
+      text-decoration: none;
+      color: rgba(20, 16, 13, 0.75);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .top-nav-links a:hover,
+    .top-nav-links a.active { color: var(--orange); }
+
+    .menu-toggle {
+      border: 1px solid rgba(20,16,13,0.2);
+      background: rgba(255,255,255,0.75);
+      color: var(--ink);
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      cursor: pointer;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 35;
+      background: radial-gradient(circle at 80% 8%, rgba(235,111,45,0.17) 0, transparent 30%), #16110f;
+      color: #f8f2e9;
+      clip-path: circle(0 at calc(100% - 54px) 46px);
+      transition: clip-path 0.6s cubic-bezier(.19,1,.22,1);
+      pointer-events: none;
+    }
+
+    .menu-overlay.open {
+      clip-path: circle(145% at calc(100% - 54px) 46px);
+      pointer-events: auto;
+    }
+
+    .menu-shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      min-height: 100%;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+    }
+
+    .menu-head {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.4rem;
+    }
+
+    .menu-close {
+      border: 1px solid rgba(248,242,233,0.25);
+      background: transparent;
+      color: #f8f2e9;
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.5rem 0.8rem;
+      cursor: pointer;
+    }
+
+    .menu-links { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+
+    .menu-link {
+      text-decoration: none;
+      color: rgba(248,242,233,0.9);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 4vw, 3.1rem);
+      line-height: 1.1;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: transform .45s ease, opacity .35s ease;
+      transition-delay: calc(var(--i) * 70ms);
+      display: inline-block;
+    }
+
+    .menu-overlay.open .menu-link { opacity: 1; transform: translateY(0); }
+    .menu-link:hover { color: #ffb576; }
+
+    .menu-note {
+      align-self: end;
+      max-width: 275px;
+      color: rgba(248,242,233,0.68);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      line-height: 1.7;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 78vh;
+      padding: 5.2rem 2rem 2.8rem;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 480px;
+      height: 480px;
+      right: -140px;
+      top: -180px;
+      background: radial-gradient(circle, rgba(235,111,45,0.2) 0%, transparent 72%);
+      animation: floatDrift 11s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      width: 340px;
+      height: 340px;
+      left: -120px;
+      bottom: -150px;
+      background: radial-gradient(circle, rgba(125,36,24,0.16) 0%, transparent 70%);
+      animation: floatDrift 14s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatDrift {
+      from { transform: translateY(0px); }
+      to { transform: translateY(26px); }
+    }
+
+    .hero-inner,
+    .section,
+    .manifesto-wrap,
+    .footer-wrap {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--wine);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.25rem, 5.5vw, 5rem);
+      line-height: 1.04;
+      color: var(--charcoal);
+      max-width: 930px;
+      margin-bottom: 1rem;
+    }
+
+    h1 em { color: var(--orange); font-style: italic; }
+
+    .hero-sub {
+      max-width: 760px;
+      color: #4f3f32;
+      font-size: 1.02rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 0.7rem;
+      max-width: 860px;
+    }
+
+    .meta {
+      border: 1px solid rgba(20,16,13,0.1);
+      background: rgba(255,255,255,0.58);
+      padding: 0.75rem;
+    }
+
+    .meta .num {
+      font-family: 'Playfair Display', serif;
+      color: var(--wine);
+      font-size: 1.55rem;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .meta .label {
+      font-size: 0.67rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .manifesto {
+      background: #17120f;
+      color: #f8f2e9;
+      border-top: 4px solid var(--orange);
+      border-bottom: 4px solid var(--amber);
+      padding: 3.7rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .manifesto-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 2rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.8rem);
+      line-height: 1.22;
+      margin-bottom: 1rem;
+    }
+
+    h2 em { color: #ffb576; font-style: italic; }
+
+    .manifesto p { color: rgba(248,242,233,0.84); margin-bottom: 0.85rem; }
+
+    .section {
+      padding: 3.5rem 2rem;
+      z-index: 1;
+    }
+
+    .section-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--wine);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .section-intro { color: #5c4a3b; max-width: 800px; margin-bottom: 1.4rem; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .card {
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
+      background: linear-gradient(160deg, #fff9f0 0%, #f6e9d8 100%);
+      padding: 1rem;
+      min-height: 170px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(23,17,13,0.14);
+    }
+
+    .card-no {
+      font-family: 'Playfair Display', serif;
+      color: var(--orange);
+      font-size: 1.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-meta {
+      font-size: 0.7rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.35rem;
+      color: var(--charcoal);
+    }
+
+    .card-desc { font-size: 0.86rem; color: #5f4d3f; }
+
+    .timeline {
+      border-left: 1px solid rgba(20,16,13,0.2);
+      margin-left: 0.4rem;
+      padding-left: 1rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item h4 {
+      font-size: 1rem;
+      color: var(--charcoal);
+      margin-bottom: 0.15rem;
+    }
+
+    .timeline-item p { color: #5f4d3f; font-size: 0.92rem; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.7rem;
+    }
+
+    .contact-item {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.64);
+      padding: 0.85rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 0.67rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .footer {
+      background: #1b1512;
+      color: rgba(248,242,233,0.78);
+      padding: 1.7rem 2rem;
+      border-top: 1px solid rgba(248,242,233,0.13);
+      z-index: 1;
+      position: relative;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .footer small {
+      font-size: 0.74rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .top-nav { flex-wrap: wrap; justify-content: center; }
+      .manifesto-wrap { grid-template-columns: 1fr; }
+      .menu-shell { grid-template-columns: 1fr; padding: 1.2rem 1rem; }
+      .menu-note { max-width: 100%; }
+    }
+
+    @media (max-width: 720px) {
+      .top-nav, .hero, .manifesto, .section, .footer { padding-left: 1rem; padding-right: 1rem; }
+      .top-nav-links { display: none; }
+    }
+  </style>
 </head>
 <body>
+  <div class="grain" aria-hidden="true"></div>
 
-
-<nav class="top-nav">
-  <a href="MourisBashir_AthleteProfile.html" class="brand">mb.work</a>
-  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuOverlay">Menu</button>
-</nav>
-
-<aside class="menu-overlay" id="menuOverlay" aria-hidden="true">
-  <div class="menu-shell">
-    <div class="menu-head">
-      <a href="MourisBashir_AthleteProfile.html" class="brand" style="color:#f7efe5;">mb.work</a>
-      <button class="menu-close" id="menuClose">Close</button>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="MourisBashir_AthleteProfile.html" class="brand">mb.work</a>
+    <div class="top-nav-links">
+      <a class="active" href="MourisBashir_AthleteProfile.html">Cover Story</a>
+      <a href="about.html">One Nation</a>
+      <a href="index.html">Horizon X</a>
+      <a href="fortune.html">Fortune</a>
+      <a href="OYO_Brand_Marketing_Communication_CaseStudy.html">OYO</a>
     </div>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuOverlay">Menu</button>
+  </nav>
 
-    <ul class="menu-links">
-      <li><a class="menu-link" style="--i:1" href="MourisBashir_AthleteProfile.html">Home</a></li>
-      <li><a class="menu-link" style="--i:2" href="about.html">One Nation</a></li>
-      <li><a class="menu-link" style="--i:3" href="index.html">Horizon X</a></li>
-      <li><a class="menu-link" style="--i:4" href="OYO_Brand_Marketing_Communication_CaseStudy.html">OYO Comms</a></li>
-      <li><a class="menu-link" style="--i:5" href="BookMyForex_Brand_Marketing_Communication_CaseStudy.html">BookMyForex</a></li>
-      <li><a class="menu-link" style="--i:6" href="HKKDH_Adani_CaseStudy.html">HKKDH</a></li>
-      <li><a class="menu-link" style="--i:7" href="sustainability.html">Sustainability</a></li>
-      <li><a class="menu-link" style="--i:8" href="fortune.html">Fortune Foods</a></li>
-    </ul>
+  <aside class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-shell">
+      <div class="menu-head">
+        <a href="MourisBashir_AthleteProfile.html" class="brand" style="color:#f8f2e9">mb.work</a>
+        <button class="menu-close" id="menuClose">Close</button>
+      </div>
 
-    <p class="menu-note">Inspired by fluid studio-menu motion: reveal, breathe, then strike with intent.</p>
-  </div>
-</aside>
+      <ul class="menu-links">
+        <li><a class="menu-link" style="--i:1" href="MourisBashir_AthleteProfile.html">Cover Story</a></li>
+        <li><a class="menu-link" style="--i:2" href="about.html">One Nation</a></li>
+        <li><a class="menu-link" style="--i:3" href="index.html">Horizon X</a></li>
+        <li><a class="menu-link" style="--i:4" href="HKKDH_Adani_CaseStudy.html">HKKDH</a></li>
+        <li><a class="menu-link" style="--i:5" href="sustainability.html">Sustainability</a></li>
+        <li><a class="menu-link" style="--i:6" href="fortune.html">Fortune Foods</a></li>
+        <li><a class="menu-link" style="--i:7" href="BookMyForex_Brand_Marketing_Communication_CaseStudy.html">BookMyForex</a></li>
+        <li><a class="menu-link" style="--i:8" href="adl_equally.html">#ADLIsEquAlly</a></li>
+        <li><a class="menu-link" style="--i:9" href="police_scotland.html">Police Scotland</a></li>
+      </ul>
 
-<nav class="top-nav">
-  <a href="MourisBashir_AthleteProfile.html" class="brand">MB.WORK</a>
-  <div class="top-nav-links">
-  <a href="homepage_v1_warm.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">About</a>
-    <a href="about.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">One Nation</a>
-    <a href="index.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Horizon X</a>
-    <a href="HKKDH_Adani_CaseStudy.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">HKKDH</a>
-    <a href="sustainability.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Sustainability</a>
-    <a href="fortune.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Fortune</a>
-    <a href="BookMyForex_Brand_Marketing_Communication_CaseStudy.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">BookMyForex</a>
-    <a href="adl_equally.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">#ADLIsEquAlly</a>
-    <a href="OYO_Brand_Marketing_Communication_CaseStudy.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">OYO</a>
-    <a href="police_scotland.html" style="font-family:sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,240,0.5);text-decoration:none;">Police Scotland</a>
-
-
-  </div>
-</nav>
-
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-tag">Mouris Bashir · Strategic Communications</div>
-    <h1>The CV tells what happened.<br>This is <em>how</em> and <em>why</em> it moved people.</h1>
-
-    <p class="hero-sub">I build emotionally precise communication systems that convert curiosity into trust, and trust into growth. Warm enough to be human. Rebellious enough to challenge the obvious brief.</p>
-    <div class="stat-row">
-      <div class="stat"><div class="num">10+</div><div class="label">Years in motion</div></div>
-      <div class="stat"><div class="num">300M+</div><div class="label">Campaign views</div></div>
-
-    <p class="hero-sub">Brand. Reputation. Growth. 
-10+ years turning communication into leverage across global markets in Asia and Europe.</p>
-    <div class="stat-row">
-      <div class="stat"><div class="num">10+</div><div class="label">Years in motion</div></div>
-      <div class="stat"><div class="num">500M+</div><div class="label">Campaign views</div></div>
-
-      <div class="stat"><div class="num">5</div><div class="label">International wins</div></div>
-      <div class="stat"><div class="num">7×</div><div class="label">Scale-up ceiling</div></div>
+      <p class="menu-note">Hybrid navigation: editorial top menu for quick pathways, hamburger for full portfolio depth.</p>
     </div>
-  </div>
-</section>
+  </aside>
 
-<section class="manifesto">
-  <div class="manifesto-wrap">
-    <div>
-      <h2>I don’t need to know just the product.<br>I need to know the <em>human tension</em>.</h2>
-      <p>The question is always the same: how do we reach people, convert them, retain them, and build a machine that does it repeatedly?</p>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="hero-tag">Editorial Cover Feature · Mouris Bashir</p>
+      <h1>Not just a marketing &amp; comms guy.<br />An <em>editorial mind</em> for growth, trust, and action.</h1>
+      <p class="hero-sub">I sweat the petty things; pet the sweaty things. Not philosophy — pattern recognition. After enough campaigns go sideways on a single word, precision becomes your operating system.</p>
+      <div class="meta-row">
+        <div class="meta"><div class="num">10+</div><div class="label">Years translating chaos</div></div>
+        <div class="meta"><div class="num">APAC + UK</div><div class="label">Cross-market communication</div></div>
+        <div class="meta"><div class="num">8+</div><div class="label">Business categories</div></div>
+        <div class="meta"><div class="num">2022–23</div><div class="label">Award-winning campaigns</div></div>
+      </div>
     </div>
-    <div>
-      <p>My work sits between brand instinct and business rigor. I’ve led campaigns, product narratives, trust communication, founder messaging, partner programs, and internal alignment in high-pressure environments.</p>
-      <p>No category is too “boring” if the story has stakes. No audience is too “hard” if the value is clear. Every brief gets one rule: make it impossible to ignore and easy to act on.</p>
+  </header>
+
+  <section class="manifesto" id="about">
+    <div class="manifesto-wrap">
+      <div>
+        <h2>I build brands with <em>emotional intelligence</em> and operational clarity.</h2>
+        <p>Brands are emotional for consumers. They’re emotional for marketers too. My work is to understand what brands mean, what they can do, and which brand experiences inspire action.</p>
+        <p>Real job: inspire people internally, externally, and at decision moments where outcomes are usually won or lost.</p>
+      </div>
+      <div>
+        <p>Ten years in modern marketing and communications, working as writer, strategist, narrative architect, and often the person who read the comments section before everyone else entered the room.</p>
+        <p>I contain contradictions: croissants and crisis rooms, cricket and copy decks, movies over books, books over movies, air over air-conditioning, gin over beer. Good strategy contains contradictions too — and resolves them into direction.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="section-tag">Featured work</div>
-  <h3>Selected campaigns & case studies</h3>
-  <p class="section-intro">A portfolio of brand, growth, and communication systems built across hospitality, consumer goods, hearing care, infrastructure, and financial services.</p>
-
-  <div class="work-grid">
-    <a class="work-card" href="about.html">
-      <div class="work-no">01</div>
-      <div class="work-meta">Adani Group · Focused</div>
-      <div class="work-title">One Nation, Billion Celebrations</div>
-      <div class="work-desc">Cultural storytelling at national scale with reputational depth.</div>
-    </a>
-
-    <a class="work-card" href="index.html">
-      <div class="work-no">02</div>
-      <div class="work-meta">hear.com · Funnel-led</div>
-      <div class="work-title">Horizon X</div>
-      <div class="work-desc">Performance narrative that linked empathy, insight, and conversion.</div>
-    </a>
-
-    <a class="work-card" href="fortune.html">
-      <div class="work-no">03</div>
-      <div class="work-meta">Fortune Foods · Social</div>
-      <div class="work-title">#NayeBharatKiNayiDelivery</div>
-      <div class="work-desc">Contemporary household relevance through local-first storytelling.</div>
-    </a>
-
-    <a class="work-card" href="OYO_Brand_Marketing_Communication_CaseStudy.html">
-      <div class="work-no">04</div>
-      <div class="work-meta">OYO · Integrated Comms</div>
-      <div class="work-title">Brand & Communication Systems</div>
-      <div class="work-desc">From campaign thought to partner and product communication architecture.</div>
-    </a>
-
-    <a class="work-card" href="BookMyForex_Brand_Marketing_Communication_CaseStudy.html">
-      <div class="work-no">05</div>
-      <div class="work-meta">BookMyForex · Trust-led</div>
-      <div class="work-title">Digital Forex Growth</div>
-      <div class="work-desc">Education-first communication to unlock adoption in a low-trust category.</div>
-    </a>
-
-    <a class="work-card" href="FarmPik_CaseStudy.html">
-      <div class="work-no">06</div>
-      <div class="work-meta">FarmPik · Brand + Comms</div>
-      <div class="work-title">#KisanOfTrust</div>
-      <div class="work-desc">Rural-tech story design blending credibility, clarity, and scale.</div>
-    </a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-wrap">
-    <small>Mouris Bashir · mb.work</small>
-    <small>Warm voice. Sharp intent. Relentless execution.</small>
-  </div>
-</footer>
-
-<script>
-  const menuOverlay = document.getElementById('menuOverlay');
-  const menuToggle = document.getElementById('menuToggle');
-  const menuClose = document.getElementById('menuClose');
-
-  function setMenu(open) {
-    menuOverlay.classList.toggle('open', open);
-    menuOverlay.setAttribute('aria-hidden', String(!open));
-    menuToggle.setAttribute('aria-expanded', String(open));
-  }
-
-  menuToggle.addEventListener('click', () => setMenu(true));
-  menuClose.addEventListener('click', () => setMenu(false));
-
-  menuOverlay.addEventListener('click', (event) => {
-    if (event.target === menuOverlay) setMenu(false);
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setMenu(false);
-  });
-</script>
-
-    <div>
-      <h2>I don’t need to know just the product.<br>I need to know the <em>human</em>.</h2>
-      <p>The question is always the same: how do we reach people, convert them, retain them, and build a machine that does it repeatedly?</p>
+  <section class="section" id="experience">
+    <p class="section-tag">Experience</p>
+    <h3>Where the work was built</h3>
+    <p class="section-intro">Lead - Brand Comms @ Adani Group (Gurugram, May 2021 - Nov 2023) and Consultant (Remote, May 2024 - Present), with prior work across Audibene, OYO, BookMyForex, AuthBridge, Barclays, and roles in Edinburgh.</p>
+    <div class="timeline">
+      <div class="timeline-item"><h4>Adani Group — Lead, Brand Comms / Consultant</h4><p>Utility Gas, Renewable Energy, FMCG, D2C, Fortune, Ports. Skills: copy, digital media communication, corporate communication, internal branding.</p></div>
+      <div class="timeline-item"><h4>Audibene (WS Audiology) — Content Strategist</h4><p>APAC product + marketing alignment across product, marketing, social, and business development teams.</p></div>
+      <div class="timeline-item"><h4>OYO — Communication Strategist</h4><p>Global PR &amp; media communication architecture for high-velocity category storytelling.</p></div>
+      <div class="timeline-item"><h4>BookMyForex — Content Strategist</h4><p>Content, social, digital, brand, PR, BD, ORM, UI/UX, and copywriting systems for trust-led growth.</p></div>
+      <div class="timeline-item"><h4>Earlier roles</h4><p>AuthBridge, Barclays, Kashmir Reader (Op-ed Editor), Lothian Police #WeCanStopIt, Telford College student communications, and Holyrood PR.</p></div>
     </div>
-    <div>
-      <p>My next company doesn’t hire a brand, marketing or comms guy. They get a fully integrated in-house agency without the overhead or the politics.
+  </section>
 
-<p>How many people can say their work helped sell forex cards, railway tickets, hearing aids, CNG, PNG, and cooking oil, or launched ESG initiatives, EV charging networks, and renewable energy platforms? It has basically been a career ride that mirrors a middle-class man’s grocery list. From One Nation, Billion Celebrations to behaviour-change work for Police Scotland, I’ve built campaigns that actually made people stop scrolling.</p>
+  <section class="section" id="discipline">
+    <p class="section-tag">Disciplinary Scope</p>
+    <h3>Integrated systems, not isolated campaigns</h3>
+    <div class="cards">
+      <article class="card"><div class="card-no">01</div><div class="card-meta">Communication</div><div class="card-title">Integrated Campaign Planning</div><p class="card-desc">Cross-channel campaign design with clear narrative hierarchy and measurable action pathways.</p></article>
+      <article class="card"><div class="card-no">02</div><div class="card-meta">Narrative</div><div class="card-title">Message Architecture</div><p class="card-desc">Positioning, stakeholder language frameworks, and story systems for internal and external trust.</p></article>
+      <article class="card"><div class="card-no">03</div><div class="card-meta">Insight</div><div class="card-title">Behaviour-led Marketing</div><p class="card-desc">Audience psychology and friction mapping to make communication useful, usable, and persuasive.</p></article>
+      <article class="card"><div class="card-no">04</div><div class="card-meta">Reputation</div><div class="card-title">Crisis + Employer Brand</div><p class="card-desc">Reputation management and employer communication systems spanning media, product, and culture touchpoints.</p></article>
     </div>
-  </div>
-</section>
+  </section>
 
-</footer>
+  <section class="section" id="portfolio">
+    <p class="section-tag">Selected Portfolio</p>
+    <h3>Editorial picks from the wider body of work</h3>
+    <div class="cards">
+      <a class="card" href="about.html"><div class="card-no">01</div><div class="card-meta">Adani Group</div><div class="card-title">One Nation, Billion Celebrations</div><p class="card-desc">Cultural storytelling with reputational depth and scale.</p></a>
+      <a class="card" href="index.html"><div class="card-no">02</div><div class="card-meta">hear.com</div><div class="card-title">Horizon X</div><p class="card-desc">Performance narrative connecting empathy, insight, and conversion.</p></a>
+      <a class="card" href="fortune.html"><div class="card-no">03</div><div class="card-meta">Fortune Foods</div><div class="card-title">#NayeBharatKiNayiDelivery</div><p class="card-desc">Household relevance via local-first storytelling.</p></a>
+      <a class="card" href="OYO_Brand_Marketing_Communication_CaseStudy.html"><div class="card-no">04</div><div class="card-meta">OYO</div><div class="card-title">Brand &amp; Communication Systems</div><p class="card-desc">Integrated campaign and partner communication architecture.</p></a>
+    </div>
+  </section>
 
+  <section class="section" id="contact">
+    <p class="section-tag">Contact</p>
+    <h3>Let’s get started.</h3>
+    <div class="contact-grid">
+      <div class="contact-item"><strong>Email</strong><a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a></div>
+      <div class="contact-item"><strong>Phone</strong><a href="tel:+19086904444">+1 908 690 4444</a></div>
+      <div class="contact-item"><strong>LinkedIn</strong><a href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener">View profile</a></div>
+      <div class="contact-item"><strong>AI Profile</strong><span>Ask my AI twin about my work.</span></div>
+      <div class="contact-item"><strong>Education</strong><span>B.A. Economics, Telford College, Edinburgh.</span></div>
+      <div class="contact-item"><strong>Gold Stars</strong><span>Digies 2023, Hermes 2022, Social S.T.A.R.S 2022/23, afaqs! Foxglove 2023, ACEF 2023.</span></div>
+    </div>
+  </section>
 
+  <footer class="footer">
+    <div class="footer-wrap">
+      <small>Mouris Bashir · mb.work</small>
+      <small>Editorial clarity. Commercial intent. Human outcomes.</small>
+    </div>
+  </footer>
+
+  <script>
+    const menuOverlay = document.getElementById('menuOverlay');
+    const menuToggle = document.getElementById('menuToggle');
+    const menuClose = document.getElementById('menuClose');
+
+    function setMenu(open) {
+      menuOverlay.classList.toggle('open', open);
+      menuOverlay.setAttribute('aria-hidden', String(!open));
+      menuToggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    menuToggle.addEventListener('click', () => setMenu(true));
+    menuClose.addEventListener('click', () => setMenu(false));
+    menuOverlay.addEventListener('click', (event) => {
+      if (event.target === menuOverlay) setMenu(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setMenu(false);
+    });
+  </script>
 </body>
 </html>
