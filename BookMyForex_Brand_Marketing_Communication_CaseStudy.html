@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookMyForex — Building Trust-Led Digital Growth</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --deep: #06233d;
+    --ink: #0b3358;
+    --accent: #f08a24;
+    --sky: #27a2db;
+    --pale: #f4f9fd;
+    --mist: #d8e8f4;
+    --body: #284760;
+    --muted: #5f7c94;
+    --cream: #fbfdff;
+  }
+
+  body { background: var(--cream); color: var(--body); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(6,35,61,0.95);
+    backdrop-filter: blur(8px);
+    padding: 0.9rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .top-nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .top-nav a {
+    font-family: sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(232,245,255,0.66);
+    text-decoration: none;
+  }
+  .top-nav .brand {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: #e8f5ff;
+  }
+  .top-nav a.active { color: #fff; }
+
+  .hero {
+    position: relative;
+    background: linear-gradient(160deg, #06233d 0%, #0b3358 60%, #0d4472 100%);
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4.5rem 3rem 5rem;
+    overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 80% 12%, rgba(240,138,36,0.26) 0%, transparent 40%),
+      radial-gradient(circle at 18% 75%, rgba(39,162,219,0.18) 0%, transparent 42%);
+  }
+  .hero-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: #88c8ea; font-weight: 500; margin-bottom: 2rem; position: relative; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 4.6rem); font-weight: 900; line-height: 1.06; color: #ecf7ff; margin-bottom: 1.4rem; max-width: 820px; position: relative; }
+  .hero-title em { color: #ffb166; font-style: italic; }
+  .hero-sub { font-size: 1rem; color: rgba(236,247,255,0.72); max-width: 700px; margin-bottom: 2.5rem; position: relative; }
+
+  .hero-meta { display: flex; gap: 2rem; flex-wrap: wrap; position: relative; }
+  .meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+  .meta-label { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(236,247,255,0.52); }
+  .meta-val { font-size: 0.9rem; color: #ecf7ff; font-weight: 400; }
+
+  .stat-strip { background: #06233d; border-top: 1px solid rgba(255,255,255,0.12); padding: 3.2rem 3rem; }
+  .stat-grid { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.15rem; color: #ffb166; font-weight: 900; line-height: 1; }
+  .stat-desc { font-size: 0.76rem; color: rgba(236,247,255,0.68); margin-top: 0.36rem; }
+
+  .page { max-width: 980px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 4.4rem 0; border-bottom: 1px solid rgba(11,51,88,0.09); }
+  section:last-child { border-bottom: none; }
+  .section-tag { font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sky); font-weight: 500; margin-bottom: 1rem; }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; color: var(--ink); margin-bottom: 1.2rem; }
+  h2 em { font-style: italic; color: var(--accent); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 1.32rem; color: var(--ink); margin: 1.9rem 0 0.8rem; }
+  p { font-size: 0.97rem; color: var(--body); max-width: 770px; margin-bottom: 1rem; }
+
+  ul { margin-left: 1.1rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.45rem; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.4rem; }
+  .card { background: var(--pale); border: 1px solid var(--mist); padding: 1.15rem; }
+  .card-title { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); font-weight: 500; margin-bottom: 0.5rem; }
+  .card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+  .quote { margin: 2rem 0; padding: 1.3rem 0 1.3rem 1.35rem; border-left: 3px solid var(--accent); }
+  .quote p { font-family: 'Playfair Display', serif; font-size: 1.16rem; font-style: italic; color: var(--ink); margin: 0; }
+
+  .timeline {
+    margin-top: 1.3rem;
+    border: 1px solid var(--mist);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .step {
+    padding: 1rem;
+    border-right: 1px solid var(--mist);
+    border-bottom: 1px solid var(--mist);
+    background: #fff;
+  }
+  .step:nth-child(4n) { border-right: none; }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--sky);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .step-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--ink); margin-bottom: 0.35rem; font-weight: 500; }
+  .step p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+
+  .creative-grid {
+    margin-top: 1.35rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.9rem;
+  }
+  .creative {
+    border: 1px dashed #9cc3dd;
+    background: #f8fcff;
+    min-height: 110px;
+    padding: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.83rem;
+    color: #4f7291;
+  }
+
+  .link-row {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .chip {
+    display: inline-block;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid #b8d2e6;
+    border-radius: 20px;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    background: #f8fcff;
+  }
+
+  footer { background: #06233d; padding: 2rem; text-align: center; margin-top: 3rem; }
+  footer p { color: rgba(236,247,255,0.66); font-size: 0.78rem; margin: 0 auto; }
+
+  @media (max-width: 700px) {
+    .top-nav { padding: 0.8rem 1rem; }
+    .top-nav-links { gap: 0.8rem 1.2rem; }
+    .hero { padding: 3rem 1.2rem 4rem; }
+    .stat-strip { padding: 2.5rem 1.2rem; }
+    .page { padding: 0 1.2rem; }
+    .step:nth-child(4n) { border-right: 1px solid var(--mist); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="MourisBashir_AthleteProfile.html" class="brand">MB.WORK</a>
+  <div class="top-nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="MourisBashir_AthleteProfile.html">Athlete</a>
+    <a href="OYO_Brand_Marketing_Communication_CaseStudy.html">OYO Comms</a>
+    <a href="BookMyForex_Brand_Marketing_Communication_CaseStudy.html" class="active">BookMyForex</a>
+    <a href="HKKDH_Adani_CaseStudy.html">HKKDH</a>
+    <a href="sustainability.html">Sustainability</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-label">Brand · Marketing · Communication Case Study</div>
+  <h1 class="hero-title">Building Trust-Led Digital Growth in <em>Online Foreign Exchange</em></h1>
+  <p class="hero-sub">How BookMyForex moved from a rate-comparison utility to a trusted, education-first forex platform by connecting social activation, customer communication, and SEO-led discovery in one growth system.</p>
+
+  <div class="hero-meta">
+    <div class="meta-item"><span class="meta-label">Brand</span><span class="meta-val">BookMyForex</span></div>
+    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Marketing & Communication Lead (Organic Growth, Product & Customer Communication)</span></div>
+    <div class="meta-item"><span class="meta-label">Focus</span><span class="meta-val">Trust, Education, Organic Acquisition</span></div>
+    <div class="meta-item"><span class="meta-label">Market</span><span class="meta-val">India · Online Forex</span></div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-grid">
+    <div><div class="stat-num">₹200Cr → ₹1,400Cr+</div><div class="stat-desc">ARR contribution environment during two-year scale-up (~7×)</div></div>
+    <div><div class="stat-num">~40%</div><div class="stat-desc">Forex card contribution to total transaction volumes</div></div>
+    <div><div class="stat-num">~130–140K → ~650K</div><div class="stat-desc">Monthly traffic baseline to daily average within 12 months</div></div>
+    <div><div class="stat-num">1.1M</div><div class="stat-desc">Peak traffic during national social activation</div></div>
+    <div><div class="stat-num">2,000+ / 5,000+</div><div class="stat-desc">Keywords in Top 3 / Top 10 search positions</div></div>
+    <div><div class="stat-num">4.3+</div><div class="stat-desc">Public ratings improvement across customer-facing platforms</div></div>
+  </div>
+</div>
+
+<div class="page">
+  <section>
+    <div class="section-tag">Context</div>
+    <h2>The category challenge was not awareness. It was <em>trust</em>.</h2>
+    <p>At the time, Indian forex customers often preferred banks, local money changers, and airport counters even when rates were poorer. Digital convenience alone was not enough to shift behavior in a financial product category tied to safety and documentation.</p>
+    <p>The adoption barriers repeated across customer cohorts: online transactions felt risky, LRS/remittance/student-payment documents felt difficult, pricing visibility looked opaque, and foreign exchange was viewed as a bank-only process.</p>
+    <div class="quote"><p>Core mandate: make digital forex feel safer, simpler, and more transparent than traditional channels.</p></div>
+  </section>
+
+  <section>
+    <div class="section-tag">Opportunity</div>
+    <h2>A growth play built on communication architecture, not isolated campaigns.</h2>
+    <p>The solution was designed as one connected funnel where top-of-funnel attention, mid-funnel education, and bottom-funnel confidence worked together. Paid media buying sat outside scope; the focus was organic growth, product communication, and customer trust loops.</p>
+
+    <div class="cards">
+      <div class="card"><div class="card-title">Trust Narrative</div><p>Positioned BookMyForex as transparent and process-safe for mainstream users, not just price-seekers.</p></div>
+      <div class="card"><div class="card-title">Education Layer</div><p>Turned complex forex and documentation topics into usable content for students, parents, and travellers.</p></div>
+      <div class="card"><div class="card-title">Community Advocacy</div><p>Built repeat participant cohorts to amplify and validate campaign participation organically.</p></div>
+      <div class="card"><div class="card-title">SEO Integration</div><p>Captured campaign intent through search-optimized landing flows and post-campaign discoverability.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">Execution</div>
+    <h2>What was implemented across channels.</h2>
+
+    <div class="timeline">
+      <div class="step"><div class="step-num">01</div><div class="step-title">Social Activation</div><p>Planned and executed coordinated Twitter activations (2017) with region-wise creator clusters to trend nationally in Top 2–3 positions.</p></div>
+      <div class="step"><div class="step-num">02</div><div class="step-title">Trust + Education</div><p>Converted real-time campaign attention into quizzes, explainers, and live interaction modules to reduce decision anxiety in forex journeys.</p></div>
+      <div class="step"><div class="step-num">03</div><div class="step-title">Community Engine</div><p>Built and managed repeat participant communities that sustained visibility, improved social proof, and strengthened peer-to-peer credibility.</p></div>
+      <div class="step"><div class="step-num">04</div><div class="step-title">Acquisition + SEO</div><p>Mapped high-intent queries to education-led landing pages, enabling improved rankings and organic traffic compounding after campaign bursts.</p></div>
+    </div>
+
+    <h3>Campaign Communication Formats</h3>
+    <ul>
+      <li>Product proposition creatives around forex card value and fee transparency.</li>
+      <li>Quiz-led interactions to gamify product learning and improve brand recall.</li>
+      <li>Category explainers that simplified compliance-heavy decision points.</li>
+      <li>Conversation-led customer support and lead handling through social channels.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-tag">Outcomes</div>
+    <h2>Business, brand, and customer impact.</h2>
+
+    <h3>Growth & Discoverability</h3>
+    <ul>
+      <li>Contributed during scale-up from ~₹200 crore to ₹1,400+ crore ARR within two years (~7×).</li>
+      <li>Forex card became a strategic engine at ~40% of total transaction volume.</li>
+      <li>Traffic moved from ~130–140K monthly to ~650K daily average within 12 months.</li>
+      <li>Peak traffic reached ~1.1M during national activation windows.</li>
+      <li>Search visibility expanded to 2,000+ keywords in Top 3 and 5,000+ in Top 10 rankings.</li>
+      <li>Competitive set began replicating education-first content patterns.</li>
+    </ul>
+
+    <h3>Brand & Customer Outcomes</h3>
+    <ul>
+      <li>Social became a functional lead-generation and customer experience touchpoint.</li>
+      <li>Public platform ratings improved to 4.3+.</li>
+      <li>BookMyForex strengthened category leadership as a digital forex platform in India.</li>
+    </ul>
+
+    <div class="quote"><p>From transaction utility to trusted platform: growth came from reducing fear before pushing conversion.</p></div>
+  </section>
+
+  <section>
+    <div class="section-tag">Creative Snapshot</div>
+    <h2>Representative communication themes used in-market.</h2>
+    <div class="creative-grid">
+      <div class="creative">Forex card over debit card positioning for travel spend control.</div>
+      <div class="creative">Transparency claims centered on interbank rates and zero hidden charges.</div>
+      <div class="creative">#IndiaKaForexCard community quizzes and user participation prompts.</div>
+      <div class="creative">Remittance communication simplifying student payment journeys.</div>
+    </div>
+    <p style="margin-top:1rem;">Design references and campaign visuals can be attached as a gallery in portfolio presentation decks or LinkedIn case snippets.</p>
+    <div class="link-row">
+      <a class="chip" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn-ready case format</a>
+      <a class="chip" href="OYO_Brand_Marketing_Communication_CaseStudy.html">View another comms case</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">Summary</div>
+    <h2>Trust-first communication unlocked digital category growth.</h2>
+    <p>This case demonstrates how a financial-services brand can win in a low-trust category by sequencing education, social proof, and discoverability. Rather than treating communications as campaign output, the work treated it as product infrastructure for market confidence.</p>
+  </section>
+</div>
+
+<footer>
+  <p>BookMyForex case study · Brand marketing, product communication, organic growth.</p>
+</footer>
+
+</body>
+</html>
