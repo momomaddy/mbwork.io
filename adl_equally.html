@@ -124,7 +124,7 @@
   }
 
 /* Global hamburger menu */
-.logo{position:fixed;top:1.2rem;left:1.6rem;z-index:10001;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#f8f8f6;text-decoration:none;}
+.logo{position:fixed;top:1.2rem;left:1.6rem;z-index:10001;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#f8f8f6;text-decoration:none;background:rgba(15,15,15,.82);padding:.32rem .62rem;border:1px solid rgba(248,248,246,.24);border-radius:999px;backdrop-filter:blur(2px);}
 .menu-btn{position:fixed;top:1.05rem;right:1.3rem;z-index:10001;background:none;border:none;cursor:pointer;width:52px;height:52px;display:flex;align-items:center;justify-content:center;}
 .menu-btn-inner{width:44px;height:44px;position:relative;border:1px solid rgba(248,248,246,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .3s,background .3s;}
 .menu-btn:hover .menu-btn-inner{border-color:#E8180A;background:rgba(232,24,10,.08);}
@@ -138,7 +138,7 @@ body.menu-open .menu-arrow{transform:rotate(135deg);}
 .overlay-links{list-style:none;} .overlay-links li{overflow:hidden;margin-bottom:.5rem;}
 .overlay-link{display:block;font-family:'Libre Baskerville',serif;font-size:clamp(2rem,5vw,4.6rem);font-style:italic;color:rgba(248,248,246,.18);text-decoration:none;line-height:1.1;transition:color .3s,transform .6s cubic-bezier(.77,0,.175,1);transform:translateY(100%);} 
 .overlay.open .overlay-link{transform:translateY(0);} .overlay-link:hover{color:#fff;} .overlay-link span{color:#E8180A;font-style:normal;font-size:.5em;font-family:'Syne',sans-serif;vertical-align:super;margin-right:.3em;}
-.overlay.open li:nth-child(1) .overlay-link{transition-delay:.1s;} .overlay.open li:nth-child(2) .overlay-link{transition-delay:.15s;} .overlay.open li:nth-child(3) .overlay-link{transition-delay:.2s;} .overlay.open li:nth-child(4) .overlay-link{transition-delay:.25s;} .overlay.open li:nth-child(5) .overlay-link{transition-delay:.3s;} .overlay.open li:nth-child(6) .overlay-link{transition-delay:.35s;} .overlay.open li:nth-child(7) .overlay-link{transition-delay:.4s;}
+.overlay.open li:nth-child(1) .overlay-link{transition-delay:.1s;} .overlay.open li:nth-child(2) .overlay-link{transition-delay:.15s;} .overlay.open li:nth-child(3) .overlay-link{transition-delay:.2s;} .overlay.open li:nth-child(4) .overlay-link{transition-delay:.25s;} .overlay.open li:nth-child(5) .overlay-link{transition-delay:.3s;} .overlay.open li:nth-child(6) .overlay-link{transition-delay:.35s;} .overlay.open li:nth-child(7) .overlay-link{transition-delay:.4s;} .overlay.open li:nth-child(8) .overlay-link{transition-delay:.45s;} .overlay.open li:nth-child(9) .overlay-link{transition-delay:.5s;} .overlay.open li:nth-child(10) .overlay-link{transition-delay:.55s;} .overlay.open li:nth-child(11) .overlay-link{transition-delay:.6s;} .overlay.open li:nth-child(12) .overlay-link{transition-delay:.65s;} .overlay.open li:nth-child(13) .overlay-link{transition-delay:.7s;}
 .overlay-contact{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(248,248,246,.14);display:flex;gap:1.3rem;flex-wrap:wrap;} .overlay-contact a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,248,246,.45);text-decoration:none;transition:color .2s;} .overlay-contact a:hover{color:#E8180A;}
 body.menu-open{overflow:hidden;}
 @media(max-width:768px){.overlay{padding:0 1.5rem;}.logo{left:1rem;top:1rem;}.menu-btn{right:.7rem;top:.78rem;}}
@@ -154,7 +154,7 @@ body.menu-open{overflow:hidden;}
   </div>
 </button>
 <div class="overlay" id="overlayMenu">
-  <ul class="overlay-links">
+    <ul class="overlay-links">
     <li><a href="homepage_v1_warm.html" class="overlay-link"><span>00</span>Home</a></li>
     <li><a href="bio_gq.html" class="overlay-link"><span>01</span>Bio</a></li>
     <li><a href="about.html" class="overlay-link"><span>02</span>One Nation</a></li>
@@ -163,6 +163,11 @@ body.menu-open{overflow:hidden;}
     <li><a href="adl_equally.html" class="overlay-link"><span>05</span>ADL EquAlly</a></li>
     <li><a href="sustainability.html" class="overlay-link"><span>06</span>Sustainability</a></li>
     <li><a href="police_scotland.html" class="overlay-link"><span>07</span>Police Scotland</a></li>
+    <li><a href="fortune.html" class="overlay-link"><span>08</span>Fortune</a></li>
+    <li><a href="OYO_Brand_Marketing_Communication_CaseStudy.html" class="overlay-link"><span>09</span>OYO Case Study</a></li>
+    <li><a href="FarmPik_CaseStudy.html" class="overlay-link"><span>10</span>FarmPik</a></li>
+    <li><a href="BookMyForex_Brand_Marketing_Communication_CaseStudy.html" class="overlay-link"><span>11</span>BookMyForex</a></li>
+    <li><a href="moment_marketing.html" class="overlay-link"><span>12</span>Moment Marketing</a></li>
   </ul>
   <div class="overlay-contact">
     <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
