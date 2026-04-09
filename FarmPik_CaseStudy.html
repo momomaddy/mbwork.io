@@ -165,6 +165,63 @@
       background: #f4f9f2;
     }
 
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .photo-grid .stack {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    figure {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    figure img {
+      width: 100%;
+      height: 100%;
+      max-height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+
+    figure figcaption {
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 0.65rem 0.8rem 0.8rem;
+      border-top: 1px solid var(--line);
+      background: #fcfdfb;
+    }
+
+    .variation {
+      background: linear-gradient(135deg, #f4f9f2, #ffffff);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .variation h3 {
+      font-size: 1rem;
+      color: var(--green);
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 780px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     footer {
       padding: 2.5rem 2rem 3rem;
       text-align: center;
@@ -293,6 +350,36 @@
             </p>
           </article>
         </div>
+        <p style="margin-top:1rem;">
+          In parallel, we onboarded <strong>17,000+ farmers</strong> onto a Digital Mandi + Partner App ecosystem,
+          digitising procurement and participation workflows. Farmers could track earnings, events, knowledge modules,
+          trainings, and advisory updates in one place, reducing dependence on fragmented offline communication.
+        </p>
+      </section>
+
+      <section>
+        <span class="tag">Campaign Visuals</span>
+        <h2>Image-led documentation in an aesthetic editorial layout.</h2>
+        <p>
+          The visual language prioritised process transparency and people-first storytelling: on-ground farmer moments,
+          grading and storage details, logistics movement, and daily operational reality.
+        </p>
+        <div class="photo-grid">
+          <figure>
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 780'><defs><linearGradient id='g' x1='0' x2='1'><stop stop-color='%230f1c12'/><stop offset='1' stop-color='%232f7a3d'/></linearGradient></defs><rect fill='url(%23g)' width='1200' height='780'/><circle cx='220' cy='260' r='120' fill='%239ed48c' opacity='.25'/><circle cx='980' cy='520' r='170' fill='%239ed48c' opacity='.2'/><text x='80' y='690' fill='white' font-family='Inter,Arial' font-size='58' opacity='.92'>Farmer &amp; Procurement Visual</text></svg>" alt="FarmPik campaign image 1">
+            <figcaption>Farmer-facing storytelling: trust through visibility, local context, and process clarity.</figcaption>
+          </figure>
+          <div class="stack">
+            <figure>
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 430'><defs><linearGradient id='g2' x1='0' x2='1'><stop stop-color='%23304133'/><stop offset='1' stop-color='%236baa3a'/></linearGradient></defs><rect fill='url(%23g2)' width='900' height='430'/><text x='42' y='228' fill='white' font-family='Inter,Arial' font-size='48' opacity='.92'>Cold Chain &amp; Grading</text></svg>" alt="FarmPik campaign image 2">
+              <figcaption>Infrastructure credibility: grading standards, storage quality, and consistency messaging.</figcaption>
+            </figure>
+            <figure>
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 430'><defs><linearGradient id='g3' x1='0' x2='1'><stop stop-color='%231d2b1f'/><stop offset='1' stop-color='%23607063'/></linearGradient></defs><rect fill='url(%23g3)' width='900' height='430'/><text x='42' y='228' fill='white' font-family='Inter,Arial' font-size='45' opacity='.92'>Digital Mandi Onboarding</text></svg>" alt="FarmPik campaign image 3">
+              <figcaption>17k+ farmer onboarding: earnings tracking, events, training, advisory, and grievance continuity.</figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -317,6 +404,16 @@
           <div class="card"><p>Stronger digital narrative around brand credibility.</p></div>
           <div class="card"><p>Clearer understanding of Adani Agri Fresh’s role in the value chain.</p></div>
           <div class="card"><p>Shift from abstract debate to process-level conversation and partnership visibility.</p></div>
+          <div class="card"><p>17k+ farmers onboarded to Digital Mandi + Partner App for traceable, always-on communication.</p></div>
+        </div>
+        <div class="variation">
+          <h3>Variation B: “From Orchard to Assurance”</h3>
+          <p>
+            A second narrative version reframes FarmPik as an assurance platform, not just a produce brand:
+            trust starts at orchard onboarding, moves through transparent grading and cold-chain integrity,
+            and reaches consumers as daily reliability. This variation is built for stakeholder decks and
+            urban-facing channels where systems-thinking and accountability need to be foregrounded.
+          </p>
         </div>
       </section>
     </div>
