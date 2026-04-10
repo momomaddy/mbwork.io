@@ -4,3 +4,54 @@ body {
   color: white;
   text-align: center;
 }
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #FAF6EE;
+  color: #3A2E1A;
+}
+
+/* HEADER */
+.masthead {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #FAF6EE;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+/* FLEX LAYOUT */
+.masthead-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo img {
+  height: 36px;
+  width: auto;
+}
+
+/* NAV */
+.masthead-nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #1A1200;
+  font-size: 0.9rem;
+}
+
+/* HERO */
+.hero {
+  margin-top: 100px;
+  padding: 4rem;
+  text-align: center;
+}
