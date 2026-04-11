@@ -192,6 +192,28 @@ body.menu-open .menu-arrow{transform:rotate(135deg);}
 .overlay-contact{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(248,248,246,.14);display:flex;gap:1.3rem;flex-wrap:wrap;} .overlay-contact a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,248,246,.45);text-decoration:none;transition:color .2s;} .overlay-contact a:hover{color:#E8180A;}
 body.menu-open{overflow:hidden;}
 @media(max-width:768px){.overlay{padding:0 1.5rem;}.logo{left:1rem;top:1rem;}.menu-btn{right:.7rem;top:.78rem;}}
+                                                                                                                                                                                                         /* Change the circle color to grey */
+.menu-btn-inner {
+  background: #7D7D7D !important; /* The grey circle color from your image */
+  border: none !important;        /* Removes the thin border line */
+}
+
+/* Ensure all three bars are white */
+.bar {
+  background: #FFFFFF !important;
+}
+
+/* Remove the red hover effect to keep it consistent */
+.menu-btn:hover .menu-btn-inner {
+  background: #5A5A5A !important; /* Darker grey on hover */
+  border-color: transparent !important;
+}
+
+/* Change the small arrow color to white (or hide it) */
+.menu-arrow {
+  border-right: 1.5px solid #FFFFFF !important;
+  border-bottom: 1.5px solid #FFFFFF !important;
+}
 
 </style>
 </head>
