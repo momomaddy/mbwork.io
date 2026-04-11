@@ -77,6 +77,18 @@
   margin: 0 auto;
   border: 1px solid var(--mist);
 }
+  .creative-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.creative-grid img {
+  width: 100%;
+  border: 1px solid var(--mist);
+  display: block;
+}
   .creative-showcase { margin: 2.5rem 0; display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.5rem; align-items: start; }
   .creative-img { width: 100%; display: block; border: 1px solid var(--mist); }
   .creative-caption { padding: 1.5rem; background: var(--pale); border: 1px solid var(--mist); }
@@ -273,24 +285,27 @@ body.menu-open{overflow:hidden;}
 
   <!-- SECOND CREATIVE (split layout) -->
   <div class="creative-showcase">
-    <img src="3.png" class="creative-img" alt="Creative 2">
+  <img src="3.png" class="creative-img" alt="Creative 2">
 
-    <div class="creative-caption">
-      <div class="creative-caption-label">Hero Creative</div>  
-      <div class="creative-headline">
-        Ab Chakki ka purana swaad, Fortune Online delivery ke saath.
-      </div>
-      <div class="creative-grid">
+  <div class="creative-caption">
+    <div class="creative-caption-label">Hero Creative</div>  
+    <div class="creative-headline">
+      Ab Chakki ka purana swaad, Fortune Online delivery ke saath.
+    </div>
+
+    <div class="creative-sub">
+      Rooted in the ritual of homecoming gifts, our visuals bridge tradition with brand relevance....
+    </div>
+  </div>
+</div>
+
+<!-- Supporting creatives -->
+<div class="creative-grid">
   <img src="4.png">
   <img src="5.png">
   <img src="6.png">
   <img src="7.png">
 </div>
-      <div class="creative-sub">
-        The lead visual anchors the campaign's core tension: the sensory warmth of a traditional chakki...
-      </div>
-    </div>
-  </div>
 </section>
   <section>
    <div class="section-tag">The Films</div>
