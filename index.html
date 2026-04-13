@@ -81,12 +81,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(253,250,244,
 .hero-scroll{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink2);opacity:0.4;display:flex;align-items:center;gap:0.5rem;}
 .hero-scroll::before{content:'';display:inline-block;width:24px;height:1px;background:currentColor;}
 
-/* ── TICKER ── */
-.ticker-wrap{background:var(--ink);overflow:hidden;padding:0.7rem 0;white-space:nowrap;}
-.ticker{display:inline-flex;animation:ticker 30s linear infinite;}
-.ticker-item{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(253,250,244,0.5);padding:0 2.5rem;}
-.ticker-item span{color:var(--rust);margin-right:1rem;}
-@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 /* ── INTRO ── */
 .intro{max-width:1000px;margin:0 auto;padding:6rem 3rem;display:grid;grid-template-columns:1fr 2px 1.8fr;gap:0 4rem;align-items:start;}
@@ -158,10 +152,86 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
   nav{padding:0 1.5rem;}
   .nav-links{display:none;}
 }
+
+/* Navigation Container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-nav {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.main-nav a:hover {
+  opacity: 1;
+}
+
+/* Dropdown Wrapper */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0; /* Aligns the menu to the right of the 'Work' link */
+  background-color: var(--cream);
+  min-width: 220px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border: 1px solid var(--rule);
+  padding: 10px 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content a {
+  color: var(--ink);
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--paper2);
+  opacity: 1;
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 </style>
 </head>
 <body>
-<header class="masthead">
+
+ <header class="masthead">
   <nav class="nav-container">
     <div class="nav-logo">
       <img src="M.png" alt="Logo">
@@ -188,6 +258,10 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
     </ul>
   </nav>
 </header>
+
+    </div>
+  </div>
+</header>
   <div class="hero">
   <div class="hero-left">
     <div>
@@ -198,7 +272,7 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
       </div>
   </div>
     <div>
-      <div class="hero-role">Ten years · Seven organisations · APAC, US, Europe, India</div>
+      <div class="hero-role">Ten years · Seven organisations · US,Europe & APAC Markets</div>
     </div>
     <div class="hero-meta-row">
       <div class="hero-meta-item"><span class="hero-meta-label">Current</span><span class="hero-meta-val">Adani Group</span></div>
@@ -347,9 +421,10 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
 
     <a href="https://chatgpt.com/g/g-69b53e7a18608191beda5677618ecfff-mouris-s-ai">Mouris's GPT</a>
 
+
+
   </div>
 </footer>
-
 
 </body>
 </html>
