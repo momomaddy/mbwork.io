@@ -83,7 +83,56 @@ nav{
   font-weight: 600;
   color: var(--ink);
 }
+/* Container for the vertical grid */
+.video-vertical-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center; /* Centers the vertical 'phones' */
+  margin-top: 3rem;
+}
 
+.video-vertical-item {
+  flex: 0 1 320px; /* Constrains the width so it looks like a phone */
+  display: flex;
+  flex-direction: column;
+}
+
+/* The magic number for 9:16 Vertical Ratio */
+.video-container.vertical {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
+  height: 0;
+  background: var(--ink);
+  border-radius: 8px; /* Optional: slight curve to look like a screen */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.video-container.vertical iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-meta {
+  padding-top: 1.2rem;
+  text-align: left;
+}
+
+/* Mobile Tweak: Don't let them get too small on phones */
+@media (max-width: 768px) {
+  .video-vertical-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .video-vertical-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 /* Mobile Tweak: Stack them back to vertical when the screen is narrow */
 @media (max-width: 768px) {
   .video-column-grid {
