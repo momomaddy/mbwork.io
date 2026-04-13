@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +34,61 @@ nav{
   padding:0.35rem 1rem;opacity:1!important;font-weight:500;
   font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
   text-decoration:none;
+}
+  .video-column-grid {
+  display: flex;
+  gap: 30px; /* Space between the two videos */
+  margin-top: 2rem;
+}
+
+.video-column-item {
+  flex: 1; /* Makes both columns equal width */
+  display: flex;
+  flex-direction: column;
+}
+
+/* This maintains the 16:9 cinematic ratio for the videos */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-meta {
+  padding-top: 1rem;
+}
+
+.video-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.video-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Mobile Tweak: Stack them back to vertical when the screen is narrow */
+@media (max-width: 768px) {
+  .video-column-grid {
+    flex-direction: column;
+  }
 }
 /* ── WORK DROPDOWN ── */
 .nav-work{position:relative;}
@@ -187,7 +243,7 @@ nav{
   <div class="nav-right">
     <!-- Work with dropdown -->
     <div class="nav-work" tabindex="0">
-  <button class="nav-work-btn" aria-haspopup="true">Work</button>
+      <button class="nav-work-btn" aria-haspopup="true">Work</button>
       <div class="work-dropdown" role="menu">
         <div class="work-dropdown-label">Case Studies</div>
         <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
@@ -208,6 +264,9 @@ nav{
     <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
   </div>
   </nav>
+</style>
+</head>
+  <body>
 
 <div class="hero">
   <div class="hero-glow"></div>
@@ -328,10 +387,45 @@ nav{
         </div>
       </div>
     </div>
-<div class="video-container">
-<iframe width="682" height="682" src="https://www.youtube.com/embed/t3IPA2qpqaU" title="#WinderfulLife | Adani Green Energy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="682" height="682" src="https://www.youtube.com/embed/QqXbUEmrMC0" title="#GlobalWindDay | Adani Green Energy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+    <section class="video-section">
+  <div class="section-header">
+    <span class="section-label">Multimedia Strategy</span>
+  </div>
+
+  <div class="video-column-grid">
+    
+    <div class="video-column-item">
+      <div class="video-container">        
+        <iframe 
+          src="https://www.youtube.com/embed/t3IPA2qpqaU?rel=0&modestbranding=1" title="#WinderfulLife | Adani Green Energy" frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-meta">
+        <div class="video-tag">#WinderfulLife</div>
+        <div class="video-title">#GlobalWindDay | Adani Green Energy</div>
+      </div>
+    </div>
+
+    <div class="video-column-item">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/QqXbUEmrMC0?rel=0&modestbranding=1" title="#GlobalWindDay | Adani Green Energy"
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+
+        <iframe width="682" height="682" src="https://www.youtube.com/embed/QqXbUEmrMC0" title="#GlobalWindDay | Adani Green Energy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-meta">
+        <div class="video-tag">GlobalWindDay</div>
+        <div class="video-title">Adani Green Energy</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
     <p>Messaging was also anchored to India's national energy goals and the UN Sustainable Development Goals — connecting operational activity to a framework audiences could recognise and trust.</p>
   </section>
 
@@ -356,7 +450,6 @@ nav{
         <div class="pillar-desc">Reviewed and aligned sustainability messaging across all seven business units. Ensured that language, tone and narrative were consistent at group level while remaining authentic to each business's specific audience and context.</div>
       </div>
     </div>
-
     <div class="sdg-strip">
       <div class="sdg-label">Aligned to UN Sustainable Development Goals</div>
       <div class="sdg-goals">
@@ -368,10 +461,44 @@ nav{
       </div>
     </div>
   </section>
-<div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/r2_e_3Zs6DY?si=q9wnsTM-YaMy_v95" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5zr1BNsmHKw?si=ST-_zdZIm9zGNbxL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+  
+<section class="video-section">
+  <div class="section-header">
+    <span class="section-label">Multimedia Strategy</span>
+  </div>
+
+  <div class="video-column-grid">
+    
+    <div class="video-column-item">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/r2_e_3Zs6DY?si=q9wnsTM-YaMy_v95rel=0&modestbranding=1" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-meta">
+        <div class="video-tag">Adani Green Energy</div>
+        <div class="video-title">#GlobalWindDay</div>
+      </div>
+    </div>
+
+    <div class="video-column-item">
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/5zr1BNsmHKw?si=ST-_zdZIm9zGNbx?rel=0&modestbranding=1" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-meta">
+        <div class="video-tag">Adani Green Energy</div>
+        <div class="video-title">#GeneratingGoodness</div>
+      </div>
+    </div>
+
+  </div>
+</section>
   <p>Messaging was also anchored to India's national energy goals and the UN Sustainable Development Goals — connecting operational activity to a framework audiences could recognise and trust.</p>
   </section>
   <section>
@@ -423,20 +550,7 @@ nav{
 </footer>
 
 
-<script>
-(function(){
-  const btn = document.getElementById('menuBtn');
-  const overlay = document.getElementById('overlayMenu');
-  if(!btn || !overlay) return;
-  const close = () => { document.body.classList.remove('menu-open'); overlay.classList.remove('open'); };
-  btn.addEventListener('click', () => {
-    const open = overlay.classList.toggle('open');
-    document.body.classList.toggle('menu-open', open);
-  });
-  overlay.querySelectorAll('a').forEach((a)=>a.addEventListener('click', close));
-  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
-})();
-</script>
+
 
 </body>
 </html>
