@@ -126,7 +126,58 @@ nav{
   .pull-quote { margin: 3rem 0; padding: 2rem 0 2rem 2rem; border-left: 3px solid var(--green); }
   .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: var(--ink); font-weight: 400; line-height: 1.5; margin-bottom: 0; max-width: 640px; }
 
-  /* CREATIVE GRID */
+ /* VIDEO SECTION */
+.video-section{padding:5rem 3rem;border-bottom:1px solid var(--line);}
+.section-label{font-size:0.6rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--line);}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid var(--line);margin-top:2rem;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.video-caption{margin-top:1.5rem;font-family:'Libre Baskerville',serif;font-style:italic;font-size:0.9rem;color:rgba(248,248,246,0.4);}
+
+/* CREATIVE SHOWCASE — masonry-inspired editorial grid */
+.showcase{padding:0 3rem 5rem;}
+.showcase-intro{padding:4rem 0 3rem;border-bottom:1px solid var(--line);margin-bottom:0;}
+.showcase-intro-text{font-family:'Libre Baskerville',serif;font-size:1.1rem;color:rgba(248,248,246,0.55);line-height:1.85;max-width:620px;}
+.showcase-intro-text strong{color:var(--white);font-style:normal;}
+
+/* EDITORIAL ROWS */
+.editorial-row{display:grid;gap:0;border-bottom:1px solid var(--line);}
+.editorial-row.two-col{grid-template-columns:1fr 1fr;}
+.editorial-row.three-col{grid-template-columns:1fr 1fr 1fr;}
+.editorial-row.hero-left{grid-template-columns:1.4fr 1fr;}
+.editorial-row.hero-right{grid-template-columns:1fr 1.4fr;}
+
+.creative-cell{position:relative;overflow:hidden;border-right:1px solid var(--line);}
+.creative-cell:last-child{border-right:none;}
+.creative-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.23,1,0.32,1);min-height:280px;}
+.creative-cell:hover img{transform:scale(1.03);}
+.cell-overlay{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(8,8,8,0.9) 0%,transparent 100%);opacity:0;transition:opacity 0.35s;}
+.creative-cell:hover .cell-overlay{opacity:1;}
+.cell-copy-tag{font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:0.4rem;}
+.cell-copy-line{font-family:'Libre Baskerville',serif;font-style:italic;font-size:0.92rem;color:var(--white);line-height:1.5;}
+
+/* COPY ANNOTATION CELLS */
+.annotation-cell{padding:3rem;display:flex;flex-direction:column;justify-content:center;background:var(--black);border-right:1px solid var(--line);}
+.annotation-cell:last-child{border-right:none;}
+.ann-num{font-size:0.58rem;letter-spacing:0.2em;color:rgba(248,248,246,0.2);margin-bottom:1.5rem;}
+.ann-headline{font-family:'Libre Baskerville',serif;font-size:1.2rem;font-weight:700;color:var(--white);line-height:1.3;margin-bottom:1rem;}
+.ann-headline em{font-style:italic;color:var(--red);}
+.ann-body{font-size:0.82rem;color:rgba(248,248,246,0.5);line-height:1.75;}
+.ann-quote{margin-top:1.5rem;padding:1rem 0 1rem 1.2rem;border-left:2px solid var(--red);font-family:'Libre Baskerville',serif;font-style:italic;font-size:0.88rem;color:rgba(248,248,246,0.7);}
+
+/* FULL WIDTH CELL */
+.full-cell{position:relative;overflow:hidden;}
+.full-cell img{width:100%;max-height:480px;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.23,1,0.32,1);}
+.full-cell:hover img{transform:scale(1.02);}
+.full-cell-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:3rem;background:linear-gradient(to top,rgba(8,8,8,0.7) 0%,transparent 50%);opacity:0;transition:opacity 0.35s;}
+.full-cell:hover .full-cell-overlay{opacity:1;}
+
+/* BRANDS ROW */
+.brands-row{display:flex;align-items:center;gap:0;border-bottom:1px solid var(--line);overflow:hidden;}
+.brand-chip{flex:1;padding:1.2rem 2rem;border-right:1px solid var(--line);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(248,248,246,0.3);text-align:center;transition:color 0.2s,background 0.2s;}
+.brand-chip:last-child{border-right:none;}
+.brand-chip:hover{color:var(--white);background:rgba(248,248,246,0.03);}
+.brand-chip span{display:block;font-family:'Libre Baskerville',serif;font-style:italic;font-size:0.75rem;color:var(--red);margin-top:0.2rem;text-transform:none;letter-spacing:0;} /* CREATIVE GRID */
   .creative-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; margin: 2.5rem 0; }
   .creative-item img { width: 100%; display: block; border-radius: 2px; }
   .creative-item-caption { font-size: 0.68rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.4; text-align: center; font-style: italic; }
@@ -318,19 +369,32 @@ nav{
     <p>The decision to cast actual ADL employees rather than models was strategic, not just aesthetic. Stock photography signals aspiration. Real employees signal reality. The campaign's central claim was that this is a lived culture, not a stated value. The creative had to prove that from the first frame.</p>
     <p>Employees also functioned as micro-influencers, sharing the content through their own networks. This extended both credibility and reach beyond ADL's own channels into the professional communities where the campaign most needed to land.</p>
 
+  
+<!-- ROW 1: Cars + Bill Ravan -->
+  <div class="editorial-row two-col" style="border-bottom:1px solid var(--line);">
+    <div class="creative-cell">
+      <img src=A1.png alt="Planning to get married soon?">
+  <div class="editorial-row two-col" style="border-bottom:1px solid var(--line);">
+    <div class="creative-cell">
+      <img src="A02.png" alt ="ADL is EquAlly"> 
+  <div class="editorial-row two-col" style="border-bottom:1px solid var(--line);"
+    <div class="cell-overlay">
+        <div class="cell-copy-tag">Pollution Control Day</div>
+        <div class="cell-copy-line">A simple move can make all the difference.</div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+        
   <!-- ROW 2: Pollution + Dussehra -->
   <div class="editorial-row two-col" style="border-bottom:1px solid var(--line);">
     <div class="creative-cell">
-      <img src="A02.png"alt=""Planning to get married soon?">
+      <img src="A03.png"alt="Planning to get married soon?">
       <div class="cell-overlay">
         <div class="cell-copy-tag">#ADLIsEquAlly</div>
         <div class="cell-copy-line">Be a part of the solution.</div>
       </div>
-    </div>
-    <div class="annotation-cell" style="border-right:none;">
-      <div class="ann-num">02 · Tactical</div>
-      <div class="ann-headline">Dussehra.<br><em>"Aiming in the right direction."</em></div>
-      <div class="ann-body">Two.</div>
     </div>
   </div>
   
@@ -343,8 +407,8 @@ nav{
         <div class="cell-copy-line">A simple move can make all the difference.</div>
       </div>
     </div>
- </section>
-
+  </div>
+  </section>
   <section>
     <div class="section-tag">Execution</div>
     <h2>Three choices that<br><em>made the campaign work.</em></h2>
