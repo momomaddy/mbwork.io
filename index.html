@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mouris Bashir — Marketing & Communications Strategist</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap');url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --paper:#F8F3EA;
@@ -19,49 +20,75 @@
 }
 html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
-.masthead {
-  width: 100%;
-  padding: 15px 30px;
-}
 
-.masthead-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* logo image */
-.logo img {
-  height: 36px;
-  width: auto;
-  display: block;
-}
-
-/* menu */
-.masthead-nav {
-  display: flex;
-  gap: 25px;
-}
-
-.masthead-nav a {
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #3D2A10;
-  opacity: 0.7;
-}
-
-.masthead-nav a:hover {
-  opacity: 1;
-}
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);padding:0 3rem;height:52px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:0.04em;}
-.nav-links{display:flex;gap:2rem;align-items:center;}
-.nav-links a{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;}
-.nav-links a:hover{opacity:1;}
-.nav-cta{background:var(--ink);color:var(--cream)!important;padding:0.35rem 1rem;opacity:1!important;font-weight:500;}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+  padding:0 3rem;height:52px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{display:block;text-decoration:none;}
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-right{display:flex;gap:2rem;align-items:center;}
+.nav-link{
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
+}
+.nav-link:hover{opacity:1;}
+.nav-cta{
+  background:var(--ink);color:var(--cream)!important;
+  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  text-decoration:none;
+}
+
+/* ── WORK DROPDOWN ── */
+.nav-work{position:relative;}
+.nav-work-btn{
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink2);background:none;border:none;cursor:pointer;
+  opacity:0.6;transition:opacity 0.2s;padding:0;
+  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
+}
+.nav-work-btn::after{
+  content:'';display:inline-block;width:0;height:0;
+  border-left:3px solid transparent;border-right:3px solid transparent;
+  border-top:4px solid currentColor;transition:transform 0.2s;
+}
+.nav-work:hover .nav-work-btn,
+.nav-work:focus-within .nav-work-btn{opacity:1;}
+.nav-work:hover .nav-work-btn::after,
+.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
+
+.work-dropdown{
+  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
+  background:var(--cream);border:1px solid var(--rule);
+  min-width:240px;
+  opacity:0;visibility:hidden;
+  transform:translateX(-50%) translateY(-6px);
+  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
+  z-index:200;
+}
+.nav-work:hover .work-dropdown,
+.nav-work:focus-within .work-dropdown{
+  opacity:1;visibility:visible;
+  transform:translateX(-50%) translateY(0);
+}
+.work-dropdown a{
+  display:block;padding:0.7rem 1.2rem;
+  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;opacity:0.65;
+  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
+}
+.work-dropdown a:last-child{border-bottom:none;}
+.work-dropdown a:hover{opacity:1;background:var(--paper2);}
+.work-dropdown-label{
+  padding:0.6rem 1.2rem 0.4rem;
+  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
+}
 
 /* ── HERO ── */
 .hero{padding-top:52px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
@@ -81,7 +108,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(253,250,244,
 .hero-scroll{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink2);opacity:0.4;display:flex;align-items:center;gap:0.5rem;}
 .hero-scroll::before{content:'';display:inline-block;width:24px;height:1px;background:currentColor;}
 
-
 /* ── INTRO ── */
 .intro{max-width:1000px;margin:0 auto;padding:6rem 3rem;display:grid;grid-template-columns:1fr 2px 1.8fr;gap:0 4rem;align-items:start;}
 .intro-rule{background:var(--rule);width:1px;margin:0 auto;}
@@ -92,6 +118,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(253,250,244,
 .intro-right p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:1.5rem;}
 .intro-right p:first-of-type::first-letter{font-size:3.5rem;font-weight:700;float:left;line-height:0.85;margin:0.15rem 0.2rem 0 0;color:var(--rust);}
 .intro-right strong{font-weight:600;color:var(--ink);}
+.intro-right a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(184,74,24,0.3);}
+.intro-right a:hover{border-bottom-color:var(--rust);}
 
 /* ── WORK ── */
 .work{background:var(--paper2);padding:6rem 3rem;}
@@ -135,8 +163,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(253,250,244,
 footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 .footer-name{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:rgba(253,250,244,0.5);}
 .footer-links{display:flex;gap:1.5rem;}
-.footer-links a{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,250,244,0.3);text-decoration:none;}
+.footer-links a{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,250,244,0.3);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:rgba(253,250,244,0.7);}
 
+/* ── RESPONSIVE ── */
 @media(max-width:768px){
   .hero{grid-template-columns:1fr;}
   .hero-left{padding:5rem 1.5rem 3rem;}
@@ -150,118 +180,43 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
   .disc-grid{grid-template-columns:1fr 1fr;}
   .disc-item:nth-child(even){border-right:none;}
   nav{padding:0 1.5rem;}
-  .nav-links{display:none;}
+  .work-dropdown{left:0;transform:none;}
+  .nav-work:hover .work-dropdown,
+  .nav-work:focus-within .work-dropdown{transform:translateY(0);}
 }
-
-/* Navigation Container */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.main-nav {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.main-nav a {
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink2);
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.main-nav a:hover {
-  opacity: 1;
-}
-
-/* Dropdown Wrapper */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0; /* Aligns the menu to the right of the 'Work' link */
-  background-color: var(--cream);
-  min-width: 220px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-  z-index: 1000;
-  border: 1px solid var(--rule);
-  padding: 10px 0;
-}
-
-/* Links inside the dropdown */
-.dropdown-content li {
-  list-style: none;
-}
-
-.dropdown-content a {
-  color: var(--ink);
-  padding: 12px 20px;
-  text-decoration: none;
-  display: block;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  opacity: 0.8;
-}
-
-.dropdown-content a:hover {
-  background-color: var(--paper2);
-  opacity: 1;
-}
-
-/* Show the dropdown on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 </style>
 </head>
 <body>
 
- <header class="masthead">
-  <nav class="nav-container">
-    <div class="nav-logo">
-      <img src="M.png" alt="Logo">
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="M.png" alt="mb.work">
+  </a>
+  <div class="nav-right">
+    <!-- Work with dropdown -->
+    <div class="nav-work" tabindex="0">
+      <button class="nav-work-btn" aria-haspopup="true">Work</button>
+      <div class="work-dropdown" role="menu">
+        <div class="work-dropdown-label">Case Studies</div>
+        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+        <a href="HorizonX.html">Horizon X — hear.com</a>
+        <a href="ONBC.html">#OneNationBillionCelebrations</a>
+        <a href="adl_equally.html">ADL Is EquAlly</a>
+        <a href="sustainability.html">Sustainability</a>
+        <a href="OYO.html">OYO</a>
+        <a href="fortune.html">Fortune</a>
+        <a href="police_scotland.html">Police Scotland</a>
+        <a href="FarmPik.html">FarmPik</a>
+        <a href="BookMyForex.html">BookMyForex</a>
+        <a href="moment_marketing.html">Moment Marketing</a>
+      </div>
     </div>
-    <ul class="main-nav">
-      <li><a href="bio.html">About</a></li>
-      <li><a href="eh5tories.html">EH5tories</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropbtn">Work ▾</a>
-        <ul class="dropdown-content">
-          <li><a href="ONBC.html">ONB</a></li>
-          <li><a href="HKKDH.html">HKKDH</a></li>
-          <li><a href="HorizonX.html">Horizon X</a></li>
-          <li><a href="adl_equally.html">ADL EquAlly</a></li>
-          <li><a href="sustainability.html">Sustainability</a></li>
-          <li><a href="police_scotland.html">Police Scotland</a></li>
-          <li><a href="fortune.html">Fortune</a></li>
-          <li><a href="OYO.html">OYO</a></li>
-          <li><a href="FarmPik.html">FarmPik</a></li>
-          <li><a href="BookMyForex.html">BookMyForex</a></li>
-          <li><a href="moment_marketing.html">Moment Marketing</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-    </div>
+    <a href="bio.html" class="nav-link">About</a>
+    <a href="eh5tories.html" class="nav-link">EH5tories</a>
+    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
   </div>
-</header>
+</nav>
   <div class="hero">
   <div class="hero-left">
     <div>
