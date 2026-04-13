@@ -42,6 +42,55 @@ nav{
   font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
   text-decoration:none;
 }
+  .creative-gallery-row {
+  display: flex;
+  gap: 15px; /* Spacing between images */
+  margin-top: 3rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 2rem;
+  flex-wrap: nowrap; /* Forces one row */
+  overflow-x: auto; /* Adds a scrollbar on mobile if they don't fit */
+}
+
+.creative-cell {
+  flex: 1; /* Makes all 4 cells equal width */
+  min-width: 200px; /* Prevents them from getting too squished */
+  position: relative;
+}
+
+.creative-cell img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optional: To hide the overlays unless hovered, or style them */
+.cell-overlay {
+  padding: 10px 0;
+}
+
+.cell-copy-tag {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rust);
+}
+
+.cell-copy-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Mobile Tweak: Stack them on very small screens if preferred */
+@media (max-width: 600px) {
+  .creative-gallery-row {
+    flex-wrap: wrap;
+  }
+  .creative-cell {
+    flex: 1 0 45%; /* Two per row on mobile */
+  }
+}
 /* ── WORK DROPDOWN ── */
 .nav-work{position:relative;}
 .nav-work-btn{
@@ -363,56 +412,48 @@ nav{
     </div>
   </section>
 
-<section>
-    <div class="section-tag">The Creative</div>
-    <h2>Real employees.<br><em>Real workplaces.</em></h2>
-    <p>The decision to cast actual ADL employees rather than models was strategic, not just aesthetic. Stock photography signals aspiration. Real employees signal reality. The campaign's central claim was that this is a lived culture, not a stated value. The creative had to prove that from the first frame.</p>
-    <p>Employees also functioned as micro-influencers, sharing the content through their own networks. This extended both credibility and reach beyond ADL's own channels into the professional communities where the campaign most needed to land.</p>
+   <section class="creative-portfolio">
+  <div class="section-tag">The Creative</div>
+  <h2>Real employees.<br><em>Real workplaces.</em></h2>
+  <p>The decision to cast actual ADL employees rather than models was strategic, not just aesthetic. Stock photography signals aspiration. Real employees signal reality. The campaign's central claim was that this is a lived culture, not a stated value. The creative had to prove that from the first frame.</p>
+  <p>Employees also functioned as micro-influencers, sharing the content through their own networks. This extended both credibility and reach beyond ADL's own channels into the professional communities where the campaign most needed to land.</p>
 
-   
-<!-- ROW 1: Cars + Bill Ravan -->
-  <div class="editorial-row two-col" style="border-bottom:1px solid var(--line);">
+  <div class="creative-gallery-row">
+    
     <div class="creative-cell">
-      <img src=A02.png alt="Planning to get married soon?">
+      <img src="A02.png" alt="Planning to get married soon?">
       <div class="cell-overlay">
         <div class="cell-copy-tag">"Are you planning to get married soon?"</div>
         <div class="cell-copy-line">"Fantastic. Let me plan my attire too!"</div>
       </div>
     </div>
-    <div class="creative-cell" style="border-right:none;">
-  <div class="editorial-row two-col" style="border-bottom:1px solid var(--line);">
+
     <div class="creative-cell">
-      <img src="A03.png" alt ="ADL is EquAlly"> 
-    <div class="cell-overlay">
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-        
-  <!-- ROW 2: Pollution + Dussehra -->
-  <div class="editorial-row two-col" style="border-bottom:1px solid var(--line);">
-    <div class="creative-cell">
-      <img src="A04.png"alt="Planning to get married soon?">
+      <img src="A03.png" alt="ADL is EquAlly">
       <div class="cell-overlay">
-        <div class="cell-copy-tag">"Are you planning to get married soon?"</div>
-        <div class="cell-copy-line">"Fantastic. Let me plan my attire too!"</div>
-      </div
+        <div class="cell-copy-tag">Equity in Action</div>
+        <div class="cell-copy-line">Lived culture, not just values.</div>
       </div>
     </div>
-  </div>
-    <div class="editorial-row two-col" style="border-bottom:1px solid var(--line);">
+
     <div class="creative-cell">
-      <img src="A05.png"alt="Planning to get married soon?">
+      <img src="A04.png" alt="Do you have kids?">
       <div class="cell-overlay">
-        <div class="cell-copy-tag">"Are you planning to get married soon?"</div>
-        <div class="cell-copy-line">"Fantastic. Let me plan my attire too!"</div>
-      </div
+        <div class="cell-copy-tag">"Do you have kids?"</div>
+        <div class="cell-copy-line">"Great. Let them have fun at ADL's creche."</div>
       </div>
     </div>
+
+    <div class="creative-cell">
+      <img src="A05.png" alt="Have you ever cried?">
+      <div class="cell-overlay">
+        <div class="cell-copy-tag">"Have you ever cried at workplace?"</div>
+        <div class="cell-copy-line">"Awesome! You're one of us."</div>
+      </div>
+    </div>
+
   </div>
- 
-  </section>
+</section> 
   
   <section>
     <div class="section-tag">Execution</div>
@@ -456,7 +497,7 @@ nav{
 
   <section>
     <div class="section-tag">Results</div>
-    <h2">Numbers that changed<br><em>an organisation.</em></h2>
+    <h2>Numbers that changed<br><em>an organisation.</em></h2>
 
     <div class="results-grid">
       <div class="result-card">
