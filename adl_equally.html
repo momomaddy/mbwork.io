@@ -121,6 +121,19 @@ nav{
   -ms-overflow-style: none;  
   scrollbar-width: none;  
 }
+  .showreel-row {
+  display: flex;
+  flex-wrap: nowrap; /* Forces one single line */
+  gap: 15px;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iPhones */
+}
+
+.creative-cell {
+  flex: 0 0 auto; /* Prevents the images from shrinking to fit */
+  width: 300px;   /* Sets a consistent width for each 'frame' */
+}
 /* ── WORK DROPDOWN ── */
 .nav-work{position:relative;}
 .nav-work-btn{
