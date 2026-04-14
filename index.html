@@ -763,6 +763,10 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
 
   </div>
 </footer>
-
+document.querySelectorAll('.acc-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    trigger.parentElement.classList.toggle('open');
+  });
+});
 </body>
 </html>
