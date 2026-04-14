@@ -159,7 +159,140 @@ nav{
   font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
 }
+ .video-column-grid {
+  display: flex;
+  gap: 30px; /* Space between the two videos */
+  margin-top: 2rem;
+}
 
+.video-column-item {
+  flex: 1; /* Makes both columns equal width */
+  display: flex;
+  flex-direction: column;
+}
+
+/* This maintains the 16:9 cinematic ratio for the videos */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-meta {
+  padding-top: 1rem;
+}
+
+.video-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.video-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+/* Container for the vertical grid */
+.video-vertical-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center; /* Centers the vertical 'phones' */
+  margin-top: 3rem;
+}
+
+.video-vertical-item {
+  flex: 0 1 320px; /* Constrains the width so it looks like a phone */
+  display: flex;
+  flex-direction: column;
+}
+
+/* The magic number for 9:16 Vertical Ratio */
+.video-container.vertical {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
+  height: 0;
+  background: var(--ink);
+  border-radius: 8px; /* Optional: slight curve to look like a screen */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.video-container.vertical iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-meta {
+  padding-top: 1.2rem;
+  text-align: left;
+}
+
+/* Mobile Tweak: Don't let them get too small on phones */
+@media (max-width: 768px) {
+  .video-vertical-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .video-vertical-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+/* Mobile Tweak: Stack them back to vertical when the screen is narrow */
+@media (max-width: 768px) {
+  .video-column-grid {
+    flex-direction: column;
+  }
+}
+  .showreel-row {
+  display: flex; /* Forces items to sit side-by-side */
+  gap: 15px;    /* Space between the images */
+  width: 100%;
+  margin: 2rem 0;
+  overflow-x: auto; /* Allows horizontal scrolling if the images are too wide */
+  padding-bottom: 10px;
+}
+
+.creative-cell {
+  flex: 1;      /* Makes all images the same width */
+  min-width: 300px; /* Adjust this based on how large you want each 'frame' */
+  position: relative;
+}
+
+.creative-cell img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensures the images fill the space nicely */
+}
+
+/* Optional: Hide scrollbar for a cleaner 'Cinematic' look */
+.showreel-row::-webkit-scrollbar {
+  display: none;
+}
+.showreel-row {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
 /* HERO */
 .hero{min-height:100vh;background:var(--deep);display:flex;flex-direction:column;justify-content:flex-end;padding:7rem 3rem 5rem;position:relative;overflow:hidden;}
 .hero-orb{position:absolute;border-radius:50%;pointer-events:none;}
@@ -479,14 +612,6 @@ footer{background:var(--deep);padding:2.5rem 3rem;display:flex;justify-content:s
       </div>
     </div>
   </section>
-<div class="mag-row">
-  <div class="mag-img"><img src="p1.gif"></div>
-  <div class="mag-copy pale">
-    <div class="mag-num">Neon Series — 01</div>
-    <div class="mag-headline">Club. Dance. Taxi. Sex...</div>
-    <div class="mag-body">The neon format borrowed from nightlife and entertainment culture — the exact environments where the campaign's message most needed to land. Each poster named a plausible social sequence and interrupted it with a single legal and moral fact. The ellipsis before the word "sex" was deliberate: it created a pause that the final line filled.</div>
-  </div>
-</div>
 
 <div class="showreel-row">
   <div class="creative-cell">
