@@ -26,49 +26,139 @@ html{scroll-behavior:smooth;}
   --white:#F5F8F2;
 }
 body{background:var(--cream);color:var(--ink);font-family:'Syne',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;cursor:none;}
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+  padding:0 3rem;height:52px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{display:block;text-decoration:none;}
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-right{display:flex;gap:2rem;align-items:center;}
+.nav-link{
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
+}
+.nav-link:hover{opacity:1;}
+.nav-cta{
+  background:var(--ink);color:var(--cream)!important;
+  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  text-decoration:none;
+}
+/* ── WORK DROPDOWN ── */
+.nav-work{position:relative;}
+.nav-work-btn{
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink2);background:none;border:none;cursor:pointer;
+  opacity:0.6;transition:opacity 0.2s;padding:0;
+  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
+}
+.nav-work-btn::after{
+  content:'';display:inline-block;width:0;height:0;
+  border-left:3px solid transparent;border-right:3px solid transparent;
+  border-top:4px solid currentColor;transition:transform 0.2s;
+}
+.nav-work:hover .nav-work-btn,
+.nav-work:focus-within .nav-work-btn{opacity:1;}
+.nav-work:hover .nav-work-btn::after,
+.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
 
-/* CURSOR */
-#cur{position:fixed;width:8px;height:8px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s;}
-#cur-ring{position:fixed;width:30px;height:30px;border:1px solid rgba(76,175,80,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .1s ease-out,top .1s ease-out;}
-body:has(a:hover) #cur{width:14px;height:14px;}
-body:has(a:hover) #cur-ring{width:44px;height:44px;}
+.work-dropdown{
+  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
+  background:var(--cream);border:1px solid var(--rule);
+  min-width:240px;
+  opacity:0;visibility:hidden;
+  transform:translateX(-50%) translateY(-6px);
+  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
+  z-index:200;
+}
+.nav-work:hover .work-dropdown,
+.nav-work:focus-within .work-dropdown{
+  opacity:1;visibility:visible;
+  transform:translateX(-50%) translateY(0);
+}
+.work-dropdown a{
+  display:block;padding:0.7rem 1.2rem;
+  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;opacity:0.65;
+  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
+}
+.work-dropdown a:last-child{border-bottom:none;}
+.work-dropdown a:hover{opacity:1;background:var(--paper2);}
+.work-dropdown-label{
+  padding:0.6rem 1.2rem 0.4rem;
+  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
+} /* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+  padding:0 3rem;height:52px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{display:block;text-decoration:none;}
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-right{display:flex;gap:2rem;align-items:center;}
+.nav-link{
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
+}
+.nav-link:hover{opacity:1;}
+.nav-cta{
+  background:var(--ink);color:var(--cream)!important;
+  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  text-decoration:none;
+}
+/* ── WORK DROPDOWN ── */
+.nav-work{position:relative;}
+.nav-work-btn{
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink2);background:none;border:none;cursor:pointer;
+  opacity:0.6;transition:opacity 0.2s;padding:0;
+  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
+}
+.nav-work-btn::after{
+  content:'';display:inline-block;width:0;height:0;
+  border-left:3px solid transparent;border-right:3px solid transparent;
+  border-top:4px solid currentColor;transition:transform 0.2s;
+}
+.nav-work:hover .nav-work-btn,
+.nav-work:focus-within .nav-work-btn{opacity:1;}
+.nav-work:hover .nav-work-btn::after,
+.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
 
-/* NAV */
-.logo{position:fixed;top:1.2rem;left:1.6rem;z-index:1001;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);text-decoration:none;background:rgba(5,14,6,.85);padding:.32rem .7rem;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(4px);}
-.menu-btn{position:fixed;top:1rem;right:1.3rem;z-index:1001;background:none;border:none;cursor:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;}
-.menu-btn-inner{width:44px;height:44px;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .3s,background .3s;position:relative;}
-.menu-btn:hover .menu-btn-inner{border-color:var(--lime);background:rgba(76,175,80,.08);}
-.bar{position:absolute;height:1.5px;background:var(--white);transition:all .4s cubic-bezier(.23,1,.32,1);}
-.bar1{width:16px;top:14px;left:14px;}.bar2{width:22px;top:21px;left:11px;}.bar3{width:14px;top:28px;left:15px;}
-body.menu-open .bar1{transform:rotate(45deg) translate(5px,5px);width:20px;}
-body.menu-open .bar2{opacity:0;transform:translateX(8px);}
-body.menu-open .bar3{transform:rotate(-45deg) translate(3px,-3px);width:20px;}
-.menu-arrow{position:absolute;bottom:6px;right:6px;width:8px;height:8px;border-right:1.5px solid var(--lime);border-bottom:1.5px solid var(--lime);transform:rotate(-45deg);transition:transform .4s;}
-body.menu-open .menu-arrow{transform:rotate(135deg);}
-.overlay{position:fixed;inset:0;z-index:1000;background:var(--void);display:flex;flex-direction:column;justify-content:center;padding:0 4rem;transform:translateX(100%);transition:transform .7s cubic-bezier(.77,0,.175,1);}
-.overlay.open{transform:translateX(0);}
-body.menu-open{overflow:hidden;}
-.overlay-links{list-style:none;}
-.overlay-links li{overflow:hidden;margin-bottom:.4rem;}
-.overlay-link{display:block;font-family:'Fraunces',serif;font-size:clamp(1.8rem,4.5vw,4rem);font-style:italic;color:rgba(245,248,242,.12);text-decoration:none;line-height:1.1;transform:translateY(100%);transition:transform .6s cubic-bezier(.77,0,.175,1),color .3s;}
-.overlay.open .overlay-link{transform:translateY(0);}
-.overlay-link:hover{color:var(--white);}
-.overlay-link span{color:var(--lime);font-style:normal;font-size:.5em;font-family:'Syne',sans-serif;vertical-align:super;margin-right:.3em;}
-.overlay.open li:nth-child(1) .overlay-link{transition-delay:.08s;}
-.overlay.open li:nth-child(2) .overlay-link{transition-delay:.13s;}
-.overlay.open li:nth-child(3) .overlay-link{transition-delay:.18s;}
-.overlay.open li:nth-child(4) .overlay-link{transition-delay:.23s;}
-.overlay.open li:nth-child(5) .overlay-link{transition-delay:.28s;}
-.overlay.open li:nth-child(6) .overlay-link{transition-delay:.33s;}
-.overlay.open li:nth-child(7) .overlay-link{transition-delay:.38s;}
-.overlay.open li:nth-child(8) .overlay-link{transition-delay:.43s;}
-.overlay.open li:nth-child(9) .overlay-link{transition-delay:.48s;}
-.overlay.open li:nth-child(10) .overlay-link{transition-delay:.53s;}
-.overlay.open li:nth-child(11) .overlay-link{transition-delay:.58s;}
-.overlay.open li:nth-child(12) .overlay-link{transition-delay:.63s;}
-.overlay-contact{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(245,248,242,.1);display:flex;gap:2rem;flex-wrap:wrap;}
-.overlay-contact a{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,248,242,.35);text-decoration:none;transition:color .2s;}
-.overlay-contact a:hover{color:var(--lime);}
+.work-dropdown{
+  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
+  background:var(--cream);border:1px solid var(--rule);
+  min-width:240px;
+  opacity:0;visibility:hidden;
+  transform:translateX(-50%) translateY(-6px);
+  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
+  z-index:200;
+}
+.nav-work:hover .work-dropdown,
+.nav-work:focus-within .work-dropdown{
+  opacity:1;visibility:visible;
+  transform:translateX(-50%) translateY(0);
+}
+.work-dropdown a{
+  display:block;padding:0.7rem 1.2rem;
+  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;opacity:0.65;
+  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
+}
+.work-dropdown a:last-child{border-bottom:none;}
+.work-dropdown a:hover{opacity:1;background:var(--paper2);}
+.work-dropdown-label{
+  padding:0.6rem 1.2rem 0.4rem;
+  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
+}
 
 /* HERO */
 .hero{min-height:100vh;background:var(--deep);display:flex;flex-direction:column;justify-content:flex-end;padding:7rem 3rem 5rem;position:relative;overflow:hidden;}
@@ -199,36 +289,34 @@ footer{background:var(--deep);padding:2.5rem 3rem;display:flex;justify-content:s
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
-<!-- NAV -->
-<a href="homepage_v2_split.html" class="logo">mb.work</a>
-<button class="menu-btn" id="menuBtn" aria-label="Menu">
-  <div class="menu-btn-inner">
-    <div class="bar bar1"></div><div class="bar bar2"></div><div class="bar bar3"></div>
-    <div class="menu-arrow"></div>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="M.png" alt="mb.work">
+  </a>
+  <div class="nav-right">
+    <!-- Work with dropdown -->
+    <div class="nav-work" tabindex="0">
+      <button class="nav-work-btn" aria-haspopup="true">Work</button>
+      <div class="work-dropdown" role="menu">
+        <div class="work-dropdown-label">Case Studies</div>
+        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+        <a href="HorizonX.html">Horizon X — hear.com</a>
+        <a href="ONBC.html">#OneNationBillionCelebrations</a>
+        <a href="adl_equally.html">ADL Is EquAlly</a>
+        <a href="sustainability.html">Sustainability</a>
+        <a href="OYO.html">OYO</a>
+        <a href="fortune.html">Fortune</a>
+        <a href="police_scotland.html">Police Scotland</a>
+        <a href="FarmPik.html">FarmPik</a>
+        <a href="BookMyForex.html">BookMyForex</a>
+        <a href="moment_marketing.html">Moment Marketing</a>
+      </div>
+    </div>
+    <a href="bio.html" class="nav-link">About</a>
+    <a href="eh5tories.html" class="nav-link">EH5tories</a>
+    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
   </div>
-</button>
-<div class="overlay" id="overlayMenu">
-  <ul class="overlay-links">
-    <li><a href="homepage_v2_split.html" class="overlay-link"><span>00</span>Home</a></li>
-    <li><a href="bio_gq.html" class="overlay-link"><span>01</span>About</a></li>
-    <li><a href="HKKDH_Adani_CaseStudy.html" class="overlay-link"><span>02</span>HKKDH</a></li>
-    <li><a href="index.html" class="overlay-link"><span>03</span>Horizon X</a></li>
-    <li><a href="about.html" class="overlay-link"><span>04</span>One Nation</a></li>
-    <li><a href="adl_equally.html" class="overlay-link"><span>05</span>ADL EquAlly</a></li>
-    <li><a href="sustainability.html" class="overlay-link"><span>06</span>Sustainability</a></li>
-    <li><a href="oyo_valentines.html" class="overlay-link"><span>07</span>OYO Valentines</a></li>
-    <li><a href="oyo_open.html" class="overlay-link"><span>08</span>OYO OPEN</a></li>
-    <li><a href="oyo_internal.html" class="overlay-link"><span>09</span>OYO Internal</a></li>
-    <li><a href="fortune.html" class="overlay-link"><span>10</span>Fortune</a></li>
-    <li><a href="police_scotland.html" class="overlay-link"><span>11</span>Police Scotland</a></li>
-    <li><a href="moment_marketing.html" class="overlay-link"><span>12</span>Moment Marketing</a></li>
-  </ul>
-  <div class="overlay-contact">
-    <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
-    <a href="tel:9086904444">9086904444</a>
-    <a href="#">LinkedIn</a>
-  </div>
-</div>
+  </nav>
 
 <!-- HERO -->
 <div class="hero">
@@ -447,28 +535,5 @@ footer{background:var(--deep);padding:2.5rem 3rem;display:flex;justify-content:s
   </div>
 </footer>
 
-<script>
-const cur = document.getElementById('cur');
-const ring = document.getElementById('cur-ring');
-let mx=0,my=0,tx=0,ty=0;
-document.addEventListener('mousemove',e=>{
-  mx=e.clientX;my=e.clientY;
-  cur.style.left=mx+'px';cur.style.top=my+'px';
-});
-(function loop(){
-  tx+=(mx-tx)*.1;ty+=(my-ty)*.1;
-  ring.style.left=tx+'px';ring.style.top=ty+'px';
-  requestAnimationFrame(loop);
-})();
-const btn=document.getElementById('menuBtn');
-const menu=document.getElementById('overlayMenu');
-btn.addEventListener('click',()=>{
-  const open=menu.classList.toggle('open');
-  document.body.classList.toggle('menu-open',open);
-});
-menu.querySelectorAll('.overlay-link').forEach(l=>l.addEventListener('click',()=>{
-  menu.classList.remove('open');document.body.classList.remove('menu-open');
-}));
-</script>
 </body>
 </html>
