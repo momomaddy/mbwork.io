@@ -47,88 +47,81 @@ display: flex;
   gap: 30px; /* Space between the two videos */
   margin-top: 2rem;
 }
+/* ── CINEMATIC VIDEO GRID ── */
 
-.video-column-item {
-  flex: 1; /* Makes both columns equal width */
-  display: flex;
-  flex-direction: column;
+.cinematic-video-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 3rem;
 }
 
-/* This maintains the 16:9 cinematic ratio for the videos */
-.video-container {
+.cinematic-video-grid .video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* Each video card */
+.video-grid-item {
+  position: relative;
+}
+
+/* Video wrapper */
+.video-wrap {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  overflow: hidden;
   background: #000;
 }
 
-.video-container iframe {
+/* iframe / video fill */
+.video-wrap iframe,
+.video-wrap video,
+.video-wrap img {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-.video-meta {
-  padding-top: 1rem;
+/* Overlay (cinematic feel ✨) */
+.video-grid-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: #fff;
 }
 
-.video-tag {
+.v-meta {
   font-size: 0.6rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--rust);
-  font-weight: 500;
-  margin-bottom: 0.4rem;
+  opacity: 0.7;
 }
 
-.video-title {
+.v-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: var(--ink);
-}
-/* Container for the vertical grid */
-.video-vertical-grid {
-  display: flex;
-  gap: 40px;
-  justify-content: center; /* Centers the vertical 'phones' */
-  margin-top: 3rem;
 }
 
-.video-vertical-item {
-  flex: 0 1 320px; /* Constrains the width so it looks like a phone */
-  display: flex;
-  flex-direction: column;
-}
-
-/* The magic number for 9:16 Vertical Ratio */
-.video-container.vertical {
-  position: relative;
-  width: 100%;
-  padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
-  height: 0;
-  background: var(--ink);
-  border-radius: 8px; /* Optional: slight curve to look like a screen */
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.video-container.vertical iframe {
+/* Click shield */
+.video-pointer-shield {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  z-index: 2;
 }
 
-.video-meta {
-  padding-top: 1.2rem;
-  text-align: left;
+/* Mobile */
+@media (max-width: 768px) {
+  .cinematic-video-grid .video-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
 /* Mobile Tweak: Don't let them get too small on phones */
 @media (max-width: 768px) {
   .video-vertical-grid {
@@ -191,7 +184,19 @@ display: flex;
   font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
 }
+.video-wrap:hover video,
+.video-wrap:hover iframe {
+  transform: scale(1.03);
+  transition: transform 0.6s ease;
+}
 
+.video-grid-overlay {
+  transition: opacity 0.4s ease;
+}
+
+.video-wrap:hover .video-grid-overlay {
+  opacity: 0.9;
+}
 /* ── HERO ── */
 .hero{padding-top:52px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
 .hero-left{background:var(--paper2);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule);}
@@ -340,11 +345,13 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
   </div>
 </div>
 
-<section class="cinematic-video-grid">
+  <section class="cinematic-video-grid">
   <div class="section-header">
     <span class="section-label">Selected Work</span>
     <span class="section-count">Featured Campaigns</span>
   </div>
+
+  <div class="video-grid">
 
   <div class="cinematic-video-grid">
     <div class="video-grid-item">
