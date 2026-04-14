@@ -175,6 +175,36 @@ nav{
     flex-direction: column;
   }
 }
+  .showreel-row {
+  display: flex; /* Forces items to sit side-by-side */
+  gap: 15px;    /* Space between the images */
+  width: 100%;
+  margin: 2rem 0;
+  overflow-x: auto; /* Allows horizontal scrolling if the images are too wide */
+  padding-bottom: 10px;
+}
+
+.creative-cell {
+  flex: 1;      /* Makes all images the same width */
+  min-width: 300px; /* Adjust this based on how large you want each 'frame' */
+  position: relative;
+}
+
+.creative-cell img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensures the images fill the space nicely */
+}
+
+/* Optional: Hide scrollbar for a cleaner 'Cinematic' look */
+.showreel-row::-webkit-scrollbar {
+  display: none;
+}
+.showreel-row {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
 /* ── WORK DROPDOWN ── */
 .nav-work{position:relative;}
 .nav-work-btn{
@@ -354,33 +384,31 @@ nav{
     </div>
 
     <div class="quote"><p>"February 14 is no longer only about couples; it is increasingly a companionship occasion across social groups."</p></div>
-<div class="creative-gallery-row">
+
+    <div class="showreel-row">
+    <div class="creative-cell">
+      <img src="O01.png" alt="OYO-OPEN">
+      <div class="cell-overlay"></div>
+    </div>
     
     <div class="creative-cell">
-      <img src="O02.png" alt="Planning to get married soon?">
-      <div class="cell-overlay">
-      </div>
+      <img src="O02.png" alt="OYO-OPEN">
+      <div class="cell-overlay"></div>
     </div>
-
+    
     <div class="creative-cell">
-      <img src="O01.png" alt="ADL is EquAlly">
-      <div class="cell-overlay">
-      </div>
+      <img src="O03.png" alt="OYO-OPEN">
+      <div class="cell-overlay"></div>
     </div>
-
-    <div class="creative-cell">
-      <img src="O03.png" alt="Do you have kids?">
-      <div class="cell-overlay">
-      </div>
+      <div class="creative-cell">
+      <img src="O04.png" alt="OYO-OPEN">
+      <div class="cell-overlay"></div>
     </div>
-
-    <div class="creative-cell">
-      <img src="O05.png" alt="Have you ever cried?">
-      <div class="cell-overlay">
-      </div>
+      <div class="creative-cell">
+      <img src="O05.png" alt="OYO-OPEN">
+      <div class="cell-overlay"></div>
     </div>
-
-  </div>
+</div>
     <h3>Performance</h3>
     <ul>
       <li>7+ lakh organic impressions.</li>
@@ -397,21 +425,22 @@ nav{
     <div class="section-tag">Case 02 · Partner Communication</div>
     <h2>OPEN Partner Privilege Program:<br><em>Turning an event into a brand signal.</em></h2>
     <p>The Partner Privilege Program launch needed more than event management. It required operational readiness, leadership alignment, partner participation, and media coherence under one narrative about relationship-first growth.</p>
-<div class="creative-cell">
+<div class="showreel-row">
+    <div class="creative-cell">
       <img src="11.png" alt="OYO-OPEN">
-      <div class="cell-overlay">
-      </div>
+      <div class="cell-overlay"></div>
     </div>
+    
     <div class="creative-cell">
       <img src="22.png" alt="OYO-OPEN">
-      <div class="cell-overlay">
-      </div>
+      <div class="cell-overlay"></div>
     </div>
+    
     <div class="creative-cell">
       <img src="33.png" alt="OYO-OPEN">
-      <div class="cell-overlay">
-      </div>
+      <div class="cell-overlay"></div>
     </div>
+</div>
     <h3>Execution Scope</h3>
     <ul>
       <li>Event design, production flow, and vendor management.</li>
