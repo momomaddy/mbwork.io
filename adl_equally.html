@@ -91,6 +91,36 @@ nav{
     flex: 1 0 45%; /* Two per row on mobile */
   }
 }
+  .showreel-row {
+  display: flex; /* Forces items to sit side-by-side */
+  gap: 15px;    /* Space between the images */
+  width: 100%;
+  margin: 2rem 0;
+  overflow-x: auto; /* Allows horizontal scrolling if the images are too wide */
+  padding-bottom: 10px;
+}
+
+.creative-cell {
+  flex: 1;      /* Makes all images the same width */
+  min-width: 300px; /* Adjust this based on how large you want each 'frame' */
+  position: relative;
+}
+
+.creative-cell img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensures the images fill the space nicely */
+}
+
+/* Optional: Hide scrollbar for a cleaner 'Cinematic' look */
+.showreel-row::-webkit-scrollbar {
+  display: none;
+}
+.showreel-row {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
 /* ── WORK DROPDOWN ── */
 .nav-work{position:relative;}
 .nav-work-btn{
