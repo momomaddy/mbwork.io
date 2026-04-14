@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FarmPik — Brand, Marketing & Communications Case Study</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --deep:#050E06;
+  --void:#080F09;
+  --forest:#0C2010;
+  --green:#1A6B2A;
+  --lime:#4CAF50;
+  --spring:#8BC34A;
+  --cream:#F5F8F2;
+  --paper:#FAFDF8;
+  --ink:#0C1E0E;
+  --body:#1E3420;
+  --muted:#4A6B50;
+  --line:rgba(26,107,42,0.15);
+  --line-dark:rgba(255,255,255,0.08);
+  --white:#F5F8F2;
+}
+body{background:var(--cream);color:var(--ink);font-family:'Syne',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;cursor:none;}
+
+/* CURSOR */
+#cur{position:fixed;width:8px;height:8px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s;}
+#cur-ring{position:fixed;width:30px;height:30px;border:1px solid rgba(76,175,80,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .1s ease-out,top .1s ease-out;}
+body:has(a:hover) #cur{width:14px;height:14px;}
+body:has(a:hover) #cur-ring{width:44px;height:44px;}
+
+/* NAV */
+.logo{position:fixed;top:1.2rem;left:1.6rem;z-index:1001;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);text-decoration:none;background:rgba(5,14,6,.85);padding:.32rem .7rem;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(4px);}
+.menu-btn{position:fixed;top:1rem;right:1.3rem;z-index:1001;background:none;border:none;cursor:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;}
+.menu-btn-inner{width:44px;height:44px;border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .3s,background .3s;position:relative;}
+.menu-btn:hover .menu-btn-inner{border-color:var(--lime);background:rgba(76,175,80,.08);}
+.bar{position:absolute;height:1.5px;background:var(--white);transition:all .4s cubic-bezier(.23,1,.32,1);}
+.bar1{width:16px;top:14px;left:14px;}.bar2{width:22px;top:21px;left:11px;}.bar3{width:14px;top:28px;left:15px;}
+body.menu-open .bar1{transform:rotate(45deg) translate(5px,5px);width:20px;}
+body.menu-open .bar2{opacity:0;transform:translateX(8px);}
+body.menu-open .bar3{transform:rotate(-45deg) translate(3px,-3px);width:20px;}
+.menu-arrow{position:absolute;bottom:6px;right:6px;width:8px;height:8px;border-right:1.5px solid var(--lime);border-bottom:1.5px solid var(--lime);transform:rotate(-45deg);transition:transform .4s;}
+body.menu-open .menu-arrow{transform:rotate(135deg);}
+.overlay{position:fixed;inset:0;z-index:1000;background:var(--void);display:flex;flex-direction:column;justify-content:center;padding:0 4rem;transform:translateX(100%);transition:transform .7s cubic-bezier(.77,0,.175,1);}
+.overlay.open{transform:translateX(0);}
+body.menu-open{overflow:hidden;}
+.overlay-links{list-style:none;}
+.overlay-links li{overflow:hidden;margin-bottom:.4rem;}
+.overlay-link{display:block;font-family:'Fraunces',serif;font-size:clamp(1.8rem,4.5vw,4rem);font-style:italic;color:rgba(245,248,242,.12);text-decoration:none;line-height:1.1;transform:translateY(100%);transition:transform .6s cubic-bezier(.77,0,.175,1),color .3s;}
+.overlay.open .overlay-link{transform:translateY(0);}
+.overlay-link:hover{color:var(--white);}
+.overlay-link span{color:var(--lime);font-style:normal;font-size:.5em;font-family:'Syne',sans-serif;vertical-align:super;margin-right:.3em;}
+.overlay.open li:nth-child(1) .overlay-link{transition-delay:.08s;}
+.overlay.open li:nth-child(2) .overlay-link{transition-delay:.13s;}
+.overlay.open li:nth-child(3) .overlay-link{transition-delay:.18s;}
+.overlay.open li:nth-child(4) .overlay-link{transition-delay:.23s;}
+.overlay.open li:nth-child(5) .overlay-link{transition-delay:.28s;}
+.overlay.open li:nth-child(6) .overlay-link{transition-delay:.33s;}
+.overlay.open li:nth-child(7) .overlay-link{transition-delay:.38s;}
+.overlay.open li:nth-child(8) .overlay-link{transition-delay:.43s;}
+.overlay.open li:nth-child(9) .overlay-link{transition-delay:.48s;}
+.overlay.open li:nth-child(10) .overlay-link{transition-delay:.53s;}
+.overlay.open li:nth-child(11) .overlay-link{transition-delay:.58s;}
+.overlay.open li:nth-child(12) .overlay-link{transition-delay:.63s;}
+.overlay-contact{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(245,248,242,.1);display:flex;gap:2rem;flex-wrap:wrap;}
+.overlay-contact a{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,248,242,.35);text-decoration:none;transition:color .2s;}
+.overlay-contact a:hover{color:var(--lime);}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--deep);display:flex;flex-direction:column;justify-content:flex-end;padding:7rem 3rem 5rem;position:relative;overflow:hidden;}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;}
+.hero-orb1{width:700px;height:700px;top:-200px;right:-200px;background:radial-gradient(circle,rgba(76,175,80,0.07) 0%,transparent 70%);}
+.hero-orb2{width:400px;height:400px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(139,195,74,0.05) 0%,transparent 70%);}
+.hero-ghost{position:absolute;bottom:-3rem;right:-1rem;font-family:'Fraunces',serif;font-size:clamp(16rem,28vw,26rem);font-weight:900;font-style:italic;color:rgba(245,248,242,.025);line-height:1;pointer-events:none;user-select:none;}
+.hero-label{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--spring);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem;opacity:0;animation:up .8s .2s forwards;}
+.hero-label::before{content:'';display:inline-block;width:28px;height:1px;background:var(--spring);}
+.hero-h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(3.5rem,9vw,9rem);line-height:.9;letter-spacing:-.03em;margin-bottom:3.5rem;opacity:0;animation:up .8s .4s forwards;}
+.hero-h1 .dim{display:block;color:rgba(245,248,242,.15);}
+.hero-h1 .main{display:block;color:var(--white);}
+.hero-h1 .italic{display:block;font-style:italic;color:var(--lime);}
+.hero-bottom{display:grid;grid-template-columns:1fr 1px 1.8fr 1px auto;gap:3rem;align-items:end;border-top:1px solid var(--line-dark);padding-top:2.5rem;opacity:0;animation:up .8s .6s forwards;}
+.hero-rule{background:var(--line-dark);width:1px;height:100%;}
+.hero-statement{font-family:'Fraunces',serif;font-style:italic;font-size:.95rem;color:rgba(245,248,242,.45);line-height:1.85;max-width:380px;}
+.hero-statement strong{font-style:normal;color:var(--white);}
+.hero-meta{}
+.hm-item{margin-bottom:1.2rem;}
+.hm-label{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,248,242,.25);}
+.hm-val{font-size:.82rem;color:var(--white);margin-top:.2rem;}
+@keyframes up{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+/* STAT STRIP */
+.stat-strip{background:var(--forest);border-top:1px solid rgba(76,175,80,.12);border-bottom:1px solid rgba(76,175,80,.12);padding:3rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2.5rem;}
+.stat-item{display:flex;flex-direction:column;gap:.3rem;}
+.stat-num{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;color:var(--spring);line-height:1;}
+.stat-desc{font-size:.72rem;color:rgba(245,248,242,.4);line-height:1.5;max-width:150px;}
+
+/* CONTENT */
+.page{max-width:960px;margin:0 auto;padding:0 3rem;}
+section{padding:5rem 0;border-bottom:1px solid var(--line);}
+section:last-child{border-bottom:none;}
+.section-tag{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem;}
+.section-tag::after{content:'';display:inline-block;width:24px;height:1px;background:var(--green);opacity:.5;}
+h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:1.8rem;}
+h2 em{font-style:italic;color:var(--green);}
+p{font-size:.95rem;color:var(--body);margin-bottom:1.2rem;max-width:700px;}
+p:last-child{margin-bottom:0;}
+
+.pull-quote{margin:3rem 0;padding:2rem 0 2rem 2rem;border-left:3px solid var(--lime);}
+.pull-quote p{font-family:'Fraunces',serif;font-size:1.35rem;font-style:italic;color:var(--ink);font-weight:400;line-height:1.55;margin-bottom:0;max-width:640px;}
+
+/* AUDIENCE GRID */
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:2.5rem 0;border:1px solid var(--line);}
+.aud-cell{padding:2rem;border-right:1px solid var(--line);}
+.aud-cell:last-child{border-right:none;}
+.aud-icon{width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.aud-icon::after{content:'';width:14px;height:14px;border-radius:50%;background:var(--spring);}
+.aud-title{font-size:.78rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.6rem;}
+.aud-body{font-size:.82rem;color:var(--muted);line-height:1.65;}
+
+/* THREE LAYER */
+.layer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:2.5rem 0;border:1px solid var(--line);}
+.layer-cell{padding:2rem;border-right:1px solid var(--line);position:relative;}
+.layer-cell:last-child{border-right:none;}
+.layer-num{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:rgba(26,107,42,.12);line-height:1;margin-bottom:.8rem;}
+.layer-title{font-size:.75rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.8rem;}
+.layer-body{font-size:.82rem;color:var(--muted);line-height:1.7;}
+.layer-quote{margin-top:1rem;font-size:.78rem;font-style:italic;color:var(--green);border-top:1px solid var(--line);padding-top:.8rem;}
+
+/* VISUAL SHOWCASE — magazine layout */
+.mag-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);margin:2.5rem 0;}
+.mag-row + .mag-row{border-top:none;}
+.mag-img{overflow:hidden;background:var(--forest);min-height:280px;display:flex;align-items:center;justify-content:center;position:relative;}
+.mag-img-placeholder{width:100%;height:100%;min-height:280px;background:linear-gradient(135deg,var(--forest),var(--void));display:flex;align-items:flex-end;padding:2rem;}
+.mag-img-label{font-family:'Fraunces',serif;font-size:1.2rem;font-style:italic;color:rgba(245,248,242,.5);}
+.mag-copy{padding:2.5rem;background:var(--paper);border-left:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;}
+.mag-copy.dark{background:var(--forest);border-left:none;border-right:1px solid rgba(76,175,80,.15);}
+.mc-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.8rem;font-weight:600;}
+.mc-label.light{color:var(--spring);}
+.mc-head{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:.7rem;}
+.mc-head.light{color:var(--white);}
+.mc-body{font-size:.82rem;color:var(--muted);line-height:1.7;}
+.mc-body.light{color:rgba(245,248,242,.5);}
+
+/* MY ROLE */
+.role-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.5rem 0;}
+.role-tag{font-size:.68rem;letter-spacing:.08em;padding:.4rem .9rem;border:1px solid var(--line);color:var(--muted);transition:all .2s;}
+.role-tag:hover{background:var(--green);color:var(--white);border-color:var(--green);}
+
+/* OUTCOMES */
+.outcomes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:2.5rem 0;}
+.outcome-card{background:var(--paper);border:1px solid var(--line);padding:1.5rem;}
+.oc-body{font-size:.85rem;color:var(--body);line-height:1.7;}
+
+/* ONBOARDING HIGHLIGHT */
+.highlight-block{background:var(--forest);padding:2.5rem;margin:2.5rem 0;position:relative;overflow:hidden;}
+.highlight-block::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(76,175,80,.12) 0%,transparent 70%);}
+.hl-title{font-family:'Fraunces',serif;font-size:1rem;color:var(--spring);font-weight:700;margin-bottom:.5rem;}
+.hl-body{font-size:.84rem;color:rgba(245,248,242,.5);line-height:1.7;margin-bottom:0;max-width:620px;}
+.hl-num{font-family:'Fraunces',serif;font-size:3rem;font-weight:900;color:var(--lime);line-height:1;margin-bottom:.3rem;}
+
+/* VARIATION B */
+.variation-block{background:linear-gradient(135deg,var(--paper),var(--cream));border:1px solid var(--line);padding:2.5rem;margin:2.5rem 0;}
+.vb-label{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:.8rem;}
+.vb-head{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.6rem;}
+.vb-head em{font-style:italic;color:var(--green);}
+.vb-body{font-size:.86rem;color:var(--muted);line-height:1.75;}
+
+/* IMPACT CLOSE */
+.impact-block{background:var(--deep);padding:2.5rem;margin:2.5rem 0;position:relative;overflow:hidden;}
+.impact-block::before{content:'';position:absolute;top:0;right:0;width:220px;height:220px;background:radial-gradient(circle,rgba(76,175,80,.12) 0%,transparent 70%);}
+.impact-title{font-family:'Fraunces',serif;font-size:1rem;color:var(--spring);font-weight:700;margin-bottom:.5rem;}
+.impact-body{font-size:.84rem;color:rgba(245,248,242,.5);line-height:1.7;margin-bottom:0;max-width:620px;}
+
+footer{background:var(--deep);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--line-dark);}
+.footer-name{font-family:'Fraunces',serif;font-size:.9rem;font-style:italic;color:rgba(245,248,242,.3);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,248,242,.2);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--lime);}
+
+@media(max-width:700px){
+  .hero,.page,.stat-strip{padding-left:1.5rem;padding-right:1.5rem;}
+  .hero-bottom{grid-template-columns:1fr;gap:2rem;}
+  .hero-rule{display:none;}
+  .audience-grid,.layer-grid{grid-template-columns:1fr;}
+  .aud-cell,.layer-cell{border-right:none;border-bottom:1px solid var(--line);}
+  .mag-row{grid-template-columns:1fr;}
+  .mag-copy{border-left:none;border-top:1px solid var(--line);}
+  .mag-copy.dark{border-right:none;border-top:1px solid rgba(76,175,80,.15);}
+  .overlay{padding:0 1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- NAV -->
+<a href="homepage_v2_split.html" class="logo">mb.work</a>
+<button class="menu-btn" id="menuBtn" aria-label="Menu">
+  <div class="menu-btn-inner">
+    <div class="bar bar1"></div><div class="bar bar2"></div><div class="bar bar3"></div>
+    <div class="menu-arrow"></div>
+  </div>
+</button>
+<div class="overlay" id="overlayMenu">
+  <ul class="overlay-links">
+    <li><a href="homepage_v2_split.html" class="overlay-link"><span>00</span>Home</a></li>
+    <li><a href="bio_gq.html" class="overlay-link"><span>01</span>About</a></li>
+    <li><a href="HKKDH_Adani_CaseStudy.html" class="overlay-link"><span>02</span>HKKDH</a></li>
+    <li><a href="index.html" class="overlay-link"><span>03</span>Horizon X</a></li>
+    <li><a href="about.html" class="overlay-link"><span>04</span>One Nation</a></li>
+    <li><a href="adl_equally.html" class="overlay-link"><span>05</span>ADL EquAlly</a></li>
+    <li><a href="sustainability.html" class="overlay-link"><span>06</span>Sustainability</a></li>
+    <li><a href="oyo_valentines.html" class="overlay-link"><span>07</span>OYO Valentines</a></li>
+    <li><a href="oyo_open.html" class="overlay-link"><span>08</span>OYO OPEN</a></li>
+    <li><a href="oyo_internal.html" class="overlay-link"><span>09</span>OYO Internal</a></li>
+    <li><a href="fortune.html" class="overlay-link"><span>10</span>Fortune</a></li>
+    <li><a href="police_scotland.html" class="overlay-link"><span>11</span>Police Scotland</a></li>
+    <li><a href="moment_marketing.html" class="overlay-link"><span>12</span>Moment Marketing</a></li>
+  </ul>
+  <div class="overlay-contact">
+    <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
+    <a href="tel:9086904444">9086904444</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-orb hero-orb1"></div>
+  <div class="hero-orb hero-orb2"></div>
+  <div class="hero-ghost">FP</div>
+
+  <div class="hero-label">Case Study · Agricultural Communications · Trust Architecture</div>
+
+  <h1 class="hero-h1">
+    <span class="dim">Building trust</span>
+    <span class="main">across fields,</span>
+    <span class="italic">feeds & boardrooms.</span>
+  </h1>
+
+  <div class="hero-bottom">
+    <div>
+      <div class="hm-item"><div class="hm-label">Client</div><div class="hm-val">FarmPik (Adani Agri Fresh)</div></div>
+      <div class="hm-item"><div class="hm-label">Scope</div><div class="hm-val">Communications Strategy · Content Architecture · Stakeholder Communication · Execution</div></div>
+      <div class="hm-item"><div class="hm-label">Context</div><div class="hm-val">Apple procurement, storage, and distribution in Himachal Pradesh</div></div>
+    </div>
+    <div class="hero-rule"></div>
+    <p class="hero-statement">
+      During a high-scrutiny period in agriculture, communication became the operating layer that connected farmers, public audiences, and stakeholders with <strong>one coherent narrative rooted in transparency, responsiveness, and real process visibility.</strong>
+    </p>
+    <div class="hero-rule"></div>
+    <div>
+      <div style="font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,248,242,.25);margin-bottom:.6rem;">Challenge</div>
+      <div style="font-family:'Fraunces',serif;font-style:italic;font-size:.9rem;color:rgba(245,248,242,.55);line-height:1.6;">Three audiences. One message. Zero margin for distortion.</div>
+    </div>
+  </div>
+</div>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-item"><div class="stat-num">17K+</div><div class="stat-desc">Farmers onboarded to Digital Mandi + Partner App</div></div>
+  <div class="stat-item"><div class="stat-num">3</div><div class="stat-desc">Distinct audience layers served simultaneously</div></div>
+  <div class="stat-item"><div class="stat-num">3</div><div class="stat-desc">Communication system layers: public, direct, grievance</div></div>
+  <div class="stat-item"><div class="stat-num">WhatsApp</div><div class="stat-desc">Regional distribution network built where farmers already were</div></div>
+  <div class="stat-item"><div class="stat-num">Zero</div><div class="stat-desc">One-time campaigns. This was a system, not a sprint.</div></div>
+</div>
+
+<!-- CONTENT -->
+<div class="page">
+
+  <section>
+    <div class="section-tag">The Context</div>
+    <h2>The narrative was moving faster than<br><em>the organisation's voice.</em></h2>
+    <p>Adani Agri Fresh works directly with apple farmers via procurement infrastructure, cold storage, procurement cycles, grading systems, and distribution channels. During farmer protests and increased public scrutiny, conversations about large corporations in agriculture were being shaped externally.</p>
+    <p>Farmers needed clarity on pricing, procurement cycles, and grievance handling. Urban audiences needed to see the human side of agricultural supply chains. Internal teams needed a unified communication voice.</p>
+    <div class="pull-quote">
+      <p>"The problem was not visibility. The problem was trust and understanding."</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">The Challenge</div>
+    <h2>How do you communicate with<br><em>three different audiences</em> at once?</h2>
+    <p>A single PR campaign or isolated social media effort would not be enough. Communication had to meet each audience where they already were and connect messaging to operational reality.</p>
+
+    <div class="audience-grid">
+      <div class="aud-cell">
+        <div class="aud-icon"></div>
+        <div class="aud-title">Farmers</div>
+        <div class="aud-body">In remote regions with limited dependence on traditional social platforms. Needed local-language messaging, pricing transparency and direct grievance access.</div>
+      </div>
+      <div class="aud-cell">
+        <div class="aud-icon"></div>
+        <div class="aud-title">Digital Audiences</div>
+        <div class="aud-body">Forming perceptions through fragmented and often incomplete information. Needed a human story behind the supply chain — faces, not facilities.</div>
+      </div>
+      <div class="aud-cell">
+        <div class="aud-icon"></div>
+        <div class="aud-title">Media & Stakeholders</div>
+        <div class="aud-body">Requiring structured, credible and timely communication. Needed process transparency and institutional accountability — not press releases.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">Key Insight</div>
+    <h2>People trust systems when they can<br><em>see themselves in them.</em></h2>
+    <p>Most agricultural communication fails because it talks about produce, not people. In this case, farmers responded better to transparent updates, local-language messaging, direct grievance channels, and visible representation in communication assets.</p>
+    <p>Trust would not come from brand claims. It would come from visibility + accessibility + responsiveness.</p>
+  </section>
+
+  <section>
+    <div class="section-tag">The Solution</div>
+    <h2>A three-layer communication system,<br><em>not a one-time campaign.</em></h2>
+
+    <div class="layer-grid">
+      <div class="layer-cell">
+        <div class="layer-num">01</div>
+        <div class="layer-title">Public Digital Narrative</div>
+        <div class="layer-body">Built a visual storytelling stream around farmers, cold storage, procurement processes, grading, logistics, and real interactions. Objective: shift perception from "corporate buyer" to "supply chain partner."</div>
+        <div class="layer-quote">"Global knowledge for local growers." "Creating value for farmers." "Ensuring goodness in every bite."</div>
+      </div>
+      <div class="layer-cell">
+        <div class="layer-num">02</div>
+        <div class="layer-title">Direct Farmer Communication</div>
+        <div class="layer-body">Built a WhatsApp-based distribution layer across regional groups where farmers were already active. Shared procurement updates, pricing information, operational announcements, rumour clarifications, and local-language communication.</div>
+        <div class="layer-quote">This reduced information distortion and created a direct line to ground communities.</div>
+      </div>
+      <div class="layer-cell">
+        <div class="layer-num">03</div>
+        <div class="layer-title">Grievance Redressal Integration</div>
+        <div class="layer-body">Connected campaign communication to an app-based grievance process. Farmers could raise issues, track resolution status, and connect with relevant teams.</div>
+        <div class="layer-quote">This made communication accountable, not cosmetic.</div>
+      </div>
+    </div>
+
+    <div class="highlight-block">
+      <div class="hl-num">17,000+</div>
+      <div class="hl-title">Farmers onboarded to Digital Mandi + Partner App</div>
+      <p class="hl-body">Digitising procurement and participation workflows. Farmers could track earnings, events, knowledge modules, trainings, and advisory updates in one place — reducing dependence on fragmented offline communication.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">Campaign Visuals</div>
+    <h2>Image-led documentation in an<br><em>aesthetic editorial layout.</em></h2>
+    <p>The visual language prioritised process transparency and people-first storytelling: on-ground farmer moments, grading and storage details, logistics movement, and daily operational reality.</p>
+
+    <div class="mag-row">
+      <div class="mag-img">
+        <div class="mag-img-placeholder">
+          <div class="mag-img-label">Farmer & Procurement Visual</div>
+        </div>
+      </div>
+      <div class="mag-copy">
+        <div class="mc-label">Farmer-facing storytelling</div>
+        <div class="mc-head">Trust through visibility, local context and process clarity.</div>
+        <div class="mc-body">On-ground documentation of farmer interactions, procurement moments and the human reality of agricultural supply chains. Real faces, real fields, real relationships.</div>
+      </div>
+    </div>
+
+    <div class="mag-row">
+      <div class="mag-copy dark">
+        <div class="mc-label light">Infrastructure credibility</div>
+        <div class="mc-head light">Grading standards, storage quality, consistency messaging.</div>
+        <div class="mc-body light">Cold chain and grading documentation positioned as proof of commitment — not just capability. Every crate a communication moment.</div>
+      </div>
+      <div class="mag-img" style="background:linear-gradient(135deg,#1A4020,#0C2010);">
+        <div class="mag-img-placeholder" style="background:linear-gradient(135deg,#1A4020,#0C2010);">
+          <div class="mag-img-label">Cold Chain & Grading</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mag-row">
+      <div class="mag-img" style="background:linear-gradient(135deg,#0C2010,#1d2b1f);">
+        <div class="mag-img-placeholder" style="background:linear-gradient(135deg,#0C2010,#1d2b1f);">
+          <div class="mag-img-label">Digital Mandi Onboarding</div>
+        </div>
+      </div>
+      <div class="mag-copy">
+        <div class="mc-label">Platform onboarding</div>
+        <div class="mc-head">17K+ farmers. Earnings, events, training, advisory, grievance. All in one place.</div>
+        <div class="mc-body">The Digital Mandi app was the backbone of the always-on communication system. Onboarding communication was designed to feel like an upgrade, not a compliance requirement.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">My Responsibilities</div>
+    <h2>End-to-end strategy<br><em>to execution.</em></h2>
+    <p>Full ownership from architecture to monitoring — across three audience layers and multiple operational teams.</p>
+    <div class="role-tags">
+      <span class="role-tag">Campaign & Channel Architecture</span>
+      <span class="role-tag">Messaging Strategy</span>
+      <span class="role-tag">Content Direction</span>
+      <span class="role-tag">Cross-functional Alignment</span>
+      <span class="role-tag">Operations & Procurement Coordination</span>
+      <span class="role-tag">WhatsApp Distribution Planning</span>
+      <span class="role-tag">Farmer Network Communication</span>
+      <span class="role-tag">Stakeholder Communication Support</span>
+      <span class="role-tag">Execution Management</span>
+      <span class="role-tag">Monitoring</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-tag">Outcome</div>
+    <h2>The campaign performed as<br><em>a communication system.</em></h2>
+
+    <div class="outcomes-grid">
+      <div class="outcome-card"><p class="oc-body">Improved farmer engagement and two-way participation.</p></div>
+      <div class="outcome-card"><p class="oc-body">Reduced misinformation through direct, structured updates.</p></div>
+      <div class="outcome-card"><p class="oc-body">Increased perception of responsiveness and transparency.</p></div>
+      <div class="outcome-card"><p class="oc-body">Stronger digital narrative around brand credibility.</p></div>
+      <div class="outcome-card"><p class="oc-body">Clearer understanding of Adani Agri Fresh's role in the value chain.</p></div>
+      <div class="outcome-card"><p class="oc-body">Shift from abstract debate to process-level conversation and partnership visibility.</p></div>
+      <div class="outcome-card"><p class="oc-body">17K+ farmers onboarded to Digital Mandi + Partner App for traceable, always-on communication.</p></div>
+    </div>
+
+    <div class="variation-block">
+      <div class="vb-label">Variation B — Alternate Narrative</div>
+      <div class="vb-head"><em>"From Orchard to Assurance"</em></div>
+      <p class="vb-body">A second narrative version reframes FarmPik as an assurance platform, not just a produce brand: trust starts at orchard onboarding, moves through transparent grading and cold-chain integrity, and reaches consumers as daily reliability. This variation is built for stakeholder decks and urban-facing channels where systems-thinking and accountability need to be foregrounded.</p>
+    </div>
+
+    <div class="impact-block">
+      <div class="impact-title">What this work actually was</div>
+      <p class="impact-body">Agricultural communication during high-scrutiny moments is not a PR problem. It is a trust infrastructure problem. The work built a system that functioned simultaneously as public narrative, direct farmer communication and internal accountability — because a single campaign aimed at one audience would have left the other two without an answer.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span class="footer-name">FarmPik · Adani Agri Fresh · Communication Architecture · Portfolio Case Study</span>
+  <div class="footer-links">
+    <a href="homepage_v2_split.html">Home</a>
+    <a href="bio_gq.html">About</a>
+    <a href="mailto:mouris.bashir@hotmail.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+const cur = document.getElementById('cur');
+const ring = document.getElementById('cur-ring');
+let mx=0,my=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+});
+(function loop(){
+  tx+=(mx-tx)*.1;ty+=(my-ty)*.1;
+  ring.style.left=tx+'px';ring.style.top=ty+'px';
+  requestAnimationFrame(loop);
+})();
+const btn=document.getElementById('menuBtn');
+const menu=document.getElementById('overlayMenu');
+btn.addEventListener('click',()=>{
+  const open=menu.classList.toggle('open');
+  document.body.classList.toggle('menu-open',open);
+});
+menu.querySelectorAll('.overlay-link').forEach(l=>l.addEventListener('click',()=>{
+  menu.classList.remove('open');document.body.classList.remove('menu-open');
+}));
+</script>
+</body>
+</html>
