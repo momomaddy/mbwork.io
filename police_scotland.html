@@ -308,7 +308,18 @@ nav{
   .mag-headline { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); line-height: 1.3; margin-bottom: 0.8rem; }
   .mag-body { font-size: 0.86rem; color: var(--muted); line-height: 1.7; }
 
-  /* PEER PORTRAITS */
+ .portfolio-gif {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--rule); /* Subtle border like your other cells */
+  filter: grayscale(10%) contrast(105%); /* Keeps it moody and professional */
+  transition: filter 0.3s ease;
+}
+
+.portfolio-gif:hover {
+  filter: grayscale(0%) contrast(100%); /* Full color on hover */
+} /* PEER PORTRAITS */
   .peer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2.5rem 0; }
   .peer-card { border: 1px solid var(--mist); overflow: hidden; }
   .peer-card img { width: 100%; display: block; }
@@ -424,7 +435,10 @@ nav{
       <span class="role-tag">Media Strategy Alignment</span>
     </div>
   </section>
-
+<video autoplay loop muted playsinline class="portfolio-gif">
+  <source src="G01.gif" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
   <section>
     <div class="section-tag">The Problem</div>
     <h2>Most campaigns told women<br>how to <em>stay safe.</em></h2>
