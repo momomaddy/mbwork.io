@@ -21,7 +21,96 @@
 html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
 
-/* ── NAV ── */
+.acc-wrap {
+  border-top: 1px solid var(--rule);
+  margin: 4rem 0;
+}
+
+.acc-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+  text-align: left;
+}
+
+.acc-trigger-num {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--ink2);
+  opacity: 0.4;
+  margin-right: 2rem;
+}
+
+.acc-trigger-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #E8180A; /* The specific red from your image */
+  letter-spacing: -0.02em;
+}
+
+.acc-trigger-meta {
+  font-size: 0.75rem;
+  color: var(--ink2);
+  opacity: 0.5;
+  margin-left: 2rem;
+}
+
+/* The Plus Icon from your image */
+.acc-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.acc-plus::before, .acc-plus::after {
+  content: '';
+  position: absolute;
+  background: var(--ink);
+  transition: transform 0.3s ease;
+}
+.acc-plus::before { width: 14px; height: 1.5px; } /* Horizontal */
+.acc-plus::after { width: 1.5px; height: 14px; }  /* Vertical */
+
+/* Animation when open */
+.acc-item.open .acc-plus::after { transform: rotate(90deg); opacity: 0; }
+.acc-item.open .acc-body { display: block; }
+
+.acc-body {
+  display: none;
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.acc-inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+}
+
+.acc-prose-col p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--ink2);
+}
+
+@media (max-width: 768px) {
+  .acc-inner-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .acc-trigger-title { font-size: 1.6rem; }
+}/* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:999;
   background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
