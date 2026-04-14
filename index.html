@@ -177,6 +177,59 @@ nav{
   opacity: 1;
   transform: scale(1.03);
 }
+  .cinematic-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Parallel layout */
+  gap: 20px;
+  margin: 4rem 0;
+}
+
+.video-grid-item {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--ink);
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+
+/* Common style for GIFs and Videos */
+.grid-media, .yt-embed-container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+/* Specific fix for YouTube to make it fill the box and hide black bars */
+.yt-embed-container {
+  position: relative;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+
+.yt-embed-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%; /* Scale up slightly to hide YT UI elements */
+  height: 150%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* User can't pause the 'background' loop */
+}
+
+/* The Shield makes the whole box clickable as a link to your subpage */
+.video-pointer-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.video-grid-item:hover .grid-media,
+.video-grid-item:hover .yt-embed-container {
+  opacity: 1;
+}
 /* ── HERO ── */
 .hero{padding-top:52px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
 .hero-left{background:var(--paper2);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule);}
@@ -325,19 +378,36 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
   </div>
 </div>
 
-<div class="work" id="work">
-  <div class="work-inner">
-    <div class="section-header">
-      <span class="section-label">Selected Work</span>
-      <span class="section-count">11 case studies</span>
-    </div>
+ <section class="cinematic-video-grid">
 
-  <section class="video-grid-section">
-  <div class="section-header">
-    <span class="section-label">Selected Narratives</span>
-    <span class="section-count">Featured Films</span>
+  <div class="video-grid-item">
+    <div class="video-wrap">
+      <div class="yt-embed-container">
+        <iframe src="https://www.youtube.com/embed/a7aJYVRuBZM?si=Vo26fxjGLPr-jJNX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <a href="HKKDH.html" class="video-pointer-shield"></a>
+      
+      <div class="video-grid-overlay">
+        <div class="v-meta">Adani Group</div>
+        <div class="v-title">Hum Karke Dikhate Hai</div>
+      </div>
+    </div>
+  </div>
+   <div class="video-grid-item">
+    <div class="video-wrap">
+      <div class="yt-embed-container">
+<iframe src="https://www.youtube.com/embed/GM7uKnyAono?si=K3Jnhu3QSuRDizbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      </div>
+      <a href="ONBC.html" class="video-pointer-shield"></a>
+      
+      <div class="video-grid-overlay">
+        <div class="v-meta">Adani Group</div>
+        <div class="v-title">#OneNationBillionCelebrations</div>
+      </div>
+    </div>
   </div>
 
+</section>
+    
   <div class="cinematic-video-grid">
     
     <a href="HorizonX.html" class="video-grid-item">
