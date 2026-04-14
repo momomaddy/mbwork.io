@@ -89,6 +89,71 @@ nav{
   font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
 }
+.cinematic-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px; /* Thin 'Paper' lines between videos */
+  background: var(--rule); /* The color of the lines */
+  border: 1px solid var(--rule);
+  margin-top: 2rem;
+}
+
+.video-grid-item {
+  text-decoration: none;
+  position: relative;
+  aspect-ratio: 16/9; /* Cinematic Ratio */
+  overflow: hidden;
+}
+
+.video-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7; /* Muted aesthetic */
+  transition: opacity 0.5s ease, transform 0.8s ease;
+}
+
+.video-grid-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(26,14,0,0.8) 0%, transparent 60%);
+  z-index: 2;
+}
+
+.v-meta {
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.v-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--cream);
+  font-style: italic;
+}
+
+/* Hover Effects */
+.video-grid-item:hover video {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .cinematic-video-grid { grid-template-columns: 1fr; }
+}
 
 /* ── HERO ── */
 .hero{padding-top:52px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
