@@ -52,7 +52,15 @@ nav{
   text-decoration:none;
 }
    /* ── HERO ── */
-.hero-left{background:var(--paper2);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule);}
+.hero{
+  padding-top:52px;
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:58% 42%;
+  position:relative;
+  overflow:hidden;
+}
+   .hero-left{background:var(--paper2);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule);}
 .hero-right{
   background:var(--paper);
   padding:7rem 5rem 4rem;
@@ -312,7 +320,7 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
     <span class="hero-meta-val">Movement over distribution</span>
   </div>
 </div>
-
+</div>
 
   <!-- RIGHT -->
   <div class="hero-right">
