@@ -54,7 +54,25 @@ nav{
    /* ── HERO ── */
 .hero{padding-top:52px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
 .hero-left{background:var(--paper2);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule);}
-.hero-right{background:var(--paper);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-right{
+  background:var(--paper);
+  padding:7rem 5rem 4rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+   .hero-role{
+  margin-top:3rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,3vw,3.5rem);
+  line-height:0.95;
+  color:var(--ink);
+}
+
+.hero-role em{
+  color:var(--rust);
+  font-style:italic;
+}
 .hero-issue{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:3rem;font-weight:500;}
 .hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(--ink);letter-spacing:-0.02em;}
 .hero-em{
@@ -307,19 +325,62 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
 </div>
   </div>
   
-<div class="hero-right">
+<div class="hero">
+
+  <!-- LEFT -->
+  <div class="hero-left">
+
     <div>
-         <div class="hero-services">
-  <div>EARNED STRATEGY</div>
-  <div>INTEGRATED CAMPAIGNS</div>
-  <div>SOCIAL & DIGITAL COMMS</div>
-  <div>INFLUENCER</div>
-  <div>C-SUITE COMMS</div>
-  <div>CRISIS COMMS</div>
+      <div class="hero-issue">
+        Marketing & Communications Strategist · Gurugram
       </div>
-      <div class="hero-scroll">Scroll to explore the work</div>
+
+      <div class="hero-name">
+        Mouris<br>
+        <strong>Bashir</strong>
+      </div>
+
+      <div class="hero-role">
+        <strong><em>Brand, PR & Creative</em></strong><br>
+        Director
+      </div>
     </div>
+
+    <div class="hero-meta-row">
+
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Current</span>
+        <span class="hero-meta-val">Adani Group</span>
+      </div>
+
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Approach</span>
+        <span class="hero-meta-val">Movement over distribution</span>
+      </div>
+
+    </div>
+
   </div>
+
+  <!-- RIGHT -->
+  <div class="hero-right">
+
+    <div class="hero-services">
+      <div>EARNED STRATEGY</div>
+      <div>INTEGRATED CAMPAIGNS</div>
+      <div>SOCIAL & DIGITAL COMMS</div>
+      <div>INFLUENCER</div>
+      <div>C-SUITE COMMS</div>
+      <div>CRISIS COMMS</div>
+    </div>
+
+    <div class="hero-scroll">
+      Scroll to explore the work
+    </div>
+
+  </div>
+
+</div>
 
 <section class="video-grid-section">
   <div class="section-header">
