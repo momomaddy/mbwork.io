@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouris Bashir — Profile</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#080808;
+  --off-black:#0F0F0F;
+  --white:#F8F8F6;
+  --off-white:#EFEDE8;
+  --red:#E8180A;
+  --red2:#FF3D2E;
+  --warm:#F0E8D8;
+  --line:rgba(248,248,246,0.1);
+  --line-light:rgba(8,8,8,0.1);
+}
+html{scroll-behavior:smooth;cursor:none;}
+body{background:var(--black);color:var(--white);font-family:'Syne',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;}
+
+/* ── CURSOR ── */
+.cursor{position:fixed;width:10px;height:10px;background:var(--red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s,width 0.3s,height 0.3s,background 0.3s;}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(232,24,10,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform 0.15s ease-out,width 0.3s,height 0.3s;}
+body:has(a:hover) .cursor{width:18px;height:18px;background:var(--red2);}
+body:has(a:hover) .cursor-ring{width:54px;height:54px;}
+
+/* ── MENU BUTTON (hamburger × arrow hybrid) ── */
+.menu-btn{position:fixed;top:2rem;right:2rem;z-index:1001;background:none;border:none;cursor:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;}
+.menu-btn-inner{width:44px;height:44px;position:relative;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color 0.3s,background 0.3s;}
+.menu-btn:hover .menu-btn-inner{border-color:var(--red);background:rgba(232,24,10,0.08);}
+.bar{position:absolute;height:1.5px;background:var(--white);transition:all 0.4s cubic-bezier(0.23,1,0.32,1);}
+.bar1{width:16px;top:14px;left:14px;}
+.bar2{width:22px;top:21px;left:11px;}
+.bar3{width:14px;top:28px;left:15px;}
+.menu-open .bar1{transform:rotate(45deg) translate(5px,5px);width:20px;}
+.menu-open .bar2{opacity:0;transform:translateX(8px);}
+.menu-open .bar3{transform:rotate(-45deg) translate(3px,-3px);width:20px;}
+/* Arrow hint */
+.menu-arrow{position:absolute;bottom:6px;right:6px;width:8px;height:8px;border-right:1.5px solid var(--red);border-bottom:1.5px solid var(--red);transform:rotate(-45deg);transition:transform 0.4s;}
+.menu-open .menu-arrow{transform:rotate(135deg);}
+
+/* ── OVERLAY MENU ── */
+.overlay{position:fixed;inset:0;z-index:1000;background:var(--off-black);display:flex;flex-direction:column;justify-content:center;padding:0 4rem;transform:translateX(100%);transition:transform 0.7s cubic-bezier(0.77,0,0.175,1);}
+.overlay.open{transform:translateX(0);}
+.overlay-links{list-style:none;}
+.overlay-links li{overflow:hidden;margin-bottom:0.5rem;}
+.overlay-link{display:block;font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,6vw,5rem);font-style:italic;color:rgba(248,248,246,0.15);text-decoration:none;font-weight:400;line-height:1.1;transition:color 0.3s;transform:translateY(100%);transition:transform 0.6s cubic-bezier(0.77,0,0.175,1),color 0.3s;}
+.overlay.open .overlay-link{transform:translateY(0);}
+.overlay.open li:nth-child(1) .overlay-link{transition-delay:0.1s;}
+.overlay.open li:nth-child(2) .overlay-link{transition-delay:0.15s;}
+.overlay.open li:nth-child(3) .overlay-link{transition-delay:0.2s;}
+.overlay.open li:nth-child(4) .overlay-link{transition-delay:0.25s;}
+.overlay.open li:nth-child(5) .overlay-link{transition-delay:0.3s;}
+.overlay-link:hover{color:var(--white);}
+.overlay-link span{color:var(--red);font-style:normal;font-size:0.5em;font-family:'Syne',sans-serif;vertical-align:super;margin-right:0.3em;}
+.overlay-contact{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);display:flex;gap:2.5rem;flex-wrap:wrap;}
+.overlay-contact a{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(248,248,246,0.4);text-decoration:none;transition:color 0.2s;}
+.overlay-contact a:hover{color:var(--red);}
+
+/* ── LOGO ── */
+.logo{position:fixed;top:2rem;left:2rem;z-index:1001;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);text-decoration:none;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 3rem 5rem;position:relative;overflow:hidden;}
+.hero-bg-num{position:absolute;top:50%;right:-2rem;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:clamp(20rem,38vw,36rem);font-weight:800;color:rgba(248,248,246,0.025);line-height:1;pointer-events:none;user-select:none;}
+.hero-tag{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s 0.3s forwards;}
+.hero-headline{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(4rem,10vw,10rem);line-height:0.9;letter-spacing:-0.03em;margin-bottom:2rem;opacity:0;animation:fadeUp 0.8s 0.5s forwards;}
+.hero-headline .line1{display:block;color:rgba(248,248,246,0.18);}
+.hero-headline .line2{display:block;color:var(--white);}
+.hero-headline .line3{display:block;color:var(--red);font-style:italic;font-family:'Libre Baskerville',serif;font-weight:400;}
+.hero-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:clamp(1rem,1.8vw,1.3rem);color:rgba(248,248,246,0.45);max-width:540px;line-height:1.7;margin-bottom:3.5rem;opacity:0;animation:fadeUp 0.8s 0.7s forwards;}
+.hero-sub strong{font-style:normal;color:var(--white);}
+.hero-footer-row{display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid var(--line);padding-top:2rem;opacity:0;animation:fadeUp 0.8s 0.9s forwards;}
+.hero-meta-items{display:flex;gap:3rem;}
+.hero-meta-item{display:flex;flex-direction:column;gap:0.2rem;}
+.hero-meta-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(248,248,246,0.3);}
+.hero-meta-val{font-size:0.85rem;color:var(--white);}
+.hero-scroll-hint{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,248,246,0.25);writing-mode:vertical-rl;transform:rotate(180deg);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── GQ FEATURE STRIP ── */
+.gq-strip{background:var(--red);padding:0.6rem 3rem;display:flex;align-items:center;gap:2rem;overflow:hidden;}
+.gq-label{font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(248,248,246,0.6);white-space:nowrap;font-weight:600;}
+.gq-quote{font-family:'Libre Baskerville',serif;font-size:0.9rem;font-style:italic;color:var(--white);white-space:nowrap;}
+
+/* ── SECTIONS (light background) ── */
+.sections{background:var(--off-white);color:var(--black);}
+
+/* ── CHAPTER HEADER ── */
+.chapter{padding:5rem 3rem 3rem;border-bottom:1px solid var(--line-light);}
+.chapter-num{font-size:0.6rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:1rem;}
+.chapter-title{font-family:'Libre Baskerville',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:var(--black);line-height:1.15;}
+.chapter-title em{font-style:italic;color:var(--red);}
+
+/* ── ACCORDION TABS ── */
+.acc-wrap{padding:0 3rem 2rem;}
+.acc-item{border-bottom:1px solid var(--line-light);}
+.acc-trigger{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;padding:2rem 0;cursor:none;gap:2rem;}
+.acc-trigger:hover .acc-trigger-title{color:var(--red);}
+.acc-trigger-left{display:flex;align-items:baseline;gap:1.5rem;}
+.acc-trigger-num{font-size:0.6rem;letter-spacing:0.18em;color:rgba(8,8,8,0.3);font-weight:600;white-space:nowrap;}
+.acc-trigger-title{font-family:'Syne',sans-serif;font-size:clamp(1.1rem,2vw,1.6rem);font-weight:700;color:var(--black);text-align:left;transition:color 0.2s;line-height:1.2;}
+.acc-trigger-meta{font-size:0.72rem;color:rgba(8,8,8,0.4);white-space:nowrap;}
+.acc-icon{width:32px;height:32px;border:1px solid var(--line-light);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.3s;position:relative;}
+.acc-icon::before,.acc-icon::after{content:'';position:absolute;background:var(--black);transition:all 0.35s cubic-bezier(0.23,1,0.32,1);}
+.acc-icon::before{width:10px;height:1.5px;}
+.acc-icon::after{width:1.5px;height:10px;}
+.acc-item.open .acc-icon{background:var(--red);border-color:var(--red);}
+.acc-item.open .acc-icon::before,.acc-item.open .acc-icon::after{background:var(--white);}
+.acc-item.open .acc-icon::after{transform:rotate(90deg);opacity:0;}
+.acc-body{max-height:0;overflow:hidden;transition:max-height 0.6s cubic-bezier(0.23,1,0.32,1);}
+.acc-content{padding:0 0 3rem 4rem;}
+
+/* ── EXPERIENCE CARD ── */
+.exp-card{background:var(--black);color:var(--white);padding:2.5rem;margin-bottom:1rem;position:relative;overflow:hidden;}
+.exp-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--red);}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;gap:1rem;}
+.exp-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--white);}
+.exp-company{font-size:0.8rem;color:var(--red);margin-top:0.2rem;}
+.exp-period{font-size:0.65rem;letter-spacing:0.1em;color:rgba(248,248,246,0.3);white-space:nowrap;}
+.exp-details{font-size:0.8rem;color:rgba(248,248,246,0.5);line-height:1.7;}
+
+/* ── AWARDS LIST ── */
+.award-item{display:flex;align-items:center;gap:1.5rem;padding:1.2rem 0;border-bottom:1px solid var(--line-light);}
+.award-item:last-child{border-bottom:none;}
+.award-star{width:8px;height:8px;background:var(--red);transform:rotate(45deg);flex-shrink:0;}
+.award-name{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:600;color:var(--black);}
+.award-year{font-size:0.65rem;letter-spacing:0.1em;color:rgba(8,8,8,0.4);margin-left:auto;white-space:nowrap;}
+
+/* ── BIO PROSE ── */
+.bio-prose{font-family:'Libre Baskerville',serif;font-size:1.05rem;color:rgba(8,8,8,0.75);line-height:1.9;}
+.bio-prose p{margin-bottom:1.4rem;}
+.bio-prose p:last-child{margin-bottom:0;}
+.bio-prose strong{color:var(--black);font-weight:700;}
+.bio-prose .pull{font-size:1.5rem;font-style:italic;color:var(--black);border-left:3px solid var(--red);padding-left:1.5rem;margin:2.5rem 0;}
+
+/* ── DISCIPLINES PILLS ── */
+.pill-wrap{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem;}
+.pill{font-size:0.7rem;letter-spacing:0.08em;padding:0.5rem 1.1rem;border:1px solid var(--line-light);color:rgba(8,8,8,0.6);transition:all 0.2s;}
+.pill:hover{background:var(--black);color:var(--white);border-color:var(--black);}
+
+/* ── CONTACT ROW ── */
+.contact-row{background:var(--black);padding:5rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.contact-headline{font-family:'Libre Baskerville',serif;font-size:clamp(2rem,4vw,3.5rem);font-style:italic;color:var(--white);line-height:1.2;font-weight:400;}
+.contact-headline strong{font-style:normal;color:var(--red);}
+.contact-links{display:flex;flex-direction:column;gap:1rem;}
+.contact-link{display:flex;align-items:center;gap:1rem;text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--line);transition:border-color 0.2s;}
+.contact-link:hover{border-color:var(--red);}
+.contact-link-label{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(248,248,246,0.3);width:60px;}
+.contact-link-val{font-size:0.88rem;color:var(--white);}
+.contact-link-arrow{margin-left:auto;color:var(--red);font-size:1rem;}
+
+/* ── AI TWIN PILL ── */
+.ai-pill{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(232,24,10,0.1);border:1px solid rgba(232,24,10,0.3);padding:0.5rem 1.2rem;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);cursor:none;transition:all 0.2s;text-decoration:none;}
+.ai-pill:hover{background:var(--red);color:var(--white);}
+.ai-dot{width:6px;height:6px;background:var(--red2);border-radius:50%;animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+.ai-pill:hover .ai-dot{background:var(--white);}
+
+footer{background:var(--off-black);border-top:1px solid var(--line);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-size:0.65rem;letter-spacing:0.1em;color:rgba(248,248,246,0.25);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(248,248,246,0.25);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--red);}
+
+@media(max-width:768px){
+  .hero,.sections .chapter,.acc-wrap,.contact-row{padding-left:1.5rem;padding-right:1.5rem;}
+  .acc-content{padding-left:1rem;}
+  .hero-meta-items{flex-wrap:wrap;gap:1.5rem;}
+  .contact-row{grid-template-columns:1fr;}
+  .gq-strip{padding-left:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- LOGO -->
+<a href="homepage_v2_split.html" class="logo">mb.work</a>
+
+<!-- MENU BUTTON -->
+<button class="menu-btn" id="menuBtn" aria-label="Menu">
+  <div class="menu-btn-inner">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+    <div class="menu-arrow"></div>
+  </div>
+</button>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay">
+  <ul class="overlay-links">
+    <li><a href="homepage_v2_split.html" class="overlay-link"><span>00</span>Home</a></li>
+    <li><a href="HKKDH_Adani_CaseStudy.html" class="overlay-link"><span>01</span>HKKDH</a></li>
+    <li><a href="index.html" class="overlay-link"><span>02</span>Horizon X</a></li>
+    <li><a href="about.html" class="overlay-link"><span>03</span>One Nation</a></li>
+    <li><a href="adl_equally.html" class="overlay-link"><span>04</span>ADL EquAlly</a></li>
+    <li><a href="sustainability.html" class="overlay-link"><span>05</span>Sustainability</a></li>
+    <li><a href="oyo_valentines.html" class="overlay-link"><span>06</span>OYO</a></li>
+    <li><a href="police_scotland.html" class="overlay-link"><span>07</span>Police Scotland</a></li>
+  </ul>
+  <div class="overlay-contact">
+    <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
+    <a href="tel:9086904444">9086904444</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-num">10</div>
+  <div class="hero-tag">GQ Profile — Marketing &amp; Communications</div>
+  <div class="hero-headline">
+    <span class="line1">Mouris</span>
+    <span class="line2">Bashir</span>
+    <span class="line3">The Strategist.</span>
+  </div>
+  <p class="hero-sub">
+    "I sweat the petty things; pet the sweaty things — because <strong>they decide outcomes.</strong> Not a philosophy. A pattern I noticed after enough campaigns went sideways on a single word."
+  </p>
+  <div class="hero-footer-row">
+    <div class="hero-meta-items">
+      <div class="hero-meta-item"><span class="hero-meta-label">Based</span><span class="hero-meta-val">Gurugram, India</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Origin</span><span class="hero-meta-val">Kashmir · Edinburgh</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">In Practice</span><span class="hero-meta-val">10+ Years</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Current</span><span class="hero-meta-val">Adani Group</span></div>
+    </div>
+    <div class="hero-scroll-hint">Scroll</div>
+  </div>
+</div>
+
+<!-- GQ STRIP -->
+<div class="gq-strip">
+  <span class="gq-label">Featured</span>
+  <span class="gq-quote">"Brands are emotional. They're emotional for consumers. And they're emotional for marketers."</span>
+</div>
+
+<!-- SECTIONS -->
+<div class="sections">
+
+  <!-- CHAPTER 1: THE PERSON -->
+  <div class="chapter">
+    <div class="chapter-num">Chapter 01</div>
+    <div class="chapter-title">The person<br>behind the <em>strategy.</em></div>
+  </div>
+
+  <div class="acc-wrap">
+
+    <div class="acc-item open" data-acc="0">
+      <button class="acc-trigger">
+        <div class="acc-trigger-left">
+          <span class="acc-trigger-num">01</span>
+          <span class="acc-trigger-title">In his own words</span>
+        </div>
+        <div class="acc-icon"></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <div class="bio-prose">
+            <p>Ten years of translating chaos into something people can understand. Sometimes, as a writer. Sometimes as a strategist. Often as the only person in the room who'd read the comments section before the meeting.</p>
+            <div class="pull">"Brands are emotional. They're emotional for consumers. And they're emotional for marketers. My job is to understand what brands mean. What brands can do. What brand experiences inspire action."</div>
+            <p>My real job is to inspire.</p>
+            <p>I bake croissants and muffins on occasion. Ski when there's snow. Ride when there are mountains. Play cricket when someone asks. Movies over books. Books over movies. Air over air conditioning. Gin over beer. <strong>I contain contradictions. So does good strategy.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-acc="1">
+      <button class="acc-trigger">
+        <div class="acc-trigger-left">
+          <span class="acc-trigger-num">02</span>
+          <span class="acc-trigger-title">Disciplines</span>
+        </div>
+        <span class="acc-trigger-meta">8 areas</span>
+        <div class="acc-icon"></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <p style="font-size:0.88rem;color:rgba(8,8,8,0.6);margin-bottom:1.2rem;">A contemporary marketing and communications strategist with experience across several business categories.</p>
+          <div class="pill-wrap">
+            <span class="pill">Integrated Communications</span>
+            <span class="pill">Campaign Planning</span>
+            <span class="pill">Narrative Strategy</span>
+            <span class="pill">Message Architecture</span>
+            <span class="pill">Behavioural Marketing</span>
+            <span class="pill">Reputation Management</span>
+            <span class="pill">Crisis Management</span>
+            <span class="pill">Digital Ecosystems</span>
+            <span class="pill">Social Strategy</span>
+            <span class="pill">Employer Branding</span>
+            <span class="pill">End-to-End Comms Systems</span>
+            <span class="pill">ESG Communication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-acc="2">
+      <button class="acc-trigger">
+        <div class="acc-trigger-left">
+          <span class="acc-trigger-num">03</span>
+          <span class="acc-trigger-title">Education</span>
+        </div>
+        <span class="acc-trigger-meta">Edinburgh</span>
+        <div class="acc-icon"></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div><div class="exp-title">B.A. Economics</div><div class="exp-company">Telford College, Edinburgh</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /acc-wrap -->
+
+  <!-- CHAPTER 2: THE CAREER -->
+  <div class="chapter" style="margin-top:2rem;">
+    <div class="chapter-num">Chapter 02</div>
+    <div class="chapter-title">The career<br>that built the <em>thinking.</em></div>
+  </div>
+
+  <div class="acc-wrap">
+
+    <div class="acc-item" data-acc="3">
+      <button class="acc-trigger">
+        <div class="acc-trigger-left">
+          <span class="acc-trigger-num">01</span>
+          <span class="acc-trigger-title">Lead — Brand Comms @ Adani Group</span>
+        </div>
+        <span class="acc-trigger-meta">2021 — Present</span>
+        <div class="acc-icon"></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div><div class="exp-title">Lead — Brand Communications</div><div class="exp-company">Adani Group · Gurugram</div></div>
+              <div class="exp-period">May 2021 – Nov 2023 (FT) · May 2024 – Present (Consultant)</div>
+            </div>
+            <div class="exp-details">Copy · Digital Media Communications · Corporate Communications · Internal Branding<br>Integrated campaigns, reputation strategy, sustainability narrative and employer branding across 10+ business units.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-acc="4">
+      <button class="acc-trigger">
+        <div class="acc-trigger-left">
+          <span class="acc-trigger-num">02</span>
+          <span class="acc-trigger-title">Content Strategist @ Audibene</span>
+        </div>
+        <span class="acc-trigger-meta">2020 — 2021</span>
+        <div class="acc-icon"></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div><div class="exp-title">Content Strategist — APAC</div><div class="exp-company">Audibene / WS Audiology · Remote</div></div>
+              <div class="exp-period">April 2020 – May 2021</div>
+            </div>
+            <div class="exp-details">Product · Marketing · Social · Business Development<br>Led Horizon X launch communication across India and APAC markets.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-acc="5">
+      <button class="acc-trigger">
+        <div class="acc-trigger-left">
+          <span class="acc-trigger-num">03</span>
+          <span class="acc-trigger-title">Communication Strategist @ OYO</span>
+        </div>
+        <span class="acc-trigger-meta">2019</span>
+        <div class="acc-icon"></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div><div class="exp-title">Communication Strategist</div><div class="exp-company">OYO Hotels and Homes · Gurgaon</div></div>
+              <div class="exp-period">Jan 2019 – Sept 2019</div>
+            </div>
+            <div class="exp-details">Global PR &amp; Media team<br>Valentine's Day campaign, OPEN partner program launch, internal communications architecture.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-acc="6">
+      <button class="acc-trigger">
+        <div class="acc-trigger-left">
+          <span class="acc-trigger-num">04</span>
+          <span class="acc-trigger-title">Content Strategist @ BookMyForex</span>
+        </div>
+        <span class="acc-trigger-meta">2016 — 2019</span>
+        <div class="acc-icon"></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div><div class="exp-title">Content Strategist</div><div class="exp-company">BookMyForex (MMT Group) · Gurgaon</div></div>
+              <div class="exp-period">Sept 2016 – Jan 2019</div>
+            </div>
+            <div class="exp-details">Content · Social · Digital · Brand · PR · BD · ORM · UI/UX · Copywriting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item" data-acc="7">
+      <button class="acc-trigger">
+        <div class="acc-trigger-left">
+          <span class="acc-trigger-num">05</span>
+          <span class="acc-trigger-title">Earlier Roles</span>
+        </div>
+        <span class="acc-trigger-meta">2012 — 2016</span>
+        <div class="acc-icon"></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <div class="exp-card" style="margin-bottom:0.6rem;">
+            <div class="exp-header"><div><div class="exp-title">Content Specialist</div><div class="exp-company">AuthBridge · Gurgaon</div></div><div class="exp-period">Mar – Aug 2016</div></div>
+          </div>
+          <div class="exp-card" style="margin-bottom:0.6rem;">
+            <div class="exp-header"><div><div class="exp-title">Content Associate</div><div class="exp-company">Barclays · Noida</div></div><div class="exp-period">Nov 2014 – Aug 2015</div></div>
+          </div>
+          <div class="exp-card" style="margin-bottom:0.6rem;">
+            <div class="exp-header"><div><div class="exp-title">Op-ed Editor</div><div class="exp-company">Kashmir Reader · Edinburgh</div></div></div>
+          </div>
+          <div class="exp-card" style="margin-bottom:0.6rem;">
+            <div class="exp-header"><div><div class="exp-title">Copywriter · #WeCanStopIt</div><div class="exp-company">Lothian Police, UK</div></div></div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-header"><div><div class="exp-title">PR Intern</div><div class="exp-company">Holyrood PR · Edinburgh</div></div><div class="exp-period">May – July 2012</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /acc-wrap -->
+
+  <!-- CHAPTER 3: AWARDS -->
+  <div class="chapter" style="margin-top:2rem;">
+    <div class="chapter-num">Chapter 03</div>
+    <div class="chapter-title">Gold stars<br>from the <em>industry.</em></div>
+  </div>
+
+  <div class="acc-wrap" style="padding-bottom:4rem;">
+    <div class="acc-item open" data-acc="8">
+      <button class="acc-trigger">
+        <div class="acc-trigger-left">
+          <span class="acc-trigger-num">01</span>
+          <span class="acc-trigger-title">Awards &amp; Recognition</span>
+        </div>
+        <span class="acc-trigger-meta">7 wins</span>
+        <div class="acc-icon"></div>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <div class="award-item"><div class="award-star"></div><div class="award-name">Digies Digital Awards — Marketing Effectiveness</div><div class="award-year">2023</div></div>
+          <div class="award-item"><div class="award-star"></div><div class="award-name">Hermes Creative Awards (AMCP, USA)</div><div class="award-year">2022</div></div>
+          <div class="award-item"><div class="award-star"></div><div class="award-name">Social S.T.A.R.S Awards — Digital &amp; Social Media Campaigns</div><div class="award-year">2022, 2023</div></div>
+          <div class="award-item"><div class="award-star"></div><div class="award-name">afaqs! Foxglove Awards — Campaign Effectiveness</div><div class="award-year">2023</div></div>
+          <div class="award-item"><div class="award-star"></div><div class="award-name">ACEF Digital Awards — Customer Engagement &amp; Digital Campaigns</div><div class="award-year">2023</div></div>
+          <div class="award-item"><div class="award-star"></div><div class="award-name">Social S.T.A.R.S Awards — Social Media Marketing</div><div class="award-year">2023</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /sections -->
+
+<!-- CONTACT -->
+<div class="contact-row">
+  <div>
+    <div class="contact-headline">"My real job<br>is to <strong>inspire.</strong><br>Let's get started."</div>
+    <br><br>
+    <a href="#" class="ai-pill"><div class="ai-dot"></div> Ask my AI Twin</a>
+  </div>
+  <div class="contact-links">
+    <a href="mailto:mouris.bashir@hotmail.com" class="contact-link">
+      <span class="contact-link-label">Email</span>
+      <span class="contact-link-val">mouris.bashir@hotmail.com</span>
+      <span class="contact-link-arrow">↗</span>
+    </a>
+    <a href="tel:9086904444" class="contact-link">
+      <span class="contact-link-label">Phone</span>
+      <span class="contact-link-val">9086904444</span>
+      <span class="contact-link-arrow">↗</span>
+    </a>
+    <a href="#" class="contact-link">
+      <span class="contact-link-label">LinkedIn</span>
+      <span class="contact-link-val">Mouris Bashir</span>
+      <span class="contact-link-arrow">↗</span>
+    </a>
+    <a href="homepage_v2_split.html" class="contact-link">
+      <span class="contact-link-label">Portfolio</span>
+      <span class="contact-link-val">mb.work</span>
+      <span class="contact-link-arrow">↗</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">Mouris Bashir · mb.work · Gurugram, India</span>
+  <div class="footer-links">
+    <a href="homepage_v2_split.html">Home</a>
+    <a href="mailto:mouris.bashir@hotmail.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+// Cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  setTimeout(() => {
+    ring.style.left = e.clientX + 'px';
+    ring.style.top = e.clientY + 'px';
+  }, 80);
+});
+
+// Menu
+const menuBtn = document.getElementById('menuBtn');
+const overlay = document.getElementById('overlay');
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('menu-open');
+  overlay.classList.toggle('open');
+  document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+});
+
+// Accordion
+const items = document.querySelectorAll('.acc-item');
+items.forEach(item => {
+  const trigger = item.querySelector('.acc-trigger');
+  const body = item.querySelector('.acc-body');
+
+  // Set initial state
+  if (item.classList.contains('open')) {
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+
+  trigger.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    // Close all
+    items.forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.acc-body').style.maxHeight = '0';
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+</body>
+</html>
