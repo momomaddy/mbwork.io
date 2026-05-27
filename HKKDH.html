@@ -246,6 +246,39 @@ nav{
     .stat-strip { padding: 3rem 1.5rem; }
     .page { padding: 0 1.2rem; }
   }
+     .video-reel {
+  position: relative;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+.reel-track {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--mist);
+}
+.reel-track::-webkit-scrollbar { height: 4px; }
+.reel-track::-webkit-scrollbar-track { background: var(--mist); }
+.reel-track::-webkit-scrollbar-thumb { background: var(--gold); }
+.reel-item {
+  flex: 0 0 560px;
+  scroll-snap-align: start;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+.reel-item iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+@media (max-width: 680px) {
+  .reel-item { flex: 0 0 85vw; }
+}
 </style>
 </head>
 <body>
@@ -310,13 +343,22 @@ nav{
     <h2>4 Golds at<br><em>Olive Crown Awards. </em></h2>
     <p>Swept the IAA Olive Crown Awards for sustainability narrative excellence, securing Corporate Social Crusader of the Year, Green Advertiser of the Year, and two Gold Awards (TV/Cinema & Digital).The Hum Karke Dikhate Hain campaign was also featured by Social Samosa in its Yearbook of Campaigns 2025. The citation recognised the campaign for humanising infrastructure at scale, repositioning Adani from industrial assets to lived, everyday progress.</p>
 
-    <div class="section-tag">The Films</div>
-  <div class="video-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/a7aJYVRuBZM?si=uaUpIMONeKW5TY0T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zSEgZ5MRQWM?si=vp68fY6BpxqEfHzr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
- <iframe width="560" height="315" src="https://www.youtube.com/embed/KXSrNMJWW4c?si=Eu6cSp-B_QTjW9ZR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/RnkMfwxuwoE?si=JRPA41Vg7HM4jg07" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-reel">
+  <div class="reel-track">
+    <div class="reel-item">
+      <iframe src="https://www.youtube.com/embed/a7aJYVRuBZM?si=uaUpIMONeKW5TY0T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="reel-item">
+      <iframe src="https://www.youtube.com/embed/zSEgZ5MRQWM?si=vp68fY6BpxqEfHzr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="reel-item">
+      <iframe src="https://www.youtube.com/embed/KXSrNMJWW4c?si=Eu6cSp-B_QTjW9ZR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="reel-item">
+      <iframe src="https://www.youtube.com/embed/RnkMfwxuwoE?si=JRPA41Vg7HM4jg07" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
   </div>
+</div>
   </section>
 
   <section>
