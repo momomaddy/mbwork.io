@@ -53,6 +53,23 @@ nav{
   font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
   text-decoration:none;
 }
+   /* ── HERO ── */
+.hero{padding-top:52px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero-left{background:var(--paper2);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule);}
+.hero-right{background:var(--paper);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-issue{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:3rem;font-weight:500;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(--ink);letter-spacing:-0.02em;}
+.hero-name strong{font-weight:700;display:block;}
+.hero-name em{font-style:italic;color:var(--rust);}
+.hero-role{margin-top:2rem;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink2);opacity:0.6;}
+.hero-statement{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;font-style:italic;line-height:1.5;color:var(--ink2);margin-bottom:3rem;}
+.hero-statement strong{font-style:normal;font-weight:600;color:var(--rust);}
+.hero-meta-row{display:flex;gap:2.5rem;border-top:1px solid var(--rule);padding-top:2rem;}
+.hero-meta-item{display:flex;flex-direction:column;gap:0.2rem;}
+.hero-meta-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink2);opacity:0.5;}
+.hero-meta-val{font-size:0.82rem;color:var(--ink);font-weight:400;}
+.hero-scroll{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink2);opacity:0.4;display:flex;align-items:center;gap:0.5rem;}
+.hero-scroll::before{content:'';display:inline-block;width:24px;height:1px;background:currentColor;}
    * ── INTRO ── */
 .intro{max-width:1000px;margin:0 auto;padding:6rem 3rem;display:grid;grid-template-columns:1fr 2px 1.8fr;gap:0 4rem;align-items:start;}
 .intro-rule{background:var(--rule);width:1px;margin:0 auto;}
@@ -126,16 +143,6 @@ nav{
   .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
   .meta-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,240,255,0.28); }
   .meta-val { font-size: 0.87rem; color: #EEF0FF; font-weight: 400; }
-/* ── HERO ── */
-.hero{padding-top:52px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
-.hero-left{background:var(--paper2);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule);}
-.hero-right{background:var(--paper);padding:6rem 4rem 5rem;display:flex;flex-direction:column;justify-content:flex-end;}
-.hero-issue{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:3rem;font-weight:500;}
-.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,6vw,6rem);font-weight:300;line-height:0.95;color:var(--ink);letter-spacing:-0.02em;}
-.hero-name strong{font-weight:700;display:block;}
-.hero-meta-row{display:flex;gap:2.5rem;border-top:1px solid var(--rule);padding-top:2rem;}
-.hero-meta-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink2);opacity:0.5;}
-.hero-meta-val{font-size:0.82rem;color:var(--ink);font-weight:400;}
 
 /* ── CLEAN CINEMATIC GRID ── */
 .video-grid-section{padding:6rem 3rem;}
