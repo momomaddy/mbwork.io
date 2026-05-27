@@ -29,51 +29,88 @@
 }
 html{scroll-behavior:smooth;cursor:none;}
 body{background:var(--black);color:var(--white);font-family:'Syne',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;}
-
-/* ── CURSOR ── */
-.cursor{position:fixed;width:10px;height:10px;background:var(--red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s,width 0.3s,height 0.3s,background 0.3s;}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(232,24,10,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform 0.15s ease-out,width 0.3s,height 0.3s;}
-body:has(a:hover) .cursor{width:18px;height:18px;background:var(--red2);}
-body:has(a:hover) .cursor-ring{width:54px;height:54px;}
-
-/* ── MENU BUTTON (hamburger × arrow hybrid) ── */
-.menu-btn{position:fixed;top:2rem;right:2rem;z-index:1001;background:none;border:none;cursor:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;}
-.menu-btn-inner{width:44px;height:44px;position:relative;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color 0.3s,background 0.3s;}
-.menu-btn:hover .menu-btn-inner{border-color:var(--red);background:rgba(232,24,10,0.08);}
-.bar{position:absolute;height:1.5px;background:var(--white);transition:all 0.4s cubic-bezier(0.23,1,0.32,1);}
-.bar1{width:16px;top:14px;left:14px;}
-.bar2{width:22px;top:21px;left:11px;}
-.bar3{width:14px;top:28px;left:15px;}
-.menu-open .bar1{transform:rotate(45deg) translate(5px,5px);width:20px;}
-.menu-open .bar2{opacity:0;transform:translateX(8px);}
-.menu-open .bar3{transform:rotate(-45deg) translate(3px,-3px);width:20px;}
-/* Arrow hint */
-.menu-arrow{position:absolute;bottom:6px;right:6px;width:8px;height:8px;border-right:1.5px solid var(--red);border-bottom:1.5px solid var(--red);transform:rotate(-45deg);transition:transform 0.4s;}
-.menu-open .menu-arrow{transform:rotate(135deg);}
-
-/* ── OVERLAY MENU ── */
-.overlay{position:fixed;inset:0;z-index:1000;background:var(--off-black);display:flex;flex-direction:column;justify-content:center;padding:0 4rem;transform:translateX(100%);transition:transform 0.7s cubic-bezier(0.77,0,0.175,1);}
-.overlay.open{transform:translateX(0);}
-.overlay-links{list-style:none;}
-.overlay-links li{overflow:hidden;margin-bottom:0.5rem;}
-.overlay-link{display:block;font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,6vw,5rem);font-style:italic;color:rgba(248,248,246,0.15);text-decoration:none;font-weight:400;line-height:1.1;transition:color 0.3s;transform:translateY(100%);transition:transform 0.6s cubic-bezier(0.77,0,0.175,1),color 0.3s;}
-.overlay.open .overlay-link{transform:translateY(0);}
-.overlay.open li:nth-child(1) .overlay-link{transition-delay:0.1s;}
-.overlay.open li:nth-child(2) .overlay-link{transition-delay:0.15s;}
-.overlay.open li:nth-child(3) .overlay-link{transition-delay:0.2s;}
-.overlay.open li:nth-child(4) .overlay-link{transition-delay:0.25s;}
-.overlay.open li:nth-child(5) .overlay-link{transition-delay:0.3s;}
-.overlay-link:hover{color:var(--white);}
-.overlay-link span{color:var(--red);font-style:normal;font-size:0.5em;font-family:'Syne',sans-serif;vertical-align:super;margin-right:0.3em;}
-.overlay-contact{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);display:flex;gap:2.5rem;flex-wrap:wrap;}
-.overlay-contact a{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(248,248,246,0.4);text-decoration:none;transition:color 0.2s;}
-.overlay-contact a:hover{color:var(--red);}
-
-/* ── LOGO ── */
-.logo{position:fixed;top:2rem;left:2rem;z-index:1001;font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);text-decoration:none;}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(8,8,8,0.95); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 3rem; height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); text-decoration: none; }
+.nav-right { display: flex; gap: 2rem; align-items: center; }
+.nav-link { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); text-decoration: none; opacity: 0.5; transition: opacity 0.2s; }
+.nav-link:hover { opacity: 1; }
+.nav-cta { background: var(--red); color: var(--white) !important; padding: 0.35rem 1rem;
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; opacity: 1 !important; }
+.nav-work { position: relative; }
+.nav-work-btn { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); background: none; border: none; cursor: pointer; opacity: 0.5;
+  transition: opacity 0.2s; padding: 0; display: flex; align-items: center; gap: 0.4rem;
+  font-family: 'Syne', sans-serif; font-weight: 400; }
+.nav-work-btn::after { content: ''; display: inline-block; width: 0; height: 0;
+  border-left: 3px solid transparent; border-right: 3px solid transparent;
+  border-top: 4px solid currentColor; transition: transform 0.2s; }
+.nav-work:hover .nav-work-btn,
+.nav-work:focus-within .nav-work-btn { opacity: 1; }
+.nav-work:hover .nav-work-btn::after,
+.nav-work:focus-within .nav-work-btn::after { transform: rotate(180deg); }
+.work-dropdown { position: absolute; top: calc(100% + 12px); left: 50%;
+  transform: translateX(-50%) translateY(-6px); background: var(--off-black);
+  border: 1px solid var(--line); min-width: 220px; opacity: 0; visibility: hidden;
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s; z-index: 200; }
+.nav-work:hover .work-dropdown,
+.nav-work:focus-within .work-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.work-dropdown-label { padding: 0.6rem 1.2rem 0.4rem; font-size: 0.55rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--red); font-weight: 600; border-bottom: 1px solid var(--line); }
+.work-dropdown a { display: block; padding: 0.7rem 1.2rem; font-size: 0.65rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(248,248,246,0.6); text-decoration: none;
+  border-bottom: 1px solid var(--line); transition: color 0.15s, background 0.15s; }
+.work-dropdown a:last-child { border-bottom: none; }
+.work-dropdown a:hover { color: var(--white); background: rgba(232,24,10,0.08); }nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(8,8,8,0.95); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 3rem; height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); text-decoration: none; }
+.nav-right { display: flex; gap: 2rem; align-items: center; }
+.nav-link { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); text-decoration: none; opacity: 0.5; transition: opacity 0.2s; }
+.nav-link:hover { opacity: 1; }
+.nav-cta { background: var(--red); color: var(--white) !important; padding: 0.35rem 1rem;
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; opacity: 1 !important; }
+.nav-work { position: relative; }
+.nav-work-btn { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); background: none; border: none; cursor: pointer; opacity: 0.5;
+  transition: opacity 0.2s; padding: 0; display: flex; align-items: center; gap: 0.4rem;
+  font-family: 'Syne', sans-serif; font-weight: 400; }
+.nav-work-btn::after { content: ''; display: inline-block; width: 0; height: 0;
+  border-left: 3px solid transparent; border-right: 3px solid transparent;
+  border-top: 4px solid currentColor; transition: transform 0.2s; }
+.nav-work:hover .nav-work-btn,
+.nav-work:focus-within .nav-work-btn { opacity: 1; }
+.nav-work:hover .nav-work-btn::after,
+.nav-work:focus-within .nav-work-btn::after { transform: rotate(180deg); }
+.work-dropdown { position: absolute; top: calc(100% + 12px); left: 50%;
+  transform: translateX(-50%) translateY(-6px); background: var(--off-black);
+  border: 1px solid var(--line); min-width: 220px; opacity: 0; visibility: hidden;
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s; z-index: 200; }
+.nav-work:hover .work-dropdown,
+.nav-work:focus-within .work-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.work-dropdown-label { padding: 0.6rem 1.2rem 0.4rem; font-size: 0.55rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--red); font-weight: 600; border-bottom: 1px solid var(--line); }
+.work-dropdown a { display: block; padding: 0.7rem 1.2rem; font-size: 0.65rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(248,248,246,0.6); text-decoration: none;
+  border-bottom: 1px solid var(--line); transition: color 0.15s, background 0.15s; }
+.work-dropdown a:last-child { border-bottom: none; }
+.work-dropdown a:hover { color: var(--white); background: rgba(232,24,10,0.08); }
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem 3rem 5rem;position:relative;overflow:hidden;}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:52px 3rem 5rem 3rem;position:relative;overflow:hidden;}
 .hero-bg-num{position:absolute;top:50%;right:-2rem;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:clamp(20rem,38vw,36rem);font-weight:800;color:rgba(248,248,246,0.025);line-height:1;pointer-events:none;user-select:none;}
 .hero-tag{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s 0.3s forwards;}
 .hero-headline{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(4rem,10vw,10rem);line-height:0.9;letter-spacing:-0.03em;margin-bottom:2rem;opacity:0;animation:fadeUp 0.8s 0.5s forwards;}
@@ -186,41 +223,37 @@ footer{background:var(--off-black);border-top:1px solid var(--line);padding:2rem
 </style>
 </head>
 <body>
-
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="M.png" alt="mb.work">
+  </a>
+  <div class="nav-right">
+    <!-- Work with dropdown -->
+    <div class="nav-work" tabindex="0">
+      <button class="nav-work-btn" aria-haspopup="true">Work</button>
+      <div class="work-dropdown" role="menu">
+        <div class="work-dropdown-label">Case Studies</div>
+        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+        <a href="HorizonX.html">Horizon X — hear.com</a>
+        <a href="ONBC.html">#OneNationBillionCelebrations</a>
+        <a href="adl_equally.html">ADL Is EquAlly</a>
+        <a href="sustainability.html">Sustainability</a>
+        <a href="OYO.html">OYO</a>
+        <a href="fortune.html">Fortune</a>
+        <a href="police_scotland.html">Police Scotland</a>
+        <a href="FarmPik.html">FarmPik</a>
+        <a href="BookMyForex.html">BookMyForex</a>
+        <a href="moment_marketing.html">Moment Marketing</a>
+      </div>
+    </div>
+    <a href="bio_gq.html" class="nav-link">About</a>
+    <a href="eh5tories.html" class="nav-link">EH5tories</a>
+    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+  </div>
+  </nav>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- LOGO -->
-<a href="homepage_v2_split.html" class="logo">mb.work</a>
-
-<!-- MENU BUTTON -->
-<button class="menu-btn" id="menuBtn" aria-label="Menu">
-  <div class="menu-btn-inner">
-    <div class="bar bar1"></div>
-    <div class="bar bar2"></div>
-    <div class="bar bar3"></div>
-    <div class="menu-arrow"></div>
-  </div>
-</button>
-
-<!-- OVERLAY -->
-<div class="overlay" id="overlay">
-  <ul class="overlay-links">
-    <li><a href="homepage_v2_split.html" class="overlay-link"><span>00</span>Home</a></li>
-    <li><a href="HKKDH_Adani_CaseStudy.html" class="overlay-link"><span>01</span>HKKDH</a></li>
-    <li><a href="index.html" class="overlay-link"><span>02</span>Horizon X</a></li>
-    <li><a href="about.html" class="overlay-link"><span>03</span>One Nation</a></li>
-    <li><a href="adl_equally.html" class="overlay-link"><span>04</span>ADL EquAlly</a></li>
-    <li><a href="sustainability.html" class="overlay-link"><span>05</span>Sustainability</a></li>
-    <li><a href="oyo_valentines.html" class="overlay-link"><span>06</span>OYO</a></li>
-    <li><a href="police_scotland.html" class="overlay-link"><span>07</span>Police Scotland</a></li>
-  </ul>
-  <div class="overlay-contact">
-    <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
-    <a href="tel:9086904444">9086904444</a>
-    <a href="#">LinkedIn</a>
-  </div>
-</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -543,15 +576,6 @@ document.addEventListener('mousemove', e => {
     ring.style.left = e.clientX + 'px';
     ring.style.top = e.clientY + 'px';
   }, 80);
-});
-
-// Menu
-const menuBtn = document.getElementById('menuBtn');
-const overlay = document.getElementById('overlay');
-menuBtn.addEventListener('click', () => {
-  menuBtn.classList.toggle('menu-open');
-  overlay.classList.toggle('open');
-  document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
 });
 
 // Accordion
