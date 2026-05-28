@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google tag (gtag.js) -->
+   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-T4KRW84LFV');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-T4KRW84LFV');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,39 +18,39 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --paper:#F8F3EA;
-  --paper2:#F1EAD8;
-  --ink:#1A0E00;
-  --ink2:#3D2A10;
-  --rust:#B84A18;
-  --gold:#9A7020;
-  --rule:rgba(26,14,0,0.1);
-  --cream:#FDFAF4;
+  --paper:#F8F3EA;
+  --paper2:#F1EAD8;
+  --ink:#1A0E00;
+  --ink2:#3D2A10;
+  --rust:#B84A18;
+  --gold:#9A7020;
+  --rule:rgba(26,14,0,0.1);
+  --cream:#FDFAF4;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
 
 /* ── NAV ── */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--rule);
-  padding:0 3rem;height:52px;
-  display:flex;align-items:center;justify-content:space-between;
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+  padding:0 3rem;height:52px;
+  display:flex;align-items:center;justify-content:space-between;
 }
 .nav-logo{display:block;text-decoration:none;}
 .nav-logo img{height:32px;width:auto;display:block;}
 .nav-right{display:flex;gap:2rem;align-items:center;}
 .nav-link{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
 }
 .nav-link:hover{opacity:1;}
 .nav-cta{
-  background:var(--ink);color:var(--cream)!important;
-  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  text-decoration:none;
+  background:var(--ink);color:var(--cream)!important;
+  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  text-decoration:none;
 }
   /* ───────────────── HERO ───────────────── */
 
@@ -169,8 +170,8 @@ height:1px;
 background:currentColor;
 display:inline-block;
 }
-   
-  /* ── INTRO ── */
+   
+  /* ── INTRO ── */
 .intro{max-width:1000px;margin:0 auto;padding:6rem 3rem;display:grid;grid-template-columns:1fr 2px 1.8fr;gap:0 4rem;align-items:start;}
 .intro-rule{background:var(--rule);width:1px;margin:0 auto;}
 .intro-left-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);font-weight:500;margin-bottom:2rem;}
@@ -183,15 +184,15 @@ display:inline-block;
 /* ── WORK DROPDOWN ── */
 .nav-work{position:relative;}
 .nav-work-btn{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);background:none;border:none;cursor:pointer;
-  opacity:0.6;transition:opacity 0.2s;padding:0;
-  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
+  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink2);background:none;border:none;cursor:pointer;
+  opacity:0.6;transition:opacity 0.2s;padding:0;
+  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
 }
 .nav-work-btn::after{
-  content:'';display:inline-block;width:0;height:0;
-  border-left:3px solid transparent;border-right:3px solid transparent;
-  border-top:4px solid currentColor;transition:transform 0.2s;
+  content:'';display:inline-block;width:0;height:0;
+  border-left:3px solid transparent;border-right:3px solid transparent;
+  border-top:4px solid currentColor;transition:transform 0.2s;
 }
 .nav-work:hover .nav-work-btn,
 .nav-work:focus-within .nav-work-btn{opacity:1;}
@@ -199,32 +200,32 @@ display:inline-block;
 .nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
 
 .work-dropdown{
-  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
-  background:var(--cream);border:1px solid var(--rule);
-  min-width:240px;
-  opacity:0;visibility:hidden;
-  transform:translateX(-50%) translateY(-6px);
-  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
-  z-index:200;
+  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
+  background:var(--cream);border:1px solid var(--rule);
+  min-width:240px;
+  opacity:0;visibility:hidden;
+  transform:translateX(-50%) translateY(-6px);
+  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
+  z-index:200;
 }
 .nav-work:hover .work-dropdown,
 .nav-work:focus-within .work-dropdown{
-  opacity:1;visibility:visible;
-  transform:translateX(-50%) translateY(0);
+  opacity:1;visibility:visible;
+  transform:translateX(-50%) translateY(0);
 }
 .work-dropdown a{
-  display:block;padding:0.7rem 1.2rem;
-  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.65;
-  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
+  display:block;padding:0.7rem 1.2rem;
+  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;opacity:0.65;
+  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
 }
 .work-dropdown a:last-child{border-bottom:none;}
 .work-dropdown a:hover{opacity:1;background:var(--paper2);}
 .work-dropdown-label{
-  padding:0.6rem 1.2rem 0.4rem;
-  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
-  }
+  padding:0.6rem 1.2rem 0.4rem;
+  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
+  }
 
 /* ── CLEAN CINEMATIC GRID ── */
 .video-grid-section{padding:6rem 3rem;}
@@ -232,59 +233,59 @@ display:inline-block;
 .section-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);font-weight:500;}
 
 .cinematic-video-grid {
-  display: grid; 
-  grid-template-columns: repeat(2, 1fr); /* Forces 2 columns */
-  gap: 30px; 
-  margin-top: 2rem;
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); /* Forces 2 columns */
+  gap: 30px; 
+  margin-top: 2rem;
 }
 
 .video-grid-item {
-  position: relative; 
-  aspect-ratio: 16/9; 
-  background: #000; 
-  overflow: hidden; 
-  border: 1px solid var(--rule);
-  text-decoration: none;
+  position: relative; 
+  aspect-ratio: 16/9; 
+  background: #000; 
+  overflow: hidden; 
+  border: 1px solid var(--rule);
+  text-decoration: none;
 }
 
 .video-wrap {
-  width: 100%; 
-  height: 100%; 
-  position: relative;
-  transition: transform 0.6s ease;
+  width: 100%; 
+  height: 100%; 
+  position: relative;
+  transition: transform 0.6s ease;
 }
 
-.video-wrap video, 
+.video-wrap video, 
 .video-wrap iframe,
 .grid-media {
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  display: block; 
-  opacity: 0.7;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+  opacity: 0.7;
 }
 
 /* Specific fix for YouTube background feel */
 .yt-embed-container {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 150%; height: 150%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 150%; height: 150%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .video-pointer-shield {position: absolute; inset: 0; z-index: 5; cursor: pointer;}
 
 .video-grid-overlay {
-  position: absolute; 
-  inset: 0; 
-  padding: 2rem; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: flex-end; 
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); 
-  z-index: 2;
-  transition: opacity 0.4s ease;
+  position: absolute; 
+  inset: 0; 
+  padding: 2rem; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-end; 
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); 
+  z-index: 2;
+  transition: opacity 0.4s ease;
 }
 
 .v-meta {font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;}
@@ -293,14 +294,14 @@ display:inline-block;
 /* Hover States */
 .video-grid-item:hover .video-wrap {transform: scale(1.03);}
 .video-grid-item:hover .video-grid-overlay {opacity: 1;}
-.video-grid-item:hover video, 
-.video-grid-item:hover .grid-media, 
+.video-grid-item:hover video, 
+.video-grid-item:hover .grid-media, 
 .video-grid-item:hover iframe {opacity: 1;}
 
 /* Mobile Stack */
 @media (max-width: 768px) {
-  .cinematic-video-grid { grid-template-columns: 1fr; }
-  .video-grid-section { padding: 4rem 1.5rem; }
+  .cinematic-video-grid { grid-template-columns: 1fr; }
+  .video-grid-section { padding: 4rem 1.5rem; }
 }
 
 /* ── CTA & FOOTER ── */
@@ -314,162 +315,162 @@ footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">
-    <img src="M.png" alt="mb.work">
-  </a>
-  <div class="nav-right">
-    <!-- Work with dropdown -->
-    <div class="nav-work" tabindex="0">
-      <button class="nav-work-btn" aria-haspopup="true">Work</button>
-      <div class="work-dropdown" role="menu">
-        <div class="work-dropdown-label">Case Studies</div>
-        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
-        <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="ONBC.html">#OneNationBillionCelebrations</a>
-        <a href="adl_equally.html">ADL Is EquAlly</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="OYO.html">OYO</a>
-        <a href="fortune.html">Fortune</a>
-        <a href="police_scotland.html">Police Scotland</a>
-        <a href="FarmPik.html">FarmPik</a>
-        <a href="BookMyForex.html">BookMyForex</a>
-        <a href="moment_marketing.html">Moment Marketing</a>
-        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
-      </div>
-    </div>
-    <a href="bio_gq.html" class="nav-link">About</a>
-    <a href="eh5tories.html" class="nav-link">EH5tories</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-  </div>
-  </nav>
+  <a href="index.html" class="nav-logo">
+    <img src="M.png" alt="mb.work">
+  </a>
+  <div class="nav-right">
+    <!-- Work with dropdown -->
+    <div class="nav-work" tabindex="0">
+      <button class="nav-work-btn" aria-haspopup="true">Work</button>
+      <div class="work-dropdown" role="menu">
+        <div class="work-dropdown-label">Case Studies</div>
+        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+        <a href="HorizonX.html">Horizon X — hear.com</a>
+        <a href="ONBC.html">#OneNationBillionCelebrations</a>
+        <a href="adl_equally.html">ADL Is EquAlly</a>
+        <a href="sustainability.html">Sustainability</a>
+        <a href="OYO.html">OYO</a>
+        <a href="fortune.html">Fortune</a>
+        <a href="police_scotland.html">Police Scotland</a>
+        <a href="FarmPik.html">FarmPik</a>
+        <a href="BookMyForex.html">BookMyForex</a>
+        <a href="moment_marketing.html">Moment Marketing</a>
+        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+      </div>
+    </div>
+    <a href="bio_gq.html" class="nav-link">About</a>
+    <a href="eh5tories.html" class="nav-link">EH5tories</a>
+    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+  </div>
+  </nav>
 <div class="hero">
-  <div class="hero-left">
-    <div>
-      <div class="hero-issue">Mouris Bashir </div>
-      <div class="hero-name"> <strong><em>Brand, PR & </em></strong><em><strong>Creative </em></strong>Director</div>
-    </div>
-    <div class="hero-meta-row">
-  <div class="hero-meta-item">
-    <span class="hero-meta-label">Current</span>
-    <span class="hero-meta-val">Adani Group</span>
-  </div>
+  <div class="hero-left">
+    <div>
+      <div class="hero-issue">Mouris Bashir </div>
+      <div class="hero-name"> <strong><em>Brand, PR & </em></strong><em><strong>Creative </em></strong>Director</div>
+    </div>
+    <div class="hero-meta-row">
+  <div class="hero-meta-item">
+    <span class="hero-meta-label">Current</span>
+    <span class="hero-meta-val">Adani Group</span>
+  </div>
 
-  <div class="hero-meta-item">
-    <span class="hero-meta-label">Approach</span>
-    <span class="hero-meta-val">Movement over distribution</span>
-  </div>
+  <div class="hero-meta-item">
+    <span class="hero-meta-label">Approach</span>
+    <span class="hero-meta-val">Movement over distribution</span>
+  </div>
 </div>
 </div>
 
-  <!-- RIGHT -->
-  <div class="hero-right">
+  <!-- RIGHT -->
+  <div class="hero-right">
 
-    <div class="hero-services">
-      <div>EARNED STRATEGY</div>
-      <div>INTEGRATED CAMPAIGNS</div>
-      <div>SOCIAL & DIGITAL COMMS</div>
-      <div>INFLUENCER</div>
-      <div>C-SUITE COMMS</div>
-      <div>CRISIS COMMS</div>
-    </div>
+    <div class="hero-services">
+      <div>EARNED STRATEGY</div>
+      <div>INTEGRATED CAMPAIGNS</div>
+      <div>SOCIAL & DIGITAL COMMS</div>
+      <div>INFLUENCER</div>
+      <div>C-SUITE COMMS</div>
+      <div>CRISIS COMMS</div>
+    </div>
 
-    <div class="hero-scroll">
-      Scroll to explore the work
-    </div>
+    <div class="hero-scroll">
+      Scroll to explore the work
+    </div>
 
-  </div>
+  </div>
 
 </div>
 
 <section class="video-grid-section">
-  <div class="section-header">
-    <span class="section-label">Selected Work</span>
-  </div>
+  <div class="section-header">
+    <span class="section-label">Selected Work</span>
+  </div>
 
- <div class="cinematic-video-grid">
-    <div class="video-grid-item">
-      <div class="video-wrap">
-        <div class="yt-embed-container">
-          <iframe src="https://www.youtube.com/embed/a7aJYVRuBZM?autoplay=1&mute=1&loop=1&playlist=a7aJYVRuBZM&controls=0" frameborder="0"></iframe>
-        </div>
-        <a href="HKKDH.html" class="video-pointer-shield"></a>
-        <div class="video-grid-overlay">
-          <div class="v-meta">Adani Group</div>
-          <div class="v-title">Hum Karke Dikhate Hai</div>
-        </div>
-      </div>
-    </div>
+ <div class="cinematic-video-grid">
+    <div class="video-grid-item">
+      <div class="video-wrap">
+        <div class="yt-embed-container">
+          <iframe src="https://www.youtube.com/embed/a7aJYVRuBZM?autoplay=1&mute=1&loop=1&playlist=a7aJYVRuBZM&controls=0" frameborder="0"></iframe>
+        </div>
+        <a href="HKKDH.html" class="video-pointer-shield"></a>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Adani Group</div>
+          <div class="v-title">Hum Karke Dikhate Hai</div>
+        </div>
+      </div>
+    </div>
 
-    <div class="video-grid-item">
-      <div class="video-wrap">
-        <div class="yt-embed-container">
-          <iframe src="https://www.youtube.com/embed/GM7uKnyAono?autoplay=1&mute=1&loop=1&playlist=GM7uKnyAono&controls=0" frameborder="0"></iframe>
-        </div>
-        <a href="ONBC.html" class="video-pointer-shield"></a>
-        <div class="video-grid-overlay">
-          <div class="v-meta">Adani Group</div>
-          <div class="v-title">#OneNationBillionCelebrations</div>
-        </div>
-      </div>
-    </div>
+    <div class="video-grid-item">
+      <div class="video-wrap">
+        <div class="yt-embed-container">
+          <iframe src="https://www.youtube.com/embed/GM7uKnyAono?autoplay=1&mute=1&loop=1&playlist=GM7uKnyAono&controls=0" frameborder="0"></iframe>
+        </div>
+        <a href="ONBC.html" class="video-pointer-shield"></a>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Adani Group</div>
+          <div class="v-title">#OneNationBillionCelebrations</div>
+        </div>
+      </div>
+    </div>
 
-    <div class="video-grid-item">
-      <div class="video-wrap">
-        <div class="yt-embed-container">
-          <iframe src="https://www.youtube.com/embed/LIVns_jdQVw?autoplay=1&mute=1&loop=1&playlist=LIVns_jdQVw&controls=0" frameborder="0"></iframe>
-        </div>
-        <a href="moment_marketing.html" class="video-pointer-shield"></a>
-        <div class="video-grid-overlay">
-          <div class="v-meta">Adani Group</div>
-          <div class="v-title">Diwali | #KaroHarJashnKoRoshan</div>
-        </div>
-      </div>
-    </div>
+    <div class="video-grid-item">
+      <div class="video-wrap">
+        <div class="yt-embed-container">
+          <iframe src="https://www.youtube.com/embed/LIVns_jdQVw?autoplay=1&mute=1&loop=1&playlist=LIVns_jdQVw&controls=0" frameborder="0"></iframe>
+        </div>
+        <a href="moment_marketing.html" class="video-pointer-shield"></a>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Adani Group</div>
+          <div class="v-title">Diwali | #KaroHarJashnKoRoshan</div>
+        </div>
+      </div>
+    </div>
 
-    <a href="HorizonX.html" class="video-grid-item">
-      <div class="video-wrap">
-        <video autoplay loop muted playsinline><source src="H010.mp4" type="video/mp4"></video>
-        <div class="video-grid-overlay">
-          <div class="v-meta">Audibene</div>
-          <div class="v-title">Where Forever Young Begins</div>
-        </div>
-      </div>
-    </a>
+    <a href="HorizonX.html" class="video-grid-item">
+      <div class="video-wrap">
+        <video autoplay loop muted playsinline><source src="H010.mp4" type="video/mp4"></video>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Audibene</div>
+          <div class="v-title">Where Forever Young Begins</div>
+        </div>
+      </div>
+    </a>
 
-    <a href="adl_equally.html" class="video-grid-item">
-      <div class="video-wrap">
-        <video autoplay loop muted playsinline><source src="adl_equally_video.mp4" type="video/mp4"></video>
-        <div class="video-grid-overlay">
-          <div class="v-meta">Adani Group</div>
-          <div class="v-title">#ADLIsEquAlly</div>
-        </div>
-      </div>
-    </a>
+    <a href="adl_equally.html" class="video-grid-item">
+      <div class="video-wrap">
+        <video autoplay loop muted playsinline><source src="adl_equally_video.mp4" type="video/mp4"></video>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Adani Group</div>
+          <div class="v-title">#ADLIsEquAlly</div>
+        </div>
+      </div>
+    </a>
 
-    <a href="police_scotland.html" class="video-grid-item">
-      <div class="video-wrap">
-        <img src="p1.gif" alt="Campaign" class="grid-media">
-        <div class="video-grid-overlay">
-          <div class="v-meta">LBP</div>
-          <div class="v-title">#WeCanStopIt</div>
-        </div>
-      </div>
-    </a>
+    <a href="police_scotland.html" class="video-grid-item">
+      <div class="video-wrap">
+        <img src="p1.gif" alt="Campaign" class="grid-media">
+        <div class="video-grid-overlay">
+          <div class="v-meta">LBP</div>
+          <div class="v-title">#WeCanStopIt</div>
+        </div>
+      </div>
+    </a>
 </div>
-    </section>
+    </section>
 
 <div class="cta">
-  <div class="cta-inner">
-    <h2>"My real job is to <strong>inspire.</strong>"</h2>
-    <div class="cta-links">
-      <a href="mailto:mouris.bashir@hotmail.com" class="cta-link primary">Email</a>
-      <a href="https://linkedin.com/in/mouris-bashir/" class="cta-link">LinkedIn</a>
-    </div>
-  </div>
+  <div class="cta-inner">
+    <h2>"My real job is to <strong>inspire.</strong>"</h2>
+    <div class="cta-links">
+      <a href="mailto:mouris.bashir@hotmail.com" class="cta-link primary">Email</a>
+      <a href="https://linkedin.com/in/mouris-bashir/" class="cta-link">LinkedIn</a>
+    </div>
+  </div>
 </div>
 
 <footer>
-  <span class="footer-name">Mouris Bashir · India</span>
+  <span class="footer-name">Mouris Bashir · India</span>
 </footer>
 
 </body>
