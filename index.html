@@ -10,6 +10,31 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
+  const slider=document.querySelector(".cinematic-video-grid");
+
+document.getElementById("next").onclick=()=>{
+
+slider.scrollBy({
+
+left:450,
+
+behavior:"smooth"
+
+});
+
+};
+
+document.getElementById("prev").onclick=()=>{
+
+slider.scrollBy({
+
+left:-450,
+
+behavior:"smooth"
+
+});
+
+};
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mouris Bashir — Marketing & Communications Strategist</title>
@@ -52,6 +77,46 @@ nav{
   font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
   text-decoration:none;
 }
+  .carousel-nav{
+
+display:flex;
+
+gap:.8rem;
+}
+
+.carousel-nav button{
+
+width:48px;
+
+height:48px;
+
+border-radius:50%;
+
+background:white;
+
+border:1px solid #ddd;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.carousel-nav button:hover{
+
+background:black;
+
+color:white;
+}<div class="carousel-nav">
+
+<button id="prev">
+←
+</button>
+
+<button id="next">
+→
+</button>
+
+</div>
   /* ───────────────── HERO ───────────────── */
 
 .hero{
@@ -228,21 +293,51 @@ display:inline-block;
 .video-grid-section{padding:3rem 3rem 6rem;}
 .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;border-bottom:1px solid var(--rule);padding-bottom:1rem;}
 .section-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);font-weight:500;}
-
 .cinematic-video-grid {
-  display: grid; 
-  grid-template-columns: repeat(2, 1fr); /* Forces 2 columns */
-  gap: 30px; 
-  margin-top: 2rem;
+
+    display:flex;
+
+    gap:2rem;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    scrollbar-width:none;
+
+    -webkit-overflow-scrolling:touch;
+
+    padding-bottom:1rem;
+
+    margin-top:2rem;
 }
 
-.video-grid-item {
-  position: relative; 
-  aspect-ratio: 16/9; 
-  background: #000; 
-  overflow: hidden; 
-  border: 1px solid var(--rule);
-  text-decoration: none;
+.cinematic-video-grid::-webkit-scrollbar{
+
+    display:none;
+}
+
+.video-grid-item{
+
+    flex:0 0 460px;
+
+    position:relative;
+
+    aspect-ratio:3/4;
+
+    background:#000;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    border:none;
+
+    scroll-snap-align:start;
+
+    text-decoration:none;
+
+    transition:.4s ease;
 }
 
 .video-wrap {
@@ -259,7 +354,7 @@ display:inline-block;
   height: 100%; 
   object-fit: cover; 
   display: block; 
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 /* Specific fix for YouTube background feel */
@@ -273,16 +368,19 @@ display:inline-block;
 
 .video-pointer-shield {position: absolute; inset: 0; z-index: 5; cursor: pointer;}
 
-.video-grid-overlay {
-  position: absolute; 
-  inset: 0; 
-  padding: 2rem; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: flex-end; 
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); 
-  z-index: 2;
-  transition: opacity 0.4s ease;
+.video-grid-overlay{
+
+    padding:1.75rem;
+
+    justify-content:flex-end;
+
+    background:
+linear-gradient(
+to top,
+rgba(0,0,0,.82),
+rgba(0,0,0,.2) 55%,
+transparent
+);
 }
 
 .v-meta {font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;}
@@ -294,7 +392,15 @@ display:inline-block;
 .video-grid-item:hover video, 
 .video-grid-item:hover .grid-media, 
 .video-grid-item:hover iframe {opacity: 1;}
+.video-grid-item:hover{
 
+    transform:translateY(-8px);
+}
+
+.video-grid-item:hover .video-wrap{
+
+    transform:scale(1.05);
+}
 /* Mobile Stack */
 @media (max-width: 768px) {
   .cinematic-video-grid { grid-template-columns: 1fr; }
