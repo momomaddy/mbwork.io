@@ -10,30 +10,7 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
-   <script>
-
-const slider = document.querySelector(".cinematic-video-grid");
-
-document.getElementById("next").addEventListener("click", () => {
-
-    slider.scrollBy({
-        left: 500,
-        behavior: "smooth"
-    });
-
-});
-
-document.getElementById("prev").addEventListener("click", () => {
-
-    slider.scrollBy({
-        left: -500,
-        behavior: "smooth"
-    });
-
-});
-
-</script>
-
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mouris Bashir — Marketing & Communications Strategist</title>
@@ -76,28 +53,10 @@ nav{
   font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
   text-decoration:none;
 }
-  .carousel-nav{
-
-display:flex;
-
-gap:.8rem;
+  .carousel-nav{display:flex;gap:.8rem;
 }
 
-.carousel-nav button{
-
-width:48px;
-
-height:48px;
-
-border-radius:50%;
-
-background:white;
-
-border:1px solid #ddd;
-
-cursor:pointer;
-
-transition:.3s;
+.carousel-nav button{width:48px;height:48px;border-radius:50%;background:white;border:1px solid #ddd;cursor:pointer;transition:.3s;
 }
 
 .carousel-nav button:hover{
@@ -105,12 +64,7 @@ transition:.3s;
 background:black;
 
 color:white;
-}<div class="carousel-nav">
-
-</button>
-<button id="prev">&#8249;</button>
-<button id="next">&#8250;</button>
-</div>
+}
    .carousel-nav{
     display:flex;
     gap:.75rem;
@@ -144,8 +98,8 @@ color:white;
 
 .hero{
     padding-top:52px;
-    min-height:75vh;
-    display:flex;
+min-height:auto;
+   display:flex;
     flex-direction:column;
     background:var(--cream);
 }
@@ -153,7 +107,7 @@ color:white;
 /* LEFT */
 .hero-left{
 background:var(--cream);
-padding:4rem 6rem 3rem;
+padding:3rem 6rem 1rem;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
@@ -313,7 +267,7 @@ display:inline-block;
   }
 
 /* ── CLEAN CINEMATIC GRID ── */
-.video-grid-section{padding:3rem 3rem 6rem;}
+.video-grid-section{padding:1rem 3rem 6rem;}
 .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;border-bottom:1px solid var(--rule);padding-bottom:1rem;}
 .section-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);font-weight:500;}
 .cinematic-video-grid {display:flex;gap:2rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:1rem;margin-top:2rem;
@@ -378,6 +332,18 @@ display:inline-block;
 .v-meta{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:#d6b06d;
 }
    .v-title{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1.1;color:white;margin-bottom:.6rem;
+}
+   .v-desc{
+
+    margin-top:.8rem;
+
+    font-size:.9rem;
+
+    line-height:1.45;
+
+    color:rgba(255,255,255,.82);
+
+    max-width:80%;
 }
 /* Hover States */
 .video-grid-item:hover .video-wrap {transform: scale(1.03);}
@@ -475,9 +441,11 @@ I helped airports behave like destinations, hotels like communities, and infrast
         </div>
         <a href="HKKDH.html" class="video-pointer-shield"></a>
         <div class="video-grid-overlay">
-          <div class="v-meta">Adani Group</div>
-          <div class="v-title">Hum Karke Dikhate Hai</div>
-        </div>
+<div class="v-meta">Adani Group</div>
+<div class="v-title">Hum Karke Dikhate Hain</div>
+<p class="v-desc">Rebuilding belief in India's largest infrastructure brand.</p>
+
+</div>
       </div>
     </div>
 
@@ -490,6 +458,7 @@ I helped airports behave like destinations, hotels like communities, and infrast
         <div class="video-grid-overlay">
           <div class="v-meta">Adani Group</div>
           <div class="v-title">#OneNationBillionCelebrations</div>
+           <p class="v-desc">Turning Airports into cultural hubs</p>
         </div>
       </div>
     </div>
@@ -552,6 +521,38 @@ I helped airports behave like destinations, hotels like communities, and infrast
 <footer>
   <span class="footer-name">Mouris Bashir · India</span>
 </footer>
+<script>
 
+document.addEventListener("DOMContentLoaded",()=>{
+
+    const slider=document.querySelector(".cinematic-video-grid");
+
+    document.getElementById("next").onclick=()=>{
+
+        slider.scrollBy({
+
+            left:680,
+
+            behavior:"smooth"
+
+        });
+
+    };
+
+    document.getElementById("prev").onclick=()=>{
+
+        slider.scrollBy({
+
+            left:-680,
+
+            behavior:"smooth"
+
+        });
+
+    };
+
+});
+
+</script>
 </body>
 </html>
