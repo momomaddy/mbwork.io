@@ -10,31 +10,30 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
-  const slider=document.querySelector(".cinematic-video-grid");
+   <script>
 
-document.getElementById("next").onclick=()=>{
+const slider = document.querySelector(".cinematic-video-grid");
 
-slider.scrollBy({
+document.getElementById("next").addEventListener("click", () => {
 
-left:450,
-
-behavior:"smooth"
-
-});
-
-};
-
-document.getElementById("prev").onclick=()=>{
-
-slider.scrollBy({
-
-left:-450,
-
-behavior:"smooth"
+    slider.scrollBy({
+        left: 500,
+        behavior: "smooth"
+    });
 
 });
 
-};
+document.getElementById("prev").addEventListener("click", () => {
+
+    slider.scrollBy({
+        left: -500,
+        behavior: "smooth"
+    });
+
+});
+
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mouris Bashir — Marketing & Communications Strategist</title>
@@ -117,6 +116,35 @@ color:white;
 </button>
 
 </div>
+   .carousel-nav{
+    display:flex;
+    gap:.75rem;
+    align-items:center;
+}
+
+.carousel-nav button{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    border:1px solid var(--rule);
+
+    background:white;
+
+    color:#111;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.carousel-nav button:hover{
+
+    background:#111;
+    color:white;
+}
   /* ───────────────── HERO ───────────────── */
 
 .hero{
