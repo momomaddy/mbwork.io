@@ -1,4 +1,4 @@
-
+console.log("EH5 JS loaded");
 const PROJECT_ID = "ipmstef7";
 const DATASET = "production";
 
