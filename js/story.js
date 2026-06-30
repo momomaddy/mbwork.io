@@ -18,7 +18,39 @@ const query = encodeURIComponent(`
 
 const url =
 `https://${PROJECT_ID}.api.sanity.io/v2025-02-19/data/query/${DATASET}?query=${query}`;
+function renderPortableText(body) {
 
+  if (!body) return "";
+
+  return body.map(block => {
+
+    if (block._type !== "block") return "";
+
+    const text = block.children
+      .map(child => child.text)
+      .join("");
+
+    switch (block.style) {
+
+      case "h1":
+        return `<h1>${text}</h1>`;
+
+      case "h2":
+        return `<h2>${text}</h2>`;
+
+      case "h3":
+        return `<h3>${text}</h3>`;
+
+      case "blockquote":
+        return `<blockquote>${text}</blockquote>`;
+
+      default:
+        return `<p>${text}</p>`;
+    }
+
+  }).join("");
+
+}
 fetch(url)
 .then(res => res.json())
 .then(data => {
@@ -46,11 +78,11 @@ fetch(url)
         })}
       </div>
 
-      <hr>
+     <hr>
 
-      <pre>
-${JSON.stringify(story.body,null,2)}
-      </pre>
+<div class="story-body">
+  ${renderPortableText(story.body)}
+</div>
 
     </article>
   `;
