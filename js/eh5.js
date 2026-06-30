@@ -2,15 +2,9 @@ console.log("EH5 JS loaded");
 const PROJECT_ID = "ipmstef7";
 const DATASET = "production";
 
-const query = encodeURIComponent(`
-  *[_type=="story"] | order(publishedAt desc){
-    title,
-    subtitle,
-    slug,
-    publishedAt,
-    thinking
-  }
-`);
+const query = encodeURIComponent(
+  '*[_type=="story"] | order(publishedAt desc){title,subtitle,slug,publishedAt,thinking}'
+);
 
 const url =
   `https://${PROJECT_ID}.api.sanity.io/v2025-02-19/data/query/${DATASET}?query=${query}`;
