@@ -8,10 +8,9 @@ const query = encodeURIComponent(`
   subtitle,
   "slug": slug.current,
   publishedAt,
-  thinking,
-  coverImage
+  thinking
 }
-);
+`);
 
 const url =
   `https://${PROJECT_ID}.api.sanity.io/v2025-02-19/data/query/${DATASET}?query=${query}`;
