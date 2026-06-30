@@ -30,7 +30,9 @@ fetch(url)
 
       article.innerHTML = `
         <h2 class="stream-post-title">
-          <a href="#">${story.title}</a>
+          <a href="story.html?slug=${story.slug}">
+  ${story.title}
+</a>
         </h2>
 
         <p class="stream-post-excerpt">
