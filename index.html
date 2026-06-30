@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,7 +128,7 @@ font-weight:500;
 .hero-name{
 font-family:'Cormorant Garamond',serif;
 font-size:clamp(4rem,6vw,6rem);
-max-width:1100px;
+max-width:1400px;
 line-height:0.93;
 letter-spacing:-0.05em;
 color:var(--ink);
@@ -282,7 +283,7 @@ display:inline-block;
 
     display:none;
 }
-.video-grid-item{flex:0 0 640px;aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:26px;background:#000;text-decoration:none;scroll-snap-align:start;transition:all .45s ease;box-shadow:0 20px 60px rgba(0,0,0,.12);
+.video-grid-item{flex:0 0 640px;min-width:640px;aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:26px;background:#000;text-decoration:none;scroll-snap-align:start;transition:all .45s ease;box-shadow:0 20px 60px rgba(0,0,0,.12);
 }
 .video-wrap {
   width: 100%; 
@@ -294,6 +295,9 @@ display:inline-block;
 
     padding:1.2rem;
 }
+   .v-title{
+
+    font-size:1.5rem;
 }
 .video-wrap video,
 .video-wrap iframe,
