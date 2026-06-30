@@ -49,3 +49,43 @@
 .story-body p{
     margin-bottom:2rem;
 }
+.story-header{
+
+    max-width:1100px;
+    margin:32px auto 80px;
+
+    padding:0 32px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.story-header a{
+
+    text-decoration:none;
+
+    color:#666;
+
+    transition:.25s;
+
+    font-size:.9rem;
+
+    letter-spacing:.05em;
+}
+
+.story-header a:hover{
+
+    color:#111;
+}
+
+.story-home{
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:.12em;
+}
