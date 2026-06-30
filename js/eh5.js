@@ -35,7 +35,7 @@ fetch(url)
         </h2>
 
         <p class="stream-post-excerpt">
-          ${story.subtitle || ""}
+          ${story.summary || ""}
         </p>
 
         <div class="stream-post-meta">
