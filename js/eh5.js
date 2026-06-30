@@ -11,7 +11,7 @@ const query = encodeURIComponent(`
   thinking,
   coverImage
 }
-`);
+);
 
 const url =
   `https://${PROJECT_ID}.api.sanity.io/v2025-02-19/data/query/${DATASET}?query=${query}`;
