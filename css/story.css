@@ -318,3 +318,64 @@ font-weight:400;
     font-size:.72rem;
 
 }
+.story-card{
+
+    margin:60px 0;
+
+    padding:24px 0;
+
+    border-top:1px solid rgba(0,0,0,.12);
+
+    border-bottom:1px solid rgba(0,0,0,.12);
+
+}
+
+.card-title{
+
+    font-family:'Courier Prime', monospace;
+
+    font-size:.7rem;
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+    color:#888;
+
+    margin-bottom:22px;
+
+}
+
+.card-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:10px 0;
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+
+}
+
+.card-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.card-row span{
+
+    color:#888;
+
+    font-size:.9rem;
+
+}
+
+.card-row strong{
+
+    font-weight:500;
+
+    color:#222;
+
+}
