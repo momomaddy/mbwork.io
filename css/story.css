@@ -183,23 +183,7 @@ font-style:italic;
 border:none;
 
 }
-.story-body p:first-child::first-letter{
 
-    float:left;
-
-    font-family:'DM Serif Display',serif;
-
-    font-size:7rem;
-
-    line-height:.82;
-
-    padding-right:12px;
-
-    margin-top:8px;
-
-    color:#1b1b1b;
-
-}
 #progress{
 
     position:fixed;
