@@ -56,6 +56,11 @@ fetch(url)
 .then(data => {
 
   const story = data.result;
+  const words =
+JSON.stringify(story.body).split(" ").length;
+
+const readTime =
+Math.max(1, Math.round(words / 220));
 
   document.getElementById("story").innerHTML = `
     <article class="story-page">
