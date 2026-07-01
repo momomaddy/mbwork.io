@@ -99,7 +99,7 @@ fetch(url)
 
         <p>Thanks for reading.</p>
 
-        <a href="www.mouris-bashir.work/eh5tories.html">
+        <a href="/eh5tories.html">
             ← Back to EH5tories
         </a>
 
