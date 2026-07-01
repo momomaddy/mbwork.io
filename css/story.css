@@ -1,9 +1,8 @@
 .story-container{
     max-width:820px;
     margin:0 auto;
-    padding:80px 40px 140px;
+    padding:140px;
 }
-
 .story-page{
     color:#1f1f1f;
 }
@@ -33,6 +32,7 @@ letter-spacing:-0.03em;
 margin-bottom:28px;
 
 font-weight:400;
+    max-width:980px;
 
 }
 
@@ -59,9 +59,9 @@ margin-bottom:70px;
 
 font-family:'DM Serif Display', serif;
 
-font-size:34px;
+font-size:14px;
 
-line-height:1.72;
+line-height:1;
 
 color:#2c241d;
 
@@ -71,7 +71,7 @@ color:#2c241d;
 }
 .story-body{
 
-max-width:700px;
+max-width:760px;
 
 }
 .story-header{
