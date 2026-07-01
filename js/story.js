@@ -5,7 +5,7 @@ const DATASET = "production";
 const params = new URLSearchParams(window.location.search);
 const slug = params.get("slug");
 
-// Sanity query
+// Query Sanity
 const query = encodeURIComponent(`
 *[_type=="story" && slug.current=="${slug}"][0]{
   title,
@@ -16,97 +16,102 @@ const query = encodeURIComponent(`
 }
 `);
 
-const url =
-`https://${PROJECT_ID}.api.sanity.io/v2025-02-19/data/query/${DATASET}?query=${query}`;
-function renderPortableText(body) {
+const url = `https://${PROJECT_ID}.api.sanity.io/v2025-02-19/data/query/${DATASET}?query=${query}`;
 
-  if (!body) return "";
+function renderPortableText(body){
 
-  return body.map(block => {
+    if(!body) return "";
 
-    if (block._type !== "block") return "";
+    return body.map(block=>{
 
-    const text = block.children
-      .map(child => child.text)
-      .join("");
+        if(block._type !== "block") return "";
 
-    switch (block.style) {
+        const text = block.children
+            .map(child=>child.text)
+            .join("");
 
-      case "h1":
-        return `<h1>${text}</h1>`;
+        switch(block.style){
 
-      case "h2":
-        return `<h2>${text}</h2>`;
+            case "h1":
+                return `<h1>${text}</h1>`;
 
-      case "h3":
-        return `<h3>${text}</h3>`;
+            case "h2":
+                return `<h2>${text}</h2>`;
 
-      case "blockquote":
-        return `<blockquote>${text}</blockquote>`;
+            case "h3":
+                return `<h3>${text}</h3>`;
 
-      default:
-        return `<p>${text}</p>`;
-    }
+            case "blockquote":
+                return `<blockquote>${text}</blockquote>`;
 
-  }).join("");
+            default:
+                return `<p>${text}</p>`;
+        }
+
+    }).join("");
 
 }
+
 fetch(url)
-.then(res => res.json())
-.then(data => {
+.then(res=>res.json())
+.then(data=>{
 
-  const story = data.result;
-  const words =
-JSON.stringify(story.body).split(" ").length;
+    const story = data.result;
 
-const readTime =
-Math.max(1, Math.round(words / 220));
+    const words =
+        JSON.stringify(story.body).split(" ").length;
 
-  document.getElementById("story").innerHTML = `
-    <article class="story-page">
+    const readTime =
+        Math.max(1, Math.round(words/220));
 
-      <div class="story-meta">
+    document.getElementById("story").innerHTML = `
+
+<article class="story-page">
+
+    <div class="story-meta">
         ${story.thinking.toUpperCase()}
-      </div>
+    </div>
 
-      <h1>${story.title}</h1>
+    <h1>${story.title}</h1>
 
-      <p class="story-summary">
+    <p class="story-summary">
         ${story.summary || ""}
-      </p>
+    </p>
 
-      <div class="story-date">
+    <div class="story-date">
         ${new Date(story.publishedAt).toLocaleDateString("en-US",{
-          month:"long",
-          day:"numeric",
-          year:"numeric"
+            month:"long",
+            day:"numeric",
+            year:"numeric"
         })}
-      </div>
+        · ${readTime} min read
+    </div>
 
     <div class="story-divider"></div>
 
-<div class="story-body">
-  ${renderPortableText(story.body)}
-</div>
+    <div class="story-body">
+        ${renderPortableText(story.body)}
+    </div>
 
-    </article>
-  `;
+    <div class="story-end">
+
+        <div class="story-line"></div>
+
+        <p>Thanks for reading.</p>
+
+        <a href="www.mouris-bashir.work/eh5tories.html">
+            ← Back to EH5tories
+        </a>
+
+    </div>
+
+</article>
+
+`;
 
 });
-<div class="story-end">
 
-    <div class="story-line"></div>
-
-    <p>
-        Thanks for reading.
-    </p>
-
-    <a href="www.mouris-bashir.work/eh5stories.html">
-        ← Back to EH5tories
-    </a>
-
-</div>
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
     const total =
         document.documentElement.scrollHeight -
