@@ -74,19 +74,29 @@ fetch(url)
 
     <h1>${story.title}</h1>
 
-    <p class="story-summary">
-        ${story.summary || ""}
-    </p>
+   <p class="story-summary">
+    ${story.summary || ""}
+</p>
 
-    <div class="story-date">
-        ${new Date(story.publishedAt).toLocaleDateString("en-US",{
-            month:"long",
-            day:"numeric",
-            year:"numeric"
-        })}
-        · ${readTime} min read
+<div class="story-card">
+
+    <div class="card-title">
+        INDEX
     </div>
 
+    <div class="card-row">
+        <span>Thinking</span>
+        <strong>${story.thinking}</strong>
+    </div>
+
+    <div class="card-row">
+        <span>Reading</span>
+        <strong>${readTime} min</strong>
+    </div>
+
+</div>
+
+<div class="story-date">
     <div class="story-divider"></div>
 
     <div class="story-body">
