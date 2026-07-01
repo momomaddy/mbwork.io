@@ -119,19 +119,19 @@ body{
 
     font-size:.9rem;
 
-    margin-bottom:70px;
+    margin-bottom:36px;
 
 }
 
 .story-body{
 
-    max-width:720px;
+    max-width:660px;
 
     margin:0 auto;
 
     font-size:1.34rem;
 
-    line-height:1.95;
+    line-height:1.75;
 
     color:#262626;
 
@@ -141,7 +141,15 @@ body{
     margin:0 0 2.1rem;
 
 }
+.story-body p:first-child{
 
+    font-size:1.55rem;
+
+    color:#1f1f1f;
+
+    line-height:1.65;
+
+}
 .story-body h2{
 
     font-size:3rem;
