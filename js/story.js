@@ -93,4 +93,29 @@ Math.max(1, Math.round(words / 220));
   `;
 
 });
+<div class="story-end">
 
+    <div class="story-line"></div>
+
+    <p>
+        Thanks for reading.
+    </p>
+
+    <a href="www.mouris-bashir.work/eh5stories.html">
+        ← Back to EH5tories
+    </a>
+
+</div>
+window.addEventListener("scroll", () => {
+
+    const total =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress =
+        window.scrollY / total * 100;
+
+    document.getElementById("progress").style.width =
+        progress + "%";
+
+});
