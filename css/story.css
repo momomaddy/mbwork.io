@@ -12,8 +12,6 @@
 
     font-family:'Courier Prime', monospace;
 
-    text-transform:uppercase;
-
     letter-spacing:.28em;
 
     font-size:.72rem;
@@ -37,7 +35,7 @@ letter-spacing:-0.03em;
 margin-bottom:28px;
 
 font-weight:400;
-    max-width:980px;
+    :980px;
 
 }
 
@@ -72,28 +70,29 @@ font-weight:400;
 }
 .story-body{
 
-    max-width:720px;
+max-width:760px;
 
-    font-family:'DM Serif Display',serif;
+font-family:'DM Serif Display',serif;
 
-    font-size:2rem;
+font-size:31px;
 
-    line-height:1.8;
+line-height:1.82;
 
-    color:#28231d;
+font-weight:400;
 
 }
 .story-body p{
 
-    margin:0 0 2.8rem;
+margin:0 0 1.7em;
 
 }
-
 .story-body p:first-child{
 
-    font-size:2.35rem;
+font-size:2.3rem;
 
-    line-height:1.45;
+line-height:1.45;
+
+max-width:18ch;
 
 }
 .story-header{
@@ -115,8 +114,6 @@ font-weight:400;
     font-size:.72rem;
 
     letter-spacing:.22em;
-
-    text-transform:uppercase;
 
     color:#8d8275;
 
@@ -172,19 +169,19 @@ font-weight:400;
 
 .story-body blockquote{
 
-    font-size:2.3rem;
+max-width:900px;
 
-    line-height:1.5;
+margin:140px auto;
 
-    font-style:italic;
+text-align:center;
 
-    border-left:3px solid #C8350A;
+font-size:2.8rem;
 
-    padding-left:28px;
+line-height:1.35;
 
-    margin:90px 0;
+font-style:italic;
 
-    color:#2b2722;
+border:none;
 
 }
 .story-body p:first-child::first-letter{
@@ -239,6 +236,15 @@ font-weight:400;
     border-top:1px solid rgba(0,0,0,.12);
 
     margin:70px 0;
+
+}
+.story-body h2{
+
+font-size:3.6rem;
+
+margin:140px 0 40px;
+
+font-weight:400;
 
 }
 .story-body blockquote{
@@ -310,8 +316,6 @@ font-weight:400;
     text-decoration:none;
 
     color:#666;
-
-    text-transform:uppercase;
 
     letter-spacing:.15em;
 
