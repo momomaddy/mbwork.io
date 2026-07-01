@@ -83,7 +83,7 @@ Math.max(1, Math.round(words / 220));
         })}
       </div>
 
-     <hr>
+    <div class="story-divider"></div>
 
 <div class="story-body">
   ${renderPortableText(story.body)}
@@ -93,3 +93,4 @@ Math.max(1, Math.round(words / 220));
   `;
 
 });
+
