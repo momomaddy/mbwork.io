@@ -30,8 +30,6 @@
 
     line-height:.98;
 
-    letter-spacing:-.03em;
-
     font-weight:400;
 
 }
@@ -71,13 +69,13 @@
 
     margin:0 auto;
 
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:Georgia,"Times New Roman",serif;
 
-    font-size:1.55rem;
+    font-size:1.28rem;
 
-    line-height:1.9;
+    line-height:1.15;
 
-    color:#26221d;
+    color:#2a2622;
 
 }
 .story-body p{
@@ -87,11 +85,11 @@
 }
 .story-body p:first-child{
 
-font-size:2.3rem;
+font-size:inherit;
 
-line-height:1.45;
+line-height:inherit;
 
-max-width:18ch;
+max-width:none;
 
 }
 .story-header{
@@ -111,8 +109,6 @@ max-width:18ch;
     font-family:'Courier Prime', monospace;
 
     font-size:.72rem;
-
-    letter-spacing:.22em;
 
     color:#8d8275;
 
@@ -230,23 +226,7 @@ margin:140px 0 40px;
 font-weight:400;
 
 }
-.story-body blockquote{
 
-    margin:120px auto;
-
-    max-width:900px;
-
-    font-size:3rem;
-
-    line-height:1.35;
-
-    text-align:center;
-
-    border:none;
-
-    padding:0;
-
-}
 .story-body a{
 
     color:#1f1f1f;
