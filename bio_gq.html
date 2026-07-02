@@ -76,13 +76,9 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .proof-strip{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:100px;
-    margin:6rem 0;
-    padding:100px 0;
-    border-top:1px solid #e5e5e5;
-    border-bottom:1px solid #e5e5e5;
+    width:100%;
+    max-width:950px;
+    margin:8rem auto;
 }
 
 .proof-item h2{
@@ -104,6 +100,36 @@ nav {
     font-weight:500;
     line-height:1.5;
     margin-top:.8rem;
+}
+     .proof-strip{
+    max-width:950px;
+    margin:8rem auto;
+    padding:5rem 0;
+
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6rem;
+}
+
+.proof-number{
+    font-size:78px;
+    font-weight:600;
+    line-height:.9;
+}
+
+.proof-title{
+    margin-top:20px;
+    font-size:22px;
+}
+
+.proof-copy{
+    margin-top:10px;
+    font-size:14px;
+    color:#777;
+    line-height:1.7;
 }
 /* ── HERO ── */
 .hero{min-height:90vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 6rem 5rem;position:relative;overflow:hidden;}
