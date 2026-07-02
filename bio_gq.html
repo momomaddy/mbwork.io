@@ -78,9 +78,9 @@ nav {
 .proof-strip{
     display:grid;
     grid-template-columns:repeat(5,1fr);
-    gap:3rem;
+    gap:100px;
     margin:6rem 0;
-    padding:4rem 0;
+    padding:100px 0;
     border-top:1px solid #e5e5e5;
     border-bottom:1px solid #e5e5e5;
 }
@@ -150,7 +150,13 @@ nav {
 .hero-scroll-hint{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,248,246,0.25);writing-mode:vertical-rl;transform:rotate(180deg);}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.acc-trigger{
+    transition:opacity .2s ease;
+}
 
+.acc-trigger:hover{
+    opacity:.75;
+}
 /* ── GQ FEATURE STRIP ── */
 .gq-strip{background:var(--red);padding:0.35rem 3rem;display:flex;align-items:center;gap:2rem;overflow:hidden;}
 .gq-label{font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(248,248,246,0.6);white-space:nowrap;font-weight:600;}
@@ -164,25 +170,6 @@ nav {
 .chapter-num{font-size:0.6rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:1rem;}
 .chapter-title{font-family:'Libre Baskerville',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:var(--black);line-height:1.15;}
 .chapter-title em{font-style:italic;color:var(--red);}
-
-/* ── ACCORDION TABS ── */
-.acc-wrap{padding:0 3rem 2rem;}
-.acc-item{border-bottom:1px solid var(--line-light);}
-.acc-trigger{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;padding:2rem 0;cursor:none;gap:2rem;}
-.acc-trigger:hover .acc-trigger-title{color:var(--red);}
-.acc-trigger-left{display:flex;align-items:baseline;gap:1.5rem;}
-.acc-trigger-num{font-size:0.6rem;letter-spacing:0.18em;color:rgba(8,8,8,0.3);font-weight:600;white-space:nowrap;}
-.acc-trigger-title{font-family:'Syne',sans-serif;font-size:clamp(1.1rem,2vw,1.6rem);font-weight:700;color:var(--black);text-align:left;transition:color 0.2s;line-height:1.2;}
-.acc-trigger-meta{font-size:0.72rem;color:rgba(8,8,8,0.4);white-space:nowrap;}
-.acc-icon{width:32px;height:32px;border:1px solid var(--line-light);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.3s;position:relative;}
-.acc-icon::before,.acc-icon::after{content:'';position:absolute;background:var(--black);transition:all 0.35s cubic-bezier(0.23,1,0.32,1);}
-.acc-icon::before{width:10px;height:1.5px;}
-.acc-icon::after{width:1.5px;height:10px;}
-.acc-item.open .acc-icon{background:var(--red);border-color:var(--red);}
-.acc-item.open .acc-icon::before,.acc-item.open .acc-icon::after{background:var(--white);}
-.acc-item.open .acc-icon::after{transform:rotate(90deg);opacity:0;}
-.acc-body{max-height:0;overflow:hidden;transition:max-height 0.6s cubic-bezier(0.23,1,0.32,1);}
-.acc-content{padding:0 0 3rem 4rem;}
 
 /* ── EXPERIENCE CARD ── */
 .exp-card{background:var(--black);color:var(--white);padding:2.5rem;margin-bottom:1rem;position:relative;overflow:hidden;}
@@ -262,9 +249,9 @@ footer{background:var(--off-black);border-top:1px solid var(--line);padding:2rem
       <button class="nav-work-btn" aria-haspopup="true">Work</button>
       <div class="work-dropdown" role="menu">
         <div class="work-dropdown-label">Case Studies</div>
+     <a href="ONBC.html">#OneNationBillionCelebrations</a>
         <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
         <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="ONBC.html">#OneNationBillionCelebrations</a>
         <a href="adl_equally.html">ADL Is EquAlly</a>
         <a href="sustainability.html">Sustainability</a>
         <a href="OYO.html">OYO</a>
@@ -334,8 +321,6 @@ footer{background:var(--off-black);border-top:1px solid var(--line);padding:2rem
     <div class="chapter-title">The <em>work</em> behind the <em>work</em></div>
   </div>
 
-  <div class="acc-wrap">
-
     <div class="acc-item open" data-acc="0">
       <button class="acc-trigger">
         <div class="acc-trigger-left">
@@ -377,7 +362,7 @@ footer{background:var(--off-black);border-top:1px solid var(--line);padding:2rem
 <br>Different industries.</br>
 <br>The same question.</br>
 <br><em>What does this audience believe today?</em></br>
-<br><em>What should they believe when we leave the room?</em><b/r></b>p>
+<br><em>What should they believe when we leave the room?</em><b/r></b></p>
 
 ---
 
@@ -406,8 +391,6 @@ footer{background:var(--off-black);border-top:1px solid var(--line);padding:2rem
 I bake croissants and muffins on occasion. Ski when there's snow. 
 </p>       
         </div>
-      </div>
-    </div>
 <!-- /acc-wrap -->
   <!-- CHAPTER 2: THE CAREER -->
   <div class="chapter" style="margin-top:2rem;">
