@@ -75,7 +75,36 @@ nav {
   padding: 0 3rem; height: 52px;
   display: flex; align-items: center; justify-content: space-between;
 }
+.proof-strip{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:3rem;
+    margin:6rem 0;
+    padding:4rem 0;
+    border-top:1px solid #e5e5e5;
+    border-bottom:1px solid #e5e5e5;
+}
 
+.proof-item h2{
+    font-size:3rem;
+    font-weight:700;
+    margin:0;
+    color:#111;
+}
+
+.proof-item p{
+    margin-top:.6rem;
+    font-size:.95rem;
+    color:#666;
+    line-height:1.5;
+}
+
+.philosophy h3{
+    font-size:1.2rem;
+    font-weight:500;
+    line-height:1.5;
+    margin-top:.8rem;
+}
 /* ── HERO ── */
 .hero{min-height:90vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 6rem 5rem;position:relative;overflow:hidden;}
 .hero-bg-num{position:absolute;top:50%;right:-2rem;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:clamp(20rem,38vw,36rem);font-weight:800;color:rgba(248,248,246,.04);line-height:1;pointer-events:none;user-select:none;}
@@ -289,7 +318,24 @@ Hearing Technology · EV · FMCG · Fruits · Fuel · Utilities · Renewable Ene
 
 <!-- SECTIONS -->
 <div class="sections">
+<section class="proof-strip">
 
+  <div class="proof-item">
+      <h2>30M+ people reached</h2>
+      <p>through products I helped grow</p>
+  </div>
+
+  <div class="proof-item">
+      <h2>$3B+ businesses supported</h2>
+      <p>across travel, fintech, infrastructure & technology</p>
+  </div>
+
+  <div class="proof-item">
+      <h2>700M+ Campaign views</h2>
+      <p>Across APAC, Europe & the Middle East</p>
+  </div>
+
+</section>
   <!-- CHAPTER 1: THE PERSON -->
   <div class="chapter">
     <div class="chapter-num">Chapter 01</div>
