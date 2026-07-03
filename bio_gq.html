@@ -403,16 +403,34 @@ margin-bottom:3rem;
 .footer{
 
     width:min(1180px,92%);
-    margin:180px auto 0;
+    margin:180px auto 80px;
 
 }
-     .footer-ai{
+
+.footer-message{
+
+    max-width:720px;
+    margin-bottom:70px;
+
+}
+
+.footer-message h2{
+
+    font-family:"DM Serif Display",serif;
+    font-size:3.4rem;
+    font-weight:400;
+    line-height:1.15;
+    margin:0;
+
+}
+
+.footer-ai{
 
     display:inline-flex;
     align-items:center;
     gap:14px;
 
-    padding:18px 30px;
+    padding:18px 34px;
 
     border:1px solid rgba(200,53,10,.25);
 
@@ -422,9 +440,11 @@ margin-bottom:3rem;
 
     letter-spacing:.16em;
 
+    text-transform:uppercase;
+
     font-size:.78rem;
 
-    text-transform:uppercase;
+    white-space:nowrap;
 
     transition:.3s;
 
@@ -433,17 +453,17 @@ margin-bottom:3rem;
 .footer-ai:hover{
 
     background:#C8350A;
-
     color:white;
 
 }
-     .footer-contact{
+
+.footer-contact{
 
     margin-top:90px;
 
 }
-     
-     .contact-row{
+
+.contact-row{
 
     display:grid;
 
@@ -453,42 +473,51 @@ margin-bottom:3rem;
 
     padding:28px 0;
 
+    border-bottom:1px solid rgba(0,0,0,.08);
+
+    text-decoration:none;
+
 }
-     .contact-label{
 
-    font-size:.72rem;
+.contact-label{
 
-    letter-spacing:.18em;
+    font-family:Inter,sans-serif;
 
     text-transform:uppercase;
 
-    color:#9f978e;
+    letter-spacing:.16em;
+
+    font-size:.72rem;
+
+    color:#999;
 
 }
-     .contact-value{
 
-    font-size:1.6rem;
-           font-weight:400;
+.contact-value{
+
+    font-size:1.55rem;
 
     color:#222;
-
-    text-decoration:none;
 
     transition:.25s;
 
 }
-     .contact-value:hover{
 
-    color:#C8350A;
-
-}
-     .contact-arrow{
-
-    color:#C8350A;
+.contact-arrow{
 
     font-size:1.5rem;
 
+    color:#C8350A;
+
+    justify-self:end;
+
     transition:.3s;
+
+}
+
+.contact-row:hover .contact-value{
+
+    color:#C8350A;
 
 }
 
@@ -497,16 +526,14 @@ margin-bottom:3rem;
     transform:translate(6px,-6px);
 
 }
-     .footer-divider{
 
-    width:100%;
+.footer-bottom{
+
+    margin-top:90px;
+
+    padding-top:36px;
 
     border-top:1px solid rgba(0,0,0,.08);
-
-    margin:180px 0 120px;
-
-}
-     .footer-bottom{
 
     display:flex;
 
@@ -514,19 +541,37 @@ margin-bottom:3rem;
 
     align-items:center;
 
-    margin-top:140px;
-
-    padding-top:40px;
-
-    border-top:1px solid rgba(0,0,0,.08);
-
 }
-     .footer-top{
 
-    margin-bottom:80px;
+.footer-bottom p{
+
+    color:#777;
+
+    margin:0;
 
 }
 
+.footer-bottom nav{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+.footer-bottom nav a{
+
+    color:#555;
+
+    text-decoration:none;
+
+}
+
+.footer-bottom nav a:hover{
+
+    color:#C8350A;
+
+}
 @media(max-width:768px){
   .hero,.sections .chapter,.acc-wrap,.contact-row{padding-left:1.5rem;padding-right:1.5rem;}
   .acc-content{padding-left:1rem;}
@@ -720,7 +765,7 @@ I bake croissants and muffins on occasion. Ski when there's snow.
      <div class="footer-top">
 
     <a class="footer-ai">
-        ● Ask my AI Twin
+        ● Talk to my AI Twin
     </a>
 
 </div>
