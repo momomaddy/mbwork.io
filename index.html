@@ -273,9 +273,6 @@ display:inline-block;
 }
 
 .cinematic-video-grid::-webkit-scrollbar{
-    display:none;
-}
-.cinematic-video-grid::-webkit-scrollbar{
 
     display:none;
 }
@@ -286,14 +283,6 @@ display:inline-block;
   height: 100%; 
   position: relative;
   transition: transform 0.6s ease;
-}
-.video-grid-overlay{
-
-    padding:1.2rem;
-}
-   .v-title{
-
-    font-size:1.5rem;
 }
 .video-wrap video,
 .video-wrap iframe,
@@ -582,30 +571,19 @@ I helped airports behave like destinations, hotels like communities, and infrast
 
 <section class="video-grid-section">
   <div class="section-header">
-
-    <span class="section-label">Selected Work</span>
-
-    <div class="carousel-nav">
+ <span class="section-label">Selected Work</span>
+ <div class="carousel-nav">
         <button id="prev">&#8592;</button>
         <button id="next">&#8594;</button>
     </div>
+  </div>
 
-</div>
-
- <div class="cinematic-video-grid">
     <div class="video-grid-item">
       <div class="video-wrap">
          <div class="yt-lite"
      data-video="a7aJYVRuBZM">
-
-<img
-class="yt-thumb"
-loading="lazy"
-src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg"
-alt="Campaign">
-
+<img class="yt-thumb"loading="lazy" src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Campaign">
 <div class="play-btn">▶</div>
-
 </div>
         <a href="HKKDH.html" class="video-pointer-shield"></a>
         <div class="video-grid-overlay">
@@ -616,20 +594,23 @@ alt="Campaign">
 </div>
       </div>
     </div>
-<a href="HorizonX.html" class="video-grid-item">
+
+    <div class="video-grid-item">
       <div class="video-wrap">
         <video
 muted
 playsinline
 preload="metadata"
 poster="preview.webp"><source src="H010.mp4" type="video/mp4"></video>
-        <div class="video-grid-overlay">
+      </div>
+           <a href="HorizonX.html" class="video-grid-item"></a>
+                <div class="video-grid-overlay">
           <div class="v-meta">Audibene</div>
           <div class="v-title">Where Forever Young Begins</div>
            <p class="v-desc">Turning hearing aids into a lifestyle & well being produuct.</p>
         </div>
       </div>
-    </a>
+    </div>
 
     <div class="video-grid-item">
       <div class="video-wrap">
@@ -651,6 +632,8 @@ poster="preview.webp"><source src="H010.mp4" type="video/mp4"></video>
     </div>
 
 </div>
+   <div class="video-grid-item">
+   <div class="video-wrap">
         <a href="moment_marketing.html" class="video-pointer-shield"></a>
         <div class="video-grid-overlay">
           <div class="v-meta">Adani Group</div>
