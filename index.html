@@ -269,26 +269,56 @@ display:inline-block;
 .video-grid-section{padding:1rem 3rem 6rem;}
 .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;border-bottom:1px solid var(--rule);padding-bottom:1rem;}
 .section-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);font-weight:500;}
-.cinematic-video-grid{display:flex;flex-wrap:nowrap;gap:2rem;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;padding-bottom:1rem;
+.cinematic-video-grid{
+
+    display:flex;
+
+    gap:32px;
+
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+    scroll-snap-type:x mandatory;
+
+    scroll-behavior:smooth;
+
+    -webkit-overflow-scrolling:touch;
+
+    padding-bottom:18px;
+
 }
 
 .cinematic-video-grid::-webkit-scrollbar{
 
     display:none;
+
 }
-.video-grid-item{flex:0 0 640px;min-width:640px;aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:26px;background:#000;text-decoration:none;scroll-snap-align:start;transition:all .45s ease;box-shadow:0 20px 60px rgba(0,0,0,.12);
-}
-.video-wrap {
-  width: 100%; 
-  height: 100%; 
-  position: relative;
-  transition: transform 0.6s ease;
+.video-wrap{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
 }
 .video-wrap video,
 .video-wrap iframe,
-.grid-media{width:100%;height:100%;object-fit:cover;opacity:.88;transition:all .6s ease;
-}
+.grid-media,
+.yt-lite{
 
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
 /* Specific fix for YouTube background feel */
 .yt-embed-container{
 
@@ -305,13 +335,11 @@ display:inline-block;
 
 .video-pointer-shield {position: absolute; inset: 0; z-index: 5; cursor: pointer;}
 
-.video-grid-overlay{
+   .video-grid-overlay{
 
     position:absolute;
 
     inset:0;
-
-    padding:2.5rem;
 
     display:flex;
 
@@ -319,19 +347,30 @@ display:inline-block;
 
     justify-content:flex-end;
 
-    background:
-    linear-gradient(
+    padding:36px;
+
+    background:linear-gradient(
         to top,
-        rgba(0,0,0,.78),
-        rgba(0,0,0,.25) 55%,
+        rgba(0,0,0,.82),
+        rgba(0,0,0,.35) 55%,
         transparent
     );
 
-    transition:.35s;
 }
 .v-meta{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:#d6b06d;
 }
-   .v-title{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1.1;color:white;margin-bottom:.6rem;
+  .v-title{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    line-height:1.1;
+
+    color:white;
+
+    margin:.4rem 0;
+
 }
    .v-desc{
 
@@ -346,23 +385,28 @@ display:inline-block;
     max-width:80%;
 }
 /* Hover States */
-.video-grid-item:hover .video-wrap {transform: scale(1.03);}
 .video-grid-item:hover .video-grid-overlay {opacity: 1;}
 .video-grid-item:hover video, 
 .video-grid-item:hover .grid-media, 
-.video-grid-item:hover iframe {opacity: 1;}
+.video-grid-item:hover iframe {opacity: 1;
    .video-grid-item:hover{
 
-    transform:
-    translateY(-10px);
+    transform:translateY(-8px);
 
-    box-shadow:
-    0 30px 80px rgba(0,0,0,.18);
+    box-shadow:0 28px 70px rgba(0,0,0,.18);
+
 }
 
 .video-grid-item:hover .video-wrap{
 
-    transform:scale(1.05);
+    transform:scale(1.04);
+
+}
+
+.video-wrap{
+
+    transition:transform .55s ease;
+
 }
 /* Mobile Stack */
 @media (max-width:768px){
@@ -382,15 +426,6 @@ display:inline-block;
         display:none;
     }
 
-    .cinematic-video-grid{
-
-        display:flex;
-        flex-direction:column;
-
-        overflow:visible;
-
-        gap:1.5rem;
-    }
    .hero-name{
 
     font-size:clamp(2.3rem,10vw,3.2rem);
@@ -398,16 +433,30 @@ display:inline-block;
     line-height:1.05;
 }
 
-    .video-grid-item{
+   .video-grid-item{
 
-        flex:none;
+    flex:0 0 620px;
 
-        width:100%;
+    width:620px;
 
-        aspect-ratio:16/9;
-    }
+    aspect-ratio:16/9;
+
+    position:relative;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:#000;
+
+    text-decoration:none;
+
+    scroll-snap-align:start;
+
+    transition:.35s ease;
 
 }
+   
 .carousel-nav{
 
     display:flex;
@@ -442,29 +491,31 @@ display:inline-block;
 
     color:#fff;
 }
-   .yt-lite{
+  .yt-lite{
 
-position:absolute;
+    position:absolute;
 
-inset:0;
+    inset:0;
 
-cursor:pointer;
+    width:100%;
 
-overflow:hidden;
+    height:100%;
+
+    overflow:hidden;
+
+    cursor:pointer;
 
 }
 
 .yt-thumb{
 
-width:100%;
+    width:100%;
 
-height:100%;
+    height:100%;
 
-object-fit:cover;
+    object-fit:cover;
 
-display:block;
-
-transition:.5s;
+    display:block;
 
 }
 
@@ -567,111 +618,238 @@ I helped airports behave like destinations, hotels like communities, and infrast
      </div>
     </div>
 
-  <!-- RIGHT -->
-
 <section class="video-grid-section">
-  <div class="section-header">
- <span class="section-label">Selected Work</span>
- <div class="carousel-nav">
-        <button id="prev">&#8592;</button>
-        <button id="next">&#8594;</button>
-    </div>
-  </div>
 
-    <div class="video-grid-item">
-      <div class="video-wrap">
-         <div class="yt-lite"
-     data-video="a7aJYVRuBZM">
-<img class="yt-thumb"loading="lazy" src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Campaign">
-<div class="play-btn">▶</div>
-</div>
-        <a href="HKKDH.html" class="video-pointer-shield"></a>
-        <div class="video-grid-overlay">
-<div class="v-meta">Adani Group</div>
-<div class="v-title">Hum Karke Dikhate Hain</div>
-<p class="v-desc">Rebuilding belief in India's largest infrastructure brand.</p>
+    <div class="section-header">
 
-</div>
-      </div>
+        <span class="section-label">Selected Work</span>
+
+        <div class="carousel-nav">
+            <button id="prev">&#8592;</button>
+            <button id="next">&#8594;</button>
+        </div>
+
     </div>
 
-    <div class="video-grid-item">
-      <div class="video-wrap">
-        <video
-muted
-playsinline
-preload="metadata"
-poster="preview.webp"><source src="H010.mp4" type="video/mp4"></video>
-      </div>
-           <a href="HorizonX.html" class="video-grid-item"></a>
+    <div class="cinematic-video-grid">
+
+        <!-- CARD 1 -->
+        <div class="video-grid-item">
+
+            <div class="video-wrap">
+
+                <div class="yt-lite" data-video="a7aJYVRuBZM">
+
+                    <img
+                        class="yt-thumb"
+                        loading="lazy"
+                        src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg"
+                        alt="Campaign">
+
+                    <div class="play-btn">▶</div>
+
+                </div>
+
+                <a href="HKKDH.html" class="video-pointer-shield"></a>
+
                 <div class="video-grid-overlay">
-          <div class="v-meta">Audibene</div>
-          <div class="v-title">Where Forever Young Begins</div>
-           <p class="v-desc">Turning hearing aids into a lifestyle & well being produuct.</p>
+
+                    <div class="v-meta">Adani Group</div>
+
+                    <div class="v-title">
+                        Hum Karke Dikhate Hain
+                    </div>
+
+                    <p class="v-desc">
+                        Rebuilding belief in India's largest infrastructure brand.
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
+
+        <!-- CARD 2 -->
+
+        <div class="video-grid-item">
+
+            <div class="video-wrap">
+
+                <video
+                    muted
+                    playsinline
+                    preload="metadata"
+                    poster="preview.webp">
+
+                    <source src="H010.mp4" type="video/mp4">
+
+                </video>
+
+                <a href="HorizonX.html" class="video-pointer-shield"></a>
+
+                <div class="video-grid-overlay">
+
+                    <div class="v-meta">Audibene</div>
+
+                    <div class="v-title">
+                        Where Forever Young Begins
+                    </div>
+
+                    <p class="v-desc">
+                        Turning hearing aids into a lifestyle & wellbeing product.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="video-grid-item">
+
+            <div class="video-wrap">
+
+                <div class="yt-lite" data-video="LIVns_jdQVw">
+
+                    <img
+                        class="yt-thumb"
+                        loading="lazy"
+                        src="https://img.youtube.com/vi/LIVns_jdQVw/maxresdefault.jpg"
+                        alt="Campaign">
+
+                    <div class="play-btn">▶</div>
+
+                </div>
+
+                <a href="ONBC.html" class="video-pointer-shield"></a>
+
+                <div class="video-grid-overlay">
+
+                    <div class="v-meta">Adani Group</div>
+
+                    <div class="v-title">
+                        #OneNationBillionCelebrations
+                    </div>
+
+                    <p class="v-desc">
+                        Turning airports into cultural destinations.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="video-grid-item">
+
+            <div class="video-wrap">
+
+                <video
+                    muted
+                    playsinline
+                    preload="metadata"
+                    poster="preview.webp">
+
+                    <source src="moment_marketing.mp4" type="video/mp4">
+
+                </video>
+
+                <a href="moment_marketing.html" class="video-pointer-shield"></a>
+
+                <div class="video-grid-overlay">
+
+                    <div class="v-meta">Adani Group</div>
+
+                    <div class="v-title">
+                        Diwali | #KaroHarJashnKoRoshan
+                    </div>
+
+                    <p class="v-desc"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 5 -->
+
+        <div class="video-grid-item">
+
+            <div class="video-wrap">
+
+                <video
+                    muted
+                    playsinline
+                    preload="metadata"
+                    poster="preview.webp">
+
+                    <source src="adl_equally_video.mp4" type="video/mp4">
+
+                </video>
+
+                <a href="adl_equally.html" class="video-pointer-shield"></a>
+
+                <div class="video-grid-overlay">
+
+                    <div class="v-meta">
+                        Adani Digital Labs
+                    </div>
+
+                    <div class="v-title">
+                        #ADLIsEquAlly
+                    </div>
+
+                    <p class="v-desc">
+                        Increased women in tech roles from 4% to 28%.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 6 -->
+
+        <div class="video-grid-item">
+
+            <div class="video-wrap">
+
+                <img
+                    src="p1.gif"
+                    alt="Campaign"
+                    class="grid-media">
+
+                <a href="police_scotland.html" class="video-pointer-shield"></a>
+
+                <div class="video-grid-overlay">
+
+                    <div class="v-meta">LBP</div>
+
+                    <div class="v-title">
+                        #WeCanStopIt
+                    </div>
+
+                    <p class="v-desc">
+                        Shaped messaging for a national awareness campaign.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="video-grid-item">
-      <div class="video-wrap">
-        <div class="yt-lite" data-video="LIVns_jdQVw">
-    <img
-        class="yt-thumb"
-        loading="lazy"
-        src="https://img.youtube.com/vi/LIVns_jdQVw/maxresdefault.jpg"
-        alt="Campaign">
-    <div class="play-btn">▶</div>
-</div>
-        <a href="ONBC.html" class="video-pointer-shield"></a>
-        <div class="video-grid-overlay">
-          <div class="v-meta">Adani Group</div>
-          <div class="v-title">#OneNationBillionCelebrations</div>
-           <p class="v-desc">Turning Airports into cultural destinations.</p>
-        </div>
-      </div>
-    </div>
-
-</div>
-   <div class="video-grid-item">
-   <div class="video-wrap">
-        <a href="moment_marketing.html" class="video-pointer-shield"></a>
-        <div class="video-grid-overlay">
-          <div class="v-meta">Adani Group</div>
-          <div class="v-title">Diwali | #KaroHarJashnKoRoshan</div>
-           <p class="v-desc"></p>
-        </div>
-      </div>
-    </div>
-
-    <a href="adl_equally.html" class="video-grid-item">
-      <div class="video-wrap">
-       
-         <video
-muted
-playsinline
-preload="metadata"
-poster="preview.webp"><source src="adl_equally_video.mp4" type="video/mp4"></video>
-        <div class="video-grid-overlay">
-          <div class="v-meta">Adani Digital Labs</div>
-          <div class="v-title">#ADLIsEquAlly</div>
-           <p class="v-desc">Inreased women in tech-fields from 4 to 28%</p>
-        </div>
-      </div>
-    </a>
-
-    <a href="police_scotland.html" class="video-grid-item">
-      <div class="video-wrap">
-        <img src="p1.gif" alt="Campaign" class="grid-media">
-        <div class="video-grid-overlay">
-          <div class="v-meta">LBP</div>
-          <div class="v-title">#WeCanStopIt</div>
-           <p class="v-desc">Shaped messaging for a National Awareness Campaign.</p>
-        </div>
-      </div>
-    </a>
-</div>
-    </section>
-
+</section>
 <div class="cta">
   <div class="cta-inner">
     <h2><strong>Movement </strong>over distribution. "</h2>
