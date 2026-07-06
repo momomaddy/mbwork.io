@@ -11,13 +11,18 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
-  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mouris Bashir — Marketing & Communications Strategist</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="..."
+rel="stylesheet">
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --paper:#F8F3EA;
@@ -54,24 +59,18 @@ nav{
   font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
   text-decoration:none;
 }
-  .carousel-nav{display:flex;gap:.8rem;
+ .carousel-nav{
+    display:flex;
+    gap:.75rem;
+    align-items:center;
 }
-
-.carousel-nav button{width:48px;height:48px;border-radius:50%;background:white;border:1px solid #ddd;cursor:pointer;transition:.3s;
-}
-
 .carousel-nav button:hover{
 
 background:black;
 
 color:white;
 }
-   .carousel-nav{
-    display:flex;
-    gap:.75rem;
-    align-items:center;
-}
-
+  
 .carousel-nav button{
 
     width:42px;
@@ -89,15 +88,7 @@ color:white;
 
     transition:.3s ease;
 }
-.carousel-nav{
 
-    display:none;
-}
-.carousel-nav button:hover{
-
-    background:#111;
-    color:white;
-}
   /* ───────────────── HERO ───────────────── */
 
 .hero{
@@ -457,6 +448,75 @@ display:inline-block;
 
     color:#fff;
 }
+   .yt-lite{
+
+position:absolute;
+
+inset:0;
+
+cursor:pointer;
+
+overflow:hidden;
+
+}
+
+.yt-thumb{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+transition:.5s;
+
+}
+
+.yt-lite:hover .yt-thumb{
+
+transform:scale(1.04);
+
+}
+
+.play-btn{
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:72px;
+
+height:72px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.9);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:28px;
+
+color:#111;
+
+transition:.3s;
+
+}
+
+.yt-lite:hover .play-btn{
+
+transform:translate(-50%,-50%) scale(1.08);
+
+}
 /* ── CTA & FOOTER ── */
 .cta{background:var(--ink);padding:6rem 3rem;text-align:center;}
 .cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;font-style:italic;color:var(--cream);line-height:1.3;margin-bottom:2rem;}
@@ -530,9 +590,18 @@ I helped airports behave like destinations, hotels like communities, and infrast
  <div class="cinematic-video-grid">
     <div class="video-grid-item">
       <div class="video-wrap">
-        <div class="yt-embed-container">
-          <iframe src="https://www.youtube.com/embed/a7aJYVRuBZM?autoplay=1&mute=1&loop=1&playlist=a7aJYVRuBZM&controls=0" frameborder="0"></iframe>
-        </div>
+         <div class="yt-lite"
+     data-video="a7aJYVRuBZM">
+
+<img
+class="yt-thumb"
+loading="lazy"
+src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg"
+alt="Campaign">
+
+<div class="play-btn">▶</div>
+
+</div>
         <a href="HKKDH.html" class="video-pointer-shield"></a>
         <div class="video-grid-overlay">
 <div class="v-meta">Adani Group</div>
@@ -544,7 +613,11 @@ I helped airports behave like destinations, hotels like communities, and infrast
     </div>
 <a href="HorizonX.html" class="video-grid-item">
       <div class="video-wrap">
-        <video autoplay loop muted playsinline><source src="H010.mp4" type="video/mp4"></video>
+        <video
+muted
+playsinline
+preload="metadata"
+poster="preview.webp"><source src="H010.mp4" type="video/mp4"></video>
         <div class="video-grid-overlay">
           <div class="v-meta">Audibene</div>
           <div class="v-title">Where Forever Young Begins</div>
@@ -555,9 +628,14 @@ I helped airports behave like destinations, hotels like communities, and infrast
 
     <div class="video-grid-item">
       <div class="video-wrap">
-        <div class="yt-embed-container">
-          <iframe src="https://www.youtube.com/embed/GM7uKnyAono?autoplay=1&mute=1&loop=1&playlist=GM7uKnyAono&controls=0" frameborder="0"></iframe>
-        </div>
+        <div class="yt-lite" data-video="LIVns_jdQVw">
+    <img
+        class="yt-thumb"
+        loading="lazy"
+        src="https://img.youtube.com/vi/LIVns_jdQVw/maxresdefault.jpg"
+        alt="Campaign">
+    <div class="play-btn">▶</div>
+</div>
         <a href="ONBC.html" class="video-pointer-shield"></a>
         <div class="video-grid-overlay">
           <div class="v-meta">Adani Group</div>
@@ -567,11 +645,7 @@ I helped airports behave like destinations, hotels like communities, and infrast
       </div>
     </div>
 
-    <div class="video-grid-item">
-      <div class="video-wrap">
-        <div class="yt-embed-container">
-          <iframe src="https://www.youtube.com/embed/LIVns_jdQVw?autoplay=1&mute=1&loop=1&playlist=LIVns_jdQVw&controls=0" frameborder="0"></iframe>
-        </div>
+</div>
         <a href="moment_marketing.html" class="video-pointer-shield"></a>
         <div class="video-grid-overlay">
           <div class="v-meta">Adani Group</div>
@@ -583,9 +657,14 @@ I helped airports behave like destinations, hotels like communities, and infrast
 
     <a href="adl_equally.html" class="video-grid-item">
       <div class="video-wrap">
-        <video autoplay loop muted playsinline><source src="adl_equally_video.mp4" type="video/mp4"></video>
+       
+         <video
+muted
+playsinline
+preload="metadata"
+poster="preview.webp"><source src="adl_equally_video.mp4" type="video/mp4"></video>
         <div class="video-grid-overlay">
-          <div class="v-meta">Adani Group</div>
+          <div class="v-meta">Adani Digital Labs</div>
           <div class="v-title">#ADLIsEquAlly</div>
            <p class="v-desc">Inreased women in tech-fields from 4 to 28%</p>
         </div>
@@ -649,7 +728,27 @@ document.addEventListener("DOMContentLoaded",()=>{
     };
 
 });
+document.querySelectorAll(".yt-lite").forEach(card=>{
 
+card.addEventListener("click",()=>{
+
+const id=card.dataset.video;
+
+card.innerHTML=`
+
+<iframe
+src="https://www.youtube.com/embed/${id}?autoplay=1"
+allow="autoplay; encrypted-media"
+allowfullscreen
+frameborder="0"
+style="width:100%;height:100%;border:0;">
+</iframe>
+
+`;
+
+});
+
+});
 </script>
 </body>
 </html>
