@@ -1,934 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-T4KRW84LFV');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mouris Bashir — Marketing & Communications Strategist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="..."
-rel="stylesheet">
-   <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --paper:#F8F3EA;
-  --paper2:#F1EAD8;
-  --ink:#1A0E00;
-  --ink2:#3D2A10;
-  --rust:#B84A18;
-  --gold:#9A7020;
-  --rule:rgba(26,14,0,0.1);
-  --cream:#FDFAF4;
-}
-html{scroll-behavior:smooth;}
-body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--rule);
-  padding:0 3rem;height:52px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{display:block;text-decoration:none;}
-.nav-logo img{height:32px;width:auto;display:block;}
-.nav-right{display:flex;gap:2rem;align-items:center;}
-.nav-link{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
-}
-.nav-link:hover{opacity:1;}
-.nav-cta{
-  background:var(--ink);color:var(--cream)!important;
-  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  text-decoration:none;
-}
- .carousel-nav{
-    display:flex;
-    gap:.75rem;
-    align-items:center;
-}
-.carousel-nav button:hover{
-
-background:black;
-
-color:white;
-}
-  
-.carousel-nav button{
-
-    width:42px;
-    height:42px;
-
-    border-radius:50%;
-
-    border:1px solid var(--rule);
-
-    background:white;
-
-    color:#111;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-}
-.selected-work{
-    margin-top:140px;
-}
-  /* ───────────────── HERO ───────────────── */
-
-.hero{
-    padding-top:52px;
-min-height:auto;
-   display:flex;
-    flex-direction:column;
-    background:var(--cream);
-}
-
-/* LEFT */
-.hero-left{
-background:var(--cream);
-padding:2rem 1.5rem;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-}
-.hero-issue{
-font-size:0.62rem;
-letter-spacing:0.22em;
-text-transform:uppercase;
-color:var(--gold);
-margin-bottom:1.5rem;
-font-weight:500;
-}
-.hero h1{
-    max-width:1000px;
-    font-size:clamp(3rem,5.5vw,5.5rem);
-    line-height:1;
-    letter-spacing:-0.04em;
-}
-
-.hero-name{
-    font-family:'Cormorant Garamond', serif;
-    font-size:clamp(3.2rem,5vw,5rem);
-    max-width:1200px;
-    line-height:0.98;
-    letter-spacing:-0.04em;
-    color:var(--ink);
-}
-.hero-name strong{
-font-weight:700;
-}
-
-.hero-name em{
-color:var(--rust);
-font-style:italic;
-}
-
-.hero-meta-row{
-display:flex;
-gap:3rem;
-border-top:1px solid var(--rule);
-padding-top:2rem;
-margin-top:2rem;
-}
-
-.hero-meta-item{
-display:flex;
-flex-direction:column;
-gap:0.2rem;
-}
-
-.hero-meta-label{
-font-size:0.58rem;
-letter-spacing:0.18em;
-text-transform:uppercase;
-color:var(--ink2);
-opacity:0.5;
-}
-
-.hero-meta-val{
-font-size:0.9rem;
-color:var(--ink);
-font-weight:400;
-}
-
-/* RIGHT */
-.hero-right{
-background:var(--cream);
-padding:7rem 5rem 4rem;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-}
-
-.hero-services{
-display:flex;
-flex-direction:column;
-gap:0.45rem;
-}
-
-.hero-services div{
-font-size:1rem;
-letter-spacing:0.04em;
-text-transform:uppercase;
-line-height:1.45;
-color:var(--ink);
-font-weight:500;
-}
-
-.hero-scroll{
-font-size:0.62rem;
-letter-spacing:0.18em;
-text-transform:uppercase;
-color:var(--ink2);
-opacity:0.4;
-display:flex;
-align-items:center;
-gap:0.5rem;
-}
-
-.hero-scroll::before{
-content:'';
-width:24px;
-height:1px;
-background:currentColor;
-display:inline-block;
-}
-   
-  /* ── INTRO ── */
-.intro{max-width:1000px;margin:0 auto;padding:6rem 3rem;display:grid;grid-template-columns:1fr 2px 1.8fr;gap:0 4rem;align-items:start;}
-.intro-rule{background:var(--rule);width:1px;margin:0 auto;}
-.intro-left-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);font-weight:500;margin-bottom:2rem;}
-.intro-stat{margin-bottom:1.5rem;}
-.intro-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--ink);line-height:1;}
-.intro-stat-desc{font-size:0.72rem;color:var(--ink2);opacity:0.6;margin-top:0.2rem;line-height:1.4;}
-.intro-right p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:1.5rem;}
-.intro-right p:first-of-type::first-letter{font-size:3.5rem;font-weight:700;float:left;line-height:0.85;margin:0.15rem 0.2rem 0 0;color:var(--rust);}
-.intro-right strong{font-weight:600;color:var(--ink);}
-/* ── WORK DROPDOWN ── */
-.nav-work{position:relative;}
-.nav-work-btn{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);background:none;border:none;cursor:pointer;
-  opacity:0.6;transition:opacity 0.2s;padding:0;
-  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
-}
-.nav-work-btn::after{
-  content:'';display:inline-block;width:0;height:0;
-  border-left:3px solid transparent;border-right:3px solid transparent;
-  border-top:4px solid currentColor;transition:transform 0.2s;
-}
-.nav-work:hover .nav-work-btn,
-.nav-work:focus-within .nav-work-btn{opacity:1;}
-.nav-work:hover .nav-work-btn::after,
-.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
-
-.work-dropdown{
-  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
-  background:var(--cream);border:1px solid var(--rule);
-  min-width:240px;
-  opacity:0;visibility:hidden;
-  transform:translateX(-50%) translateY(-6px);
-  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
-  z-index:200;
-}
-.nav-work:hover .work-dropdown,
-.nav-work:focus-within .work-dropdown{
-  opacity:1;visibility:visible;
-  transform:translateX(-50%) translateY(0);
-}
-.work-dropdown a{
-  display:block;padding:0.7rem 1.2rem;
-  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.65;
-  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
-}
-.work-dropdown a:last-child{border-bottom:none;}
-.work-dropdown a:hover{opacity:1;background:var(--paper2);}
-.work-dropdown-label{
-  padding:0.6rem 1.2rem 0.4rem;
-  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
-  }
-
-/* ── CLEAN CINEMATIC GRID ── */
-.video-grid-section{padding:1rem 3rem 6rem;}
-.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:3rem;border-bottom:1px solid var(--rule);padding-bottom:1rem;}
-.section-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);font-weight:500;}
-.cinematic-video-grid{
-
-    display:flex;
-
-    gap:32px;
-
-    overflow-x:auto;
-
-    overflow-y:hidden;
-
-    scroll-snap-type:x mandatory;
-
-    scroll-behavior:smooth;
-
-    -webkit-overflow-scrolling:touch;
-
-    padding-bottom:18px;
-
-}
-
-.cinematic-video-grid::-webkit-scrollbar{
-
-    display:none;
-
-}
-.video-wrap{
-
-    position:relative;
-
-    width:100%;
-
-    height:100%;
-
-}
-.video-wrap video,
-.video-wrap iframe,
-.grid-media,
-.yt-lite{
-
-    position:absolute;
-
-    inset:0;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-/* Specific fix for YouTube background feel */
-.yt-embed-container{
-
-    position:absolute;
-
-    inset:0;
-
-    width:100%;
-
-    height:100%;
-
-    overflow:hidden;
-}
-
-.video-pointer-shield {position: absolute; inset: 0; z-index: 5; cursor: pointer;}
-
-   .video-grid-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    padding:36px;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.82),
-        rgba(0,0,0,.35) 55%,
-        transparent
-    );
-
-}
-.v-meta{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:#d6b06d;
-}
-  .v-title{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:2rem;
-
-    line-height:1.1;
-
-    color:white;
-
-    margin:.4rem 0;
-
-}
-   .v-desc{
-
-    margin-top:.8rem;
-
-    font-size:.9rem;
-
-    line-height:1.45;
-
-    color:rgba(255,255,255,.82);
-
-    max-width:80%;
-}
-/* Hover States */
-.video-grid-item:hover .video-grid-overlay {opacity: 1;}
-.video-grid-item:hover video,
-.video-grid-item:hover .grid-media,
-.video-grid-item:hover iframe{
-    opacity:1;
-}
-
-.video-grid-item:hover{
-    transform:translateY(-8px);
-    box-shadow:0 28px 70px rgba(0,0,0,.18);
-}
-
-.video-grid-item:hover .video-wrap{
-
-    transform:scale(1.04);
-
-}
-
-.video-wrap{
-
-    transition:transform .55s ease;
-
-}
-   .video-grid-item{
-
-    flex:0 0 620px;
-
-    width:620px;
-
-    aspect-ratio:16/9;
-
-    position:relative;
-
-    border-radius:24px;
-
-    overflow:hidden;
-
-    background:#000;
-
-    text-decoration:none;
-
-    scroll-snap-align:start;
-
-    transition:.35s ease;
-
-}
-/* Mobile Stack */
-@media (max-width:768px){
-
-    .video-grid-section{
-
-        padding:2rem 1.25rem 4rem;
-    }
-
-    .section-header{
-
-        margin-bottom:1.5rem;
-    }
-
-    .carousel-nav{
-
-        display:none;
-    }
-
-   .hero-name{
-
-    font-size:clamp(2.3rem,10vw,3.2rem);
-
-    line-height:1.05;
-}
-
-   
-.carousel-nav{
-
-    display:flex;
-
-    gap:.75rem;
-
-    align-items:center;
-}
-
-.carousel-nav button{
-
-    width:42px;
-
-    height:42px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(0,0,0,.15);
-
-    background:#fff;
-
-    color:#111;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.carousel-nav button:hover{
-
-    background:#111;
-
-    color:#fff;
-}
-  .yt-lite{
-
-    position:absolute;
-
-    inset:0;
-
-    width:100%;
-
-    height:100%;
-
-    overflow:hidden;
-
-    cursor:pointer;
-
-}
-
-.yt-thumb{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
-}
-
-.yt-lite:hover .yt-thumb{
-
-transform:scale(1.04);
-
-}
-
-.play-btn{
-
-position:absolute;
-
-top:50%;
-
-left:50%;
-
-transform:translate(-50%,-50%);
-
-width:72px;
-
-height:72px;
-
-border-radius:50%;
-
-background:rgba(255,255,255,.9);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:28px;
-
-color:#111;
-
-transition:.3s;
-
-}
-
-.yt-lite:hover .play-btn{
-
-transform:translate(-50%,-50%) scale(1.08);
-
-}
-}
-/* ── CTA & FOOTER ── */
-.cta{background:var(--ink);padding:6rem 3rem;text-align:center;}
-.cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;font-style:italic;color:var(--cream);line-height:1.3;margin-bottom:2rem;}
-.cta-link{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(253,250,244,0.5);text-decoration:none;padding:0.6rem 1.8rem;border:1px solid rgba(253,250,244,0.2);transition:all 0.2s;}
-.cta-link.primary{background:var(--rust);border-color:var(--rust);color:var(--cream);}
-footer{background:var(--ink);border-top:1px solid rgba(253,250,244,0.1);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;color:rgba(253,250,244,0.5); font-size: 0.8rem;}
-</style>
-   <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xf0msaw3g9");
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T4KRW84LFV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouris Bashir — Marketing & Communications Strategist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      :root {
+        --paper: #F8F3EA;
+        --paper2: #F1EAD8;
+        --ink: #1A0E00;
+        --ink2: #3D2A10;
+        --rust: #B84A18;
+        --gold: #9A7020;
+        --rule: rgba(26, 14, 0, 0.1);
+        --cream: #FDFAF4;
+      }
+      html { scroll-behavior: smooth; }
+      body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+        background: rgba(253, 250, 244, 0.95); backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--rule);
+        padding: 0 3rem; height: 52px;
+        display: flex; align-items: center; justify-content: space-between;
+      }
+      .nav-logo { display: block; text-decoration: none; }
+      .nav-logo img { height: 32px; width: auto; display: block; }
+      .nav-right { display: flex; gap: 2rem; align-items: center; }
+      .nav-link {
+        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+        color: var(--ink2); text-decoration: none; opacity: 0.6; transition: opacity 0.2s;
+      }
+      .nav-link:hover { opacity: 1; }
+      .nav-cta {
+        background: var(--ink); color: var(--cream) !important;
+        padding: 0.35rem 1rem; opacity: 1 !important; font-weight: 500;
+        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      /* ── WORK DROPDOWN ── */
+      .nav-work { position: relative; }
+      .nav-work-btn {
+        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+        color: var(--ink2); background: none; border: none; cursor: pointer;
+        opacity: 0.6; transition: opacity 0.2s; padding: 0;
+        display: flex; align-items: center; gap: 0.4rem; font-family: 'DM Sans', sans-serif; font-weight: 300;
+      }
+      .nav-work-btn::after {
+        content: ''; display: inline-block; width: 0; height: 0;
+        border-left: 3px solid transparent; border-right: 3px solid transparent;
+        border-top: 4px solid currentColor; transition: transform 0.2s;
+      }
+      .nav-work:hover .nav-work-btn,
+      .nav-work:focus-within .nav-work-btn { opacity: 1; }
+      .nav-work:hover .nav-work-btn::after,
+      .nav-work:focus-within .nav-work-btn::after { transform: rotate(180deg); }
+
+      .work-dropdown {
+        position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
+        background: var(--cream); border: 1px solid var(--rule);
+        min-width: 240px;
+        opacity: 0; visibility: hidden;
+        transform: translateX(-50%) translateY(-6px);
+        transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+        z-index: 200;
+      }
+      .nav-work:hover .work-dropdown,
+      .nav-work:focus-within .work-dropdown {
+        opacity: 1; visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+      .work-dropdown a {
+        display: block; padding: 0.7rem 1.2rem;
+        font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+        color: var(--ink2); text-decoration: none; opacity: 0.65;
+        border-bottom: 1px solid var(--rule); transition: opacity 0.15s, background 0.15s;
+      }
+      .work-dropdown a:last-child { border-bottom: none; }
+      .work-dropdown a:hover { opacity: 1; background: var(--paper2); }
+      .work-dropdown-label {
+        padding: 0.6rem 1.2rem 0.4rem;
+        font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
+        color: var(--rust); font-weight: 500; border-bottom: 1px solid var(--rule);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        padding-top: 52px;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        background: var(--cream);
+      }
+      .hero-left {
+        background: var(--cream);
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .hero-issue {
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+      .hero h1 {
+        max-width: 1000px;
+        font-size: clamp(3rem, 5.5vw, 5.5rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+      .hero-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(3.2rem, 5vw, 5rem);
+        max-width: 1200px;
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+      }
+
+      /* ── CLEAN CINEMATIC GRID ── */
+      .video-grid-section { padding: 1rem 3rem 6rem; }
+      .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 3rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
+      .section-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); font-weight: 500; }
+      
+      .carousel-nav { display: flex; gap: 0.75rem; align-items: center; }
+      .carousel-nav button {
+        width: 42px; height: 42px;
+        border-radius: 50%;
+        border: 1px solid var(--rule);
+        background: white; color: #111;
+        cursor: pointer; transition: 0.3s ease;
+      }
+      .carousel-nav button:hover { background: black; color: white; }
+
+      .cinematic-video-grid {
+        display: flex; gap: 32px;
+        overflow-x: auto; overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 18px;
+      }
+      .cinematic-video-grid::-webkit-scrollbar { display: none; }
+
+      .video-grid-item {
+        flex: 0 0 620px; width: 620px;
+        aspect-ratio: 16/9;
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        background: #000;
+        text-decoration: none;
+        scroll-snap-align: start;
+        transition: 0.35s ease;
+      }
+      .video-grid-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+      }
+
+      .video-wrap { position: relative; width: 100%; height: 100%; transition: transform 0.55s ease; }
+      .video-grid-item:hover .video-wrap { transform: scale(1.04); }
+
+      .video-wrap video,
+      .video-wrap iframe,
+      .grid-media,
+      .yt-lite {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+      }
+
+      .yt-lite { cursor: pointer; }
+      .yt-thumb { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .yt-lite:hover .yt-thumb { transform: scale(1.04); }
+
+      .play-btn {
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 72px; height: 72px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 28px; color: #111;
+        transition: 0.3s;
+      }
+      .yt-lite:hover .play-btn { transform: translate(-50%, -50%) scale(1.08); }
+
+      .video-pointer-shield { position: absolute; inset: 0; z-index: 5; cursor: pointer; }
+
+      .video-grid-overlay {
+        position: absolute; inset: 0;
+        display: flex; flex-direction: column;
+        justify-content: flex-end;
+        padding: 36px;
+        background: linear-gradient(
+          to top,
+          rgba(0,0,0,0.82),
+          rgba(0,0,0,0.35) 55%,
+          transparent
+        );
+      }
+      .v-meta { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: #d6b06d; }
+      .v-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; line-height: 1.1; color: white; margin: 0.4rem 0; }
+      .v-desc { margin-top: 0.8rem; font-size: 0.9rem; line-height: 1.45; color: rgba(255, 255, 255, 0.82); max-width: 80%; }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .video-grid-section { padding: 2rem 1.25rem 4rem; }
+        .section-header { margin-bottom: 1.5rem; }
+        .carousel-nav { display: none; }
+        .hero-name { font-size: clamp(2.3rem, 10vw, 3.2rem); line-height: 1.05; }
+        .video-grid-item { flex: 0 0 85vw; width: 85vw; }
+      }
+
+      /* ── CTA & FOOTER ── */
+      .cta { background: var(--ink); padding: 6rem 3rem; text-align: center; }
+      .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.3; margin-bottom: 2rem; }
+      .cta-links { display: flex; gap: 1rem; justify-content: center; }
+      .cta-link { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(253, 250, 244, 0.5); text-decoration: none; padding: 0.6rem 1.8rem; border: 1px solid rgba(253, 250, 244, 0.2); transition: all 0.2s; }
+      .cta-link.primary { background: var(--rust); border-color: var(--rust); color: var(--cream); }
+      footer { background: var(--ink); border-top: 1px solid rgba(253, 250, 244, 0.1); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; color: rgba(253, 250, 244, 0.5); font-size: 0.8rem; }
+    </style>
+
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "xf0msaw3g9");
+    </script>
 </head>
 <body>
 
 <nav>
-    <a href="index.html" class="nav-logo">
-        <img src="M.png" alt="MB">
-    </a>
-
-    <div class="nav-right">
-
-        <a href="work.html" class="nav-link">Work</a>
-
-        <a href="writing.html" class="nav-link">Writing</a>
-
-        <a href="bio_gq.html" class="nav-link">About</a>
-
-        <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">
-            Contact
-        </a>
-
+  <a href="index.html" class="nav-logo">
+    <img src="M.png" alt="mb.work">
+  </a>
+  <div class="nav-right">
+    <div class="nav-work" tabindex="0">
+      <button class="nav-work-btn" aria-haspopup="true">Work</button>
+      <div class="work-dropdown" role="menu">
+        <div class="work-dropdown-label">Case Studies</div>
+        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+        <a href="HorizonX.html">Horizon X — hear.com</a>
+        <a href="ONBC.html">#OneNationBillionCelebrations</a>
+        <a href="adl_equally.html">ADL Is EquAlly</a>
+        <a href="sustainability.html">Sustainability</a>
+        <a href="OYO.html">OYO</a>
+        <a href="fortune.html">Fortune</a>
+        <a href="police_scotland.html">Police Scotland</a>
+        <a href="FarmPik.html">FarmPik</a>
+        <a href="BookMyForex.html">BookMyForex</a>
+        <a href="moment_marketing.html">Moment Marketing</a>
+        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+      </div>
     </div>
+    <a href="bio_gq.html" class="nav-link">About</a>
+    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+  </div>
 </nav>
 
-
-
-<section class="hero">
-
-    <div class="hero-left">
-
-        <div class="hero-issue">
-            MOURIS BASHIR
-        </div>
-
-        <h1 class="hero-name">
-
-            I help organisations become
-            stories people remember.
-
-        </h1>
-
-        <p class="hero-description">
-
-            From helping airports behave like destinations,
-            hotels like communities,
-            and infrastructure feel like everyday progress.
-
-        </p>
-
+<div class="hero">
+  <div class="hero-left">
+    <div>
+      <div class="hero-issue">Mouris Bashir</div>
+      <h1 class="hero-name">
+        I helped airports behave like destinations, hotels like communities, and infrastructure like everyday progress
+      </h1>
     </div>
-
-</section>
-
-
+  </div>
+</div>
 
 <section class="video-grid-section">
+  <div class="section-header">
+    <span class="section-label">Selected Work</span>
+    <div class="carousel-nav">
+      <button id="prev" aria-label="Previous">&#8592;</button>
+      <button id="next" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
 
-    <div class="section-header">
-
-        <span class="section-label">
-            Selected Stories
-        </span>
-
-        <div class="carousel-nav">
-
-            <button id="prev">
-                ←
-            </button>
-
-            <button id="next">
-                →
-            </button>
-
+  <div class="cinematic-video-grid">
+    <!-- CARD 1 -->
+    <div class="video-grid-item">
+      <div class="video-wrap">
+        <div class="yt-lite" data-video="a7aJYVRuBZM">
+          <img class="yt-thumb" loading="lazy" src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Campaign">
+          <div class="play-btn">▶</div>
         </div>
-
+        <a href="HKKDH.html" class="video-pointer-shield"></a>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Adani Group</div>
+          <div class="v-title">Hum Karke Dikhate Hain</div>
+          <p class="v-desc">Rebuilding belief in India's largest infrastructure brand.</p>
+        </div>
+      </div>
     </div>
 
-
-
-    <div class="cinematic-video-grid">
-
-
-
-
-        <!-- STORY 1 -->
-
-        <article class="video-grid-item">
-
-            <div class="video-wrap">
-
-                <img
-                src="cover-hkkdh.webp"
-                class="grid-media">
-
-                <a href="HKKDH.html"
-                   class="video-pointer-shield"></a>
-
-                <div class="video-grid-overlay">
-
-                    <div class="v-meta">
-                        12 minute read
-                    </div>
-
-                    <div class="v-title">
-
-                        Rebuilding Trust
-
-                    </div>
-
-                    <p class="v-desc">
-
-                        Why legitimacy became the real communication challenge.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-
-
-
-        <!-- STORY 2 -->
-
-        <article class="video-grid-item">
-
-            <div class="video-wrap">
-
-                <video autoplay muted loop playsinline>
-
-                    <source src="H010.mp4">
-
-                </video>
-
-                <a href="HorizonX.html"
-                   class="video-pointer-shield"></a>
-
-                <div class="video-grid-overlay">
-
-                    <div class="v-meta">
-                        8 minute read
-                    </div>
-
-                    <div class="v-title">
-
-                        Forever Young
-
-                    </div>
-
-                    <p class="v-desc">
-
-                        Repositioning hearing care from a medical device to a lifestyle.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-
-
-
-
-        <!-- STORY 3 -->
-
-        <article class="video-grid-item">
-
-            <div class="video-wrap">
-
-                <img
-                src="cover-onbc.webp"
-                class="grid-media">
-
-                <a href="ONBC.html"
-                   class="video-pointer-shield"></a>
-
-                <div class="video-grid-overlay">
-
-                    <div class="v-meta">
-
-                        9 minute read
-
-                    </div>
-
-                    <div class="v-title">
-
-                        Building Communities
-
-                    </div>
-
-                    <p class="v-desc">
-
-                        Turning airports into cultural destinations.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-
-
-
-        <!-- STORY 4 -->
-
-        <article class="video-grid-item">
-
-            <div class="video-wrap">
-
-                <img
-                src="adl.webp"
-                class="grid-media">
-
-                <a href="adl_equally.html"
-                   class="video-pointer-shield"></a>
-
-                <div class="video-grid-overlay">
-
-                    <div class="v-meta">
-
-                        6 minute read
-
-                    </div>
-
-                    <div class="v-title">
-
-                        Changing Culture
-
-                    </div>
-
-                    <p class="v-desc">
-
-                        Increasing representation inside a technology organisation.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-
-
+    <!-- CARD 2 -->
+    <div class="video-grid-item">
+      <div class="video-wrap">
+        <video autoplay muted loop playsinline preload="metadata" poster="preview.webp">
+          <source src="H010.mp4" type="video/mp4">
+        </video>
+        <a href="HorizonX.html" class="video-pointer-shield"></a>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Audibene</div>
+          <div class="v-title">Where Forever Young Begins</div>
+          <p class="v-desc">Turning hearing aids into a lifestyle & wellbeing product.</p>
+        </div>
+      </div>
     </div>
 
+    <!-- CARD 3 -->
+    <div class="video-grid-item">
+      <div class="video-wrap">
+        <div class="yt-lite" data-video="GM7uKnyAono">
+          <img class="yt-thumb" loading="lazy" src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="Campaign">
+          <div class="play-btn">▶</div>
+        </div>
+        <a href="ONBC.html" class="video-pointer-shield"></a>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Adani Group</div>
+          <div class="v-title">#OneNationBillionCelebrations</div>
+          <p class="v-desc">Turning airports into cultural destinations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="video-grid-item">
+      <div class="video-wrap">
+        <div class="yt-lite" data-video="LIVns_jdQVw">
+          <img class="yt-thumb" loading="lazy" src="https://img.youtube.com/vi/LIVns_jdQVw/maxresdefault.jpg" alt="Campaign">
+          <div class="play-btn">▶</div>
+        </div>
+        <a href="moment_marketing.html" class="video-pointer-shield"></a>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Adani Group</div>
+          <div class="v-title">Diwali | #KaroHarJashnKoRoshan</div>
+          <p class="v-desc">Cultural storytelling at scale</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="video-grid-item">
+      <div class="video-wrap">
+        <video autoplay muted loop playsinline preload="metadata" poster="preview.webp">
+          <source src="adl_equally_video.mp4" type="video/mp4">
+        </video>
+        <a href="adl_equally.html" class="video-pointer-shield"></a>
+        <div class="video-grid-overlay">
+          <div class="v-meta">Adani Digital Labs</div>
+          <div class="v-title">#ADLIsEquAlly</div>
+          <p class="v-desc">Increased women in tech roles from 4% to 28%.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="video-grid-item">
+      <div class="video-wrap">
+        <img src="p1.gif" alt="Campaign" class="grid-media">
+        <a href="police_scotland.html" class="video-pointer-shield"></a>
+        <div class="video-grid-overlay">
+          <div class="v-meta">LBP</div>
+          <div class="v-title">#WeCanStopIt</div>
+          <p class="v-desc">Shaped messaging for a national awareness campaign.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-
-
-
-<section class="writing">
-
-    <div class="section-header">
-
-        <span class="section-label">
-
-            Latest Writing
-
-        </span>
-
-    </div>
-
-    <div class="writing-grid">
-
-        <a href="#">
-
-            Communication isn't persuasion.
-            It's memory.
-
-        </a>
-
-        <a href="#">
-
-            Why infrastructure brands
-            rarely become cultural brands.
-
-        </a>
-
-        <a href="#">
-
-            The best campaigns begin
-            before the brief.
-
-        </a>
-
-    </div>
-
-</section>
-
-
-
-
 
 <div class="cta">
-
-    <div class="cta-inner">
-
-        <h2>
-
-            <strong>Movement</strong>
-
-            over distribution.
-
-        </h2>
-
-        <div class="cta-links">
-
-            <a
-            href="mailto:mouris.bashir@hotmail.com"
-            class="cta-link primary">
-
-                Email
-
-            </a>
-
-            <a
-            href="https://linkedin.com/in/mouris-bashir/"
-            class="cta-link">
-
-                LinkedIn
-
-            </a>
-
-        </div>
-
+  <div class="cta-inner">
+    <h2><strong>Movement </strong>over distribution.</h2>
+    <div class="cta-links">
+      <a href="mailto:mouris.bashir@hotmail.com" class="cta-link primary">Email</a>
+      <a href="https://linkedin.com/in/mouris-bashir/" class="cta-link" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-
+  </div>
 </div>
 
 <footer>
-
-    Mouris Bashir · India
-
+  <span class="footer-name">Mouris Bashir · India</span>
 </footer>
 
-<script src="home.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.querySelector(".cinematic-video-grid");
+
+    document.getElementById("next").onclick = () => {
+      slider.scrollBy({ left: 680, behavior: "smooth" });
+    };
+
+    document.getElementById("prev").onclick = () => {
+      slider.scrollBy({ left: -680, behavior: "smooth" });
+    };
+
+    document.querySelectorAll(".yt-lite").forEach(card => {
+      card.addEventListener("click", () => {
+        const id = card.dataset.video;
+        card.innerHTML = `
+          <iframe
+            src="https://www.youtube.com/embed/${id}?autoplay=1"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            frameborder="0"
+            style="width:100%;height:100%;border:0;">
+          </iframe>
+        `;
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
