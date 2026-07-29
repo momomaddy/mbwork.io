@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
     <script>
@@ -387,6 +388,43 @@
   </div>
 </section>
 <div class="writing">
+    <div className="latest">
+
+{stories.map(story=>(
+
+<a
+
+key={story.slug.current}
+
+href={`/stories/${story.slug.current}`}
+
+>
+
+<img
+
+src={urlFor(story.coverImage)}
+
+alt=""
+
+/>
+
+<h3>
+
+{story.title}
+
+</h3>
+
+<p>
+
+{story.readingTime} min read
+
+</p>
+
+</a>
+
+))}
+
+</div>
 
 <a href="#">Article 1</a>
 
