@@ -302,16 +302,22 @@
     transition:.35s;
 
 }
-
-.video-card img{
+        
+        .video-card img{
 
     width:100%;
 
-    aspect-ratio:.56;
+    aspect-ratio:9/16;
 
     object-fit:cover;
 
-    display:block;
+    transition:.5s;
+
+}
+
+.video-card:hover img{
+
+    transform:scale(1.05);
 
 }
 
@@ -340,21 +346,21 @@
 
     position:absolute;
 
-    left:50%;
-
     top:50%;
+
+    left:50%;
 
     transform:translate(-50%,-50%);
 
-    width:72px;
+    width:68px;
 
-    height:72px;
+    height:68px;
 
     border-radius:50%;
 
-    background:white;
+    background:rgba(255,255,255,.92);
 
-    color:black;
+    color:#111;
 
     display:flex;
 
@@ -362,12 +368,23 @@
 
     justify-content:center;
 
-    font-size:24px;
+    font-size:22px;
 
-    z-index:2;
+    font-weight:700;
+
+    backdrop-filter:blur(8px);
+
+    transition:.3s;
+
+    z-index:3;
 
 }
 
+.video-card:hover .play-button{
+
+    transform:translate(-50%,-50%) scale(1.1);
+
+}
 .video-info{
 
     position:absolute;
@@ -463,8 +480,8 @@
     <div>
       <div class="hero-issue">Mouris Bashir</div>
       <h1 class="hero-name">
-       Brand, Marketing & Communications across PR, Social and Corporate Affairs.
-          </h1><p>I help organisations shape reputation, launch products, build communities and tell stories people remember.</p>
+       Brand, Marketing & Communications across PR, Social and Corporate Affairs </h1>
+        <p>I help organisations shape reputation, launch products, build communities and tell stories people remember.</p>
       </h1>
     </div>
   </div>
@@ -564,97 +581,145 @@
 <section class="video-section">
 
     <div class="section-header">
-        <h2>Watch</h2>
+        <h2>Videos, Reels, Shorts & Fun</h2>
         <a href="https://instagram.com/yourusername" target="_blank">
             View all →
         </a>
     </div>
 
-    <p class="section-intro">
-        Short ideas on branding, marketing, history and culture.
-    </p>
-
     <div class="video-grid">
 
-        <a class="video-card"
-           href="https://www.instagram.com/reel/XXXXXXXX/"
-           target="_blank">
+    
 
-            <img src="images/reel1.jpg">
+    <!-- Reel 1 -->
+    <a class="video-card"
+       href="https://www.instagram.com/reel/Cfvx1phLIAt/"
+       target="_blank">
 
-            <div class="play-button">▶</div>
+        <img src="images/reels/history-brands.jpg"
+             alt="Why History Matters for Brands">
 
-            <div class="video-info">
+        <div class="play-button">
+            ▶
+        </div>
 
-                <h3>
-                    Why every brand needs better stories
-                </h3>
+        <div class="video-info">
 
-                <span>38 sec</span>
+            <h3>
+                Why History Matters for Brands
+            </h3>
 
-            </div>
+            <span>Instagram Reel</span>
 
-        </a>
+        </div>
 
-        <a class="video-card"
-           href="https://www.instagram.com/reel/YYYYYYYY/"
-           target="_blank">
+    </a>
 
-            <img src="images/reel2.jpg">
+    <!-- Reel 2 -->
+    <a class="video-card"
+       href="https://www.instagram.com/reel/CgT8tX7Msmo/"
+       target="_blank">
 
-            <div class="play-button">▶</div>
+        <img src="images/reels/kashmir-storytelling.jpg"
+             alt="Kashmir and Storytelling">
 
-            <div class="video-info">
+        <div class="play-button">
+            ▶
+        </div>
 
-                <h3>
-                    Kashmir isn't a branding problem
-                </h3>
+        <div class="video-info">
 
-                <span>1 min</span>
+            <h3>
+                Kashmir & the Power of Storytelling
+            </h3>
 
-            </div>
+            <span>Instagram Reel</span>
 
-        </a>
+        </div>
 
-        <a class="video-card"
-           href="https://www.instagram.com/reel/ZZZZZZZZ/"
-           target="_blank">
+    </a>
 
-            <img src="images/reel3.jpg">
+</div>
+       
+<div class="video-grid">
 
-            <div class="play-button">▶</div>
+    <!-- Reel 1 -->
+    <a class="video-card"
+       href="https://www.instagram.com/reel/Cfvx1phLIAt/"
+       target="_blank">
 
-            <div class="video-info">
+        <img src="images/reels/history-brands.jpg"
+             alt="Why History Matters for Brands">
 
-                <h3>
-                    Why airports became cities
-                </h3>
+        <div class="play-button">
+            ▶
+        </div>
 
-                <span>56 sec</span>
+        <div class="video-info">
+            <h3>Why History Matters for Brands</h3>
+            <span>39 sec</span>
+        </div>
 
-            </div>
+    </a>
 
-        </a>
+    <!-- Reel 2 -->
+    <a class="video-card"
+       href="https://www.instagram.com/reel/CgT8tX7Msmo/"
+       target="_blank">
 
-        <a class="video-card"
-           href="https://www.instagram.com/reel/AAAAAAA/"
-           target="_blank">
+        <img src="images/reels/kashmir-storytelling.jpg"
+             alt="Kashmir & the Power of Storytelling">
 
-            <img src="images/reel4.jpg">
+        <div class="play-button">
+            ▶
+        </div>
 
-            <div class="play-button">▶</div>
+        <div class="video-info">
+            <h3>Kashmir & the Power of Storytelling</h3>
+            <span>58 sec</span>
+        </div>
 
-            <div class="video-info">
+    </a>
 
-                <h3>
-                    The psychology of trust
-                </h3>
+    <!-- Reel 3 -->
+    <a class="video-card"
+       href="https://www.instagram.com/reel/CuYihUUOUAr/"
+       target="_blank">
 
-                <span>44 sec</span>
+        <img src="images/reels/marketing-perspective.jpg"
+             alt="Marketing Perspective">
 
-            </div>
+        <div class="play-button">
+            ▶
+        </div>
 
-        </a>
+        <div class="video-info">
+            <h3>Marketing Is About Perspective</h3>
+            <span>1 min</span>
+        </div>
+
+    </a>
+    <!-- Reel 4 -->
+      <a class="video-card"
+       href="https://www.instagram.com/reel/Cwps93nv5yx/"
+       target="_blank">
+
+        <img src="images/reels/strategy-thinking.jpg"
+             alt="Strategy & Brand Thinking">
+
+        <div class="play-button">▶</div>
+
+        <div class="video-info">
+            <h3>Strategy Before Tactics</h3>
+            <span>Video Essay</span>
+        </div>
+
+    </a>
+
+</div>
+      
+
+       
 
     </div>
 
