@@ -525,152 +525,45 @@
 }
 
 }
-/* -Riger -*/
-        .ringer-stories{
+        /* - Feattured slider - */
+.featured-slider{
 
     display:flex;
 
-    flex-direction:column;
+    gap:36px;
 
-    gap:70px;
+    overflow-x:auto;
 
-    margin-top:50px;
+    scroll-snap-type:x mandatory;
+
+    scroll-behavior:smooth;
+
+    scrollbar-width:none;
+
+    padding-bottom:30px;
 
 }
 
-.story-card{
+.featured-slider::-webkit-scrollbar{
+
+    display:none;
+
+}
+        .featured-story{
+
+    flex:0 0 100%;
+
+    scroll-snap-align:center;
 
     display:grid;
 
-    grid-template-columns:40% 60%;
+    grid-template-columns:38% 62%;
 
-    background:#0f0f0f;
+    min-height:540px;
 
-    border-radius:36px;
-
-    overflow:hidden;
-
-    min-height:520px;
-
-    text-decoration:none;
-
-    color:white;
-
-    transition:.35s;
-
-}
-
-.story-card:hover{
-
-    transform:translateY(-6px);
-
-}
-
-.story-card.reverse{
-
-    grid-template-columns:60% 40%;
-
-}
-
-.story-card.reverse .story-copy{
-
-    order:2;
-
-}
-
-.story-card.reverse .story-media{
-
-    order:1;
-
-}
-
-.story-copy{
-
-    padding:70px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-}
-
-.story-client{
-
-    font-size:14px;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
-
-    opacity:.7;
-
-    margin-bottom:24px;
-
-}
-
-.story-copy h2{
-
-    font-size:64px;
-
-    line-height:.95;
-
-    margin-bottom:25px;
-
-    font-family:"Instrument Serif",serif;
-
-    font-weight:400;
-
-}
-
-.story-copy p{
-
-    font-size:21px;
-
-    line-height:1.7;
-
-    max-width:460px;
-
-    color:#cfcfcf;
-
-    margin-bottom:40px;
-
-}
-
-.story-link{
-
-    font-weight:700;
-
-    font-size:18px;
-
-}
-
-.story-media{
+    border-radius:34px;
 
     overflow:hidden;
-
-}
-
-.story-media img,
-
-.story-media video{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.5s;
-
-}
-
-.story-card:hover img,
-
-.story-card:hover video{
-
-    transform:scale(1.04);
 
 }
         /*--Slider--*/
@@ -867,33 +760,48 @@
     </div>
   </div>
 </div>
-<div class="ringer-stories">
+    <div class="section-header">
+
+    <span class="section-label">
+        Featured Stories
+    </span>
+
+    <div class="carousel-nav">
+
+        <button id="featured-prev">
+            ←
+        </button>
+
+        <button id="featured-next">
+            →
+        </button>
+
+    </div>
+
+</div>
+<div class="featured-slider">
 
     <!-- STORY 1 -->
 
-  <a href="ONBC.html" class="story-card reverse">
+    <a href="ONBC.html" class="featured-story reverse">
 
         <div class="story-copy">
 
             <span class="story-client">Adani Airports</span>
 
-            <h2>
-                Building Communities
-            </h2>
+            <h2>Building Communities</h2>
 
             <p>
                 Turning airports into cultural destinations through India's largest festive campaign.
             </p>
 
-            <span class="story-link">
-                Read Story →
-            </span>
+            <span class="story-link">Read Story →</span>
 
         </div>
 
         <div class="story-media">
 
-            <img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg">
+            <img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="Building Communities">
 
         </div>
 
@@ -903,23 +811,19 @@
 
     <!-- STORY 2 -->
 
- <a href="HorizonX.html" class="story-card">
+    <a href="HorizonX.html" class="featured-story">
 
         <div class="story-copy">
 
             <span class="story-client">Audibene</span>
 
-            <h2>
-                Changing Perception
-            </h2>
+            <h2>Changing Perception</h2>
 
             <p>
                 Turning hearing aids from a medical device into a lifestyle product.
             </p>
 
-            <span class="story-link">
-                Read Story →
-            </span>
+            <span class="story-link">Read Story →</span>
 
         </div>
 
@@ -935,30 +839,29 @@
 
     </a>
 
+
+
     <!-- STORY 3 -->
-    <a href="HKKDH.html" class="story-card">
+
+    <a href="HKKDH.html" class="featured-story">
 
         <div class="story-copy">
 
             <span class="story-client">Adani Group</span>
 
-            <h2>
-                Rebuilding Trust
-            </h2>
+            <h2>Rebuilding Trust</h2>
 
             <p>
-                Restoring belief in India's largest infrastructure brand through a long-term corporate communications strategy.
+                Restoring belief in India's largest infrastructure brand through long-term corporate communications.
             </p>
 
-            <span class="story-link">
-                Read Story →
-            </span>
+            <span class="story-link">Read Story →</span>
 
         </div>
 
         <div class="story-media">
 
-            <img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg">
+            <img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Rebuilding Trust">
 
         </div>
 
@@ -1203,17 +1106,63 @@
 </footer>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ------------------------------------
+       Selected Work Slider
+    ------------------------------------ */
+
     const slider = document.querySelector(".cinematic-video-grid");
 
-    document.getElementById("next").onclick = () => {
-      slider.scrollBy({ left: 480, behavior: "smooth" });
-    };
+    const next = document.getElementById("next");
+    const prev = document.getElementById("prev");
 
-    document.getElementById("prev").onclick = () => {
-      slider.scrollBy({ left: -480, behavior: "smooth" });
-    };
-  });
+    if (slider && next && prev) {
+
+        next.addEventListener("click", () => {
+            slider.scrollBy({
+                left: 480,
+                behavior: "smooth"
+            });
+        });
+
+        prev.addEventListener("click", () => {
+            slider.scrollBy({
+                left: -480,
+                behavior: "smooth"
+            });
+        });
+
+    }
+
+
+    /* ------------------------------------
+       Featured Stories Slider
+    ------------------------------------ */
+    const featuredSlider = document.querySelector(".featured-slider");
+
+    const featuredNext = document.getElementById("featured-next");
+    const featuredPrev = document.getElementById("featured-prev");
+
+    if (featuredSlider && featuredNext && featuredPrev) {
+
+        featuredNext.addEventListener("click", () => {
+            featuredSlider.scrollBy({
+                left: featuredSlider.offsetWidth,
+                behavior: "smooth"
+            });
+        });
+
+        featuredPrev.addEventListener("click", () => {
+            featuredSlider.scrollBy({
+                left: -featuredSlider.offsetWidth,
+                behavior: "smooth"
+            });
+        });
+
+    }
+
+});
 </script>
 
 </body>
