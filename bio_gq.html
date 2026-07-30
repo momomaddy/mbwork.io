@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-T4KRW84LFV');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>About | Mouris Bashir</title>
@@ -20,18 +28,100 @@
       .role{font-weight:600}.company{color:var(--muted)}.pills{display:flex;flex-wrap:wrap;gap:10px}.pills span{padding:10px 16px;border:1px solid var(--line);border-radius:999px}
       .cta{text-align:center;border-top:1px solid var(--line);padding:90px 0}@media(max-width:900px){
         .hero,.bio,.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.c{padding:0 24px}}
+      nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(8,8,8,0.95); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 3rem; height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); text-decoration: none; }
+.nav-right { display: flex; gap: 2rem; align-items: center; }
+.nav-link { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); text-decoration: none; opacity: 0.5; transition: opacity 0.2s; }
+.nav-link:hover { opacity: 1; }
+.nav-cta { background: var(--red); color: var(--white) !important; padding: 0.35rem 1rem;
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; opacity: 1 !important; }
+.nav-work { position: relative; }
+.nav-work-btn { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); background: none; border: none; cursor: pointer; opacity: 0.5;
+  transition: opacity 0.2s; padding: 0; display: flex; align-items: center; gap: 0.4rem;
+  font-family: 'Syne', sans-serif; font-weight: 400; }
+.nav-work-btn::after { content: ''; display: inline-block; width: 0; height: 0;
+  border-left: 3px solid transparent; border-right: 3px solid transparent;
+  border-top: 4px solid currentColor; transition: transform 0.2s; }
+.nav-work:hover .nav-work-btn,
+.nav-work:focus-within .nav-work-btn { opacity: 1; }
+.nav-work:hover .nav-work-btn::after,
+.nav-work:focus-within .nav-work-btn::after { transform: rotate(180deg); }
+.work-dropdown { position: absolute; top: calc(100% + 12px); left: 50%;
+  transform: translateX(-50%) translateY(-6px); background: var(--off-black);
+  border: 1px solid var(--line); min-width: 220px; opacity: 0; visibility: hidden;
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s; z-index: 200; }
+.nav-work:hover .work-dropdown,
+.nav-work:focus-within .work-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.work-dropdown-label { padding: 0.6rem 1.2rem 0.4rem; font-size: 0.55rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--red); font-weight: 600; border-bottom: 1px solid var(--line); }
+.work-dropdown a { display: block; padding: 0.7rem 1.2rem; font-size: 0.65rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(248,248,246,0.6); text-decoration: none;
+  border-bottom: 1px solid var(--line); transition: color 0.15s, background 0.15s; }
+.work-dropdown a:last-child { border-bottom: none; }
+.work-dropdown a:hover { color: var(--white); background: rgba(232,24,10,0.08); }nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(8,8,8,0.95); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  padding: 0 3rem; height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
     </style>
+     <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xf0msaw3g9");
+</script>
   </head>
   <body>
+    <a href="index.html" class="nav-logo">mb.work</a>
+  </a>
+  <div class="nav-right">
+    <!-- Work with dropdown -->
+    <div class="nav-work" tabindex="0">
+      <button class="nav-work-btn" aria-haspopup="true">Work</button>
+      <div class="work-dropdown" role="menu">
+        <div class="work-dropdown-label">Case Studies</div>
+     <a href="ONBC.html">#OneNationBillionCelebrations</a>
+        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+        <a href="HorizonX.html">Horizon X — hear.com</a>
+        <a href="adl_equally.html">ADL Is EquAlly</a>
+        <a href="sustainability.html">Sustainability</a>
+        <a href="OYO.html">OYO</a>
+        <a href="fortune.html">Fortune</a>
+        <a href="police_scotland.html">Police Scotland</a>
+        <a href="FarmPik.html">FarmPik</a>
+        <a href="BookMyForex.html">BookMyForex</a>
+        <a href="moment_marketing.html">Moment Marketing</a>
+      </div>
+    </div>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="eh5tories.html" class="nav-link">EH5tories</a>
+    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+  </div>
+  </nav>
+
     <div class="c">
-      <nav><strong>MB.WORK</strong>
-        <span>About</span></nav>
-      <section class="hero"><div><h1>Stories shape organisations.</h1><p>I work across executive communications, brand marketing, PR and corporate affairs, helping organisations launch products, build trust and navigate moments that matter.</p></div><div>
+      <section class="hero"><div><h1>Stories shape organisations.</h1>
+        <p>I work across executive communications, brand marketing, PR and corporate affairs, helping organisations launch products, build trust and navigate moments that matter.</p>
+      </div>
+        <div>
         <img src="Mouris.jpeg" alt="Mouris">
       </div>
       </section>
       <div class="stats">
-        <div class="stat"><h2>10+</h2><p>Years</p></div><div class="stat"><h2>30M+</h2><p>People reached</p></div><div class="stat"><h2>700M+</h2><p>Campaign views</p></div><div class="stat"><h2>$5B+</h2><p>Businesses supported</p></div></div>
+        <div class="stat"><h2>10+</h2><p>Years</p></div><div class="stat"><h2>100M+</h2><p>People reached</p></div><div class="stat"><h2>700M+</h2><p>Campaign views</p></div><div class="stat"><h2>$5B+</h2><p>Businesses supported</p></div></div>
       <section class="bio">
         <div><h2>About</h2><p>I grew up in Kashmir and later studied in Edinburgh. Between those places I learned two different ways of seeing the world: one taught complexity, the other clarity.</p><p>Before communications I sold books, worked in customer service, moderated focus groups and wrote for newsrooms. Those experiences still shape how I build brands today.</p></div>
         <div><p>Over the last decade I've worked across infrastructure, hospitality, AI, healthcare, fintech and consumer technology, translating complex businesses into stories people understand and remember.</p><p>Outside work I'm building EH5 Stories and writing my first novel.</p>
