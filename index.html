@@ -225,7 +225,180 @@
         color: var(--ink2); 
         opacity: 0.85; 
       }
+.video-section{
 
+    margin:140px auto;
+
+    max-width:1400px;
+
+}
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+}
+
+.section-header h2{
+
+    font-size:72px;
+
+    font-family:"PP Editorial New",serif;
+
+    font-weight:400;
+
+}
+
+.section-header a{
+
+    color:#111;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.section-intro{
+
+    max-width:520px;
+
+    color:#555;
+
+    margin-bottom:45px;
+
+    line-height:1.6;
+
+}
+
+.video-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+}
+
+.video-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:34px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.video-card img{
+
+    width:100%;
+
+    aspect-ratio:.56;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.video-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.video-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        transparent 35%,
+        rgba(0,0,0,.65)
+    );
+
+}
+
+.play-button{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:black;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    z-index:2;
+
+}
+
+.video-info{
+
+    position:absolute;
+
+    left:25px;
+
+    right:25px;
+
+    bottom:25px;
+
+    z-index:2;
+
+}
+
+.video-info h3{
+
+    font-size:28px;
+
+    line-height:1.2;
+
+    margin-bottom:8px;
+
+}
+
+.video-info span{
+
+    opacity:.8;
+
+    font-size:14px;
+
+}
       /* Mobile Responsive */
       @media (max-width: 768px) {
         nav { padding: 0 1.5rem; }
@@ -397,7 +570,104 @@
     </div>
   </div>
 </div>
+<section class="video-section">
 
+    <div class="section-header">
+        <h2>Watch</h2>
+        <a href="https://instagram.com/yourusername" target="_blank">
+            View all →
+        </a>
+    </div>
+
+    <p class="section-intro">
+        Short ideas on branding, marketing, history and culture.
+    </p>
+
+    <div class="video-grid">
+
+        <a class="video-card"
+           href="https://www.instagram.com/reel/XXXXXXXX/"
+           target="_blank">
+
+            <img src="images/reel1.jpg">
+
+            <div class="play-button">▶</div>
+
+            <div class="video-info">
+
+                <h3>
+                    Why every brand needs better stories
+                </h3>
+
+                <span>38 sec</span>
+
+            </div>
+
+        </a>
+
+        <a class="video-card"
+           href="https://www.instagram.com/reel/YYYYYYYY/"
+           target="_blank">
+
+            <img src="images/reel2.jpg">
+
+            <div class="play-button">▶</div>
+
+            <div class="video-info">
+
+                <h3>
+                    Kashmir isn't a branding problem
+                </h3>
+
+                <span>1 min</span>
+
+            </div>
+
+        </a>
+
+        <a class="video-card"
+           href="https://www.instagram.com/reel/ZZZZZZZZ/"
+           target="_blank">
+
+            <img src="images/reel3.jpg">
+
+            <div class="play-button">▶</div>
+
+            <div class="video-info">
+
+                <h3>
+                    Why airports became cities
+                </h3>
+
+                <span>56 sec</span>
+
+            </div>
+
+        </a>
+
+        <a class="video-card"
+           href="https://www.instagram.com/reel/AAAAAAA/"
+           target="_blank">
+
+            <img src="images/reel4.jpg">
+
+            <div class="play-button">▶</div>
+
+            <div class="video-info">
+
+                <h3>
+                    The psychology of trust
+                </h3>
+
+                <span>44 sec</span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
 <footer>
   <span class="footer-name">Mouris Bashir · India</span>
 </footer>
