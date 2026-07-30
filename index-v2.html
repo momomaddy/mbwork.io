@@ -19,6 +19,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
+      
+        .logo{font:700 28px 'Cormorant Garamond',serif;text-decoration:none;color:#171717}
+        .links{display:flex;gap:32px}
+        .links a{text-decoration:none;color:#171717;font-size:12px;text-transform:uppercase;letter-spacing:.15em}
+        .hero{padding:160px 56px 90px;max-width:980px}.k{font-size:12px;letter-spacing:.22em;color:#B85B2D}
+        .hero h1{font:400 clamp(4rem,8vw,7rem)/.92 'Cormorant Garamond',serif;margin:20px 0}
+        .hero p{font-size:20px;color:#666;max-width:650px}
+        .section{padding:0 56px 90px}
+        .head{display:flex;justify-content:space-between;border-bottom:1px solid #e7e2da;padding-bottom:18px;margin-bottom:30px}
+        .stories{display:flex;gap:34px;overflow-x:auto}
+        .stories::-webkit-scrollbar{display:none}
+        .story{flex:0 0 760px;aspect-ratio:16/10;border-radius:28px;overflow:hidden;position:relative;text-decoration:none;color:#fff}
+        .story img,.story video{width:100%;height:100%;object-fit:cover}
+        .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:42px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.2),transparent)}
+        .meta{font-size:12px;letter-spacing:.2em;color:#d7b47c}
+        .title{font:400 48px/.95 'Cormorant Garamond',serif;margin-top:12px}
+        .desc{max-width:80%;margin-top:14px;font-size:16px}
+        .writing{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+        .writing a{text-decoration:none;color:#171717;font:400 32px/1.15 'Cormorant Garamond',serif}
+        footer{padding:70px;text-align:center;background:#171717;color:#fff}
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       :root {
         --paper: #F8F3EA;
@@ -525,48 +545,7 @@
 }
 
 }
-        /* - Feattured slider - */
-.featured-slider{
-
-    display:flex;
-
-    gap:36px;
-
-    overflow-x:auto;
-
-    scroll-snap-type:x mandatory;
-
-    scroll-behavior:smooth;
-
-    scrollbar-width:none;
-
-    padding-bottom:30px;
-
-}
-
-.featured-slider::-webkit-scrollbar{
-
-    display:none;
-
-}
-        .featured-story{
-
-    flex:0 0 100%;
-
-    scroll-snap-align:center;
-
-    display:grid;
-
-    grid-template-columns:38% 62%;
-
-    min-height:540px;
-
-    border-radius:34px;
-
-    overflow:hidden;
-
-}
-        /*--Slider--*/
+               /*--Slider--*/
         .latest-slider{
 
     display:flex;
@@ -760,114 +739,40 @@
     </div>
   </div>
 </div>
-    <div class="section-header">
-
-    <span class="section-label">
-        Featured Stories
-    </span>
-
-    <div class="carousel-nav">
-
-        <button id="featured-prev">
-            ←
-        </button>
-
-        <button id="featured-next">
-            →
-        </button>
-
-    </div>
-
-</div>
-<div class="featured-slider">
-
-    <!-- STORY 1 -->
-
-    <a href="ONBC.html" class="featured-story reverse">
-
-        <div class="story-copy">
-
-            <span class="story-client">Adani Airports</span>
-
-            <h2>Building Communities</h2>
-
-            <p>
-                Turning airports into cultural destinations through India's largest festive campaign.
-            </p>
-
-            <span class="story-link">Read Story →</span>
-
-        </div>
-
-        <div class="story-media">
-
-            <img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="Building Communities">
-
-        </div>
-
-    </a>
 
 
-
-    <!-- STORY 2 -->
-
-    <a href="HorizonX.html" class="featured-story">
-
-        <div class="story-copy">
-
-            <span class="story-client">Audibene</span>
-
-            <h2>Changing Perception</h2>
-
-            <p>
-                Turning hearing aids from a medical device into a lifestyle product.
-            </p>
-
-            <span class="story-link">Read Story →</span>
-
-        </div>
-
-        <div class="story-media">
-
-            <video autoplay muted loop playsinline>
-
-                <source src="H010.mp4" type="video/mp4">
-
-            </video>
-
-        </div>
-
-    </a>
-
-
-
-    <!-- STORY 3 -->
-
-    <a href="HKKDH.html" class="featured-story">
-
-        <div class="story-copy">
-
-            <span class="story-client">Adani Group</span>
-
-            <h2>Rebuilding Trust</h2>
-
-            <p>
-                Restoring belief in India's largest infrastructure brand through long-term corporate communications.
-            </p>
-
-            <span class="story-link">Read Story →</span>
-
-        </div>
-
-        <div class="story-media">
-
-            <img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Rebuilding Trust">
-
-        </div>
-
-    </a>
-
-</div>
+   <section class='section'>
+       <div class='head'>
+           <strong>Featured Work</strong>
+       </div>
+       <div class='stories'
+           <a class='story' href='ONBC.html'>
+               <img src='https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg'>
+               <div class='overlay'>
+                   <div class='meta'>9 MIN READ</div>
+                   <div class='title'>Building Communities</div>
+                   <div class='desc'>Turning airports into cultural destinations.</div>
+               </div>
+           </a>
+           <a class='story' href='HorizonX.html'>
+               <video autoplay muted loop playsinline>
+                   <source src='H010.mp4' type='video/mp4'>
+               </video><div class='overlay'>
+                   <div class='meta'>8 MIN READ</div>
+                   <div class='title'>Changing Perception</div>
+                   <div class='desc'>Making hearing care feel like wellbeing.</div>
+               </div>
+           </a>
+            <a class='story' href='HKKDH.html'>
+               <img src='https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg'>
+               <div class='overlay'>
+                   <div class='meta'>12 MIN READ</div>
+                   <div class='title'>Rebuilding Trust</div>
+                   <div class='desc'>Why legitimacy became the real communication challenge.</div>
+               </div>
+           </a>
+       </div>
+   </section>
 <section class="latest-work">
 
     <div class="latest-header">
