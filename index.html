@@ -480,7 +480,154 @@
 }
 
 }
+/* -Riger -*/
+        .ringer-stories{
 
+    display:flex;
+
+    flex-direction:column;
+
+    gap:70px;
+
+    margin-top:50px;
+
+}
+
+.story-card{
+
+    display:grid;
+
+    grid-template-columns:40% 60%;
+
+    background:#0f0f0f;
+
+    border-radius:36px;
+
+    overflow:hidden;
+
+    min-height:520px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.story-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.story-card.reverse{
+
+    grid-template-columns:60% 40%;
+
+}
+
+.story-card.reverse .story-copy{
+
+    order:2;
+
+}
+
+.story-card.reverse .story-media{
+
+    order:1;
+
+}
+
+.story-copy{
+
+    padding:70px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.story-client{
+
+    font-size:14px;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    opacity:.7;
+
+    margin-bottom:24px;
+
+}
+
+.story-copy h2{
+
+    font-size:64px;
+
+    line-height:.95;
+
+    margin-bottom:25px;
+
+    font-family:"Instrument Serif",serif;
+
+    font-weight:400;
+
+}
+
+.story-copy p{
+
+    font-size:21px;
+
+    line-height:1.7;
+
+    max-width:460px;
+
+    color:#cfcfcf;
+
+    margin-bottom:40px;
+
+}
+
+.story-link{
+
+    font-weight:700;
+
+    font-size:18px;
+
+}
+
+.story-media{
+
+    overflow:hidden;
+
+}
+
+.story-media img,
+
+.story-media video{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.story-card:hover img,
+
+.story-card:hover video{
+
+    transform:scale(1.04);
+
+}
       /* ── CTA & FOOTER ── */
       .cta { background: var(--ink); padding: 6rem 3rem; text-align: center; }
       .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.3; margin-bottom: 2rem; }
@@ -540,7 +687,107 @@
     </div>
   </div>
 </div>
+<div class="ringer-stories">
 
+    <!-- STORY 1 -->
+
+    <a href="HKKDH.html" class="story-card">
+
+        <div class="story-copy">
+
+            <span class="story-client">Adani Group</span>
+
+            <h2>
+                Rebuilding Trust
+            </h2>
+
+            <p>
+                Restoring belief in India's largest infrastructure brand through a long-term corporate communications strategy.
+            </p>
+
+            <span class="story-link">
+                Read Story →
+            </span>
+
+        </div>
+
+        <div class="story-media">
+
+            <img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg">
+
+        </div>
+
+    </a>
+
+
+
+    <!-- STORY 2 -->
+
+    <a href="ONBC.html" class="story-card reverse">
+
+        <div class="story-copy">
+
+            <span class="story-client">Adani Airports</span>
+
+            <h2>
+                Building Communities
+            </h2>
+
+            <p>
+                Turning airports into cultural destinations through India's largest festive campaign.
+            </p>
+
+            <span class="story-link">
+                Read Story →
+            </span>
+
+        </div>
+
+        <div class="story-media">
+
+            <img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg">
+
+        </div>
+
+    </a>
+
+
+
+    <!-- STORY 3 -->
+
+    <a href="HorizonX.html" class="story-card">
+
+        <div class="story-copy">
+
+            <span class="story-client">Audibene</span>
+
+            <h2>
+                Changing Perception
+            </h2>
+
+            <p>
+                Turning hearing aids from a medical device into a lifestyle product.
+            </p>
+
+            <span class="story-link">
+                Read Story →
+            </span>
+
+        </div>
+
+        <div class="story-media">
+
+            <video autoplay muted loop playsinline>
+
+                <source src="H010.mp4" type="video/mp4">
+
+            </video>
+
+        </div>
+
+    </a>
+
+</div>
 <section class="video-grid-section">
   <div class="section-header">
     <span class="section-label">Selected Work</span>
@@ -635,7 +882,7 @@
 <section class="video-section">
     <div class="section-header">
         <div class="shorts-heading">
-    <span>Shorts</span>
+    <span>Reels</span>
 </div>
         <a href="moment_marketing.html">
             View all →
