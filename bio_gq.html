@@ -28,7 +28,7 @@
       .role{font-weight:600}.company{color:var(--muted)}.pills{display:flex;flex-wrap:wrap;gap:10px}.pills span{padding:10px 16px;border:1px solid var(--line);border-radius:999px}
       .cta{text-align:center;border-top:1px solid var(--line);padding:90px 0}@media(max-width:900px){
         .hero,.bio,.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.c{padding:0 24px}}
-    nav{
+   nav{
     position:fixed;
     top:0;
     left:0;
@@ -38,16 +38,15 @@
     justify-content:space-between;
     align-items:center;
 
-    padding:24px 70px;
+    padding:26px 70px;
 
     background:rgba(247,243,236,.88);
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(14px);
 
-    border-bottom:1px solid rgba(0,0,0,.06);
+    border-bottom:1px solid rgba(0,0,0,.08);
 
     z-index:999;
 }
-
 .nav-logo{
     color:#111;
     text-decoration:none;
@@ -64,12 +63,13 @@
 }
 
 .nav-link{
-    color:#555;
+    color:#666;
     text-decoration:none;
     font-size:.72rem;
     letter-spacing:.16em;
     text-transform:uppercase;
     transition:.25s;
+  opacity:1;
 }
 
 .nav-link:hover{
@@ -77,17 +77,17 @@
 }
 
 .nav-cta{
-    text-decoration:none;
-    color:#111;
-    padding:10px 18px;
-    border:1px solid #111;
-    border-radius:999px;
-    font-size:.72rem;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    transition:.25s;
-}
 
+    background:transparent;
+
+    color:#111;
+
+    border:1px solid #111;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+}
 .nav-cta:hover{
     background:#111;
     color:#F7F3EC;
