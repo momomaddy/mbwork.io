@@ -23,9 +23,6 @@
         .logo{font:700 28px 'Cormorant Garamond',serif;text-decoration:none;color:#171717}
         .links{display:flex;gap:32px}
         .links a{text-decoration:none;color:#171717;font-size:12px;text-transform:uppercase;letter-spacing:.15em}
-        .hero{padding:160px 56px 90px;max-width:980px}.k{font-size:12px;letter-spacing:.22em;color:#B85B2D}
-        .hero h1{font:400 clamp(4rem,8vw,7rem)/.92 'Cormorant Garamond',serif;margin:20px 0}
-        .hero p{font-size:20px;color:#666;max-width:650px}
         .section{padding:0 56px 90px}
         .head{display:flex;justify-content:space-between;border-bottom:1px solid #e7e2da;padding-bottom:18px;margin-bottom:30px}
         .stories{display:flex;gap:34px;overflow-x:auto}
@@ -38,7 +35,6 @@
         .desc{max-width:80%;margin-top:14px;font-size:16px}
         .writing{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
         .writing a{text-decoration:none;color:#171717;font:400 32px/1.15 'Cormorant Garamond',serif}
-        footer{padding:70px;text-align:center;background:#171717;color:#fff}
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       :root {
         --paper: #F8F3EA;
@@ -124,13 +120,9 @@
       }
 
       /* ── HERO ── */
-      .hero {
-        padding-top: 52px;
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
-        background: var(--cream);
-      }
+     .hero{padding:160px 56px 90px;max-width:980px}.k{font-size:12px;letter-spacing:.22em;color:#B85B2D}
+        .hero h1{font:400 clamp(4rem,8vw,7rem)/.92 'Cormorant Garamond',serif;margin:20px 0}
+        .hero p{font-size:20px;color:#666;max-width:650px}
       .hero-left {
         background: var(--cream);
         padding: 4rem 3rem 2rem;
@@ -545,7 +537,165 @@
 }
 
 }
-               /*--Slider--*/
+     /* =====================================================
+   FEATURED STORIES
+===================================================== */
+
+.featured-slider{
+
+    display:flex;
+    gap:32px;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+
+    padding:20px 0 50px;
+
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+
+}
+
+.featured-slider::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.featured-story{
+
+    position:relative;
+
+    flex:0 0 92%;
+
+    height:560px;
+
+    border-radius:34px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    scroll-snap-align:center;
+
+    display:block;
+
+    background:#111;
+
+}
+
+.featured-story img,
+.featured-story video{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+
+}
+
+.featured-story:hover img,
+.featured-story:hover video{
+
+    transform:scale(1.05);
+
+}
+
+.featured-story::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.88) 0%,
+        rgba(0,0,0,.35) 45%,
+        rgba(0,0,0,0) 75%
+    );
+
+}
+
+.story-copy{
+
+    position:absolute;
+
+    left:55px;
+
+    bottom:55px;
+
+    width:520px;
+
+    z-index:5;
+
+}
+
+.story-client{
+
+    display:inline-block;
+
+    font-size:13px;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:#d4b07a;
+
+    margin-bottom:18px;
+
+}
+
+.story-copy h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:68px;
+
+    line-height:.92;
+
+    margin:0 0 18px;
+
+    color:white;
+
+}
+
+.story-copy p{
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    color:#ececec;
+
+    margin-bottom:26px;
+
+    max-width:480px;
+
+}
+
+.story-link{
+
+    display:inline-block;
+
+    color:white;
+
+    font-weight:600;
+
+    letter-spacing:.04em;
+
+}
+        /*--Slider--*/
         .latest-slider{
 
     display:flex;
@@ -740,12 +890,11 @@
   </div>
 </div>
 
-
    <section class='section'>
        <div class='head'>
            <strong>Featured Work</strong>
        </div>
-       <div class='stories'
+       <div class='stories'>
            <a class='story' href='ONBC.html'>
                <img src='https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg'>
                <div class='overlay'>
