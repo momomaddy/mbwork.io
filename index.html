@@ -152,46 +152,69 @@
       }
       .carousel-nav button:hover { background: var(--ink); color: var(--cream); }
 
-      .cinematic-video-grid {
-        display: flex; gap: 28px;
-        overflow-x: auto; overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        padding: 0.5rem 0 1.5rem;
-      }
-      .cinematic-video-grid::-webkit-scrollbar { display: none; }
+      .cinematic-video-grid{
+
+    display:flex;
+
+    gap:36px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    padding:20px 0 30px;
+
+    scrollbar-width:none;
+
+    -ms-overflow-style:none;
+
+}
+
+.cinematic-video-grid::-webkit-scrollbar{
+
+    display:none;
+
+}
 
       /* Pure Editorial Card styling */
-      .video-grid-item {
-        flex: 0 0 460px; width: 460px;
-        min-height: 320px;
-        position: relative;
-        border: 1px solid var(--rule);
-        background: var(--paper);
-        text-decoration: none;
-        scroll-snap-align: start;
-        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        padding: 2.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .video-grid-item:hover {
-        transform: translateY(-6px);
-        background: var(--paper2);
-        border-color: rgba(184, 74, 24, 0.3);
-        box-shadow: 0 16px 40px rgba(26, 14, 0, 0.05);
-      }
+        .video-grid-item{
 
-      .card-header-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--rule);
-        padding-bottom: 1rem;
-        margin-bottom: 1.5rem;
-      }
+    flex:0 0 88%;
+
+    scroll-snap-align:center;
+
+    display:grid;
+
+    grid-template-columns:38% 62%;
+
+    align-items:center;
+
+    background:#0b0b0b;
+
+    border-radius:34px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    color:white;
+
+    min-height:520px;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+        .card-header-meta,
+.video-grid-item > div:last-child{
+
+    grid-column:1;
+
+    padding:70px;
+
+}
       .v-meta { 
         font-size: 0.65rem; 
         letter-spacing: 0.18em; 
@@ -205,26 +228,46 @@
         opacity: 0.4;
         transition: transform 0.3s ease, opacity 0.3s ease;
       }
-      .video-grid-item:hover .v-arrow {
-        transform: translateX(4px);
-        opacity: 1;
-        color: var(--rust);
-      }
+     
+        .video-grid-item:hover{
 
-      .v-title { 
-        font-family: 'Cormorant Garamond', serif; 
-        font-size: 2.2rem; 
-        line-height: 1.1; 
-        color: var(--ink); 
-        margin-bottom: 1rem; 
-        font-weight: 400;
-      }
-      .v-desc { 
-        font-size: 0.88rem; 
-        line-height: 1.6; 
-        color: var(--ink2); 
-        opacity: 0.85; 
-      }
+    transform:translateY(-6px);
+
+}
+
+.video-grid-item:hover img,
+.video-grid-item:hover video{
+
+    transform:scale(1.04);
+
+    transition:.6s;
+
+}
+
+     .v-title{
+
+    font-size:64px;
+
+    line-height:.95;
+
+    margin:18px 0;
+
+    font-family:"Instrument Serif",serif;
+
+    font-weight:400;
+
+}
+      .v-desc{
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    color:#cfcfcf;
+
+    max-width:420px;
+
+}
 .video-section{
 
     margin:140px auto;
