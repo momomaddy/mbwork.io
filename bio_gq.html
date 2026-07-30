@@ -1,628 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-T4KRW84LFV');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mouris Bashir — Profile</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --black:#080808;
-  --off-black:#0F0F0F;
-  --white:#F8F8F6;
-  --off-white:#EFEDE8;
-  --red:#E8180A;
-  --red2:#FF3D2E;
-  --warm:#F0E8D8;
-  --line:rgba(248,248,246,0.1);
-  --line-light:rgba(8,8,8,0.1);
-}
-html{scroll-behavior:smooth;}
-body{background:var(--off-white);color:var(--black);font-family:'Syne',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;}
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-  background: rgba(8,8,8,0.95); backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--line);
-  padding: 0 3rem; height: 52px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700;
-  letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); text-decoration: none; }
-.nav-right { display: flex; gap: 2rem; align-items: center; }
-.nav-link { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--white); text-decoration: none; opacity: 0.5; transition: opacity 0.2s; }
-.nav-link:hover { opacity: 1; }
-.nav-cta { background: var(--red); color: var(--white) !important; padding: 0.35rem 1rem;
-  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; opacity: 1 !important; }
-.nav-work { position: relative; }
-.nav-work-btn { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--white); background: none; border: none; cursor: pointer; opacity: 0.5;
-  transition: opacity 0.2s; padding: 0; display: flex; align-items: center; gap: 0.4rem;
-  font-family: 'Syne', sans-serif; font-weight: 400; }
-.nav-work-btn::after { content: ''; display: inline-block; width: 0; height: 0;
-  border-left: 3px solid transparent; border-right: 3px solid transparent;
-  border-top: 4px solid currentColor; transition: transform 0.2s; }
-.nav-work:hover .nav-work-btn,
-.nav-work:focus-within .nav-work-btn { opacity: 1; }
-.nav-work:hover .nav-work-btn::after,
-.nav-work:focus-within .nav-work-btn::after { transform: rotate(180deg); }
-.work-dropdown { position: absolute; top: calc(100% + 12px); left: 50%;
-  transform: translateX(-50%) translateY(-6px); background: var(--off-black);
-  border: 1px solid var(--line); min-width: 220px; opacity: 0; visibility: hidden;
-  transition: opacity 0.2s, transform 0.2s, visibility 0.2s; z-index: 200; }
-.nav-work:hover .work-dropdown,
-.nav-work:focus-within .work-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-.work-dropdown-label { padding: 0.6rem 1.2rem 0.4rem; font-size: 0.55rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--red); font-weight: 600; border-bottom: 1px solid var(--line); }
-.work-dropdown a { display: block; padding: 0.7rem 1.2rem; font-size: 0.65rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: rgba(248,248,246,0.6); text-decoration: none;
-  border-bottom: 1px solid var(--line); transition: color 0.15s, background 0.15s; }
-.work-dropdown a:last-child { border-bottom: none; }
-.work-dropdown a:hover { color: var(--white); background: rgba(232,24,10,0.08); }nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-  background: rgba(8,8,8,0.95); backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--line);
-  padding: 0 3rem; height: 52px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.proof-strip{
-
-    max-width:1180px;
-
-    margin:10rem auto;
-
-    padding:8rem 0;
-
-}
-
-.proof-item h2{
-    font-size:3rem;
-    font-weight:700;
-    margin:0;
-    color:#111;
-}
-
-.proof-item p{
-    margin-top:.6rem;
-    font-size:.95rem;
-    color:#666;
-    line-height:1.5;
-}
-
-.philosophy h3{
-    font-size:1.2rem;
-    font-weight:500;
-    line-height:1.5;
-    margin-top:.8rem;
-}
-     .proof-strip{
-    max-width:950px;
-    margin:8rem auto;
-    padding:5rem 0;
-
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:6rem;
-}
-
-.proof-number{
-
-font-size:5rem;
-
-font-weight:700;
-
-letter-spacing:-0.04em;
-
-}
-
-.proof-title{
-
-font-size:1.5rem;
-
-line-height:1.2;
-
-margin-top:1rem;
-
-}
-.proof-copy{
-    margin-top:10px;
-    font-size:14px;
-    color:#777;
-    line-height:1.7;
-}
-     .article{
-
-    width:min(760px,90%);
-    margin:0 auto;
-    padding:5rem 0;
-
-}
-    .story-break{margin:7rem auto;width:120px;border-top:1px solid rgba(0,0,0,.12);
-
-}
-     .pull{max-width:760px;margin:0 auto 7rem;padding:0;border:none;font-size:2.3rem;line-height:1.4;font-style:italic;font-family:'Libre Baskerville',serif;color:#111;
-
-}
-/* ── HERO ── */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 7rem;
-
-}
-.hero-bg-num{position:absolute;top:50%;right:-2rem;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:clamp(20rem,38vw,36rem);font-weight:800;color:rgba(248,248,246,.04);line-height:1;pointer-events:none;user-select:none;}
-.hero-tag{font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s 0.3s forwards;}
-.hero-headline{font-size:clamp(3.5rem,7vw,7rem);max-width:1100px;line-height:.88;letter-spacing:-0.05em;
-}
-     .hero{align-items:flex-start;
-}
-    .hero-headline{
-
-    max-width:960px;
-
-}
-     .hero-headline .line1{display:block;color:rgba(248,248,246,0.26);}
-.hero-headline .line2{display:block;color:var(--black);}
-.hero-headline .line3{display:block;color:var(--red);font-style:italic;font-family:'Libre Baskerville',serif;font-weight:400;}
-    .hero-headline{
-    font-family:'Libre Baskerville',sans-serif;
-    font-weight:800;
-    font-size:clamp(2.8rem,5vw,5.5rem);
-    line-height:.92;
-    letter-spacing:-0.05em;
-    max-width:900px;
-         margin-bottom:2.4rem;
-}
-.hero-sub{font-family:'Libre Baskerville',serif;font-style:italic;font-size:clamp(1.05rem,1.5vw,1.18rem);color:rgba(248,248,246,0.45);max-width:650px;line-height:1.7;margin-bottom:5rem;opacity:0;animation:fadeUp 0.8s 0.7s forwards;}
-.hero-sub strong{font-style:normal;color:var(--white);}
-     .hero-sub em{
-
-    color:var(--white);
-
-    font-style:italic;
-
-}
-.hero-footer-row{display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid var(--line);padding-top:2rem;opacity:0;animation:fadeUp 0.8s 0.9s forwards;}
-.hero-meta-items{display:flex;gap:3rem;}
-.hero-meta-item{display:flex;flex-direction:column;gap:0.2rem;}
-.hero-meta-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(248,248,246,0.3);}
-.hero-meta-val{font-size:0.85rem;color:var(--white);}
-.hero-scroll-hint{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(248,248,246,0.25);writing-mode:vertical-rl;transform:rotate(180deg);}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.acc-trigger{
-    transition:opacity .2s ease;
-}
-
-.acc-trigger:hover{
-    opacity:.75;
-}
-/* ── GQ FEATURE STRIP ── */
-.gq-strip{background:var(--red);padding:0.6rem 3rem;display:flex;align-items:center;gap:2rem;overflow:hidden;margin-bottom:48px;}
-.gq-label{font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(248,248,246,0.6);white-space:nowrap;font-weight:600;}
-.gq-quote{font-family:'Libre Baskerville',serif;font-size:0.9rem;font-style:italic;color:var(--white);white-space:nowrap;}
-
-/* ── SECTIONS (light background) ── */
-.sections{background:var(--off-white);color:var(--black);}
-const observer = new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-});
-
-document.querySelectorAll("section,.chapter,.proof-strip,.contact-row")
-
-.forEach(el=>{
-
-el.classList.add("fade");
-
-observer.observe(el);
-
-});
-/* ── CHAPTER HEADER ── */
-.chapter{
-
-padding:10rem 0 5rem;
-
-max-width:1180px;
-
-margin:auto;
-
-}.chapter-num{font-size:0.6rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:1rem;}
-.chapter-title{
-
-font-size:clamp(3rem,5vw,5rem);
-
-line-height:1.05;
-
-max-width:900px;
-
-}.chapter-title em{font-style:italic;color:var(--red);}
-
-/* ── EXPERIENCE CARD ── */
-.exp-card{
-
-background:none;
-
-padding:2.5rem 0;
-
-border-bottom:1px solid rgba(0,0,0,.08);
-
-}
-.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;gap:1rem;}
-.exp-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--black);}
-.exp-company{font-size:0.8rem;color:var(--red);margin-top:0.2rem;}
-.exp-period{font-size:0.65rem;letter-spacing:0.1em;color:rgba(248,248,246,0.3);white-space:nowrap;}
-.exp-details{font-size:0.8rem;color:rgba(248,248,246,0.5);line-height:1.7;}
-
-/* ── AWARDS LIST ── */
-.award-item{
-
-padding:2.3rem 0;
-
-}.award-item:last-child{border-bottom:none;}
-.award-star{width:8px;height:8px;background:var(--red);transform:rotate(45deg);flex-shrink:0;}
-.award-name{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:600;color:var(--black);}
-.award-year{font-size:0.65rem;letter-spacing:0.1em;color:rgba(8,8,8,0.4);margin-left:auto;white-space:nowrap;}
-
-     /*--Animation-- */
-     .fade{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:
-
-opacity .7s ease,
-
-transform .7s ease;
-
-}
-
-.fade.show{
-
-opacity:1;
-
-transform:none;
-
-}
-/* ── BIO PROSE ── */
-.bio-prose{
-
-max-width:760px;
-
-margin:auto;
-
-font-family:'Libre Baskerville',serif;
-
-font-size:1.42rem;
-
-line-height:1.95;
-
-color:#2A2A2A;
-
-}
-.bio-prose p{
-
-margin-bottom:3rem;
-
-}
-.bio-prose p:last-child{margin-bottom:0;}
-.bio-prose strong{color:var(--black);font-weight:700;}
-.bio-prose .pull{font-size:1.35rem;line-height:1.5;max-width:700px;font-style:italic;color:var(--black);border-left:3px solid var(--red);padding-left:1.5rem;margin:2.5rem 0;}
-
-/* ── DISCIPLINES PILLS ── */
-.pill-wrap{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem;}
-.pill{font-size:0.7rem;letter-spacing:0.08em;padding:0.5rem 1.1rem;border:1px solid var(--line-light);color:rgba(8,8,8,0.6);transition:all 0.2s;}
-.pill:hover{background:var(--black);color:var(--white);border-color:var(--black);}
-
-/* ── CONTACT ROW ── */
-.contact-row{
-
-    display:grid;
-
-    grid-template-columns:170px 1fr 40px;
-
-    align-items:center;
-
-    padding:28px 0;
-
-}
-     .contact-headline{font-family:'Libre Baskerville',serif;font-size:clamp(2rem,4vw,3.5rem);font-style:italic;color:var(--white);line-height:1.2;font-weight:400;}
-.contact-headline strong{font-style:normal;color:var(--red);}
-.contact-links{display:flex;flex-direction:column;gap:1rem;}
-.contact-link{display:flex;align-items:center;gap:1rem;text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--line);transition:border-color 0.2s;}
-.contact-link:hover{border-color:var(--red);}
-.contact-link-label{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(248,248,246,0.3);width:60px;}
-.contact-link-val{font-size:0.88rem;color:var(--white);}
-.contact-link-arrow{margin-left:auto;color:var(--red);font-size:1rem;}
-
-/* ── AI TWIN PILL ── */
-.ai-pill{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(232,24,10,0.1);border:1px solid rgba(232,24,10,0.3);padding:0.5rem 1.2rem;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);cursor:none;transition:all 0.2s;text-decoration:none;}
-.ai-pill:hover{background:var(--red);color:var(--white);}
-.ai-dot{width:6px;height:6px;background:var(--red2);border-radius:50%;animation:pulse 1.5s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
-.ai-pill:hover .ai-dot{background:var(--white);}
-
-     /* Footer */
-     footer{background:var(--ink);padding:42px 60px;display:flex;justify-content:space-between;align-items:center;}
-.footer-brand{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--paper);}
-.footer-brand em{font-style:italic;color:var(--red);}
-.footer-right{display:flex;gap:2rem;}
-.footer-right a{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,232,0.35);text-decoration:none;transition:color 0.2s;}
-.footer-right a:hover{color:var(--red);}
-     .footer-left{display:flex;align-items:center;gap:60px;}
-     .footer-ai{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border:1px solid rgba(255,255,255,.12);color:var(--paper);text-decoration:none;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;transition:.25s;}
-
-.footer-ai:hover{background:var(--red);border-color:var(--red);}
-.footer-brand span{color:var(--red);}
-     
-@media(max-width:768px){
-  .hero,.sections .chapter,.acc-wrap,.contact-row{padding-left:1.5rem;padding-right:1.5rem;}
-  .acc-content{padding-left:1rem;}
-  .hero-meta-items{flex-wrap:wrap;gap:1.5rem;}
-  .contact-row{grid-template-columns:1fr;}
-  .gq-strip{padding-left:1.5rem;}
-}
-     .footer-right{display:flex;gap:42px;}
-     .footer-right a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:.25s;}
-
-.footer-right a:hover{
-
- color:white;
-
-}
-     
-</style>
-     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xf0msaw3g9");
-</script>
-</head>
-<body>
-<nav>
-       <a href="index.html" class="nav-logo">mb.work</a>
-  </a>
-  <div class="nav-right">
-    <!-- Work with dropdown -->
-    <div class="nav-work" tabindex="0">
-      <button class="nav-work-btn" aria-haspopup="true">Work</button>
-      <div class="work-dropdown" role="menu">
-        <div class="work-dropdown-label">Case Studies</div>
-     <a href="ONBC.html">#OneNationBillionCelebrations</a>
-        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
-        <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="adl_equally.html">ADL Is EquAlly</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="OYO.html">OYO</a>
-        <a href="fortune.html">Fortune</a>
-        <a href="police_scotland.html">Police Scotland</a>
-        <a href="FarmPik.html">FarmPik</a>
-        <a href="BookMyForex.html">BookMyForex</a>
-        <a href="moment_marketing.html">Moment Marketing</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>About | Mouris Bashir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+    :root{--bg:#F7F3EC;--ink:#151515;--muted:#666;--line:#ddd}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,sans-serif;color:var(--ink)}.c{max-width:1280px;margin:auto;padding:0 48px}
+      nav{display:flex;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}
+      .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;padding:90px 0}
+      .hero h1{font:400 clamp(58px,7vw,96px)/.94 "Cormorant Garamond",serif;margin:0 0 20px}
+      .hero p{font-size:20px;line-height:1.8;color:var(--muted)}img{width:100%;border-radius:28px}
+      .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:70px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+      .stat h2{font:400 60px "Cormorant Garamond",serif;margin:0}.stat p{color:var(--muted)}section{padding:80px 0}h2{font:400 52px "Cormorant Garamond",serif}.bio,
+      .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.bio p{font-size:19px;line-height:1.9}
+      .row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px solid var(--line);padding:20px 0}
+      .role{font-weight:600}.company{color:var(--muted)}.pills{display:flex;flex-wrap:wrap;gap:10px}.pills span{padding:10px 16px;border:1px solid var(--line);border-radius:999px}
+      .cta{text-align:center;border-top:1px solid var(--line);padding:90px 0}@media(max-width:900px){
+        .hero,.bio,.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.c{padding:0 24px}}
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <nav><strong>MB.WORK</strong>
+        <span>About</span></nav>
+      <section class="hero"><div><h1>Stories shape organisations.</h1><p>I work across executive communications, brand marketing, PR and corporate affairs, helping organisations launch products, build trust and navigate moments that matter.</p></div><div>
+        <img src="Mouris.jpeg" alt="Mouris">
       </div>
+      </section>
+      <div class="stats">
+        <div class="stat"><h2>10+</h2><p>Years</p></div><div class="stat"><h2>30M+</h2><p>People reached</p></div><div class="stat"><h2>700M+</h2><p>Campaign views</p></div><div class="stat"><h2>$5B+</h2><p>Businesses supported</p></div></div>
+      <section class="bio">
+        <div><h2>About</h2><p>I grew up in Kashmir and later studied in Edinburgh. Between those places I learned two different ways of seeing the world: one taught complexity, the other clarity.</p><p>Before communications I sold books, worked in customer service, moderated focus groups and wrote for newsrooms. Those experiences still shape how I build brands today.</p></div>
+        <div><p>Over the last decade I've worked across infrastructure, hospitality, AI, healthcare, fintech and consumer technology, translating complex businesses into stories people understand and remember.</p><p>Outside work I'm building EH5 Stories and writing my first novel.</p>
+        </div>
+    </section>
+<section>
+
+  <h2>Earlier Career</h2>
+  <p class="section-intro">
+        Before boardrooms and billion-dollar businesses came
+        bookstores, newsrooms, customer service desks and
+        public sector campaigns.
+    </p>
+  <div class="row">
+    <div>Mar – Aug'16</div>
+    <div>
+      <div class="role">Communications Specialist</div>
+      <div class="company">AuthBridge India</div>
     </div>
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="eh5tories.html" class="nav-link">EH5tories</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
   </div>
-  </nav>
-
-<!-- HERO -->
-     <div class="hero">
-  <div class="hero-bg-num">10</div>
-  <div class="hero-tag">Marketing &amp; Communications</div>
-        <div class="hero-headline">
-    <span class="line1">For ten years,</span>
-    <span class="line2">I've worked on products that had one thing in common.</span>
-     <span class="line3"> People didn't understand them.</span>
-
+   <div class="row">
+    <div>Sep'15- Feb'16</div>
+    <div>
+      <div class="role">Op-ed Editor</div>
+      <div class="company">Kashmir Reader</div>
+    </div>
   </div>
-
-<!-- SECTIONS -->
-<div class="sections">
-<section class="proof-strip">
-  <div class="proof-item">
-      <h2>30M+ people reached</h2>
-      <p>through products I helped grow</p>
+  <div class="row">
+    <div>Nov'14 – Aug'15</div>
+    <div>
+      <div class="role">Communications Associate</div>
+      <div class="company">Barclays Bank</div>
+    </div>
   </div>
-
-  <div class="proof-item">
-      <h2>$3B+ businesses supported</h2>
-      <p>across travel, fintech, infrastructure & technology</p>
+  <div class="row">
+    <div> Aug'13- Jul'14</div>
+    <div>
+      <div class="role">Copy & Research</div>
+      <div class="company">Police Scotlandd</div>
+    </div>
   </div>
-
-  <div class="proof-item">
-      <h2>700M+ Campaign views</h2>
-      <p>Across APAC, Europe & the Middle East</p>
+  <div class="row">
+    <div> Oct'12- Jul'13</div>
+    <div>
+      <div class="role">Mareting Assistant</div>
+      <div class="company">Edinburgh College</div>
+    </div>
   </div>
+  <div class="row">
+    <div> Jun' 12- Sep'12</div>
+    <div>
+      <div class="role">PR Intern</div>
+      <div class="company">Holyrood PR · Edinburgh</div>
+    </div>
+  </div>
+</section>
+
+   
+
+    </div>
 
 </section>
-  <!-- CHAPTER 1: THE PERSON -->
-  <div class="chapter">
-    <div class="chapter-num">Chapter 01</div>
-    <div class="chapter-title">The <em>work</em> behind the <em>work</em></div>
-  </div>
-<section class="article">
-          <div class="bio-prose">
-<div class="pull">
- Before I was a marketer, or wrote my first copy, I sold to people. Before I built campaigns, I answered customer questions.
-</p>       
-</div>
-   <p>  
-At sixteen, me and my friends pooled our annual trip money together and I borrowed some from my father.
-
-We opened a video games parlour.
-
-It failed and yet started a gaming and hangout culture that thrives to this day in our small town of 100K people.</p>
-
-<p>Later, I sold educational books, waited at Six Nations Rugby games, and answered customer queries at McDees and Waitrose.
-Then Police Scotland, running focus groups in schools and youth clubs across Edinburgh.</p>
-<p>Looking back, none of those jobs were really different.
-     People were always telling me what mattered.
-Sometimes with words.
-Usually without them.
-That's still how I work. 
-And most importantly the role of end service providers in empbodying brand language and ethos.</p>
-<hr class="story-break"></p>
-<p>I've spent the years since inside rooms most people never think about. The ones where companies decide what they're really trying to say.</br></p>
-<p>-Airports.</p>
-<p>-Hearing technology.</p>
-<p>-Currency exchange.</p>
-<p>-Hospitality.</p>
-<p>-Infrastructure, in the middle of a crisis & digital transformation. </p>
-<p>-AI </p>
-<p>-FMCG </p>
-<p>-D2C. </p>
-Different industries but problem and the question remained same.<br>
-<em>What does this audience believe today?</em></br>
-<em>What should they believe when we leave the room?</em><br></p>
-<hr class="story-break">
-<p>I grew up in Kashmir. A place where beauty and contradiction rarely arrive separately. 
-Edinburgh taught me the opposite instinct.
-Say less. Mean more.
-   
-     <div class="gq-strip">
-  <span class="gq-label">Featured</span>
-  <span class="gq-quote">"Figure out what an audience believes before a campaign starts, and what they should believe when it ends. Everything else is execution."</span>
-</div><br>
-               Somewhere between those places I developed the only skill that's consistently mattered in this work.
-It wasn't writing or branding or marketing but paying attention.
-Campaigns begin in dashboards.
-Brands begin in observation.</br</p>
-<hr class="story-break">
-<p>Today, I divide my time between building brands and building ideas.
-I'm building EH5 not for founders and companies that have outgrown
-     their first story and are searching for the next one but because I am curious if I can vibe code a 
-     tech-driven product on my own.</br>
-I'm also writing a novel.
-</p>
-<hr class="story-break">
-     <p>   <h3>Beyond work... </h3>
-I bake croissants and muffins on occasion. Ski when there's snow. 
-</p>    
-          </section>
-        </div>
-     
-<!-- /acc-wrap -->
-  <!-- CHAPTER 2: THE CAREER -->
-  <div class="chapter" style="margin-top:2rem;">
-    <div class="chapter-num">Chapter 02</div>
-    <div class="chapter-title"><em>Earlier</em> roles</div>
-  </div>
-          <span class="acc-trigger-title">Before corporate</span>
-        <span class="acc-trigger-meta">2012 — 2016</span>
-          <div class="exp-card" style="margin-bottom:0.6rem;">
-            <div class="exp-header"><div><div class="exp-title">Content Specialist</div><div class="exp-company">AuthBridge · Gurgaon</div></div><div class="exp-period">Mar – Aug 2016</div></div>
-          </div>
-          <div class="exp-card" style="margin-bottom:0.6rem;">
-            <div class="exp-header"><div><div class="exp-title">Communication Associate</div><div class="exp-company">Barclays · Noida</div></div><div class="exp-period">Nov 2014 – Aug 2015</div></div>
-          </div>
-          <div class="exp-card" style="margin-bottom:0.6rem;">
-            <div class="exp-header"><div><div class="exp-title">Op-ed Editor</div><div class="exp-company">Kashmir Reader · Edinburgh</div></div></div>
-          </div>
-          <div class="exp-card" style="margin-bottom:0.6rem;">
-            <div class="exp-header"><div><div class="exp-title">Copywriter · #WeCanStopIt</div><div class="exp-company">Lothian Police, UK</div></div></div>
-          </div>
-          <div class="exp-card" style="margin-bottom:0.6rem;">
-             <div class="exp-header"><div><div class="exp-title">Marketing Assistant </div><div class="exp-company">Telford College, UK</div></div></div>
-          </div>
-          <div class="exp-card" style="margin-bottom:0.6rem;">
-            <div class="exp-header"><div><div class="exp-title">PR Intern</div><div class="exp-company">Holyrood PR · Edinburgh</div></div><div class="exp-period">May – July 2012</div></div>
-          </div>
-<!-- /acc-wrap -->
-
-  <!-- CHAPTER 3: AWARDS -->
-  <div class="chapter" style="margin-top:2rem;">
-    <div class="chapter-num">Chapter 03</div>
-    <div class="chapter-title">Recognition<br>from the <em>industry.</em></div>
-  </div>
-      <div class="acc-body">
-        <div class="acc-content">
-          <div class="award-item"><div class="award-star"></div><div class="award-name">Digies Digital Awards — Marketing Effectiveness</div><div class="award-year">2023</div></div>
-          <div class="award-item"><div class="award-star"></div><div class="award-name">Hermes Creative Awards (AMCP, USA)</div><div class="award-year">2022</div></div>
-          <div class="award-item"><div class="award-star"></div><div class="award-name">Social S.T.A.R.S Awards — Digital &amp; Social Media Campaigns</div><div class="award-year">2022, 2023</div></div>
-          <div class="award-item"><div class="award-star"></div><div class="award-name">afaqs! Foxglove Awards — Campaign Effectiveness</div><div class="award-year">2023</div></div>
-          <div class="award-item"><div class="award-star"></div><div class="award-name">ACEF Digital Awards — Customer Engagement &amp; Digital Campaigns</div><div class="award-year">2023</div></div>
-          <div class="award-item"><div class="award-star"></div><div class="award-name">Social S.T.A.R.S Awards — Social Media Marketing</div><div class="award-year">2023</div></div>
-        </div>
-      </div>
-<!-- /sections -->
-
-<!-- CONTACT -->
-
-
-<script>
-<footer>
-
-    <div class="footer-left">
-
-        <a href="#" class="footer-ai">
-            ● Talk to my AI Twin
-        </a>
-
-        <div class="footer-brand">
-            EH<span>5</span>tories
-        </div>
-
-    </div>
-
-    <nav class="footer-right">
-
-        <a href="/index.html">Portfolio</a>
-        <a href="/bio_gq.html">About</a>
-        <a href="/eh5tories.html">Essays</a>
-
-    </nav>
-
-</footer>
-// Accordion
-const items = document.querySelectorAll('.acc-item');
-items.forEach(item => {
-  const trigger = item.querySelector('.acc-trigger');
-  const body = item.querySelector('.acc-body');
-
-  // Set initial state
-  if (item.classList.contains('open')) {
-    body.style.maxHeight = body.scrollHeight + 'px';
-  }
-
-  trigger.addEventListener('click', () => {
-    const isOpen = item.classList.contains('open');
-    // Close all
-    items.forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.acc-body').style.maxHeight = '0';
-    });
-    // Open clicked if it was closed
-    if (!isOpen) {
-      item.classList.add('open');
-      body.style.maxHeight = body.scrollHeight + 'px';
-    }
-  });
-});
-</script>
-</body>
-</html>
+     <section class="grid"><div><h2>Industries</h2><div class="pills"><span>Infrastructure</span><span>AI</span><span>Hospitality</span><span>Healthcare</span><span>Fintech</span><span>Energy</span><span>D2C</span></div></div><div><h2>Recognition</h2><ul><li>Hermes Creative Awards</li><li>Digies Digital Awards</li><li>Social S.T.A.R.S.</li><li>ACEF Digital Awards</li></ul></div></section><section class="cta"><h2>Let's build stories people remember.</h2><p>mouris.bashir@hotmail.com</p></section></div></body></html>
