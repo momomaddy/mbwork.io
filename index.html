@@ -416,6 +416,49 @@
     font-size:14px;
 
 }
+        .shorts-heading{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:0 auto 70px;
+
+}
+
+.shorts-heading span{
+
+    display:inline-block;
+
+    padding:18px 90px;
+
+    border:2px solid #111;
+
+   border-radius:45% 55% 48% 52% / 52% 48% 55% 45%;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:96px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    color:#111;
+
+    background:#F8F5EF;
+
+    transform:rotate(-4deg);
+
+    transition:.35s ease;
+
+}
+
+.shorts-heading span:hover{
+
+    transform:rotate(-2deg) scale(1.02);
+
+}
       /* Mobile Responsive */
       @media (max-width: 768px) {
         nav { padding: 0 1.5rem; }
@@ -426,6 +469,17 @@
         .hero-name { font-size: clamp(2.2rem, 8vw, 3.2rem); }
         .video-grid-item { flex: 0 0 85vw; width: 85vw; padding: 1.8rem; min-height: 280px; }
       }
+        @media (max-width:768px){
+
+.shorts-heading span{
+
+    font-size:52px;
+
+    padding:14px 42px;
+
+}
+
+}
 
       /* ── CTA & FOOTER ── */
       .cta { background: var(--ink); padding: 6rem 3rem; text-align: center; }
@@ -580,8 +634,10 @@
 </section>
 <section class="video-section">
     <div class="section-header">
-        <h2>Videos</h2>
-        <a href="https://instagram.com/yourusername" target="_blank">
+        <div class="shorts-heading">
+    <span>Shorts</span>
+</div>
+        <a href="moment_marketing.html">
             View all →
         </a>
     </div>      
