@@ -28,82 +28,90 @@
       .role{font-weight:600}.company{color:var(--muted)}.pills{display:flex;flex-wrap:wrap;gap:10px}.pills span{padding:10px 16px;border:1px solid var(--line);border-radius:999px}
       .cta{text-align:center;border-top:1px solid var(--line);padding:90px 0}@media(max-width:900px){
         .hero,.bio,.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.c{padding:0 24px}}
-   nav{
-    position:fixed;
-    top:0;
+  /* ==========================
+   Navigation
+========================== */
+
+.nav{
+
+    position:absolute;
+
+    top:40px;
+
     left:0;
-    right:0;
+
+    width:100%;
+
+    padding:0 70px;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
-    padding:26px 70px;
-
-    background:rgba(247,243,236,.88);
-    backdrop-filter:blur(14px);
-
-    border-bottom:1px solid rgba(0,0,0,.08);
-
-    z-index:999;
+    z-index:100;
 }
-.nav-logo{
-    color:#111;
+
+.logo{
+
     text-decoration:none;
-    font-size:.82rem;
-    letter-spacing:.18em;
-    text-transform:uppercase;
+
+    color:#111;
+
+    font-size:.8rem;
+
     font-weight:700;
-}
 
-.nav-right{
-    display:flex;
-    gap:42px;
-    align-items:center;
-}
+    letter-spacing:.22em;
 
-.nav-link{
-    color:#666;
-    text-decoration:none;
-    font-size:.72rem;
-    letter-spacing:.16em;
     text-transform:uppercase;
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#666;
+
+    font-size:.72rem;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
     transition:.25s;
-  opacity:1;
 }
 
-.nav-link:hover{
+.nav-links a:hover{
+
     color:#111;
 }
 
-.nav-cta{
-
-    background:transparent;
-
-    color:#111;
+.button{
 
     border:1px solid #111;
 
-    padding:12px 20px;
+    padding:12px 22px;
 
     border-radius:999px;
 }
-.nav-cta:hover{
+
+.button:hover{
+
     background:#111;
-    color:#F7F3EC;
+
+    color:#F7F3EC !important;
 }
-.nav-work { position: relative; }
-.nav-work-btn { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--white); background: none; border: none; cursor: pointer; opacity: 0.5;
-  transition: opacity 0.2s; padding: 0; display: flex; align-items: center; gap: 0.4rem;
-  font-family: 'Syne', sans-serif; font-weight: 400; }
-.nav-work-btn::after { content: ''; display: inline-block; width: 0; height: 0;
-  border-left: 3px solid transparent; border-right: 3px solid transparent;
-  border-top: 4px solid currentColor; transition: transform 0.2s; }
-.nav-work:hover .nav-work-btn,
-.nav-work:focus-within .nav-work-btn { opacity: 1; }
-.nav-work:hover .nav-work-btn::after,
-.nav-work:focus-within .nav-work-btn::after { transform: rotate(180deg); }
 .work-dropdown { position: absolute; top: calc(100% + 12px); left: 50%;
   transform: translateX(-50%) translateY(-6px); background: var(--off-black);
   border: 1px solid var(--line); min-width: 220px; opacity: 0; visibility: hidden;
@@ -136,17 +144,17 @@
 </script>
   </head>
   <body>
-    <nav>
-  <a href="index.html" class="nav-logo">
-    mb.work
-  </a>
-      <div class="nav-right">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="eh5tories.html" class="nav-link">EH5tories</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-  </div>
-  </nav>
+<nav class="nav">
+    <a href="index.html" class="logo">MB.WORK</a>
 
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="eh5tories.html">EH5tories</a>
+        <a href="mailto:mouris.bashir@hotmail.com" class="button">
+            Get in touch
+        </a>
+    </div>
+</nav>
     <div class="c">
       <section class="hero"><div><h1>Stories shape organisations.</h1>
         <p>I work across executive communications, brand marketing, PR and corporate affairs, helping organisations launch products, build trust and navigate moments that matter.</p>
