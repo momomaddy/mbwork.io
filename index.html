@@ -13,848 +13,85 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouris Bashir — Marketing & Communications Strategist</title>
+    <title>OTD — Old Town Dispatches</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="css/otd-home.css?v=20260731">
     <style>
-      
-        .logo{font:700 28px 'Cormorant Garamond',serif;text-decoration:none;color:#171717}
-        .links{display:flex;gap:32px}
-        .links a{text-decoration:none;color:#171717;font-size:12px;text-transform:uppercase;letter-spacing:.15em}
-        .section{padding:0 56px 90px}
-        .head{display:flex;justify-content:space-between;border-bottom:1px solid #e7e2da;padding-bottom:18px;margin-bottom:30px}
-        .stories{display:flex;gap:34px;overflow-x:auto}
-        .stories::-webkit-scrollbar{display:none}
-        .story{flex:0 0 760px;aspect-ratio:16/10;border-radius:28px;overflow:hidden;position:relative;text-decoration:none;color:#fff}
-        .story img,.story video{width:100%;height:100%;object-fit:cover}
-        .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:42px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.2),transparent)}
-        .meta{font-size:12px;letter-spacing:.2em;color:#d7b47c}
-        .title{font:400 48px/.95 'Cormorant Garamond',serif;margin-top:12px}
-        .desc{max-width:80%;margin-top:14px;font-size:16px}
-        .writing{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-        .writing a{text-decoration:none;color:#171717;font:400 32px/1.15 'Cormorant Garamond',serif}
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       :root {
-        --paper: #F8F3EA;
-        --paper2: #F1EAD8;
-        --ink: #1A0E00;
-        --ink2: #3D2A10;
-        --rust: #B84A18;
-        --gold: #9A7020;
-        --rule: rgba(26, 14, 0, 0.12);
-        --cream: #FDFAF4;
+        --paper: #fbfbf7;
+        --ink: #10251e;
+        --muted: #64706b;
+        --green: #12b676;
+        --rule: #e7ece7;
+        --dark: #10251e;
       }
       html { scroll-behavior: smooth; }
-      body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
-
-      /* ── NAV ── */
-      nav {
-        position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-        background: rgba(253, 250, 244, 0.95); backdrop-filter: blur(6px);
-        border-bottom: 1px solid var(--rule);
-        padding: 0 3rem; height: 52px;
-        display: flex; align-items: center; justify-content: space-between;
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: 'DM Sans', sans-serif;
+        line-height: 1.45;
+        overflow-x: hidden;
       }
-      .nav-logo { display: block; text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); }
-      .nav-logo img { height: 32px; width: auto; display: block; }
-      .nav-right { display: flex; gap: 2rem; align-items: center; }
-      .nav-link {
-        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-        color: var(--ink2); text-decoration: none; opacity: 0.6; transition: opacity 0.2s;
-      }
-      .nav-link:hover { opacity: 1; }
-      .nav-cta {
-        background: var(--ink); color: var(--cream) !important;
-        padding: 0.35rem 1rem; opacity: 1 !important; font-weight: 500;
-        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-        text-decoration: none; transition: background 0.2s ease;
-      }
-      .nav-cta:hover { background: var(--rust); }
-
-      /* ── WORK DROPDOWN ── */
-      .nav-work { position: relative; }
-      .nav-work-btn {
-        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-        color: var(--ink2); background: none; border: none; cursor: pointer;
-        opacity: 0.6; transition: opacity 0.2s; padding: 0;
-        display: flex; align-items: center; gap: 0.4rem; font-family: 'DM Sans', sans-serif; font-weight: 300;
-      }
-      .nav-work-btn::after {
-        content: ''; display: inline-block; width: 0; height: 0;
-        border-left: 3px solid transparent; border-right: 3px solid transparent;
-        border-top: 4px solid currentColor; transition: transform 0.2s;
-      }
-      .nav-work:hover .nav-work-btn,
-      .nav-work:focus-within .nav-work-btn { opacity: 1; }
-      .nav-work:hover .nav-work-btn::after,
-      .nav-work:focus-within .nav-work-btn::after { transform: rotate(180deg); }
-
-      .work-dropdown {
-        position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
-        background: var(--cream); border: 1px solid var(--rule);
-        min-width: 240px;
-        opacity: 0; visibility: hidden;
-        transform: translateX(-50%) translateY(-6px);
-        transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-        z-index: 200;
-      }
-      .nav-work:hover .work-dropdown,
-      .nav-work:focus-within .work-dropdown {
-        opacity: 1; visibility: visible;
-        transform: translateX(-50%) translateY(0);
-      }
-      .work-dropdown a {
-        display: block; padding: 0.7rem 1.2rem;
-        font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-        color: var(--ink2); text-decoration: none; opacity: 0.65;
-        border-bottom: 1px solid var(--rule); transition: opacity 0.15s, background 0.15s;
-      }
-      .work-dropdown a:last-child { border-bottom: none; }
-      .work-dropdown a:hover { opacity: 1; background: var(--paper2); }
-      .work-dropdown-label {
-        padding: 0.6rem 1.2rem 0.4rem;
-        font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
-        color: var(--rust); font-weight: 500; border-bottom: 1px solid var(--rule);
-      }
-
-      /* ── HERO ── */
-       .hero{
-
-    max-width:1600px;
-
-    margin:0 auto;
-
-    padding:150px 70px 80px;
-
-}
-
-.hero-title{
-
-    font-family:"DM Sans", sans-serif;
-
-    font-size:clamp(72px,6.8vw,112px);
-
-    line-height:.95;
-
-    letter-spacing:-0.03em;
-
-    max-width:1450px;
-
-    margin:0;
-
-    font-weight:400;
-
-}
-
-.hero-sub{
-
-    margin-top:38px;
-
-    max-width:620px;
-
-    font-size:22px;
-
-    line-height:1.7;
-
-    color:#666;
-
-}
-
-      /* ── EDITORIAL WORK CARDS (IMAGE-LESS) ── */
-      .video-grid-section { padding: 3rem 3rem 6rem; }
-      .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
-      .section-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); font-weight: 500; }
-      
-      .carousel-nav { display: flex; gap: 0.75rem; align-items: center; }
-      .carousel-nav button {
-        width: 42px; height: 42px;
-        border-radius: 50%;
-        border: 1px solid var(--rule);
-        background: transparent; color: var(--ink);
-        cursor: pointer; transition: 0.3s ease;
-        font-size: 1rem;
-      }
-      .carousel-nav button:hover { background: var(--ink); color: var(--cream); }
-
-    .cinematic-video-grid{
-
-    display:flex !important;
-
-    flex-direction:row !important;
-
-    flex-wrap:nowrap !important;
-
-    gap:28px;
-
-    overflow-x:auto;
-
-    overflow-y:hidden;
-
-    scroll-snap-type:x mandatory;
-
-    scrollbar-width:none;
-
-    -ms-overflow-style:none;
-
-    width:100%;
-
-}
-
-.cinematic-video-grid::-webkit-scrollbar{
-
-    display:none;
-
-}
-
-      /* Pure Editorial Card styling */
-.video-grid-item{
-
-    flex:0 0 360px !important;
-
-    width:360px;
-
-    min-width:360px;
-
-    max-width:360px;
-
-    scroll-snap-align:start;
-
-}
-
-        .card-header-meta,
-.video-grid-item > div:last-child{
-
-    grid-column:1;
-
-    padding:70px;
-
-}
-      .v-meta { 
-        font-size: 0.65rem; 
-        letter-spacing: 0.18em; 
-        text-transform: uppercase; 
-        color: var(--rust); 
-        font-weight: 500; 
-      }
-      .v-arrow {
-        font-size: 1.1rem;
-        color: var(--ink2);
-        opacity: 0.4;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-     
-        .video-grid-item:hover{
-
-    transform:translateY(-6px);
-
-}
-        .video-grid-item img,
-.video-grid-item video{
-
-    width:100%;
-
-    height:230px;
-
-    object-fit:cover;
-
-    display:block;
-
-}
-
-.video-grid-item:hover img,
-.video-grid-item:hover video{
-
-    transform:scale(1.04);
-
-    transition:.6s;
-
-}
-.video-grid-item > div{
-
-    padding:22px;
-
-}
-  .v-title{
-
-    font-size:34px;
-
-    line-height:1;
-
-    margin:10px 0;
-
-    font-family:"Cormorant Garamond",serif;
-
-}
-     .v-desc{
-
-    font-size:15px;
-
-    color:#666;
-
-    line-height:1.6;
-
-}
-.video-section{
-
-    margin:140px auto;
-
-    max-width:1400px;
-
-}
-
-.section-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:10px;
-
-}
-
-.section-header h2{
-
-    font-size:72px;
-
-    font-family:"PP Editorial New",serif;
-
-    font-weight:400;
-
-}
-
-.section-header a{
-
-    color:#111;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-}
-
-.section-intro{
-
-    max-width:520px;
-
-    color:#555;
-
-    margin-bottom:45px;
-
-    line-height:1.6;
-
-}
-
-.video-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:28px;
-
-}
-
-.video-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:34px;
-
-    text-decoration:none;
-
-    color:white;
-
-    transition:.35s;
-
-}
-        
-        .video-card img{
-
-    width:100%;
-
-    aspect-ratio:9/16;
-
-    object-fit:cover;
-
-    transition:.5s;
-
-}
-
-.video-card:hover img{
-
-    transform:scale(1.05);
-
-}
-
-.video-card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.video-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        transparent 35%,
-        rgba(0,0,0,.65)
-    );
-
-}
-
-.play-button{
-
-    position:absolute;
-
-    top:50%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:68px;
-
-    height:68px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.92);
-
-    color:#111;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:22px;
-
-    font-weight:700;
-
-    backdrop-filter:blur(8px);
-
-    transition:.3s;
-
-    z-index:3;
-
-}
-
-.video-card:hover .play-button{
-
-    transform:translate(-50%,-50%) scale(1.1);
-
-}
-.video-info{
-
-    position:absolute;
-
-    left:25px;
-
-    right:25px;
-
-    bottom:25px;
-
-    z-index:2;
-
-}
-
-.video-info h3{
-
-    font-size:28px;
-
-    line-height:1.2;
-
-    margin-bottom:8px;
-
-}
-
-.video-info span{
-
-    opacity:.8;
-
-    font-size:14px;
-
-}
-        .shorts-heading{
-
-    display:flex;
-
-    justify-content:center;
-
-    margin:0 auto 70px;
-
-}
-
-.shorts-heading span{
-
-    display:inline-block;
-
-    padding:18px 90px;
-
-    border:2px solid #111;
-
-   border-radius:45% 55% 48% 52% / 52% 48% 55% 45%;
-
-    font-family:"Inter",sans-serif;
-
-    font-size:96px;
-
-    font-weight:900;
-
-    line-height:1;
-
-    color:#111;
-
-    background:#F8F5EF;
-
-    transform:rotate(-4deg);
-
-    transition:.35s ease;
-
-}
-
-.shorts-heading span:hover{
-
-    transform:rotate(-2deg) scale(1.02);
-
-}
-      /* Mobile Responsive */
-      @media (max-width: 768px) {
-        nav { padding: 0 1.5rem; }
-        .hero-left { padding: 3rem 1.5rem 1.5rem; }
-        .video-grid-section { padding: 2rem 1.5rem 4rem; }
-        .section-header { margin-bottom: 1.5rem; }
-        .carousel-nav { display: none; }
-        .hero-name { font-size: clamp(2.2rem, 8vw, 3.2rem); }
-        .video-grid-item { flex: 0 0 85vw; width: 85vw; padding: 1.8rem; min-height: 280px; }
-      }
-        @media (max-width:768px){
-
-.shorts-heading span{
-
-    font-size:52px;
-
-    padding:14px 42px;
-
-}
-
-}
-     /* =====================================================
-   FEATURED STORIES
-===================================================== */
-
-.featured-slider{
-
-    display:flex;
-    gap:32px;
-
-    overflow-x:auto;
-    overflow-y:hidden;
-
-    scroll-snap-type:x mandatory;
-    scroll-behavior:smooth;
-
-    padding:20px 0 50px;
-
-    scrollbar-width:none;
-    -webkit-overflow-scrolling:touch;
-
-}
-
-.featured-slider::-webkit-scrollbar{
-
-    display:none;
-
-}
-
-.featured-story{
-
-    position:relative;
-
-    flex:0 0 92%;
-
-    height:560px;
-
-    border-radius:34px;
-
-    overflow:hidden;
-
-    text-decoration:none;
-
-    color:#fff;
-
-    scroll-snap-align:center;
-
-    display:block;
-
-    background:#111;
-
-}
-
-.featured-story img,
-.featured-story video{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.7s;
-
-}
-
-.featured-story:hover img,
-.featured-story:hover video{
-
-    transform:scale(1.05);
-
-}
-
-.featured-story::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(
-        to top,
-        rgba(0,0,0,.88) 0%,
-        rgba(0,0,0,.35) 45%,
-        rgba(0,0,0,0) 75%
-    );
-
-}
-
-.story-copy{
-
-    position:absolute;
-
-    left:55px;
-
-    bottom:55px;
-
-    width:520px;
-
-    z-index:5;
-
-}
-
-.story-client{
-
-    display:inline-block;
-
-    font-size:13px;
-
-    letter-spacing:.18em;
-
-    text-transform:uppercase;
-
-    color:#d4b07a;
-
-    margin-bottom:18px;
-
-}
-
-.story-copy h2{
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:68px;
-
-    line-height:.92;
-
-    margin:0 0 18px;
-
-    color:white;
-
-}
-
-.story-copy p{
-
-    font-size:20px;
-
-    line-height:1.7;
-
-    color:#ececec;
-
-    margin-bottom:26px;
-
-    max-width:480px;
-
-}
-
-.story-link{
-
-    display:inline-block;
-
-    color:white;
-
-    font-weight:600;
-
-    letter-spacing:.04em;
-
-}
-        /*--Slider--*/
-        .latest-slider{
-
-    display:flex;
-
-    gap:28px;
-
-    overflow-x:auto;
-
-    overflow-y:hidden;
-
-    scroll-snap-type:x mandatory;
-
-    scroll-behavior:smooth;
-
-    padding:10px 0 30px;
-
-    scrollbar-width:none;
-
-    -webkit-overflow-scrolling:touch;
-
-}
-
-.latest-slider::-webkit-scrollbar{
-
-    display:none;
-
-}
-        .latest-card{
-
-    position:relative;
-
-    flex:0 0 360px;
-
-    height:520px;
-
-    border-radius:28px;
-
-    overflow:hidden;
-
-    scroll-snap-align:start;
-
-    text-decoration:none;
-
-    color:white;
-
-    display:block;
-
-}
-
-.latest-card img,
-.latest-card video{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.5s;
-
-}
-
-.latest-card:hover img,
-.latest-card:hover video{
-
-    transform:scale(1.05);
-
-}
-
-.latest-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-
-        transparent 25%,
-
-        rgba(0,0,0,.82)
-
-    );
-
-}
-
-.latest-overlay{
-
-    position:absolute;
-
-    left:28px;
-
-    right:28px;
-
-    bottom:28px;
-
-    z-index:2;
-
-}
-
-.latest-overlay span{
-
-    display:inline-block;
-
-    background:rgba(255,255,255,.14);
-
-    padding:8px 14px;
-
-    border-radius:999px;
-
-    font-size:13px;
-
-    margin-bottom:16px;
-
-}
-
-.latest-overlay h3{
-
-    font-size:38px;
-
-    line-height:1.08;
-
-    margin-bottom:12px;
-
-    font-family:"Cormorant Garamond",serif;
-
-}
-
-.latest-overlay p{
-
-    opacity:.9;
-
-    font-size:16px;
-
-}
-      /* ── CTA & FOOTER ── */
-      .cta { background: var(--ink); padding: 6rem 3rem; text-align: center; }
-      .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.3; margin-bottom: 2rem; }
-      .cta-links { display: flex; gap: 1rem; justify-content: center; }
-      .cta-link { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(253, 250, 244, 0.5); text-decoration: none; padding: 0.6rem 1.8rem; border: 1px solid rgba(253, 250, 244, 0.2); transition: all 0.2s; }
-      .cta-link.primary { background: var(--rust); border-color: var(--rust); color: var(--cream); }
-      .cta-link:hover { border-color: var(--cream); color: var(--cream); }
-      footer { background: var(--ink); border-top: 1px solid rgba(253, 250, 244, 0.1); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; color: rgba(253, 250, 244, 0.5); font-size: 0.8rem; }
-    </style>
+      a { color: inherit; }
+      .site-header { background: #fff; border-bottom: 1px solid var(--rule); }
+      .brand-wrap { position: relative; min-height: 225px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .brand { text-align: center; text-decoration: none; color: var(--ink); }
+      .brand-mark { display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 118px; line-height: .72; letter-spacing: -.07em; }
+      .brand-tag { display: inline-block; margin-top: 26px; padding: 10px 42px 12px; border-radius: 999px; background: var(--ink); color: #fff; font: 700 30px/1 'Cormorant Garamond', Georgia, serif; box-shadow: 0 18px 45px rgba(16,37,30,.12); transform: rotate(-1deg); }
+      .menu-button { position: absolute; right: 38px; top: 32px; width: 36px; height: 36px; border: 1px solid var(--rule); background: #fff; color: var(--ink); font-size: 21px; line-height: 32px; text-align: center; text-decoration: none; }
+      .nav { height: 42px; display: flex; align-items: center; gap: 28px; padding: 0 42px; border-top: 1px solid var(--rule); font-size: 10px; text-transform: uppercase; letter-spacing: .28em; font-weight: 700; }
+      .nav a { text-decoration: none; }
+      .hero-feature { position: relative; min-height: 580px; display: flex; align-items: center; overflow: hidden; color: #fff; }
+      .hero-feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .hero-feature::after, .conversation::after, .story-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,18,14,.88), rgba(5,18,14,.44) 55%, rgba(5,18,14,.18)); }
+      .hero-copy { position: relative; z-index: 2; width: min(760px, 92vw); padding-left: 42px; }
+      .eyebrow { color: var(--green); font-size: 10px; letter-spacing: .32em; text-transform: uppercase; font-weight: 700; margin-bottom: 28px; display: inline-flex; align-items: center; gap: 16px; }
+      .eyebrow::before { content: ""; width: 36px; height: 1px; background: currentColor; }
+      h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+      .hero-copy h1 { font-size: 106px; line-height: .86; letter-spacing: -.045em; margin-bottom: 24px; color: #fff; }
+      .hero-copy p { font-size: 24px; max-width: 700px; margin-bottom: 18px; }
+      .byline, .read-link { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; font-weight: 700; }
+      .read-link { display: inline-block; margin-top: 18px; text-decoration: underline; text-underline-offset: 6px; }
+      .dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3; }
+      .dots span { width: 18px; height: 5px; background: rgba(255,255,255,.55); }
+      .dots span:last-child { background: var(--green); }
+      .section { max-width: 1120px; margin: 0 auto; padding: 48px 24px; }
+      .section-title { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin-bottom: 20px; }
+      .section-title h2 { font-size: 48px; line-height: 1; }
+      .section-title small { color: var(--green); display: block; font-size: 9px; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 6px; font-family: 'DM Sans', sans-serif; }
+      .circle-arrow { width: 28px; height: 28px; border: 1px solid var(--rule); border-radius: 50%; display: inline-grid; place-items: center; text-decoration: none; font-size: 16px; }
+      .latest-row { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 16px; scrollbar-width: none; }
+      .latest-row::-webkit-scrollbar { display: none; }
+      .story-card { position: relative; flex: 0 0 270px; height: 210px; border-radius: 12px; overflow: hidden; color: #fff; text-decoration: none; display: block; }
+      .story-card.tall { height: 300px; flex-basis: 230px; }
+      .story-card img, .story-card video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+      .story-card:hover img, .story-card:hover video { transform: scale(1.05); }
+      .card-copy { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 18px; }
+      .pill { display: inline-block; background: rgba(255,255,255,.22); border-radius: 999px; padding: 5px 10px; font-size: 8px; text-transform: uppercase; letter-spacing: .18em; font-weight: 700; margin-bottom: 10px; }
+      .card-copy h3 { font-size: 24px; line-height: .95; color: #fff; }
+      .card-copy p { margin-top: 9px; font-size: 9px; text-transform: uppercase; letter-spacing: .18em; }
+      .conversation { position: relative; min-height: 460px; display: flex; align-items: center; color: #fff; overflow: hidden; margin: 8px 0 0; }
+      .conversation img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .conversation-copy { position: relative; z-index: 2; padding: 42px; width: min(760px, 92vw); }
+      .conversation h2 { font-size: 96px; line-height: .86; letter-spacing: -.04em; color: #fff; margin-bottom: 24px; }
+      .conversation p { font-size: 20px; max-width: 640px; }
+      .category { padding-top: 18px; }
+      .category .section-title { border-bottom: none; margin-bottom: 18px; display: block; }
+      .category .section-title h2 { display: inline; font-size: 34px; }
+      .category-grid { display: flex; gap: 24px; flex-wrap: wrap; }
+      .footer { margin-top: 70px; background: var(--dark); color: #fff; padding: 70px 12%; display: flex; justify-content: space-between; gap: 70px; }
+      .footer h2 { font-size: 28px; margin-bottom: 24px; color: #fff; }
+      .footer .eyebrow::before { display: none; }
+      .footer p { color: rgba(255,255,255,.7); max-width: 420px; }
+      .footer-links { display: flex; flex-wrap: wrap; max-width: 360px; gap: 12px 80px; align-content: start; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+      .footer-links a { color: rgba(255,255,255,.75); text-decoration: none; }
+      @media (max-width: 760px) { .brand-wrap { min-height: 170px; } .brand-mark { font-size: 74px; } .brand-tag { font-size: 20px; padding: 9px 28px; } .nav { padding: 0 20px; gap: 18px; overflow-x: auto; } .hero-feature { min-height: 520px; } .hero-copy, .conversation-copy { padding: 26px; } .latest-row { margin-right: -24px; } .footer { grid-template-columns: 1fr; } }
+</style>
 
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -866,147 +103,46 @@
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">
-    mb.work
-  </a>
-  <div class="nav-right">
-    <div class="nav-work" tabindex="0">
-    </div>
-    <a href="bio_gq.html" class="nav-link">About</a>
-      <a href="eh5toriies.html" class="nav-link">EH5tories</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+<header class="site-header">
+  <div class="brand-wrap">
+    <a class="brand" href="index.html" aria-label="Old Town Dispatches home">
+      <span class="brand-mark">OTD</span>
+      <span class="brand-tag">Old Town Dispatches</span>
+    </a>
+    <a class="menu-button" href="mailto:mouris.bashir@hotmail.com" aria-label="Get in touch">≡</a>
   </div>
-</nav>
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="#history">History</a>
+    <a href="#sports">Sports</a>
+    <a href="#music">Music</a>
+  </nav>
+</header>
 
-<div class="hero">
-  <div class="hero-left">
-    <div>
-      <div class="hero-issue">Mouris Bashir</div>
-     <h1 class="hero-title">
-Shaping how organisations are seen, understood and remembered.
-</h1>
-    <p>From executive communications and corporate affairs to brand marketing, PR and social, 
-        I help organisations earn attention, trust and advocacy.
-    </p>
+<main>
+  <section class="hero-feature">
+    <img src="images/11.png" alt="A packed stadium at dusk">
+    <div class="hero-copy">
+      <span class="eyebrow">Football · Brand Story</span>
+      <h1>Football as Public Memory</h1>
+      <p>A stadium is not only where people watch. It is where a city remembers itself.</p>
+      <div class="byline">By Mouris Bashir · Jul 31 · 4 min read</div>
+      <a class="read-link" href="ONBC.html">Read Story</a>
     </div>
-  </div>
-</div>
-    
-   <section class='section'>
-        <div class="shorts-heading">
-           <span>Featured Work</span>
-       </div>
-       <div class='stories'>
-<a href="ONBC.html" class="featured-story">
+    <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+  </section>
 
-<img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg">
-
-<div class="story-copy">
-
-<span class="story-client">
-
-Adani Airports
-
-</span>
-
-<h2>
-
-Building Communities
-
-</h2>
-
-<p>
-
-Turning airports into cultural destinations through India's largest festive campaign.
-
-</p>
-
-<span class="story-link">
-
-Read Story →
-
-</span>
-
-</div>
-
-</a>
-      
-    <a href="HorizonX.html" class="featured-story">>
-               <video autoplay muted loop playsinline>
-                   <source src='H010.mp4' type='video/mp4'>
-               </video>
-               <div class="story-copy">
-
-<span class="story-client">
-
-Audibene
-
-</span>
-
-<h2>
-
-Changing Perception
-
-</h2>
-
-<p>
-
-Making hearing care feel like 'hearables.'
-
-</p>
-
-<span class="story-link">
-
-Read Story →
-
-</span>
-
-</div>
-
-</a>
-              
-  <a href="HKKDH.html" class="featured-story">>
-               <img src='https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg'>
-               <div class="story-copy">
-
-<span class="story-client">
-
-Adani Group
-
-</span>
-
-<h2>
-
-Rebuilding Trust
-
-</h2>
-
-<p>
-
-Why legitimacy became the real communication challenge.
-
-</p>
-
-<span class="story-link">
-
-Read Story →
-
-</span>
-
-</div>
-
-</a>        
-       </div>
-   </section>
-<section class="latest-work">
-         <div class="shorts-heading">
-    <span>More Work</span>
-</div>
-
-        <button class="latest-next">→</button>
-
+  <section class="section" aria-labelledby="latest-title">
+    <div class="section-title">
+      <h2 id="latest-title">The Latest</h2>
+      <a class="circle-arrow" href="#history" aria-label="Skip to categories">›</a>
     </div>
+
+    <div class="latest-row">
+      <a href="police_scotland.html" class="story-card"><img src="p1.gif" alt="Campaign visual for Police Scotland"><div class="card-copy"><span class="pill">History</span><h3>The Archive Under the Market</h3><p>By Mouris Bashir · 5 min read</p></div></a>
+      <a href="HKKDH.html" class="story-card"><img src="images/10.png" alt="Community campaign crowd"><div class="card-copy"><span class="pill">Football</span><h3>The Derby That Made a Neighborhood</h3><p>By Mouris Bashir · 6 min read</p></div></a>
+      <a href="ONBC.html" class="story-card"><img src="images/11.png" alt="Stadium flags at dusk"><div class="card-copy"><span class="pill">Football</span><h3>Why Stadiums Become Archives</h3><p>By Mouris Bashir · 4 min read</p></div></a>
+      <a href="OYO.html" class="story-card"><img src="O06.jpeg" alt="People in conversation near a mural"><div class="card-copy"><span class="pill">People</span><h3>The Tea Table Oral History</h3><p>By Mouris Bashir · 3 min read</p></div></a>
+=======
 
     <div class="latest-slider">
 <!-- Work 1 -->
@@ -1088,217 +224,59 @@ Read Story →
 
         <p>Infrastructure</p>
 
-    </div>
-
-</a>
-        <!-- Work 6 -->
-        <a href="adl_equally.html" class="latest-card">
-
-    <video autoplay muted loop playsinline>
-
-        <source src="adl_equally_video.mp4" type="video/mp4">
-
-    </video>
-
-    <div class="latest-overlay">
-
-        <span>ADL</span>
-
-        <h3>ADL is EquAlly.</h3>
-
-        <p>Employer Branding</p>
 
     </div>
+  </section>
 
-</a>
-            <!-- Work 7 -->
-        <a href="bookmyforex.html" class="latest-card">
-
-            <img src="BMF1111.jpg" alt="Strategy & Brand Thinking">
-
-            <div class="latest-overlay">
-
-                <span>BookMyForex</span>
-
-                <h3>Creating a Category</h3>
-
-                <p>8 min read</p>
-
-            </div>
-
-        </a>
-        <!-- Work 8 -->
-       <a href="FarmPik.html" class="latest-card">
-
-           <img src="FP6.JPG" alt="Strategy & Brand Thinking">
-
-            <div class="latest-overlay">
-
-                <span>FarmPik</span>
-
-                <h3>#15YearsOfTrust</h3>
-
-                <p>8 min read</p>
-
-            </div>
-
-        </a>
-
+  <section class="conversation">
+    <img src="O06.jpeg" alt="People in conversation near a mural">
+    <div class="conversation-copy">
+      <span class="eyebrow">Watch & Listen</span>
+      <h2>Old Town Conversations</h2>
+      <p>Interviews about memory, place, archives, and the people who keep old cities legible.</p>
+      <a class="read-link" href="moment_marketing.html">Explore Shows</a>
     </div>
+  </section>
 
-</section>
-    
-<section class="video-section">
-    <div class="section-header">
-        <div class="shorts-heading">
-    <span>Reels</span>
-</div>
-        <a href="moment_marketing.html">
-            View all →
-        </a>
-    </div>      
-<div class="video-grid">
-
-    <!-- Reel 1 -->
-    <a class="video-card"
-       href="https://www.instagram.com/reel/Cfvx1phLIAt/"
-       target="_blank">
-
-        <img src="images/history-brands.png"
-             alt="Why History Matters for Brands">
-
-        <div class="play-button">
-            ▶
-        </div>
-
-        <div class="video-info">
-            <h3>What are you listening to? </h3>
-            <span>39 sec</span>
-        </div>
-
-    </a>
-
-    <!-- Reel 2 -->
-    <a class="video-card"
-       href="https://www.instagram.com/reel/CgT8tX7Msmo/"
-       target="_blank">
-
-        <img src="images/kashmir-storytelling.png"
-             alt="Kashmir & the Power of Storytelling">
-
-        <div class="play-button">
-            ▶
-        </div>
-
-        <div class="video-info">
-            <h3>The People's Way.</h3>
-            <span>58 sec</span>
-        </div>
-
-    </a>
-
-    <!-- Reel 3 -->
-    <a class="video-card"
-       href="https://www.instagram.com/reel/CuYihUUOUAr/"
-       target="_blank">
-
-        <img src="images/Reel 3.png"
-             alt="Marketing Perspective">
-
-        <div class="play-button">
-            ▶
-        </div>
-
-        <div class="video-info">
-            <h3>Umbrellas, Moonsooooon & Dance!</h3>
-            <span>1 min</span>
-        </div>
-
-    </a>
-    <!-- Reel 4 -->
-      <a class="video-card"
-       href="https://www.instagram.com/reel/Cwps93nv5yx/"
-       target="_blank">
-
-        <img src="images/Reel 4.png" alt="Strategy & Brand Thinking">
-
-        <div class="play-button">▶</div>
-
-        <div class="video-info">
-            <h3>A Day at ADL...</h3>
-            <span>Video Essay</span>
-        </div>
-
-    </a>
-
-</div>
-       
+  <section class="section category" id="history">
+    <div class="section-title"><small>History</small><h2>History</h2> <a class="circle-arrow" href="eh5tories.html">›</a></div>
+    <div class="category-grid">
+      <a href="sustainability.html" class="story-card tall"><img src="youtube-thumbnail.png" alt="Documentary thumbnail"><div class="card-copy"><span class="pill">Stories</span><h3>The Map That Outlived the King</h3><p>4 min read</p></div></a>
+      <a href="police_scotland.html" class="story-card tall"><img src="p1.gif" alt="Wall campaign artwork"><div class="card-copy"><span class="pill">History</span><h3>The Archive Under the Market</h3><p>4 min read</p></div></a>
     </div>
+  </section>
 
-</section>
-<footer>
-  <span class="footer-name">Mouris Bashir · Kashmir</span>
+  <section class="section category" id="sports">
+    <div class="section-title"><small>Sports</small><h2>Sports</h2> <a class="circle-arrow" href="ONBC.html">›</a></div>
+    <div class="category-grid">
+      <a href="HKKDH.html" class="story-card tall"><img src="images/10.png" alt="Large event gathering"><div class="card-copy"><span class="pill">Football</span><h3>The Derby That Made a Neighborhood</h3><p>6 min read</p></div></a>
+      <a href="ONBC.html" class="story-card tall"><img src="images/11.png" alt="Stadium at sunset"><div class="card-copy"><span class="pill">Football</span><h3>Why Stadiums Become Archives</h3><p>4 min read</p></div></a>
+    </div>
+  </section>
+
+  <section class="section category" id="music">
+    <div class="section-title"><small>Music</small><h2>Music</h2> <a class="circle-arrow" href="moment_marketing.html">›</a></div>
+    <div class="category-grid">
+      <a href="moment_marketing.html" class="story-card tall"><img src="images/history-brands.png" alt="A person listening at a desk"><div class="card-copy"><span class="pill">Albums</span><h3>The Record Shop at the Edge of Memory</h3><p>4 min read</p></div></a>
+      <a href="moment_marketing.html" class="story-card tall"><img src="images/Reel 4.png" alt="Podcast recording setup"><div class="card-copy"><span class="pill">Archive</span><h3>The Night Radio Taught the Neighborhood</h3><p>4 min read</p></div></a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>
+    <h2>OTD</h2>
+    <span class="eyebrow">Old Town Dispatches</span>
+    <p>OTD is a calm, curated publication for history, sports, and music, built around editorial programming rather than feeds.</p>
+    <p>© 2026 OTD. All rights reserved.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="#history">Read</a>
+    <a href="moment_marketing.html">Shows</a><a href="bio_gq.html">Writers</a>
+    <a href="bio_gq.html">About</a><a href="mailto:mouris.bashir@hotmail.com">Contact</a>
+    <a href="mailto:mouris.bashir@hotmail.com">Terms</a><a href="mailto:mouris.bashir@hotmail.com">Privacy</a>
+  </div>
 </footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* ------------------------------------
-       Selected Work Slider
-    ------------------------------------ */
-
-    const slider = document.querySelector(".cinematic-video-grid");
-
-    const next = document.getElementById("next");
-    const prev = document.getElementById("prev");
-
-    if (slider && next && prev) {
-
-        next.addEventListener("click", () => {
-            slider.scrollBy({
-                left: 480,
-                behavior: "smooth"
-            });
-        });
-
-        prev.addEventListener("click", () => {
-            slider.scrollBy({
-                left: -480,
-                behavior: "smooth"
-            });
-        });
-
-    }
-
-
-    /* ------------------------------------
-       Featured Stories Slider
-    ------------------------------------ */
-    const featuredSlider = document.querySelector(".featured-slider");
-
-    const featuredNext = document.getElementById("featured-next");
-    const featuredPrev = document.getElementById("featured-prev");
-
-    if (featuredSlider && featuredNext && featuredPrev) {
-
-        featuredNext.addEventListener("click", () => {
-            featuredSlider.scrollBy({
-                left: featuredSlider.offsetWidth,
-                behavior: "smooth"
-            });
-        });
-
-        featuredPrev.addEventListener("click", () => {
-            featuredSlider.scrollBy({
-                left: -featuredSlider.offsetWidth,
-                behavior: "smooth"
-            });
-        });
-
-    }
-
-});
-</script>
 
 </body>
 </html>
