@@ -12,239 +12,85 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouris Bashir — Marketing & Communications Strategist</title>
+    <title>OTD — Old Town Dispatches</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="css/otd-home.css?v=20260731">
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       :root {
-        --paper: #F8F3EA;
-        --paper2: #F1EAD8;
-        --ink: #1A0E00;
-        --ink2: #3D2A10;
-        --rust: #B84A18;
-        --gold: #9A7020;
-        --rule: rgba(26, 14, 0, 0.12);
-        --cream: #FDFAF4;
+        --paper: #fbfbf7;
+        --ink: #10251e;
+        --muted: #64706b;
+        --green: #12b676;
+        --rule: #e7ece7;
+        --dark: #10251e;
       }
       html { scroll-behavior: smooth; }
-      body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
-
-      /* ── NAV ── */
-      nav {
-        position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-        background: rgba(253, 250, 244, 0.95); backdrop-filter: blur(6px);
-        border-bottom: 1px solid var(--rule);
-        padding: 0 3rem; height: 52px;
-        display: flex; align-items: center; justify-content: space-between;
-      }
-      .nav-logo { display: block; text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); }
-      .nav-logo img { height: 32px; width: auto; display: block; }
-      .nav-right { display: flex; gap: 2rem; align-items: center; }
-      .nav-link {
-        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-        color: var(--ink2); text-decoration: none; opacity: 0.6; transition: opacity 0.2s;
-      }
-      .nav-link:hover { opacity: 1; }
-      .nav-cta {
-        background: var(--ink); color: var(--cream) !important;
-        padding: 0.35rem 1rem; opacity: 1 !important; font-weight: 500;
-        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-        text-decoration: none; transition: background 0.2s ease;
-      }
-      .nav-cta:hover { background: var(--rust); }
-
-      /* ── WORK DROPDOWN ── */
-      .nav-work { position: relative; }
-      .nav-work-btn {
-        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-        color: var(--ink2); background: none; border: none; cursor: pointer;
-        opacity: 0.6; transition: opacity 0.2s; padding: 0;
-        display: flex; align-items: center; gap: 0.4rem; font-family: 'DM Sans', sans-serif; font-weight: 300;
-      }
-      .nav-work-btn::after {
-        content: ''; display: inline-block; width: 0; height: 0;
-        border-left: 3px solid transparent; border-right: 3px solid transparent;
-        border-top: 4px solid currentColor; transition: transform 0.2s;
-      }
-      .nav-work:hover .nav-work-btn,
-      .nav-work:focus-within .nav-work-btn { opacity: 1; }
-      .nav-work:hover .nav-work-btn::after,
-      .nav-work:focus-within .nav-work-btn::after { transform: rotate(180deg); }
-
-      .work-dropdown {
-        position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
-        background: var(--cream); border: 1px solid var(--rule);
-        min-width: 240px;
-        opacity: 0; visibility: hidden;
-        transform: translateX(-50%) translateY(-6px);
-        transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-        z-index: 200;
-      }
-      .nav-work:hover .work-dropdown,
-      .nav-work:focus-within .work-dropdown {
-        opacity: 1; visibility: visible;
-        transform: translateX(-50%) translateY(0);
-      }
-      .work-dropdown a {
-        display: block; padding: 0.7rem 1.2rem;
-        font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-        color: var(--ink2); text-decoration: none; opacity: 0.65;
-        border-bottom: 1px solid var(--rule); transition: opacity 0.15s, background 0.15s;
-      }
-      .work-dropdown a:last-child { border-bottom: none; }
-      .work-dropdown a:hover { opacity: 1; background: var(--paper2); }
-      .work-dropdown-label {
-        padding: 0.6rem 1.2rem 0.4rem;
-        font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
-        color: var(--rust); font-weight: 500; border-bottom: 1px solid var(--rule);
-      }
-
-      /* ── HERO ── */
-      .hero {
-        padding-top: 52px;
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
-        background: var(--cream);
-      }
-      .hero-left {
-        background: var(--cream);
-        padding: 4rem 3rem 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .hero-issue {
-        font-size: 0.62rem;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 1.5rem;
-        font-weight: 500;
-      }
-      .hero-name {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(2.8rem, 5.2vw, 4.8rem);
-        max-width: 1200px;
-        line-height: 1.05;
-        letter-spacing: -0.02em;
-        color: var(--ink);
-        font-weight: 300;
-      }
-
-      /* ── EDITORIAL WORK CARDS (IMAGE-LESS) ── */
-      .video-grid-section { padding: 3rem 3rem 6rem; }
-      .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
-      .section-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); font-weight: 500; }
-      
-      .carousel-nav { display: flex; gap: 0.75rem; align-items: center; }
-      .carousel-nav button {
-        width: 42px; height: 42px;
-        border-radius: 50%;
-        border: 1px solid var(--rule);
-        background: transparent; color: var(--ink);
-        cursor: pointer; transition: 0.3s ease;
-        font-size: 1rem;
-      }
-      .carousel-nav button:hover { background: var(--ink); color: var(--cream); }
-
-      .cinematic-video-grid {
-        display: flex; gap: 28px;
-        overflow-x: auto; overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        padding: 0.5rem 0 1.5rem;
-      }
-      .cinematic-video-grid::-webkit-scrollbar { display: none; }
-
-      /* Pure Editorial Card styling */
-      .video-grid-item {
-        flex: 0 0 460px; width: 460px;
-        min-height: 320px;
-        position: relative;
-        border: 1px solid var(--rule);
+      body {
         background: var(--paper);
-        text-decoration: none;
-        scroll-snap-align: start;
-        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        padding: 2.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        color: var(--ink);
+        font-family: 'DM Sans', sans-serif;
+        line-height: 1.45;
+        overflow-x: hidden;
       }
-      .video-grid-item:hover {
-        transform: translateY(-6px);
-        background: var(--paper2);
-        border-color: rgba(184, 74, 24, 0.3);
-        box-shadow: 0 16px 40px rgba(26, 14, 0, 0.05);
-      }
-
-      .card-header-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--rule);
-        padding-bottom: 1rem;
-        margin-bottom: 1.5rem;
-      }
-      .v-meta { 
-        font-size: 0.65rem; 
-        letter-spacing: 0.18em; 
-        text-transform: uppercase; 
-        color: var(--rust); 
-        font-weight: 500; 
-      }
-      .v-arrow {
-        font-size: 1.1rem;
-        color: var(--ink2);
-        opacity: 0.4;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-      .video-grid-item:hover .v-arrow {
-        transform: translateX(4px);
-        opacity: 1;
-        color: var(--rust);
-      }
-
-      .v-title { 
-        font-family: 'Cormorant Garamond', serif; 
-        font-size: 2.2rem; 
-        line-height: 1.1; 
-        color: var(--ink); 
-        margin-bottom: 1rem; 
-        font-weight: 400;
-      }
-      .v-desc { 
-        font-size: 0.88rem; 
-        line-height: 1.6; 
-        color: var(--ink2); 
-        opacity: 0.85; 
-      }
-
-      /* Mobile Responsive */
-      @media (max-width: 768px) {
-        nav { padding: 0 1.5rem; }
-        .hero-left { padding: 3rem 1.5rem 1.5rem; }
-        .video-grid-section { padding: 2rem 1.5rem 4rem; }
-        .section-header { margin-bottom: 1.5rem; }
-        .carousel-nav { display: none; }
-        .hero-name { font-size: clamp(2.2rem, 8vw, 3.2rem); }
-        .video-grid-item { flex: 0 0 85vw; width: 85vw; padding: 1.8rem; min-height: 280px; }
-      }
-
-      /* ── CTA & FOOTER ── */
-      .cta { background: var(--ink); padding: 6rem 3rem; text-align: center; }
-      .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.3; margin-bottom: 2rem; }
-      .cta-links { display: flex; gap: 1rem; justify-content: center; }
-      .cta-link { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(253, 250, 244, 0.5); text-decoration: none; padding: 0.6rem 1.8rem; border: 1px solid rgba(253, 250, 244, 0.2); transition: all 0.2s; }
-      .cta-link.primary { background: var(--rust); border-color: var(--rust); color: var(--cream); }
-      .cta-link:hover { border-color: var(--cream); color: var(--cream); }
-      footer { background: var(--ink); border-top: 1px solid rgba(253, 250, 244, 0.1); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; color: rgba(253, 250, 244, 0.5); font-size: 0.8rem; }
-    </style>
+      a { color: inherit; }
+      .site-header { background: #fff; border-bottom: 1px solid var(--rule); }
+      .brand-wrap { position: relative; min-height: 225px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .brand { text-align: center; text-decoration: none; color: var(--ink); }
+      .brand-mark { display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 118px; line-height: .72; letter-spacing: -.07em; }
+      .brand-tag { display: inline-block; margin-top: 26px; padding: 10px 42px 12px; border-radius: 999px; background: var(--ink); color: #fff; font: 700 30px/1 'Cormorant Garamond', Georgia, serif; box-shadow: 0 18px 45px rgba(16,37,30,.12); transform: rotate(-1deg); }
+      .menu-button { position: absolute; right: 38px; top: 32px; width: 36px; height: 36px; border: 1px solid var(--rule); background: #fff; color: var(--ink); font-size: 21px; line-height: 32px; text-align: center; text-decoration: none; }
+      .nav { height: 42px; display: flex; align-items: center; gap: 28px; padding: 0 42px; border-top: 1px solid var(--rule); font-size: 10px; text-transform: uppercase; letter-spacing: .28em; font-weight: 700; }
+      .nav a { text-decoration: none; }
+      .hero-feature { position: relative; min-height: 580px; display: flex; align-items: center; overflow: hidden; color: #fff; }
+      .hero-feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .hero-feature::after, .conversation::after, .story-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,18,14,.88), rgba(5,18,14,.44) 55%, rgba(5,18,14,.18)); }
+      .hero-copy { position: relative; z-index: 2; width: min(760px, 92vw); padding-left: 42px; }
+      .eyebrow { color: var(--green); font-size: 10px; letter-spacing: .32em; text-transform: uppercase; font-weight: 700; margin-bottom: 28px; display: inline-flex; align-items: center; gap: 16px; }
+      .eyebrow::before { content: ""; width: 36px; height: 1px; background: currentColor; }
+      h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+      .hero-copy h1 { font-size: 106px; line-height: .86; letter-spacing: -.045em; margin-bottom: 24px; color: #fff; }
+      .hero-copy p { font-size: 24px; max-width: 700px; margin-bottom: 18px; }
+      .byline, .read-link { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; font-weight: 700; }
+      .read-link { display: inline-block; margin-top: 18px; text-decoration: underline; text-underline-offset: 6px; }
+      .dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3; }
+      .dots span { width: 18px; height: 5px; background: rgba(255,255,255,.55); }
+      .dots span:last-child { background: var(--green); }
+      .section { max-width: 1120px; margin: 0 auto; padding: 48px 24px; }
+      .section-title { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin-bottom: 20px; }
+      .section-title h2 { font-size: 48px; line-height: 1; }
+      .section-title small { color: var(--green); display: block; font-size: 9px; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 6px; font-family: 'DM Sans', sans-serif; }
+      .circle-arrow { width: 28px; height: 28px; border: 1px solid var(--rule); border-radius: 50%; display: inline-grid; place-items: center; text-decoration: none; font-size: 16px; }
+      .latest-row { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 16px; scrollbar-width: none; }
+      .latest-row::-webkit-scrollbar { display: none; }
+      .story-card { position: relative; flex: 0 0 270px; height: 210px; border-radius: 12px; overflow: hidden; color: #fff; text-decoration: none; display: block; }
+      .story-card.tall { height: 300px; flex-basis: 230px; }
+      .story-card img, .story-card video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+      .story-card:hover img, .story-card:hover video { transform: scale(1.05); }
+      .card-copy { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 18px; }
+      .pill { display: inline-block; background: rgba(255,255,255,.22); border-radius: 999px; padding: 5px 10px; font-size: 8px; text-transform: uppercase; letter-spacing: .18em; font-weight: 700; margin-bottom: 10px; }
+      .card-copy h3 { font-size: 24px; line-height: .95; color: #fff; }
+      .card-copy p { margin-top: 9px; font-size: 9px; text-transform: uppercase; letter-spacing: .18em; }
+      .conversation { position: relative; min-height: 460px; display: flex; align-items: center; color: #fff; overflow: hidden; margin: 8px 0 0; }
+      .conversation img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .conversation-copy { position: relative; z-index: 2; padding: 42px; width: min(760px, 92vw); }
+      .conversation h2 { font-size: 96px; line-height: .86; letter-spacing: -.04em; color: #fff; margin-bottom: 24px; }
+      .conversation p { font-size: 20px; max-width: 640px; }
+      .category { padding-top: 18px; }
+      .category .section-title { border-bottom: none; margin-bottom: 18px; display: block; }
+      .category .section-title h2 { display: inline; font-size: 34px; }
+      .category-grid { display: flex; gap: 24px; flex-wrap: wrap; }
+      .footer { margin-top: 70px; background: var(--dark); color: #fff; padding: 70px 12%; display: flex; justify-content: space-between; gap: 70px; }
+      .footer h2 { font-size: 28px; margin-bottom: 24px; color: #fff; }
+      .footer .eyebrow::before { display: none; }
+      .footer p { color: rgba(255,255,255,.7); max-width: 420px; }
+      .footer-links { display: flex; flex-wrap: wrap; max-width: 360px; gap: 12px 80px; align-content: start; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+      .footer-links a { color: rgba(255,255,255,.75); text-decoration: none; }
+      @media (max-width: 760px) { .brand-wrap { min-height: 170px; } .brand-mark { font-size: 74px; } .brand-tag { font-size: 20px; padding: 9px 28px; } .nav { padding: 0 20px; gap: 18px; overflow-x: auto; } .hero-feature { min-height: 520px; } .hero-copy, .conversation-copy { padding: 26px; } .latest-row { margin-right: -24px; } .footer { grid-template-columns: 1fr; } }
+</style>
 
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -256,583 +102,180 @@
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">
-    mb.work
-  </a>
-  <div class="nav-right">
-    <div class="nav-work" tabindex="0">
-      <button class="nav-work-btn" aria-haspopup="true">Work</button>
-      <div class="work-dropdown" role="menu">
-        <div class="work-dropdown-label">Case Studies</div>
-          <a href="ONBC.html">#OneNationBillionCelebrations</a>
-        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
-        <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="adl_equally.html">ADL Is EquAlly</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="OYO.html">OYO</a>
-        <a href="fortune.html">Fortune</a>
-        <a href="police_scotland.html">Police Scotland</a>
-        <a href="FarmPik.html">FarmPik</a>
-        <a href="BookMyForex.html">BookMyForex</a>
-        <a href="moment_marketing.html">Moment Marketing</a>
-        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
-      </div>
+<header class="site-header">
+  <div class="brand-wrap">
+    <a class="brand" href="index.html" aria-label="Old Town Dispatches home">
+      <span class="brand-mark">OTD</span>
+      <span class="brand-tag">Old Town Dispatches</span>
+    </a>
+    <a class="menu-button" href="mailto:mouris.bashir@hotmail.com" aria-label="Get in touch">≡</a>
+  </div>
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="#history">History</a>
+    <a href="#sports">Sports</a>
+    <a href="#music">Music</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero-feature">
+    <img src="images/11.png" alt="A packed stadium at dusk">
+    <div class="hero-copy">
+      <span class="eyebrow">Football · Brand Story</span>
+      <h1>Football as Public Memory</h1>
+      <p>A stadium is not only where people watch. It is where a city remembers itself.</p>
+      <div class="byline">By Mouris Bashir · Jul 31 · 4 min read</div>
+      <a class="read-link" href="ONBC.html">Read Story</a>
     </div>
-    <a href="bio_gq.html" class="nav-link">About</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-  </div>
-</nav>
+    <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+  </section>
 
-<div class="hero">
-  <div class="hero-left">
-    <div>
-      <div class="hero-issue">Mouris Bashir</div>
-      <h1 class="hero-name">
-       Brand, Marketing & Communications across PR, Social and Corporate Affairs.
-          </h1><p>I help organisations shape reputation, launch products, build communities and tell stories people remember.</p>
-      </h1>
+  <section class="section" aria-labelledby="latest-title">
+    <div class="section-title">
+      <h2 id="latest-title">The Latest</h2>
+      <a class="circle-arrow" href="#history" aria-label="Skip to categories">›</a>
     </div>
-  </div>
-</div>
 
-<section class="video-grid-section">
-  <div class="section-header">
-    <span class="section-label">Selected Work</span>
-    <div class="carousel-nav">
-      <button id="prev" aria-label="Previous">&#8592;</button>
-      <button id="next" aria-label="Next">&#8594;</button>
+    <div class="latest-row">
+      <a href="police_scotland.html" class="story-card"><img src="p1.gif" alt="Campaign visual for Police Scotland"><div class="card-copy"><span class="pill">History</span><h3>The Archive Under the Market</h3><p>By Mouris Bashir · 5 min read</p></div></a>
+      <a href="HKKDH.html" class="story-card"><img src="images/10.png" alt="Community campaign crowd"><div class="card-copy"><span class="pill">Football</span><h3>The Derby That Made a Neighborhood</h3><p>By Mouris Bashir · 6 min read</p></div></a>
+      <a href="ONBC.html" class="story-card"><img src="images/11.png" alt="Stadium flags at dusk"><div class="card-copy"><span class="pill">Football</span><h3>Why Stadiums Become Archives</h3><p>By Mouris Bashir · 4 min read</p></div></a>
+      <a href="OYO.html" class="story-card"><img src="O06.jpeg" alt="People in conversation near a mural"><div class="card-copy"><span class="pill">People</span><h3>The Tea Table Oral History</h3><p>By Mouris Bashir · 3 min read</p></div></a>
+=======
+
+    <div class="latest-slider">
+<!-- Work 1 -->
+        
+   <a href="police_scotland.html" class="latest-card">
+
+            <img src="p1.gif" alt="Strategy & Brand Thinking">
+
+            <div class="latest-overlay">
+
+                <span>Police Scotland</span>
+
+                <h3>#WeCanStopIt</h3>
+
+                <p>8 min read</p>
+
+            </div>
+
+        </a>
+
+        <!-- Work 2 -->
+       <a href="OYO.html" class="latest-card">
+
+                <img src="O06.jpeg" alt="Strategy & Brand Thinking">
+
+            <div class="latest-overlay">
+
+                <span>OYO</span>
+
+                <h3>#ValentineAloneTogether</h3>
+
+                <p>Global Startup</p>
+
+            </div>
+
+        </a>
+        <!-- Work 3 -->
+       <a href="fortune.html" class="latest-card">
+
+          <img src="Pic 1.png" alt="Strategy & Brand Thinking">
+
+            <div class="latest-overlay">
+
+                <span>Fortune Online</span>
+
+                <h3>Naye Bharat Ki Nayi Delivery</h3>
+
+                <p>FMCG</p>
+
+            </div>
+
+        </a>
+        <!-- Work 4 -->
+       <a href="farmpik_fruity.html" class="latest-card">
+
+           <img src="FF1.JPG" alt="Strategy & Brand Thinking">
+
+            <div class="latest-overlay">
+
+                <span>FarmPik</span>
+
+                <h3>Fruity Life Healthy Vibe</h3>
+
+                <p>D2C</p>
+
+            </div>
+
+        </a>
+        <!-- Work 5 -->
+       <a href="sustainability.html" class="latest-card">
+
+    <img src="youtube-thumbnail.png" alt="Generating Goodness">
+
+    <div class="latest-overlay">
+
+        <span>Adani Green</span>
+
+        <h3>Generating Goodness with #WonderfulLife</h3>
+
+        <p>Infrastructure</p>
+
+
     </div>
-  </div>
+  </section>
 
-  <div class="cinematic-video-grid">
-        <!-- CARD 1 -->
-    <a href="ONBC.html" class="video-grid-item">
-          <img src='https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg'>
-      <div class="card-header-meta">
-        <span class="v-meta">Adani Group</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">#OneNationBillionCelebrations</h2>
-        <p class="v-desc">Turning airports into cultural destinations.</p>
-      </div>
-    </a>
-    <!-- CARD 2 -->
-    <a href="HKKDH.html" class="video-grid-item">
-         <img src='https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg'>
-      <div class="card-header-meta">
-        <span class="v-meta">Adani Group</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">Hum Karke Dikhate Hain</h2>
-        <p class="v-desc">Rebuilding belief in India's largest infrastructure brand.</p>
-      </div>
-    </a>
-
-    <!-- CARD 3 -->
-    <a href="HorizonX.html" class="video-grid-item">
-        <video autoplay muted loop playsinline><source src='H010.mp4' type='video/mp4'></video>
-      <div class="card-header-meta">
-        <span class="v-meta">Audibene</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">Where Forever Young Begins</h2>
-        <p class="v-desc">Turning hearing aids into a lifestyle & wellbeing product.</p>
-      </div>
-    </a>
-
-
-    <!-- CARD 4 -->
-    <a href="moment_marketing.html" class="video-grid-item">
-        <img class="yt-thumb" loading="lazy" src="https://img.youtube.com/vi/LIVns_jdQVw/maxresdefault.jpg" alt="Campaign">
-      <div class="card-header-meta">
-        <span class="v-meta">Adani Group</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">Diwali | #KaroHarJashnKoRoshan</h2>
-        <p class="v-desc">Cultural storytelling at scale across national touchpoints.</p>
-      </div>
-    </a>
-
-    <!-- CARD 5 -->
-    <a href="adl_equally.html" class="video-grid-item">
-        <video autoplay muted loop playsinline preload="metadata" poster="preview.webp">
-<source src="adl_equally_video.mp4" type="video/mp4">
-</video>
-      <div class="card-header-meta">
-        <span class="v-meta">Adani Digital Labs</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">#ADLIsEquAlly</h2>
-        <p class="v-desc">Increased women in tech roles from 4% to 28%.</p>
-      </div>
-    </a>
-
-    <!-- CARD 6 -->
-    <a href="police_scotland.html" class="video-grid-item">
-        <img src="p1.gif">
-      <div class="card-header-meta">
-        <span class="v-meta">LBP</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">#WeCanStopIt</h2>
-        <p class="v-desc">Shaped messaging for a national awareness campaign.</p>
-      </div>
-    </a>
-  </div>
-</section>
-<div class="cta">
-  <div class="cta-inner">
-    <h2><strong>Movement </strong>over distribution.</h2>
-    <div class="cta-links">
-      <a href="mailto:mouris.bashir@hotmail.com" class="cta-link primary">Email</a>
-      <a href="https://linkedin.com/in/mouris-bashir/" class="cta-link" target="_blank" rel="noopener">LinkedIn</a>
+  <section class="conversation">
+    <img src="O06.jpeg" alt="People in conversation near a mural">
+    <div class="conversation-copy">
+      <span class="eyebrow">Watch & Listen</span>
+      <h2>Old Town Conversations</h2>
+      <p>Interviews about memory, place, archives, and the people who keep old cities legible.</p>
+      <a class="read-link" href="moment_marketing.html">Explore Shows</a>
     </div>
-  </div>
-</div>
+  </section>
 
-<footer>
-  <span class="footer-name">Mouris Bashir · India</span>
+  <section class="section category" id="history">
+    <div class="section-title"><small>History</small><h2>History</h2> <a class="circle-arrow" href="eh5tories.html">›</a></div>
+    <div class="category-grid">
+      <a href="sustainability.html" class="story-card tall"><img src="youtube-thumbnail.png" alt="Documentary thumbnail"><div class="card-copy"><span class="pill">Stories</span><h3>The Map That Outlived the King</h3><p>4 min read</p></div></a>
+      <a href="police_scotland.html" class="story-card tall"><img src="p1.gif" alt="Wall campaign artwork"><div class="card-copy"><span class="pill">History</span><h3>The Archive Under the Market</h3><p>4 min read</p></div></a>
+    </div>
+  </section>
+
+  <section class="section category" id="sports">
+    <div class="section-title"><small>Sports</small><h2>Sports</h2> <a class="circle-arrow" href="ONBC.html">›</a></div>
+    <div class="category-grid">
+      <a href="HKKDH.html" class="story-card tall"><img src="images/10.png" alt="Large event gathering"><div class="card-copy"><span class="pill">Football</span><h3>The Derby That Made a Neighborhood</h3><p>6 min read</p></div></a>
+      <a href="ONBC.html" class="story-card tall"><img src="images/11.png" alt="Stadium at sunset"><div class="card-copy"><span class="pill">Football</span><h3>Why Stadiums Become Archives</h3><p>4 min read</p></div></a>
+    </div>
+  </section>
+
+  <section class="section category" id="music">
+    <div class="section-title"><small>Music</small><h2>Music</h2> <a class="circle-arrow" href="moment_marketing.html">›</a></div>
+    <div class="category-grid">
+      <a href="moment_marketing.html" class="story-card tall"><img src="images/history-brands.png" alt="A person listening at a desk"><div class="card-copy"><span class="pill">Albums</span><h3>The Record Shop at the Edge of Memory</h3><p>4 min read</p></div></a>
+      <a href="moment_marketing.html" class="story-card tall"><img src="images/Reel 4.png" alt="Podcast recording setup"><div class="card-copy"><span class="pill">Archive</span><h3>The Night Radio Taught the Neighborhood</h3><p>4 min read</p></div></a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>
+    <h2>OTD</h2>
+    <span class="eyebrow">Old Town Dispatches</span>
+    <p>OTD is a calm, curated publication for history, sports, and music, built around editorial programming rather than feeds.</p>
+    <p>© 2026 OTD. All rights reserved.</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a><a href="#history">Read</a>
+    <a href="moment_marketing.html">Shows</a><a href="bio_gq.html">Writers</a>
+    <a href="bio_gq.html">About</a><a href="mailto:mouris.bashir@hotmail.com">Contact</a>
+    <a href="mailto:mouris.bashir@hotmail.com">Terms</a><a href="mailto:mouris.bashir@hotmail.com">Privacy</a>
+  </div>
 </footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slider = document.querySelector(".cinematic-video-grid");
-
-    document.getElementById("next").onclick = () => {
-      slider.scrollBy({ left: 480, behavior: "smooth" });
-    };
-
-    document.getElementById("prev").onclick = () => {
-      slider.scrollBy({ left: -480, behavior: "smooth" });
-    };
-  });
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-T4KRW84LFV');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouris Bashir — Marketing & Communications Strategist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <style>
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      :root {
-        --paper: #F8F3EA;
-        --paper2: #F1EAD8;
-        --ink: #1A0E00;
-        --ink2: #3D2A10;
-        --rust: #B84A18;
-        --gold: #9A7020;
-        --rule: rgba(26, 14, 0, 0.12);
-        --cream: #FDFAF4;
-      }
-      html { scroll-behavior: smooth; }
-      body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
-
-      /* ── NAV ── */
-      nav {
-        position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-        background: rgba(253, 250, 244, 0.95); backdrop-filter: blur(6px);
-        border-bottom: 1px solid var(--rule);
-        padding: 0 3rem; height: 52px;
-        display: flex; align-items: center; justify-content: space-between;
-      }
-      .nav-logo { display: block; text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); }
-      .nav-logo img { height: 32px; width: auto; display: block; }
-      .nav-right { display: flex; gap: 2rem; align-items: center; }
-      .nav-link {
-        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-        color: var(--ink2); text-decoration: none; opacity: 0.6; transition: opacity 0.2s;
-      }
-      .nav-link:hover { opacity: 1; }
-      .nav-cta {
-        background: var(--ink); color: var(--cream) !important;
-        padding: 0.35rem 1rem; opacity: 1 !important; font-weight: 500;
-        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-        text-decoration: none; transition: background 0.2s ease;
-      }
-      .nav-cta:hover { background: var(--rust); }
-
-      /* ── WORK DROPDOWN ── */
-      .nav-work { position: relative; }
-      .nav-work-btn {
-        font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-        color: var(--ink2); background: none; border: none; cursor: pointer;
-        opacity: 0.6; transition: opacity 0.2s; padding: 0;
-        display: flex; align-items: center; gap: 0.4rem; font-family: 'DM Sans', sans-serif; font-weight: 300;
-      }
-      .nav-work-btn::after {
-        content: ''; display: inline-block; width: 0; height: 0;
-        border-left: 3px solid transparent; border-right: 3px solid transparent;
-        border-top: 4px solid currentColor; transition: transform 0.2s;
-      }
-      .nav-work:hover .nav-work-btn,
-      .nav-work:focus-within .nav-work-btn { opacity: 1; }
-      .nav-work:hover .nav-work-btn::after,
-      .nav-work:focus-within .nav-work-btn::after { transform: rotate(180deg); }
-
-      .work-dropdown {
-        position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
-        background: var(--cream); border: 1px solid var(--rule);
-        min-width: 240px;
-        opacity: 0; visibility: hidden;
-        transform: translateX(-50%) translateY(-6px);
-        transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-        z-index: 200;
-      }
-      .nav-work:hover .work-dropdown,
-      .nav-work:focus-within .work-dropdown {
-        opacity: 1; visibility: visible;
-        transform: translateX(-50%) translateY(0);
-      }
-      .work-dropdown a {
-        display: block; padding: 0.7rem 1.2rem;
-        font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-        color: var(--ink2); text-decoration: none; opacity: 0.65;
-        border-bottom: 1px solid var(--rule); transition: opacity 0.15s, background 0.15s;
-      }
-      .work-dropdown a:last-child { border-bottom: none; }
-      .work-dropdown a:hover { opacity: 1; background: var(--paper2); }
-      .work-dropdown-label {
-        padding: 0.6rem 1.2rem 0.4rem;
-        font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
-        color: var(--rust); font-weight: 500; border-bottom: 1px solid var(--rule);
-      }
-
-      /* ── HERO ── */
-      .hero {
-        padding-top: 52px;
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
-        background: var(--cream);
-      }
-      .hero-left {
-        background: var(--cream);
-        padding: 4rem 3rem 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .hero-issue {
-        font-size: 0.62rem;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 1.5rem;
-        font-weight: 500;
-      }
-      .hero-name {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(2.8rem, 5.2vw, 4.8rem);
-        max-width: 1200px;
-        line-height: 1.05;
-        letter-spacing: -0.02em;
-        color: var(--ink);
-        font-weight: 300;
-      }
-
-      /* ── EDITORIAL WORK CARDS (IMAGE-LESS) ── */
-      .video-grid-section { padding: 3rem 3rem 6rem; }
-      .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
-      .section-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); font-weight: 500; }
-      
-      .carousel-nav { display: flex; gap: 0.75rem; align-items: center; }
-      .carousel-nav button {
-        width: 42px; height: 42px;
-        border-radius: 50%;
-        border: 1px solid var(--rule);
-        background: transparent; color: var(--ink);
-        cursor: pointer; transition: 0.3s ease;
-        font-size: 1rem;
-      }
-      .carousel-nav button:hover { background: var(--ink); color: var(--cream); }
-
-      .cinematic-video-grid {
-        display: flex; gap: 28px;
-        overflow-x: auto; overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        padding: 0.5rem 0 1.5rem;
-      }
-      .cinematic-video-grid::-webkit-scrollbar { display: none; }
-
-      /* Pure Editorial Card styling */
-      .video-grid-item {
-        flex: 0 0 460px; width: 460px;
-        min-height: 320px;
-        position: relative;
-        border: 1px solid var(--rule);
-        background: var(--paper);
-        text-decoration: none;
-        scroll-snap-align: start;
-        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        padding: 2.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .video-grid-item:hover {
-        transform: translateY(-6px);
-        background: var(--paper2);
-        border-color: rgba(184, 74, 24, 0.3);
-        box-shadow: 0 16px 40px rgba(26, 14, 0, 0.05);
-      }
-
-      .card-header-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--rule);
-        padding-bottom: 1rem;
-        margin-bottom: 1.5rem;
-      }
-      .v-meta { 
-        font-size: 0.65rem; 
-        letter-spacing: 0.18em; 
-        text-transform: uppercase; 
-        color: var(--rust); 
-        font-weight: 500; 
-      }
-      .v-arrow {
-        font-size: 1.1rem;
-        color: var(--ink2);
-        opacity: 0.4;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-      .video-grid-item:hover .v-arrow {
-        transform: translateX(4px);
-        opacity: 1;
-        color: var(--rust);
-      }
-
-      .v-title { 
-        font-family: 'Cormorant Garamond', serif; 
-        font-size: 2.2rem; 
-        line-height: 1.1; 
-        color: var(--ink); 
-        margin-bottom: 1rem; 
-        font-weight: 400;
-      }
-      .v-desc { 
-        font-size: 0.88rem; 
-        line-height: 1.6; 
-        color: var(--ink2); 
-        opacity: 0.85; 
-      }
-
-      /* Mobile Responsive */
-      @media (max-width: 768px) {
-        nav { padding: 0 1.5rem; }
-        .hero-left { padding: 3rem 1.5rem 1.5rem; }
-        .video-grid-section { padding: 2rem 1.5rem 4rem; }
-        .section-header { margin-bottom: 1.5rem; }
-        .carousel-nav { display: none; }
-        .hero-name { font-size: clamp(2.2rem, 8vw, 3.2rem); }
-        .video-grid-item { flex: 0 0 85vw; width: 85vw; padding: 1.8rem; min-height: 280px; }
-      }
-
-      /* ── CTA & FOOTER ── */
-      .cta { background: var(--ink); padding: 6rem 3rem; text-align: center; }
-      .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.3; margin-bottom: 2rem; }
-      .cta-links { display: flex; gap: 1rem; justify-content: center; }
-      .cta-link { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(253, 250, 244, 0.5); text-decoration: none; padding: 0.6rem 1.8rem; border: 1px solid rgba(253, 250, 244, 0.2); transition: all 0.2s; }
-      .cta-link.primary { background: var(--rust); border-color: var(--rust); color: var(--cream); }
-      .cta-link:hover { border-color: var(--cream); color: var(--cream); }
-      footer { background: var(--ink); border-top: 1px solid rgba(253, 250, 244, 0.1); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; color: rgba(253, 250, 244, 0.5); font-size: 0.8rem; }
-    </style>
-
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "xf0msaw3g9");
-    </script>
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo">
-    mb.work
-  </a>
-  <div class="nav-right">
-    <div class="nav-work" tabindex="0">
-      <button class="nav-work-btn" aria-haspopup="true">Work</button>
-      <div class="work-dropdown" role="menu">
-        <div class="work-dropdown-label">Case Studies</div>
-          <a href="ONBC.html">#OneNationBillionCelebrations</a>
-        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
-        <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="adl_equally.html">ADL Is EquAlly</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="OYO.html">OYO</a>
-        <a href="fortune.html">Fortune</a>
-        <a href="police_scotland.html">Police Scotland</a>
-        <a href="FarmPik.html">FarmPik</a>
-        <a href="BookMyForex.html">BookMyForex</a>
-        <a href="moment_marketing.html">Moment Marketing</a>
-        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
-      </div>
-    </div>
-    <a href="bio_gq.html" class="nav-link">About</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-  </div>
-</nav>
-
-<div class="hero">
-  <div class="hero-left">
-    <div>
-      <div class="hero-issue">Mouris Bashir</div>
-      <h1 class="hero-name">
-       Brand, Marketing & Communications across PR, Social and Corporate Affairs.
-          </h1><p>I help organisations shape reputation, launch products, build communities and tell stories people remember.</p>
-      </h1>
-    </div>
-  </div>
-</div>
-
-<section class="video-grid-section">
-  <div class="section-header">
-    <span class="section-label">Selected Work</span>
-    <div class="carousel-nav">
-      <button id="prev" aria-label="Previous">&#8592;</button>
-      <button id="next" aria-label="Next">&#8594;</button>
-    </div>
-  </div>
-
-  <div class="cinematic-video-grid">
-        <!-- CARD 1 -->
-    <a href="ONBC.html" class="video-grid-item">
-          <img src='https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg'>
-      <div class="card-header-meta">
-        <span class="v-meta">Adani Group</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">#OneNationBillionCelebrations</h2>
-        <p class="v-desc">Turning airports into cultural destinations.</p>
-      </div>
-    </a>
-    <!-- CARD 2 -->
-    <a href="HKKDH.html" class="video-grid-item">
-         <img src='https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg'>
-      <div class="card-header-meta">
-        <span class="v-meta">Adani Group</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">Hum Karke Dikhate Hain</h2>
-        <p class="v-desc">Rebuilding belief in India's largest infrastructure brand.</p>
-      </div>
-    </a>
-
-    <!-- CARD 3 -->
-    <a href="HorizonX.html" class="video-grid-item">
-        <video autoplay muted loop playsinline><source src='H010.mp4' type='video/mp4'></video>
-      <div class="card-header-meta">
-        <span class="v-meta">Audibene</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">Where Forever Young Begins</h2>
-        <p class="v-desc">Turning hearing aids into a lifestyle & wellbeing product.</p>
-      </div>
-    </a>
-
-
-    <!-- CARD 4 -->
-    <a href="moment_marketing.html" class="video-grid-item">
-        <img class="yt-thumb" loading="lazy" src="https://img.youtube.com/vi/LIVns_jdQVw/maxresdefault.jpg" alt="Campaign">
-      <div class="card-header-meta">
-        <span class="v-meta">Adani Group</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">Diwali | #KaroHarJashnKoRoshan</h2>
-        <p class="v-desc">Cultural storytelling at scale across national touchpoints.</p>
-      </div>
-    </a>
-
-    <!-- CARD 5 -->
-    <a href="adl_equally.html" class="video-grid-item">
-        <video autoplay muted loop playsinline preload="metadata" poster="preview.webp">
-<source src="adl_equally_video.mp4" type="video/mp4">
-</video>
-      <div class="card-header-meta">
-        <span class="v-meta">Adani Digital Labs</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">#ADLIsEquAlly</h2>
-        <p class="v-desc">Increased women in tech roles from 4% to 28%.</p>
-      </div>
-    </a>
-
-    <!-- CARD 6 -->
-    <a href="police_scotland.html" class="video-grid-item">
-        <img src="p1.gif">
-      <div class="card-header-meta">
-        <span class="v-meta">LBP</span>
-        <span class="v-arrow">&#8594;</span>
-      </div>
-      <div>
-        <h2 class="v-title">#WeCanStopIt</h2>
-        <p class="v-desc">Shaped messaging for a national awareness campaign.</p>
-      </div>
-    </a>
-  </div>
-</section>
-<div class="cta">
-  <div class="cta-inner">
-    <h2><strong>Movement </strong>over distribution.</h2>
-    <div class="cta-links">
-      <a href="mailto:mouris.bashir@hotmail.com" class="cta-link primary">Email</a>
-      <a href="https://linkedin.com/in/mouris-bashir/" class="cta-link" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <span class="footer-name">Mouris Bashir · India</span>
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slider = document.querySelector(".cinematic-video-grid");
-
-    document.getElementById("next").onclick = () => {
-      slider.scrollBy({ left: 480, behavior: "smooth" });
-    };
-
-    document.getElementById("prev").onclick = () => {
-      slider.scrollBy({ left: -480, behavior: "smooth" });
-    };
-  });
-</script>
 
 </body>
 </html>
