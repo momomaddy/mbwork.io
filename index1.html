@@ -1,0 +1,537 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index 5ef0ce58a92e9ce58d207a8a8e3f330932fe4e37..a5e061a81c1952dff1a4493dd50a699c03741d0a 100644
+--- a/index.html
++++ b/index.html
+@@ -1,47 +1,47 @@
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+-    
++
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
+     <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-T4KRW84LFV');
+     </script>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Mouris Bashir — Marketing & Communications Strategist</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+-    
++
+     <style>
+-      
++
+         .logo{font:700 28px 'Cormorant Garamond',serif;text-decoration:none;color:#171717}
+         .links{display:flex;gap:32px}
+         .links a{text-decoration:none;color:#171717;font-size:12px;text-transform:uppercase;letter-spacing:.15em}
+         .section{padding:0 56px 90px}
+         .head{display:flex;justify-content:space-between;border-bottom:1px solid #e7e2da;padding-bottom:18px;margin-bottom:30px}
+         .stories{display:flex;gap:34px;overflow-x:auto}
+         .stories::-webkit-scrollbar{display:none}
+         .story{flex:0 0 760px;aspect-ratio:16/10;border-radius:28px;overflow:hidden;position:relative;text-decoration:none;color:#fff}
+         .story img,.story video{width:100%;height:100%;object-fit:cover}
+         .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:42px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.2),transparent)}
+         .meta{font-size:12px;letter-spacing:.2em;color:#d7b47c}
+         .title{font:400 48px/.95 'Cormorant Garamond',serif;margin-top:12px}
+         .desc{max-width:80%;margin-top:14px;font-size:16px}
+         .writing{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+         .writing a{text-decoration:none;color:#171717;font:400 32px/1.15 'Cormorant Garamond',serif}
+       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+       :root {
+         --paper: #F8F3EA;
+         --paper2: #F1EAD8;
+         --ink: #1A0E00;
+         --ink2: #3D2A10;
+         --rust: #B84A18;
+         --gold: #9A7020;
+         --rule: rgba(26, 14, 0, 0.12);
+         --cream: #FDFAF4;
+@@ -144,51 +144,51 @@
+ 
+     margin:0;
+ 
+     font-weight:400;
+ 
+ }
+ 
+ .hero-sub{
+ 
+     margin-top:38px;
+ 
+     max-width:620px;
+ 
+     font-size:22px;
+ 
+     line-height:1.7;
+ 
+     color:#666;
+ 
+ }
+ 
+       /* ── EDITORIAL WORK CARDS (IMAGE-LESS) ── */
+       .video-grid-section { padding: 3rem 3rem 6rem; }
+       .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
+       .section-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); font-weight: 500; }
+-      
++
+       .carousel-nav { display: flex; gap: 0.75rem; align-items: center; }
+       .carousel-nav button {
+         width: 42px; height: 42px;
+         border-radius: 50%;
+         border: 1px solid var(--rule);
+         background: transparent; color: var(--ink);
+         cursor: pointer; transition: 0.3s ease;
+         font-size: 1rem;
+       }
+       .carousel-nav button:hover { background: var(--ink); color: var(--cream); }
+ 
+     .cinematic-video-grid{
+ 
+     display:flex !important;
+ 
+     flex-direction:row !important;
+ 
+     flex-wrap:nowrap !important;
+ 
+     gap:28px;
+ 
+     overflow-x:auto;
+ 
+     overflow-y:hidden;
+ 
+@@ -209,64 +209,64 @@
+ }
+ 
+       /* Pure Editorial Card styling */
+ .video-grid-item{
+ 
+     flex:0 0 360px !important;
+ 
+     width:360px;
+ 
+     min-width:360px;
+ 
+     max-width:360px;
+ 
+     scroll-snap-align:start;
+ 
+ }
+ 
+         .card-header-meta,
+ .video-grid-item > div:last-child{
+ 
+     grid-column:1;
+ 
+     padding:70px;
+ 
+ }
+-      .v-meta { 
+-        font-size: 0.65rem; 
+-        letter-spacing: 0.18em; 
+-        text-transform: uppercase; 
+-        color: var(--rust); 
+-        font-weight: 500; 
++      .v-meta {
++        font-size: 0.65rem;
++        letter-spacing: 0.18em;
++        text-transform: uppercase;
++        color: var(--rust);
++        font-weight: 500;
+       }
+       .v-arrow {
+         font-size: 1.1rem;
+         color: var(--ink2);
+         opacity: 0.4;
+         transition: transform 0.3s ease, opacity 0.3s ease;
+       }
+-     
++
+         .video-grid-item:hover{
+ 
+     transform:translateY(-6px);
+ 
+ }
+         .video-grid-item img,
+ .video-grid-item video{
+ 
+     width:100%;
+ 
+     height:230px;
+ 
+     object-fit:cover;
+ 
+     display:block;
+ 
+ }
+ 
+ .video-grid-item:hover img,
+ .video-grid-item:hover video{
+ 
+     transform:scale(1.04);
+ 
+     transition:.6s;
+ 
+@@ -351,51 +351,51 @@
+ .video-grid{
+ 
+     display:grid;
+ 
+     grid-template-columns:repeat(4,1fr);
+ 
+     gap:28px;
+ 
+ }
+ 
+ .video-card{
+ 
+     position:relative;
+ 
+     overflow:hidden;
+ 
+     border-radius:34px;
+ 
+     text-decoration:none;
+ 
+     color:white;
+ 
+     transition:.35s;
+ 
+ }
+-        
++
+         .video-card img{
+ 
+     width:100%;
+ 
+     aspect-ratio:9/16;
+ 
+     object-fit:cover;
+ 
+     transition:.5s;
+ 
+ }
+ 
+ .video-card:hover img{
+ 
+     transform:scale(1.05);
+ 
+ }
+ 
+ .video-card:hover{
+ 
+     transform:translateY(-8px);
+ 
+ }
+ 
+ .video-card::after{
+@@ -864,176 +864,176 @@
+       })(window, document, "clarity", "script", "xf0msaw3g9");
+     </script>
+ </head>
+ <body>
+ 
+ <nav>
+   <a href="index.html" class="nav-logo">
+     mb.work
+   </a>
+   <div class="nav-right">
+     <div class="nav-work" tabindex="0">
+     </div>
+     <a href="bio_gq.html" class="nav-link">About</a>
+       <a href="eh5toriies.html" class="nav-link">EH5tories</a>
+     <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+   </div>
+ </nav>
+ 
+ <div class="hero">
+   <div class="hero-left">
+     <div>
+       <div class="hero-issue">Mouris Bashir</div>
+      <h1 class="hero-title">
+ Shaping how organisations are seen, understood and remembered.
+ </h1>
+-    <p>From executive communications and corporate affairs to brand marketing, PR and social, 
++    <p>From executive communications and corporate affairs to brand marketing, PR and social,
+         I help organisations earn attention, trust and advocacy.
+     </p>
+     </div>
+   </div>
+ </div>
+-    
++
+    <section class='section'>
+         <div class="shorts-heading">
+            <span>Featured Work</span>
+        </div>
+        <div class='stories'>
+ <a href="ONBC.html" class="featured-story">
+ 
+ <img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg">
+ 
+ <div class="story-copy">
+ 
+ <span class="story-client">
+ 
+ Adani Airports
+ 
+ </span>
+ 
+ <h2>
+ 
+ Building Communities
+ 
+ </h2>
+ 
+ <p>
+ 
+ Turning airports into cultural destinations through India's largest festive campaign.
+ 
+ </p>
+ 
+ <span class="story-link">
+ 
+ Read Story →
+ 
+ </span>
+ 
+ </div>
+ 
+ </a>
+-      
++
+     <a href="HorizonX.html" class="featured-story">>
+                <video autoplay muted loop playsinline>
+                    <source src='H010.mp4' type='video/mp4'>
+                </video>
+                <div class="story-copy">
+ 
+ <span class="story-client">
+ 
+ Audibene
+ 
+ </span>
+ 
+ <h2>
+ 
+ Changing Perception
+ 
+ </h2>
+ 
+ <p>
+ 
+ Making hearing care feel like 'hearables.'
+ 
+ </p>
+ 
+ <span class="story-link">
+ 
+ Read Story →
+ 
+ </span>
+ 
+ </div>
+ 
+ </a>
+-              
++
+   <a href="HKKDH.html" class="featured-story">>
+                <img src='https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg'>
+                <div class="story-copy">
+ 
+ <span class="story-client">
+ 
+ Adani Group
+ 
+ </span>
+ 
+ <h2>
+ 
+ Rebuilding Trust
+ 
+ </h2>
+ 
+ <p>
+ 
+ Why legitimacy became the real communication challenge.
+ 
+ </p>
+ 
+ <span class="story-link">
+ 
+ Read Story →
+ 
+ </span>
+ 
+ </div>
+ 
+-</a>        
++</a>
+        </div>
+    </section>
+ <section class="latest-work">
+          <div class="shorts-heading">
+     <span>More Work</span>
+ </div>
+ 
+         <button class="latest-next">→</button>
+ 
+     </div>
+-    
++
+ 
+     <div class="latest-slider">
+ <!-- Work 1 -->
+-        
++
+    <a href="police_scotland.html" class="latest-card">
+ 
+             <img src="p1.gif" alt="Strategy & Brand Thinking">
+ 
+             <div class="latest-overlay">
+ 
+                 <span>Police Scotland</span>
+ 
+                 <h3>#WeCanStopIt</h3>
+ 
+                 <p>8 min read</p>
+ 
+             </div>
+ 
+         </a>
+ 
+         <!-- Work 2 -->
+        <a href="OYO.html" class="latest-card">
+ 
+                 <img src="O06.jpeg" alt="Strategy & Brand Thinking">
+ 
+             <div class="latest-overlay">
+ 
+                 <span>OYO</span>
+ 
+@@ -1126,60 +1126,60 @@ Read Story →
+                 <p>8 min read</p>
+ 
+             </div>
+ 
+         </a>
+         <!-- Work 8 -->
+        <a href="FarmPik.html" class="latest-card">
+ 
+            <img src="FP6.JPG" alt="Strategy & Brand Thinking">
+ 
+             <div class="latest-overlay">
+ 
+                 <span>FarmPik</span>
+ 
+                 <h3>#15YearsOfTrust</h3>
+ 
+                 <p>8 min read</p>
+ 
+             </div>
+ 
+         </a>
+ 
+     </div>
+ 
+ </section>
+-    
++
+ <section class="video-section">
+     <div class="section-header">
+         <div class="shorts-heading">
+     <span>Reels</span>
+ </div>
+         <a href="moment_marketing.html">
+             View all →
+         </a>
+-    </div>      
++    </div>
+ <div class="video-grid">
+ 
+     <!-- Reel 1 -->
+     <a class="video-card"
+        href="https://www.instagram.com/reel/Cfvx1phLIAt/"
+        target="_blank">
+ 
+         <img src="images/history-brands.png"
+              alt="Why History Matters for Brands">
+ 
+         <div class="play-button">
+             ▶
+         </div>
+ 
+         <div class="video-info">
+             <h3>What are you listening to? </h3>
+             <span>39 sec</span>
+         </div>
+ 
+     </a>
+ 
+     <!-- Reel 2 -->
+     <a class="video-card"
+        href="https://www.instagram.com/reel/CgT8tX7Msmo/"
+        target="_blank">
+@@ -1211,51 +1211,51 @@ Read Story →
+         </div>
+ 
+         <div class="video-info">
+             <h3>Umbrellas, Moonsooooon & Dance!</h3>
+             <span>1 min</span>
+         </div>
+ 
+     </a>
+     <!-- Reel 4 -->
+       <a class="video-card"
+        href="https://www.instagram.com/reel/Cwps93nv5yx/"
+        target="_blank">
+ 
+         <img src="images/Reel 4.png" alt="Strategy & Brand Thinking">
+ 
+         <div class="play-button">▶</div>
+ 
+         <div class="video-info">
+             <h3>A Day at ADL...</h3>
+             <span>Video Essay</span>
+         </div>
+ 
+     </a>
+ 
+ </div>
+-       
++
+     </div>
+ 
+ </section>
+ <footer>
+   <span class="footer-name">Mouris Bashir · Kashmir</span>
+ </footer>
+ 
+ <script>
+ document.addEventListener("DOMContentLoaded", () => {
+ 
+     /* ------------------------------------
+        Selected Work Slider
+     ------------------------------------ */
+ 
+     const slider = document.querySelector(".cinematic-video-grid");
+ 
+     const next = document.getElementById("next");
+     const prev = document.getElementById("prev");
+ 
+     if (slider && next && prev) {
+ 
+         next.addEventListener("click", () => {
+             slider.scrollBy({
+                 left: 480,
+                 behavior: "smooth"
+ 
+EOF
+)
