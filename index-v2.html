@@ -81,187 +81,187 @@
       @media (max-width: 760px) { .brand-wrap { min-height: 170px; } .brand-mark { font-size: 74px; } .brand-tag { font-size: 20px; padding: 9px 28px; } .nav { padding: 0 20px; gap: 18px; overflow-x: auto; } .hero-feature { min-height: 520px; } .hero-copy, .conversation-copy { padding: 26px; } .latest-row { margin-right: -24px; } .footer { grid-template-columns: 1fr; } }
 
 </script>
-15	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    16	    <title>OTD — Old Town Dispatches</title>
-    17	    <link rel="preconnect" href="https://fonts.googleapis.com">
-    18	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    19	    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    20	    
-    21	    <style>
-    22	      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    23	      :root {
-    24	        --paper: #fbfbf7;
-    25	        --ink: #10251e;
-    26	        --muted: #64706b;
-    27	        --green: #12b676;
-    28	        --rule: #e7ece7;
-    29	        --dark: #10251e;
-    30	      }
-    31	      html { scroll-behavior: smooth; }
-    32	      body {
-    33	        background: var(--paper);
-    34	        color: var(--ink);
-    35	        font-family: 'DM Sans', sans-serif;
-    36	        line-height: 1.45;
-    37	        overflow-x: hidden;
-    38	      }
-    39	      a { color: inherit; }
-    40	      .site-header { background: #fff; border-bottom: 1px solid var(--rule); }
-    41	      .brand-wrap { position: relative; min-height: 225px; display: grid; place-items: center; }
-    42	      .brand { text-align: center; text-decoration: none; color: var(--ink); }
-    43	      .brand-mark { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(74px, 11vw, 126px); line-height: .72; letter-spacing: -.07em; }
-    44	      .brand-tag { display: inline-block; margin-top: 26px; padding: 10px 42px 12px; border-radius: 999px; background: var(--ink); color: #fff; font: 700 clamp(18px, 2.2vw, 30px)/1 'Cormorant Garamond', serif; box-shadow: 0 18px 45px rgba(16,37,30,.12); transform: rotate(-1deg); }
-    45	      .menu-button { position: absolute; right: 38px; top: 32px; width: 36px; height: 36px; border: 1px solid var(--rule); background: #fff; color: var(--ink); font-size: 21px; line-height: 1; display: grid; place-items: center; text-decoration: none; }
-    46	      .nav { height: 42px; display: flex; align-items: center; gap: 28px; padding: 0 42px; border-top: 1px solid var(--rule); font-size: 10px; text-transform: uppercase; letter-spacing: .28em; font-weight: 700; }
-    47	      .nav a { text-decoration: none; }
-    48	      .hero-feature { position: relative; min-height: 580px; display: flex; align-items: center; overflow: hidden; color: #fff; }
-    49	      .hero-feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    50	      .hero-feature::after, .conversation::after, .story-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,18,14,.88), rgba(5,18,14,.44) 55%, rgba(5,18,14,.18)); }
-    51	      .hero-copy { position: relative; z-index: 2; width: min(760px, 92vw); padding-left: 42px; }
-    52	      .eyebrow { color: var(--green); font-size: 10px; letter-spacing: .32em; text-transform: uppercase; font-weight: 700; margin-bottom: 28px; display: inline-flex; align-items: center; gap: 16px; }
-    53	      .eyebrow::before { content: ""; width: 36px; height: 1px; background: currentColor; }
-    54	      h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
-    55	      .hero-copy h1 { font-size: clamp(62px, 8.2vw, 112px); line-height: .86; letter-spacing: -.045em; margin-bottom: 24px; color: #fff; }
-    56	      .hero-copy p { font-size: clamp(18px, 2vw, 24px); max-width: 700px; margin-bottom: 18px; }
-    57	      .byline, .read-link { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; font-weight: 700; }
-    58	      .read-link { display: inline-block; margin-top: 18px; text-decoration: underline; text-underline-offset: 6px; }
-    59	      .dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3; }
-    60	      .dots span { width: 18px; height: 5px; background: rgba(255,255,255,.55); }
-    61	      .dots span:last-child { background: var(--green); }
-    62	      .section { max-width: 1120px; margin: 0 auto; padding: 48px 24px; }
-    63	      .section-title { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin-bottom: 20px; }
-    64	      .section-title h2 { font-size: clamp(34px, 4vw, 48px); line-height: 1; }
-    65	      .section-title small { color: var(--green); display: block; font-size: 9px; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 6px; font-family: 'DM Sans', sans-serif; }
-    66	      .circle-arrow { width: 28px; height: 28px; border: 1px solid var(--rule); border-radius: 50%; display: inline-grid; place-items: center; text-decoration: none; font-size: 16px; }
-    67	      .latest-row { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 16px; scrollbar-width: none; }
-    68	      .latest-row::-webkit-scrollbar { display: none; }
-    69	      .story-card { position: relative; flex: 0 0 270px; height: 210px; border-radius: 12px; overflow: hidden; color: #fff; text-decoration: none; display: block; }
-    70	      .story-card.tall { height: 300px; flex-basis: 230px; }
-    71	      .story-card img, .story-card video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
-    72	      .story-card:hover img, .story-card:hover video { transform: scale(1.05); }
-    73	      .card-copy { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 18px; }
-    74	      .pill { display: inline-block; background: rgba(255,255,255,.22); border-radius: 999px; padding: 5px 10px; font-size: 8px; text-transform: uppercase; letter-spacing: .18em; font-weight: 700; margin-bottom: 10px; }
-    75	      .card-copy h3 { font-size: 24px; line-height: .95; color: #fff; }
-    76	      .card-copy p { margin-top: 9px; font-size: 9px; text-transform: uppercase; letter-spacing: .18em; }
-    77	      .conversation { position: relative; min-height: 460px; display: flex; align-items: center; color: #fff; overflow: hidden; margin: 8px 0 0; }
-    78	      .conversation img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    79	      .conversation-copy { position: relative; z-index: 2; padding: 42px; width: min(760px, 92vw); }
-    80	      .conversation h2 { font-size: clamp(56px, 8vw, 104px); line-height: .86; letter-spacing: -.04em; color: #fff; margin-bottom: 24px; }
-    81	      .conversation p { font-size: 20px; max-width: 640px; }
-    82	      .category { padding-top: 18px; }
-    83	      .category .section-title { border-bottom: none; margin-bottom: 18px; display: block; }
-    84	      .category .section-title h2 { display: inline; font-size: 34px; }
-    85	      .category-grid { display: flex; gap: 24px; flex-wrap: wrap; }
-    86	      .footer { margin-top: 70px; background: var(--dark); color: #fff; padding: 70px max(24px, calc((100vw - 1120px)/2)); display: grid; grid-template-columns: 1.2fr 1fr; gap: 70px; }
-    87	      .footer h2 { font-size: 28px; margin-bottom: 24px; color: #fff; }
-    88	      .footer .eyebrow::before { display: none; }
-    89	      .footer p { color: rgba(255,255,255,.7); max-width: 420px; }
-    90	      .footer-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 80px; align-content: start; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
-    91	      .footer-links a { color: rgba(255,255,255,.75); text-decoration: none; }
-    92	      @media (max-width: 760px) { .brand-wrap { min-height: 170px; } .nav { padding: 0 20px; gap: 18px; overflow-x: auto; } .hero-feature { min-height: 520px; } .hero-copy, .conversation-copy { padding: 26px; } .latest-row { margin-right: -24px; } .footer { grid-template-columns: 1fr; } }
-    93	</style>
-    94	
-    95	    <script type="text/javascript">
-    96	      (function(c,l,a,r,i,t,y){
-    97	          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    98	          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    99	          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-   100	      })(window, document, "clarity", "script", "xf0msaw3g9");
-   101	    </script>
-   102	</head>
-   103	<body>
-   104	
-   105	<header class="site-header">
-   106	  <div class="brand-wrap">
-   107	    <a class="brand" href="index.html" aria-label="Old Town Dispatches home">
-   108	      <span class="brand-mark">OTD</span>
-   109	      <span class="brand-tag">Old Town Dispatches</span>
-   110	    </a>
-   111	    <a class="menu-button" href="mailto:mouris.bashir@hotmail.com" aria-label="Get in touch">≡</a>
-   112	  </div>
-   113	  <nav class="nav" aria-label="Primary navigation">
-   114	    <a href="#history">History</a>
-   115	    <a href="#sports">Sports</a>
-   116	    <a href="#music">Music</a>
-   117	  </nav>
-   118	</header>
-   119	
-   120	<main>
-   121	  <section class="hero-feature">
-   122	    <img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="A packed stadium at dusk">
-   123	    <div class="hero-copy">
-   124	      <span class="eyebrow">Football · Brand Story</span>
-   125	      <h1>Football as Public Memory</h1>
-   126	      <p>A stadium is not only where people watch. It is where a city remembers itself.</p>
-   127	      <div class="byline">By Mouris Bashir · Jul 31 · 4 min read</div>
-   128	      <a class="read-link" href="ONBC.html">Read Story</a>
-   129	    </div>
-   130	    <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
-   131	  </section>
-   132	
-   133	  <section class="section" aria-labelledby="latest-title">
-   134	    <div class="section-title">
-   135	      <h2 id="latest-title">The Latest</h2>
-   136	      <a class="circle-arrow" href="#history" aria-label="Skip to categories">›</a>
-   137	    </div>
-   138	    <div class="latest-row">
-   139	      <a href="police_scotland.html" class="story-card"><img src="p1.gif" alt="Campaign visual for Police Scotland"><div class="card-copy"><span class="pill">History</span><h3>The Archive Under the Market</h3><p>By Mouris Bashir · 5 min read</p></div></a>
-   140	      <a href="HKKDH.html" class="story-card"><img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Community campaign crowd"><div class="card-copy"><span class="pill">Football</span><h3>The Derby That Made a Neighborhood</h3><p>By Mouris Bashir · 6 min read</p></div></a>
-   141	      <a href="ONBC.html" class="story-card"><img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="Stadium flags at dusk"><div class="card-copy"><span class="pill">Football</span><h3>Why Stadiums Become Archives</h3><p>By Mouris Bashir · 4 min read</p></div></a>
-   142	      <a href="OYO.html" class="story-card"><img src="O06.jpeg" alt="People in conversation near a mural"><div class="card-copy"><span class="pill">People</span><h3>The Tea Table Oral History</h3><p>By Mouris Bashir · 3 min read</p></div></a>
-   143	    </div>
-   144	  </section>
-   145	
-   146	  <section class="conversation">
-   147	    <img src="images/kashmir-storytelling.png" alt="Library shelves filled with books">
-   148	    <div class="conversation-copy">
-   149	      <span class="eyebrow">Watch & Listen</span>
-   150	      <h2>Old Town Conversations</h2>
-   151	      <p>Interviews about memory, place, archives, and the people who keep old cities legible.</p>
-   152	      <a class="read-link" href="moment_marketing.html">Explore Shows</a>
-   153	    </div>
-   154	  </section>
-   155	
-   156	  <section class="section category" id="history">
-   157	    <div class="section-title"><small>History</small><h2>History</h2> <a class="circle-arrow" href="eh5tories.html">›</a></div>
-   158	    <div class="category-grid">
-   159	      <a href="sustainability.html" class="story-card tall"><img src="youtube-thumbnail.png" alt="Documentary thumbnail"><div class="card-copy"><span class="pill">Stories</span><h3>The Map That Outlived the King</h3><p>4 min read</p></div></a>
-   160	      <a href="police_scotland.html" class="story-card tall"><img src="p1.gif" alt="Wall campaign artwork"><div class="card-copy"><span class="pill">History</span><h3>The Archive Under the Market</h3><p>4 min read</p></div></a>
-   161	    </div>
-   162	  </section>
-   163	
-   164	  <section class="section category" id="sports">
-   165	    <div class="section-title"><small>Sports</small><h2>Sports</h2> <a class="circle-arrow" href="ONBC.html">›</a></div>
-   166	    <div class="category-grid">
-   167	      <a href="HKKDH.html" class="story-card tall"><img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Large event gathering"><div class="card-copy"><span class="pill">Football</span><h3>The Derby That Made a Neighborhood</h3><p>6 min read</p></div></a>
-   168	      <a href="ONBC.html" class="story-card tall"><img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="Stadium at sunset"><div class="card-copy"><span class="pill">Football</span><h3>Why Stadiums Become Archives</h3><p>4 min read</p></div></a>
-   169	    </div>
-   170	  </section>
-   171	
-   172	  <section class="section category" id="music">
-   173	    <div class="section-title"><small>Music</small><h2>Music</h2> <a class="circle-arrow" href="moment_marketing.html">›</a></div>
-   174	    <div class="category-grid">
-   175	      <a href="moment_marketing.html" class="story-card tall"><img src="images/history-brands.png" alt="A person listening at a desk"><div class="card-copy"><span class="pill">Albums</span><h3>The Record Shop at the Edge of Memory</h3><p>4 min read</p></div></a>
-   176	      <a href="moment_marketing.html" class="story-card tall"><img src="images/Reel 4.png" alt="Podcast recording setup"><div class="card-copy"><span class="pill">Archive</span><h3>The Night Radio Taught the Neighborhood</h3><p>4 min read</p></div></a>
-   177	    </div>
-   178	  </section>
-   179	</main>
-   180	
-   181	<footer class="footer">
-   182	  <div>
-   183	    <h2>OTD</h2>
-   184	    <span class="eyebrow">Old Town Dispatches</span>
-   185	    <p>OTD is a calm, curated publication for history, sports, and music, built around editorial programming rather than feeds.</p>
-   186	    <p>© 2026 OTD. All rights reserved.</p>
-   187	  </div>
-   188	  <div class="footer-links">
-   189	    <a href="index.html">Home</a><a href="#history">Read</a>
-   190	    <a href="moment_marketing.html">Shows</a><a href="bio_gq.html">Writers</a>
-   191	    <a href="bio_gq.html">About</a><a href="mailto:mouris.bashir@hotmail.com">Contact</a>
-   192	    <a href="mailto:mouris.bashir@hotmail.com">Terms</a><a href="mailto:mouris.bashir@hotmail.com">Privacy</a>
-   193	  </div>
-   194	</footer>
-   195	
-   196	</body>
-   197	</html>
-[work df50a04] Redesign front page as OTD 
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	    <title>OTD — Old Town Dispatches</title>
+  	    <link rel="preconnect" href="https://fonts.googleapis.com">
+    	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    	    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    	    
+  	    <style>
+	      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+   	      :root {
+   	        --paper: #fbfbf7;
+   	        --ink: #10251e;
+  	        --muted: #64706b;
+ 	        --green: #12b676;
+	        --rule: #e7ece7;
+	        --dark: #10251e;
+  	      }
+	      html { scroll-behavior: smooth; }
+ 	      body {
+ 	        background: var(--paper);
+  	        color: var(--ink);
+   	        font-family: 'DM Sans', sans-serif;
+          line-height: 1.45;
+ 	        overflow-x: hidden;
+ 	      }
+  	      a { color: inherit; }
+   	      .site-header { background: #fff; border-bottom: 1px solid var(--rule); }
+    	      .brand-wrap { position: relative; min-height: 225px; display: grid; place-items: center; }
+    	      .brand { text-align: center; text-decoration: none; color: var(--ink); }
+	      .brand-mark { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: clamp(74px, 11vw, 126px); line-height: .72; letter-spacing: -.07em; }
+    	      .brand-tag { display: inline-block; margin-top: 26px; padding: 10px 42px 12px; border-radius: 999px; background: var(--ink); color: #fff; font: 700 clamp(18px, 2.2vw, 30px)/1 'Cormorant Garamond', serif; box-shadow: 0 18px 45px rgba(16,37,30,.12); transform: rotate(-1deg); }
+    	      .menu-button { position: absolute; right: 38px; top: 32px; width: 36px; height: 36px; border: 1px solid var(--rule); background: #fff; color: var(--ink); font-size: 21px; line-height: 1; display: grid; place-items: center; text-decoration: none; }
+    	      .nav { height: 42px; display: flex; align-items: center; gap: 28px; padding: 0 42px; border-top: 1px solid var(--rule); font-size: 10px; text-transform: uppercase; letter-spacing: .28em; font-weight: 700; }
+    	      .nav a { text-decoration: none; }
+    	      .hero-feature { position: relative; min-height: 580px; display: flex; align-items: center; overflow: hidden; color: #fff; }
+    	      .hero-feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    	      .hero-feature::after, .conversation::after, .story-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,18,14,.88), rgba(5,18,14,.44) 55%, rgba(5,18,14,.18)); }
+    	      .hero-copy { position: relative; z-index: 2; width: min(760px, 92vw); padding-left: 42px; }
+    	      .eyebrow { color: var(--green); font-size: 10px; letter-spacing: .32em; text-transform: uppercase; font-weight: 700; margin-bottom: 28px; display: inline-flex; align-items: center; gap: 16px; }
+    	      .eyebrow::before { content: ""; width: 36px; height: 1px; background: currentColor; }
+    	      h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+    	      .hero-copy h1 { font-size: clamp(62px, 8.2vw, 112px); line-height: .86; letter-spacing: -.045em; margin-bottom: 24px; color: #fff; }
+    	      .hero-copy p { font-size: clamp(18px, 2vw, 24px); max-width: 700px; margin-bottom: 18px; }
+    	      .byline, .read-link { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; font-weight: 700; }
+    	      .read-link { display: inline-block; margin-top: 18px; text-decoration: underline; text-underline-offset: 6px; }
+    	      .dots { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3; }
+    	      .dots span { width: 18px; height: 5px; background: rgba(255,255,255,.55); }
+	      .dots span:last-child { background: var(--green); }
+    	      .section { max-width: 1120px; margin: 0 auto; padding: 48px 24px; }
+    	      .section-title { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin-bottom: 20px; }
+    	      .section-title h2 { font-size: clamp(34px, 4vw, 48px); line-height: 1; }
+    	      .section-title small { color: var(--green); display: block; font-size: 9px; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 6px; font-family: 'DM Sans', sans-serif; }
+   	      .circle-arrow { width: 28px; height: 28px; border: 1px solid var(--rule); border-radius: 50%; display: inline-grid; place-items: center; text-decoration: none; font-size: 16px; }
+   	      .latest-row { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 16px; scrollbar-width: none; }
+   	      .latest-row::-webkit-scrollbar { display: none; }
+   	      .story-card { position: relative; flex: 0 0 270px; height: 210px; border-radius: 12px; overflow: hidden; color: #fff; text-decoration: none; display: block; }
+  	      .story-card.tall { height: 300px; flex-basis: 230px; }
+   	      .story-card img, .story-card video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+   	      .story-card:hover img, .story-card:hover video { transform: scale(1.05); }
+  	      .card-copy { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 18px; }
+   	      .pill { display: inline-block; background: rgba(255,255,255,.22); border-radius: 999px; padding: 5px 10px; font-size: 8px; text-transform: uppercase; letter-spacing: .18em; font-weight: 700; margin-bottom: 10px; }
+   	      .card-copy h3 { font-size: 24px; line-height: .95; color: #fff; }
+ 	      .card-copy p { margin-top: 9px; font-size: 9px; text-transform: uppercase; letter-spacing: .18em; }
+    	      .conversation { position: relative; min-height: 460px; display: flex; align-items: center; color: #fff; overflow: hidden; margin: 8px 0 0; }
+   	      .conversation img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  	      .conversation-copy { position: relative; z-index: 2; padding: 42px; width: min(760px, 92vw); }
+   	      .conversation h2 { font-size: clamp(56px, 8vw, 104px); line-height: .86; letter-spacing: -.04em; color: #fff; margin-bottom: 24px; }
+   	      .conversation p { font-size: 20px; max-width: 640px; }
+   	      .category { padding-top: 18px; }
+   	      .category .section-title { border-bottom: none; margin-bottom: 18px; display: block; }
+    	      .category .section-title h2 { display: inline; font-size: 34px; }
+   	      .category-grid { display: flex; gap: 24px; flex-wrap: wrap; }
+   	      .footer { margin-top: 70px; background: var(--dark); color: #fff; padding: 70px max(24px, calc((100vw - 1120px)/2)); display: grid; grid-template-columns: 1.2fr 1fr; gap: 70px; }
+    	      .footer h2 { font-size: 28px; margin-bottom: 24px; color: #fff; }
+    	      .footer .eyebrow::before { display: none; }
+   	      .footer p { color: rgba(255,255,255,.7); max-width: 420px; }
+    	      .footer-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 80px; align-content: start; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+    	      .footer-links a { color: rgba(255,255,255,.75); text-decoration: none; }
+    	      @media (max-width: 760px) { .brand-wrap { min-height: 170px; } .nav { padding: 0 20px; gap: 18px; overflow-x: auto; } .hero-feature { min-height: 520px; } .hero-copy, .conversation-copy { padding: 26px; } .latest-row { margin-right: -24px; } .footer { grid-template-columns: 1fr; } }
+	</style>
+    	
+    	    <script type="text/javascript">
+	      (function(c,l,a,r,i,t,y){
+    	          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    	          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    	          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+   	      })(window, document, "clarity", "script", "xf0msaw3g9");
+	    </script>
+   	</head>
+   	<body>
+	
+   	<header class="site-header">
+   	  <div class="brand-wrap">
+   	    <a class="brand" href="index.html" aria-label="Old Town Dispatches home">
+   	      <span class="brand-mark">OTD</span>
+ 	      <span class="brand-tag">Old Town Dispatches</span>
+ 	    </a>
+   	    <a class="menu-button" href="mailto:mouris.bashir@hotmail.com" aria-label="Get in touch">≡</a>
+   	  </div>
+  	  <nav class="nav" aria-label="Primary navigation">
+  	    <a href="#history">History</a>
+  	    <a href="#sports">Sports</a>
+ 	    <a href="#music">Music</a>
+ 	  </nav>
+	</header>
+	
+	<main>
+	  <section class="hero-feature">
+ 	    <img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="A packed stadium at dusk">
+ 	    <div class="hero-copy">
+  	      <span class="eyebrow">Football · Brand Story</span>
+	      <h1>Football as Public Memory</h1>
+	      <p>A stadium is not only where people watch. It is where a city remembers itself.</p>
+	      <div class="byline">By Mouris Bashir · Jul 31 · 4 min read</div>
+        <a class="read-link" href="ONBC.html">Read Story</a>
+   	    </div>
+      <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+ 	  </section>
+ 	
+	  <section class="section" aria-labelledby="latest-title">
+    <div class="section-title">
+      <h2 id="latest-title">The Latest</h2>
+      <a class="circle-arrow" href="#history" aria-label="Skip to categories">›</a>
+	    </div>
+  	    <div class="latest-row">
+ 	      <a href="police_scotland.html" class="story-card"><img src="p1.gif" alt="Campaign visual for Police Scotland"><div class="card-copy"><span class="pill">History</span><h3>The Archive Under the Market</h3><p>By Mouris Bashir · 5 min read</p></div></a>
+  	      <a href="HKKDH.html" class="story-card"><img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Community campaign crowd"><div class="card-copy"><span class="pill">Football</span><h3>The Derby That Made a Neighborhood</h3><p>By Mouris Bashir · 6 min read</p></div></a>
+  	      <a href="ONBC.html" class="story-card"><img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="Stadium flags at dusk"><div class="card-copy"><span class="pill">Football</span><h3>Why Stadiums Become Archives</h3><p>By Mouris Bashir · 4 min read</p></div></a>
+	      <a href="OYO.html" class="story-card"><img src="O06.jpeg" alt="People in conversation near a mural"><div class="card-copy"><span class="pill">People</span><h3>The Tea Table Oral History</h3><p>By Mouris Bashir · 3 min read</p></div></a>
+	    </div>
+   </section>
+   	
+  <section class="conversation">
+	    <img src="images/kashmir-storytelling.png" alt="Library shelves filled with books">
+	    <div class="conversation-copy">
+      <span class="eyebrow">Watch & Listen</span>
+         <h2>Old Town Conversations</h2>
+  	      <p>Interviews about memory, place, archives, and the people who keep old cities legible.</p>
+      <a class="read-link" href="moment_marketing.html">Explore Shows</a>
+   	    </div>
+  	  </section>
+	
+   	  <section class="section category" id="history">
+    <div class="section-title"><small>History</small><h2>History</h2> <a class="circle-arrow" href="eh5tories.html">›</a></div>
+   	    <div class="category-grid">
+      <a href="sustainability.html" class="story-card tall"><img src="youtube-thumbnail.png" alt="Documentary thumbnail"><div class="card-copy"><span class="pill">Stories</span><h3>The Map That Outlived the King</h3><p>4 min read</p></div></a>
+	      <a href="police_scotland.html" class="story-card tall"><img src="p1.gif" alt="Wall campaign artwork"><div class="card-copy"><span class="pill">History</span><h3>The Archive Under the Market</h3><p>4 min read</p></div></a>
+	    </div>
+	  </section>
+	
+	  <section class="section category" id="sports">
+   	    <div class="section-title"><small>Sports</small><h2>Sports</h2> <a class="circle-arrow" href="ONBC.html">›</a></div>
+ 	    <div class="category-grid">
+  	      <a href="HKKDH.html" class="story-card tall"><img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Large event gathering"><div class="card-copy"><span class="pill">Football</span><h3>The Derby That Made a Neighborhood</h3><p>6 min read</p></div></a>
+   	      <a href="ONBC.html" class="story-card tall"><img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="Stadium at sunset"><div class="card-copy"><span class="pill">Football</span><h3>Why Stadiums Become Archives</h3><p>4 min read</p></div></a>
+  	    </div>
+   	  </section>
+   	
+  	  <section class="section category" id="music">
+  	    <div class="section-title"><small>Music</small><h2>Music</h2> <a class="circle-arrow" href="moment_marketing.html">›</a></div>
+	    <div class="category-grid">
+ 	      <a href="moment_marketing.html" class="story-card tall"><img src="images/history-brands.png" alt="A person listening at a desk"><div class="card-copy"><span class="pill">Albums</span><h3>The Record Shop at the Edge of Memory</h3><p>4 min read</p></div></a>
+	      <a href="moment_marketing.html" class="story-card tall"><img src="images/Reel 4.png" alt="Podcast recording setup"><div class="card-copy"><span class="pill">Archive</span><h3>The Night Radio Taught the Neighborhood</h3><p>4 min read</p></div></a>
+ 	    </div>
+   	  </section>
+ 	</main>
+ 	
+	<footer class="footer">
+   	  <div>
+  	    <h2>OTD</h2>
+   	    <span class="eyebrow">Old Town Dispatches</span>
+	    <p>OTD is a calm, curated publication for history, sports, and music, built around editorial programming rather than feeds.</p>
+	    <p>© 2026 OTD. All rights reserved.</p>
+   	  </div>
+   	  <div class="footer-links">
+	    <a href="index.html">Home</a><a href="#history">Read</a>
+ 	    <a href="moment_marketing.html">Shows</a><a href="bio_gq.html">Writers</a>
+  	    <a href="bio_gq.html">About</a><a href="mailto:mouris.bashir@hotmail.com">Contact</a>
+  	    <a href="mailto:mouris.bashir@hotmail.com">Terms</a><a href="mailto:mouris.bashir@hotmail.com">Privacy</a>
+	  </div>
+	</footer>
+ 	
+  	</body>
+	</html>
+
