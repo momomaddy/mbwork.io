@@ -10,597 +10,1054 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adani Sustainability Narrative — Case Study</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --deep: #061A0E; --ink: #0A2010; --green: #1A7A3C; --lime: #4CAF72;
-    --pale: #F2FAF5; --mist: #D8EEE0; --body: #1E3328; --muted: #5A7A65; --cream: #F7FCF9;
-  }
-  body { background: var(--cream); color: var(--body); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
- /* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--rule);
-  padding:0 3rem;height:52px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{display:block;text-decoration:none;}
-.nav-logo img{height:32px;width:auto;display:block;}
-.nav-right{display:flex;gap:2rem;align-items:center;}
-.nav-link{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
-}
-.nav-link:hover{opacity:1;}
-.nav-cta{
-  background:var(--ink);color:var(--cream)!important;
-  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  text-decoration:none;
-}
-  .video-column-grid {
-  display: flex;
-  gap: 30px; /* Space between the two videos */
-  margin-top: 2rem;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy & Utilities / Mouris Bashir</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-.video-column-item {
-  flex: 1; /* Makes both columns equal width */
-  display: flex;
-  flex-direction: column;
-}
+    *, *::before, *::after { box-sizing: border-box; }
 
-/* This maintains the 16:9 cinematic ratio for the videos */
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  background: #000;
-}
+    :root {
+      --paper: #f7f1e3;
+      --paper-soft: #fffaf0;
+      --ink: #17130e;
+      --ink-soft: #423b34;
+      --muted: #766d62;
+      --rule: #211a14;
+      --red: #b92f1f;
+      --blue: #174f75;
+      --green: #32684c;
+      --yellow: #e4b93f;
+      --white: #fffdf7;
+    }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    html { scroll-behavior: smooth; }
 
-.video-meta {
-  padding-top: 1rem;
-}
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23,19,14,0.035) 1px, transparent 1px) 0 0 / 24px 24px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
 
-.video-tag {
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--rust);
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-}
+    /* Sticky Navigation Header */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 54px;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: rgba(247, 241, 227, 0.94);
+      border-bottom: 2px solid var(--rule);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.video-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-/* Container for the vertical grid */
-.video-vertical-grid {
-  display: flex;
-  gap: 40px;
-  justify-content: center; /* Centers the vertical 'phones' */
-  margin-top: 3rem;
-}
+    .nav-logo { display: block; text-decoration: none; }
+    .nav-logo img { display: block; width: auto; height: 32px; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-link,
+    .nav-work-btn,
+    .nav-cta {
+      color: var(--ink);
+      font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-.video-vertical-item {
-  flex: 0 1 320px; /* Constrains the width so it looks like a phone */
-  display: flex;
-  flex-direction: column;
-}
+    .nav-work { position: relative; }
 
-/* The magic number for 9:16 Vertical Ratio */
-.video-container.vertical {
-  position: relative;
-  width: 100%;
-  padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
-  height: 0;
-  background: var(--ink);
-  border-radius: 8px; /* Optional: slight curve to look like a screen */
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
+    .nav-work-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
 
-.video-container.vertical iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    .nav-work-btn::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+    }
 
-.video-meta {
-  padding-top: 1.2rem;
-  text-align: left;
-}
+    .work-dropdown {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      min-width: 250px;
+      background: var(--paper-soft);
+      border: 2px solid var(--rule);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
 
-/* Mobile Tweak: Don't let them get too small on phones */
-@media (max-width: 768px) {
-  .video-vertical-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .video-vertical-item {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-/* Mobile Tweak: Stack them back to vertical when the screen is narrow */
-@media (max-width: 768px) {
-  .video-column-grid {
-    flex-direction: column;
-  }
-}
-/* ── WORK DROPDOWN ── */
-.nav-work{position:relative;}
-.nav-work-btn{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);background:none;border:none;cursor:pointer;
-  opacity:0.6;transition:opacity 0.2s;padding:0;
-  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
-}
-.nav-work-btn::after{
-  content:'';display:inline-block;width:0;height:0;
-  border-left:3px solid transparent;border-right:3px solid transparent;
-  border-top:4px solid currentColor;transition:transform 0.2s;
-}
-.nav-work:hover .nav-work-btn,
-.nav-work:focus-within .nav-work-btn{opacity:1;}
-.nav-work:hover .nav-work-btn::after,
-.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
+    .nav-work:hover .work-dropdown,
+    .nav-work:focus-within .work-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
 
-.work-dropdown{
-  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
-  background:var(--cream);border:1px solid var(--rule);
-  min-width:240px;
-  opacity:0;visibility:hidden;
-  transform:translateX(-50%) translateY(-6px);
-  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
-  z-index:200;
-}
-.nav-work:hover .work-dropdown,
-.nav-work:focus-within .work-dropdown{
-  opacity:1;visibility:visible;
-  transform:translateX(-50%) translateY(0);
-}
-.work-dropdown a{
-  display:block;padding:0.7rem 1.2rem;
-  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.65;
-  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
-}
-.work-dropdown a:last-child{border-bottom:none;}
-.work-dropdown a:hover{opacity:1;background:var(--paper2);}
-.work-dropdown-label{
-  padding:0.6rem 1.2rem 0.4rem;
-  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
-}
-  .hero { position: relative; background: var(--deep); min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem 3rem 5rem; overflow: hidden; }
-  .hero-glow { position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(circle at 70% 20%, rgba(26,122,60,0.22) 0%, transparent 55%), radial-gradient(circle at 10% 75%, rgba(76,175,114,0.1) 0%, transparent 45%); }
-  .ring { position: absolute; border-radius: 50%; pointer-events: none; }
-  .r1 { width: 480px; height: 480px; top: -120px; right: -100px; border: 1px solid rgba(26,122,60,0.2); }
-  .r2 { width: 300px; height: 300px; top: -20px; right: 40px; border: 1px solid rgba(76,175,114,0.1); }
-  .r3 { width: 700px; height: 700px; bottom: -250px; left: -200px; border: 1px solid rgba(26,122,60,0.06); }
+    .work-dropdown-label,
+    .work-dropdown a {
+      display: block;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      color: var(--ink);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-  .hero-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lime); font-weight: 500; margin-bottom: 2rem; }
-  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5vw, 4.6rem); font-weight: 900; line-height: 1.05; color: #EEF7F1; margin-bottom: 1.5rem; max-width: 740px; }
-  .hero-title em { font-style: italic; color: #7ECDA0; }
-  .hero-sub { font-size: 1rem; color: rgba(238,247,241,0.48); max-width: 540px; margin-bottom: 3rem; font-weight: 300; }
-  .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; }
-  .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
-  .meta-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,247,241,0.28); }
-  .meta-val { font-size: 0.87rem; color: #EEF7F1; font-weight: 400; }
+    .work-dropdown-label { color: var(--red); background: var(--yellow); }
+    .work-dropdown a:hover { background: var(--ink); color: var(--paper); }
+    .work-dropdown a:last-child { border-bottom: 0; }
 
-  .stat-strip { background: var(--deep); padding: 4rem 3rem; border-top: 1px solid rgba(26,122,60,0.15); }
-  .stat-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 2.5rem; }
-  .stat { display: flex; flex-direction: column; gap: 0.3rem; }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: #7ECDA0; line-height: 1; }
-  .stat-desc { font-size: 0.76rem; color: rgba(238,247,241,0.42); line-height: 1.5; max-width: 145px; }
+    .nav-cta {
+      padding: 0.55rem 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-  .biz-strip { background: var(--green); padding: 1rem 3rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-  .biz-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,247,241,0.55); font-weight: 500; white-space: nowrap; }
-  .biz-pill { background: rgba(238,247,241,0.12); border: 1px solid rgba(238,247,241,0.2); color: #EEF7F1; font-size: 0.72rem; letter-spacing: 0.08em; padding: 0.3rem 0.8rem; font-weight: 500; }
+    /* Sub-header Issue Bar */
+    .issue-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem clamp(1rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-soft);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
 
-  .page { max-width: 920px; margin: 0 auto; padding: 0 2rem; }
-  section { padding: 5rem 0; border-bottom: 1px solid rgba(10,32,16,0.07); }
-  section:last-child { border-bottom: none; }
-  .section-tag { font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); font-weight: 500; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
-  .section-tag::after { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--green); opacity: 0.45; }
-  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 1.8rem; }
-  h2 em { font-style: italic; color: var(--green); }
-  p { font-size: 0.96rem; color: #2A4035; margin-bottom: 1.2rem; max-width: 700px; }
-  p:last-child { margin-bottom: 0; }
+    .issue-bar span:nth-child(2) {
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.5rem;
+      background: var(--yellow);
+    }
 
-  .pull-quote { margin: 3rem 0; padding: 2rem 0 2rem 2rem; border-left: 3px solid var(--green); }
-  .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: var(--ink); font-weight: 400; line-height: 1.5; margin-bottom: 0; max-width: 640px; }
+    .issue-bar span:last-child { text-align: right; }
 
-  .shift-block { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 2.5rem 0; border: 1px solid var(--mist); }
-  .shift-col { padding: 2rem; }
-  .shift-col:first-child { border-right: 1px solid var(--mist); background: var(--pale); }
-  .shift-label { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 1rem; }
-  .shift-label.active { color: var(--green); }
-  .shift-item { font-size: 0.86rem; color: var(--muted); padding: 0.5rem 0; border-bottom: 1px solid var(--mist); line-height: 1.5; }
-  .shift-item:last-child { border-bottom: none; }
-  .shift-item.active { color: var(--body); font-weight: 400; }
+    /* Hero Section */
+    .hero {
+      border-bottom: 2px solid var(--rule);
+      background: var(--paper);
+    }
 
-  .translation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2.5rem 0; }
-  .translation-card { border: 1px solid var(--mist); overflow: hidden; }
-  .tc-before { background: var(--pale); padding: 1.2rem 1.4rem; border-bottom: 1px solid var(--mist); }
-  .tc-after { background: #fff; padding: 1.2rem 1.4rem; }
-  .tc-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 500; }
-  .tc-label.after { color: var(--green); }
-  .tc-text { font-size: 0.85rem; color: var(--muted); line-height: 1.5; font-style: italic; }
-  .tc-text.after { color: var(--body); font-style: normal; font-weight: 400; }
+    .hero-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.45fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: end;
+      padding: clamp(1.4rem, 4vw, 3.4rem);
+      border-bottom: 2px solid var(--rule);
+    }
 
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2.5rem 0; }
-  .pillar { background: var(--pale); border: 1px solid var(--mist); padding: 1.8rem; }
-  .pillar-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--mist); line-height: 1; margin-bottom: 0.5rem; }
-  .pillar-title { font-size: 0.78rem; font-weight: 500; color: var(--green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.7rem; }
-  .pillar-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .kicker {
+      width: max-content;
+      max-width: 100%;
+      background: var(--green);
+      color: var(--white);
+      padding: 0.35rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-  .sdg-strip { background: var(--pale); border: 1px solid var(--mist); padding: 2rem; margin: 2.5rem 0; }
-  .sdg-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); font-weight: 500; margin-bottom: 1.2rem; }
-  .sdg-goals { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-  .sdg-goal { background: var(--green); color: #EEF7F1; font-size: 0.7rem; letter-spacing: 0.06em; padding: 0.35rem 0.9rem; font-weight: 500; }
+    h1 {
+      margin: 2rem 0 1.2rem;
+      max-width: 14ch;
+      font-size: clamp(2.8rem, 5.8vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      font-weight: 900;
+      overflow-wrap: normal;
+    }
 
-  .award-block { background: var(--deep); padding: 2.5rem; margin: 2.5rem 0; position: relative; overflow: hidden; }
-  .award-block::before { content: ''; position: absolute; top: 0; right: 0; width: 220px; height: 220px; background: radial-gradient(circle, rgba(26,122,60,0.18) 0%, transparent 70%); }
-  .award-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #7ECDA0; font-weight: 700; margin-bottom: 0.5rem; }
-  .award-sub { font-size: 0.84rem; color: rgba(238,247,241,0.5); line-height: 1.6; margin-bottom: 0; max-width: 600px; }
+    .dek {
+      max-width: 720px;
+      margin: 0;
+      font: 400 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
 
-  .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
-  .result-card { background: var(--pale); border: 1px solid var(--mist); padding: 1.5rem; }
-  .result-card-label { font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
-  .result-item { margin-bottom: 0.8rem; }
-  .result-item:last-child { margin-bottom: 0; }
-  .result-num { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--green); line-height: 1; }
-  .result-sub { font-size: 0.76rem; color: var(--muted); line-height: 1.4; margin-top: 0.2rem; }
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
 
-  .impact-block { background: var(--deep); padding: 2.5rem; margin: 2.5rem 0; position: relative; overflow: hidden; }
-  .impact-block::before { content: ''; position: absolute; top: 0; right: 0; width: 220px; height: 220px; background: radial-gradient(circle, rgba(26,122,60,0.15) 0%, transparent 70%); }
-  .impact-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #7ECDA0; font-weight: 700; margin-bottom: 0.6rem; }
-  .impact-body { font-size: 0.86rem; color: rgba(238,247,241,0.52); line-height: 1.7; margin-bottom: 0; max-width: 620px; }
+    .meta-item {
+      min-height: 84px;
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-  footer { background: var(--deep); padding: 3rem; text-align: center; }
-  footer p { font-size: 0.76rem; color: rgba(238,247,241,0.26); margin: 0 auto; }
-  footer span { color: var(--lime); }
+    .meta-item:last-child { border-bottom: 0; }
 
-  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+    .meta-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--green);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-  @media (max-width: 700px) {
-    .shift-block, .translation-grid { grid-template-columns: 1fr; }
-    .shift-col:first-child { border-right: none; border-bottom: 1px solid var(--mist); }
-    .pillars { grid-template-columns: 1fr; }
-    .hero { padding: 3rem 1.5rem 4rem; }
-    .stat-strip, .biz-strip { padding: 3rem 1.5rem; }
-    .page { padding: 0 1.2rem; }
-  }
+    .meta-val {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    /* Stats Grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-bottom: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .stat {
+      min-height: 150px;
+      padding: 1.2rem clamp(1rem, 2vw, 1.6rem);
+      border-right: 1px solid rgba(247, 241, 227, 0.35);
+    }
+
+    .stat:last-child { border-right: 0; }
+
+    .stat-num {
+      display: block;
+      margin-bottom: 0.6rem;
+      color: var(--yellow);
+      font-size: clamp(2rem, 3.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 0.9;
+    }
+
+    .stat-desc {
+      display: block;
+      max-width: 16rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    /* Article Shell & Rails */
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.22fr) minmax(0, 900px) minmax(170px, 0.26fr);
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      width: min(1360px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .rail {
+      position: sticky;
+      top: 76px;
+      align-self: start;
+      border-top: 2px solid var(--rule);
+      padding-top: 0.8rem;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .rail strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--green);
+    }
+
+    .rail nav {
+      all: unset;
+      display: block;
+      margin-top: 1.2rem;
+    }
+
+    .rail nav a {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 0.64rem;
+    }
+
+    .rail nav a:hover { color: var(--green); }
+
+    article {
+      background: var(--paper-soft);
+      border-left: 2px solid var(--rule);
+      border-right: 2px solid var(--rule);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .section {
+      padding: clamp(2.2rem, 5vw, 4.2rem) 0;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .section:last-child { border-bottom: 0; }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--rule);
+      background: var(--green);
+      color: var(--white);
+      padding: 0.22rem 0.5rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .section-label.problem { background: var(--red); }
+    .section-label.strategy { background: var(--blue); }
+    .section-label.results { background: var(--ink); }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font: 700 clamp(2rem, 4vw, 3.2rem)/0.98 "Libre Baskerville", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 1.15rem;
+      font: 400 1.02rem/1.78 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      max-width: 760px;
+      font-size: clamp(1.18rem, 2.2vw, 1.55rem);
+      line-height: 1.62;
+      color: var(--ink);
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      padding: 0.18rem 0.42rem 0 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 5.4rem;
+      font-weight: 900;
+      line-height: 0.78;
+      color: var(--green);
+    }
+
+    /* Pull Quotes */
+    .pull-quote {
+      margin: 2rem 0;
+      padding: 1.2rem 0 1.2rem 1.2rem;
+      border-left: 8px solid var(--yellow);
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .pull-quote p {
+      margin: 0;
+      max-width: 640px;
+      color: var(--ink);
+      font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    /* Shift Block Table */
+    .shift-block {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.6rem 0;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .shift-col {
+      padding: 1.2rem;
+    }
+
+    .shift-col:first-child {
+      border-right: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
+
+    .shift-label {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .shift-label.active { color: var(--green); }
+
+    .shift-item {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .shift-item:last-child { border-bottom: 0; }
+    .shift-item.active { color: var(--ink); font-weight: 700; }
+
+    /* Translation Cards Grid */
+    .translation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 1.6rem 0;
+    }
+
+    .translation-card {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      box-shadow: 6px 6px 0 var(--green);
+      overflow: hidden;
+    }
+
+    .tc-before {
+      background: var(--paper-soft);
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .tc-after {
+      background: var(--paper);
+      padding: 1rem 1.2rem;
+    }
+
+    .tc-label {
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .tc-label.after { color: var(--green); }
+
+    .tc-text {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    .tc-text.after {
+      color: var(--ink);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    /* Video Media Cards Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin: 1.6rem 0 0.4rem;
+    }
+
+    .video-card {
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 6px 6px 0 var(--green);
+    }
+
+    .video-card:nth-child(2n) { box-shadow: 6px 6px 0 var(--yellow); }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Vertical Reels Grid */
+    .vertical-reel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin: 1.6rem 0;
+    }
+
+    .video-card-vertical {
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 6px 6px 0 var(--blue);
+    }
+
+    .video-frame-vertical {
+      position: relative;
+      width: 100%;
+      padding-bottom: 177.77%;
+      background: #000;
+    }
+
+    .video-frame-vertical iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      padding: 0.65rem 0.85rem;
+      background: var(--yellow);
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-top: 2px solid var(--rule);
+    }
+
+    /* Pillars Grid */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 1.6rem 0;
+    }
+
+    .pillar {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      padding: 1.2rem;
+      box-shadow: 6px 6px 0 var(--green);
+    }
+
+    .pillar-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .pillar-title {
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+
+    .pillar-desc {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* SDG Pills Container */
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+
+    .pill-item {
+      padding: 0.5rem 0.9rem;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    /* Results Cards Grid */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 1.6rem 0;
+    }
+
+    .result-card {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      padding: 1.2rem;
+      box-shadow: 6px 6px 0 var(--green);
+    }
+
+    .result-card:nth-child(2n) { box-shadow: 6px 6px 0 var(--yellow); }
+    .result-card:nth-child(3n) { box-shadow: 6px 6px 0 var(--blue); }
+
+    .result-card-label {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+    }
+
+    .result-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .result-sub {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      line-height: 1.4;
+    }
+
+    /* Sticky Side Card */
+    .side-card {
+      align-self: start;
+      border: 2px solid var(--rule);
+      background: var(--green);
+      color: var(--white);
+      padding: 1rem;
+      box-shadow: 7px 7px 0 var(--yellow);
+      position: sticky;
+      top: 76px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .side-card p {
+      margin: 0 0 1rem;
+      max-width: none;
+      color: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .side-card p:last-child { margin-bottom: 0; }
+
+    footer {
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      border-top: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .hero-copy { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-shell { grid-template-columns: 1fr; }
+      .rail, .side-card { position: static; }
+      article { border: 2px solid var(--rule); }
+    }
+
+    @media (max-width: 720px) {
+      nav { height: auto; min-height: 54px; align-items: flex-start; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+      .nav-right { flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem; }
+      .nav-link, .nav-work-btn, .nav-cta { font-size: 0.6rem; }
+      .issue-bar { grid-template-columns: 1fr; gap: 0.45rem; }
+      .issue-bar span:last-child { text-align: left; }
+      h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+      .hero-meta, .stats { grid-template-columns: 1fr; }
+      .shift-block, .translation-grid, .video-grid, .vertical-reel-grid, .pillars, .results-grid { grid-template-columns: 1fr; }
+      .shift-col { border-right: 0; border-bottom: 1px solid var(--rule); }
+    }
   </style>
 </head>
-  <body>
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="M.png" alt="mb.work">
-  </a>
-  <div class="nav-right">
-    <!-- Work with dropdown -->
-    <div class="nav-work" tabindex="0">
-      <button class="nav-work-btn" aria-haspopup="true">Work</button>
-      <div class="work-dropdown" role="menu">
-        <div class="work-dropdown-label">Case Studies</div>
-        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
-        <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="ONBC.html">#OneNationBillionCelebrations</a>
-        <a href="adl_equally.html">ADL Is EquAlly</a>
-        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
-        <a href="OYO.html">OYO</a>
-        <a href="fortune.html">Fortune</a>
-        <a href="police_scotland.html">Police Scotland</a>
-        <a href="FarmPik.html">FarmPik</a>
-        <a href="BookMyForex.html">BookMyForex</a>
-        <a href="moment_marketing.html">Moment Marketing</a>
+<body>
+  <!-- Navigation Header -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
+    </a>
+    <div class="nav-right">
+      <div class="nav-work" tabindex="0">
+        <button class="nav-work-btn" aria-haspopup="true">Work</button>
+        <div class="work-dropdown" role="menu">
+          <div class="work-dropdown-label">Case Studies</div>
+          <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+          <a href="HorizonX.html">Horizon X - hear.com</a>
+          <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+          <a href="adl_equally.html">ADL Is EquAlly</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="OYO.html">OYO Valentine's</a>
+          <a href="OYO_OPEN.html">OYO OPEN</a>
+          <a href="OYO_Internal.html">OYO Internal Comms</a>
+          <a href="fortune.html">Fortune</a>
+          <a href="police_scotland.html">Police Scotland</a>
+          <a href="FarmPik.html">FarmPik</a>
+          <a href="BookMyForex.html">BookMyForex</a>
+          <a href="moment_marketing.html">Moment Marketing</a>
+          <a href="ONBC.html">One Nation Billion Celebrations</a>
+          <a href="airportvideos.html">Airport Videos</a>
+          <a href="execcomms.html">Executive Comms</a>
+        </div>
       </div>
+      <a href="bio_gq.html" class="nav-link">About</a>
+      <a href="eh5tories.html" class="nav-link">EH5tories</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
     </div>
-    <a href="bio_gq.html" class="nav-link">About</a>
-    <a href="eh5tories.html" class="nav-link">EH5tories</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-  </div>
   </nav>
 
-<div class="hero">
-  <div class="hero-glow"></div>
-  <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-  <div class="hero-label">Case Study · Sustainability & ESG Communication</div>
-  <h1 class="hero-title">Making the<br><em>invisible</em><br>understood.</h1>
-  <p class="hero-sub">How technical sustainability data across seven Adani businesses was translated into public narrative — connecting infrastructure activity to everyday human meaning.</p>
-  <div class="hero-meta">
-    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">Adani Group</span></div>
-    <div class="meta-item"><span class="meta-label">Scope</span><span class="meta-val">Sustainability Narrative · ESG Comms · Digital</span></div>
-    <div class="meta-item"><span class="meta-label">Businesses</span><span class="meta-val">APSEZ · AGEL · ATGL · ATL · APL · AEL · AESL</span></div>
-    <div class="meta-item"><span class="meta-label">Recognition</span><span class="meta-val">ESG Initiative of the Year — ET Energyworld</span></div>
-  </div>
-</div>
-
-<div class="stat-strip">
-  <div class="stat-grid">
-    <div class="stat"><div class="stat-num">14M+</div><div class="stat-desc">Views across sustainability content</div></div>
-    <div class="stat"><div class="stat-num">47M+</div><div class="stat-desc">Total reach across platforms</div></div>
-    <div class="stat"><div class="stat-num">4%</div><div class="stat-desc">Average engagement rate across socials</div></div>
-    <div class="stat"><div class="stat-num">7</div><div class="stat-desc">Business units aligned under one narrative</div></div>
-    <div class="stat"><div class="stat-num">SDG</div><div class="stat-desc">Aligned to UN Sustainable Development Goals</div></div>
-  </div>
-</div>
-
-<div class="biz-strip">
-  <span class="biz-label">Businesses covered</span>
-  <span class="biz-pill">APSEZ — Ports</span>
-  <span class="biz-pill">AGEL — Renewable Energy</span>
-  <span class="biz-pill">ATGL — City Gas</span>
-  <span class="biz-pill">ATL — Transmission</span>
-  <span class="biz-pill">APL — Power</span>
-  <span class="biz-pill">AEL — Enterprises</span>
-  <span class="biz-pill">AESL — Energy Solutions</span>
-</div>
-
-<div class="page">
-
-  <section>
-    <div class="section-tag">The Problem</div>
-    <h2>Decarbonisation is measurable<br>for engineers. <em>Invisible for everyone else.</em></h2>
-    <p>Across ports, renewable energy, city gas distribution and transmission, Adani Group businesses were making significant environmental progress. The investments were real. The impact was measurable. But for public audiences, the communication was largely technical, disclosure-driven and impossible to relate to.</p>
-    <p>Terms like emissions reduction, net-zero commitments and energy transition carried precise meaning for investors and policymakers. For communities living near these operations, they meant nothing. Without translation, sustainability risked being perceived as corporate reporting — something companies say, not something they do.</p>
-    <div class="pull-quote">
-      <p>"People trust sustainability not when it is claimed, but when they can understand how it affects their lives."</p>
-    </div>
-    <p>Different stakeholders needed different things from the same message: investors needed disclosures, policymakers needed compliance signals, communities needed visible impact, and media needed accountability narratives. The communication was failing all of them by trying to speak to none of them specifically.</p>
-  </section>
-
-  <section>
-    <div class="section-tag">The Strategic Shift</div>
-    <h2>From reporting<br>to <em>human relevance.</em></h2>
-    <p>The core strategic move was to stop treating sustainability as data to be disclosed and start treating it as impact to be explained. This required a shift in both framing and language — applied consistently across seven business units with different audiences and different tones of voice.</p>
-    <div class="shift-block">
-      <div class="shift-col">
-        <div class="shift-label">Before</div>
-        <div class="shift-item">We installed 2.3 GW of solar capacity</div>
-        <div class="shift-item">Emissions reduced by X metric tonnes</div>
-        <div class="shift-item">Net-zero commitment by 2050</div>
-        <div class="shift-item">Energy transition infrastructure</div>
-        <div class="shift-item">Efficiency improvement programs</div>
-      </div>
-      <div class="shift-col">
-        <div class="shift-label active">After</div>
-        <div class="shift-item active">Energy sufficient for 30,000 homes — clean</div>
-        <div class="shift-item active">Cleaner air for the cities we operate in</div>
-        <div class="shift-item active">Building the infrastructure your children inherit</div>
-        <div class="shift-item active">Gas that replaces coal in your kitchen and your city</div>
-        <div class="shift-item active">Less waste, more reach — infrastructure that does more</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-tag">The Translation Method</div>
-    <h2>Technical inputs.<br><em>Human outputs.</em></h2>
-    <p>The most important communication discipline was converting infrastructure metrics into consequences people could picture. Rather than leading with generation numbers, capacity additions or reduction percentages, every piece of communication was reverse-engineered from a human question: what does this mean for someone living near this project?</p>
-
-    <div class="translation-grid">
-      <div class="translation-card">
-        <div class="tc-before">
-          <div class="tc-label">Technical input</div>
-          <div class="tc-text">"1 kW of solar capacity installed"</div>
-        </div>
-        <div class="tc-after">
-          <div class="tc-label after">Public communication</div>
-          <div class="tc-text after">Energy sufficient to power a family home for a year — without a single gram of CO₂</div>
-        </div>
-      </div>
-      <div class="translation-card">
-        <div class="tc-before">
-          <div class="tc-label">Technical input</div>
-          <div class="tc-text">"City gas distribution network expansion"</div>
-        </div>
-        <div class="tc-after">
-          <div class="tc-label after">Public communication</div>
-          <div class="tc-text after">Fewer trucks, less smoke, cleaner air — piped gas replacing cylinders across your city</div>
-        </div>
-      </div>
-      <div class="translation-card">
-        <div class="tc-before">
-          <div class="tc-label">Technical input</div>
-          <div class="tc-text">"Efficiency improvement at port operations"</div>
-        </div>
-        <div class="tc-after">
-          <div class="tc-label after">Public communication</div>
-          <div class="tc-text after">India's trade moving faster, with a lighter footprint on the coastline it crosses</div>
-        </div>
-      </div>
-      <div class="translation-card">
-        <div class="tc-before">
-          <div class="tc-label">Technical input</div>
-          <div class="tc-text">"Net-zero commitment by 2050"</div>
-        </div>
-        <div class="tc-after">
-          <div class="tc-label after">Public communication</div>
-          <div class="tc-text after">The infrastructure we build today is designed for the India your children will live in</div>
-        </div>
-      </div>
-    </div>
-    
-    <section class="video-section">
-  <div class="section-header">
-    <span class="section-label">Multimedia Strategy</span>
+  <!-- Sub-header Issue Bar -->
+  <div class="issue-bar">
+    <span>Adani Group / Sustainability Narrative</span>
+    <span>Case Study</span>
+    <span>#MakingTheInvisibleUnderstood</span>
   </div>
 
-  <div class="video-column-grid">
-    
-   <div class="video-vertical-grid">
-    <div class="video-vertical-item">
-      <div class="video-container vertical">       
-        <iframe src="https://www.youtube.com/embed/t3IPA2qpqaU?rel=0&modestbranding=1" title="#WinderfulLife | Adani Green Energy" frameborder="0" allowfullscreen>
-        </iframe>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <div class="kicker">Energy & Utilities</div>
+        <h1>Making the invisible understood.</h1>
+        <p class="dek">How technical sustainability data across seven Adani businesses was translated into public narrative—connecting infrastructure activity to everyday human meaning.</p>
       </div>
-      <div class="video-meta">
-        <div class="video-tag">#WinderfulLife</div>
-        <div class="video-title">#GlobalWindDay | Adani Green Energy</div>
+      <div class="hero-meta" aria-label="Project details">
+        <div class="meta-item">
+          <span class="meta-label">Client</span>
+          <span class="meta-val">Adani Group</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Scope</span>
+          <span class="meta-val">Sustainability Narrative, ESG Comms &amp; Digital</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Businesses</span>
+          <span class="meta-val">APSEZ, AGEL, ATGL, ATL, APL, AEL &amp; AESL</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Recognition</span>
+          <span class="meta-val">ESG Initiative of the Year — ET Energyworld</span>
+        </div>
       </div>
     </div>
+  </header>
 
-   <div class="video-vertical-item">
-      <div class="video-container vertical">
-        <iframe 
-          src="https://www.youtube.com/embed/QqXbUEmrMC0?rel=0&modestbranding=1" title="#GlobalWindDay | Adani Green Energy"
-          frameborder="0" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="video-meta">
-        <div class="video-tag">GlobalWindDay</div>
-        <div class="video-title">Adani Green Energy</div>
-      </div>
+  <!-- Stats Grid -->
+  <section class="stats" aria-label="Campaign metrics">
+    <div class="stat">
+      <span class="stat-num">14M+</span>
+      <span class="stat-desc">Views across sustainability content</span>
     </div>
-  </div>
-</section>
-    <p>Messaging was also anchored to India's national energy goals and the UN Sustainable Development Goals — connecting operational activity to a framework audiences could recognise and trust.</p>
-  </section>
-
-  <section>
-    <div class="section-tag">Execution</div>
-    <h2>Three pillars.<br><em>Seven businesses.</em></h2>
-    <p>The work was structured around three communication workstreams, each addressing a different dimension of the sustainability story across all business units.</p>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-num">01</div>
-        <div class="pillar-title">Environmental Responsibility</div>
-        <div class="pillar-desc">Translated renewable energy and city gas transition into relatable public language. Connected project-level activity to air quality, climate and community benefit across AGEL, ATGL, AEL and AESL.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">02</div>
-        <div class="pillar-title">Community Participation</div>
-        <div class="pillar-desc">Communicated the Greenmosphere initiative — plantation drives, school sustainability programs and energy audits — as shared public action rather than corporate CSR. Made environmental responsibility participatory.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">03</div>
-        <div class="pillar-title">Cross-Business Alignment</div>
-        <div class="pillar-desc">Reviewed and aligned sustainability messaging across all seven business units. Ensured that language, tone and narrative were consistent at group level while remaining authentic to each business's specific audience and context.</div>
-      </div>
+    <div class="stat">
+      <span class="stat-num">47M+</span>
+      <span class="stat-desc">Total reach across platforms</span>
     </div>
-    <div class="sdg-strip">
-      <div class="sdg-label">Aligned to UN Sustainable Development Goals</div>
-      <div class="sdg-goals">
-        <span class="sdg-goal">SDG 7 — Affordable & Clean Energy</span>
-        <span class="sdg-goal">SDG 11 — Sustainable Cities</span>
-        <span class="sdg-goal">SDG 13 — Climate Action</span>
-        <span class="sdg-goal">SDG 9 — Industry & Infrastructure</span>
-        <span class="sdg-goal">SDG 17 — Partnerships for the Goals</span>
-      </div>
+    <div class="stat">
+      <span class="stat-num">4%</span>
+      <span class="stat-desc">Average engagement rate</span>
     </div>
-  </section>
-  
-<section class="video-section">
-  <div class="section-header">
-  </div>
-
-  <div class="video-column-grid">
-    
-    <div class="video-column-item">
-      <div class="video-container">
-        <iframe 
-          src="https://www.youtube.com/embed/r2_e_3Zs6DY?si=q9wnsTM-YaMy_v95rel=0&modestbranding=1" 
-          frameborder="0" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="video-meta">
-        <div class="video-tag">iCan - reduce emissions </div>
-        <div class="video-title">Adani Green Energy</div>
-      </div>
+    <div class="stat">
+      <span class="stat-num">7</span>
+      <span class="stat-desc">Business units aligned under one narrative</span>
     </div>
-
-    <div class="video-column-item">
-      <div class="video-container">
-        <iframe 
-          src="https://www.youtube.com/embed/5zr1BNsmHKw?si=ST-_zdZIm9zGNbx?rel=0&modestbranding=1" 
-          frameborder="0" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="video-meta">
-        <div class="video-tag">#GeneratingGoodness</div>
-        <div class="video-title">Adani Green Energy</div>
-      </div>
-    </div>
-  </div>
-</section>
-  </section>
-  <section>
-    <div class="section-tag">Greenmosphere</div>
-    <h2>The campaign that made<br><em>renewable energy visible.</em></h2>
-    <p>Greenmosphere — Adani Total Gas's Low Carbon Society initiative — was the most visible expression of this communication strategy. Renewable energy projects are massive but invisible. People see a solar panel once in a magazine, a windmill on a highway. For most citizens, renewable energy lives as a policy concept, not a lived experience.</p>
-    <p>Greenmosphere was built as a translation project. Rather than communicating megawatts and capacity additions, it spoke about air, community, future generations and everyday life. It reframed environmental responsibility from a corporate claim into a shared community effort — structured around tree plantation, sustainability education in schools, and practical energy conservation guidance for households.</p>
-    <p>Digital communication served as the bridge between on-ground initiatives and public understanding — explaining impact in simple language, connecting activity to SDG goals, and encouraging community participation rather than passive awareness.</p>
-
-    <div class="award-block">
-      <div class="award-title">ESG Initiative of the Year — ET Energyworld Annual Gas Conclave</div>
-      <div class="award-sub">Recognised by The Economic Times Energyworld at one of India's leading energy sector forums, placing Greenmosphere alongside the most significant environmental and sustainability initiatives across India's gas and energy industry.</div>
+    <div class="stat">
+      <span class="stat-num">SDG</span>
+      <span class="stat-desc">Aligned to UN Sustainable Goals</span>
     </div>
   </section>
 
-  <section>
-    <div class="section-tag">Results</div>
-    <h2>Reach, engagement<br>and <em>a shift in how sustainability landed.</em></h2>
+  <!-- Main Article Layout Shell -->
+  <main class="article-shell">
+    <aside class="rail">
+      <strong>On This Page</strong>
+      Problem, translation method, execution, and award results.
+      <nav>
+        <a href="#problem">The Problem</a>
+        <a href="#shift">The Strategic Shift</a>
+        <a href="#translation">Translation Method</a>
+        <a href="#multimedia">Multimedia Series</a>
+        <a href="#execution">Pillars &amp; SDGs</a>
+        <a href="#greenmosphere">Greenmosphere Initiative</a>
+        <a href="#results">Results &amp; Impact</a>
+      </nav>
+    </aside>
 
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="result-card-label">Content Performance</div>
-        <div class="result-item"><div class="result-num">14M+</div><div class="result-sub">Views across sustainability content</div></div>
-        <div class="result-item"><div class="result-num">47M+</div><div class="result-sub">Total reach across platforms</div></div>
-        <div class="result-item"><div class="result-num">4%</div><div class="result-sub">Average engagement rate across social channels</div></div>
-      </div>
-      <div class="result-card">
-        <div class="result-card-label">Narrative Coherence</div>
-        <div class="result-item"><div class="result-num">7</div><div class="result-sub">Business units aligned under one sustainability narrative</div></div>
-        <div class="result-item"><div class="result-num">5</div><div class="result-sub">UN SDGs explicitly communicated across content</div></div>
-      </div>
-      <div class="result-card">
-        <div class="result-card-label">Recognition</div>
-        <div class="result-item"><div class="result-num">1st</div><div class="result-sub">ESG Initiative of the Year — ET Energyworld Annual Gas Conclave</div></div>
-        <div class="result-item"><div class="result-num">National</div><div class="result-sub">Visibility across India's energy and sustainability media</div></div>
-      </div>
-    </div>
+    <article>
+      <!-- Section: Problem -->
+      <section class="section" id="problem">
+        <span class="section-label problem">The Problem</span>
+        <h2>Decarbonisation is measurable for engineers. Invisible for everyone else.</h2>
+        <p class="lede dropcap">Across ports, renewable energy, city gas distribution and transmission, Adani Group businesses were making significant environmental progress. The investments were real. The impact was measurable. But for public audiences, the communication was largely technical, disclosure-driven and impossible to relate to.</p>
+        <p>Terms like emissions reduction, net-zero commitments and energy transition carried precise meaning for investors and policymakers. For communities living near these operations, they meant nothing. Without translation, sustainability risked being perceived as corporate reporting—something companies say, not something they do.</p>
 
-    <div class="impact-block">
-      <div class="impact-title">What this work actually was</div>
-      <div class="impact-body">Infrastructure companies don't just sell products — they must justify their existence socially. This was not marketing. It was legitimacy communication. The work helped move Adani Group's sustainability story from investor disclosure to public understanding, and from corporate claim to community participation — across seven businesses, at national scale.</div>
-    </div>
-  </section>
+        <div class="pull-quote">
+          <p>"People trust sustainability not when it is claimed, but when they can understand how it affects their lives."</p>
+        </div>
 
-</div>
+        <p>Different stakeholders needed different things from the same message: investors needed disclosures, policymakers needed compliance signals, communities needed visible impact, and media needed accountability narratives. The communication was failing all of them by trying to speak to none of them specifically.</p>
+      </section>
 
-<footer>
-  <p>Adani Group · <span>Sustainability Narrative Communication</span> · ESG & Digital · Portfolio Case Study</p>
-</footer>
+      <!-- Section: Strategic Shift -->
+      <section class="section" id="shift">
+        <span class="section-label strategy">The Strategic Shift</span>
+        <h2>From reporting to human relevance.</h2>
+        <p>The core strategic move was to stop treating sustainability as data to be disclosed and start treating it as impact to be explained. This required a shift in both framing and language—applied consistently across seven business units with different audiences and different tones of voice.</p>
 
+        <div class="shift-block">
+          <div class="shift-col">
+            <div class="shift-label">Before</div>
+            <div class="shift-item">We installed 2.3 GW of solar capacity</div>
+            <div class="shift-item">Emissions reduced by X metric tonnes</div>
+            <div class="shift-item">Net-zero commitment by 2050</div>
+            <div class="shift-item">Energy transition infrastructure</div>
+            <div class="shift-item">Efficiency improvement programs</div>
+          </div>
+          <div class="shift-col">
+            <div class="shift-label active">After</div>
+            <div class="shift-item active">Energy sufficient for 30,000 homes — clean</div>
+            <div class="shift-item active">Cleaner air for the cities we operate in</div>
+            <div class="shift-item active">Building the infrastructure your children inherit</div>
+            <div class="shift-item active">Gas that replaces coal in your kitchen and city</div>
+            <div class="shift-item active">Less waste, more reach — infrastructure that does more</div>
+          </div>
+        </div>
+      </section>
 
+      <!-- Section: Translation Method -->
+      <section class="section" id="translation">
+        <span class="section-label">Translation Method</span>
+        <h2>Technical inputs. Human outputs.</h2>
+        <p>The most important communication discipline was converting infrastructure metrics into consequences people could picture. Rather than leading with generation numbers, capacity additions or reduction percentages, every piece of communication was reverse-engineered from a human question: what does this mean for someone living near this project?</p>
 
+        <div class="translation-grid">
+          <div class="translation-card">
+            <div class="tc-before">
+              <span class="tc-label">Technical input</span>
+              <div class="tc-text">"1 kW of solar capacity installed"</div>
+            </div>
+            <div class="tc-after">
+              <span class="tc-label after">Public communication</span>
+              <div class="tc-text after">Energy sufficient to power a family home for a year—without a single gram of CO₂</div>
+            </div>
+          </div>
+          <div class="translation-card">
+            <div class="tc-before">
+              <span class="tc-label">Technical input</span>
+              <div class="tc-text">"City gas distribution network expansion"</div>
+            </div>
+            <div class="tc-after">
+              <span class="tc-label after">Public communication</span>
+              <div class="tc-text after">Fewer trucks, less smoke, cleaner air—piped gas replacing cylinders across your city</div>
+            </div>
+          </div>
+          <div class="translation-card">
+            <div class="tc-before">
+              <span class="tc-label">Technical input</span>
+              <div class="tc-text">"Efficiency improvement at port operations"</div>
+            </div>
+            <div class="tc-after">
+              <span class="tc-label after">Public communication</span>
+              <div class="tc-text after">India's trade moving faster, with a lighter footprint on the coastline it crosses</div>
+            </div>
+          </div>
+          <div class="translation-card">
+            <div class="tc-before">
+              <span class="tc-label">Technical input</span>
+              <div class="tc-text">"Net-zero commitment by 2050"</div>
+            </div>
+            <div class="tc-after">
+              <span class="tc-label after">Public communication</span>
+              <div class="tc-text after">The infrastructure we build today is designed for the India your children will live in</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- Section: Multimedia Series -->
+      <section class="section" id="multimedia">
+        <span class="section-label">Multimedia Strategy</span>
+        <h2>Short-form &amp; campaign video reels.</h2>
+        <p>Multi-platform storytelling bringing the green energy and emissions reduction efforts to life across digital channels.</p>
+
+        <!-- Vertical Reels Grid -->
+        <div class="vertical-reel-grid">
+          <div class="video-card-vertical">
+            <div class="video-frame-vertical">
+              <iframe src="https://www.youtube.com/embed/t3IPA2qpqaU?rel=0&amp;modestbranding=1" title="#WinderfulLife | Adani Green Energy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">#WinderfulLife | Adani Green Energy</div>
+          </div>
+          <div class="video-card-vertical">
+            <div class="video-frame-vertical">
+              <iframe src="https://www.youtube.com/embed/QqXbUEmrMC0?rel=0&amp;modestbranding=1" title="#GlobalWindDay | Adani Green Energy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">#GlobalWindDay | Adani Green Energy</div>
+          </div>
+        </div>
+
+        <!-- Horizontal Video Grid -->
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/r2_e_3Zs6DY?rel=0&amp;modestbranding=1" title="iCan - reduce emissions" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">iCan — Reduce Emissions</div>
+          </div>
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/5zr1BNsmHKw?rel=0&amp;modestbranding=1" title="#GeneratingGoodness" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-caption">#GeneratingGoodness — Adani Green Energy</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Execution & Pillars -->
+      <section class="section" id="execution">
+        <span class="section-label">Execution</span>
+        <h2>Three pillars. Seven businesses.</h2>
+        <p>The work was structured around three communication workstreams, each addressing a different dimension of the sustainability story across all business units.</p>
+
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-num">01</div>
+            <div class="pillar-title">Environmental Responsibility</div>
+            <div class="pillar-desc">Translated renewable energy and city gas transition into relatable public language. Connected project-level activity to air quality, climate and community benefit across AGEL, ATGL, AEL and AESL.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">02</div>
+            <div class="pillar-title">Community Participation</div>
+            <div class="pillar-desc">Communicated the Greenmosphere initiative—plantation drives, school sustainability programs and energy audits—as shared public action rather than corporate CSR.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">03</div>
+            <div class="pillar-title">Cross-Business Alignment</div>
+            <div class="pillar-desc">Reviewed and aligned sustainability messaging across all seven business units. Ensured language, tone and narrative were consistent at group level while remaining authentic.</div>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.6rem; font-weight: 700;">Aligned UN Sustainable Development Goals:</p>
+        <div class="pills-container">
+          <div class="pill-item">SDG 7 — Clean Energy</div>
+          <div class="pill-item">SDG 11 — Sustainable Cities</div>
+          <div class="pill-item">SDG 13 — Climate Action</div>
+          <div class="pill-item">SDG 9 — Industry &amp; Infrastructure</div>
+          <div class="pill-item">SDG 17 — Partnerships</div>
+        </div>
+      </section>
+
+      <!-- Section: Greenmosphere -->
+      <section class="section" id="greenmosphere">
+        <span class="section-label">Greenmosphere</span>
+        <h2>The campaign that made renewable energy visible.</h2>
+        <p>Greenmosphere—Adani Total Gas's Low Carbon Society initiative—was the most visible expression of this communication strategy. Renewable energy projects are massive but invisible. For most citizens, renewable energy lives as a policy concept, not a lived experience.</p>
+        <p>Greenmosphere was built as a translation project. Rather than communicating megawatts and capacity additions, it spoke about air, community, future generations and everyday life. It reframed environmental responsibility from a corporate claim into a shared community effort.</p>
+
+        <div class="pull-quote">
+          <p>"ESG Initiative of the Year — ET Energyworld Annual Gas Conclave. Recognised at one of India's leading energy sector forums."</p>
+        </div>
+      </section>
+
+      <!-- Section: Results -->
+      <section class="section" id="results">
+        <span class="section-label results">Results</span>
+        <h2>Reach, engagement and narrative shift.</h2>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <span class="result-card-label">Content Performance</span>
+            <div class="result-num">14M+</div>
+            <div class="result-sub">Views across sustainability content with 47M+ total reach.</div>
+          </div>
+          <div class="result-card">
+            <span class="result-card-label">Narrative Alignment</span>
+            <div class="result-num">7</div>
+            <div class="result-sub">Business units aligned under one coherent narrative spine.</div>
+          </div>
+          <div class="result-card">
+            <span class="result-card-label">Industry Honor</span>
+            <div class="result-num">1st</div>
+            <div class="result-sub">ESG Initiative of the Year award at ET Energyworld Gas Conclave.</div>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>"Infrastructure companies don't just sell products—they must justify their existence socially. This was legitimacy communication at national scale."</p>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Note -->
+    <aside class="side-card">
+      <h3>ESG Legitimacy</h3>
+      <p>By shifting the story from technical disclosure to human consequences, Adani's sustainability narrative earned public trust and industry-wide recognition.</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    Adani Group · <span>Sustainability Narrative Communication</span> · Portfolio Case Study
+  </footer>
 </body>
 </html>
