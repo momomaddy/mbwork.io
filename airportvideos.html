@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airport Videos — Adani One / Mouris Bashir</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --paper: #f7f1e3;
+      --paper-soft: #fffaf0;
+      --ink: #17130e;
+      --ink-soft: #423b34;
+      --muted: #766d62;
+      --rule: #211a14;
+      --red: #b92f1f;
+      --blue: #174f75;
+      --green: #32684c;
+      --yellow: #e4b93f;
+      --white: #fffdf7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23,19,14,0.035) 1px, transparent 1px) 0 0 / 24px 24px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 54px;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: rgba(247, 241, 227, 0.94);
+      border-bottom: 2px solid var(--rule);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { display: block; text-decoration: none; }
+    .nav-logo img { display: block; width: auto; height: 32px; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-link,
+    .nav-work-btn,
+    .nav-cta {
+      color: var(--ink);
+      font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-work { position: relative; }
+
+    .nav-work-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .nav-work-btn::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+    }
+
+    .work-dropdown {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      min-width: 250px;
+      background: var(--paper-soft);
+      border: 2px solid var(--rule);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
+
+    .nav-work:hover .work-dropdown,
+    .nav-work:focus-within .work-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .work-dropdown-label,
+    .work-dropdown a {
+      display: block;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      color: var(--ink);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .work-dropdown-label { color: var(--red); background: var(--yellow); }
+    .work-dropdown a:hover { background: var(--ink); color: var(--paper); }
+    .work-dropdown a:last-child { border-bottom: 0; }
+
+    .nav-cta {
+      padding: 0.55rem 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .issue-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem clamp(1rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-soft);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .issue-bar span:nth-child(2) {
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.5rem;
+      background: var(--yellow);
+    }
+
+    .issue-bar span:last-child { text-align: right; }
+
+    .hero {
+      border-bottom: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .hero-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.45fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: end;
+      padding: clamp(1.4rem, 4vw, 3.4rem);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .kicker {
+      width: max-content;
+      max-width: 100%;
+      background: var(--red);
+      color: var(--white);
+      padding: 0.35rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 2rem 0 1.2rem;
+      max-width: 13ch;
+      font-size: clamp(3rem, 6.2vw, 5.9rem);
+      line-height: 0.88;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      font-weight: 900;
+      overflow-wrap: normal;
+    }
+
+    .dek {
+      max-width: 720px;
+      margin: 0;
+      font: 400 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
+
+    .meta-item {
+      min-height: 94px;
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .meta-item:last-child { border-bottom: 0; }
+
+    .meta-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--red);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .meta-val {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-bottom: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .stat {
+      min-height: 150px;
+      padding: 1.2rem clamp(1rem, 2vw, 1.6rem);
+      border-right: 1px solid rgba(247, 241, 227, 0.35);
+    }
+
+    .stat:last-child { border-right: 0; }
+
+    .stat-num {
+      display: block;
+      margin-bottom: 0.6rem;
+      color: var(--yellow);
+      font-size: clamp(2.2rem, 4vw, 4.4rem);
+      font-weight: 900;
+      line-height: 0.9;
+    }
+
+    .stat-desc {
+      display: block;
+      max-width: 16rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.24fr) minmax(0, 900px) minmax(170px, 0.28fr);
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      width: min(1360px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .rail {
+      position: sticky;
+      top: 76px;
+      align-self: start;
+      border-top: 2px solid var(--rule);
+      padding-top: 0.8rem;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .rail strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--red);
+    }
+
+    .rail nav {
+      all: unset;
+      display: block;
+      margin-top: 1.2rem;
+    }
+
+    .rail nav a {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 0.64rem;
+    }
+
+    .rail nav a:hover { color: var(--red); }
+
+    article {
+      background: var(--paper-soft);
+      border-left: 2px solid var(--rule);
+      border-right: 2px solid var(--rule);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .section {
+      padding: clamp(2.2rem, 5vw, 4.2rem) 0;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .section:last-child { border-bottom: 0; }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--rule);
+      background: var(--green);
+      color: var(--white);
+      padding: 0.22rem 0.5rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font: 700 clamp(2rem, 4vw, 3.5rem)/0.98 "Libre Baskerville", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 1.15rem;
+      font: 400 1.02rem/1.78 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      max-width: 760px;
+      font-size: clamp(1.18rem, 2.2vw, 1.58rem);
+      line-height: 1.62;
+      color: var(--ink);
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      padding: 0.18rem 0.42rem 0 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 5.4rem;
+      font-weight: 900;
+      line-height: 0.78;
+      color: var(--red);
+    }
+
+    /* Featured video grid — the seven Gateway films */
+    .film-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin: 1.6rem 0 0.4rem;
+    }
+
+    .film-card {
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 7px 7px 0 var(--red);
+    }
+
+    .film-card:nth-child(3n+2) { box-shadow: 7px 7px 0 var(--blue); }
+    .film-card:nth-child(3n+3) { box-shadow: 7px 7px 0 var(--green); }
+
+    .film-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .film-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .film-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.7rem 0.85rem;
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    .film-caption .film-city {
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .film-caption .film-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    @media (max-width: 720px) {
+      .film-grid { grid-template-columns: 1fr; }
+    }
+
+    .pull-quote {
+      margin: 2rem 0;
+      padding: 1.2rem 0 1.2rem 1.2rem;
+      border-left: 8px solid var(--yellow);
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .pull-quote p {
+      margin: 0;
+      max-width: 640px;
+      color: var(--ink);
+      font-size: clamp(1.35rem, 3vw, 2.15rem);
+      line-height: 1.24;
+      font-style: italic;
+    }
+
+    /* Directory / index of the wider catalogue */
+    .catalogue {
+      margin: 1.8rem 0 0;
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    .cat-block {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .cat-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      background: var(--ink);
+      color: var(--paper);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .cat-head h3 {
+      margin: 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .cat-count {
+      font-size: 0.64rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      white-space: nowrap;
+    }
+
+    .cat-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cat-links a {
+      display: block;
+      padding: 0.68rem 1rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .cat-links a:hover { background: var(--yellow); }
+    .cat-links a:nth-child(2n) { border-right: 0; }
+
+    .cat-links a.view-all {
+      background: var(--paper-soft);
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.68rem;
+    }
+
+    @media (max-width: 560px) {
+      .cat-links { grid-template-columns: 1fr; }
+      .cat-links a { border-right: 0; }
+    }
+
+    .side-card {
+      align-self: start;
+      border: 2px solid var(--rule);
+      background: var(--blue);
+      color: var(--white);
+      padding: 1rem;
+      box-shadow: 7px 7px 0 var(--yellow);
+      position: sticky;
+      top: 76px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .side-card p {
+      margin: 0 0 1rem;
+      max-width: none;
+      color: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .side-card p:last-child { margin-bottom: 0; }
+
+    footer {
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      border-top: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .hero-copy { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-shell { grid-template-columns: 1fr; }
+      .rail,
+      .side-card { position: static; }
+      article { border: 2px solid var(--rule); }
+    }
+
+    @media (max-width: 720px) {
+      nav { height: auto; min-height: 54px; align-items: flex-start; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+      .nav-right { flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem; }
+      .nav-link,
+      .nav-work-btn,
+      .nav-cta { font-size: 0.6rem; }
+      .work-dropdown {
+        position: fixed;
+        top: 54px;
+        left: 1rem;
+        right: 1rem;
+        width: auto;
+        min-width: 0;
+        transform: translateY(-8px);
+      }
+      .nav-work:hover .work-dropdown,
+      .nav-work:focus-within .work-dropdown {
+        transform: translateY(0);
+      }
+      .issue-bar { grid-template-columns: 1fr; gap: 0.45rem; }
+      .issue-bar span:last-child { text-align: left; }
+      h1 { font-size: clamp(2.7rem, 13.2vw, 3.5rem); }
+      .hero-meta,
+      .stats { grid-template-columns: 1fr; }
+      .meta-item,
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .meta-item:last-child,
+      .stat:last-child { border-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
+    </a>
+    <div class="nav-right">
+      <div class="nav-work" tabindex="0">
+        <button class="nav-work-btn" aria-haspopup="true">Work</button>
+        <div class="work-dropdown" role="menu">
+          <div class="work-dropdown-label">Case Studies</div>
+          <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+          <a href="HorizonX.html">Horizon X - hear.com</a>
+          <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+          <a href="adl_equally.html">ADL Is EquAlly</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="OYO.html">OYO</a>
+          <a href="fortune.html">Fortune</a>
+          <a href="police_scotland.html">Police Scotland</a>
+          <a href="FarmPik.html">FarmPik</a>
+          <a href="BookMyForex.html">BookMyForex</a>
+          <a href="moment_marketing.html">Moment Marketing</a>
+          <a href="ONBC.html">One Nation Billion Celebrations</a>
+          <a href="airportvideos.html">Airport Videos</a>
+        </div>
+      </div>
+      <a href="bio_gq.html" class="nav-link">About</a>
+      <a href="eh5tories.html" class="nav-link">EH5tories</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+    </div>
+  </nav>
+
+  <div class="issue-bar">
+    <span>Adani Digital Labs</span>
+    <span>Video Direction</span>
+    <span>#AirportVideos</span>
+  </div>
+
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <div class="kicker">Case Study / Video</div>
+        <h1>Airport Videos</h1>
+        <p class="dek">A working library of short-form films for Adani One — seven airports turned into a single, recognisable voice across guides, feedback, dining, heritage and destination content.</p>
+      </div>
+      <div class="hero-meta" aria-label="Project details">
+        <div class="meta-item">
+          <span class="meta-label">Client</span>
+          <span class="meta-val">Adani Digital Labs / Adani One</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Scope</span>
+          <span class="meta-val">Video content strategy and direction across the Adani One video gallery</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Airports</span>
+          <span class="meta-val">Mumbai, Ahmedabad, Lucknow, Jaipur, Guwahati, Mangaluru, Thiruvananthapuram</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Source</span>
+          <span class="meta-val"><a href="https://www.adanione.com/video-gallery" style="color: var(--ink);">adanione.com/video-gallery ↗</a></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats" aria-label="Library scale">
+    <div class="stat">
+      <span class="stat-num">7</span>
+      <span class="stat-desc">Airports covered, one gateway film each</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">80+</span>
+      <span class="stat-desc">Videos live across the Adani One gallery</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">9</span>
+      <span class="stat-desc">Content tracks: guides, services, heritage, destinations</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">16</span>
+      <span class="stat-desc">Airport-to-airport connection guides</span>
+    </div>
+  </section>
+
+  <main class="article-shell">
+    <aside class="rail">
+      <strong>On This Page</strong>
+      Gateway films, then the full catalogue by track.
+      <nav>
+        <a href="#gateway">The Gateway Films</a>
+        <a href="#catalogue">Full Catalogue</a>
+      </nav>
+    </aside>
+
+    <article>
+      <section class="section" id="gateway">
+        <span class="section-label">The Gateway Films</span>
+        <h2>Seven airports, one welcome.</h2>
+        <p class="lede dropcap">Each Adani-run airport gets its own "Gateway to Seamless Experience" film — the flagship entry point into the wider video library, built to carry the same tone from Mumbai to Mangaluru while still feeling local.</p>
+        <p>The films walk a passenger through the same emotional arc everywhere: flight reminders, check-in, duty-free and F&amp;B on the go, cab booking, and a lounge close. The repetition is deliberate — it's what makes seven different airports read as one brand.</p>
+
+        <div class="film-grid">
+          <div class="film-card">
+            <div class="film-frame">
+              <iframe src="https://www.youtube.com/embed/qgvulxiIN7k" title="Gateway to Seamless Experience, Mumbai Airport" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="film-caption">
+              <span class="film-city">Mumbai</span>
+              <span class="film-tag">Gateway Film</span>
+            </div>
+          </div>
+          <div class="film-card">
+            <div class="film-frame">
+              <iframe src="https://www.youtube.com/embed/ri99im5jR8k" title="Gateway to Seamless Experience, Ahmedabad Airport" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="film-caption">
+              <span class="film-city">Ahmedabad</span>
+              <span class="film-tag">Gateway Film</span>
+            </div>
+          </div>
+          <div class="film-card">
+            <div class="film-frame">
+              <iframe src="https://www.youtube.com/embed/lasWTChyMiA" title="Gateway to Seamless Experience, Jaipur Airport" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="film-caption">
+              <span class="film-city">Jaipur</span>
+              <span class="film-tag">Gateway Film</span>
+            </div>
+          </div>
+          <div class="film-card">
+            <div class="film-frame">
+              <iframe src="https://www.youtube.com/embed/-adDF7olIak" title="Gateway to Seamless Experience, Lucknow Airport" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="film-caption">
+              <span class="film-city">Lucknow</span>
+              <span class="film-tag">Gateway Film</span>
+            </div>
+          </div>
+          <div class="film-card">
+            <div class="film-frame">
+              <iframe src="https://www.youtube.com/embed/eeT4tKdwJgA" title="Gateway to Seamless Experience, Guwahati Airport" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="film-caption">
+              <span class="film-city">Guwahati</span>
+              <span class="film-tag">Gateway Film</span>
+            </div>
+          </div>
+          <div class="film-card">
+            <div class="film-frame">
+              <iframe src="https://www.youtube.com/embed/j6OECIa1TVY" title="Gateway to Seamless Experience, Mangaluru Airport" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="film-caption">
+              <span class="film-city">Mangaluru</span>
+              <span class="film-tag">Gateway Film</span>
+            </div>
+          </div>
+        </div>
+        <div class="film-grid" style="grid-template-columns: minmax(0,1fr) minmax(0,1fr); margin-top: 0;">
+          <div class="film-card" style="grid-column: 1 / 2;">
+            <div class="film-frame">
+              <iframe src="https://www.youtube.com/embed/-xesvgPlytY" title="Gateway to Seamless Experience, Thiruvananthapuram Airport" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="film-caption">
+              <span class="film-city">Thiruvananthapuram</span>
+              <span class="film-tag">Gateway Film</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>Seven airports, one welcome — the same promise of goodness, told in a different accent each time.</p>
+        </div>
+      </section>
+
+      <section class="section" id="catalogue">
+        <span class="section-label">Full Catalogue</span>
+        <h2>Everything else in the library.</h2>
+        <p>Beyond the seven gateway films, the Adani One video gallery runs deep — practical guides, city-to-city connections, dining and shopping walkthroughs, heritage trails and destination picks, all built to answer a traveller's next question before they ask it. A sample from each track below; the full set lives on Adani One.</p>
+
+        <div class="catalogue">
+          <div class="cat-block">
+            <div class="cat-head">
+              <h3>Airport-to-Airport Guides</h3>
+              <span class="cat-count">16 videos</span>
+            </div>
+            <div class="cat-links">
+              <a href="https://www.adanione.com/video-gallery/mumbai-to-ahmedabad-airport-guide" target="_blank" rel="noopener">Mumbai → Ahmedabad</a>
+              <a href="https://www.adanione.com/video-gallery/ahmedabad-to-jaipur-airport-guide" target="_blank" rel="noopener">Ahmedabad → Jaipur</a>
+              <a href="https://www.adanione.com/video-gallery/jaipur-to-guwahati-airport-guide" target="_blank" rel="noopener">Jaipur → Guwahati</a>
+              <a href="https://www.adanione.com/video-gallery/lucknow-to-mumbai-airport-guide" target="_blank" rel="noopener">Lucknow → Mumbai</a>
+              <a href="https://www.adanione.com/video-gallery" class="view-all" target="_blank" rel="noopener">View all 16 on Adani One ↗</a>
+            </div>
+          </div>
+
+          <div class="cat-block">
+            <div class="cat-head">
+              <h3>Airport Feedback</h3>
+              <span class="cat-count">7 videos</span>
+            </div>
+            <div class="cat-links">
+              <a href="https://www.adanione.com/video-gallery/mumbai-airport-feedback" target="_blank" rel="noopener">Mumbai Airport Feedback</a>
+              <a href="https://www.adanione.com/video-gallery/lucknow-airport-feedback" target="_blank" rel="noopener">Lucknow Airport Feedback</a>
+              <a href="https://www.adanione.com/video-gallery/jaipur-airport-feedback" target="_blank" rel="noopener">Jaipur Airport Feedback</a>
+              <a href="https://www.adanione.com/video-gallery/thiruvananthapuram-airport-feedback" target="_blank" rel="noopener">Thiruvananthapuram Feedback</a>
+              <a href="https://www.adanione.com/video-gallery" class="view-all" target="_blank" rel="noopener">View all 7 on Adani One ↗</a>
+            </div>
+          </div>
+
+          <div class="cat-block">
+            <div class="cat-head">
+              <h3>Dining &amp; Shopping</h3>
+              <span class="cat-count">6 videos</span>
+            </div>
+            <div class="cat-links">
+              <a href="https://www.adanione.com/video-gallery/delicious-dining-at-lucknow-airport" target="_blank" rel="noopener">Delicious Dining, Lucknow</a>
+              <a href="https://www.adanione.com/video-gallery/shopping-delight-at-lucknow-airport" target="_blank" rel="noopener">Shopping Delight, Lucknow</a>
+              <a href="https://www.adanione.com/video-gallery/dining-at-terminal-2-international-departure-mumbai-airport" target="_blank" rel="noopener">Dining, T2 International Departure Mumbai</a>
+              <a href="https://www.adanione.com/video-gallery/duty-free-shops-at-lucknow-airport" target="_blank" rel="noopener">Duty Free Shops, Lucknow</a>
+              <a href="https://www.adanione.com/video-gallery" class="view-all" target="_blank" rel="noopener">View all 6 on Adani One ↗</a>
+            </div>
+          </div>
+
+          <div class="cat-block">
+            <div class="cat-head">
+              <h3>Payments &amp; Rewards</h3>
+              <span class="cat-count">7 videos</span>
+            </div>
+            <div class="cat-links">
+              <a href="https://www.adanione.com/video-gallery/how-to-earn-adani-reward-points" target="_blank" rel="noopener">How to Earn Reward Points</a>
+              <a href="https://www.adanione.com/video-gallery/where-to-find-reward-points" target="_blank" rel="noopener">Where to Find Reward Points</a>
+              <a href="https://www.adanione.com/video-gallery/payment-via-credit-card" target="_blank" rel="noopener">Payment via Credit Card</a>
+              <a href="https://www.adanione.com/video-gallery/wallet-payments" target="_blank" rel="noopener">Wallet Payments</a>
+              <a href="https://www.adanione.com/video-gallery" class="view-all" target="_blank" rel="noopener">View all 7 on Adani One ↗</a>
+            </div>
+          </div>
+
+          <div class="cat-block">
+            <div class="cat-head">
+              <h3>Practical Traveller Info</h3>
+              <span class="cat-count">8 videos</span>
+            </div>
+            <div class="cat-links">
+              <a href="https://www.adanione.com/video-gallery/lucknow-airport-restricted-items" target="_blank" rel="noopener">Lucknow Restricted Items</a>
+              <a href="https://www.adanione.com/video-gallery/public-transport-at-mumbai-airport" target="_blank" rel="noopener">Public Transport, Mumbai</a>
+              <a href="https://www.adanione.com/video-gallery/learn-the-lingo-for-mumbai" target="_blank" rel="noopener">Learn the Lingo for Mumbai</a>
+              <a href="https://www.adanione.com/video-gallery/types-of-travellers-part-1" target="_blank" rel="noopener">Types of Travellers — Part 1</a>
+              <a href="https://www.adanione.com/video-gallery" class="view-all" target="_blank" rel="noopener">View all 8 on Adani One ↗</a>
+            </div>
+          </div>
+
+          <div class="cat-block">
+            <div class="cat-head">
+              <h3>Airport Heritage</h3>
+              <span class="cat-count">7 videos</span>
+            </div>
+            <div class="cat-links">
+              <a href="https://www.adanione.com/video-gallery/best-heritage-places-in-and-around-jaipur" target="_blank" rel="noopener">Heritage Around Jaipur</a>
+              <a href="https://www.adanione.com/video-gallery/best-heritage-places-in-and-around-mumbai" target="_blank" rel="noopener">Heritage Around Mumbai</a>
+              <a href="https://www.adanione.com/video-gallery/best-heritage-places-in-and-around-ahmedabad" target="_blank" rel="noopener">Heritage Around Ahmedabad</a>
+              <a href="https://www.adanione.com/video-gallery/best-heritage-places-in-and-around-guwahati" target="_blank" rel="noopener">Heritage Around Guwahati</a>
+              <a href="https://www.adanione.com/video-gallery" class="view-all" target="_blank" rel="noopener">View all 7 on Adani One ↗</a>
+            </div>
+          </div>
+
+          <div class="cat-block">
+            <div class="cat-head">
+              <h3>Weekend Getaways</h3>
+              <span class="cat-count">7 videos</span>
+            </div>
+            <div class="cat-links">
+              <a href="https://www.adanione.com/video-gallery/weekend-getaways-from-mumbai" target="_blank" rel="noopener">Getaways from Mumbai</a>
+              <a href="https://www.adanione.com/video-gallery/weekend-getaways-from-jaipur" target="_blank" rel="noopener">Getaways from Jaipur</a>
+              <a href="https://www.adanione.com/video-gallery/weekend-getaways-from-ahmedabad" target="_blank" rel="noopener">Getaways from Ahmedabad</a>
+              <a href="https://www.adanione.com/video-gallery/weekend-getaways-from-guwahati" target="_blank" rel="noopener">Getaways from Guwahati</a>
+              <a href="https://www.adanione.com/video-gallery" class="view-all" target="_blank" rel="noopener">View all 7 on Adani One ↗</a>
+            </div>
+          </div>
+
+          <div class="cat-block">
+            <div class="cat-head">
+              <h3>Top 5 Domestic Destinations</h3>
+              <span class="cat-count">7 videos</span>
+            </div>
+            <div class="cat-links">
+              <a href="https://www.adanione.com/video-gallery/top-5-domestic-destinations-from-mumbai" target="_blank" rel="noopener">From Mumbai</a>
+              <a href="https://www.adanione.com/video-gallery/top-5-domestic-destinations-from-jaipur" target="_blank" rel="noopener">From Jaipur</a>
+              <a href="https://www.adanione.com/video-gallery/top-5-domestic-destinations-from-lucknow" target="_blank" rel="noopener">From Lucknow</a>
+              <a href="https://www.adanione.com/video-gallery/top-5-domestic-destinations-from-ahmedabad" target="_blank" rel="noopener">From Ahmedabad</a>
+              <a href="https://www.adanione.com/video-gallery" class="view-all" target="_blank" rel="noopener">View all 7 on Adani One ↗</a>
+            </div>
+          </div>
+
+          <div class="cat-block">
+            <div class="cat-head">
+              <h3>Top 5 International Destinations</h3>
+              <span class="cat-count">7 videos</span>
+            </div>
+            <div class="cat-links">
+              <a href="https://www.adanione.com/video-gallery/top-5-international-destinations-from-mumbai" target="_blank" rel="noopener">From Mumbai</a>
+              <a href="https://www.adanione.com/video-gallery/top-5-international-destinations-from-jaipur" target="_blank" rel="noopener">From Jaipur</a>
+              <a href="https://www.adanione.com/video-gallery/top-5-international-destinations-from-ahmedabad" target="_blank" rel="noopener">From Ahmedabad</a>
+              <a href="https://www.adanione.com/video-gallery/top-5-international-destinations-from-guwahati" target="_blank" rel="noopener">From Guwahati</a>
+              <a href="https://www.adanione.com/video-gallery" class="view-all" target="_blank" rel="noopener">View all 7 on Adani One ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <aside class="side-card">
+      <h3>Editorial Note</h3>
+      <p>Everything here is embedded and linked from Adani One's public video gallery — a working index of the video output rather than a standalone production.</p>
+      <p>The Gateway films are the throughline: same structure, seven cities, one system.</p>
+    </aside>
+  </main>
+
+  <footer>
+    Adani Digital Labs / Adani One Video Gallery — full library at <a href="https://www.adanione.com/video-gallery" target="_blank" rel="noopener">adanione.com/video-gallery</a>
+  </footer>
+</body>
+</html>
