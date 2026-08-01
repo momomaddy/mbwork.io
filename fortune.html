@@ -8,573 +8,942 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fortune #NayeBharatKiNayiDelivery — Case Study</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --deep: #1A0800; --orange: #E8631A; --amber: #F5A623;
-    --cream: #FDF8F2; --pale: #FEF3E8; --mist: #FADDBE;
-    --body: #3A2010; --muted: #8A6040; --ink: #2C1400;
-  }
-  body { background: var(--cream); color: var(--body); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--rule);
-  padding:0 3rem;height:52px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{display:block;text-decoration:none;}
-.nav-logo img{height:32px;width:auto;display:block;}
-.nav-right{display:flex;gap:2rem;align-items:center;}
-.nav-link{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
-}
-.nav-link:hover{opacity:1;}
-.nav-cta{
-  background:var(--ink);color:var(--cream)!important;
-  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  text-decoration:none;
-}
-  .video-column-grid {
-  display: flex;
-  gap: 30px; /* Space between the two videos */
-  margin-top: 2rem;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortune #NayeBharatKiNayiDelivery — Case Study / Mouris Bashir</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-.video-column-item {
-  flex: 1; /* Makes both columns equal width */
-  display: flex;
-  flex-direction: column;
-}
+    *, *::before, *::after { box-sizing: border-box; }
 
-/* This maintains the 16:9 cinematic ratio for the videos */
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  background: #000;
-}
+    :root {
+      --paper: #f7f1e3;
+      --paper-soft: #fffaf0;
+      --ink: #17130e;
+      --ink-soft: #423b34;
+      --muted: #766d62;
+      --rule: #211a14;
+      --red: #b92f1f;
+      --blue: #174f75;
+      --green: #32684c;
+      --yellow: #e4b93f;
+      --orange: #e8631a;
+      --white: #fffdf7;
+    }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    html { scroll-behavior: smooth; }
 
-.video-meta {
-  padding-top: 1rem;
-}
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23,19,14,0.035) 1px, transparent 1px) 0 0 / 24px 24px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
 
-.video-tag {
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--rust);
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-}
+    /* Sticky Navigation Header */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 54px;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: rgba(247, 241, 227, 0.94);
+      border-bottom: 2px solid var(--rule);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.video-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-/* Container for the vertical grid */
-.video-vertical-grid {
-  display: flex;
-  gap: 40px;
-  justify-content: center; /* Centers the vertical 'phones' */
-  margin-top: 3rem;
-}
+    .nav-logo { display: block; text-decoration: none; }
+    .nav-logo img { display: block; width: auto; height: 32px; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-link,
+    .nav-work-btn,
+    .nav-cta {
+      color: var(--ink);
+      font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-.video-vertical-item {
-  flex: 0 1 320px; /* Constrains the width so it looks like a phone */
-  display: flex;
-  flex-direction: column;
-}
+    .nav-work { position: relative; }
 
-/* The magic number for 9:16 Vertical Ratio */
-.video-container.vertical {
-  position: relative;
-  width: 100%;
-  padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
-  height: 0;
-  background: var(--ink);
-  border-radius: 8px; /* Optional: slight curve to look like a screen */
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
+    .nav-work-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
 
-.video-container.vertical iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    .nav-work-btn::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+    }
 
-.video-meta {
-  padding-top: 1.2rem;
-  text-align: left;
-}
+    .work-dropdown {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      min-width: 250px;
+      background: var(--paper-soft);
+      border: 2px solid var(--rule);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
 
-/* Mobile Tweak: Don't let them get too small on phones */
-@media (max-width: 768px) {
-  .video-vertical-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .video-vertical-item {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-/* Mobile Tweak: Stack them back to vertical when the screen is narrow */
-@media (max-width: 768px) {
-  .video-column-grid {
-    flex-direction: column;
-  }
-}
-  .showreel-row {
-  display: flex; /* Forces items to sit side-by-side */
-  gap: 15px;    /* Space between the images */
-  width: 100%;
-  margin: 2rem 0;
-  overflow-x: auto; /* Allows horizontal scrolling if the images are too wide */
-  padding-bottom: 10px;
-}
+    .nav-work:hover .work-dropdown,
+    .nav-work:focus-within .work-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
 
-.creative-cell {
-  flex: 1;      /* Makes all images the same width */
-  min-width: 300px; /* Adjust this based on how large you want each 'frame' */
-  position: relative;
-}
+    .work-dropdown-label,
+    .work-dropdown a {
+      display: block;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      color: var(--ink);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-.creative-cell img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover; /* Ensures the images fill the space nicely */
-}
+    .work-dropdown-label { color: var(--red); background: var(--yellow); }
+    .work-dropdown a:hover { background: var(--ink); color: var(--paper); }
+    .work-dropdown a:last-child { border-bottom: 0; }
 
-/* Optional: Hide scrollbar for a cleaner 'Cinematic' look */
-.showreel-row::-webkit-scrollbar {
-  display: none;
-}
-.showreel-row {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
-}
-/* ── WORK DROPDOWN ── */
-.nav-work{position:relative;}
-.nav-work-btn{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);background:none;border:none;cursor:pointer;
-  opacity:0.6;transition:opacity 0.2s;padding:0;
-  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
-}
-.nav-work-btn::after{
-  content:'';display:inline-block;width:0;height:0;
-  border-left:3px solid transparent;border-right:3px solid transparent;
-  border-top:4px solid currentColor;transition:transform 0.2s;
-}
-.nav-work:hover .nav-work-btn,
-.nav-work:focus-within .nav-work-btn{opacity:1;}
-.nav-work:hover .nav-work-btn::after,
-.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
+    .nav-cta {
+      padding: 0.55rem 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-.work-dropdown{
-  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
-  background:var(--cream);border:1px solid var(--rule);
-  min-width:240px;
-  opacity:0;visibility:hidden;
-  transform:translateX(-50%) translateY(-6px);
-  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
-  z-index:200;
-}
-.nav-work:hover .work-dropdown,
-.nav-work:focus-within .work-dropdown{
-  opacity:1;visibility:visible;
-  transform:translateX(-50%) translateY(0);
-}
-.work-dropdown a{
-  display:block;padding:0.7rem 1.2rem;
-  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.65;
-  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
-}
-.work-dropdown a:last-child{border-bottom:none;}
-.work-dropdown a:hover{opacity:1;background:var(--paper2);}
-.work-dropdown-label{
-  padding:0.6rem 1.2rem 0.4rem;
-  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
-  }
-  .hero { position: relative; background: var(--deep); min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem 3rem 5rem; overflow: hidden; }
-  .hero-glow { position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(circle at 72% 22%, rgba(232,99,26,0.25) 0%, transparent 52%), radial-gradient(circle at 10% 75%, rgba(245,166,35,0.12) 0%, transparent 45%); }
-  .ring { position: absolute; border-radius: 50%; pointer-events: none; }
-  .r1 { width: 480px; height: 480px; top: -110px; right: -90px; border: 1px solid rgba(232,99,26,0.18); }
-  .r2 { width: 300px; height: 300px; top: -20px; right: 40px; border: 1px solid rgba(245,166,35,0.1); }
-  .r3 { width: 680px; height: 680px; bottom: -240px; left: -200px; border: 1px solid rgba(232,99,26,0.06); }
+    /* Sub-header Issue Bar */
+    .issue-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem clamp(1rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-soft);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
 
-  .hero-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); font-weight: 500; margin-bottom: 2rem; }
-  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5.2vw, 4.8rem); font-weight: 900; line-height: 1.05; color: #FDF4E8; margin-bottom: 1.5rem; max-width: 720px; }
-  .hero-title em { font-style: italic; color: #F5C47A; }
-  .hero-sub { font-size: 1rem; color: rgba(253,244,232,0.48); max-width: 520px; margin-bottom: 3rem; font-weight: 300; }
-  .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; }
-  .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
-  .meta-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,244,232,0.28); }
-  .meta-val { font-size: 0.87rem; color: #FDF4E8; font-weight: 400; }
+    .issue-bar span:nth-child(2) {
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.5rem;
+      background: var(--yellow);
+    }
 
-  .stat-strip { background: var(--deep); padding: 4rem 3rem; border-top: 1px solid rgba(232,99,26,0.15); }
-  .stat-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 2.5rem; }
-  .stat { display: flex; flex-direction: column; gap: 0.3rem; }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: #F5C47A; line-height: 1; }
-  .stat-desc { font-size: 0.76rem; color: rgba(253,244,232,0.42); line-height: 1.5; max-width: 145px; }
+    .issue-bar span:last-child { text-align: right; }
 
-  .hashtag-strip { background: var(--orange); padding: 1.1rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .hashtag-main { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #FDF4E8; font-style: italic; }
-  .hashtag-sub { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(253,244,232,0.65); }
+    /* Hero Section */
+    .hero {
+      border-bottom: 2px solid var(--rule);
+      background: var(--paper);
+    }
 
-  .page { max-width: 920px; margin: 0 auto; padding: 0 2rem; }
-  section { padding: 5rem 0; border-bottom: 1px solid rgba(42,16,0,0.07); }
-  section:last-child { border-bottom: none; }
-  .section-tag { font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); font-weight: 500; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
-  .section-tag::after { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--orange); opacity: 0.45; }
-  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 1.8rem; }
-  h2 em { font-style: italic; color: var(--orange); }
-  p { font-size: 0.96rem; color: #3A2010; margin-bottom: 1.2rem; max-width: 700px; }
-  p:last-child { margin-bottom: 0; }
+    .hero-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.45fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: end;
+      padding: clamp(1.4rem, 4vw, 3.4rem);
+      border-bottom: 2px solid var(--rule);
+    }
 
-  .pull-quote { margin: 3rem 0; padding: 2rem 0 2rem 2rem; border-left: 3px solid var(--orange); }
-  .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: var(--ink); font-weight: 400; line-height: 1.5; margin-bottom: 0; max-width: 640px; }
+    .kicker {
+      width: max-content;
+      max-width: 100%;
+      background: var(--orange);
+      color: var(--white);
+      padding: 0.35rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-  /* First image (centered feature) */
-.creative-single {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0 3rem;
-}
+    h1 {
+      margin: 2rem 0 1.2rem;
+      max-width: 14ch;
+      font-size: clamp(2.8rem, 5.8vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      font-weight: 900;
+      overflow-wrap: normal;
+    }
 
-.creative-single img {
-  width: 100%;
-  max-width: 520px;
-  border: 1px solid var(--mist);
-}
-  .creative-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin: 2rem 0;
-}
+    .dek {
+      max-width: 720px;
+      margin: 0;
+      font: 400 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
 
-.creative-stack img {
-  width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
-  border: 1px solid var(--mist);
-}
-  .creative-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  margin: 1.5rem 0 3rem;
-}
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
 
-.creative-grid img {
-  width: 100%;
-  border: 1px solid var(--mist);
-  display: block;
-}
-  .creative-showcase { margin: 2.5rem 0; display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.5rem; align-items: start; }
-  .creative-img { width: 100%; display: block; border: 1px solid var(--mist); }
-  .creative-caption { padding: 1.5rem; background: var(--pale); border: 1px solid var(--mist); }
-  .creative-caption-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); font-weight: 500; margin-bottom: 0.8rem; }
-  .creative-headline { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1.3; margin-bottom: 0.8rem; }
-  .creative-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .meta-item {
+      min-height: 84px;
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-  .shift-block { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 2.5rem 0; border: 1px solid var(--mist); }
-  .shift-col { padding: 2rem; }
-  .shift-col:first-child { border-right: 1px solid var(--mist); background: var(--pale); }
-  .shift-label { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 1rem; }
-  .shift-label.active { color: var(--orange); }
-  .shift-item { font-size: 0.86rem; color: var(--muted); padding: 0.5rem 0; border-bottom: 1px solid var(--mist); line-height: 1.5; }
-  .shift-item:last-child { border-bottom: none; }
-  .shift-item.active { color: var(--body); font-weight: 400; }
+    .meta-item:last-child { border-bottom: 0; }
 
-  .formats { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1.2rem; margin: 2.5rem 0; }
-  .format-card { background: var(--pale); border: 1px solid var(--mist); padding: 1.6rem; }
-  .format-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--mist); line-height: 1; margin-bottom: 0.5rem; }
-  .format-title { font-size: 0.78rem; font-weight: 500; color: var(--orange); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.6rem; }
-  .format-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .meta-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--orange);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-  .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
-  .result-card { background: var(--pale); border: 1px solid var(--mist); padding: 1.5rem; }
-  .result-card-label { font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
-  .result-item { margin-bottom: 0.8rem; }
-  .result-item:last-child { margin-bottom: 0; }
-  .result-num { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--orange); line-height: 1; }
-  .result-sub { font-size: 0.76rem; color: var(--muted); line-height: 1.4; margin-top: 0.2rem; }
+    .meta-val {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
 
-  .impact-block { background: var(--deep); padding: 2.5rem; margin: 2.5rem 0; position: relative; overflow: hidden; }
-  .impact-block::before { content: ''; position: absolute; top: 0; right: 0; width: 220px; height: 220px; background: radial-gradient(circle, rgba(232,99,26,0.18) 0%, transparent 70%); }
-  .impact-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #F5C47A; font-weight: 700; margin-bottom: 0.6rem; }
-  .impact-body { font-size: 0.86rem; color: rgba(253,244,232,0.52); line-height: 1.7; margin-bottom: 0; max-width: 620px; }
+    /* Stats Grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-bottom: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-  .role-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0; }
-  .role-tag { background: rgba(232,99,26,0.08); border: 1px solid rgba(232,99,26,0.2); color: var(--orange); font-size: 0.72rem; letter-spacing: 0.08em; padding: 0.35rem 0.9rem; font-weight: 500; }
+    .stat {
+      min-height: 150px;
+      padding: 1.2rem clamp(1rem, 2vw, 1.6rem);
+      border-right: 1px solid rgba(247, 241, 227, 0.35);
+    }
 
-  footer { background: var(--deep); padding: 3rem; text-align: center; }
-  footer p { font-size: 0.76rem; color: rgba(253,244,232,0.26); margin: 0 auto; }
-  footer span { color: var(--amber); }
+    .stat:last-child { border-right: 0; }
 
-  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
-  @media (max-width: 700px) {
-    .shift-block, .creative-showcase { grid-template-columns: 1fr; }
-    .shift-col:first-child { border-right: none; border-bottom: 1px solid var(--mist); }
-    .hero { padding: 3rem 1.5rem 4rem; }
-    .stat-strip { padding: 3rem 1.5rem; }
-    .page { padding: 0 1.2rem; }
-  }
+    .stat-num {
+      display: block;
+      margin-bottom: 0.6rem;
+      color: var(--yellow);
+      font-size: clamp(2rem, 3.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 0.9;
+    }
 
+    .stat-desc {
+      display: block;
+      max-width: 16rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
 
-</style>
+    /* Article Shell & Rails */
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.22fr) minmax(0, 900px) minmax(170px, 0.26fr);
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      width: min(1360px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .rail {
+      position: sticky;
+      top: 76px;
+      align-self: start;
+      border-top: 2px solid var(--rule);
+      padding-top: 0.8rem;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .rail strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--orange);
+    }
+
+    .rail nav {
+      all: unset;
+      display: block;
+      margin-top: 1.2rem;
+    }
+
+    .rail nav a {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 0.64rem;
+    }
+
+    .rail nav a:hover { color: var(--orange); }
+
+    article {
+      background: var(--paper-soft);
+      border-left: 2px solid var(--rule);
+      border-right: 2px solid var(--rule);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .section {
+      padding: clamp(2.2rem, 5vw, 4.2rem) 0;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .section:last-child { border-bottom: 0; }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--rule);
+      background: var(--orange);
+      color: var(--white);
+      padding: 0.22rem 0.5rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .section-label.challenge { background: var(--red); }
+    .section-label.idea { background: var(--blue); }
+    .section-label.results { background: var(--ink); }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font: 700 clamp(2rem, 4vw, 3.2rem)/0.98 "Libre Baskerville", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 1.15rem;
+      font: 400 1.02rem/1.78 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      max-width: 760px;
+      font-size: clamp(1.18rem, 2.2vw, 1.55rem);
+      line-height: 1.62;
+      color: var(--ink);
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      padding: 0.18rem 0.42rem 0 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 5.4rem;
+      font-weight: 900;
+      line-height: 0.78;
+      color: var(--orange);
+    }
+
+    /* Pull Quotes */
+    .pull-quote {
+      margin: 2rem 0;
+      padding: 1.2rem 0 1.2rem 1.2rem;
+      border-left: 8px solid var(--yellow);
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .pull-quote p {
+      margin: 0;
+      max-width: 640px;
+      color: var(--ink);
+      font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    /* Video Media Card */
+    .media-card {
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 6px 6px 0 var(--orange);
+      margin: 2rem 0;
+      overflow: hidden;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .media-caption {
+      padding: 0.65rem 0.85rem;
+      background: var(--yellow);
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Horizontal Creative Reel */
+    .showreel-row {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding: 0.8rem 0 1.2rem;
+      margin: 1.6rem 0;
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .creative-cell {
+      flex: 0 0 280px;
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 4px 4px 0 var(--orange);
+    }
+
+    .creative-cell img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Strategic Shift Block */
+    .shift-block {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.6rem 0;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .shift-col {
+      padding: 1.2rem;
+    }
+
+    .shift-col:first-child {
+      border-right: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
+
+    .shift-label {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .shift-label.active { color: var(--orange); }
+
+    .shift-item {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .shift-item:last-child { border-bottom: 0; }
+    .shift-item.active { color: var(--ink); font-weight: 700; }
+
+    /* Formats Grid */
+    .formats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 1.6rem 0;
+    }
+
+    .format-card {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      padding: 1.2rem;
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .format-card:nth-child(2n) { box-shadow: 6px 6px 0 var(--orange); }
+    .format-card:nth-child(3n) { box-shadow: 6px 6px 0 var(--blue); }
+
+    .format-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .format-title {
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+
+    .format-desc {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* Role Pills / Tags */
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+
+    .pill-item {
+      padding: 0.5rem 0.9rem;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    /* Results Cards Grid */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 1.6rem 0;
+    }
+
+    .result-card {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      padding: 1.2rem;
+      box-shadow: 6px 6px 0 var(--orange);
+    }
+
+    .result-card:nth-child(2n) { box-shadow: 6px 6px 0 var(--yellow); }
+    .result-card:nth-child(3n) { box-shadow: 6px 6px 0 var(--blue); }
+
+    .result-card-label {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.6rem;
+    }
+
+    .result-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .result-sub {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      line-height: 1.4;
+    }
+
+    /* Sticky Side Card */
+    .side-card {
+      align-self: start;
+      border: 2px solid var(--rule);
+      background: var(--orange);
+      color: var(--white);
+      padding: 1rem;
+      box-shadow: 7px 7px 0 var(--yellow);
+      position: sticky;
+      top: 76px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .side-card p {
+      margin: 0 0 1rem;
+      max-width: none;
+      color: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .side-card p:last-child { margin-bottom: 0; }
+
+    footer {
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      border-top: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .hero-copy { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-shell { grid-template-columns: 1fr; }
+      .rail, .side-card { position: static; }
+      article { border: 2px solid var(--rule); }
+    }
+
+    @media (max-width: 720px) {
+      nav { height: auto; min-height: 54px; align-items: flex-start; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+      .nav-right { flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem; }
+      .nav-link, .nav-work-btn, .nav-cta { font-size: 0.6rem; }
+      .issue-bar { grid-template-columns: 1fr; gap: 0.45rem; }
+      .issue-bar span:last-child { text-align: left; }
+      h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+      .hero-meta, .stats { grid-template-columns: 1fr; }
+      .shift-block, .formats-grid, .results-grid { grid-template-columns: 1fr; }
+      .shift-col { border-right: 0; border-bottom: 1px solid var(--rule); }
+    }
+  </style>
 </head>
 <body>
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="M.png" alt="mb.work">
-  </a>
-  <div class="nav-right">
-    <!-- Work with dropdown -->
-    <div class="nav-work" tabindex="0">
-      <button class="nav-work-btn" aria-haspopup="true">Work</button>
-      <div class="work-dropdown" role="menu">
-        <div class="work-dropdown-label">Case Studies</div>
-        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
-        <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="ONBC.html">#OneNationBillionCelebrations</a>
-        <a href="adl_equally.html">ADL Is EquAlly</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="OYO.html">OYO</a>
-        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
-        <a href="police_scotland.html">Police Scotland</a>
-        <a href="FarmPik.html">FarmPik</a>
-        <a href="BookMyForex.html">BookMyForex</a>
-        <a href="moment_marketing.html">Moment Marketing</a>
+  <!-- Navigation Header -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
+    </a>
+    <div class="nav-right">
+      <div class="nav-work" tabindex="0">
+        <button class="nav-work-btn" aria-haspopup="true">Work</button>
+        <div class="work-dropdown" role="menu">
+          <div class="work-dropdown-label">Case Studies</div>
+          <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+          <a href="HorizonX.html">Horizon X - hear.com</a>
+          <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+          <a href="adl_equally.html">ADL Is EquAlly</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="OYO.html">OYO Valentine's</a>
+          <a href="OYO_OPEN.html">OYO OPEN</a>
+          <a href="OYO_Internal.html">OYO Internal Comms</a>
+          <a href="fortune.html">Fortune</a>
+          <a href="police_scotland.html">Police Scotland</a>
+          <a href="FarmPik.html">FarmPik</a>
+          <a href="BookMyForex.html">BookMyForex</a>
+          <a href="moment_marketing.html">Moment Marketing</a>
+          <a href="ONBC.html">One Nation Billion Celebrations</a>
+          <a href="airportvideos.html">Airport Videos</a>
+          <a href="execcomms.html">Executive Comms</a>
+        </div>
       </div>
+      <a href="bio_gq.html" class="nav-link">About</a>
+      <a href="eh5tories.html" class="nav-link">EH5tories</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
     </div>
-    <a href="bio_gq.html" class="nav-link">About</a>
-    <a href="eh5tories.html" class="nav-link">EH5tories</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-  </div>
   </nav>
 
-<div class="hero">
-  <div class="hero-glow"></div>
-  <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-  <div class="hero-label">Case Study · D2C Brand Launch · Content Strategy</div>
-  <h1 class="hero-title"> LEVELLING UP
-<em>GROCERY</em><br>SHOPPING HABITS</h1>
-  <p class="hero-sub">How Fortune Online was launched as India's first direct-to-consumer grocery platform and why the brief was never really about atta.</p>
-  <div class="hero-meta">
-    <div class="meta-item"><span class="meta-label">Brand</span><span class="meta-val">Fortune, Adani Wilmar</span></div>
-    <div class="meta-item"><span class="meta-label">Campaign</span><span class="meta-val">#NayeBharatKiNayiDelivery</span></div>
-    <div class="meta-item"><span class="meta-label">Year</span><span class="meta-val">2021</span></div>
-    <div class="meta-item"><span class="meta-label">Platform</span><span class="meta-val">Fortune Online App</span></div>
+  <!-- Sub-header Issue Bar -->
+  <div class="issue-bar">
+    <span>Fortune / Adani Wilmar</span>
+    <span>D2C Brand Launch</span>
+    <span>#NayeBharatKiNayiDelivery</span>
   </div>
-</div>
-<div class="stat-strip">
-  <div class="stat-grid">
-    <div class="stat"><div class="stat-num">450K+</div><div class="stat-desc">Video views across platforms</div></div>
-    <div class="stat"><div class="stat-num">1.36L+</div><div class="stat-desc">Campaign reach, #NayeBharatKiNayiDelivery</div></div>
-    <div class="stat"><div class="stat-num">1L+</div><div class="stat-desc">YouTube views, Diwali campaign video</div></div>
-    <div class="stat"><div class="stat-num">11%</div><div class="stat-desc">Engagement rate, Diwali video on Facebook</div></div>
-    <div class="stat"><div class="stat-num">60K+</div><div class="stat-desc">Impressions across digital handles</div></div>
-  </div>
-</div>
 
-<div class="hashtag-strip">
-  <span class="hashtag-main">#NayeBharatKiNayiDelivery</span>
-  <span class="hashtag-sub">Fortune Online App · One-stop-shop for all Fortune products</span>
-</div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <div class="kicker">Case Study / D2C Brand Launch</div>
+        <h1>Levelling Up Grocery Shopping Habits</h1>
+        <p class="dek">How Fortune Online was launched as India's first direct-to-consumer grocery platform and why the brief was never really about atta.</p>
+      </div>
+      <div class="hero-meta" aria-label="Project details">
+        <div class="meta-item">
+          <span class="meta-label">Brand</span>
+          <span class="meta-val">Fortune, Adani Wilmar</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Campaign</span>
+          <span class="meta-val">#NayeBharatKiNayiDelivery</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Year</span>
+          <span class="meta-val">2021</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Platform</span>
+          <span class="meta-val">Fortune Online App</span>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<div class="page">
-
-  <section>
-    <div class="section-tag">My Role</div>
-    <h2>From brief to brand,<br><em>end to end.</em></h2>
-    <p>This was not a campaign execution brief. It was a brand-building brief for a product that did not yet exist in market. Fortune Online was Adani Wilmar's first direct-to-consumer platform, a new channel, a new relationship with the customer, and a new way of thinking about a brand that had previously only lived on supermarket shelves.</p>
-    <div class="role-tags">
-      <span class="role-tag">Conceptual Ideation</span>
-      <span class="role-tag">Creative Strategy</span>
-      <span class="role-tag">Copywriting</span>
-      <span class="role-tag">Naming</span>
-      <span class="role-tag">Workshop Facilitation</span>
-      <span class="role-tag">Brand Strategy</span>
+  <!-- Stats Grid -->
+  <section class="stats" aria-label="Campaign impact">
+    <div class="stat">
+      <span class="stat-num">450K+</span>
+      <span class="stat-desc">Video views across platforms</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">1.36L+</span>
+      <span class="stat-desc">Campaign reach (#NayeBharatKiNayiDelivery)</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">1L+</span>
+      <span class="stat-desc">YouTube views for Diwali campaign video</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">11%</span>
+      <span class="stat-desc">Diwali video engagement rate on Facebook</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">60K+</span>
+      <span class="stat-desc">Impressions across digital handles</span>
     </div>
   </section>
 
-  <section>
-    <div class="section-tag">The Challenge</div>
-    <h2>The brief was grocery.<br><em>The problem was behaviour.</em></h2>
-    <p>COVID-19 compressed a decade of D2C adoption into eighteen months. Supermarkets strained. Supply chains shortened. Home delivery stopped being a convenience and became a necessity. In this window, Adani Wilmar launched Fortune Online, the only platform dealing directly with consumers across the full Fortune product range.</p>
-    <p>The platform had strong product foundations: free delivery, first-order gifts, exclusive combos, doorstep access to everything from atta to edible oil. But the communication challenge was deeper than awareness. Fortune was a brand Indians trusted in the kitchen, not online. The task was to transfer that trust to a new behaviour, ordering groceries through an app, without losing the warmth and familiarity that made Fortune feel like home.</p>
-    <div class="pull-quote">
-      <p>"Ab Chakki ka purana swaad, Fortune Online delivery ke saath." The brief in one line: keep the taste, change the habit.</p>
-    </div>
-  </section>
+  <!-- Main Article Layout Shell -->
+  <main class="article-shell">
+    <aside class="rail">
+      <strong>On This Page</strong>
+      Challenge, nostalgia strategy, creative, and outcomes.
+      <nav>
+        <a href="#role">My Role</a>
+        <a href="#challenge">The Challenge</a>
+        <a href="#idea">Nostalgia Strategy</a>
+        <a href="#creative">Creative Work</a>
+        <a href="#films">Campaign Films</a>
+        <a href="#execution">Content Formats</a>
+        <a href="#results">Results &amp; Impact</a>
+      </nav>
+    </aside>
 
-  <section>
-    <div class="section-tag">The Idea</div>
-    <h2>Nostalgia as a<br><em>growth strategy.</em></h2>
-    <p>The insight that unlocked everything: Indians don't buy atta. They buy the memory of their mother's rotis. The chakki, the stone mill, is a sensory shorthand for freshness, purity and home. Fortune Chakki Fresh Atta had already borrowed that equity. The launch campaign's job was to extend it into a new context: doorstep delivery.</p>
-    <p>Rather than positioning Fortune Online as a technology convenience, we framed it as a restoration. The old taste, now reachable without leaving home. #NayeBharatKiNayiDelivery carried both registers simultaneously: new India, new delivery, but the same Fortune your family has always trusted.</p>
+    <article>
+      <!-- Section: My Role -->
+      <section class="section" id="role">
+        <span class="section-label">My Role</span>
+        <h2>From brief to brand, end to end.</h2>
+        <p class="lede dropcap">This was not a campaign execution brief. It was a brand-building brief for a product that did not yet exist in market. Fortune Online was Adani Wilmar's first direct-to-consumer platform, a new channel, a new relationship with the customer, and a new way of thinking about a brand that had previously only lived on supermarket shelves.</p>
 
-    <div class="shift-block">
-      <div class="shift-col">
-        <div class="shift-label">Conventional D2C framing</div>
-        <div class="shift-item">Fast delivery. Easy app. Great deals.</div>
-        <div class="shift-item">Order in minutes, delivered to your door</div>
-        <div class="shift-item">Technology making life easier</div>
-        <div class="shift-item">New platform, new experience</div>
-      </div>
-      <div class="shift-col">
-        <div class="shift-label active">Fortune Online framing</div>
-        <div class="shift-item active">Chakki ka purana swaad, at your door</div>
-        <div class="shift-item active">The taste you grew up with, without stepping out</div>
-        <div class="shift-item active">India's trusted kitchen brand, now direct to you</div>
-        <div class="shift-item active">Same Fortune. Naye Bharat ki naye delivery.</div>
-      </div>
-    </div>
-  </section>
+        <div class="pills-container">
+          <div class="pill-item">Conceptual Ideation</div>
+          <div class="pill-item">Creative Strategy</div>
+          <div class="pill-item">Copywriting</div>
+          <div class="pill-item">Naming</div>
+          <div class="pill-item">Workshop Facilitation</div>
+          <div class="pill-item">Brand Strategy</div>
+        </div>
+      </section>
 
-  <section>
-  <div class="section-tag">The Creative</div>
-  <h2>The work.</h2>
+      <!-- Section: Challenge -->
+      <section class="section" id="challenge">
+        <span class="section-label challenge">The Challenge</span>
+        <h2>The brief was grocery. The problem was behaviour.</h2>
+        <p>COVID-19 compressed a decade of D2C adoption into eighteen months. Supermarkets strained. Supply chains shortened. Home delivery stopped being a convenience and became a necessity. In this window, Adani Wilmar launched Fortune Online, the only platform dealing directly with consumers across the full Fortune product range.</p>
+        <p>The platform had strong product foundations: free delivery, first-order gifts, exclusive combos, doorstep access to everything from atta to edible oil. But the communication challenge was deeper than awareness. Fortune was a brand Indians trusted in the kitchen, not online. The task was to transfer that trust to a new behaviour, ordering groceries through an app, without losing the warmth and familiarity that made Fortune feel like home.</p>
 
-<div class="showreel-row">
-    <div class="creative-cell">
-      <img src="Pic 1.png" alt="Fortune Online">
-      <div class="cell-overlay"></div>
-    </div>
-    
-    <div class="creative-cell">
-      <img src="9.png" alt="Fortune Online">
-      <div class="cell-overlay"></div>
-    </div>
-    
-    <div class="creative-cell">
-      <img src="3.png" alt="Fortune Online">
-      <div class="cell-overlay"></div>
-    </div>
-      <div class="creative-cell">
-      <img src="4.png" alt="Fortune Online">
-      <div class="cell-overlay"></div>
-    </div>
-      <div class="creative-cell">
-      <img src="5.png" alt="Fortune Online">
-      <div class="cell-overlay"></div>
-    </div>
-       <div class="creative-cell">
-      <img src="6.png" alt="Fortune Online">
-      <div class="cell-overlay"></div>
-    </div>
-       <div class="creative-cell">
-      <img src="7.png" alt="Fortune Online">
-      <div class="cell-overlay"></div>
-    </div>
-   <div class="creative-cell">
-      <img src="8.png" alt="Fortune Online">
-      <div class="cell-overlay"></div>
-    </div>
-    </div>
-</section>
-  <section>
-   <div class="section-tag">The Films</div>
-  <div class="video-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/6Dih8goN79E?si=ffOlKfKIzlqPifEv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-</section>
-  
-  <section>
-    <div class="section-tag">Execution</div>
-    <h2>Multiple formats.<br><em>One consistent idea.</em></h2>
-    <p>Rather than producing a single hero campaign, we built a content ecosystem. Multiple video formats designed to serve different stages of the customer journey, from awareness to conversion to retention. Each format was distinct in style but unified in voice.</p>
-    <div class="formats">
-      <div class="format-card">
-        <div class="format-num">01</div>
-        <div class="format-title">Stop-Motion</div>
-        <div class="format-desc">Product storytelling through tactile, handcrafted visual language reinforcing the artisanal quality of Fortune's ingredients</div>
-      </div>
-      <div class="format-card">
-        <div class="format-num">02</div>
-        <div class="format-title">Typography</div>
-        <div class="format-desc">Campaign messaging brought to life through kinetic type, driving recall for the hashtag and platform proposition</div>
-      </div>
-      <div class="format-card">
-        <div class="format-num">03</div>
-        <div class="format-title">Motion Graphics</div>
-        <div class="format-desc">App features, offers and product benefits communicated through clean, shareable animated content</div>
-      </div>
-      <div class="format-card">
-        <div class="format-num">04</div>
-        <div class="format-title">Recipe Corner</div>
-        <div class="format-desc">Utility-driven content showing Fortune products in use, driving retention and organic engagement through practical value</div>
-      </div>
-      <div class="format-card">
-        <div class="format-num">05</div>
-        <div class="format-title">Tactical Content</div>
-        <div class="format-desc">Festival moments, offers and in-app features communicated in real time, including the 11% engagement Diwali video</div>
-      </div>
-    </div>
-    <p>Content ran across YouTube, Facebook and digital handles, with YouTube carrying the longer-form brand story and Facebook driving tactical engagement and festival moments.</p>
-  </section>
+        <div class="pull-quote">
+          <p>"Ab Chakki ka purana swaad, Fortune Online delivery ke saath. Keep the taste, change the habit."</p>
+        </div>
+      </section>
 
-  <section>
-    <div class="section-tag">Results</div>
-    <h2>Numbers from a<br><em>brand-new channel.</em></h2>
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="result-card-label">Video Performance</div>
-        <div class="result-item"><div class="result-num">450K+</div><div class="result-sub">Total video views across platforms</div></div>
-        <div class="result-item"><div class="result-num">1L+</div><div class="result-sub">YouTube views, Diwali campaign video</div></div>
-      </div>
-      <div class="result-card">
-        <div class="result-card-label">Campaign Reach</div>
-        <div class="result-item"><div class="result-num">1.36L+</div><div class="result-sub">Audience reached, #NayeBharatKiNayiDelivery</div></div>
-        <div class="result-item"><div class="result-num">60K+</div><div class="result-sub">Impressions across digital handles</div></div>
-      </div>
-      <div class="result-card">
-        <div class="result-card-label">Engagement</div>
-        <div class="result-item"><div class="result-num">11%</div><div class="result-sub">Engagement rate, Diwali video on Facebook</div></div>
-        <div class="result-item"><div class="result-num">Positive</div><div class="result-sub">Sentiment shift across all social handles</div></div>
-      </div>
-    </div>
-    <div class="impact-block">
-      <div class="impact-title">What this actually built</div>
-      <div class="impact-body">Fortune Online was not just a new app. It was a new relationship between a heritage FMCG brand and its customers. The campaign's job was to make that relationship feel familiar before it was established. By anchoring a D2C launch in sensory memory rather than technology convenience, the work gave Fortune Online something most new platforms take years to earn: trust on day one.</div>
-    </div>
-  </section>
+      <!-- Section: Idea -->
+      <section class="section" id="idea">
+        <span class="section-label idea">The Idea</span>
+        <h2>Nostalgia as a growth strategy.</h2>
+        <p>The insight that unlocked everything: Indians don't buy atta. They buy the memory of their mother's rotis. The chakki, the stone mill, is a sensory shorthand for freshness, purity and home. Fortune Chakki Fresh Atta had already borrowed that equity. The launch campaign's job was to extend it into a new context: doorstep delivery.</p>
+        <p>Rather than positioning Fortune Online as a technology convenience, we framed it as a restoration. The old taste, now reachable without leaving home. #NayeBharatKiNayiDelivery carried both registers simultaneously: new India, new delivery, but the same Fortune your family has always trusted.</p>
 
-</div>
+        <div class="shift-block">
+          <div class="shift-col">
+            <div class="shift-label">Conventional D2C framing</div>
+            <div class="shift-item">Fast delivery. Easy app. Great deals.</div>
+            <div class="shift-item">Order in minutes, delivered to your door</div>
+            <div class="shift-item">Technology making life easier</div>
+            <div class="shift-item">New platform, new experience</div>
+          </div>
+          <div class="shift-col">
+            <div class="shift-label active">Fortune Online framing</div>
+            <div class="shift-item active">Chakki ka purana swaad, at your door</div>
+            <div class="shift-item active">The taste you grew up with, without stepping out</div>
+            <div class="shift-item active">India's trusted kitchen brand, now direct to you</div>
+            <div class="shift-item active">Same Fortune. Naye Bharat ki naye delivery.</div>
+          </div>
+        </div>
+      </section>
 
-<footer>
-  <p>Fortune · Adani Wilmar · <span>#NayeBharatKiNayiDelivery</span> · D2C Launch · Portfolio Case Study</p>
-</footer>
+      <!-- Section: Creative Showcase -->
+      <section class="section" id="creative">
+        <span class="section-label">Creative Showcase</span>
+        <h2>Brand &amp; product creative gallery.</h2>
+        <p>A visual walkthrough of the digital assets, product combos, and promotional creatives that launched Fortune Online.</p>
 
+        <div class="showreel-row">
+          <div class="creative-cell"><img src="Pic 1.png" alt="Fortune Online 1"></div>
+          <div class="creative-cell"><img src="9.png" alt="Fortune Online 2"></div>
+          <div class="creative-cell"><img src="3.png" alt="Fortune Online 3"></div>
+          <div class="creative-cell"><img src="4.png" alt="Fortune Online 4"></div>
+          <div class="creative-cell"><img src="5.png" alt="Fortune Online 5"></div>
+          <div class="creative-cell"><img src="6.png" alt="Fortune Online 6"></div>
+          <div class="creative-cell"><img src="7.png" alt="Fortune Online 7"></div>
+          <div class="creative-cell"><img src="8.png" alt="Fortune Online 8"></div>
+        </div>
+      </section>
 
+      <!-- Section: Campaign Films -->
+      <section class="section" id="films">
+        <span class="section-label">Campaign Films</span>
+        <h2>Brand Launch Video.</h2>
+        <p>The main brand film introducing Fortune Online to households across India.</p>
+
+        <div class="media-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/6Dih8goN79E?si=ffOlKfKIzlqPifEv" title="Fortune Online Launch Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="media-caption">Fortune Online Launch Film — #NayeBharatKiNayiDelivery</div>
+        </div>
+      </section>
+
+      <!-- Section: Execution -->
+      <section class="section" id="execution">
+        <span class="section-label">Execution</span>
+        <h2>Multiple formats. One consistent idea.</h2>
+        <p>Rather than producing a single hero campaign, we built a content ecosystem. Multiple video formats designed to serve different stages of the customer journey, from awareness to conversion to retention. Each format was distinct in style but unified in voice.</p>
+
+        <div class="formats-grid">
+          <div class="format-card">
+            <div class="format-num">01</div>
+            <div class="format-title">Stop-Motion</div>
+            <div class="format-desc">Product storytelling through tactile, handcrafted visual language reinforcing the artisanal quality of Fortune's ingredients.</div>
+          </div>
+          <div class="format-card">
+            <div class="format-num">02</div>
+            <div class="format-title">Typography</div>
+            <div class="format-desc">Campaign messaging brought to life through kinetic type, driving recall for the hashtag and platform proposition.</div>
+          </div>
+          <div class="format-card">
+            <div class="format-num">03</div>
+            <div class="format-title">Motion Graphics</div>
+            <div class="format-desc">App features, offers and product benefits communicated through clean, shareable animated content.</div>
+          </div>
+          <div class="format-card">
+            <div class="format-num">04</div>
+            <div class="format-title">Recipe Corner</div>
+            <div class="format-desc">Utility-driven content showing Fortune products in use, driving retention and organic engagement through practical value.</div>
+          </div>
+          <div class="format-card">
+            <div class="format-num">05</div>
+            <div class="format-title">Tactical Content</div>
+            <div class="format-desc">Festival moments, offers and in-app features communicated in real time, including the 11% engagement Diwali video.</div>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.6rem;">Content ran across YouTube, Facebook and digital handles, with YouTube carrying the longer-form brand story and Facebook driving tactical engagement and festival moments.</p>
+      </section>
+
+      <!-- Section: Results -->
+      <section class="section" id="results">
+        <span class="section-label results">Results</span>
+        <h2>Numbers from a brand-new channel.</h2>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <span class="result-card-label">Video Performance</span>
+            <div class="result-num">450K+</div>
+            <div class="result-sub">Total video views across platforms (1L+ YouTube views for Diwali video).</div>
+          </div>
+          <div class="result-card">
+            <span class="result-card-label">Campaign Reach</span>
+            <div class="result-num">1.36L+</div>
+            <div class="result-sub">Audience reached under #NayeBharatKiNayiDelivery.</div>
+          </div>
+          <div class="result-card">
+            <span class="result-card-label">Engagement Rate</span>
+            <div class="result-num">11%</div>
+            <div class="result-sub">Engagement rate for the Diwali video on Facebook.</div>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>"Fortune Online was not just a new app. By anchoring a D2C launch in sensory memory rather than technology convenience, the work gave Fortune Online trust on day one."</p>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Note -->
+    <aside class="side-card">
+      <h3>D2C Strategy</h3>
+      <p>#NayeBharatKiNayiDelivery successfully launched Fortune Online by transferring kitchen brand equity into a digital-first grocery habit.</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    Fortune · Adani Wilmar · <span>#NayeBharatKiNayiDelivery</span> · D2C Launch
+  </footer>
 </body>
 </html>
