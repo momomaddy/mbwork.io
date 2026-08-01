@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OYO OPEN Program — Case Study / Mouris Bashir</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --paper: #f7f1e3;
+      --paper-soft: #fffaf0;
+      --ink: #17130e;
+      --ink-soft: #423b34;
+      --muted: #766d62;
+      --rule: #211a14;
+      --red: #b92f1f;
+      --blue: #174f75;
+      --green: #32684c;
+      --yellow: #e4b93f;
+      --white: #fffdf7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23,19,14,0.035) 1px, transparent 1px) 0 0 / 24px 24px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    /* Sticky Navigation Header */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 54px;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: rgba(247, 241, 227, 0.94);
+      border-bottom: 2px solid var(--rule);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { display: block; text-decoration: none; }
+    .nav-logo img { display: block; width: auto; height: 32px; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-link,
+    .nav-work-btn,
+    .nav-cta {
+      color: var(--ink);
+      font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-work { position: relative; }
+
+    .nav-work-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .nav-work-btn::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+    }
+
+    .work-dropdown {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      min-width: 250px;
+      background: var(--paper-soft);
+      border: 2px solid var(--rule);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
+
+    .nav-work:hover .work-dropdown,
+    .nav-work:focus-within .work-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .work-dropdown-label,
+    .work-dropdown a {
+      display: block;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      color: var(--ink);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .work-dropdown-label { color: var(--red); background: var(--yellow); }
+    .work-dropdown a:hover { background: var(--ink); color: var(--paper); }
+    .work-dropdown a:last-child { border-bottom: 0; }
+
+    .nav-cta {
+      padding: 0.55rem 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    /* Sub-header Issue Bar */
+    .issue-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem clamp(1rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-soft);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .issue-bar span:nth-child(2) {
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.5rem;
+      background: var(--yellow);
+    }
+
+    .issue-bar span:last-child { text-align: right; }
+
+    /* Hero Section */
+    .hero {
+      border-bottom: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .hero-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.45fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: end;
+      padding: clamp(1.4rem, 4vw, 3.4rem);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .kicker {
+      width: max-content;
+      max-width: 100%;
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.35rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 2rem 0 1.2rem;
+      max-width: 14ch;
+      font-size: clamp(2.8rem, 5.8vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      font-weight: 900;
+      overflow-wrap: normal;
+    }
+
+    .dek {
+      max-width: 720px;
+      margin: 0;
+      font: 400 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
+
+    .meta-item {
+      min-height: 84px;
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .meta-item:last-child { border-bottom: 0; }
+
+    .meta-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--blue);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .meta-val {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    /* Stats Grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-bottom: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .stat {
+      min-height: 150px;
+      padding: 1.2rem clamp(1rem, 2vw, 1.6rem);
+      border-right: 1px solid rgba(247, 241, 227, 0.35);
+    }
+
+    .stat:last-child { border-right: 0; }
+
+    .stat-num {
+      display: block;
+      margin-bottom: 0.6rem;
+      color: var(--yellow);
+      font-size: clamp(2rem, 3.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 0.9;
+    }
+
+    .stat-desc {
+      display: block;
+      max-width: 16rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    /* Article Shell & Rails */
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.22fr) minmax(0, 900px) minmax(170px, 0.26fr);
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      width: min(1360px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .rail {
+      position: sticky;
+      top: 76px;
+      align-self: start;
+      border-top: 2px solid var(--rule);
+      padding-top: 0.8rem;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .rail strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--blue);
+    }
+
+    .rail nav {
+      all: unset;
+      display: block;
+      margin-top: 1.2rem;
+    }
+
+    .rail nav a {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 0.64rem;
+    }
+
+    .rail nav a:hover { color: var(--blue); }
+
+    article {
+      background: var(--paper-soft);
+      border-left: 2px solid var(--rule);
+      border-right: 2px solid var(--rule);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .section {
+      padding: clamp(2.2rem, 5vw, 4.2rem) 0;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .section:last-child { border-bottom: 0; }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--rule);
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.22rem 0.5rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font: 700 clamp(2rem, 4vw, 3.2rem)/0.98 "Libre Baskerville", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 1.15rem;
+      font: 400 1.02rem/1.78 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      max-width: 760px;
+      font-size: clamp(1.18rem, 2.2vw, 1.55rem);
+      line-height: 1.62;
+      color: var(--ink);
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      padding: 0.18rem 0.42rem 0 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 5.4rem;
+      font-weight: 900;
+      line-height: 0.78;
+      color: var(--blue);
+    }
+
+    /* Horizontal Reel */
+    .showreel-row {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding: 0.8rem 0 1.2rem;
+      margin: 1.6rem 0;
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .creative-cell {
+      flex: 0 0 280px;
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 4px 4px 0 var(--blue);
+    }
+
+    .creative-cell img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Vertical Video Section */
+    .video-card-vertical {
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 6px 6px 0 var(--yellow);
+      max-width: 320px;
+      margin: 1.6rem auto;
+    }
+
+    .video-frame-vertical {
+      position: relative;
+      width: 100%;
+      padding-bottom: 177.77%;
+      background: #000;
+    }
+
+    .video-frame-vertical iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      padding: 0.65rem 0.85rem;
+      background: var(--yellow);
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-top: 2px solid var(--rule);
+    }
+
+    .list-box {
+      margin: 1.2rem 0;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .list-item {
+      padding: 0.85rem 1.2rem;
+      border-bottom: 1px solid var(--rule);
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+
+    .list-item:last-child { border-bottom: 0; }
+
+    .side-card {
+      align-self: start;
+      border: 2px solid var(--rule);
+      background: var(--blue);
+      color: var(--white);
+      padding: 1rem;
+      box-shadow: 7px 7px 0 var(--yellow);
+      position: sticky;
+      top: 76px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .side-card p {
+      margin: 0 0 1rem;
+      max-width: none;
+      color: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .side-card p:last-child { margin-bottom: 0; }
+
+    footer {
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      border-top: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .hero-copy { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-shell { grid-template-columns: 1fr; }
+      .rail, .side-card { position: static; }
+      article { border: 2px solid var(--rule); }
+    }
+
+    @media (max-width: 720px) {
+      nav { height: auto; min-height: 54px; align-items: flex-start; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+      .nav-right { flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem; }
+      .nav-link, .nav-work-btn, .nav-cta { font-size: 0.6rem; }
+      .issue-bar { grid-template-columns: 1fr; gap: 0.45rem; }
+      .issue-bar span:last-child { text-align: left; }
+      h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+      .hero-meta, .stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
+    </a>
+    <div class="nav-right">
+      <div class="nav-work" tabindex="0">
+        <button class="nav-work-btn" aria-haspopup="true">Work</button>
+        <div class="work-dropdown" role="menu">
+          <div class="work-dropdown-label">Case Studies</div>
+          <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+          <a href="HorizonX.html">Horizon X - hear.com</a>
+          <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+          <a href="adl_equally.html">ADL Is EquAlly</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="OYO.html">OYO Valentine's</a>
+          <a href="OYO_OPEN.html">OYO OPEN</a>
+          <a href="OYO_Internal.html">OYO Internal Comms</a>
+          <a href="fortune.html">Fortune</a>
+          <a href="police_scotland.html">Police Scotland</a>
+          <a href="FarmPik.html">FarmPik</a>
+          <a href="BookMyForex.html">BookMyForex</a>
+          <a href="moment_marketing.html">Moment Marketing</a>
+          <a href="ONBC.html">One Nation Billion Celebrations</a>
+          <a href="airportvideos.html">Airport Videos</a>
+          <a href="execcomms.html">Executive Comms</a>
+        </div>
+      </div>
+      <a href="bio_gq.html" class="nav-link">About</a>
+      <a href="eh5tories.html" class="nav-link">EH5tories</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+    </div>
+  </nav>
+
+  <!-- Sub-header Issue Bar -->
+  <div class="issue-bar">
+    <span>OYO / Partner Communication</span>
+    <span>Case Study</span>
+    <span>#OYOOPEN</span>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <div class="kicker">Case Study / Partner Communication</div>
+        <h1>OPEN Partner Privilege Program</h1>
+        <p class="dek">Turning an event into a brand signal — executing operational readiness, leadership alignment, and media coherence under one relationship-first narrative.</p>
+      </div>
+      <div class="hero-meta" aria-label="Project details">
+        <div class="meta-item">
+          <span class="meta-label">Client</span>
+          <span class="meta-val">OYO</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Scope</span>
+          <span class="meta-val">Partner Engagement, Media Relations &amp; Event Comms</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Onboarded</span>
+          <span class="meta-val">120,000+ Partners on CO-OYO / OPEN</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Grid -->
+  <section class="stats" aria-label="Program metrics">
+    <div class="stat">
+      <span class="stat-num">44+</span>
+      <span class="stat-desc">Media attendees at launch</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">60+</span>
+      <span class="stat-desc">Quality national &amp; financial stories</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">120K+</span>
+      <span class="stat-desc">Partner users onboarded on CO-OYO/OPEN</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">National</span>
+      <span class="stat-desc">Scale across regional partner networks</span>
+    </div>
+  </section>
+
+  <!-- Main Article Layout Shell -->
+  <main class="article-shell">
+    <aside class="rail">
+      <strong>On This Page</strong>
+      Execution scope, media outcomes, and video playlist.
+      <nav>
+        <a href="#scope">Execution Scope</a>
+        <a href="#gallery">Launch Event Visuals</a>
+        <a href="#outcomes">Program Outcomes</a>
+        <a href="#multimedia">Multimedia Series</a>
+      </nav>
+    </aside>
+
+    <article>
+      <!-- Section: Scope -->
+      <section class="section" id="scope">
+        <span class="section-label">Execution Scope</span>
+        <h2>Relationship-first growth.</h2>
+        <p class="lede dropcap">The Partner Privilege Program launch needed more than event management. It required operational readiness, leadership alignment, partner participation, and media coherence under one narrative about relationship-first growth.</p>
+
+        <div class="list-box">
+          <div class="list-item"><strong>Event Management:</strong> Event design, production flow, and vendor management.</div>
+          <div class="list-item"><strong>Leadership Alignment:</strong> Cross-functional leadership alignment (Founders’ Office, business, operations, tech).</div>
+          <div class="list-item"><strong>PR &amp; Media:</strong> Media coordination, press interactions, and narrative reinforcement.</div>
+          <div class="list-item"><strong>Partner Education:</strong> Partner education communication to support onboarding and product usage.</div>
+          <div class="list-item"><strong>Tracking:</strong> Post-launch coverage tracking and leadership reporting.</div>
+        </div>
+      </section>
+
+      <!-- Section: Gallery -->
+      <section class="section" id="gallery">
+        <span class="section-label">Event Visuals</span>
+        <h2>Launch stage &amp; partner showcase.</h2>
+
+        <div class="showreel-row">
+          <div class="creative-cell"><img src="33.jpeg" alt="OYO OPEN Event 1"></div>
+          <div class="creative-cell"><img src="22.png" alt="OYO OPEN Event 2"></div>
+          <div class="creative-cell"><img src="11.png" alt="OYO OPEN Event 3"></div>
+        </div>
+      </section>
+
+      <!-- Section: Outcomes -->
+      <section class="section" id="outcomes">
+        <span class="section-label">Outcomes</span>
+        <h2>National media &amp; partner adoption.</h2>
+
+        <div class="list-box">
+          <div class="list-item"><strong>44+ Media Attendees</strong> Present at launch.</div>
+          <div class="list-item"><strong>60+ Quality Stories</strong> Across national, regional, and financial media.</div>
+          <div class="list-item"><strong>High Engagement</strong> Leadership and hotel partner participation at scale.</div>
+          <div class="list-item"><strong>120,000+ Onboarded</strong> Partner users onboarded on CO-OYO/OPEN platforms.</div>
+        </div>
+      </section>
+
+      <!-- Section: Multimedia -->
+      <section class="section" id="multimedia">
+        <span class="section-label">Multimedia Strategy</span>
+        <h2>OYO Partner Series.</h2>
+
+        <div class="video-card-vertical">
+          <div class="video-frame-vertical">
+            <iframe 
+              src="https://www.youtube.com/embed?listType=playlist&list=PLwdraNl1PabdhDKtsxEnqJ6YOYpx5mJAP&modestbranding=1&rel=0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-caption">OYO Partner Series Playlist</div>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Note -->
+    <aside class="side-card">
+      <h3>Program Takeaway</h3>
+      <p>OYO OPEN proved that partner communications must be operational, transparent, and built for long-term platform trust.</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    OYO · <span>OPEN Partner Privilege Program</span> · Case Study
+  </footer>
+</body>
+</html>
