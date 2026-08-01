@@ -391,7 +391,7 @@
       font-style: italic;
     }
 
-    /* Video Reel Component formatted to Neo-Brutalist Grid style */
+    /* Video Reels / Embedded Cards */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -434,48 +434,7 @@
       text-transform: uppercase;
     }
 
-    /* Shift Block Table */
-    .shift-block {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0;
-      margin: 1.6rem 0;
-      border: 2px solid var(--rule);
-      background: var(--paper);
-    }
-
-    .shift-col {
-      padding: 1.2rem;
-    }
-
-    .shift-col:first-child {
-      border-right: 2px solid var(--rule);
-      background: var(--paper-soft);
-    }
-
-    .shift-label {
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .shift-label.active { color: var(--red); }
-
-    .shift-item {
-      font-family: "Libre Baskerville", Georgia, serif;
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-      padding: 0.4rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .shift-item:last-child { border-bottom: 0; }
-    .shift-item.active { color: var(--ink); font-weight: 700; }
-
-    /* Feature Grid / Cards */
+    /* Story & Feature Cards */
     .story-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -508,7 +467,7 @@
       line-height: 1.55;
     }
 
-    /* List Item Boxes */
+    /* Structured List Item Boxes */
     .list-box {
       margin: 1.2rem 0;
       border: 2px solid var(--rule);
@@ -622,7 +581,7 @@
       .issue-bar span:last-child { text-align: left; }
       h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
       .hero-meta, .stats { grid-template-columns: 1fr; }
-      .video-grid, .story-grid, .shift-block, .eco-grid { grid-template-columns: 1fr; }
+      .video-grid, .story-grid, .eco-grid { grid-template-columns: 1fr; }
       .eco-col { border-right: 0; border-bottom: 1px solid var(--rule); }
     }
   </style>
@@ -631,7 +590,7 @@
   <!-- Navigation Header -->
   <nav>
     <a href="index.html" class="nav-logo">
-      <img src="M.png" alt="mb.work">
+      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
     </a>
     <div class="nav-right">
       <div class="nav-work" tabindex="0">
@@ -662,8 +621,8 @@
 
   <!-- Sub-header Issue Bar -->
   <div class="issue-bar">
-    <span>Adani Group / Reputation &amp; Narrative Strategy</span>
-    <span>Yearbook of Campaigns 2025</span>
+    <span>Adani Group / Corporate Brand Custodian</span>
+    <span>Case Study</span>
     <span>#HumKarkeDikhateHain</span>
   </div>
 
@@ -673,24 +632,24 @@
       <div>
         <div class="kicker">Case Study / Brand Campaign</div>
         <h1>Hum Karke Dikhate Hain</h1>
-        <p class="dek">Owned the social &amp; digital rollout of the flagship TVC. Turned it into institutional storytelling at national scale.</p>
+        <p class="dek">Humanising infrastructure at scale — transforming a corporate brand campaign into an ongoing storytelling platform that repositions industrial assets as lived, everyday progress.</p>
       </div>
       <div class="hero-meta" aria-label="Project details">
         <div class="meta-item">
-          <span class="meta-label">Client</span>
+          <span class="meta-label">Brand</span>
           <span class="meta-val">Adani Group</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">TVC Agency</span>
+          <span class="meta-label">Agency</span>
           <span class="meta-val">Ogilvy India</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">My Scope</span>
-          <span class="meta-val">Reputation, Narrative, Distribution &amp; Alignment</span>
+          <span class="meta-label">Role</span>
+          <span class="meta-val">Narrative Integration, Social Strategy &amp; Rollout Development</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Scale</span>
-          <span class="meta-val">10+ Business Units · National Scale</span>
+          <span class="meta-label">Scope</span>
+          <span class="meta-val">20+ Businesses, 10+ Languages, 28 Cities</span>
         </div>
       </div>
     </div>
@@ -699,20 +658,20 @@
   <!-- Stats Grid -->
   <section class="stats" aria-label="Campaign impact">
     <div class="stat">
-      <span class="stat-num">290M+</span>
-      <span class="stat-desc">Impressions across digital platforms</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">160M+</span>
-      <span class="stat-desc">Views within 4 weeks of launch</span>
+      <span class="stat-num">450M+</span>
+      <span class="stat-desc">Campaign Views Across Digital Platforms</span>
     </div>
     <div class="stat">
       <span class="stat-num">+26%</span>
-      <span class="stat-desc">Brand awareness uplift</span>
+      <span class="stat-desc">Increase in Overall Brand Awareness</span>
     </div>
     <div class="stat">
-      <span class="stat-num">1.01M</span>
-      <span class="stat-desc">Community growth across channels</span>
+      <span class="stat-num">20+</span>
+      <span class="stat-desc">Independently Governed Businesses Aligned</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">10+</span>
+      <span class="stat-desc">Indian Languages Scaled Regionally</span>
     </div>
   </section>
 
@@ -720,176 +679,191 @@
   <main class="article-shell">
     <aside class="rail">
       <strong>On This Page</strong>
-      Recognition, strategy, films, and impact.
+      Strategic overview, films, and impact.
       <nav>
-        <a href="#awards">Olive Crown Recognition</a>
-        <a href="#challenge">The Challenge</a>
-        <a href="#idea">The Big Idea</a>
-        <a href="#inhouse">In-House Parivartan Films</a>
-        <a href="#role">Narrative System Role</a>
-        <a href="#system">Integrated System</a>
-        <a href="#results">Results &amp; Reputation</a>
+        <a href="#overview">Overview &amp; Challenge</a>
+        <a href="#role">Role &amp; Responsibilities</a>
+        <a href="#strategy">Two-Phase Strategy</a>
+        <a href="#tvc-films">Flagship TVC Films</a>
+        <a href="#parivartan-films">Parivartan Series</a>
+        <a href="#solution">Solution &amp; Integration</a>
+        <a href="#system">Communication System</a>
       </nav>
     </aside>
 
     <article>
-      <!-- Section: Recognition -->
-      <section class="section" id="awards">
-        <span class="section-label">Recognition</span>
-        <h2>4 Golds at Olive Crown Awards.</h2>
-        <p class="lede dropcap">Swept the IAA Olive Crown Awards for sustainability narrative excellence, securing Corporate Social Crusader of the Year, Green Advertiser of the Year, and two Gold Awards (TV/Cinema &amp; Digital).</p>
-        <p>The <em>Hum Karke Dikhate Hain</em> campaign was also featured by Social Samosa in its <strong>Yearbook of Campaigns 2025</strong>. The citation recognised the campaign for humanising infrastructure at scale, repositioning Adani from industrial assets to lived, everyday progress.</p>
+      <!-- Overview & Challenge -->
+      <section class="section" id="overview">
+        <span class="section-label challenge">The Challenge</span>
+        <h2>Moving beyond engineering scale.</h2>
+        <p class="lede dropcap">Infrastructure is difficult to communicate. People don't experience ports, transmission lines, or renewable energy projects directly—they experience what those assets make possible.</p>
+        <p>In the wake of a period of intense public and market scrutiny, the Adani Group unveiled a multi-media campaign titled <em>‘Hum Karke Dikhate Hain’</em>. Developed by Ogilvy India, the 100-second television commercial celebrated 35 years of service, emphasizing resilience and converting challenges into opportunities.</p>
+        <p>However, the primary strategic challenge was not merely awareness, but coherence. The Group operates independently governed, market-leading businesses across energy, logistics, materials, and consumer sectors. The opportunity was to transform a singular corporate statement into a believable, unified public narrative that felt consistent at a group level while remaining authentic to each business unit.</p>
+      </section>
 
-        <!-- Video Reel Grid 1 -->
+      <!-- Role -->
+      <section class="section" id="role">
+        <span class="section-label">My Role</span>
+        <h2>Converting TVC into an ongoing system.</h2>
+        <p>Working within the Corporate Brand Custodian team, my role was to convert a television campaign into an ongoing communication system across paid, earned, and owned media.</p>
+
+        <div class="list-box">
+          <div class="list-item">
+            <strong>Social Storytelling Framework</strong>
+            Developing the digital architecture to translate corporate narratives into audience-first social content.
+          </div>
+          <div class="list-item">
+            <strong>Cross-Business Alignment</strong>
+            Reviewing and aligning communication across 10+ business units and agency partners to ensure unified messaging.
+          </div>
+          <div class="list-item">
+            <strong>Credibility Management</strong>
+            Ensuring operational updates, service announcements, and daily digital communication consistently reflected the platform’s promise.
+          </div>
+          <div class="list-item">
+            <strong>Multilingual Rollout</strong>
+            Supporting localized execution across 10+ languages and 28 regional markets.
+          </div>
+        </div>
+      </section>
+
+      <!-- Strategy -->
+      <section class="section" id="strategy">
+        <span class="section-label">The Strategy</span>
+        <h2>The two-phase narrative evolution.</h2>
+        <p>The strategic framework moved through two distinct chapters to shift perception from stats to felt progress.</p>
+
+        <div class="story-grid">
+          <div class="story-card">
+            <h3>Phase One: Scale &amp; Resilience</h3>
+            <p>Established the Group's identity around resilience, execution, and nation-building. The central thought was simple: <em>"We don't just make promises. We deliver."</em></p>
+          </div>
+          <div class="story-card">
+            <h3>Phase Two: Human Storytelling</h3>
+            <p>Evolved from corporate statements to human impact. Instead of showcasing infrastructure, we showcased the lives transformed because that infrastructure existed.</p>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>"Infrastructure became the backdrop. People became the protagonists."</p>
+        </div>
+
+        <p>Relatable protagonists and memorable lines reframed the industrial giant into an enabler of everyday progress:</p>
+        <div class="list-box">
+          <div class="list-item">
+            <strong>Pehle Pankha, Phir Bijli</strong>
+            A child's conviction in a toy fan becomes an aspirational story for green energy and rural electrification.
+          </div>
+          <div class="list-item">
+            <strong>Journey of Dreams</strong>
+            Positions ports and logistics as gateways to opportunity for artisans in Kutch selling handcrafted Namda toys globally.
+          </div>
+          <div class="list-item">
+            <strong>Suraj Bhaiya Hain Naa</strong>
+            Showcases rural economic transformation, schools, and hospitals powered by the Khavda solar power plant.
+          </div>
+          <div class="list-item">
+            <strong>Aapke Safar Ke Humsafar</strong>
+            Elevates airport operations with care, connection, and seamless passenger experience.
+          </div>
+        </div>
+      </section>
+
+      <!-- Flagship TVC Films Embed Grid -->
+      <section class="section" id="tvc-films">
+        <span class="section-label">Flagship Films</span>
+        <h2>Campaign video reels.</h2>
+        <p>Swept the IAA Olive Crown Awards for sustainability narrative excellence, securing Corporate Social Crusader of the Year, Green Advertiser of the Year, and two Gold Awards (TV/Cinema &amp; Digital).</p>
+
         <div class="video-grid">
           <div class="video-card">
             <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/a7aJYVRuBZM?si=uaUpIMONeKW5TY0T" title="Hum Karke Dikhate Hain - Film 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/a7aJYVRuBZM?si=uaUpIMONeKW5TY0T" title="Pehle Pankha, Phir Bijli" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-caption">Pehle Pankha, Phir Bijli</div>
           </div>
           <div class="video-card">
             <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/zSEgZ5MRQWM?si=vp68fY6BpxqEfHzr" title="Hum Karke Dikhate Hain - Film 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/zSEgZ5MRQWM?si=vp68fY6BpxqEfHzr" title="Journey of Dreams" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-caption">Journey of Dreams</div>
           </div>
           <div class="video-card">
             <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/KXSrNMJWW4c?si=Eu6cSp-B_QTjW9ZR" title="Hum Karke Dikhate Hain - Film 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/KXSrNMJWW4c?si=Eu6cSp-B_QTjW9ZR" title="Suraj Bhaiya Hain Naa" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-caption">Suraj Bhaiya Hain Naa</div>
           </div>
           <div class="video-card">
             <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/RnkMfwxuwoE?si=JRPA41Vg7HM4jg07" title="Hum Karke Dikhate Hain - Film 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/RnkMfwxuwoE?si=JRPA41Vg7HM4jg07" title="Aapke Safar Ke Humsafar" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-caption">Aapke Safar Ke Humsafar</div>
           </div>
         </div>
       </section>
 
-      <!-- Section: Challenge -->
-      <section class="section" id="challenge">
-        <span class="section-label challenge">The Challenge</span>
-        <h2>The problem was not awareness. It was legitimacy.</h2>
-        <p>In the wake of intense public and market scrutiny, Adani Group launched a national brand platform anchored in a 100-second TVC developed by Ogilvy India, celebrating 35 years of service and positioning the Group's identity around resilience, execution, and nation-building.</p>
-        <p>The immediate challenge was not visibility. It was coherence. The Group operated across independently governed, market-leading businesses in energy, logistics, airports, materials, and consumer sectors, each with its own audience, tone of voice, and credibility expectations. A singular corporate statement, however powerful on television, risked fracturing the moment it touched each vertical.</p>
-
-        <div class="pull-quote">
-          <p>"The real problem was not: how do we promote a campaign? It was: how do we shift public perception when attention is high and sentiment is volatile?"</p>
-        </div>
-
-        <p>Challenges included breaking through cluttered media environments, overcoming category barriers of impersonal infrastructure, engaging diverse audiences across languages and geographies, and achieving emotional resonance at scale.</p>
-      </section>
-
-      <!-- Section: Big Idea -->
-      <section class="section" id="idea">
-        <span class="section-label">The Big Idea</span>
-        <h2>Reframe infrastructure as felt and lived progress.</h2>
-        <p>The critical insight: impact is real only when it is emotionally and tangibly felt. The campaign humanised infrastructure through emotionally resonant stories, each connecting a specific Adani business to a human life changed by its existence.</p>
-
-        <div class="story-grid">
-          <div class="story-card">
-            <h3>01. Pehle Pankha, Phir Bijli</h3>
-            <p>Made green energy aspirational, connecting renewable power to the everyday lives of people waiting for reliable electricity across India.</p>
-          </div>
-          <div class="story-card">
-            <h3>02. Journey of Dreams</h3>
-            <p>Positioned ports as gateways to opportunity, showing how infrastructure built for trade becomes the platform for individual ambition.</p>
-          </div>
-          <div class="story-card">
-            <h3>03. Suraj Bhaiya Hain Naa</h3>
-            <p>Showcased rural transformation, connecting the Group's infrastructure work to tangible change in the daily lives of communities.</p>
-          </div>
-          <div class="story-card">
-            <h3>04. Aapke Safar Ke Humsafar</h3>
-            <p>Elevated airports with care and connection, repositioning them from functional transit points to human experiences defined by warmth.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section: In-House Films -->
-      <section class="section" id="inhouse">
+      <!-- In-House Parivartan Series Embed Grid -->
+      <section class="section" id="parivartan-films">
         <span class="section-label">In-House Films</span>
-        <h2>Parivartan — Localized Social Impact Stories.</h2>
+        <h2>Parivartan — Localized impact stories.</h2>
         <p>Adopted the word "Parivartan" as a thematic title for several localized social impact and community development stories, highlighting transformations in rural entrepreneurship, agriculture, and women's empowerment.</p>
 
-        <!-- Video Reel Grid 2 -->
         <div class="video-grid">
           <div class="video-card">
             <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/DV7sZQNg9w0?si=soUHqmtVVUQsr-6j" title="Parivartan - Story 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/DV7sZQNg9w0?si=soUHqmtVVUQsr-6j" title="Parivartan Film 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-caption">Parivartan Series — Story 01</div>
           </div>
           <div class="video-card">
             <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/m45a9iOj4II?si=1c7q1TJpjuicyKNG" title="Parivartan - Story 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/m45a9iOj4II?si=1c7q1TJpjuicyKNG" title="Parivartan Film 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-caption">Parivartan Series — Story 02</div>
           </div>
           <div class="video-card">
             <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/EJryLB20dFs?si=oKzEaAe0E7WKugPD" title="Parivartan - Story 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/EJryLB20dFs?si=oKzEaAe0E7WKugPD" title="Parivartan Film 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-caption">Parivartan Series — Story 03</div>
           </div>
           <div class="video-card">
             <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/cy-ro36BL5Q?si=mJ_osZt-c6TQlNGb" title="Parivartan - Story 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/cy-ro36BL5Q?si=mJ_osZt-c6TQlNGb" title="Parivartan Film 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-caption">Parivartan Series — Story 04</div>
           </div>
           <div class="video-card" style="grid-column: 1 / -1;">
             <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/FIIHBBq0Nhg?si=nsyvU1kOTbEWNk_D" title="Parivartan - Story 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/FIIHBBq0Nhg?si=nsyvU1kOTbEWNh_D" title="Parivartan Film 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-caption">Parivartan Series — Community Impact</div>
           </div>
         </div>
       </section>
 
-      <!-- Section: My Role -->
-      <section class="section" id="role">
-        <span class="section-label">My Role</span>
-        <h2>From broadcast moment to narrative system.</h2>
-        <p>Owned and adapted the campaign story across Owned, Earned, and Digital channels; transformed abstract data into concrete high-impact social and media strategies that drove community engagement and organic inbound press. The TVC was the starting point. My work was everything that came after it. Scaled it to 400M+ views on YouTube. Grew the community by 150k fans.</p>
-
-        <div class="shift-block">
-          <div class="shift-col">
-            <div class="shift-label">From</div>
-            <div class="shift-item">Responding to criticism</div>
-            <div class="shift-item">Broadcast messaging</div>
-            <div class="shift-item">Centralised brand control</div>
-            <div class="shift-item">Fragmented business unit voices</div>
-            <div class="shift-item">Campaign as a moment</div>
-          </div>
-          <div class="shift-col">
-            <div class="shift-label active">To</div>
-            <div class="shift-item active">Owning a larger narrative about impact</div>
-            <div class="shift-item active">Distributed narrative ownership</div>
-            <div class="shift-item active">Community-carried storytelling</div>
-            <div class="shift-item active">One spine, ten authentic voices</div>
-            <div class="shift-item active">Campaign as an ongoing system</div>
-          </div>
-        </div>
+      <!-- Solution -->
+      <section class="section" id="solution">
+        <span class="section-label solution">Solution</span>
+        <h2>Tone adaptation &amp; credibility management.</h2>
+        <p>I translated the core campaign voice into the natural language of each business unit. Infrastructure services emphasized operational reliability and safety, airports focused on passenger experience, and consumer products communicated quality and everyday usefulness. The core idea remained constant, but the expression matched each audience.</p>
+        <p>Integrated distribution across advertising, media relations, social platforms, and corporate channels ensured audiences encountered the same idea through different interactions rather than repeated ads. Messaging was sequenced across announcements, stories, and service communications to reinforce recognition over time.</p>
       </section>
 
-      <!-- Section: Integrated System -->
+      <!-- Communication System -->
       <section class="section" id="system">
-        <span class="section-label system">The System</span>
-        <h2>One spine. Every channel.</h2>
-        <p>The execution discipline was integration. Paid, owned, and earned media were sequenced as a single encounter. Audiences met the same idea through different interactions rather than repeated ads. Vernacular ecosystems were activated. Tier 2 and 3 creators carried the narrative beyond the brand's own channels.</p>
+        <span class="section-label system">System</span>
+        <h2>Scalable digital platform.</h2>
+        <p>Rather than launching isolated campaigns, we built a unified narrative platform that scaled natively across LinkedIn, Instagram, Facebook, X, and YouTube.</p>
 
         <div class="eco-grid">
           <div class="eco-col">
             <div class="eco-label">Paid</div>
             <div class="eco-item">• TVC, 80+ channels, 20,000+ spots</div>
             <div class="eco-item">• 10 languages, 400+ GRPs</div>
-            <div class="eco-item">• Shark Tank &amp; Indian Idol integrations</div>
+            <div class="eco-item">• Shark Tank &amp; Indian Idol placements</div>
             <div class="eco-item">• India vs England cricket placement</div>
-            <div class="eco-item">• OOH at Ahmedabad &amp; Jaipur airports</div>
           </div>
           <div class="eco-col">
             <div class="eco-label">Owned</div>
@@ -897,45 +871,17 @@
             <div class="eco-item">• 10+ vernacular ecosystems</div>
             <div class="eco-item">• Ports of Progress storytelling</div>
             <div class="eco-item">• Parivartan narrative platform</div>
-            <div class="eco-item">• Leadership LinkedIn &amp; X strategy</div>
           </div>
           <div class="eco-col">
             <div class="eco-label">Earned</div>
             <div class="eco-item">• Media relations &amp; corporate PR</div>
             <div class="eco-item">• Tier 2 &amp; 3 creator activation</div>
             <div class="eco-item">• Community narrative ownership</div>
-            <div class="eco-item">• Real-time social listening</div>
             <div class="eco-item">• Sentiment-driven adaptation</div>
           </div>
         </div>
-      </section>
 
-      <!-- Section: Results -->
-      <section class="section" id="results">
-        <span class="section-label">Results</span>
-        <h2>Numbers that shifted a reputation.</h2>
-
-        <div class="story-grid">
-          <div class="story-card">
-            <h3>Reach &amp; Scale</h3>
-            <p><strong>290M+</strong> Impressions across platforms<br><strong>160M+</strong> Views in 4 weeks<br><strong>10</strong> Languages across TV &amp; digital</p>
-          </div>
-          <div class="story-card">
-            <h3>Brand Perception Shifts</h3>
-            <p><strong>+26%</strong> Brand awareness uplift<br><strong>+23%</strong> Infrastructure leadership perception<br><strong>+23%</strong> Positive impact on Indian lives<br><strong>+27%</strong> Diversified presence recognition</p>
-          </div>
-        </div>
-
-        <div class="list-box">
-          <div class="list-item">
-            <strong>Community &amp; Distribution Impact</strong>
-            1.01M community growth across channels, aligning 10+ business units under a single, resilient narrative spine.
-          </div>
-        </div>
-
-        <div class="pull-quote">
-          <p>"Infrastructure companies do not just sell products. They must justify their existence socially. HKKDH was not campaign execution. It was reputation infrastructure."</p>
-        </div>
+        <p>Executive leadership amplified the stories through thought-leadership channels, while shorter edits, reels, and platform-native assets extended their reach across digital audiences—creating a single corporate narrative expressed through multiple voices without losing consistency.</p>
       </section>
     </article>
 
@@ -943,13 +889,13 @@
     <aside class="side-card">
       <h3>Editorial Note</h3>
       <p><em>Hum Karke Dikhate Hain</em> established itself as the flagship corporate branding and reputation management platform for the Adani Group.</p>
-      <p>Recognized in Social Samosa's <strong>Yearbook of Campaigns 2025</strong> and winner of 4 IAA Olive Crown Gold Awards.</p>
+      <p>Developed with Ogilvy India, it demonstrated how emotion-first, human-centered storytelling can shift corporate reputation at scale.</p>
     </aside>
   </main>
 
   <!-- Footer -->
   <footer>
-    Adani Group · <span>Hum Karke Dikhate Hain</span> · Reputation &amp; Narrative Strategy · Yearbook of Campaigns 2025
+    EH5 / Mouris Bashir — <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
   </footer>
 </body>
 </html>
