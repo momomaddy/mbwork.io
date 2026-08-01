@@ -9,563 +9,870 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Police Scotland #WeCanStopIt — Case Study</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --deep: #05050F;
-    --ink: #08081A;
-    --blue: #2A4FD4;
-    --sky: #6B8FFF;
-    --pale: #F0F3FF;
-    --mist: #CBD4FF;
-    --body: #1A1E3A;
-    --muted: #5A6490;
-    --cream: #F5F6FF;
-  }
-  body { background: var(--cream); color: var(--body); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
-.top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background: rgba(43,0,14,0.96);
-    backdrop-filter: blur(8px);
-    padding: 0.9rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .top-nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-  .top-nav a {
-    font-family: sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(255,239,243,0.68);
-    text-decoration: none;
-  }
-  .top-nav .brand {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    color: #FFEFF3;
-  }
-  .top-nav a.active { color: #FFEFF3; }
- /* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--rule);
-  padding:0 3rem;height:52px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{display:block;text-decoration:none;}
-.nav-logo img{height:32px;width:auto;display:block;}
-.nav-right{display:flex;gap:2rem;align-items:center;}
-.nav-link{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
-}
-.nav-link:hover{opacity:1;}
-.nav-cta{
-  background:var(--ink);color:var(--cream)!important;
-  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  text-decoration:none;
-}
-  .video-column-grid {
-  display: flex;
-  gap: 30px; /* Space between the two videos */
-  margin-top: 2rem;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Police Scotland #WeCanStopIt — Case Study / Mouris Bashir</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-.video-column-item {
-  flex: 1; /* Makes both columns equal width */
-  display: flex;
-  flex-direction: column;
-}
+    *, *::before, *::after { box-sizing: border-box; }
 
-/* This maintains the 16:9 cinematic ratio for the videos */
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  background: #000;
-}
+    :root {
+      --paper: #f7f1e3;
+      --paper-soft: #fffaf0;
+      --ink: #17130e;
+      --ink-soft: #423b34;
+      --muted: #766d62;
+      --rule: #211a14;
+      --red: #b92f1f;
+      --blue: #2a4fd4;
+      --green: #32684c;
+      --yellow: #e4b93f;
+      --white: #fffdf7;
+    }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    html { scroll-behavior: smooth; }
 
-.video-meta {
-  padding-top: 1rem;
-}
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23,19,14,0.035) 1px, transparent 1px) 0 0 / 24px 24px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
 
-.video-tag {
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--rust);
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-}
+    /* Sticky Navigation Header */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 54px;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: rgba(247, 241, 227, 0.94);
+      border-bottom: 2px solid var(--rule);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.video-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-/* Container for the vertical grid */
-.video-vertical-grid {
-  display: flex;
-  gap: 40px;
-  justify-content: center; /* Centers the vertical 'phones' */
-  margin-top: 3rem;
-}
+    .nav-logo { display: block; text-decoration: none; }
+    .nav-logo img { display: block; width: auto; height: 32px; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-link,
+    .nav-work-btn,
+    .nav-cta {
+      color: var(--ink);
+      font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-.video-vertical-item {
-  flex: 0 1 320px; /* Constrains the width so it looks like a phone */
-  display: flex;
-  flex-direction: column;
-}
+    .nav-work { position: relative; }
 
-/* The magic number for 9:16 Vertical Ratio */
-.video-container.vertical {
-  position: relative;
-  width: 100%;
-  padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
-  height: 0;
-  background: var(--ink);
-  border-radius: 8px; /* Optional: slight curve to look like a screen */
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
+    .nav-work-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
 
-.video-container.vertical iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    .nav-work-btn::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+    }
 
-.video-meta {
-  padding-top: 1.2rem;
-  text-align: left;
-}
+    .work-dropdown {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      min-width: 250px;
+      background: var(--paper-soft);
+      border: 2px solid var(--rule);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
 
-/* Mobile Tweak: Don't let them get too small on phones */
-@media (max-width: 768px) {
-  .video-vertical-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .video-vertical-item {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-/* Mobile Tweak: Stack them back to vertical when the screen is narrow */
-@media (max-width: 768px) {
-  .video-column-grid {
-    flex-direction: column;
-  }
-}
-  .showreel-row {
-  display: flex; /* Forces items to sit side-by-side */
-  gap: 15px;    /* Space between the images */
-  width: 100%;
-  margin: 2rem 0;
-  overflow-x: auto; /* Allows horizontal scrolling if the images are too wide */
-  padding-bottom: 10px;
-}
+    .nav-work:hover .work-dropdown,
+    .nav-work:focus-within .work-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
 
-.creative-cell {
-  flex: 1;      /* Makes all images the same width */
-  min-width: 300px; /* Adjust this based on how large you want each 'frame' */
-  position: relative;
-}
+    .work-dropdown-label,
+    .work-dropdown a {
+      display: block;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      color: var(--ink);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-.creative-cell img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover; /* Ensures the images fill the space nicely */
-}
+    .work-dropdown-label { color: var(--red); background: var(--yellow); }
+    .work-dropdown a:hover { background: var(--ink); color: var(--paper); }
+    .work-dropdown a:last-child { border-bottom: 0; }
 
-/* Optional: Hide scrollbar for a cleaner 'Cinematic' look */
-.showreel-row::-webkit-scrollbar {
-  display: none;
-}
-.showreel-row {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
-}
-/* ── WORK DROPDOWN ── */
-.nav-work{position:relative;}
-.nav-work-btn{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);background:none;border:none;cursor:pointer;
-  opacity:0.6;transition:opacity 0.2s;padding:0;
-  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
-}
-.nav-work-btn::after{
-  content:'';display:inline-block;width:0;height:0;
-  border-left:3px solid transparent;border-right:3px solid transparent;
-  border-top:4px solid currentColor;transition:transform 0.2s;
-}
-.nav-work:hover .nav-work-btn,
-.nav-work:focus-within .nav-work-btn{opacity:1;}
-.nav-work:hover .nav-work-btn::after,
-.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
+    .nav-cta {
+      padding: 0.55rem 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-.work-dropdown{
-  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
-  background:var(--cream);border:1px solid var(--rule);
-  min-width:240px;
-  opacity:0;visibility:hidden;
-  transform:translateX(-50%) translateY(-6px);
-  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
-  z-index:200;
-}
-.nav-work:hover .work-dropdown,
-.nav-work:focus-within .work-dropdown{
-  opacity:1;visibility:visible;
-  transform:translateX(-50%) translateY(0);
-}
-.work-dropdown a{
-  display:block;padding:0.7rem 1.2rem;
-  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.65;
-  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
-}
-.work-dropdown a:last-child{border-bottom:none;}
-.work-dropdown a:hover{opacity:1;background:var(--paper2);}
-.work-dropdown-label{
-  padding:0.6rem 1.2rem 0.4rem;
-  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
-  }
-  .hero { position: relative; background: var(--deep); min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem 3rem 5rem; overflow: hidden; }
-  .hero-glow { position: absolute; inset: 0; pointer-events: none;
-    background-image:
-      radial-gradient(circle at 70% 20%, rgba(42,79,212,0.25) 0%, transparent 52%),
-      radial-gradient(circle at 15% 75%, rgba(107,33,168,0.12) 0%, transparent 45%); }
-  .ring { position: absolute; border-radius: 50%; pointer-events: none; }
-  .r1 { width: 480px; height: 480px; top: -110px; right: -90px; border: 1px solid rgba(42,79,212,0.2); }
-  .r2 { width: 300px; height: 300px; top: -20px; right: 40px; border: 1px solid rgba(107,143,255,0.1); }
-  .r3 { width: 680px; height: 680px; bottom: -240px; left: -200px; border: 1px solid rgba(42,79,212,0.06); }
+    /* Sub-header Issue Bar */
+    .issue-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem clamp(1rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-soft);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
 
-  .hero-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sky); font-weight: 500; margin-bottom: 2rem; }
-  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5.2vw, 4.8rem); font-weight: 900; line-height: 1.05; color: #EEF0FF; margin-bottom: 1.5rem; max-width: 720px; }
-  .hero-title em { font-style: italic; color: #A8C4FF; }
-  .hero-sub { font-size: 1rem; color: rgba(238,240,255,0.48); max-width: 540px; margin-bottom: 3rem; font-weight: 300; }
-  .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; }
-  .meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
-  .meta-label { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(238,240,255,0.28); }
-  .meta-val { font-size: 0.87rem; color: #EEF0FF; font-weight: 400; }
+    .issue-bar span:nth-child(2) {
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.5rem;
+      background: var(--yellow);
+    }
 
-  .stat-strip { background: var(--deep); padding: 4rem 3rem; border-top: 1px solid rgba(42,79,212,0.15); }
-  .stat-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 2.5rem; }
-  .stat { display: flex; flex-direction: column; gap: 0.3rem; }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: #A8C4FF; line-height: 1; }
-  .stat-desc { font-size: 0.76rem; color: rgba(238,240,255,0.42); line-height: 1.5; max-width: 145px; }
+    .issue-bar span:last-child { text-align: right; }
 
-  .blue-band { background: var(--blue); padding: 1.1rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .blue-band-main { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #fff; font-style: italic; }
-  .blue-band-sub { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+    /* Hero Section */
+    .hero {
+      border-bottom: 2px solid var(--rule);
+      background: var(--paper);
+    }
 
-  .page { max-width: 920px; margin: 0 auto; padding: 0 2rem; }
-  section { padding: 5rem 0; border-bottom: 1px solid rgba(8,8,26,0.07); }
-  section:last-child { border-bottom: none; }
-  .section-tag { font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); font-weight: 500; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
-  .section-tag::after { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--blue); opacity: 0.45; }
-  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 1.8rem; }
-  h2 em { font-style: italic; color: var(--blue); }
-  p { font-size: 0.96rem; color: #1A1E3A; margin-bottom: 1.2rem; max-width: 700px; }
-  p:last-child { margin-bottom: 0; }
+    .hero-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.45fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: end;
+      padding: clamp(1.4rem, 4vw, 3.4rem);
+      border-bottom: 2px solid var(--rule);
+    }
 
-  .pull-quote { margin: 3rem 0; padding: 2rem 0 2rem 2rem; border-left: 3px solid var(--blue); }
-  .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: var(--ink); font-weight: 400; line-height: 1.5; margin-bottom: 0; max-width: 640px; }
+    .kicker {
+      width: max-content;
+      max-width: 100%;
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.35rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-  /* HERO CREATIVE — full bleed single statement */
-  .statement-block { margin: 3rem 0; background: #000; padding: 3.5rem; position: relative; overflow: hidden; }
-  .statement-text { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; color: #fff; line-height: 1.2; max-width: 600px; }
-  .statement-text span { color: #A8C4FF; }
+    h1 {
+      margin: 2rem 0 1.2rem;
+      max-width: 14ch;
+      font-size: clamp(2.8rem, 5.8vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      font-weight: 900;
+      overflow-wrap: normal;
+    }
 
-  /* MAGAZINE LAYOUT */
-  .mag-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; border: 1px solid var(--mist); margin-bottom: 0; }
-  .mag-row + .mag-row { border-top: none; }
-  .mag-row:last-of-type { margin-bottom: 4rem; }
-  .mag-img { overflow: hidden; }
-  .mag-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 320px; }
-  .mag-copy { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
-  .mag-copy.pale { background: var(--pale); }
-  .mag-copy.white { background: #fff; }
-  .mag-num { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
-  .mag-headline { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); line-height: 1.3; margin-bottom: 0.8rem; }
-  .mag-body { font-size: 0.86rem; color: var(--muted); line-height: 1.7; }
+    .dek {
+      max-width: 720px;
+      margin: 0;
+      font: 400 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
 
- .portfolio-gif {
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 1px solid var(--rule); /* Subtle border like your other cells */
-  filter: grayscale(10%) contrast(105%); /* Keeps it moody and professional */
-  transition: filter 0.3s ease;
-}
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
 
-.portfolio-gif:hover {
-  filter: grayscale(0%) contrast(100%); /* Full color on hover */
-} /* PEER PORTRAITS */
-  .peer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2.5rem 0; }
-  .peer-card { border: 1px solid var(--mist); overflow: hidden; }
-  .peer-card img { width: 100%; display: block; }
-  .peer-caption { padding: 1.2rem; background: var(--pale); }
-  .peer-caption-quote { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-style: italic; color: var(--ink); line-height: 1.6; margin-bottom: 0.5rem; }
-  .peer-caption-attr { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); font-weight: 500; }
+    .meta-item {
+      min-height: 84px;
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-  .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
-  .result-card { background: var(--pale); border: 1px solid var(--mist); padding: 1.5rem; }
-  .result-card-label { font-size: 0.63rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
-  .result-item { margin-bottom: 0.8rem; }
-  .result-item:last-child { margin-bottom: 0; }
-  .result-num { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; color: var(--blue); line-height: 1; }
-  .result-sub { font-size: 0.76rem; color: var(--muted); line-height: 1.4; margin-top: 0.2rem; }
+    .meta-item:last-child { border-bottom: 0; }
 
-  .press-strip { background: var(--pale); border: 1px solid var(--mist); padding: 2rem; margin: 2rem 0; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
-  .press-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); font-weight: 500; white-space: nowrap; }
-  .press-outlet { font-size: 0.82rem; color: var(--body); font-weight: 500; padding: 0.3rem 0.8rem; border: 1px solid var(--mist); background: #fff; }
+    .meta-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--blue);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-  .impact-block { background: var(--deep); padding: 2.5rem; margin: 2.5rem 0; position: relative; overflow: hidden; }
-  .impact-block::before { content: ''; position: absolute; top: 0; right: 0; width: 220px; height: 220px; background: radial-gradient(circle, rgba(42,79,212,0.2) 0%, transparent 70%); }
-  .impact-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #A8C4FF; font-weight: 700; margin-bottom: 0.6rem; }
-  .impact-body { font-size: 0.86rem; color: rgba(238,240,255,0.52); line-height: 1.7; margin-bottom: 0; max-width: 620px; }
+    .meta-val {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
 
-  .role-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0; }
-  .role-tag { background: rgba(42,79,212,0.07); border: 1px solid rgba(42,79,212,0.2); color: var(--blue); font-size: 0.72rem; letter-spacing: 0.08em; padding: 0.35rem 0.9rem; font-weight: 500; }
+    /* Stats Grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-bottom: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-  footer { background: var(--deep); padding: 3rem; text-align: center; }
-  footer p { font-size: 0.76rem; color: rgba(238,240,255,0.26); margin: 0 auto; }
-  footer span { color: var(--sky); }
+    .stat {
+      min-height: 150px;
+      padding: 1.2rem clamp(1rem, 2vw, 1.6rem);
+      border-right: 1px solid rgba(247, 241, 227, 0.35);
+    }
 
-  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
-  @media (max-width: 700px) {
-    .mag-row, .peer-grid { grid-template-columns: 1fr; }
-    .mag-img img { min-height: 240px; }
-    .hero { padding: 3rem 1.5rem 4rem; }
-    .stat-strip, .blue-band { padding: 3rem 1.5rem; }
-    .page { padding: 0 1.2rem; }
-  }
+    .stat:last-child { border-right: 0; }
 
-</style>
+    .stat-num {
+      display: block;
+      margin-bottom: 0.6rem;
+      color: var(--yellow);
+      font-size: clamp(2rem, 3.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 0.9;
+    }
+
+    .stat-desc {
+      display: block;
+      max-width: 16rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    /* Article Shell & Rails */
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.22fr) minmax(0, 900px) minmax(170px, 0.26fr);
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      width: min(1360px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .rail {
+      position: sticky;
+      top: 76px;
+      align-self: start;
+      border-top: 2px solid var(--rule);
+      padding-top: 0.8rem;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .rail strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--blue);
+    }
+
+    .rail nav {
+      all: unset;
+      display: block;
+      margin-top: 1.2rem;
+    }
+
+    .rail nav a {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 0.64rem;
+    }
+
+    .rail nav a:hover { color: var(--blue); }
+
+    article {
+      background: var(--paper-soft);
+      border-left: 2px solid var(--rule);
+      border-right: 2px solid var(--rule);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .section {
+      padding: clamp(2.2rem, 5vw, 4.2rem) 0;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .section:last-child { border-bottom: 0; }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--rule);
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.22rem 0.5rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .section-label.problem { background: var(--red); }
+    .section-label.results { background: var(--ink); }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font: 700 clamp(2rem, 4vw, 3.2rem)/0.98 "Libre Baskerville", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 1.15rem;
+      font: 400 1.02rem/1.78 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      max-width: 760px;
+      font-size: clamp(1.18rem, 2.2vw, 1.55rem);
+      line-height: 1.62;
+      color: var(--ink);
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      padding: 0.18rem 0.42rem 0 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 5.4rem;
+      font-weight: 900;
+      line-height: 0.78;
+      color: var(--blue);
+    }
+
+    /* Pull Quotes */
+    .pull-quote {
+      margin: 2rem 0;
+      padding: 1.2rem 0 1.2rem 1.2rem;
+      border-left: 8px solid var(--yellow);
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .pull-quote p {
+      margin: 0;
+      max-width: 640px;
+      color: var(--ink);
+      font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    /* Statement Block Component */
+    .statement-block {
+      margin: 2rem 0;
+      background: var(--ink);
+      color: var(--white);
+      padding: 2.5rem;
+      border: 2px solid var(--rule);
+      box-shadow: 6px 6px 0 var(--blue);
+    }
+
+    .statement-text {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.2;
+      max-width: 600px;
+    }
+
+    .statement-text span {
+      color: var(--yellow);
+    }
+
+    /* Horizontal Creative Reel */
+    .showreel-row {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding: 0.8rem 0 1.2rem;
+      margin: 1.6rem 0;
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .creative-cell {
+      flex: 0 0 280px;
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 4px 4px 0 var(--blue);
+    }
+
+    .creative-cell img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Magazine Row Layouts */
+    .mag-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      margin: 1.6rem 0;
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .mag-img {
+      overflow: hidden;
+      border-right: 1px solid var(--rule);
+    }
+
+    .mag-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mag-copy {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .mag-num {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.4rem;
+    }
+
+    .mag-headline {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .mag-body {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* Role Pills / Tags */
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+
+    .pill-item {
+      padding: 0.5rem 0.9rem;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    /* Results Cards Grid */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 1.6rem 0;
+    }
+
+    .result-card {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      padding: 1.2rem;
+      box-shadow: 6px 6px 0 var(--blue);
+    }
+
+    .result-card:nth-child(2n) { box-shadow: 6px 6px 0 var(--yellow); }
+
+    .result-card-label {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.6rem;
+    }
+
+    .result-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .result-sub {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      line-height: 1.4;
+    }
+
+    /* Press Coverage Badges */
+    .press-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.2rem 0;
+    }
+
+    .press-badge {
+      padding: 0.4rem 0.8rem;
+      border: 2px solid var(--rule);
+      background: var(--paper-soft);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+
+    /* Sticky Side Card */
+    .side-card {
+      align-self: start;
+      border: 2px solid var(--rule);
+      background: var(--blue);
+      color: var(--white);
+      padding: 1rem;
+      box-shadow: 7px 7px 0 var(--yellow);
+      position: sticky;
+      top: 76px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .side-card p {
+      margin: 0 0 1rem;
+      max-width: none;
+      color: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .side-card p:last-child { margin-bottom: 0; }
+
+    footer {
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      border-top: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .hero-copy { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-shell { grid-template-columns: 1fr; }
+      .rail, .side-card { position: static; }
+      article { border: 2px solid var(--rule); }
+    }
+
+    @media (max-width: 720px) {
+      nav { height: auto; min-height: 54px; align-items: flex-start; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+      .nav-right { flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem; }
+      .nav-link, .nav-work-btn, .nav-cta { font-size: 0.6rem; }
+      .issue-bar { grid-template-columns: 1fr; gap: 0.45rem; }
+      .issue-bar span:last-child { text-align: left; }
+      h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+      .hero-meta, .stats, .mag-row, .results-grid { grid-template-columns: 1fr; }
+      .mag-img { border-right: 0; border-bottom: 1px solid var(--rule); }
+    }
+  </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="M.png" alt="mb.work">
-  </a>
-  <div class="nav-right">
-    <!-- Work with dropdown -->
-    <div class="nav-work" tabindex="0">
-      <button class="nav-work-btn" aria-haspopup="true">Work</button>
-      <div class="work-dropdown" role="menu">
-        <div class="work-dropdown-label">Case Studies</div>
-        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
-        <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="ONBC.html">#OneNationBillionCelebrations</a>
-        <a href="adl_equally.html">ADL Is EquAlly</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="OYO.html">OYO</a>
-        <a href="fortune.html">Fortune</a>
-        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
-        <a href="FarmPik.html">FarmPik</a>
-        <a href="BookMyForex.html">BookMyForex</a>
-        <a href="moment_marketing.html">Moment Marketing</a>
+  <!-- Navigation Header -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
+    </a>
+    <div class="nav-right">
+      <div class="nav-work" tabindex="0">
+        <button class="nav-work-btn" aria-haspopup="true">Work</button>
+        <div class="work-dropdown" role="menu">
+          <div class="work-dropdown-label">Case Studies</div>
+          <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+          <a href="HorizonX.html">Horizon X - hear.com</a>
+          <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+          <a href="adl_equally.html">ADL Is EquAlly</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="OYO.html">OYO Valentine's</a>
+          <a href="OYO_OPEN.html">OYO OPEN</a>
+          <a href="OYO_Internal.html">OYO Internal Comms</a>
+          <a href="fortune.html">Fortune</a>
+          <a href="police_scotland.html">Police Scotland</a>
+          <a href="FarmPik.html">FarmPik</a>
+          <a href="BookMyForex.html">BookMyForex</a>
+          <a href="moment_marketing.html">Moment Marketing</a>
+          <a href="ONBC.html">One Nation Billion Celebrations</a>
+          <a href="airportvideos.html">Airport Videos</a>
+          <a href="execcomms.html">Executive Comms</a>
+        </div>
       </div>
+      <a href="bio_gq.html" class="nav-link">About</a>
+      <a href="eh5tories.html" class="nav-link">EH5tories</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
     </div>
-    <a href="bio_gq.html" class="nav-link">About</a>
-    <a href="eh5tories.html" class="nav-link">EH5tories</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-  </div>
   </nav>
 
-<div class="hero">
-  <div class="hero-glow"></div>
-  <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-  <div class="hero-label">Case Study · Public Safety Campaign · Social Behaviour Change</div>
-  <h1 class="hero-title">We can<br><em>stop it.</em></h1>
-  <p class="hero-sub">A sexual consent awareness campaign that reached 401,251 people in four weeks, generated national BBC and Guardian coverage, and was adopted nationwide by Police Scotland.</p>
-  <div class="hero-meta">
-    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">Lothian and Borders Police</span></div>
-    <div class="meta-item"><span class="meta-label">Campaign</span><span class="meta-val">#WeCanStopIt</span></div>
-    <div class="meta-item"><span class="meta-label">Agency</span><span class="meta-val">In-house</span></div>
-    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Copywriting and Research</span></div>
-  </div>
-</div>
-
-<div class="stat-strip">
-  <div class="stat-grid">
-    <div class="stat"><div class="stat-num">401,251</div><div class="stat-desc">People reached in the first four weeks</div></div>
-    <div class="stat"><div class="stat-num">4 weeks</div><div class="stat-desc">To national BBC and Guardian coverage</div></div>
-    <div class="stat"><div class="stat-num">Nationwide</div><div class="stat-desc">Police Scotland adopted the campaign nationally</div></div>
-    <div class="stat"><div class="stat-num">18–35</div><div class="stat-desc">Target audience: young men, peer-to-peer framing</div></div>
-  </div>
-</div>
-
-<div class="blue-band">
-  <span class="blue-band-main">#WeCanStopIt</span>
-  <span class="blue-band-sub">Police Scotland · Lothian and Borders · Consent Awareness</span>
-</div>
-
-<div class="page">
-
-  <section>
-    <div class="section-tag">My Role</div>
-    <h2>Research, copy,<br><em>and the message that had to land.</em></h2>
-    <p>My role was creative communication development and campaign messaging, aligned with the media strategy to ensure clarity, reach and public discussion. This meant writing the copy that carried the campaign's central argument, and ensuring that argument was both unambiguous and impossible to dismiss.</p>
-    <div class="role-tags">
-      <span class="role-tag">Copywriting</span>
-      <span class="role-tag">Research</span>
-      <span class="role-tag">Campaign Messaging</span>
-      <span class="role-tag">Media Strategy Alignment</span>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-tag">The Problem</div>
-    <h2>Most campaigns told women<br>how to <em>stay safe.</em></h2>
-    <p>Sexual assault prevention campaigns have historically been directed at potential victims: advice on how to dress, where to go, who to trust, how to leave. The implicit message being that safety is the responsibility of the person at risk.</p>
-    <p>Research conducted by Police Scotland identified a different and more uncomfortable gap: many young men did not clearly recognise that sex without explicit consent constitutes rape. This was not a knowledge gap about the law. It was a recognition gap about everyday situations.</p>
-    <div class="pull-quote">
-      <p>"The campaign needed to shift the conversation from victim precaution to bystander responsibility."</p>
-    </div>
-    <p>The challenge was to address this without alienating the audience the campaign most needed to reach. An accusatory tone would cause disengagement. A preachy tone would be ignored. The message needed to travel through peer networks, not around them.</p>
-  </section>
-
-  <section>
-    <div class="section-tag">The Strategy</div>
-    <h2>Speak to peers,<br><em>not perpetrators.</em></h2>
-    <p>The strategic reframe was the campaign's most important decision. Rather than addressing men as potential offenders, the communication positioned them as agents of prevention. The "we" in #WeCanStopIt was deliberate — collective, inclusive, social.</p>
-    <p>Prevention was framed as a social norm held by the majority, not a rule imposed by authority. The campaign borrowed the language and visual logic of peer communication rather than institutional messaging, making it shareable, discussable and credible within the networks it needed to reach.</p>
-
-    <div class="statement-block">
-      <div class="statement-text">Sex without consent<br><span>is rape.</span><br>#WeCanStopIt</div>
-    </div>
-
-    <p>The central line was written to be unambiguous. No euphemism. No softening. No room for misreading. The clarity of the language was the strategy — if the message could be misread, it could be ignored.</p>
-  </section>
-
-  <section>
-    <div class="section-tag">The Work</div>
-    <h2>The creative.<br><em>Neon. Peer portraits. One line.</em></h2>
-    <p>The campaign ran two visual systems simultaneously. The neon poster series used everyday social scenarios — Club. Dance. Taxi. Sex — to name the exact contexts where consent is misread or ignored. Each poster ended with the same unambiguous statement. The peer portrait series put real-looking men on camera with direct first-person pledges, normalising the behaviour the campaign was trying to spread.</p>
-
-    <!-- NEON SERIES — magazine alternating layout -->
-  <div class="mag-row">
-  <div class="mag-img"><img src="p1.gif"></div>
-  <div class="mag-copy pale">
-    <div class="mag-num">Neon Series — 01</div>
-    <div class="mag-headline">Club. Dance. Taxi. Sex...</div>
-    <div class="mag-body">The neon format borrowed from nightlife and entertainment culture — the exact environments where the campaign's message most needed to land. Each poster named a plausible social sequence and interrupted it with a single legal and moral fact. The ellipsis before the word "sex" was deliberate: it created a pause that the final line filled.</div>
-  </div>
-</div>
-
-<div class="showreel-row">
-  <div class="creative-cell">
-    <img src="p4.jpg">
-    <div class="cell-overlay"></div>
-  </div> <div class="creative-cell">
-    <img src="p5.jpg">
-    <div class="cell-overlay"></div>
+  <!-- Sub-header Issue Bar -->
+  <div class="issue-bar">
+    <span>Police Scotland / Public Safety</span>
+    <span>Case Study</span>
+    <span>#WeCanStopIt</span>
   </div>
 
-  <div class="creative-cell">
-    <img src="p6.jpg">
-    <div class="cell-overlay"></div>
-  </div>
-
-  <div class="creative-cell">
-    <img src="p7.jpg">
-    <div class="cell-overlay"></div>
-  </div>
-</div> <p style="margin-top: 4rem;">The peer portrait series placed real-looking men — identified by name and occupation — in direct address to the viewer. Each portrait carried a first-person pledge rather than a third-person instruction. The question "Are you?" or "Do you?" at the end of each creative transferred the message from statement to social invitation.</p>
-
-<div class="showreel-row">
-  <div class="creative-cell">
-    <img src="p1.jpg" alt="#WeCanStopIt">
-    <div class="cell-overlay"></div>
-  </div>
-  
-  <div class="creative-cell">
-    <img src="p2.jpg" alt="#WeCanStopIt">
-    <div class="cell-overlay"></div>
-  </div>
-  <div class="creative-cell">
-    <img src="michael.jpg" alt="#WeCanStopIt">
-    <div class="cell-overlay"></div>
-  </div>
-  <div class="creative-cell">
-    <img src="jay.jpg" alt="#WeCanStopIt">
-    <div class="cell-overlay"></div>
-  </div>
-  
-  <div class="creative-cell">
-    <img src="pete.jpg" alt="#WeCanStopIt">
-    <div class="cell-overlay"></div>
-  </div>
-</div>
-  </section>
-
-  <section>
-    <div class="section-tag">Results</div>
-    <h2>401,251 people.<br><em>Four weeks. National adoption.</em></h2>
-
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="result-card-label">Reach</div>
-        <div class="result-item"><div class="result-num">401,251</div><div class="result-sub">People reached in the first four weeks</div></div>
-        <div class="result-item"><div class="result-num">4 weeks</div><div class="result-sub">To full national media coverage</div></div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <div class="kicker">Case Study / Public Safety Campaign</div>
+        <h1>We Can Stop It</h1>
+        <p class="dek">A sexual consent awareness campaign that reached 401,251 people in four weeks, generated national BBC and Guardian coverage, and was adopted nationwide by Police Scotland.</p>
       </div>
-      <div class="result-card">
-        <div class="result-card-label">Institutional Impact</div>
-        <div class="result-item"><div class="result-num">Nationwide</div><div class="result-sub">Police Scotland adopted the campaign across Scotland</div></div>
-        <div class="result-item"><div class="result-num">Organic</div><div class="result-sub">Campaign travelled into editorial conversation beyond paid distribution</div></div>
+      <div class="hero-meta" aria-label="Project details">
+        <div class="meta-item">
+          <span class="meta-label">Client</span>
+          <span class="meta-val">Lothian and Borders Police</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Campaign</span>
+          <span class="meta-val">#WeCanStopIt</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Agency</span>
+          <span class="meta-val">In-house</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Role</span>
+          <span class="meta-val">Copywriting &amp; Research</span>
+        </div>
       </div>
     </div>
+  </header>
 
-    <div class="press-strip">
-      <span class="press-label">National coverage</span>
-      <span class="press-outlet">BBC</span>
-      <span class="press-outlet">The Guardian</span>
-      <span class="press-outlet">BuzzFeed</span>
-      <span class="press-outlet">Major UK news outlets</span>
+  <!-- Stats Grid -->
+  <section class="stats" aria-label="Campaign impact">
+    <div class="stat">
+      <span class="stat-num">401,251</span>
+      <span class="stat-desc">People reached in the first 4 weeks</span>
     </div>
-
-    <div class="impact-block">
-      <div class="impact-title">Why this campaign still matters</div>
-      <div class="impact-body">The #WeCanStopIt campaign demonstrated that the most effective behaviour change communication does not lecture its audience — it recruits them. By framing prevention as a social identity that the majority already holds, the campaign gave young men a way to participate in the message rather than resist it. The nationwide adoption by Police Scotland was not just an institutional endorsement. It was confirmation that the communication architecture was correct: clarity of message, peer-to-peer tone, and a creative system that could scale across contexts without losing its core argument.</div>
+    <div class="stat">
+      <span class="stat-num">4 Weeks</span>
+      <span class="stat-desc">To national BBC and Guardian coverage</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">Nationwide</span>
+      <span class="stat-desc">Police Scotland adopted campaign nationally</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">18–35</span>
+      <span class="stat-desc">Target audience: young men, peer framing</span>
     </div>
   </section>
 
-</div>
+  <!-- Main Article Layout Shell -->
+  <main class="article-shell">
+    <aside class="rail">
+      <strong>On This Page</strong>
+      Problem, strategy, creative assets, and national impact.
+      <nav>
+        <a href="#role">My Role</a>
+        <a href="#problem">The Problem</a>
+        <a href="#strategy">Peer Strategy</a>
+        <a href="#work">Creative Showcase</a>
+        <a href="#results">Results &amp; Adoption</a>
+      </nav>
+    </aside>
 
-<footer>
-  <p>Police Scotland · <span>#WeCanStopIt</span> · Consent Awareness Campaign · Portfolio Case Study</p>
-</footer>
+    <article>
+      <!-- Section: My Role -->
+      <section class="section" id="role">
+        <span class="section-label">My Role</span>
+        <h2>Research, copy, and the message that had to land.</h2>
+        <p class="lede dropcap">My role was creative communication development and campaign messaging, aligned with the media strategy to ensure clarity, reach and public discussion. This meant writing the copy that carried the campaign's central argument, and ensuring that argument was both unambiguous and impossible to dismiss.</p>
 
+        <div class="pills-container">
+          <div class="pill-item">Copywriting</div>
+          <div class="pill-item">Research</div>
+          <div class="pill-item">Campaign Messaging</div>
+          <div class="pill-item">Media Strategy Alignment</div>
+        </div>
+      </section>
 
+      <!-- Section: The Problem -->
+      <section class="section" id="problem">
+        <span class="section-label problem">The Problem</span>
+        <h2>Most campaigns told women how to stay safe.</h2>
+        <p>Sexual assault prevention campaigns have historically been directed at potential victims: advice on how to dress, where to go, who to trust, how to leave. The implicit message being that safety is the responsibility of the person at risk.</p>
+        <p>Research conducted by Police Scotland identified a different and more uncomfortable gap: many young men did not clearly recognise that sex without explicit consent constitutes rape. This was not a knowledge gap about the law. It was a recognition gap about everyday situations.</p>
+
+        <div class="pull-quote">
+          <p>"The campaign needed to shift the conversation from victim precaution to bystander responsibility."</p>
+        </div>
+
+        <p>The challenge was to address this without alienating the audience the campaign most needed to reach. An accusatory tone would cause disengagement. A preachy tone would be ignored. The message needed to travel through peer networks, not around them.</p>
+      </section>
+
+      <!-- Section: Strategy -->
+      <section class="section" id="strategy">
+        <span class="section-label">The Strategy</span>
+        <h2>Speak to peers, not perpetrators.</h2>
+        <p>The strategic reframe was the campaign's most important decision. Rather than addressing men as potential offenders, the communication positioned them as agents of prevention. The "we" in #WeCanStopIt was deliberate—collective, inclusive, social.</p>
+        <p>Prevention was framed as a social norm held by the majority, not a rule imposed by authority. The campaign borrowed the language and visual logic of peer communication rather than institutional messaging, making it shareable, discussable and credible within the networks it needed to reach.</p>
+
+        <div class="statement-block">
+          <div class="statement-text">Sex without consent <span>is rape.</span><br>#WeCanStopIt</div>
+        </div>
+
+        <p>The central line was written to be unambiguous. No euphemism. No softening. No room for misreading. The clarity of the language was the strategy—if the message could be misread, it could be ignored.</p>
+      </section>
+
+      <!-- Section: Creative Showcase -->
+      <section class="section" id="work">
+        <span class="section-label">Creative Showcase</span>
+        <h2>Neon. Peer portraits. One line.</h2>
+        <p>The campaign ran two visual systems simultaneously. The neon poster series used everyday social scenarios—Club. Dance. Taxi. Sex—to name the exact contexts where consent is misread or ignored. Each poster ended with the same unambiguous statement. The peer portrait series put real-looking men on camera with direct first-person pledges, normalising the behaviour the campaign was trying to spread.</p>
+
+        <!-- Animated Gif Showcase Row -->
+        <div class="mag-row">
+          <div class="mag-img">
+            <img src="p1.gif" alt="Neon Consent Series GIF" class="portfolio-gif">
+          </div>
+          <div class="mag-copy">
+            <span class="mag-num">Neon Series — 01</span>
+            <div class="mag-headline">Club. Dance. Taxi. Sex...</div>
+            <p class="mag-body">The neon format borrowed from nightlife culture—the exact environments where the campaign's message most needed to land. Each poster named a plausible social sequence and interrupted it with a single legal and moral fact.</p>
+          </div>
+        </div>
+
+        <!-- Horizontal Scrollable Reel 1: Neon Posters -->
+        <div class="showreel-row">
+          <div class="creative-cell"><img src="p4.jpg" alt="Neon Series 4"></div>
+          <div class="creative-cell"><img src="p5.jpg" alt="Neon Series 5"></div>
+          <div class="creative-cell"><img src="p6.jpg" alt="Neon Series 6"></div>
+          <div class="creative-cell"><img src="p7.jpg" alt="Neon Series 7"></div>
+        </div>
+
+        <p style="margin-top: 1.6rem;">The peer portrait series placed real-looking men—identified by name and occupation—in direct address to the viewer. Each portrait carried a first-person pledge rather than a third-person instruction, transferring the message from statement to social invitation.</p>
+
+        <!-- Horizontal Scrollable Reel 2: Peer Portraits -->
+        <div class="showreel-row">
+          <div class="creative-cell"><img src="p1.jpg" alt="Peer Portrait 1"></div>
+          <div class="creative-cell"><img src="p2.jpg" alt="Peer Portrait 2"></div>
+          <div class="creative-cell"><img src="michael.jpg" alt="Michael Portrait"></div>
+          <div class="creative-cell"><img src="jay.jpg" alt="Jay Portrait"></div>
+          <div class="creative-cell"><img src="pete.jpg" alt="Pete Portrait"></div>
+        </div>
+      </section>
+
+      <!-- Section: Results -->
+      <section class="section" id="results">
+        <span class="section-label results">Results</span>
+        <h2>401,251 people. Four weeks. National adoption.</h2>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <span class="result-card-label">Audience Reach</span>
+            <div class="result-num">401,251</div>
+            <div class="result-sub">People reached in the first four weeks of launch.</div>
+          </div>
+          <div class="result-card">
+            <span class="result-card-label">National Adoption</span>
+            <div class="result-num">Nationwide</div>
+            <div class="result-sub">Police Scotland adopted the campaign across Scotland.</div>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.6rem; font-weight: 700;">National Media Outlets Covering the Launch:</p>
+        <div class="press-container">
+          <span class="press-badge">BBC</span>
+          <span class="press-badge">The Guardian</span>
+          <span class="press-badge">BuzzFeed</span>
+          <span class="press-badge">Major UK News Outlets</span>
+        </div>
+
+        <div class="pull-quote">
+          <p>"By framing prevention as a social identity that the majority already holds, the campaign gave young men a way to participate in the message rather than resist it."</p>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Note -->
+    <aside class="side-card">
+      <h3>Institutional Adoption</h3>
+      <p>#WeCanStopIt was adopted nationwide across Scotland by Police Scotland after proving its effectiveness in shifting public safety discourse.</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    Police Scotland · <span>#WeCanStopIt</span> · Consent Awareness Campaign
+  </footer>
 </body>
 </html>
