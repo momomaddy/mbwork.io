@@ -11,7 +11,7 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editorial Case Study — Editorial Blocks</title>
+  <title>Moment Marketing — Mouris Bashir</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
@@ -24,19 +24,20 @@
       --ink-soft: #423b34;
       --rule: #211a14;
       --red: #d92b2b;
-      --yellow: #f4c430;
-      --blue: #1d4e89;
-      --green: #2d6a4f;
-      --dark-block: #111111;
+      --yellow: #e4b93f;
+      --blue: #174f75;
+      --green: #32684c;
+      --dark-block: #080808;
       --light-block: #eae5d9;
+      --white: #ffffff;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      background: var(--paper);
-      color: var(--ink);
+      background: var(--dark-block);
+      color: #ffffff;
       font-family: "DM Sans", Arial, sans-serif;
       line-height: 1.55;
       overflow-x: hidden;
@@ -49,7 +50,7 @@
       z-index: 100;
       height: 54px;
       padding: 0 clamp(1rem, 4vw, 3rem);
-      background: rgba(247, 241, 227, 0.95);
+      background: rgba(8, 8, 8, 0.95);
       border-bottom: 2px solid var(--rule);
       backdrop-filter: blur(8px);
       display: flex;
@@ -57,11 +58,18 @@
       justify-content: space-between;
     }
 
-    .nav-logo { display: block; text-decoration: none; }
-    .nav-logo img { display: block; width: auto; height: 32px; }
+    .nav-logo {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
     .nav-right { display: flex; align-items: center; gap: 1.4rem; }
-    .nav-link, .nav-work-btn, .nav-cta {
-      color: var(--ink);
+    .nav-link, .nav-cta {
+      color: #ffffff;
       font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -70,19 +78,19 @@
 
     .nav-cta {
       padding: 0.55rem 0.75rem;
-      background: var(--ink);
-      color: var(--paper);
+      background: var(--red);
+      color: #ffffff;
     }
 
-    /* Issue Sub-header Bar */
+    /* Sub-header Issue Bar */
     .issue-bar {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 1rem;
       padding: 0.7rem clamp(1rem, 4vw, 3rem);
-      border-bottom: 2px solid var(--rule);
-      background: var(--paper-soft);
+      border-bottom: 2px solid #222222;
+      background: #111111;
       font-size: 0.68rem;
       font-weight: 900;
       letter-spacing: 0.16em;
@@ -98,50 +106,45 @@
 
     .issue-bar span:last-child { text-align: right; }
 
-    /* Full-Bleed Segmented Color Blocks (Matching the Attached Vibe) */
+    /* Full-Bleed Segmented Color Blocks */
     .section-block {
       width: 100%;
-      padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 3rem);
+      padding: clamp(3rem, 6vw, 5.5rem) clamp(1rem, 4vw, 3rem);
       border-bottom: 3px solid var(--rule);
-      transition: background-color 0.3s ease;
     }
 
-    /* Color Theme Modifiers reflecting individual brand identities */
     .block-dark {
       background-color: var(--dark-block);
       color: #ffffff;
-      border-bottom-color: #000000;
+      border-bottom-color: #222222;
     }
 
     .block-yellow {
       background-color: var(--yellow);
       color: var(--ink);
+      border-bottom-color: var(--rule);
+    }
+
+    .block-light {
+      background-color: var(--paper-soft);
+      color: var(--ink);
+      border-bottom-color: var(--rule);
     }
 
     .block-red {
       background-color: var(--red);
       color: #ffffff;
+      border-bottom-color: var(--rule);
     }
 
-    .block-blue {
-      background-color: var(--blue);
-      color: #ffffff;
-    }
-
-    .block-light {
-      background-color: var(--light-block);
-      color: var(--ink);
-    }
-
-    /* Inner Container for Aligning Content inside Full-Bleed Sections */
     .block-inner {
       max-width: 1120px;
       margin: 0 auto;
     }
 
-    /* Editorial Section Header */
+    /* Block Headers & Tags */
     .block-header {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       border-bottom: 2px solid currentColor;
       padding-bottom: 1rem;
       display: flex;
@@ -152,7 +155,7 @@
     }
 
     .block-tag {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 900;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -163,7 +166,7 @@
 
     .block-title {
       font-family: "Libre Baskerville", Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-size: clamp(2rem, 4vw, 3.4rem);
       font-weight: 700;
       margin: 0.8rem 0 0;
       line-height: 1.05;
@@ -171,25 +174,112 @@
 
     .block-desc {
       font-family: "Libre Baskerville", Georgia, serif;
-      font-size: clamp(1rem, 1.8vw, 1.35rem);
-      line-height: 1.6;
-      max-width: 720px;
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      line-height: 1.65;
+      max-width: 760px;
       margin-top: 1rem;
       opacity: 0.9;
     }
 
-    /* Image Asset & Editorial Grids */
+    /* Hero Headline formatting */
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+
+    .hero-title .dim { opacity: 0.35; }
+    .hero-title .accent { color: var(--red); font-family: "Libre Baskerville", Georgia, serif; font-style: italic; text-transform: none; }
+
+    /* Pill Tags */
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid currentColor;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* Brand Chips Row */
+    .brands-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      border: 2px solid currentColor;
+      margin-top: 2rem;
+    }
+
+    .brand-chip {
+      padding: 1.2rem;
+      border-right: 1px solid currentColor;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .brand-chip:last-child { border-right: 0; }
+
+    .brand-chip span {
+      display: block;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-style: italic;
+      font-size: 0.82rem;
+      margin-top: 0.3rem;
+      text-transform: none;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    /* Video Embed Container */
+    .media-card {
+      border: 2px solid currentColor;
+      background: #000000;
+      margin: 2rem 0;
+      overflow: hidden;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-bottom: 2px solid currentColor;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .media-caption {
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Editorial Asset Grids */
     .editorial-grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .editorial-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
       margin-top: 2rem;
     }
 
@@ -217,79 +307,65 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.4s ease;
     }
 
-    .editorial-card:hover .editorial-frame img {
-      transform: scale(1.03);
+    .editorial-annotation {
+      padding: 1.2rem;
     }
 
-    .editorial-caption {
-      padding: 0.85rem 1rem;
-      font-size: 0.78rem;
+    .ann-num {
+      font-size: 0.65rem;
       font-weight: 900;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* Key Statistics / Metric Callouts */
-    .metric-row {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 2.5rem;
-      border-top: 2px solid currentColor;
-      padding-top: 2rem;
-    }
-
-    .metric-num {
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
-      font-weight: 900;
-      line-height: 0.9;
-      display: block;
+      opacity: 0.6;
       margin-bottom: 0.4rem;
     }
 
-    .metric-label {
-      font-size: 0.72rem;
+    .ann-headline {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 1.15rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .ann-body {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.88rem;
+      line-height: 1.6;
       opacity: 0.85;
     }
 
     /* Pull Quotes */
     .editorial-quote {
-      margin: 2.5rem 0 0;
-      padding-left: 1.5rem;
+      margin: 2rem 0;
+      padding-left: 1.2rem;
       border-left: 6px solid currentColor;
       font-family: "Libre Baskerville", Georgia, serif;
-      font-size: clamp(1.3rem, 2.5vw, 2.1rem);
+      font-size: clamp(1.2rem, 2.2vw, 1.8rem);
       font-style: italic;
-      line-height: 1.3;
-      max-width: 820px;
+      line-height: 1.35;
     }
 
     footer {
       padding: 2.5rem clamp(1rem, 4vw, 3rem);
-      background: var(--dark-block);
+      background: #000000;
       color: #ffffff;
       text-align: center;
       font-size: 0.72rem;
       font-weight: 900;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      border-top: 2px solid #222222;
     }
 
     footer a { color: var(--yellow); text-decoration: none; }
 
     @media (max-width: 860px) {
-      .editorial-grid-2, .editorial-grid-3, .metric-row {
+      .editorial-grid-2, .brands-row {
         grid-template-columns: 1fr;
       }
+      .brand-chip { border-right: 0; border-bottom: 1px solid currentColor; }
     }
   </style>
 </head>
@@ -297,164 +373,169 @@
 
   <!-- Sticky Top Navigation -->
   <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
-    </a>
+    <a href="index.html" class="nav-logo">mb.work</a>
     <div class="nav-right">
-      <a href="HKKDH.html" class="nav-link">HKKDH</a>
-      <a href="HorizonX.html" class="nav-link">Horizon X</a>
       <a href="bio_gq.html" class="nav-link">About</a>
-      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+      <a href="index.html" class="nav-link">Case Studies</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch ↗</a>
     </div>
   </nav>
 
   <!-- Issue Sub-header -->
   <div class="issue-bar">
     <span>Mouris Bashir</span>
-    <span>Editorial Portfolio Architecture</span>
-    <span>#SegmentedVibe</span>
+    <span>Moment Marketing Showcase</span>
+    <span>#CopyAndConcept</span>
   </div>
 
-  <!-- SECTION 1: DARK BRAND BLOCK (e.g. Executive Comms / High-Contrast) -->
+  <!-- SECTION 1: DARK BLOCK — HERO & OVERVIEW -->
   <section class="section-block block-dark">
     <div class="block-inner">
-      <div class="block-header">
-        <div>
-          <span class="block-tag">Issue 01 · Executive Comms</span>
-          <h1 class="block-title">The Leadership Voice in the Feed.</h1>
-        </div>
-        <span class="block-tag">400M+ Views</span>
+      <span class="block-tag">Creative Showcase · Moment Marketing</span>
+      <h1 class="hero-title">
+        <span class="dim">The copy</span><br>
+        <span>that did the</span><br>
+        <span class="accent">thinking.</span>
+      </h1>
+
+      <p class="block-desc">
+        Good moment marketing doesn't ride the calendar. It <strong>uses it as a brief.</strong> Every date is a tension—between what the day means and what the brand needs to say. The copy that works is the copy that finds the overlap without announcing it.
+      </p>
+
+      <div class="hero-tags">
+        <span class="tag">Adani Gas · #FuellingGoodness</span>
+        <span class="tag">Adani Renewables</span>
+        <span class="tag">Adani Digital Labs</span>
+        <span class="tag">Concept Ideation</span>
+        <span class="tag">Copywriting</span>
+        <span class="tag">Social Content</span>
+        <span class="tag">Moment Marketing</span>
+        <span class="tag">Tactical Communication</span>
       </div>
 
-      <p class="block-desc">Translating C-suite thought leadership into platform-native formats engineered for social feeds, press releases, and keynote stages.</p>
-
-      <div class="editorial-grid-3">
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="ex01-election-quote.jpg" alt="Executive Statement"></div>
-          <div class="editorial-caption"><span>Ex. 01</span><span>Moment Statement</span></div>
-        </div>
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="ex03-rohit-kapoor-quote.jpg" alt="CXO Quote Card"></div>
-          <div class="editorial-caption"><span>Ex. 02</span><span>CXO Card</span></div>
-        </div>
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="ex06-panel-discussion.jpg" alt="Stage Panel"></div>
-          <div class="editorial-caption"><span>Ex. 03</span><span>Keynote Stage</span></div>
-        </div>
-      </div>
-
-      <div class="metric-row">
-        <div><span class="metric-num">400M+</span><span class="metric-label">Crisis Comms Views</span></div>
-        <div><span class="metric-num">20+</span><span class="metric-label">CEOs Advised</span></div>
-        <div><span class="metric-num">140K</span><span class="metric-label">Subscriber Growth</span></div>
-        <div><span class="metric-num">3</span><span class="metric-label">Core Channels</span></div>
+      <div class="brands-row">
+        <div class="brand-chip">Adani Gas<span>#FuellingGoodness</span></div>
+        <div class="brand-chip">Adani Renewables<span>Sustainability storytelling</span></div>
+        <div class="brand-chip">Adani Digital Labs<span>Culture &amp; employer brand</span></div>
+        <div class="brand-chip">Integrated<span>Tactical · Social · Seasonal</span></div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: BRAND YELLOW BLOCK (e.g. Adani #HKKDH Campaign) -->
-  <section class="section-block block-yellow">
-    <div class="block-inner">
-      <div class="block-header">
-        <div>
-          <span class="block-tag">Issue 02 · Flagship Brand Platform</span>
-          <h2 class="block-title">Hum Karke Dikhate Hain.</h2>
-        </div>
-        <span class="block-tag">Yearbook 2025</span>
-      </div>
-
-      <p class="block-desc">Humanising mega-infrastructure through emotion-first storytelling, connecting ports, renewables, and logistics to everyday Indian prosperity.</p>
-
-      <div class="editorial-quote">
-        "Infrastructure became the backdrop. People became the protagonists."
-      </div>
-
-      <div class="editorial-grid-2">
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="FF1.JPG" alt="Pehle Pankha Phir Bijli"></div>
-          <div class="editorial-caption"><span>Film 01</span><span>Pehle Pankha, Phir Bijli</span></div>
-        </div>
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="FF2.JPG" alt="Journey of Dreams"></div>
-          <div class="editorial-caption"><span>Film 02</span><span>Journey of Dreams</span></div>
-        </div>
-      </div>
-
-      <div class="metric-row">
-        <div><span class="metric-num">290M+</span><span class="metric-label">Total Impressions</span></div>
-        <div><span class="metric-num">160M+</span><span class="metric-label">Views in 4 Weeks</span></div>
-        <div><span class="metric-num">+26%</span><span class="metric-label">Awareness Lift</span></div>
-        <div><span class="metric-num">4 Gold</span><span class="metric-label">Olive Crown Awards</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: BRAND BLUE BLOCK (e.g. hear.com Horizon X) -->
-  <section class="section-block block-blue">
-    <div class="block-inner">
-      <div class="block-header">
-        <div>
-          <span class="block-tag">Issue 03 · DTC MedTech Launch</span>
-          <h2 class="block-title">Horizon X: Where Forever Young Begins.</h2>
-        </div>
-        <span class="block-tag">Nasdaq IPO Story</span>
-      </div>
-
-      <p class="block-desc">Positioning hearing care as a luxury lifestyle decision rather than a clinical prosthesis across 6 international markets.</p>
-
-      <div class="editorial-grid-2">
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="H01.png" alt="Horizon Campaign Visual"></div>
-          <div class="editorial-caption"><span>Visual 01</span><span>Campaign Rollout</span></div>
-        </div>
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="H07.png" alt="Horizon Product Design"></div>
-          <div class="editorial-caption"><span>Visual 02</span><span>Hearable Product Design</span></div>
-        </div>
-      </div>
-
-      <div class="metric-row">
-        <div><span class="metric-num">39%</span><span class="metric-label">Global Sales Share</span></div>
-        <div><span class="metric-num">$2B</span><span class="metric-label">Nasdaq Valuation</span></div>
-        <div><span class="metric-num">59%</span><span class="metric-label">Gross Margin</span></div>
-        <div><span class="metric-num">+19pts</span><span class="metric-label">NPS Improvement</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: BRAND RED / LIGHT BLOCK (e.g. Employer Branding / ADL) -->
+  <!-- SECTION 2: LIGHT BLOCK — CAMPAIGN FILM -->
   <section class="section-block block-light">
     <div class="block-inner">
       <div class="block-header">
         <div>
-          <span class="block-tag">Issue 04 · Inclusion &amp; Employer Brand</span>
-          <h2 class="block-title">ADL is EquAlly.</h2>
+          <span class="block-tag">Anchor Film</span>
+          <h2 class="block-title">#FuellingGoodness Brand Platform</h2>
         </div>
-        <span class="block-tag">Impact Campaign</span>
+        <span class="block-tag">Adani Gas</span>
       </div>
 
-      <p class="block-desc">Flipping the interview bias questions women dread to drive workplace representation from 8% to 31%.</p>
+      <p class="block-desc">Adani Gas—#FuellingGoodness brand film. The platform this content system was built to serve across tactical calendar moments.</p>
 
-      <div class="editorial-grid-3">
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="A02.png" alt="Question Flip 1"></div>
-          <div class="editorial-caption"><span>Reframe 01</span><span>Marriage Bias</span></div>
+      <div class="media-card">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/kDYYXnmKM6s" title="Adani Gas Campaign Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="A03.png" alt="Question Flip 2"></div>
-          <div class="editorial-caption"><span>Reframe 02</span><span>Family Balance</span></div>
+        <div class="media-caption">Adani Gas — #FuellingGoodness Campaign Film</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: YELLOW BLOCK — GANDHI JAYANTI CONCEPT -->
+  <section class="section-block block-yellow">
+    <div class="block-inner">
+      <div class="block-header">
+        <div>
+          <span class="block-tag">Concept 01 · Gandhi Jayanti</span>
+          <h2 class="block-title">Gandhi's Monkeys. CNG's Brief.</h2>
         </div>
-        <div class="editorial-card">
-          <div class="editorial-frame"><img src="A04.png" alt="Question Flip 3"></div>
-          <div class="editorial-caption"><span>Reframe 03</span><span>Parenting Support</span></div>
-        </div>
+        <span class="block-tag">Adani Gas</span>
       </div>
 
-      <div class="metric-row">
-        <div><span class="metric-num">8%→31%</span><span class="metric-label">Workforce Representation</span></div>
-        <div><span class="metric-num">95%</span><span class="metric-label">Tech Role Placement</span></div>
-        <div><span class="metric-num">Group</span><span class="metric-label">Hiring Shift</span></div>
-        <div><span class="metric-num">In-House</span><span class="metric-label">Full Execution</span></div>
+      <p class="block-desc">Reinterpreting the iconic three wise monkeys as CNG, PNG, and EV advocates—each with their own sense—earned the brand a place in one of the most culturally loaded calendar moments of the year without a single forced product mention.</p>
+
+      <div class="editorial-grid-2">
+        <div class="editorial-card">
+          <div class="editorial-frame"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAVQBQADASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAEIBgcCBAUJA//EAGIQAAEDAwEDBAoKDAsHBAECBwABAgMEBREGBxIhCBMxQRgiN1FWYXF1kdIUFTKBkpSys9HTFyMzNlJVcnN0k6GxFjQ1QldihZWjtMJDRUZTgqLBJCc4YyXhJvBEVHaDlsP/xAAcAQEAAQUBAQAAAAAAAAAAAAAAAQIEBQYHAwj/xABIEQABAgMBCgsGBQMFAAIDAQAAAQIDBBEFBhIVITFBcaHB0RMWNFFSU2FygZGxByIzQ+HwFDJCgpI1svEjJERzolRiJdLiwv/aAAw0A3AAG32e0e022/TdaA3VJ3VN/djRe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK9P13GgNxSObXvG/05Nd78Kbb8Tf65HG2yeuTyduGE5Xp+u4r/wA0o5pe8WCTk3XrwptnxN/rk9jfevCm2fEn+uRxtsnrk8nbhhOV6fruK+c2pHNr3iwfY33rwotnxJ/rkLybb14U234m/wBccbbJ65PJ24YTlen67ivisXvEKxe8WDXk2Xpf+Kbb8Tf65xXk1Xtf+Krb8Tf6xPG2yeuTyduGE5Xp6l3Ffd0bpYBeTRe/Cq2/E3+sR2M978Krb8Uf6xPG22OvTyduGE5Xp6l3Ff91SN1SwHY03vwqtvxN/rDsab34VW34m/1ieNtkdenk7cMJyvT9dxX/dUbqm/+xpvfhVbfib/WHY03vwqtvxN/rDjbZHXp5O3DCcr0/XcaA3VJ3VN/djTe/Cq2/E3+sT2NN78Krb8Tf6w422R16eTtwwnK2/TdaA3VJ3FN/9jTe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK9P13GgNxSObXvG/05Nd78Kbb8Tf6xyTk23vwp
+* **Acha Suno. Acha Dekho. Acha Bolo.**
+"Acha Suno: Gaadi main CNG daal ke, engine ki khat khat nahi, music suno sahi!"
+          </div>
+        </div>
+
+        <div class="editorial-card">
+          <div class="editorial-annotation">
+            <span class="ann-num">Insight &amp; Strategy</span>
+            <div class="ann-headline">Culturally Embedded Wordplay</div>
+            <p class="ann-body">By avoiding generic greeting cards and using Gandhi's monkeys to frame clean fuel benefits, the copy made the product the message.</p>
+            <div class="editorial-quote">"The copy that works is the copy that finds the overlap without announcing it."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: RED BLOCK — TACTICAL & DUSSEHRA CREATIVES -->
+  <section class="section-block block-red">
+    <div class="block-inner">
+      <div class="block-header">
+        <div>
+          <span class="block-tag">Concept 02 · Dussehra &amp; Pollution Control</span>
+          <h2 class="block-title">Tactical Wordplay &amp; Cultural Metaphors.</h2>
+        </div>
+        <span class="block-tag">Adani Gas</span>
+      </div>
+
+      <p class="block-desc">Combining real-world household tensions with cultural metaphors to reframe cleaner energy as an unforced choice.</p>
+
+      <div class="editorial-grid-2">
+        <div class="editorial-card">
+          <div class="editorial-frame"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAJ6BQADASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAECBAMFBgcICf/EAGcQAAEDAvQCBQQKDAkHCAoABwEAAgMEBREGBxIhCBMxQRgiN1FWYXF1kdIUFTKBkpSys9HTFzIzNlJVcnN0k6GxFjQ1QldihZWjtMJDRUZTgqLBJCc4YyXhJvBEVHaDlsP/xAAcAQEAAQUBAQAAAAAAAAAAAAAAAQIEBgMBCP/EABEBAAICAQMFRBEMAAAAAAAABAgMEBREGBxIhCBMxUnHBExQXM1FTYXKRobHh8AcXIjJCVKGx4iM1RDRUk3S18f/aAAw0A3AAG32e0e022/TdaA3VJ3VN/djRe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK9P13GgNxSObXvG/05Nd78Kbb8Tf65HG2yeuTyduGE5Xp+u4r/A1o5pe8WCTk3XrwptnxN/rk9jfevCm2fEn+uRxtsnrk8nbhhOV6fruK+c2pHNr3iwfY33rwotnxJ/rkLybb14U234m/wBccbbJ65PJ24YTlen67ivisXvEKxe8WDXk2Xpf+Kbb8Tf65xXk1Xtf+Krb8Tf6xPG2yeuTyduGE5Xp6l3Ffd0bpYBeTRe/Cq2/E3+sR2M978Krb8Uf6xPG22OvTyduGE5Xp6l3Ff91SN1SwHY03vwqtvxN/rDsab34VW34m/1ieNtkdenk7cMJyvT9dxX/dUbqm/+xpvfhVbfib/WHY03vwqtvxN/rDjbZHXp5O3DCcr0/XcaA3VJ3VN/djTe/Cq2/E3+sT2NN78Krb8Tf6w422R16eTtwwnK2/TdaA3VJ3FN/9jTe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK2/TdaA3VJ3FN/9jTe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK9P13GgNxSObXvG/05Nd78Kbb8Tf6xyTk23vwp
+* **Aiming in the Right Direction**
+"Pollution Control Day &amp; Dussehra: CNG is always aimed at a cleaner destination."
+          </div>
+        </div>
+
+        <div class="editorial-card">
+          <div class="editorial-frame"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAJ6BQADASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAECBAMFBgcICf/EAGcQAAEDAvQCBQQKDAkHCAoABwEAAgMEBREGBxIhCBMxQRgiN1FWYXF1kdIUFTKBkpSys9HTFzIzNlJVcnN0k6GxFjQ1QldihZWjtMJDRUZTgqLBJCc4YyXhJvBEVHaDlsP/xAAcAQEAAQUBAQAAAAAAAAAAAAAAAQIEBgMBCP/EABEBAAICAQMFRBEMAAAAAAAABAgMEBREGBxIhCBMxUnHBExQXM1FTYXKRobHh8AcXIjJCVKGx4iM1RDRUk3S18f/aAAw0A3AAG32e0e022/TdaA3VJ3VN/djRe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK9P13GgNxSObXvG/05Nd78Kbb8Tf65HG2yeuTyduGE5Xp+u4r/A1o5pe8WCTk3XrwptnxN/rk9jfevCm2fEn+uRxtsnrk8nbhhOV6fruK+c2pHNr3iwfY33rwotnxJ/rkLybb14U234m/wBccbbJ65PJ24YTlen67ivisXvEKxe8WDXk2Xpf+Kbb8Tf65xXk1Xtf+Krb8Tf6xPG2yeuTyduGE5Xp6l3Ffd0bpYBeTRe/Cq2/E3+sR2M978Krb8Uf6xPG22OvTyduGE5Xp6l3Ff91SN1SwHY03vwqtvxN/rDsab34VW34m/1ieNtkdenk7cMJyvT9dxX/dUbqm/+xpvfhVbfib/WHY03vwqtvxN/rDjbZHXp5O3DCcr0/XcaA3VJ3VN/djNe/Cq2/E3+sT2NN78Krb8Tf6w422R16eTtwwnK2/TdaA3VJ3FN/9jTe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK2/TdaA3VJ3FN/9jTe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK9P13GgNxSObXvG/05Nd78Kbb8Tf6xyTk23vwp
+* **Cars Homage &amp; Bill Ravan**
+"Cars emissions homage &amp; the 10-headed bill Ravan."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: LIGHT BLOCK — WORDPLAY & ISRO -->
+  <section class="section-block block-light">
+    <div class="block-inner">
+      <div class="block-header">
+        <div>
+          <span class="block-tag">Concept 03 · Teacher's Day &amp; ISRO</span>
+          <h2 class="block-title">TEACH4ER &amp; SolEVtions.</h2>
+        </div>
+        <span class="block-tag">Adani Gas</span>
+      </div>
+
+      <p class="block-desc">Embedding chemical formulas (CH4 for methane) and EV terminology directly into cultural vocabulary for seamless brand recall.</p>
+
+      <div class="editorial-grid-2">
+        <div class="editorial-card">
+          <div class="editorial-frame"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAJ6BQADASIAAhEBAxEB/8QAHQABAQABBQEBAAAAAAAAAAAAAAECAwQFBgcICf/EAGUQAAIBAwEEAwgKDQgGBwYFBQABAgMEEQUGEiExBxNBCBQVIlFhcZI3U1WBkZOxs9HSFzIzNVRXcnR1laGy0yM2QkVSc5S0FiVDYoLBJCc3RGSi8CZGhKPCw1ZjZYPh8RiFpEf/xAAcAQEBAAIDAQEAAAAAAAAAAAAAAQIEDwYHAwj/xABJEQACAQIBBAwJCQgDAQEBAAAAAQIDEQQFEiExBhUzQVFScXKRobHBExQ0U2GBstHhBxciMiksettings1Rdr/aAAw0A3AAG32e0e022/TdaA3VJ3VN/djRe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK9P13GgNxSObXvG/05Nd78Kbb8Tf65HG2yeuTyduGE5Xp+u4r/wA0o5pe8WCTk3XrwptnxN/rk9jfevCm2fEn+uRxtsnrk8nbhhOV6fruK+c2pHNr3iwfY33rwotnxJ/rkLybb14U234m/wBccbbJ65PJ24YTlen67ivisXvEKxe8WDXk2Xpf+Kbb8Tf65xXk1Xtf+Krb8Tf6xPG2yeuTyduGE5Xp6l3Ffd0bpYBeTRe/Cq2/E3+sR2M978Krb8Uf6xPG22OvTyduGE5Xp6l3Ff91SN1SwHY03vwqtvxN/rDsab34VW34m/1ieNtkdenk7cMJyvT9dxX/dUbqm/+xpvfhVbfib/WHY03vwqtvxN/rDjbZHXp5O3DCcr0/XcaA3VJ3VN/djNe/Cq2/E3+sT2NN78Krb8Tf6w422R16eTtwwnK2/TdaA3VJ3FN/9jTe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK2/TdaA3VJ3FN/9jTe/Cq2/E3+sA5NV78Krb8Tf6w422R16eTtwwnK9P13GgNxSObXvG/05Nd78Kbb8Tf6xyTk23vwp
+* **TEACH4ER &amp; ISRO Launch**
+"TEACH4ER: Embedding CH4 into Teacher's Day for seamless brand recall."
+          </div>
+        </div>
+
+        <div class="editorial-card">
+          <div class="editorial-annotation">
+            <span class="ann-num">Execution Rule</span>
+            <div class="ann-headline">Zero Forced Connections</div>
+            <p class="ann-body">Every moment marketing creative succeeded because the brand insight matched the cultural event naturally, preventing generic "Happy Holiday" fluff.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
