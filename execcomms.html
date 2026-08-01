@@ -464,14 +464,64 @@
       .ex-grid.two-col { grid-template-columns: 1fr; }
     }
 
-    .track-note {
-      margin: 1.6rem 0;
-      padding: 1rem 1.2rem;
-      border: 2px dashed var(--rule);
-      background: var(--paper);
-      font-family: "Libre Baskerville", Georgia, serif;
-      font-size: 0.86rem;
+  /* Featured video grid — the seven Gateway films */
+    .film-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin: 1.6rem 0 0.4rem;
+    }
+
+    .film-card {
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 7px 7px 0 var(--red);
+    }
+
+    .film-card:nth-child(3n+2) { box-shadow: 7px 7px 0 var(--blue); }
+    .film-card:nth-child(3n+3) { box-shadow: 7px 7px 0 var(--green); }
+
+    .film-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .film-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .film-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.7rem 0.85rem;
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    .film-caption .film-city {
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .film-caption .film-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--ink-soft);
+    }
+
+    @media (max-width: 720px) {
+      .film-grid { grid-template-columns: 1fr; }
     }
 
     .pull-quote {
@@ -484,13 +534,12 @@
 
     .pull-quote p {
       margin: 0;
-      max-width: 620px;
+      max-width: 640px;
       color: var(--ink);
       font-size: clamp(1.35rem, 3vw, 2.15rem);
       line-height: 1.24;
       font-style: italic;
     }
-
     .side-card {
       align-self: start;
       border: 2px solid var(--rule);
@@ -716,8 +765,63 @@
       <section class="section" id="video">
         <span class="section-label video">Video</span>
         <h2>Executives, on camera.</h2>
-        <p>The same discipline applies when the leader is on camera instead of in text — a briefing note becomes a talking-points sheet, a byline becomes a script. That work runs alongside the wider video library (see the <a href="airportvideos.html" style="color: var(--red); font-weight: 700;">Airport Videos</a> page for the format at consumer scale).</p>
-        <div class="track-note">No video examples in this drop yet — happy to slot in reels or interview cuts here once you send them over, following the same Ex.## labelling.</div>
+        <p>The same discipline applies when the leader is on camera instead of in text — a briefing note becomes a talking-points sheet, a byline becomes a script. </p>
+      <div class="film-grid">
+         <div class="film-card">
+    <div class="film-frame">
+      <iframe src="https://www.youtube.com/embed/r4znGWaY7m8" title="Mr Gautam Adani Unveils Succession Plans | Exclusive Interview with Bloomberg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="film-caption">
+      <span class="film-city">Adani Succession</span>
+      <span class="film-tag">Special Report</span>
+    </div>
+  </div>
+  <div class="film-card">
+    <div class="film-frame">
+      <iframe src="https://www.youtube.com/embed/V7wBPmxxdvI" title="Turning Crisis into Opportunity & Future of Adani Group | Gautam Adani Talks to Bloomberg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="film-caption">
+      <span class="film-city">Gautam Adani</span>
+      <span class="film-tag">Interview Film</span>
+    </div>
+  </div>
+  <div class="film-card">
+    <div class="film-frame">
+      <iframe src="https://www.youtube.com/embed/tI4CIw9oRjQ" title="Business Strategy, Hunger for Growth, & Family Legacy | Karan Adani Exclusive Interview | Bloomberg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="film-caption">
+      <span class="film-city">Karan Adani</span>
+      <span class="film-tag">Interview Film</span>
+    </div>
+  </div>
+         <div class="film-card">
+    <div class="film-frame">
+      <iframe src="https://www.youtube.com/embed/-QSy2pL2mAc" title="Mr. Pranav Adani | Transforming Dharavi and Defending the Adani Legacy | Exclusive Interview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="film-caption">
+      <span class="film-city">Pranav Adani</span>
+      <span class="film-tag">Interview Film</span>
+    </div>
+  </div>
+        <div class="film-card">
+    <div class="film-frame">
+      <iframe src="https://www.youtube.com/embed/wbTQRnK-xPs" title="Leading with Vision | Mr. Sagar Adani on Energy and Growth | Exclusive Interview | Bloomberg News" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="film-caption">
+      <span class="film-city">Sagar Adani</span>
+      <span class="film-tag">Interview Film</span>
+    </div>
+  </div>
+</div>
+  <div class="film-card">
+    <div class="film-frame">
+      <iframe src="https://www.youtube.com/embed/6N9outRHEW0" title="Mr. Jeet Adani | Visionary Young Leader | Shaping India's Future with Airports & Defence | Bloomberg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="film-caption">
+      <span class="film-city">Jeet Adani</span>
+      <span class="film-tag">Interview Film</span>
+    </div>
+  </div>
       </section>
 
       <section class="section" id="speeches">
