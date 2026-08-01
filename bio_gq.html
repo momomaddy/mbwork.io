@@ -9,222 +9,816 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>About | Mouris Bashir</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-    :root{--bg:#F7F3EC;--ink:#151515;--muted:#666;--line:#ddd}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,sans-serif;color:var(--ink)}.c{max-width:1280px;margin:auto;padding:0 48px}
-      nav{display:flex;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}
-      .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;padding:90px 0}
-      .hero h1{font:400 clamp(58px,7vw,96px)/.94 "Cormorant Garamond",serif;margin:0 0 20px}
-      .hero p{font-size:20px;line-height:1.8;color:var(--muted)}img{width:100%;border-radius:28px}
-      .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:70px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-      .stat h2{font:400 60px "Cormorant Garamond",serif;margin:0}.stat p{color:var(--muted)}section{padding:80px 0}h2{font:400 52px "Cormorant Garamond",serif}.bio,
-      .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.bio p{font-size:19px;line-height:1.9}
-      .row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px solid var(--line);padding:20px 0}
-      .role{font-weight:600}.company{color:var(--muted)}.pills{display:flex;flex-wrap:wrap;gap:10px}.pills span{padding:10px 16px;border:1px solid var(--line);border-radius:999px}
-      .cta{text-align:center;border-top:1px solid var(--line);padding:90px 0}@media(max-width:900px){
-        .hero,.bio,.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.c{padding:0 24px}}
-  /* ==========================
-   Navigation
-========================== */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About & Practice — Mouris Bashir</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-.nav{
+    *, *::before, *::after { box-sizing: border-box; }
 
-    position:absolute;
+    :root {
+      --paper: #f7f1e3;
+      --paper-soft: #fffaf0;
+      --ink: #17130e;
+      --ink-soft: #423b34;
+      --muted: #766d62;
+      --rule: #211a14;
+      --red: #b92f1f;
+      --blue: #174f75;
+      --green: #32684c;
+      --yellow: #e4b93f;
+      --white: #fffdf7;
+    }
 
-    top:40px;
+    html { scroll-behavior: smooth; }
 
-    left:0;
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23,19,14,0.035) 1px, transparent 1px) 0 0 / 24px 24px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
 
-    width:100%;
+    /* Navigation Header */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 54px;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: rgba(247, 241, 227, 0.94);
+      border-bottom: 2px solid var(--rule);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    padding:0 70px;
+    .nav-logo { display: block; text-decoration: none; }
+    .nav-logo img { display: block; width: auto; height: 32px; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-link,
+    .nav-work-btn,
+    .nav-cta {
+      color: var(--ink);
+      font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-    display:flex;
+    .nav-work { position: relative; }
 
-    justify-content:space-between;
+    .nav-work-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
 
-    align-items:center;
+    .nav-work-btn::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+    }
 
-    z-index:100;
-}
+    .work-dropdown {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      min-width: 250px;
+      background: var(--paper-soft);
+      border: 2px solid var(--rule);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
 
-.logo{
+    .nav-work:hover .work-dropdown,
+    .nav-work:focus-within .work-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
 
-    text-decoration:none;
+    .work-dropdown-label,
+    .work-dropdown a {
+      display: block;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      color: var(--ink);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-    color:#111;
+    .work-dropdown-label { color: var(--red); background: var(--yellow); }
+    .work-dropdown a:hover { background: var(--ink); color: var(--paper); }
+    .work-dropdown a:last-child { border-bottom: 0; }
 
-    font-size:.8rem;
+    .nav-cta {
+      padding: 0.55rem 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-    font-weight:700;
+    /* Sub-header Issue Bar */
+    .issue-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem clamp(1rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-soft);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
 
-    letter-spacing:.22em;
+    .issue-bar span:nth-child(2) {
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.5rem;
+      background: var(--yellow);
+    }
 
-    text-transform:uppercase;
-}
+    .issue-bar span:last-child { text-align: right; }
 
-.nav-links{
+    /* Hero Section */
+    .hero {
+      border-bottom: 2px solid var(--rule);
+      background: var(--paper);
+    }
 
-    display:flex;
+    .hero-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.45fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: end;
+      padding: clamp(1.4rem, 4vw, 3.4rem);
+      border-bottom: 2px solid var(--rule);
+    }
 
-    align-items:center;
+    .kicker {
+      width: max-content;
+      max-width: 100%;
+      background: var(--red);
+      color: var(--white);
+      padding: 0.35rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-    gap:42px;
-}
+    h1 {
+      margin: 2rem 0 1.2rem;
+      max-width: 14ch;
+      font-size: clamp(2.8rem, 5.8vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      font-weight: 900;
+      overflow-wrap: normal;
+    }
 
-.nav-links a{
+    .dek {
+      max-width: 720px;
+      margin: 0;
+      font: 400 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
 
-    text-decoration:none;
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
 
-    color:#666;
+    .meta-item {
+      min-height: 84px;
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-    font-size:.72rem;
+    .meta-item:last-child { border-bottom: 0; }
 
-    letter-spacing:.18em;
+    .meta-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--red);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-    text-transform:uppercase;
+    .meta-val {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
 
-    transition:.25s;
-}
+    /* Stats Grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-bottom: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-.nav-links a:hover{
+    .stat {
+      min-height: 150px;
+      padding: 1.2rem clamp(1rem, 2vw, 1.6rem);
+      border-right: 1px solid rgba(247, 241, 227, 0.35);
+    }
 
-    color:#111;
-}
+    .stat:last-child { border-right: 0; }
 
-.button{
+    .stat-num {
+      display: block;
+      margin-bottom: 0.6rem;
+      color: var(--yellow);
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      font-weight: 900;
+      line-height: 0.9;
+    }
 
-    border:1px solid #111;
+    .stat-desc {
+      display: block;
+      max-width: 16rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
 
-    padding:12px 22px;
+    /* Article Shell and Side Navigation */
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.22fr) minmax(0, 900px) minmax(170px, 0.26fr);
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      width: min(1360px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
 
-    border-radius:999px;
-}
+    .rail {
+      position: sticky;
+      top: 76px;
+      align-self: start;
+      border-top: 2px solid var(--rule);
+      padding-top: 0.8rem;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
 
-.button:hover{
+    .rail strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--red);
+    }
 
-    background:#111;
+    .rail nav {
+      all: unset;
+      display: block;
+      margin-top: 1.2rem;
+    }
 
-    color:#F7F3EC !important;
-}
-.work-dropdown { position: absolute; top: calc(100% + 12px); left: 50%;
-  transform: translateX(-50%) translateY(-6px); background: var(--off-black);
-  border: 1px solid var(--line); min-width: 220px; opacity: 0; visibility: hidden;
-  transition: opacity 0.2s, transform 0.2s, visibility 0.2s; z-index: 200; }
-.nav-work:hover .work-dropdown,
-.nav-work:focus-within .work-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-.work-dropdown-label { padding: 0.6rem 1.2rem 0.4rem; font-size: 0.55rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--red); font-weight: 600; border-bottom: 1px solid var(--line); }
-.work-dropdown a { display: block; padding: 0.7rem 1.2rem; font-size: 0.65rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: rgba(248,248,246,0.6); text-decoration: none;
-  border-bottom: 1px solid var(--line); transition: color 0.15s, background 0.15s; }
-.work-dropdown a:last-child { border-bottom: none; }
-.work-dropdown a:hover { color: var(--white); background: rgba(232,24,10,0.08); }nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-  background: rgba(8,8,8,0.95); backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--line);
-  padding: 0 3rem; height: 52px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.hero{
-    padding-top:140px;
-}
-    </style>
-     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xf0msaw3g9");
-</script>
-  </head>
-  <body>
-<nav class="nav">
-    <a href="index.html" class="logo">MB.WORK</a>
+    .rail nav a {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 0.64rem;
+    }
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="eh5tories.html">EH5tories</a>
-        <a href="mailto:mouris.bashir@hotmail.com" class="button">
-            Get in touch
-        </a>
-    </div>
-</nav>
-    <div class="c">
-      <section class="hero"><div><h1>Stories shape organisations.</h1>
-        <p>I work across executive communications, brand marketing, PR and corporate affairs, helping organisations launch products, build trust and navigate moments that matter.</p>
-      </div>
-        <div>
-        <img src="Mouris.jpeg" alt="Mouris">
-      </div>
-      </section>
-      <div class="stats">
-        <div class="stat"><h2>10+</h2><p>Years</p></div><div class="stat"><h2>100M+</h2><p>People reached</p></div><div class="stat"><h2>700M+</h2><p>Campaign views</p></div><div class="stat"><h2>$5B+</h2><p>Businesses supported</p></div></div>
-      <section class="bio">
-        <div><h2>About</h2><p>I grew up in Kashmir and later studied in Edinburgh. Between those places I learned two different ways of seeing the world: one taught complexity, the other clarity.</p><p>Before communications I sold books, worked in customer service, moderated focus groups and wrote for newsrooms. Those experiences still shape how I build brands today.</p></div>
-        <div><p>Over the last decade I've worked across infrastructure, hospitality, AI, healthcare, fintech and consumer technology, translating complex businesses into stories people understand and remember.</p><p>Outside work I'm building EH5 Stories and writing my first novel.</p>
+    .rail nav a:hover { color: var(--red); }
+
+    article {
+      background: var(--paper-soft);
+      border-left: 2px solid var(--rule);
+      border-right: 2px solid var(--rule);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .section {
+      padding: clamp(2.2rem, 5vw, 4.2rem) 0;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .section:last-child { border-bottom: 0; }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--rule);
+      background: var(--green);
+      color: var(--white);
+      padding: 0.22rem 0.5rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .section-label.experience { background: var(--blue); }
+    .section-label.recognition { background: var(--red); }
+    .section-label.industries { background: var(--ink); }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font: 700 clamp(2rem, 4vw, 3.2rem)/0.98 "Libre Baskerville", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 1.15rem;
+      font: 400 1.02rem/1.78 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      max-width: 760px;
+      font-size: clamp(1.18rem, 2.2vw, 1.55rem);
+      line-height: 1.62;
+      color: var(--ink);
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      padding: 0.18rem 0.42rem 0 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 5.4rem;
+      font-weight: 900;
+      line-height: 0.78;
+      color: var(--red);
+    }
+
+    /* Pull Quotes */
+    .pull-quote {
+      margin: 2rem 0;
+      padding: 1.2rem 0 1.2rem 1.2rem;
+      border-left: 8px solid var(--yellow);
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .pull-quote p {
+      margin: 0;
+      max-width: 640px;
+      color: var(--ink);
+      font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    /* Experience List Grid */
+    .exp-table {
+      display: grid;
+      gap: 0;
+      margin: 1.6rem 0 0.4rem;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .exp-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--rule);
+      align-items: baseline;
+    }
+
+    .exp-row:last-child { border-bottom: 0; }
+
+    .exp-period {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: var(--red);
+      text-transform: uppercase;
+    }
+
+    .exp-title-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .exp-role {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .exp-company {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* Industry Pills */
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+
+    .pill-item {
+      padding: 0.5rem 0.9rem;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    /* Industry Awards List */
+    .award-grid {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .award-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1rem;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      box-shadow: 5px 5px 0 var(--yellow);
+    }
+
+    .award-card:nth-child(2n) { box-shadow: 5px 5px 0 var(--red); }
+    .award-card:nth-child(3n) { box-shadow: 5px 5px 0 var(--blue); }
+
+    .award-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .award-year {
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+    }
+
+    /* Sticky Side Card */
+    .side-card {
+      align-self: start;
+      border: 2px solid var(--rule);
+      background: var(--blue);
+      color: var(--white);
+      padding: 1rem;
+      box-shadow: 7px 7px 0 var(--yellow);
+      position: sticky;
+      top: 76px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .side-card p {
+      margin: 0 0 1rem;
+      max-width: none;
+      color: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .side-card p:last-child { margin-bottom: 0; }
+
+    .ai-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--yellow);
+      color: var(--ink);
+      border: 1px solid var(--rule);
+      padding: 0.4rem 0.7rem;
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      border-top: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .hero-copy { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-shell { grid-template-columns: 1fr; }
+      .rail, .side-card { position: static; }
+      article { border: 2px solid var(--rule); }
+    }
+
+    @media (max-width: 720px) {
+      nav { height: auto; min-height: 54px; align-items: flex-start; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+      .nav-right { flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem; }
+      .nav-link, .nav-work-btn, .nav-cta { font-size: 0.6rem; }
+      .issue-bar { grid-template-columns: 1fr; gap: 0.45rem; }
+      .issue-bar span:last-child { text-align: left; }
+      h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+      .hero-meta, .stats { grid-template-columns: 1fr; }
+      .exp-row { grid-template-columns: 1fr; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
+    </a>
+    <div class="nav-right">
+      <div class="nav-work" tabindex="0">
+        <button class="nav-work-btn" aria-haspopup="true">Work</button>
+        <div class="work-dropdown" role="menu">
+          <div class="work-dropdown-label">Case Studies</div>
+          <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+          <a href="HorizonX.html">Horizon X - hear.com</a>
+          <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+          <a href="adl_equally.html">ADL Is EquAlly</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="OYO.html">OYO</a>
+          <a href="fortune.html">Fortune</a>
+          <a href="police_scotland.html">Police Scotland</a>
+          <a href="FarmPik.html">FarmPik</a>
+          <a href="BookMyForex.html">BookMyForex</a>
+          <a href="moment_marketing.html">Moment Marketing</a>
+          <a href="ONBC.html">One Nation Billion Celebrations</a>
+          <a href="airportvideos.html">Airport Videos</a>
+          <a href="execcomms.html">Executive Comms</a>
         </div>
-    </section>
-<section>
+      </div>
+      <a href="bio_gq.html" class="nav-link">About</a>
+      <a href="eh5tories.html" class="nav-link">EH5tories</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
+    </div>
+  </nav>
 
-  <h2>Earlier Career</h2>
-  <p class="section-intro">
-        Before boardrooms and billion-dollar businesses came
-        bookstores, newsrooms, customer service desks and
-        public sector campaigns.
-    </p>
-  <div class="row">
-    <div>2016</div>
-    <div>
-      <div class="role">Communications Specialist</div>
-      <div class="company">AuthBridge India</div>
-    </div>
+  <!-- Sub-header Issue Bar -->
+  <div class="issue-bar">
+    <span>Mouris Bashir</span>
+    <span>Profile &amp; Biography</span>
+    <span>#Strategy &amp; Practice</span>
   </div>
-   <div class="row">
-    <div>2015-16</div>
-    <div>
-      <div class="role">Op-ed Editor</div>
-      <div class="company">Kashmir Reader</div>
-    </div>
-  </div>
-  <div class="row">
-    <div>2014 – 15</div>
-    <div>
-      <div class="role">Communications Associate</div>
-      <div class="company">Barclays Bank</div>
-    </div>
-  </div>
-  <div class="row">
-    <div> 2013- 14</div>
-    <div>
-      <div class="role">Copy & Research</div>
-      <div class="company">Police Scotlandd</div>
-    </div>
-  </div>
-  <div class="row">
-    <div>2012- 13</div>
-    <div>
-      <div class="role">Mareting Assistant</div>
-      <div class="company">Edinburgh College</div>
-    </div>
-  </div>
-  <div class="row">
-    <div> 2012</div>
-    <div>
-      <div class="role">PR Intern</div>
-      <div class="company">Holyrood PR · Edinburgh</div>
-    </div>
-  </div>
-</section>
 
-   
-
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <div class="kicker">About / Practice</div>
+        <h1>For ten years, I've worked on products people didn't understand.</h1>
+        <p class="dek">Stories shape organisations. I've spent the last decade helping companies launch products, build trust, and navigate moments that matter.</p>
+      </div>
+      <div class="hero-meta" aria-label="Practice details">
+        <div class="meta-item">
+          <span class="meta-label">Focus</span>
+          <span class="meta-val">Brand Marketing, Public Relations, Executive Comms &amp; Corporate Affairs</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Background</span>
+          <span class="meta-val">Kashmir &amp; Edinburgh — finding clarity within complexity</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Ventures</span>
+          <span class="meta-val">EH5 Stories &amp; Literary Fiction</span>
+        </div>
+      </div>
     </div>
+  </header>
 
-</section>
-     <section class="grid"><div><h2>Industries</h2><div class="pills"><span>Infrastructure</span><span>AI</span><span>Hospitality</span><span>Healthcare</span><span>Fintech</span><span>Energy</span><span>D2C</span></div></div><div><h2>Recognition</h2><ul><li>Hermes Creative Awards</li><li>Digies Digital Awards</li><li>Social S.T.A.R.S.</li><li>ACEF Digital Awards</li></ul></div></section><section class="cta"><h2>Let's build stories people remember.</h2><p>mouris.bashir@hotmail.com</p></section></div></body></html>
+  <!-- Metrics Bar -->
+  <section class="stats" aria-label="Impact and metrics">
+    <div class="stat">
+      <span class="stat-num">10+</span>
+      <span class="stat-desc">Years of industry experience</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">30M+</span>
+      <span class="stat-desc">People reached through growth campaigns</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">700M+</span>
+      <span class="stat-desc">Campaign views across APAC, Europe &amp; ME</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">$3B+</span>
+      <span class="stat-desc">Businesses supported across sectors</span>
+    </div>
+  </section>
+
+  <!-- Main Article Layout Shell -->
+  <main class="article-shell">
+    <aside class="rail">
+      <strong>On This Page</strong>
+      Background, roles, sectors and awards.
+      <nav>
+        <a href="#about">The Work Behind The Work</a>
+        <a href="#experience">Selected Roles</a>
+        <a href="#industries">Industries</a>
+        <a href="#recognition">Recognition</a>
+      </nav>
+    </aside>
+
+    <article>
+      <!-- Section 1: Biography -->
+      <section class="section" id="about">
+        <span class="section-label">Biography</span>
+        <h2>The work behind the work.</h2>
+        <p class="lede dropcap">Before I was a marketer, or wrote my first copy, I sold to people. Before I built campaigns, I answered customer questions directly on the front lines.</p>
+        <p>At sixteen, my friends and I pooled our trip money, and I borrowed from my father to open a video games parlour. It failed, yet it started a gaming and hangout culture that thrives to this day in our small town of 100K people.</p>
+        <p>Later, I sold educational books, waited tables at Six Nations Rugby games, and answered customer queries at McDonald's and Waitrose—followed by Police Scotland, running focus groups in schools and youth clubs across Edinburgh. Looking back, none of those jobs were really different. People were always telling me what mattered—sometimes with words, usually without them.</p>
+
+        <div class="pull-quote">
+          <p>"Figure out what an audience believes before a campaign starts, and what they should believe when it ends. Everything else is execution."</p>
+        </div>
+
+        <p>I grew up in Kashmir—a place where beauty and contradiction rarely arrive separately. Edinburgh taught me the opposite instinct: say less, mean more. Somewhere between those places I developed the only skill that's consistently mattered in this work: paying attention. Campaigns begin in dashboards; brands begin in observation.</p>
+        <p>Over the last decade, I've worked across infrastructure, hospitality, AI, healthcare, fintech, and consumer technology, translating complex businesses into stories people understand and remember. Outside work, I'm building EH5 Stories and writing my first novel.</p>
+      </section>
+
+      <!-- Section 2: Experience -->
+      <section class="section" id="experience">
+        <span class="section-label experience">Selected Experience</span>
+        <h2>Career &amp; roles.</h2>
+        <p>A history of leading communication architecture, brand growth, and strategic campaigns across corporate, startup, and public sectors.</p>
+
+        <div class="exp-table">
+          <div class="exp-row">
+            <span class="exp-period">2024–Present</span>
+            <div class="exp-title-block">
+              <span class="exp-role">Corporate Communications Consultant</span>
+              <span class="exp-company">Adani Group</span>
+            </div>
+          </div>
+          <div class="exp-row">
+            <span class="exp-period">2021–2024</span>
+            <div class="exp-title-block">
+              <span class="exp-role">Lead — Brand &amp; Digital Communication</span>
+              <span class="exp-company">Adani Group</span>
+            </div>
+          </div>
+          <div class="exp-row">
+            <span class="exp-period">2020–2021</span>
+            <div class="exp-title-block">
+              <span class="exp-role">Brand &amp; Marketing Communications Lead (APAC)</span>
+              <span class="exp-company">hear.com</span>
+            </div>
+          </div>
+          <div class="exp-row">
+            <span class="exp-period">2019</span>
+            <div class="exp-title-block">
+              <span class="exp-role">Content &amp; Integrated Communications</span>
+              <span class="exp-company">OYO</span>
+            </div>
+          </div>
+          <div class="exp-row">
+            <span class="exp-period">2016–2019</span>
+            <div class="exp-title-block">
+              <span class="exp-role">Founding Marketing &amp; Communications Strategist</span>
+              <span class="exp-company">BookMyForex</span>
+            </div>
+          </div>
+          <div class="exp-row">
+            <span class="exp-period">2016</span>
+            <div class="exp-title-block">
+              <span class="exp-role">Product Marketing &amp; Content Specialist</span>
+              <span class="exp-company">AuthBridge</span>
+            </div>
+          </div>
+          <div class="exp-row">
+            <span class="exp-period">2014–2015</span>
+            <div class="exp-title-block">
+              <span class="exp-role">Communication Associate</span>
+              <span class="exp-company">Barclays</span>
+            </div>
+          </div>
+          <div class="exp-row">
+            <span class="exp-period">2012</span>
+            <div class="exp-title-block">
+              <span class="exp-role">PR &amp; Marketing Assistant</span>
+              <span class="exp-company">Holyrood PR / Police Scotland</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Industries -->
+      <section class="section" id="industries">
+        <span class="section-label industries">Sectors</span>
+        <h2>Industries covered.</h2>
+        <p>Translating technical frameworks and complex operational models into clear human value propositions across varied domains.</p>
+
+        <div class="pills-container">
+          <div class="pill-item">Infrastructure</div>
+          <div class="pill-item">Artificial Intelligence</div>
+          <div class="pill-item">Hospitality</div>
+          <div class="pill-item">Healthcare &amp; MedTech</div>
+          <div class="pill-item">Fintech &amp; Forex</div>
+          <div class="pill-item">Renewable Energy</div>
+          <div class="pill-item">D2C &amp; Consumer Tech</div>
+        </div>
+      </section>
+
+      <!-- Section 4: Recognition -->
+      <section class="section" id="recognition">
+        <span class="section-label recognition">Recognition</span>
+        <h2>Industry awards.</h2>
+        <p>Campaign effectiveness, digital marketing innovation, and corporate communications honors.</p>
+
+        <div class="award-grid">
+          <div class="award-card">
+            <span class="award-name">Digies Digital Awards — Marketing Effectiveness</span>
+            <span class="award-year">2023</span>
+          </div>
+          <div class="award-card">
+            <span class="award-name">Hermes Creative Awards (AMCP, USA)</span>
+            <span class="award-year">2022</span>
+          </div>
+          <div class="award-card">
+            <span class="award-name">Social S.T.A.R.S Awards — Digital &amp; Social Media Campaigns</span>
+            <span class="award-year">2022, 2023</span>
+          </div>
+          <div class="award-card">
+            <span class="award-name">afaqs! Foxglove Awards — Campaign Effectiveness</span>
+            <span class="award-year">2023</span>
+          </div>
+          <div class="award-card">
+            <span class="award-name">ACEF Digital Awards — Customer Engagement &amp; Digital Campaigns</span>
+            <span class="award-year">2023</span>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Note -->
+    <aside class="side-card">
+      <h3>Editorial Note</h3>
+      <p>This profile represents over a decade of enterprise brand marketing, public policy, and strategic communication practice.</p>
+      <p>Outside corporate consulting, EH5 Stories operates as a creative exploration space for literary fiction and tech-driven experiments.</p>
+      <a href="mailto:mouris.bashir@hotmail.com" class="ai-pill">Get In Touch ↗</a>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    EH5 / Mouris Bashir — <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
+  </footer>
+</body>
+</html>
