@@ -9,586 +9,1060 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FarmPik #FruityLifeHealthyVibe — Case Study</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-:root{
-  --black:#080808;
-  --white:#F8F8F6;
-  --green:#3DB53D;
-  --red:#D92B2B;
-  --teal:#5BC4C4;
-  --yellow:#F5B800;
-  --cream:#FFFEF8;
-  --line:rgba(8,8,8,0.1);
-  --rule: rgba(8,8,8,0.1);
---ink: #080808;
---ink2: #222222;
---paper2: #f3f0e8;
---rust: #8b5e3c;
-  --line-dark:rgba(255,255,255,0.08);
-}
-body{background:var(--cream);color:var(--black);font-family:'Syne',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;}
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--rule);
-  padding:0 3rem;height:52px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{display:block;text-decoration:none;}
-.nav-logo img{height:32px;width:auto;display:block;}
-.nav-right{display:flex;gap:2rem;align-items:center;}
-.nav-link{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
-}
-.nav-link:hover{opacity:1;}
-.nav-cta{
-  background:var(--ink);color:var(--cream)!important;
-  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  text-decoration:none;
-}
-/* ── WORK DROPDOWN ── */
-.nav-work{position:relative;}
-.nav-work-btn{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);background:none;border:none;cursor:pointer;
-  opacity:0.6;transition:opacity 0.2s;padding:0;
-  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
-}
-.nav-work-btn::after{
-  content:'';display:inline-block;width:0;height:0;
-  border-left:3px solid transparent;border-right:3px solid transparent;
-  border-top:4px solid currentColor;transition:transform 0.2s;
-}
-.nav-work:hover .nav-work-btn,
-.nav-work:focus-within .nav-work-btn{opacity:1;}
-.nav-work:hover .nav-work-btn::after,
-.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmPik #FruityLifeHealthyVibe — Case Study / Mouris Bashir</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-.work-dropdown{
-  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
-  background:var(--cream);border:1px solid var(--rule);
-  min-width:240px;
-  opacity:0;visibility:hidden;
-  transform:translateX(-50%) translateY(-6px);
-  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
-  z-index:200;
-}
-.nav-work:hover .work-dropdown,
-.nav-work:focus-within .work-dropdown{
-  opacity:1;visibility:visible;
-  transform:translateX(-50%) translateY(0);
-}
-.work-dropdown a{
-  display:block;padding:0.7rem 1.2rem;
-  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.65;
-  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
-}
-.work-dropdown a:last-child{border-bottom:none;}
-.work-dropdown a:hover{opacity:1;background:var(--paper2);}
-.work-dropdown-label{
-  padding:0.6rem 1.2rem 0.4rem;
-  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
-}
-  /* HERO *//* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--rule);
-  padding:0 3rem;height:52px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{display:block;text-decoration:none;}
-.nav-logo img{height:32px;width:auto;display:block;}
-.nav-right{display:flex;gap:2rem;align-items:center;}
-.nav-link{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
-}
-.nav-link:hover{opacity:1;}
-.nav-cta{
-  background:var(--ink);color:var(--cream)!important;
-  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  text-decoration:none;
-}
-/* ── WORK DROPDOWN ── */
-.nav-work{position:relative;}
-.nav-work-btn{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);background:none;border:none;cursor:pointer;
-  opacity:0.6;transition:opacity 0.2s;padding:0;
-  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
-}
-.nav-work-btn::after{
-  content:'';display:inline-block;width:0;height:0;
-  border-left:3px solid transparent;border-right:3px solid transparent;
-  border-top:4px solid currentColor;transition:transform 0.2s;
-}
-.nav-work:hover .nav-work-btn,
-.nav-work:focus-within .nav-work-btn{opacity:1;}
-.nav-work:hover .nav-work-btn::after,
-.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
+    *, *::before, *::after { box-sizing: border-box; }
 
-.work-dropdown{
-  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
-  background:var(--cream);border:1px solid var(--rule);
-  min-width:240px;
-  opacity:0;visibility:hidden;
-  transform:translateX(-50%) translateY(-6px);
-  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
-  z-index:200;
-}
-.nav-work:hover .work-dropdown,
-.nav-work:focus-within .work-dropdown{
-  opacity:1;visibility:visible;
-  transform:translateX(-50%) translateY(0);
-}
-.work-dropdown a{
-  display:block;padding:0.7rem 1.2rem;
-  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.65;
-  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
-}
-.work-dropdown a:last-child{border-bottom:none;}
-.work-dropdown a:hover{opacity:1;background:var(--paper2);}
-.work-dropdown-label{
-  padding:0.6rem 1.2rem 0.4rem;
-  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
-}
-/* HERO */
-.hero{min-height:85vh;background:var(--black);display:flex;flex-direction:column;justify-content:flex-end;padding:5rem 3rem 5rem;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(61,181,61,0.12) 0%,transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(217,43,43,0.1) 0%,transparent 45%);pointer-events:none;}
-.hero-ghost{position:absolute;bottom:-2rem;right:-1rem;font-family:'Fraunces',serif;font-size:clamp(14rem,26vw,24rem);font-weight:900;font-style:italic;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;user-select:none;}
-.hero-label{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--green);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem;opacity:0;animation:up .8s .2s forwards;}
-.hero-label::before{content:'';display:inline-block;width:28px;height:1px;background:var(--green);}
-.hero-h1{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(3.5rem,9vw,9.5rem);line-height:.9;letter-spacing:-.03em;margin-bottom:3rem;opacity:0;animation:up .8s .4s forwards;}
-.hero-h1 .dim{display:block;color:rgba(255,255,255,.15);}
-.hero-h1 .white{display:block;color:var(--white);}
-.hero-h1 .green{display:block;font-style:italic;color:var(--green);}
-.hero-bottom{display:grid;grid-template-columns:1fr 1px 1.8fr;gap:3rem;align-items:end;border-top:1px solid var(--line-dark);padding-top:2.5rem;opacity:0;animation:up .8s .6s forwards;}
-.hero-rule{background:var(--line-dark);}
-.hero-meta-item{margin-bottom:1rem;}
-.hm-label{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);}
-.hm-val{font-size:.82rem;color:var(--white);margin-top:.15rem;}
-.hero-statement{font-family:'Fraunces',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;max-width:420px;}
-.hero-statement strong{font-style:normal;color:var(--white);}
-@keyframes up{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+    :root {
+      --paper: #f7f1e3;
+      --paper-soft: #fffaf0;
+      --ink: #17130e;
+      --ink-soft: #423b34;
+      --muted: #766d62;
+      --rule: #211a14;
+      --red: #b92f1f;
+      --blue: #174f75;
+      --green: #32684c;
+      --yellow: #e4b93f;
+      --white: #fffdf7;
+    }
 
-/* STAT STRIP */
-.stat-strip{background:var(--green);padding:1.8rem 3rem;display:flex;align-items:center;gap:0;overflow:hidden;}
-.stat-chip{flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.25);padding:0 2rem;}
-.stat-chip:last-child{border-right:none;}
-.sc-num{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:#fff;line-height:1;}
-.sc-label{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:.2rem;}
+    html { scroll-behavior: smooth; }
 
-/* SECTIONS */
-.page{max-width:980px;margin:0 auto;padding:0 3rem;}
-section{padding:5rem 0;border-bottom:1px solid var(--line);}
-section:last-child{border-bottom:none;}
-.section-tag{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem;}
-.section-tag::after{content:'';display:inline-block;width:24px;height:1px;background:var(--green);opacity:.5;}
-h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:700;line-height:1.15;color:var(--black);margin-bottom:1.8rem;}
-h2 em{font-style:italic;color:var(--green);}
-p{font-size:.95rem;color:#2A2A2A;margin-bottom:1.2rem;max-width:700px;line-height:1.8;}
-p:last-child{margin-bottom:0;}
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23,19,14,0.035) 1px, transparent 1px) 0 0 / 24px 24px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
 
-.pull-quote{margin:3rem 0;padding:2rem 0 2rem 2rem;border-left:3px solid var(--green);}
-.pull-quote p{font-family:'Fraunces',serif;font-size:1.35rem;font-style:italic;color:var(--black);font-weight:400;line-height:1.55;margin-bottom:0;max-width:640px;}
+    /* Sticky Navigation Header */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 54px;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: rgba(247, 241, 227, 0.94);
+      border-bottom: 2px solid var(--rule);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-/* STRATEGY GRID */
-.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:2.5rem 0;border:1px solid var(--line);}
-.sg-cell{padding:2rem;border-right:1px solid var(--line);}
-.sg-cell:last-child{border-right:none;}
-.sg-num{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:rgba(8,8,8,.08);line-height:1;margin-bottom:.8rem;}
-.sg-title{font-size:.75rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.7rem;}
-.sg-body{font-size:.82rem;color:#4A4A4A;line-height:1.7;}
+    .nav-logo { display: block; text-decoration: none; }
+    .nav-logo img { display: block; width: auto; height: 32px; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-link,
+    .nav-work-btn,
+    .nav-cta {
+      color: var(--ink);
+      font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-/* CREATIVE SHOWCASE */
-/* Hero creative full width */
-.creative-full{margin:3rem 0;position:relative;overflow:hidden;border:1px solid var(--line);}
-.creative-full img{width:100%;max-height:500px;object-fit:cover;display:block;transition:transform .5s;}
-.creative-full:hover img{transform:scale(1.02);}
-.creative-full-cap{padding:1.5rem 2rem;background:var(--black);}
-.cfc-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.4rem;}
-.cfc-line{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:rgba(255,255,255,.7);}
+    .nav-work { position: relative; }
 
-/* Magazine rows */
-.mag-row{display:grid;gap:0;border:1px solid var(--line);margin-bottom:0;}
-.mag-row.left{grid-template-columns:1fr 1fr;}
-.mag-row.right{grid-template-columns:1fr 1fr;}
-.mag-row + .mag-row{border-top:none;}
-.mag-row:last-of-type{margin-bottom:3rem;}
-.mag-img{overflow:hidden;}
-.mag-img img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block;transition:transform .5s;}
-.mag-img:hover img{transform:scale(1.04);}
-.mag-copy{padding:2.5rem;background:var(--cream);border-left:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;}
-.mag-copy.dark{background:var(--black);border-left:none;border-right:1px solid rgba(255,255,255,.08);}
-.mc-tag{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:.7rem;}
-.mc-tag.light{color:rgba(255,255,255,.4);}
-.mc-head{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--black);line-height:1.3;margin-bottom:.6rem;}
-.mc-head.light{color:var(--white);}
-.mc-copy-line{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--green);margin-bottom:.6rem;}
-.mc-body{font-size:.8rem;color:#555;line-height:1.7;}
-.mc-body.light{color:rgba(255,255,255,.45);}
+    .nav-work-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
 
-/* 3-up grid */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);margin:3rem 0;}
-.g3-cell{overflow:hidden;border-right:1px solid var(--line);}
-.g3-cell:last-child{border-right:none;}
-.g3-cell img{width:100%;display:block;aspect-ratio:1;object-fit:cover;transition:transform .5s;}
-.g3-cell:hover img{transform:scale(1.04);}
-.g3-cap{padding:1rem;border-top:1px solid var(--line);}
-.g3-tag{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);}
-.g3-line{font-size:.8rem;color:var(--black);margin-top:.2rem;font-family:'Fraunces',serif;font-style:italic;}
+    .nav-work-btn::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+    }
 
-/* COPY CRAFT */
-.copy-wall{background:var(--black);padding:4rem 3rem;margin:3rem 0;}
-.copy-items{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.copy-item{padding:2rem;border-right:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
-.copy-item:nth-child(even){border-right:none;}
-.copy-item:nth-last-child(-n+2){border-bottom:none;}
-.copy-item-line{font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--white);line-height:1.4;margin-bottom:.5rem;}
-.copy-item-context{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);}
+    .work-dropdown {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      min-width: 250px;
+      background: var(--paper-soft);
+      border: 2px solid var(--rule);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
 
-/* OUTCOMES */
-.outcomes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:2.5rem 0;}
-.outcome-card{background:#fff;border:1px solid var(--line);padding:1.5rem;}
-.oc-body{font-size:.85rem;color:#333;line-height:1.7;}
+    .nav-work:hover .work-dropdown,
+    .nav-work:focus-within .work-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
 
-/* ROLE TAGS */
-.role-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.5rem 0;}
-.role-tag{font-size:.68rem;letter-spacing:.08em;padding:.4rem .9rem;border:1px solid var(--line);color:#555;transition:all .2s;}
-.role-tag:hover{background:var(--green);color:#fff;border-color:var(--green);}
+    .work-dropdown-label,
+    .work-dropdown a {
+      display: block;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      color: var(--ink);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-.impact-block{background:var(--black);padding:2.5rem;margin:2.5rem 0;position:relative;overflow:hidden;}
-.impact-block::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(61,181,61,.12) 0%,transparent 70%);}
-.impact-title{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--green);font-weight:700;margin-bottom:.5rem;}
-.impact-body{font-size:.84rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:0;max-width:620px;}
+    .work-dropdown-label { color: var(--red); background: var(--yellow); }
+    .work-dropdown a:hover { background: var(--ink); color: var(--paper); }
+    .work-dropdown a:last-child { border-bottom: 0; }
 
-footer{background:var(--black);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--line-dark);}
-.footer-name{font-family:'Fraunces',serif;font-size:.9rem;font-style:italic;color:rgba(255,255,255,.3);}
-.footer-links{display:flex;gap:2rem;}
-.footer-links a{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2);text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:var(--green);}
+    .nav-cta {
+      padding: 0.55rem 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-@media(max-width:700px){
-  .hero,.page,.stat-strip,.copy-wall{padding-left:1.5rem;padding-right:1.5rem;}
-  .hero-bottom{grid-template-columns:1fr;gap:2rem;}
-  .hero-rule{display:none;}
-  .strategy-grid,.grid3{grid-template-columns:1fr;}
-  .sg-cell,.g3-cell{border-right:none;border-bottom:1px solid var(--line);}
-  .mag-row.left,.mag-row.right{grid-template-columns:1fr;}
-  .mag-copy{border-left:none;border-top:1px solid var(--line);}
-  .mag-copy.dark{border-right:none;border-top:1px solid var(--line-dark);}
-  .copy-items{grid-template-columns:1fr;}
-  .copy-item{border-right:none;}
-  .stat-chip{padding:0 1rem;}
-}
-</style>
+    /* Sub-header Issue Bar */
+    .issue-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem clamp(1rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-soft);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .issue-bar span:nth-child(2) {
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.5rem;
+      background: var(--yellow);
+    }
+
+    .issue-bar span:last-child { text-align: right; }
+
+    /* Hero Section */
+    .hero {
+      border-bottom: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .hero-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.45fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: end;
+      padding: clamp(1.4rem, 4vw, 3.4rem);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .kicker {
+      width: max-content;
+      max-width: 100%;
+      background: var(--green);
+      color: var(--white);
+      padding: 0.35rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 2rem 0 1.2rem;
+      max-width: 14ch;
+      font-size: clamp(2.8rem, 5.8vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      font-weight: 900;
+      overflow-wrap: normal;
+    }
+
+    .dek {
+      max-width: 720px;
+      margin: 0;
+      font: 400 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
+
+    .meta-item {
+      min-height: 84px;
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .meta-item:last-child { border-bottom: 0; }
+
+    .meta-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--green);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .meta-val {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    /* Stats Grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-bottom: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .stat {
+      min-height: 150px;
+      padding: 1.2rem clamp(1rem, 2vw, 1.6rem);
+      border-right: 1px solid rgba(247, 241, 227, 0.35);
+    }
+
+    .stat:last-child { border-right: 0; }
+
+    .stat-num {
+      display: block;
+      margin-bottom: 0.6rem;
+      color: var(--yellow);
+      font-size: clamp(2rem, 3.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 0.9;
+    }
+
+    .stat-desc {
+      display: block;
+      max-width: 16rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    /* Article Shell & Rails */
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.22fr) minmax(0, 900px) minmax(170px, 0.26fr);
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      width: min(1360px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .rail {
+      position: sticky;
+      top: 76px;
+      align-self: start;
+      border-top: 2px solid var(--rule);
+      padding-top: 0.8rem;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .rail strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--green);
+    }
+
+    .rail nav {
+      all: unset;
+      display: block;
+      margin-top: 1.2rem;
+    }
+
+    .rail nav a {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 0.64rem;
+    }
+
+    .rail nav a:hover { color: var(--green); }
+
+    article {
+      background: var(--paper-soft);
+      border-left: 2px solid var(--rule);
+      border-right: 2px solid var(--rule);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .section {
+      padding: clamp(2.2rem, 5vw, 4.2rem) 0;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .section:last-child { border-bottom: 0; }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--rule);
+      background: var(--green);
+      color: var(--white);
+      padding: 0.22rem 0.5rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .section-label.challenge { background: var(--red); }
+    .section-label.strategy { background: var(--blue); }
+    .section-label.copycraft { background: var(--ink); }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font: 700 clamp(2rem, 4vw, 3.2rem)/0.98 "Libre Baskerville", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 1.15rem;
+      font: 400 1.02rem/1.78 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      max-width: 760px;
+      font-size: clamp(1.18rem, 2.2vw, 1.55rem);
+      line-height: 1.62;
+      color: var(--ink);
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      padding: 0.18rem 0.42rem 0 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 5.4rem;
+      font-weight: 900;
+      line-height: 0.78;
+      color: var(--green);
+    }
+
+    /* Pull Quotes */
+    .pull-quote {
+      margin: 2rem 0;
+      padding: 1.2rem 0 1.2rem 1.2rem;
+      border-left: 8px solid var(--yellow);
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .pull-quote p {
+      margin: 0;
+      max-width: 640px;
+      color: var(--ink);
+      font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    /* Strategy 3-Column Grid */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.6rem 0;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .sg-cell {
+      padding: 1.2rem;
+      border-right: 1px solid var(--rule);
+    }
+
+    .sg-cell:last-child { border-right: 0; }
+
+    .sg-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .sg-title {
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+
+    .sg-body {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* Media Cards for Creative Showcase */
+    .media-card {
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 6px 6px 0 var(--green);
+      margin: 2rem 0;
+      overflow: hidden;
+    }
+
+    .media-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .media-caption {
+      padding: 0.65rem 0.85rem;
+      background: var(--yellow);
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-top: 2px solid var(--rule);
+    }
+
+    /* Magazine Row Layouts */
+    .mag-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      margin: 1.6rem 0;
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .mag-img {
+      overflow: hidden;
+      border-right: 1px solid var(--rule);
+    }
+
+    .mag-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mag-copy {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .mc-tag {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+
+    .mc-head {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .mc-body {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* 3-Up Grid */
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      margin: 1.6rem 0;
+      box-shadow: 6px 6px 0 var(--blue);
+    }
+
+    .g3-cell {
+      border-right: 1px solid var(--rule);
+      overflow: hidden;
+    }
+
+    .g3-cell:last-child { border-right: 0; }
+
+    .g3-cell img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .g3-cap {
+      padding: 0.8rem;
+      border-top: 1px solid var(--rule);
+      background: var(--paper-soft);
+    }
+
+    .g3-tag {
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    /* Copy Wall Grid */
+    .copy-wall {
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 1.6rem;
+      margin: 1.6rem 0;
+      box-shadow: 6px 6px 0 var(--red);
+    }
+
+    .copy-items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .copy-item {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(247, 241, 227, 0.2);
+    }
+
+    .copy-item-line {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--yellow);
+      margin-bottom: 0.3rem;
+    }
+
+    .copy-item-context {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(247, 241, 227, 0.6);
+    }
+
+    /* Role Pills / Tags */
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+
+    .pill-item {
+      padding: 0.5rem 0.9rem;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    /* Outcomes Grid */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 1.6rem 0;
+    }
+
+    .outcome-card {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      padding: 1.2rem;
+      box-shadow: 6px 6px 0 var(--green);
+    }
+
+    .oc-body {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* Sticky Side Card */
+    .side-card {
+      align-self: start;
+      border: 2px solid var(--rule);
+      background: var(--green);
+      color: var(--white);
+      padding: 1rem;
+      box-shadow: 7px 7px 0 var(--yellow);
+      position: sticky;
+      top: 76px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .side-card p {
+      margin: 0 0 1rem;
+      max-width: none;
+      color: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .side-card p:last-child { margin-bottom: 0; }
+
+    footer {
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      border-top: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .hero-copy { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-shell { grid-template-columns: 1fr; }
+      .rail, .side-card { position: static; }
+      article { border: 2px solid var(--rule); }
+    }
+
+    @media (max-width: 720px) {
+      nav { height: auto; min-height: 54px; align-items: flex-start; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+      .nav-right { flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem; }
+      .nav-link, .nav-work-btn, .nav-cta { font-size: 0.6rem; }
+      .issue-bar { grid-template-columns: 1fr; gap: 0.45rem; }
+      .issue-bar span:last-child { text-align: left; }
+      h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+      .hero-meta, .stats { grid-template-columns: 1fr; }
+      .strategy-grid, .mag-row, .grid3, .copy-items, .outcomes-grid { grid-template-columns: 1fr; }
+      .sg-cell { border-right: 0; border-bottom: 1px solid var(--rule); }
+      .mag-img { border-right: 0; border-bottom: 1px solid var(--rule); }
+    }
+  </style>
 </head>
 <body>
-<nav>
-<a href="index.html" class="nav-logo">mb.work</a>
-  <div class="nav-right">
-    <!-- Work with dropdown -->
-    <div class="nav-work" tabindex="0">
-      <button class="nav-work-btn" aria-haspopup="true">Work</button>
-      <div class="work-dropdown" role="menu">
-        <div class="work-dropdown-label">Case Studies</div>
-        <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
-        <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="ONBC.html">#OneNationBillionCelebrations</a>
-        <a href="adl_equally.html">ADL Is EquAlly</a>
-        <a href="sustainability.html">Sustainability</a>
-        <a href="OYO.html">OYO</a>
-        <a href="fortune.html">Fortune</a>
-        <a href="police_scotland.html">Police Scotland</a>
-        <a href="FarmPik.html">FarmPik</a>
-        <a href="BookMyForex.html">BookMyForex</a>
-        <a href="moment_marketing.html">Moment Marketing</a>
+  <!-- Navigation Header -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
+    </a>
+    <div class="nav-right">
+      <div class="nav-work" tabindex="0">
+        <button class="nav-work-btn" aria-haspopup="true">Work</button>
+        <div class="work-dropdown" role="menu">
+          <div class="work-dropdown-label">Case Studies</div>
+          <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+          <a href="HorizonX.html">Horizon X - hear.com</a>
+          <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+          <a href="adl_equally.html">ADL Is EquAlly</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="OYO.html">OYO</a>
+          <a href="fortune.html">Fortune</a>
+          <a href="police_scotland.html">Police Scotland</a>
+          <a href="FarmPik.html">FarmPik</a>
+          <a href="BookMyForex.html">BookMyForex</a>
+          <a href="moment_marketing.html">Moment Marketing</a>
+          <a href="ONBC.html">One Nation Billion Celebrations</a>
+          <a href="airportvideos.html">Airport Videos</a>
+          <a href="execcomms.html">Executive Comms</a>
+        </div>
       </div>
+      <a href="bio_gq.html" class="nav-link">About</a>
+      <a href="eh5tories.html" class="nav-link">EH5tories</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
     </div>
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="eh5tories.html" class="nav-link">EH5tories</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-  </div>
   </nav>
-<div style="height:52px;"></div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-ghost">FL</div>
-  <div class="hero-label">Case Study · Consumer Brand · Social Content Strategy</div>
-  <h1 class="hero-h1">
-    <span class="dim">Fruity life.</span>
-    <span class="white">Healthy</span>
-    <span class="green">vibe.</span>
-  </h1>
-  <div class="hero-bottom">
-    <div>
-      <div class="hero-meta-item"><div class="hm-label">Brand</div><div class="hm-val">FarmPik by Adani Agri Fresh</div></div>
-      <div class="hero-meta-item"><div class="hm-label">Campaign</div><div class="hm-val">#FruityLifeHealthyVibe</div></div>
-      <div class="hero-meta-item"><div class="hm-label">Scope</div><div class="hm-val">Content Strategy · Copywriting · Social · Moment Marketing</div></div>
-    </div>
-    <div class="hero-rule"></div>
-    <p class="hero-statement">
-      The brief wasn't to sell more fruit. It was to make fruit <strong>feel like a lifestyle choice</strong>, one people would share, relate to and choose without being told to.
-    </p>
+  <!-- Sub-header Issue Bar -->
+  <div class="issue-bar">
+    <span>FarmPik / Adani Agri Fresh</span>
+    <span>Social Content Strategy</span>
+    <span>#FruityLifeHealthyVibe</span>
   </div>
-</div>
 
-<!-- STAT STRIP -->
-<div class="stat-strip">
-  <div class="stat-chip"><div class="sc-num">6+</div><div class="sc-label">Content series</div></div>
-  <div class="stat-chip"><div class="sc-num">11+</div><div class="sc-label">Creative formats</div></div>
-  <div class="stat-chip"><div class="sc-num">Lifestyle</div><div class="sc-label">Not health messaging</div></div>
-  <div class="stat-chip"><div class="sc-num">Daily</div><div class="sc-label">Moment marketing cadence</div></div>
-  <div class="stat-chip"><div class="sc-num">Zero</div><div class="sc-label">Preachy copy lines</div></div>
-</div>
-
-<!-- CONTENT -->
-<div class="page">
-
-  <section>
-    <div class="section-tag">The Challenge</div>
-    <h2>How do you make people want<br><em>what they already know they should eat?</em></h2>
-    <p>Fruit is not a discovery category. Everyone knows apples are good for you. Everyone knows grapes are better than popcorn. The knowledge gap is zero. The behaviour gap is enormous.</p>
-    <p>FarmPik's content brief was not about education. It was about desire. The task was to make fresh fruit feel contemporary, shareable and culturally relevant — to sit alongside the content people actually want to see, not the content they feel obligated to engage with.</p>
-    <div class="pull-quote">
-      <p>"Don't preach health. Make healthy feel like a personality."</p>
-    </div>
-    <p>The campaign needed to speak to urban Indian consumers in their actual contexts — not generic wellness stock photography — in a voice that was warm, witty and specific enough to feel like a brand with a point of view.</p>
-  </section>
-
-  <section>
-    <div class="section-tag">The Strategy</div>
-    <h2>Meet people where they are.<br><em>Then bring the fruit.</em></h2>
-    <p>The creative strategy was built around one principle: anchor every piece of fruit content in a real, recognisable moment. Not "eat healthy." Instead: you're binge-watching, swap the popcorn. It's Monday morning, here's a grape pun. You're watching the match, have an apple — and here's exactly what activity it's equivalent to.</p>
-
-    <div class="strategy-grid">
-      <div class="sg-cell">
-        <div class="sg-num">01</div>
-        <div class="sg-title">Moment First</div>
-        <div class="sg-body">Every creative started with a human situation — binge watching, Monday morning, sports day, World Happiness Day — and worked backwards to the fruit. The occasion was always the hook, never the product.</div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <div class="kicker">Case Study / Consumer Brand</div>
+        <h1>Fruity life. Healthy vibe.</h1>
+        <p class="dek">The brief wasn't to sell more fruit. It was to make fruit feel like a lifestyle choice, one people would share, relate to and choose without being told to.</p>
       </div>
-      <div class="sg-cell">
-        <div class="sg-num">02</div>
-        <div class="sg-title">Copy as Creative</div>
-        <div class="sg-body">"A grape way to perk up your Monday." "Have a break, have an apple." "Eat pomegranate, sleep great." The copy did the conceptual work. Design amplified it. Never the other way around.</div>
-      </div>
-      <div class="sg-cell">
-        <div class="sg-num">03</div>
-        <div class="sg-title">Tone: Wit, not Wellness</div>
-        <div class="sg-body">No calorie counts. No immunity claims. No "boost your health" language. Every line had to earn its place by being either genuinely funny, genuinely interesting or genuinely surprising. Wellness was the subtext, never the text.</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-tag">The Creative Work</div>
-    <h2>The copy did the thinking.<br><em>The fruit did the talking.</em></h2>
-    <p>The content system ran across multiple formats — product-led visuals, lifestyle photography, infographic posts and moment marketing — with one consistent thread: every line had to be the kind of thing a person would say to a friend, not read off a nutrition label.</p>
-
-    <!-- HERO CREATIVE: Athletics -->
-    <div class="creative-full">
-<img src="FF1.JPG" alt="World Athletics Day — Rehydrate Recharge Refuel">
-      <div class="creative-full-cap">
-        <div class="cfc-tag">World Athletics Day · Hero Creative</div>
-        <div class="cfc-line">The kinetic energy of the athlete and the graphic type doing the same job simultaneously.</div>
-      </div>
-    </div>
-
-    <!-- ROW 1: Break + Binge -->
-    <div class="mag-row left">
-      <div class="mag-img">
-<img src="FF2.JPG" alt="Have a break have an apple"></div>
-        <div class="mag-copy">
-        <div class="mc-tag">Copy-led · Tactical</div>
-        <div class="mc-copy-line">#FruitsForFastFood</div>
-        <div class="mc-body">One of the strongest pieces in the campaign — a direct riff on one of the most famous taglines in advertising history, applied to fruit. The cultural reference did the engagement work. The product didn't need to explain itself.</div>
-      </div>
-    </div>
-    <div class="mag-row right">
-      <div class="mag-copy dark">
-        <div class="mc-tag light">Lifestyle · Moment</div>
-        <div class="mc-head light">#FruityLifeHealthyVibe</div>
-        <div class="mc-body light">The couch-and-TV insight — that snacking is as much a ritual as a choice — positioned FarmPik grapes as the upgrade, not the sacrifice. The dark atmospheric creative reinforced the nighttime binge vibe exactly.</div>
-      </div>
-      <div class="mag-img">
-<img src="FF3.JPG" alt="Binge watching munch grapes"> </div>
-      </div>
-
-    <!-- ROW 2: Sleep + Heart -->
-    <div class="mag-row left">
-      <div class="mag-img">
-<img src="FF4.JPG" alt="Eat pomegranate sleep great"></div>
-        <div class="mag-copy">
-        <div class="mc-tag">Product Personality</div>
-        <div class="mc-copy-line">#FruitsForFastFood</div>
-        <div class="mc-body">The pomegranate wearing a sleep mask is the campaign's most purely delightful creative. The fruit has been given a personality. The copy lands the benefit without a single health claim. This is how you make fruit feel contemporary.</div>
-      </div>
-    </div>
-    <div class="mag-row right">
-      <div class="mag-copy dark">
-        <div class="mc-tag light">Benefit-Led · Atmospheric</div>
-        <div class="mc-body light">The ECG aesthetic is borrowed from medical imaging but subverted into lifestyle content. The neon green line feels like a music visualiser as much as a health monitor. The creative earns the heart benefit claim through the visual rather than stating it.</div>
-      </div>
-      <div class="mag-img">
-<img src="FF5.JPG" alt="Grape vibes healthy heart"></div>
-      </div>
-
-    <!-- 3-up: Monday + Floating + Smoothie -->
-    <div class="grid3">
-      <div class="g3-cell">
-<img src="FF7.JPG" alt="A grape way to perk up your Monday">
-        <div class="g3-cap">
-          <div class="g3-tag">Moment Marketing</div>
+      <div class="hero-meta" aria-label="Project details">
+        <div class="meta-item">
+          <span class="meta-label">Brand</span>
+          <span class="meta-val">FarmPik by Adani Agri Fresh</span>
         </div>
-      </div>
-      <div class="g3-cell">
-<img src="FF11.JPG" alt="Grapes — a perfect natural energy-boosting snack">
-        <div class="g3-cap">
-          <div class="g3-tag">Product Feature</div>
+        <div class="meta-item">
+          <span class="meta-label">Campaign</span>
+          <span class="meta-val">#FruityLifeHealthyVibe</span>
         </div>
-      </div>
-      <div class="g3-cell">
-<img src="FF8.JPG" alt="Grape smoothie for a soothing summer">
-        <div class="g3-cap">
-          <div class="g3-tag">Seasonal · Utility</div>
+        <div class="meta-item">
+          <span class="meta-label">Scope</span>
+          <span class="meta-val">Content Strategy, Copywriting, Social &amp; Moment Marketing</span>
         </div>
       </div>
     </div>
+  </header>
 
-    <!-- ROW 3: Equation + Heavenly -->
-    <div class="mag-row left">
-      <div class="mag-img">
-<img src="FF6.JPG" alt="Grape smoothie for a soothing summer">
-      </div>
-      
-        <div class="mag-copy">
-        <div class="mc-tag">Data-Led · Infographic</div>
-        <div class="mc-body">The infographic format translated nutritional data into physical activity equivalents — the kind of factual reframe that people save and share. No nutrition label. No percentage claims. Just a number that makes you think differently about the apple in your bag.</div>
-      </div>
+  <!-- Stats Grid -->
+  <section class="stats" aria-label="Campaign metrics">
+    <div class="stat">
+      <span class="stat-num">6+</span>
+      <span class="stat-desc">Content series</span>
     </div>
-    <div class="mag-row right">
-      <div class="mag-copy dark">
-        <div class="mc-tag light">Brand Campaign · #15YearsOfTrust</div>
-        <div class="mc-body light">The anniversary creative anchored FarmPik's heritage in sensory language rather than corporate milestone messaging. "15 years of trust" becomes an emotional claim, not a LinkedIn announcement.</div>
-      </div>
-      <div class="mag-img">
-<img src="FF9.JPG" alt="Heavenly taste in every bite"></div>
-      </div>
-
-    <!-- Happiness -->
-    <div class="mag-row left" style="margin-bottom:3rem;">
-      <div class="mag-img">
-<img src="FF10.JPG" alt="A bunch of health and happiness"></div>
-        <div class="mag-copy">
-        <div class="mc-tag">Occasion Marketing · World Happiness Day</div>
-        <div class="mc-body">The double meaning of "bunch" — a bunch of grapes, a bunch of happiness — does the creative work in four words. The visual is lush and abundant. The hashtag earns the occasion without the copy doing explanatory work.</div>
-      </div>
+    <div class="stat">
+      <span class="stat-num">11+</span>
+      <span class="stat-desc">Creative formats</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">Lifestyle</span>
+      <span class="stat-desc">Not health messaging</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">Daily</span>
+      <span class="stat-desc">Moment marketing cadence</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">Zero</span>
+      <span class="stat-desc">Preachy copy lines</span>
     </div>
   </section>
 
-  <section>
-    <div class="section-tag">The Copy Craft</div>
-    <h2>Lines that worked because<br><em>they didn't try too hard.</em></h2>
-    <p>The most important craft decision in the campaign was what not to say. No immunity. No antioxidants. No "boost your health." Just copy that was specific, surprising and occasionally punny in the way that real people are punny about food.</p>
+  <!-- Main Article Layout Shell -->
+  <main class="article-shell">
+    <aside class="rail">
+      <strong>On This Page</strong>
+      Challenge, strategy, creative showcase, and copy craft.
+      <nav>
+        <a href="#challenge">The Challenge</a>
+        <a href="#strategy">The Strategy</a>
+        <a href="#showcase">Creative Showcase</a>
+        <a href="#copycraft">The Copy Craft</a>
+        <a href="#role">My Role</a>
+        <a href="#demonstrates">Work Demonstrations</a>
+      </nav>
+    </aside>
 
-    <div class="copy-wall">
-      <div class="copy-items">
-        <div class="copy-item">
-          <div class="copy-item-line">"Have a break, have an apple."</div>
-          <div class="copy-item-context">#FruitsForFastFood · Cultural reference</div>
-        </div>
-        <div class="copy-item">
-          <div class="copy-item-line">"A grape way to perk up your Monday."</div>
-          <div class="copy-item-context">Monday moment · Wordplay</div>
-        </div>
-        <div class="copy-item">
-          <div class="copy-item-line">"Binge watching? Munch grapes, not popcorn."</div>
-          <div class="copy-item-context">Lifestyle swap · Evening moment</div>
-        </div>
-        <div class="copy-item">
-          <div class="copy-item-line">"Eat pomegranate, sleep great."</div>
-          <div class="copy-item-context">Benefit-led · Rhyme · Product personality</div>
-        </div>
-        <div class="copy-item">
-          <div class="copy-item-line">"Grape vibes for a healthy heart."</div>
-          <div class="copy-item-context">Health · Atmospheric visual</div>
-        </div>
-        <div class="copy-item">
-          <div class="copy-item-line">"A bunch of health and happiness."</div>
-          <div class="copy-item-context">World Happiness Day · Wordplay</div>
-        </div>
-        <div class="copy-item">
-          <div class="copy-item-line">"Heavenly taste in every bite."</div>
-          <div class="copy-item-context">#15YearsOfTrust · Anniversary campaign</div>
-        </div>
-        <div class="copy-item">
-          <div class="copy-item-line">"Fruits help you Rehydrate. Recharge. Refuel."</div>
-          <div class="copy-item-context">World Athletics Day · Three-beat structure</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <article>
+      <!-- Section: The Challenge -->
+      <section class="section" id="challenge">
+        <span class="section-label challenge">The Challenge</span>
+        <h2>How do you make people want what they already know they should eat?</h2>
+        <p class="lede dropcap">Fruit is not a discovery category. Everyone knows apples are good for you. Everyone knows grapes are better than popcorn. The knowledge gap is zero. The behaviour gap is enormous.</p>
+        <p>FarmPik's content brief was not about education. It was about desire. The task was to make fresh fruit feel contemporary, shareable and culturally relevant—to sit alongside the content people actually want to see, not the content they feel obligated to engage with.</p>
 
-  <section>
-    <div class="section-tag">My Role</div>
-    <h2>Content strategy,<br><em>copy, concept, cadence.</em></h2>
-    <p>This was a full-ownership brief across content strategy and copy — building the system that connected the brand's product range to the cultural calendar, and the cultural calendar to the consumer's daily life.</p>
-    <div class="role-tags">
-      <span class="role-tag">Content Strategy</span>
-      <span class="role-tag">Copywriting</span>
-      <span class="role-tag">Concept Ideation</span>
-      <span class="role-tag">Moment Marketing</span>
-      <span class="role-tag">Brand Voice Development</span>
-      <span class="role-tag">Social Content Architecture</span>
-      <span class="role-tag">Campaign Calendar Planning</span>
-    </div>
-  </section>
+        <div class="pull-quote">
+          <p>"Don't preach health. Make healthy feel like a personality."</p>
+        </div>
 
-  <section>
-    <div class="section-tag">What This Work Demonstrates</div>
-    <h2>Consumer copy is<br><em>the hardest brief to get right.</em></h2>
+        <p>The campaign needed to speak to urban Indian consumers in their actual contexts—not generic wellness stock photography—in a voice that was warm, witty and specific enough to feel like a brand with a point of view.</p>
+      </section>
 
-    <div class="outcomes-grid">
-      <div class="outcome-card"><p class="oc-body">Built a consistent brand voice across product categories — apples, grapes, pomegranate — without the content feeling like a product catalogue.</p></div>
-      <div class="outcome-card"><p class="oc-body">Created a moment marketing cadence that connected to cultural occasions without forcing the product into contexts where it didn't belong.</p></div>
-      <div class="outcome-card"><p class="oc-body">Established copy as the primary creative driver — the headline came first, the visual followed. Every executional decision served the line, not the other way around.</p></div>
-      <div class="outcome-card"><p class="oc-body">Maintained zero preachy health messaging across the entire campaign. The benefits were always implied, demonstrated or reframed — never stated.</p></div>
-    </div>
+      <!-- Section: The Strategy -->
+      <section class="section" id="strategy">
+        <span class="section-label strategy">The Strategy</span>
+        <h2>Meet people where they are. Then bring the fruit.</h2>
+        <p>The creative strategy was built around one principle: anchor every piece of fruit content in a real, recognisable moment. Not "eat healthy." Instead: you're binge-watching, swap the popcorn. It's Monday morning, here's a grape pun. You're watching the match, have an apple—and here's exactly what activity it's equivalent to.</p>
 
-    <div class="impact-block">
-      <div class="impact-title">The discipline that made this work</div>
-      <p class="impact-body">The campaign succeeded because it respected the audience. Nobody needs to be told that fruit is good for them. They need to be reminded why they'd want it today, in this moment, when the popcorn is right there. The copy answered that question every single time — without lecturing, without data, and without ever using the word "healthy" as a noun.</p>
-    </div>
-  </section>
+        <div class="strategy-grid">
+          <div class="sg-cell">
+            <div class="sg-num">01</div>
+            <div class="sg-title">Moment First</div>
+            <div class="sg-body">Every creative started with a human situation—binge watching, Monday morning, sports day, World Happiness Day—and worked backwards to the fruit. The occasion was always the hook, never the product.</div>
+          </div>
+          <div class="sg-cell">
+            <div class="sg-num">02</div>
+            <div class="sg-title">Copy as Creative</div>
+            <div class="sg-body">"A grape way to perk up your Monday." "Have a break, have an apple." "Eat pomegranate, sleep great." The copy did the conceptual work. Design amplified it. Never the other way around.</div>
+          </div>
+          <div class="sg-cell">
+            <div class="sg-num">03</div>
+            <div class="sg-title">Tone: Wit, not Wellness</div>
+            <div class="sg-body">No calorie counts. No immunity claims. No "boost your health" language. Every line had to earn its place by being either genuinely funny, genuinely interesting or genuinely surprising. Wellness was the subtext, never the text.</div>
+          </div>
+        </div>
+      </section>
 
-</div>
+      <!-- Section: Creative Showcase -->
+      <section class="section" id="showcase">
+        <span class="section-label">Creative Showcase</span>
+        <h2>The copy did the thinking. The fruit did the talking.</h2>
+        <p>The content system ran across multiple formats—product-led visuals, lifestyle photography, infographic posts and moment marketing—with one consistent thread: every line had to be the kind of thing a person would say to a friend, not read off a nutrition label.</p>
 
-<footer>
-  <span class="footer-name">FarmPik · Adani Agri Fresh · #FruityLifeHealthyVibe · Portfolio Case Study</span>
-  <div class="footer-links">
-    <a href="homepage_v2_split.html">Home</a>
-    <a href="FarmPik_new.html">FarmPik Case Study</a>
-    <a href="moment_marketing.html">Moment Marketing</a>
-    <a href="mailto:mouris.bashir@hotmail.com">Contact</a>
-  </div>
-</footer>
+        <!-- Hero Creative: Athletics -->
+        <div class="media-card">
+          <img src="FF1.JPG" alt="World Athletics Day — Rehydrate Recharge Refuel">
+          <div class="media-caption">World Athletics Day · Hero Creative — The kinetic energy of the athlete and graphic type doing the same job simultaneously.</div>
+        </div>
 
+        <!-- Row 1: Break + Binge -->
+        <div class="mag-row">
+          <div class="mag-img">
+            <img src="FF2.JPG" alt="Have a break have an apple">
+          </div>
+          <div class="mag-copy">
+            <span class="mc-tag">Copy-led · Tactical</span>
+            <div class="mc-head">#FruitsForFastFood</div>
+            <p class="mc-body">One of the strongest pieces in the campaign—a direct riff on one of the most famous taglines in advertising history, applied to fruit. The cultural reference did the engagement work. The product didn't need to explain itself.</p>
+          </div>
+        </div>
+
+        <div class="mag-row">
+          <div class="mag-copy">
+            <span class="mc-tag">Lifestyle · Moment</span>
+            <div class="mc-head">#FruityLifeHealthyVibe</div>
+            <p class="mc-body">The couch-and-TV insight—that snacking is as much a ritual as a choice—positioned FarmPik grapes as the upgrade, not the sacrifice. The dark atmospheric creative reinforced the nighttime binge vibe exactly.</p>
+          </div>
+          <div class="mag-img">
+            <img src="FF3.JPG" alt="Binge watching munch grapes">
+          </div>
+        </div>
+
+        <!-- Row 2: Sleep + Heart -->
+        <div class="mag-row">
+          <div class="mag-img">
+            <img src="FF4.JPG" alt="Eat pomegranate sleep great">
+          </div>
+          <div class="mag-copy">
+            <span class="mc-tag">Product Personality</span>
+            <div class="mc-head">#FruitsForFastFood</div>
+            <p class="mc-body">The pomegranate wearing a sleep mask is the campaign's most purely delightful creative. The fruit has been given a personality. The copy lands the benefit without a single health claim. This is how you make fruit feel contemporary.</p>
+          </div>
+        </div>
+
+        <div class="mag-row">
+          <div class="mag-copy">
+            <span class="mc-tag">Benefit-Led · Atmospheric</span>
+            <div class="mc-head">Grape Vibes for a Healthy Heart</div>
+            <p class="mc-body">The ECG aesthetic is borrowed from medical imaging but subverted into lifestyle content. The neon green line feels like a music visualiser as much as a health monitor. The creative earns the heart benefit claim through the visual rather than stating it.</p>
+          </div>
+          <div class="mag-img">
+            <img src="FF5.JPG" alt="Grape vibes healthy heart">
+          </div>
+        </div>
+
+        <!-- 3-up: Monday + Floating + Smoothie -->
+        <div class="grid3">
+          <div class="g3-cell">
+            <img src="FF7.JPG" alt="A grape way to perk up your Monday">
+            <div class="g3-cap">
+              <span class="g3-tag">Moment Marketing</span>
+            </div>
+          </div>
+          <div class="g3-cell">
+            <img src="FF11.JPG" alt="Grapes — a perfect natural energy-boosting snack">
+            <div class="g3-cap">
+              <span class="g3-tag">Product Feature</span>
+            </div>
+          </div>
+          <div class="g3-cell">
+            <img src="FF8.JPG" alt="Grape smoothie for a soothing summer">
+            <div class="g3-cap">
+              <span class="g3-tag">Seasonal · Utility</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: Equation + Heavenly -->
+        <div class="mag-row">
+          <div class="mag-img">
+            <img src="FF6.JPG" alt="Grape smoothie for a soothing summer">
+          </div>
+          <div class="mag-copy">
+            <span class="mc-tag">Data-Led · Infographic</span>
+            <div class="mc-head">Nutritional Data Reframed</div>
+            <p class="mc-body">The infographic format translated nutritional data into physical activity equivalents—the kind of factual reframe that people save and share. No nutrition label. No percentage claims. Just a number that makes you think differently about the apple in your bag.</p>
+          </div>
+        </div>
+
+        <div class="mag-row">
+          <div class="mag-copy">
+            <span class="mc-tag">Brand Campaign · #15YearsOfTrust</span>
+            <div class="mc-head">Heavenly Taste in Every Bite</div>
+            <p class="mc-body">The anniversary creative anchored FarmPik's heritage in sensory language rather than corporate milestone messaging. "15 years of trust" becomes an emotional claim, not a LinkedIn announcement.</p>
+          </div>
+          <div class="mag-img">
+            <img src="FF9.JPG" alt="Heavenly taste in every bite">
+          </div>
+        </div>
+
+        <!-- Happiness -->
+        <div class="mag-row">
+          <div class="mag-img">
+            <img src="FF10.JPG" alt="A bunch of health and happiness">
+          </div>
+          <div class="mag-copy">
+            <span class="mc-tag">Occasion Marketing · World Happiness Day</span>
+            <div class="mc-head">A Bunch of Health and Happiness</div>
+            <p class="mc-body">The double meaning of "bunch"—a bunch of grapes, a bunch of happiness—does the creative work in four words. The visual is lush and abundant. The hashtag earns the occasion without the copy doing explanatory work.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Copy Craft -->
+      <section class="section" id="copycraft">
+        <span class="section-label copycraft">The Copy Craft</span>
+        <h2>Lines that worked because they didn't try too hard.</h2>
+        <p>The most important craft decision in the campaign was what not to say. No immunity. No antioxidants. No "boost your health." Just copy that was specific, surprising and occasionally punny in the way that real people are punny about food.</p>
+
+        <div class="copy-wall">
+          <div class="copy-items">
+            <div class="copy-item">
+              <div class="copy-item-line">"Have a break, have an apple."</div>
+              <div class="copy-item-context">#FruitsForFastFood · Cultural reference</div>
+            </div>
+            <div class="copy-item">
+              <div class="copy-item-line">"A grape way to perk up your Monday."</div>
+              <div class="copy-item-context">Monday moment · Wordplay</div>
+            </div>
+            <div class="copy-item">
+              <div class="copy-item-line">"Binge watching? Munch grapes, not popcorn."</div>
+              <div class="copy-item-context">Lifestyle swap · Evening moment</div>
+            </div>
+            <div class="copy-item">
+              <div class="copy-item-line">"Eat pomegranate, sleep great."</div>
+              <div class="copy-item-context">Benefit-led · Rhyme · Product personality</div>
+            </div>
+            <div class="copy-item">
+              <div class="copy-item-line">"Grape vibes for a healthy heart."</div>
+              <div class="copy-item-context">Health · Atmospheric visual</div>
+            </div>
+            <div class="copy-item">
+              <div class="copy-item-line">"A bunch of health and happiness."</div>
+              <div class="copy-item-context">World Happiness Day · Wordplay</div>
+            </div>
+            <div class="copy-item">
+              <div class="copy-item-line">"Heavenly taste in every bite."</div>
+              <div class="copy-item-context">#15YearsOfTrust · Anniversary campaign</div>
+            </div>
+            <div class="copy-item">
+              <div class="copy-item-line">"Fruits help you Rehydrate. Recharge. Refuel."</div>
+              <div class="copy-item-context">World Athletics Day · Three-beat structure</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: My Role -->
+      <section class="section" id="role">
+        <span class="section-label">My Role</span>
+        <h2>Content strategy, copy, concept, cadence.</h2>
+        <p>This was a full-ownership brief across content strategy and copy—building the system that connected the brand's product range to the cultural calendar, and the cultural calendar to the consumer's daily life.</p>
+
+        <div class="pills-container">
+          <div class="pill-item">Content Strategy</div>
+          <div class="pill-item">Copywriting</div>
+          <div class="pill-item">Concept Ideation</div>
+          <div class="pill-item">Moment Marketing</div>
+          <div class="pill-item">Brand Voice Development</div>
+          <div class="pill-item">Social Content Architecture</div>
+          <div class="pill-item">Campaign Calendar Planning</div>
+        </div>
+      </section>
+
+      <!-- Section: What This Work Demonstrates -->
+      <section class="section" id="demonstrates">
+        <span class="section-label">Impact</span>
+        <h2>Consumer copy is the hardest brief to get right.</h2>
+
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <p class="oc-body">Built a consistent brand voice across product categories—apples, grapes, pomegranate—without the content feeling like a product catalogue.</p>
+          </div>
+          <div class="outcome-card">
+            <p class="oc-body">Created a moment marketing cadence that connected to cultural occasions without forcing the product into contexts where it didn't belong.</p>
+          </div>
+          <div class="outcome-card">
+            <p class="oc-body">Established copy as the primary creative driver—the headline came first, the visual followed. Every executional decision served the line, not the other way around.</p>
+          </div>
+          <div class="outcome-card">
+            <p class="oc-body">Maintained zero preachy health messaging across the entire campaign. The benefits were always implied, demonstrated or reframed—never stated.</p>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>"The campaign succeeded because it respected the audience. Nobody needs to be told that fruit is good for them. They need to be reminded why they'd want it today, in this moment."</p>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Note -->
+    <aside class="side-card">
+      <h3>Brand Context</h3>
+      <p>FarmPik by Adani Agri Fresh launched #FruityLifeHealthyVibe as a social-first lifestyle campaign.</p>
+      <p>By connecting fruit to daily habits, witty moment marketing, and cultural benchmarks, the strategy turned fresh produce into shareable social identity.</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    FarmPik · Adani Agri Fresh · <span>#FruityLifeHealthyVibe</span> · Portfolio Case Study
+  </footer>
 </body>
 </html>
