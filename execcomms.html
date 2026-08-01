@@ -473,7 +473,65 @@
       font-size: 0.86rem;
       color: var(--ink-soft);
     }
+/* Featured video grid — the seven Gateway films */
+    .film-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin: 1.6rem 0 0.4rem;
+    }
 
+    .film-card {
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 7px 7px 0 var(--red);
+    }
+
+    .film-card:nth-child(3n+2) { box-shadow: 7px 7px 0 var(--blue); }
+    .film-card:nth-child(3n+3) { box-shadow: 7px 7px 0 var(--green); }
+
+    .film-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .film-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .film-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.7rem 0.85rem;
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    .film-caption .film-city {
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .film-caption .film-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    @media (max-width: 720px) {
+      .film-grid { grid-template-columns: 1fr; }
+    }
     .pull-quote {
       margin: 2rem 0;
       padding: 1.2rem 0 1.2rem 1.2rem;
@@ -612,7 +670,7 @@
   </nav>
 
   <div class="issue-bar">
-    <span>EH5 / Mouris Bashir</span>
+    <span>Mouris Bashir</span>
     <span>Practice Note</span>
     <span>#ExecutiveComms</span>
   </div>
@@ -661,6 +719,10 @@
     <div class="stat">
       <span class="stat-num">3</span>
       <span class="stat-desc">Top OYO leadership voices carried across channels</span>
+    </div>
+      <div class="stat">
+      <span class="stat-num">5</span>
+      <span class="stat-desc">Supported Adani Parivar Social Comms across events, current affairs and major announcement</span>
     </div>
   </section>
 
