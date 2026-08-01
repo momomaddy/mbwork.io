@@ -9,520 +9,726 @@
   gtag('js', new Date());
   gtag('config', 'G-T4KRW84LFV');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OYO — Brand, Marketing & Communication Case Study</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OYO Valentine’s Day 2019 — Case Study / Mouris Bashir</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-  :root {
-    --deep: #2B000E;
-    --ink: #3E0A1B;
-    --red: #C2183B;
-    --rose: #E94564;
-    --pale: #FFF4F6;
-    --mist: #F5DCE2;
-    --body: #4C1F2A;
-    --muted: #8A5B68;
-    --cream: #FFF9FA;
-  }
+    *, *::before, *::after { box-sizing: border-box; }
 
-  body { background: var(--cream); color: var(--body); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
-  .top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background: rgba(43,0,14,0.96);
-    backdrop-filter: blur(8px);
-    padding: 0.9rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .top-nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-  .top-nav a {
-    font-family: sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(255,239,243,0.68);
-    text-decoration: none;
-  }
-  .top-nav .brand {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    color: #FFEFF3;
-  }
-  .top-nav a.active { color: #FFEFF3; }
- /* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  background:rgba(253,250,244,0.95);backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--rule);
-  padding:0 3rem;height:52px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{display:block;text-decoration:none;}
-.nav-logo img{height:32px;width:auto;display:block;}
-.nav-right{display:flex;gap:2rem;align-items:center;}
-.nav-link{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.6;transition:opacity 0.2s;
-}
-.nav-link:hover{opacity:1;}
-.nav-cta{
-  background:var(--ink);color:var(--cream)!important;
-  padding:0.35rem 1rem;opacity:1!important;font-weight:500;
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  text-decoration:none;
-}
-  .video-column-grid {
-  display: flex;
-  gap: 30px; /* Space between the two videos */
-  margin-top: 2rem;
-}
+    :root {
+      --paper: #f7f1e3;
+      --paper-soft: #fffaf0;
+      --ink: #17130e;
+      --ink-soft: #423b34;
+      --muted: #766d62;
+      --rule: #211a14;
+      --red: #b92f1f;
+      --blue: #174f75;
+      --green: #32684c;
+      --yellow: #e4b93f;
+      --white: #fffdf7;
+    }
 
-.video-column-item {
-  flex: 1; /* Makes both columns equal width */
-  display: flex;
-  flex-direction: column;
-}
+    html { scroll-behavior: smooth; }
 
-/* This maintains the 16:9 cinematic ratio for the videos */
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  background: #000;
-}
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(23,19,14,0.035) 1px, transparent 1px) 0 0 / 24px 24px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    /* Sticky Navigation Header */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 54px;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: rgba(247, 241, 227, 0.94);
+      border-bottom: 2px solid var(--rule);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.video-meta {
-  padding-top: 1rem;
-}
+    .nav-logo { display: block; text-decoration: none; }
+    .nav-logo img { display: block; width: auto; height: 32px; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-link,
+    .nav-work-btn,
+    .nav-cta {
+      color: var(--ink);
+      font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-.video-tag {
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--rust);
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-}
+    .nav-work { position: relative; }
 
-.video-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-/* Container for the vertical grid */
-.video-vertical-grid {
-  display: flex;
-  gap: 40px;
-  justify-content: center; /* Centers the vertical 'phones' */
-  margin-top: 3rem;
-}
+    .nav-work-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
 
-.video-vertical-item {
-  flex: 0 1 320px; /* Constrains the width so it looks like a phone */
-  display: flex;
-  flex-direction: column;
-}
+    .nav-work-btn::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+    }
 
-/* The magic number for 9:16 Vertical Ratio */
-.video-container.vertical {
-  position: relative;
-  width: 100%;
-  padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
-  height: 0;
-  background: var(--ink);
-  border-radius: 8px; /* Optional: slight curve to look like a screen */
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
+    .work-dropdown {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      min-width: 250px;
+      background: var(--paper-soft);
+      border: 2px solid var(--rule);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
 
-.video-container.vertical iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    .nav-work:hover .work-dropdown,
+    .nav-work:focus-within .work-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
 
-.video-meta {
-  padding-top: 1.2rem;
-  text-align: left;
-}
+    .work-dropdown-label,
+    .work-dropdown a {
+      display: block;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      color: var(--ink);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
-/* Mobile Tweak: Don't let them get too small on phones */
-@media (max-width: 768px) {
-  .video-vertical-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .video-vertical-item {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-/* Mobile Tweak: Stack them back to vertical when the screen is narrow */
-@media (max-width: 768px) {
-  .video-column-grid {
-    flex-direction: column;
-  }
-}
-  .showreel-row {
-  display: flex; /* Forces items to sit side-by-side */
-  gap: 15px;    /* Space between the images */
-  width: 100%;
-  margin: 2rem 0;
-  overflow-x: auto; /* Allows horizontal scrolling if the images are too wide */
-  padding-bottom: 10px;
-}
+    .work-dropdown-label { color: var(--red); background: var(--yellow); }
+    .work-dropdown a:hover { background: var(--ink); color: var(--paper); }
+    .work-dropdown a:last-child { border-bottom: 0; }
 
-.creative-cell {
-  flex: 1;      /* Makes all images the same width */
-  min-width: 300px; /* Adjust this based on how large you want each 'frame' */
-  position: relative;
-}
+    .nav-cta {
+      padding: 0.55rem 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
 
-.creative-cell img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover; /* Ensures the images fill the space nicely */
-}
+    /* Sub-header Issue Bar */
+    .issue-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem clamp(1rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper-soft);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
 
-/* Optional: Hide scrollbar for a cleaner 'Cinematic' look */
-.showreel-row::-webkit-scrollbar {
-  display: none;
-}
-.showreel-row {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
-}
-/* ── WORK DROPDOWN ── */
-.nav-work{position:relative;}
-.nav-work-btn{
-  font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--ink2);background:none;border:none;cursor:pointer;
-  opacity:0.6;transition:opacity 0.2s;padding:0;
-  display:flex;align-items:center;gap:0.4rem;font-family:'DM Sans',sans-serif;font-weight:300;
-}
-.nav-work-btn::after{
-  content:'';display:inline-block;width:0;height:0;
-  border-left:3px solid transparent;border-right:3px solid transparent;
-  border-top:4px solid currentColor;transition:transform 0.2s;
-}
-.nav-work:hover .nav-work-btn,
-.nav-work:focus-within .nav-work-btn{opacity:1;}
-.nav-work:hover .nav-work-btn::after,
-.nav-work:focus-within .nav-work-btn::after{transform:rotate(180deg);}
+    .issue-bar span:nth-child(2) {
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.5rem;
+      background: var(--yellow);
+    }
 
-.work-dropdown{
-  position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);
-  background:var(--cream);border:1px solid var(--rule);
-  min-width:240px;
-  opacity:0;visibility:hidden;
-  transform:translateX(-50%) translateY(-6px);
-  transition:opacity 0.2s,transform 0.2s,visibility 0.2s;
-  z-index:200;
-}
-.nav-work:hover .work-dropdown,
-.nav-work:focus-within .work-dropdown{
-  opacity:1;visibility:visible;
-  transform:translateX(-50%) translateY(0);
-}
-.work-dropdown a{
-  display:block;padding:0.7rem 1.2rem;
-  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--ink2);text-decoration:none;opacity:0.65;
-  border-bottom:1px solid var(--rule);transition:opacity 0.15s,background 0.15s;
-}
-.work-dropdown a:last-child{border-bottom:none;}
-.work-dropdown a:hover{opacity:1;background:var(--paper2);}
-.work-dropdown-label{
-  padding:0.6rem 1.2rem 0.4rem;
-  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--rust);font-weight:500;border-bottom:1px solid var(--rule);
-  }
-  .hero { position: relative; background: var(--deep); min-height: 90vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem 3rem 5rem; overflow: hidden; }
-  .hero-glow { position: absolute; inset: 0; background-image: radial-gradient(circle at 72% 22%, rgba(233,69,100,0.24) 0%, transparent 52%), radial-gradient(circle at 12% 78%, rgba(194,24,59,0.14) 0%, transparent 45%); }
-  .hero-label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: #FF9AAD; font-weight: 500; margin-bottom: 2rem; position: relative; }
-  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 4.6rem); font-weight: 900; line-height: 1.05; color: #FFEFF3; margin-bottom: 1.4rem; max-width: 760px; position: relative; }
-  .hero-title em { font-style: italic; color: #FFB8C6; }
-  .hero-sub { font-size: 1rem; color: rgba(255,239,243,0.65); max-width: 620px; margin-bottom: 2.5rem; position: relative; }
+    .issue-bar span:last-child { text-align: right; }
 
-  .hero-meta { display: flex; gap: 2rem; flex-wrap: wrap; position: relative; }
-  .meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
-  .meta-label { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,239,243,0.45); }
-  .meta-val { font-size: 0.87rem; color: #FFEFF3; font-weight: 400; }
+    /* Hero Section */
+    .hero {
+      border-bottom: 2px solid var(--rule);
+      background: var(--paper);
+    }
 
-  .stat-strip { background: var(--deep); border-top: 1px solid rgba(255,154,173,0.2); padding: 3.5rem 3rem; }
-  .stat-grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #FFB8C6; font-weight: 900; line-height: 1; }
-  .stat-desc { font-size: 0.76rem; color: rgba(255,239,243,0.6); margin-top: 0.35rem; }
+    .hero-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.45fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: end;
+      padding: clamp(1.4rem, 4vw, 3.4rem);
+      border-bottom: 2px solid var(--rule);
+    }
 
-  .page { max-width: 940px; margin: 0 auto; padding: 0 2rem; }
-  section { padding: 4.5rem 0; border-bottom: 1px solid rgba(62,10,27,0.08); }
-  section:last-child { border-bottom: none; }
-  .section-tag { font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 1rem; }
-  h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.22; color: var(--ink); margin-bottom: 1.3rem; }
-  h2 em { font-style: italic; color: var(--red); }
-  h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--ink); margin: 2rem 0 0.8rem; }
-  p { font-size: 0.96rem; color: var(--body); max-width: 760px; margin-bottom: 1rem; }
+    .kicker {
+      width: max-content;
+      max-width: 100%;
+      background: var(--red);
+      color: var(--white);
+      padding: 0.35rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.4rem; }
-  .card { background: var(--pale); border: 1px solid var(--mist); padding: 1.25rem; }
-  .card-title { font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 0.5rem; }
-  .card p { font-size: 0.84rem; color: var(--muted); margin: 0; }
+    h1 {
+      margin: 2rem 0 1.2rem;
+      max-width: 14ch;
+      font-size: clamp(2.8rem, 5.8vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      font-weight: 900;
+      overflow-wrap: normal;
+    }
 
-  ul { margin-left: 1.1rem; margin-bottom: 1rem; }
-  li { margin-bottom: 0.45rem; }
+    .dek {
+      max-width: 720px;
+      margin: 0;
+      font: 400 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
 
-  .quote { margin: 2rem 0; padding: 1.5rem 0 1.5rem 1.5rem; border-left: 3px solid var(--red); }
-  .quote p { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-style: italic; color: var(--ink); margin: 0; }
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper-soft);
+    }
 
-  footer { background: var(--deep); padding: 2rem; text-align: center; margin-top: 3rem; }
-  footer p { color: rgba(255,239,243,0.62); font-size: 0.78rem; margin: 0 auto; }
+    .meta-item {
+      min-height: 84px;
+      padding: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-  @media (max-width: 700px) {
-    .top-nav { padding: 0.8rem 1rem; }
-    .top-nav-links { gap: 0.8rem 1.2rem; }
-    .hero { padding: 3rem 1.2rem 4rem; }
-    .stat-strip { padding: 2.5rem 1.2rem; }
-    .page { padding: 0 1.2rem; }
-  }
+    .meta-item:last-child { border-bottom: 0; }
 
+    .meta-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--red);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-</style>
+    .meta-val {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    /* Stats Grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-bottom: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .stat {
+      min-height: 150px;
+      padding: 1.2rem clamp(1rem, 2vw, 1.6rem);
+      border-right: 1px solid rgba(247, 241, 227, 0.35);
+    }
+
+    .stat:last-child { border-right: 0; }
+
+    .stat-num {
+      display: block;
+      margin-bottom: 0.6rem;
+      color: var(--yellow);
+      font-size: clamp(2rem, 3.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 0.9;
+    }
+
+    .stat-desc {
+      display: block;
+      max-width: 16rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    /* Article Shell & Rails */
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.22fr) minmax(0, 900px) minmax(170px, 0.26fr);
+      gap: clamp(1.2rem, 3vw, 2.6rem);
+      width: min(1360px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0;
+    }
+
+    .rail {
+      position: sticky;
+      top: 76px;
+      align-self: start;
+      border-top: 2px solid var(--rule);
+      padding-top: 0.8rem;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .rail strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--red);
+    }
+
+    .rail nav {
+      all: unset;
+      display: block;
+      margin-top: 1.2rem;
+    }
+
+    .rail nav a {
+      display: block;
+      padding: 0.4rem 0;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 0.64rem;
+    }
+
+    .rail nav a:hover { color: var(--red); }
+
+    article {
+      background: var(--paper-soft);
+      border-left: 2px solid var(--rule);
+      border-right: 2px solid var(--rule);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .section {
+      padding: clamp(2.2rem, 5vw, 4.2rem) 0;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .section:last-child { border-bottom: 0; }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--rule);
+      background: var(--red);
+      color: var(--white);
+      padding: 0.22rem 0.5rem;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font: 700 clamp(2rem, 4vw, 3.2rem)/0.98 "Libre Baskerville", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 1.15rem;
+      font: 400 1.02rem/1.78 "Libre Baskerville", Georgia, serif;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      max-width: 760px;
+      font-size: clamp(1.18rem, 2.2vw, 1.55rem);
+      line-height: 1.62;
+      color: var(--ink);
+    }
+
+    .dropcap::first-letter {
+      float: left;
+      padding: 0.18rem 0.42rem 0 0;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 5.4rem;
+      font-weight: 900;
+      line-height: 0.78;
+      color: var(--red);
+    }
+
+    .pull-quote {
+      margin: 2rem 0;
+      padding: 1.2rem 0 1.2rem 1.2rem;
+      border-left: 8px solid var(--yellow);
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .pull-quote p {
+      margin: 0;
+      max-width: 640px;
+      color: var(--ink);
+      font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 1.6rem 0 0.4rem;
+    }
+
+    .story-card {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      padding: 1.2rem;
+      box-shadow: 6px 6px 0 var(--yellow);
+    }
+
+    .story-card:nth-child(2n) { box-shadow: 6px 6px 0 var(--red); }
+
+    .story-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 0.92rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .story-card p {
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    /* Horizontal Reel */
+    .showreel-row {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding: 0.8rem 0 1.2rem;
+      margin: 1.6rem 0;
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .creative-cell {
+      flex: 0 0 280px;
+      border: 2px solid var(--rule);
+      background: var(--ink);
+      box-shadow: 4px 4px 0 var(--red);
+    }
+
+    .creative-cell img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .list-box {
+      margin: 1.2rem 0;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .list-item {
+      padding: 0.85rem 1.2rem;
+      border-bottom: 1px solid var(--rule);
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+
+    .list-item:last-child { border-bottom: 0; }
+    .list-item strong { color: var(--ink); font-family: "DM Sans", Arial, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.2rem; }
+
+    .side-card {
+      align-self: start;
+      border: 2px solid var(--rule);
+      background: var(--red);
+      color: var(--white);
+      padding: 1rem;
+      box-shadow: 7px 7px 0 var(--yellow);
+      position: sticky;
+      top: 76px;
+    }
+
+    .side-card h3 {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .side-card p {
+      margin: 0 0 1rem;
+      max-width: none;
+      color: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .side-card p:last-child { margin-bottom: 0; }
+
+    footer {
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      border-top: 2px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    @media (max-width: 980px) {
+      .hero-copy { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-shell { grid-template-columns: 1fr; }
+      .rail, .side-card { position: static; }
+      article { border: 2px solid var(--rule); }
+    }
+
+    @media (max-width: 720px) {
+      nav { height: auto; min-height: 54px; align-items: flex-start; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+      .nav-right { flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem; }
+      .nav-link, .nav-work-btn, .nav-cta { font-size: 0.6rem; }
+      .issue-bar { grid-template-columns: 1fr; gap: 0.45rem; }
+      .issue-bar span:last-child { text-align: left; }
+      h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+      .hero-meta, .stats, .story-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="M.png" alt="mb.work">
-  </a>
-  <div class="nav-right">
-    <!-- Work with dropdown -->
-    <div class="nav-work" tabindex="0">
-      <button class="nav-work-btn" aria-haspopup="true">Work</button>
-      <div class="work-dropdown" role="menu">
-        <div class="work-dropdown-label">Case Studies</div>
-        <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
-        <a href="HorizonX.html">Horizon X — hear.com</a>
-        <a href="ONBC.html">#OneNationBillionCelebrations</a>
-        <a href="adl_equally.html">ADL Is EquAlly</a>
-        <a href="sustainability.html">Sustainability</a>
-       <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
-        <a href="fortune.html">Fortune</a>
-        <a href="police_scotland.html">Police Scotland</a>
-        <a href="FarmPik.html">FarmPik</a>
-        <a href="BookMyForex.html">BookMyForex</a>
-        <a href="moment_marketing.html">Moment Marketing</a>
+  <!-- Navigation Header -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
+    </a>
+    <div class="nav-right">
+      <div class="nav-work" tabindex="0">
+        <button class="nav-work-btn" aria-haspopup="true">Work</button>
+        <div class="work-dropdown" role="menu">
+          <div class="work-dropdown-label">Case Studies</div>
+          <a href="HKKDH.html">Hum Karke Dikhate Hain</a>
+          <a href="HorizonX.html">Horizon X - hear.com</a>
+          <a href="farmpik_fruity.html">Fruity life Healthy Vibe</a>
+          <a href="adl_equally.html">ADL Is EquAlly</a>
+          <a href="sustainability.html">Sustainability</a>
+          <a href="OYO.html">OYO Valentine's</a>
+          <a href="OYO_OPEN.html">OYO OPEN</a>
+          <a href="OYO_Internal.html">OYO Internal Comms</a>
+          <a href="fortune.html">Fortune</a>
+          <a href="police_scotland.html">Police Scotland</a>
+          <a href="FarmPik.html">FarmPik</a>
+          <a href="BookMyForex.html">BookMyForex</a>
+          <a href="moment_marketing.html">Moment Marketing</a>
+          <a href="ONBC.html">One Nation Billion Celebrations</a>
+          <a href="airportvideos.html">Airport Videos</a>
+          <a href="execcomms.html">Executive Comms</a>
+        </div>
       </div>
+      <a href="bio_gq.html" class="nav-link">About</a>
+      <a href="eh5tories.html" class="nav-link">EH5tories</a>
+      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
     </div>
-    <a href="bio_gq.html" class="nav-link">About</a>
-    <a href="eh5tories.html" class="nav-link">EH5tories</a>
-    <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-  </div>
   </nav>
-<div class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-label">Brand · Marketing · Communication Case Study</div>
-  <h1 class="hero-title">For the Love of Love —<br><em>OYO Paints the Town Red</em></h1>
-  <p class="hero-sub">An integrated communication system that repositioned Valentine’s Day from a couples-only moment to a broader celebration of companionship — while also strengthening partner trust, product narrative, and internal alignment.</p>
 
-  <div class="hero-meta">
-    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-val">OYO</span></div>
-    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Concept · Strategy · Copy · Program Leadership</span></div>
-    <div class="meta-item"><span class="meta-label">Agency</span><span class="meta-val">In-house</span></div>
-    <div class="meta-item"><span class="meta-label">Campaign Tag</span><span class="meta-val">#ValentinesTogetherAlone</span></div>
-  </div>
-</div>
-
-<div class="stat-strip">
-  <div class="stat-grid">
-    <div><div class="stat-num">7L+</div><div class="stat-desc">Organic impressions across campaign period</div></div>
-    <div><div class="stat-num">~6,000</div><div class="stat-desc">New followers acquired</div></div>
-    <div><div class="stat-num">~5%</div><div class="stat-desc">Engagement rate during the 14-day run</div></div>
-    <div><div class="stat-num">112%</div><div class="stat-desc">Increase in bookings vs previous year period</div></div>
-    <div><div class="stat-num">120K+</div><div class="stat-desc">Partner users onboarded on CO-OYO/OPEN</div></div>
-  </div>
-</div>
-
-<div class="page">
-  <section>
-    <div class="section-tag">Context</div>
-    <h2>A communication mandate larger than a single campaign.</h2>
-    <p>At OYO, the brand challenge was not just seasonal visibility. It was narrative breadth. The business needed to speak credibly to multiple audiences at once — consumers, hotel partners, media, leadership stakeholders, and employees — without fragmenting the core message.</p>
-    <p>The work was therefore designed as an integrated set of communication systems: market-facing brand storytelling, product and trust communication, partner engagement, and internal clarity architecture.</p>
-  </section>
-
-  <section>
-    <div class="section-tag">Case 01 · Brand Marketing</div>
-    <h2>Valentine’s Day 2019:<br><em>From romance to companionship.</em></h2>
-
-    <h3>Objective</h3>
-    <ul>
-      <li>Reposition Valentine’s Day beyond couples.</li>
-      <li>Normalize celebration with friends, family, and solo travellers.</li>
-      <li>Build emotional affinity and organic social participation.</li>
-    </ul>
-
-    <h3>Execution</h3>
-    <div class="cards">
-      <div class="card"><div class="card-title">Integrated Teams</div><p>Brand, offline marketing, conversions, PR, and OYO Townhouse teams aligned on one message architecture.</p></div>
-      <div class="card"><div class="card-title">Always-on Series</div><p>A 14-day social content sequence across Facebook and Instagram to sustain momentum.</p></div>
-      <div class="card"><div class="card-title">Creator + Community</div><p>Influencer stays at OYO Homes combined with user-generated content amplification.</p></div>
-      <div class="card"><div class="card-title">Data PR</div><p>Launched OYO Love Index 2019 from booking insights to validate the cultural shift with evidence.</p></div>
-    </div>
-
-    <div class="quote"><p>"February 14 is no longer only about couples; it is increasingly a companionship occasion across social groups."</p></div>
-    <div class="showreel-row">
-    <div class="creative-cell">
-      <img src="O01.png" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-    
-    <div class="creative-cell">
-      <img src="O02.png" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-    
-    <div class="creative-cell">
-      <img src="O03.png" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-      <div class="creative-cell">
-      <img src="O04.jpeg" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-      <div class="creative-cell">
-      <img src="O05.jpeg" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-       <div class="creative-cell">
-      <img src="O06.jpeg" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-       <div class="creative-cell">
-      <img src="O07.jpeg" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-    </div>
-    <h3>Performance</h3>
-    <ul>
-      <li>7+ lakh organic impressions.</li>
-      <li>~6,000 new followers.</li>
-      <li>~5% engagement rate.</li>
-      <li>112% increase in bookings vs same period previous year.</li>
-      <li>Booking mix: 63% couples, 22% friends/family (high-growth segment).</li>
-      <li>Goa emerged as top couples destination, followed by Delhi and Bangalore.</li>
-    </ul>
-  </section>
-
-
-  <section>
-    <div class="section-tag">Case 02 · Partner Communication</div>
-    <h2>OPEN Partner Privilege Program:<br><em>Turning an event into a brand signal.</em></h2>
-    <p>The Partner Privilege Program launch needed more than event management. It required operational readiness, leadership alignment, partner participation, and media coherence under one narrative about relationship-first growth.</p>
-<div class="showreel-row">
-    <div class="creative-cell">
-      <img src="33.jpeg" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-  <div class="creative-cell">
-      <img src="22.png" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-  <div class="creative-cell">
-      <img src="11.png" alt="OYO-OPEN">
-      <div class="cell-overlay"></div>
-    </div>
-</div>
-    <h3>Execution Scope</h3>
-    <ul>
-      <li>Event design, production flow, and vendor management.</li>
-      <li>Cross-functional leadership alignment (Founders’ Office, business, operations, tech).</li>
-      <li>Media coordination, press interactions, and narrative reinforcement.</li>
-      <li>Partner education communication to support onboarding and product usage.</li>
-      <li>Post-launch coverage tracking and leadership reporting.</li>
-    </ul>
-    <h3>Outcomes</h3>
- <section class="video-section">
-  <div class="section-header">
-    <span class="section-label">Multimedia Strategy — OYO</span>
+  <!-- Sub-header Issue Bar -->
+  <div class="issue-bar">
+    <span>OYO / Brand Marketing</span>
+    <span>Case Study</span>
+    <span>#ValentinesTogetherAlone</span>
   </div>
 
-  <div class="video-vertical-grid">
-    <div class="video-vertical-item">
-      <div class="video-container vertical">
-        <iframe 
-          src="https://www.youtube.com/embed?listType=playlist&list=PLwdraNl1PabdhDKtsxEnqJ6YOYpx5mJAP&modestbranding=1&rel=0" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-copy">
+      <div>
+        <div class="kicker">Case Study / Brand Marketing</div>
+        <h1>For the Love of Love — OYO Paints the Town Red</h1>
+        <p class="dek">An integrated communication campaign that repositioned Valentine’s Day from a couples-only moment to a broader celebration of companionship.</p>
       </div>
-      <div class="video-meta">
-        <div class="video-tag">Brand Narrative</div>
-        <div class="video-title">OYO Partner Series</div>
+      <div class="hero-meta" aria-label="Project details">
+        <div class="meta-item">
+          <span class="meta-label">Client</span>
+          <span class="meta-val">OYO</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Role</span>
+          <span class="meta-val">Concept, Strategy, Copy &amp; Program Leadership</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Agency</span>
+          <span class="meta-val">In-house</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Tagline</span>
+          <span class="meta-val">#ValentinesTogetherAlone</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-    <ul>
-      <li>44+ media attendees at launch.</li>
-      <li>60+ quality stories across national, regional, and financial media.</li>
-      <li>Leadership and hotel partner participation at scale.</li>
-      <li>120,000+ partner users onboarded on CO-OYO/OPEN platforms.</li>
-    </ul>
-  </section>
+  </header>
 
-  <section>
-    <div class="section-tag">Case 03 · Internal Communication</div>
-    <h2>Building clarity during hypergrowth:<br><em>from scattered updates to architecture.</em></h2>
-    <p>As OYO scaled across geographies and functions, internal communication became inconsistent. The fix was not frequency. It was segmentation and purpose.</p>
-
-    <h3>Communication Architecture</h3>
-    <div class="cards">
-      <div class="card"><div class="card-title">OYO Shorts</div><p>Fast, high-frequency awareness updates on launches, news, and active movement.</p></div>
-      <div class="card"><div class="card-title">OYO Tinyletter</div><p>Readable explainers translating activity into business meaning and progress context.</p></div>
-      <div class="card"><div class="card-title">The OYO Press</div><p>Leadership media-intelligence layer tracking coverage, perception, and narrative direction.</p></div>
+  <!-- Stats Grid -->
+  <section class="stats" aria-label="Campaign metrics">
+    <div class="stat">
+      <span class="stat-num">7L+</span>
+      <span class="stat-desc">Organic impressions across campaign period</span>
     </div>
-
-    <p>This structure separated awareness, understanding, and executive visibility — improving message clarity across employee, manager, and stakeholder audiences.</p>
+    <div class="stat">
+      <span class="stat-num">~6,000</span>
+      <span class="stat-desc">New followers acquired</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">~5%</span>
+      <span class="stat-desc">Engagement rate during 14-day run</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">112%</span>
+      <span class="stat-desc">Increase in bookings vs previous year</span>
+    </div>
   </section>
 
-  <section>
-    <div class="section-tag">Role Summary</div>
-    <h2>What I led across these initiatives.</h2>
-    <ul>
-      <li>Concept ideation and copywriting across digital, social, OOH, and in-store formats.</li>
-      <li>Communication strategy and messaging architecture across launches and cross-functional programs.</li>
-      <li>Program leadership across stakeholder management, media coordination, operations, and narrative consistency.</li>
-      <li>Integration of data, content, and execution to make communication measurable and culturally resonant.</li>
-    </ul>
-  </section>
-</div>
+  <!-- Main Article Layout Shell -->
+  <main class="article-shell">
+    <aside class="rail">
+      <strong>On This Page</strong>
+      Objectives, execution, creative reel, and performance.
+      <nav>
+        <a href="#objectives">Campaign Objectives</a>
+        <a href="#execution">Strategic Execution</a>
+        <a href="#gallery">Creative Showcase</a>
+        <a href="#performance">Performance Impact</a>
+      </nav>
+    </aside>
 
-<footer>
-  <p>OYO Brand, Marketing & Communication Case Study · Prepared for portfolio use.</p>
-</footer>
+    <article>
+      <!-- Section: Objectives -->
+      <section class="section" id="objectives">
+        <span class="section-label">Objectives</span>
+        <h2>From romance to companionship.</h2>
+        <p class="lede dropcap">At OYO, the brand challenge was not just seasonal visibility. It was narrative breadth. The business needed to speak credibly to consumers without fragmenting the core message.</p>
 
+        <div class="list-box">
+          <div class="list-item">
+            <strong>Reposition Valentine's Day</strong>
+            Move the cultural narrative beyond couples to celebrate companionship across all social groups.
+          </div>
+          <div class="list-item">
+            <strong>Normalize Inclusivity</strong>
+            Normalize celebration with friends, family, and solo travellers.
+          </div>
+          <div class="list-item">
+            <strong>Drive Engagement</strong>
+            Build emotional affinity and organic social participation through user-generated content and data PR.
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Execution -->
+      <section class="section" id="execution">
+        <span class="section-label">Execution</span>
+        <h2>Multichannel campaign architecture.</h2>
+
+        <div class="story-grid">
+          <div class="story-card">
+            <h3>Integrated Teams</h3>
+            <p>Brand, offline marketing, conversions, PR, and OYO Townhouse teams aligned on one message architecture.</p>
+          </div>
+          <div class="story-card">
+            <h3>Always-on Series</h3>
+            <p>A 14-day social content sequence across Facebook and Instagram to sustain momentum.</p>
+          </div>
+          <div class="story-card">
+            <h3>Creator + Community</h3>
+            <p>Influencer stays at OYO Homes combined with user-generated content amplification.</p>
+          </div>
+          <div class="story-card">
+            <h3>Data PR</h3>
+            <p>Launched OYO Love Index 2019 from booking insights to validate the cultural shift with evidence.</p>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>"February 14 is no longer only about couples; it is increasingly a companionship occasion across social groups."</p>
+        </div>
+      </section>
+
+      <!-- Section: Gallery -->
+      <section class="section" id="gallery">
+        <span class="section-label">Creative Showcase</span>
+        <h2>Campaign visuals &amp; assets.</h2>
+
+        <div class="showreel-row">
+          <div class="creative-cell"><img src="O01.png" alt="OYO Campaign 1"></div>
+          <div class="creative-cell"><img src="O02.png" alt="OYO Campaign 2"></div>
+          <div class="creative-cell"><img src="O03.png" alt="OYO Campaign 3"></div>
+          <div class="creative-cell"><img src="O04.jpeg" alt="OYO Campaign 4"></div>
+          <div class="creative-cell"><img src="O05.jpeg" alt="OYO Campaign 5"></div>
+          <div class="creative-cell"><img src="O06.jpeg" alt="OYO Campaign 6"></div>
+          <div class="creative-cell"><img src="O07.jpeg" alt="OYO Campaign 7"></div>
+        </div>
+      </section>
+
+      <!-- Section: Performance -->
+      <section class="section" id="performance">
+        <span class="section-label">Performance</span>
+        <h2>Measurable cultural shift.</h2>
+
+        <div class="list-box">
+          <div class="list-item"><strong>7+ Lakhs</strong> Organic impressions generated across the campaign period.</div>
+          <div class="list-item"><strong>~6,000</strong> New followers acquired organically.</div>
+          <div class="list-item"><strong>~5%</strong> Engagement rate sustained during the 14-day run.</div>
+          <div class="list-item"><strong>112% Increase</strong> In bookings compared to the same period in the previous year.</div>
+          <div class="list-item"><strong>Diversified Mix</strong> Booking mix shifted to 63% couples and 22% friends/family (high-growth segment). Goa emerged as top couples destination, followed by Delhi and Bangalore.</div>
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Note -->
+    <aside class="side-card">
+      <h3>Campaign Takeaway</h3>
+      <p>By blending data-driven PR with inclusive storytelling, OYO established Valentine's Day as a high-growth companionship occasion.</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    OYO · <span>Valentine's Day 2019</span> · Brand Marketing Case Study
+  </footer>
 </body>
 </html>
