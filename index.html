@@ -108,12 +108,12 @@
       .nav a:hover { color: var(--gold); }
 
       /* ── HERO FEATURE ── */
-      .hero-feature {
-        position: relative;
-        background: var(--paper-light);
-        border-bottom: 2px solid var(--rule-dark);
-        padding: 40px 24px 0;
-      }
+        .hero-feature {
+  position: relative;
+  background: var(--paper-light); /* Keeps the light editorial paper background */
+  border-bottom: 2px solid var(--rule-dark);
+  padding: 40px 24px 20px;
+}
       .hero-container {
         max-width: 1120px;
         margin: 0 auto;
@@ -133,20 +133,24 @@
         margin-bottom: 16px;
       }
       h1, h2, h3 { font-family: 'Playfair Display', serif; }
-      .hero-header h1 {
-        font-size: clamp(38px, 6vw, 76px);
-        line-height: .92;
-        font-weight: 900;
-        letter-spacing: -.02em;
-        margin-bottom: 16px;
-        text-transform: uppercase;
-      }
+        .hero-header h1 {
+  font-size: clamp(38px, 6vw, 76px);
+  line-height: .92;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  color: var(--ink) !important; /* Forces sharp black text */
+}
       .hero-header p {
-        font-size: 18px;
-        max-width: 820px;
-        color: var(--ink-soft);
-        line-height: 1.4;
-      }
+  font-size: 18px;
+  max-width: 820px;
+  color: var(--ink-soft) !important; /* Dark readable body text */
+  line-height: 1.4;
+}
+        .hero-feature::after {
+  display: none !important;
+}
       .hero-media {
         position: relative;
         width: 100%;
