@@ -217,14 +217,27 @@
 
       /* ── SECTIONS & CARDS ── */
       .section { max-width: 1120px; margin: 0 auto; padding: 48px 24px; }
-      .section-title {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        border-bottom: 2px solid var(--rule-dark);
-        padding-bottom: 12px;
-        margin-bottom: 28px;
-      }
+        /* Ensure the title bar lays out items in a flex row space-between */
+.section-title {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  border-bottom: 2px solid var(--rule-dark);
+  padding-bottom: 12px;
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+/* REMOVE OR OVERRIDE THIS CLASS THAT WAS CAUSING THE BREAK:
+   Previously .category .section-title was forcing display: block; */
+.category .section-title {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-end !important;
+  border-bottom: 2px solid var(--rule-dark) !important;
+  margin-bottom: 24px;
+}
+        
       .section-title-wrap h2 { font-size: 38px; line-height: 1; font-weight: 900; text-transform: uppercase; }
       .section-title-wrap small {
         color: #C84B31;
