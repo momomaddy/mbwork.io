@@ -399,7 +399,153 @@
   background: var(--gold-bg);
   color: var(--ink);
 }
+/* ── THE RINGER EH5TORIES CLUSTER ── */
+.ringer-section {
+  max-width: 1120px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+.ringer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
 
+.ringer-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 420px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  border: 1px solid var(--rule-dark);
+}
+
+/* Card 1: Noteworthy Reads */
+.reads-card {
+  background: #ffffff;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.reads-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  color: #111;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+.reads-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.reads-list li {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+.reads-list li:last-child {
+  border-bottom: none;
+}
+.reads-list a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.reads-list a:hover {
+  color: var(--gold);
+}
+.green-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981;
+  border-radius: 50%;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* Cards 2 & 3: Media Cards */
+.media-card {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+.media-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.media-card:hover img {
+  transform: scale(1.04);
+}
+.ringer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.92) 100%);
+}
+.ringer-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+}
+.ringer-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.ringer-headline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.ringer-byline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+.byline-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 860px) {
+  .ringer-grid {
+    grid-template-columns: 1fr;
+  }
+  .ringer-card {
+    height: 380px;
+  }
+}
     </style>
 
     <script type="text/javascript">
@@ -467,17 +613,51 @@
     </div>
   </section>
 
-  <section class="conversation">
-    <div class="conversation-media">
-      <img src="Mour1s.jpeg" alt="People in conversation near a mural">
+  <section class="ringer-section">
+  <div class="ringer-grid">
+    
+    <!-- CARD 1: Noteworthy Reads List -->
+    <div class="ringer-card reads-card">
+      <h3 class="reads-title">Noteworthy Reads</h3>
+      <ul class="reads-list">
+        <li><a href="eh5tories.html"><span class="green-dot"></span>Notes about memory, place, archives, and people</a></li>
+        <li><a href="eh5tories.html"><span class="green-dot"></span>The copy that did the thinking</a></li>
+        <li><a href="eh5tories.html"><span class="green-dot"></span>Building trust across fields & boardrooms</a></li>
+        <li><a href="eh5tories.html"><span class="green-dot"></span>Creating a category in digital growth</a></li>
+        <li><a href="eh5tories.html"><span class="green-dot"></span>Why history matters for modern brands</a></li>
+      </ul>
     </div>
-    <div class="conversation-copy">
-      <span class="eyebrow">Do Read</span>
-      <h2>EH5tories</h2>
-      <p>Notes about memory, place, archives, and the people who keep old the world interesting.</p>
-      <a class="read-link" href="eh5tories.html">Explore more</a>
-    </div>
-  </section>
+
+    <!-- CARD 2: Featured Article Card -->
+    <a href="eh5tories.html" class="ringer-card media-card">
+      <img src="Mour1s.jpeg" alt="EH5tories Feature">
+      <div class="ringer-overlay"></div>
+      <div class="ringer-content">
+        <span class="ringer-pill">EH5tories</span>
+        <h3 class="ringer-headline">Notes about memory, place, archives, and the people who keep the world interesting.</h3>
+        <div class="ringer-byline">
+          <img src="M.png" alt="Mouris Bashir" class="byline-avatar">
+          <span>By Mouris Bashir · 5 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 3: Secondary Feature Card -->
+    <a href="eh5tories.html" class="ringer-card media-card">
+      <img src="https://img.youtube.com/vi/GM7uKnyAono/maxresdefault.jpg" alt="EH5tories Essay">
+      <div class="ringer-overlay"></div>
+      <div class="ringer-content">
+        <span class="ringer-pill">ESSAY</span>
+        <h3 class="ringer-headline">Shaping how organisations are seen, understood, and remembered.</h3>
+        <div class="ringer-byline">
+          <img src="M.png" alt="Mouris Bashir" class="byline-avatar">
+          <span>By Mouris Bashir · 4 min read</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
 
   <section class="section category" id="Brand">
     <div class="section-title">
