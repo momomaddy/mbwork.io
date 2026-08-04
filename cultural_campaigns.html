@@ -265,22 +265,25 @@
     /* Track index — jump nav to campaign sections */
     .track-index {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       border-bottom: 2px solid var(--rule);
       background: var(--paper-soft);
     }
 
     .track-index a {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 0.9rem 1rem;
       border-right: 1px solid var(--rule);
       color: var(--ink);
       text-decoration: none;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 900;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       text-align: center;
+      line-height: 1.2;
     }
 
     .track-index a:last-child { border-right: 0; }
@@ -360,6 +363,7 @@
 
     .section-label.hero-film { background: var(--red); }
     .section-label.animation { background: var(--blue); }
+    .section-label.social { background: var(--yellow); color: var(--ink); border-color: var(--rule); }
     .section-label.seva { background: var(--green); }
     .section-label.leadership { background: var(--ink); border-color: var(--rule); }
 
@@ -406,6 +410,13 @@
     .ex-card {
       border: 2px solid var(--rule);
       background: var(--ink);
+      text-decoration: none; /* For wrapped links */
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ex-card:hover {
+      transform: translate(-3px, -3px);
     }
 
     .ex-card.c1 { box-shadow: 6px 6px 0 var(--red); }
@@ -419,6 +430,15 @@
       overflow: hidden;
       border-bottom: 2px solid var(--rule);
       background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--paper-soft);
+    }
+
+    /* Special square ratio for social posts */
+    .ex-frame.social-ratio {
+      aspect-ratio: 1 / 1;
     }
 
     .ex-frame img {
@@ -538,7 +558,7 @@
     @media (max-width: 980px) {
       .hero-copy { grid-template-columns: 1fr; }
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .track-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .track-index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .article-shell { grid-template-columns: 1fr; }
       .rail,
       .side-card { position: static; }
@@ -576,6 +596,7 @@
       }
       .meta-item:last-child,
       .stat:last-child { border-bottom: 0; }
+      .track-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   </style>
 </head>
@@ -632,7 +653,7 @@
         </div>
         <div class="meta-item">
           <span class="meta-label">Formats</span>
-          <span class="meta-val">Hero documentaries, regional animation, family reflections</span>
+          <span class="meta-val">Hero documentaries, regional animation, social distribution</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Mandate</span>
@@ -669,6 +690,7 @@
     <a href="#anchor-films">Anchor Films</a>
     <a href="#innocent-eyes">Animation</a>
     <a href="#seva-and-sadhna">Seva &amp; Impact</a>
+    <a href="#social-amplification">Social Feeds</a>
     <a href="#leadership-devotion">Leadership</a>
   </div>
 
@@ -680,6 +702,7 @@
         <a href="#anchor-films">Anchor Films</a>
         <a href="#innocent-eyes">Animation</a>
         <a href="#seva-and-sadhna">Seva &amp; Impact</a>
+        <a href="#social-amplification">Social Feeds</a>
         <a href="#leadership-devotion">Leadership</a>
       </nav>
     </aside>
@@ -689,14 +712,25 @@
         <span class="section-label hero-film">Anchor Films</span>
         <h2>Framing the saga of devotion.</h2>
         <p class="lede dropcap">At the MahaKumbh, commercial advertising fails instantly. The strategic brief demanded removing all corporate polish in favor of raw, reverent, human-first storytelling. By centering the narratives around 'Seva' (community service) rather than corporate promotion, the anchor films established immediate cultural authenticity and massive digital resonance.</p>
-
-        <div class="ex-grid two-col">
-          <div class="ex-card c1">
-            <div class="ex-frame"><img src="ex-kumbh-01.jpg" alt="Mahapunya | The Saga of MahaKumbh 2025 | Prayagraj thumbnail showing Gautam Adani and Priti Adani greeting pilgrims"></div>
-            <div class="ex-tag"><span class="ex-num">Ex.01</span><span class="ex-desc">Mahapunya | The Saga (4M Views)</span></div>
-          </div>
+<div class="ex-card c1">
+  <div class="ex-frame">
+    <iframe width="100%" height="100%" 
+      src="https://www.youtube.com/embed/krQf47w1PI8?rel=0&modestbranding=1" 
+      title="Mahapunya | The Saga of MahaKumbh 2025 | Prayagraj" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen
+      style="position: absolute; top: 0; left: 0;">
+    </iframe>
+  </div>
+  <div class="ex-tag">
+    <span class="ex-num">Ex.01</span>
+    <span class="ex-desc">Mahapunya | The Saga (4M Views)</span>
+  </div>
+</div>
           <div class="ex-card c2">
-            <div class="ex-frame"><img src="ex-kumbh-02.jpg" alt="MahaKumbh 2025 | Faith, Service and a Divine Journey thumbnail featuring pilgrims at Prayagraj"></div>
+            <div class="ex-frame"><img src="ex-kumbh-02.jpg" alt="MahaKumbh 2025 | Faith, Service and a Divine Journey thumbnail"></div>
             <div class="ex-tag"><span class="ex-num">Ex.02</span><span class="ex-desc">Faith, Service &amp; Divine Journey (4M Views)</span></div>
           </div>
         </div>
@@ -709,11 +743,11 @@
 
         <div class="ex-grid two-col">
           <div class="ex-card c3">
-            <div class="ex-frame"><img src="ex-kumbh-03.jpg" alt="MahaKumbh Through the Innocent Eyes of Bachpan animated artwork thumbnail"></div>
+            <div class="ex-frame"><img src="ex-kumbh-03.jpg" alt="MahaKumbh Through the Innocent Eyes of Bachpan artwork"></div>
             <div class="ex-tag"><span class="ex-num">Ex.03</span><span class="ex-desc">Innocent Eyes of Bachpan (3.2M Views)</span></div>
           </div>
           <div class="ex-card c4">
-            <div class="ex-frame"><img src="ex-kumbh-04.jpg" alt="MahaKumbh 2025: A Sacred Journey of Devotion and Seva illustrated artwork thumbnail"></div>
+            <div class="ex-frame"><img src="ex-kumbh-04.jpg" alt="MahaKumbh 2025: A Sacred Journey of Devotion and Seva artwork"></div>
             <div class="ex-tag"><span class="ex-num">Ex.04</span><span class="ex-desc">Sacred Journey of Devotion (4.1M Views)</span></div>
           </div>
         </div>
@@ -726,18 +760,67 @@
 
         <div class="ex-grid two-col">
           <div class="ex-card c1">
-            <div class="ex-frame"><img src="ex-kumbh-05.jpg" alt="MahaKumbh 2025 | A Sacred Celebration of True Seva thumbnail showing a pilgrim receiving a tilak"></div>
+            <div class="ex-frame"><img src="ex-kumbh-05.jpg" alt="MahaKumbh 2025 | A Sacred Celebration of True Seva"></div>
             <div class="ex-tag"><span class="ex-num">Ex.05</span><span class="ex-desc">Celebration of True Seva (3.8M Views)</span></div>
           </div>
           <div class="ex-card c2">
-            <div class="ex-frame"><img src="ex-kumbh-06.jpg" alt="100,000 Mahaprasad distribution thumbnail showing ISKCON service at Prayagraj"></div>
+            <div class="ex-frame"><img src="ex-kumbh-06.jpg" alt="100,000 Mahaprasad distribution"></div>
             <div class="ex-tag"><span class="ex-num">Ex.06</span><span class="ex-desc">100,000 Daily Mahaprasad (3M Views)</span></div>
           </div>
         </div>
+      </section>
 
-        <div class="pull-quote">
-          <p>When an enterprise aligns with a cultural gathering of millions, the campaign must feel like service, not publicity.</p>
+      <section class="section" id="social-amplification">
+        <span class="section-label social">Social</span>
+        <h2>Amplification across the feed.</h2>
+        <p>The campaign extended far beyond hero films through highly reactive, moment-driven distribution on social channels. This included direct thought leadership from the Chairman’s personal handle alongside real-time cultural updates and reel drops from the corporate brand accounts.</p>
+
+        <div class="ex-grid">
+          <!-- Corporate Tweets / Reels -->
+          <a href="https://x.com/AdaniOnline/status/1887403635296117138" target="_blank" class="ex-card c1">
+            <div class="ex-frame social-ratio">
+              <img src="tweet-adani-01.jpg" alt="X Post / Reel by @AdaniOnline: MahaKumbh cultural integration">
+            </div>
+            <div class="ex-tag"><span class="ex-num">Ex.07</span><span class="ex-desc">@AdaniOnline / Brand Post</span></div>
+          </a>
+          
+          <a href="https://x.com/AdaniOnline/status/1895420132903796786" target="_blank" class="ex-card c2">
+            <div class="ex-frame social-ratio">
+              <img src="tweet-adani-02.jpg" alt="X Post / Reel by @AdaniOnline: Ongoing ground service">
+            </div>
+            <div class="ex-tag"><span class="ex-num">Ex.08</span><span class="ex-desc">@AdaniOnline / Impact Reel</span></div>
+          </a>
+
+          <a href="https://x.com/AdaniOnline/status/1885630121169784966" target="_blank" class="ex-card c3">
+            <div class="ex-frame social-ratio">
+              <img src="tweet-adani-03.jpg" alt="X Post / Reel by @AdaniOnline: Devotion in action">
+            </div>
+            <div class="ex-tag"><span class="ex-num">Ex.09</span><span class="ex-desc">@AdaniOnline / Devotional Video</span></div>
+          </a>
+
+          <!-- Leadership / Executive Tweets -->
+          <a href="https://x.com/gautam_adani/status/1877345061958017230" target="_blank" class="ex-card c4">
+            <div class="ex-frame social-ratio">
+              <img src="tweet-gautam-01.jpg" alt="X Post by @gautam_adani: Executive reflection on Kumbh">
+            </div>
+            <div class="ex-tag"><span class="ex-num">Ex.10</span><span class="ex-desc">@gautam_adani / Leadership Voice</span></div>
+          </a>
+
+          <a href="https://x.com/gautam_adani/status/1884533724907520395" target="_blank" class="ex-card c1">
+            <div class="ex-frame social-ratio">
+              <img src="tweet-gautam-02.jpg" alt="X Post by @gautam_adani: Personal devotion statement">
+            </div>
+            <div class="ex-tag"><span class="ex-num">Ex.11</span><span class="ex-desc">@gautam_adani / Executive Comms</span></div>
+          </a>
+
+          <a href="https://x.com/gautam_adani/status/1882687547899596951" target="_blank" class="ex-card c2">
+            <div class="ex-frame social-ratio">
+              <img src="tweet-gautam-03.jpg" alt="X Post by @gautam_adani: Service and family at Kumbh">
+            </div>
+            <div class="ex-tag"><span class="ex-num">Ex.12</span><span class="ex-desc">@gautam_adani / Seva Statement</span></div>
+          </a>
         </div>
+        <div class="track-note">Clicking any social card above will route directly to the live broadcasted asset on X. Replace the placeholder images (`tweet-adani-01.jpg`, etc.) with standard feed screenshots.</div>
       </section>
 
       <section class="section" id="leadership-devotion">
@@ -748,11 +831,11 @@
         <div class="ex-grid">
           <div class="ex-card c3">
             <div class="ex-frame"><img src="ex-kumbh-07.jpg" alt="Gautam Adani & Family MahaKumbh 2025 experience thumbnail showing family serving food"></div>
-            <div class="ex-tag"><span class="ex-num">Ex.07</span><span class="ex-desc">Sewa Hi Sadhna Hai — Family (3.9M Views)</span></div>
+            <div class="ex-tag"><span class="ex-num">Ex.13</span><span class="ex-desc">Sewa Hi Sadhna Hai — Family (3.9M Views)</span></div>
           </div>
           <div class="ex-card c4">
             <div class="ex-frame"><img src="ex-kumbh-08.jpg" alt="MahaKumbh 2025 Vishwa ke sabse bade dharmik samagam mein Adani Samuh ka sankalp thumbnail"></div>
-            <div class="ex-tag"><span class="ex-num">Ex.08</span><span class="ex-desc">World's Largest Gathering (3.8M Views)</span></div>
+            <div class="ex-tag"><span class="ex-num">Ex.14</span><span class="ex-desc">World's Largest Gathering (3.8M Views)</span></div>
           </div>
         </div>
       </section>
@@ -761,7 +844,7 @@
     <aside class="side-card">
       <h3>Editorial Note</h3>
       <p>This case study highlights the social comms distribution strategy and rollout executed for the Adani Group during MahaKumbh 2025 in Prayagraj.</p>
-      <p>All video assets follow the systematic Ex.## labeling for unified portfolio navigation across EH5 practice notes.</p>
+      <p>All video and social assets follow the systematic Ex.## labeling for unified portfolio navigation across EH5 practice notes.</p>
     </aside>
   </main>
 
