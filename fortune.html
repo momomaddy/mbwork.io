@@ -460,7 +460,117 @@
       display: block;
       object-fit: cover;
     }
+/* ── YOUTUBE CHANNEL CARD GRID ── */
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
 
+.yt-card {
+  background: var(--paper-card, #EFECE4);
+  border: 1px solid var(--rule-dark, #111111);
+  text-decoration: none;
+  color: var(--ink, #111111);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.yt-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.yt-thumb-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  background: #000;
+  overflow: hidden;
+}
+
+.yt-thumb-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.yt-card:hover .yt-thumb-wrap img {
+  opacity: 1;
+}
+
+.play-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(17, 17, 17, 0.85);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.yt-card-info {
+  padding: 20px;
+}
+
+.yt-card-info h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0;
+  line-height: 1.25;
+}
+
+.yt-card-info p {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent, #C84B31);
+}
+
+/* Special Banner Style for Channel Link */
+.channel-link-card {
+  background: var(--dark-band, #1B1A17);
+  color: #ffffff;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.channel-card-content h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 12px 0;
+}
+
+.channel-card-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.yt-btn {
+  display: inline-block;
+  background: var(--gold-bg, #D6B880);
+  color: var(--ink, #111111);
+  padding: 10px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
     /* Strategic Shift Block */
     .shift-block {
       display: grid;
@@ -820,7 +930,6 @@
       <!-- Section: Creative Showcase -->
       <section class="section" id="creative">
         <span class="section-label">Creative Showcase</span>
-        <h2>Brand &amp; product creative gallery.</h2>
         <p>A visual walkthrough of the digital assets, product combos, and promotional creatives that launched Fortune Online.</p>
 
         <div class="showreel-row">
@@ -850,6 +959,37 @@
       </iframe>
     </div>
     <div class="media-caption">Fortune Online Launch Film — #NayeBharatKiNayiDelivery</div>
+  </div>
+</section>
+         <section class="section" id="youtube-channel">
+  <div class="section-title-wrap">
+    <small>Official Channel</small>
+    <h2>Fortune Online Videos</h2>
+  </div>
+
+  <div class="channel-grid">
+    <!-- Video Card 1 -->
+    <a href="https://www.youtube.com/watch?v=cQ_fJFqXnd0" target="_blank" rel="noopener" class="yt-card">
+      <div class="yt-thumb-wrap">
+        <img src="https://img.youtube.com/vi/cQ_fJFqXnd0/maxresdefault.jpg" alt="Fortune Online Brand Film">
+        <span class="play-badge">▶ Watch on YouTube</span>
+      </div>
+      <div class="yt-card-info">
+        <span class="pill">Fortune Online</span>
+        <h3>Brand Launch & Product Showcase</h3>
+        <p>Watch full video on YouTube →</p>
+      </div>
+    </a>
+
+    <!-- Channel Banner Card -->
+    <a href="https://www.youtube.com/@fortuneonlineindia/videos" target="_blank" rel="noopener" class="yt-card channel-link-card">
+      <div class="channel-card-content">
+        <span class="pill">YouTube Channel</span>
+        <h3>Explore the Full Fortune Online Video Library</h3>
+        <p>Access recipe tutorials, ad campaigns, and app guides directly on YouTube.</p>
+        <span class="yt-btn">Visit @fortuneonlineindia</span>
+      </div>
+    </a>
   </div>
 </section>
  <!--My Role -->
