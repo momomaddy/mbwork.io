@@ -680,21 +680,21 @@
       text-transform: uppercase;
       color: rgba(247, 241, 227, 0.6);
     }
-/* Force the grid to display 4 equal columns in a horizontal row */
+    /* Display 2 cards per row (2 columns total) */
 #instagram-campaign .ex-grid {
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important; /* 4 side-by-side columns */
-  gap: 16px !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2 side-by-side columns */
+  gap: 24px !important;
   width: 100% !important;
 }
 
-/* Constrain card widths so Instagram embeds fit neatly inside */
+/* Ensure Instagram cards fit their grid cell properly */
 #instagram-campaign .ex-card {
-  min-width: 0 !important; /* Prevents flex/grid overflow */
+  min-width: 0 !important;
   width: 100% !important;
 }
 
-/* Force Instagram iframe embeds to fit cleanly inside their parent card */
+/* Make Instagram embed widgets fill 100% of the card width */
 #instagram-campaign .instagram-media {
   min-width: 100% !important;
   max-width: 100% !important;
@@ -702,19 +702,13 @@
   margin: 0 auto !important;
 }
 
-/* Allow smooth horizontal scrolling on mobile/smaller screens */
-@media (max-width: 1024px) {
+/* On mobile devices, stack them 1 per column for readability */
+@media (max-width: 640px) {
   #instagram-campaign .ex-grid {
-    display: flex !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 12px;
-  }
-  #instagram-campaign .ex-card {
-    flex: 0 0 280px !important; /* Fixed card width on smaller screens */
-    scroll-snap-align: start;
+    grid-template-columns: 1fr !important;
   }
 }
+
     /* Role Pills / Tags */
     .pills-container {
       display: flex;
@@ -1038,7 +1032,7 @@
   <h2>The visual feed.</h2>
   <p class="lede">Bringing the Fruity Life Healthy Vibe aesthetic to the feed through highly visual, engaging lifestyle reels and posts.</p>
 
-  <div class="ex-grid four-col">
+<div class="ex-grid two-col">
     
     <!-- Instagram Post 1 -->
     <div class="ex-card c1" style="display: flex; flex-direction: column;">
