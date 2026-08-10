@@ -680,7 +680,41 @@
       text-transform: uppercase;
       color: rgba(247, 241, 227, 0.6);
     }
+/* Force the grid to display 4 equal columns in a horizontal row */
+#instagram-campaign .ex-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important; /* 4 side-by-side columns */
+  gap: 16px !important;
+  width: 100% !important;
+}
 
+/* Constrain card widths so Instagram embeds fit neatly inside */
+#instagram-campaign .ex-card {
+  min-width: 0 !important; /* Prevents flex/grid overflow */
+  width: 100% !important;
+}
+
+/* Force Instagram iframe embeds to fit cleanly inside their parent card */
+#instagram-campaign .instagram-media {
+  min-width: 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Allow smooth horizontal scrolling on mobile/smaller screens */
+@media (max-width: 1024px) {
+  #instagram-campaign .ex-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+  }
+  #instagram-campaign .ex-card {
+    flex: 0 0 280px !important; /* Fixed card width on smaller screens */
+    scroll-snap-align: start;
+  }
+}
     /* Role Pills / Tags */
     .pills-container {
       display: flex;
@@ -998,15 +1032,13 @@
         </div>
       </div>
       </section>
-    
-    
 
       <section class="section" id="instagram-campaign">
   <span class="section-label social">Social Amplification</span>
   <h2>The visual feed.</h2>
   <p class="lede">Bringing the Fruity Life Healthy Vibe aesthetic to the feed through highly visual, engaging lifestyle reels and posts.</p>
 
-  <div class="ex-grid two-col">
+  <div class="ex-grid four-col">
     
     <!-- Instagram Post 1 -->
     <div class="ex-card c1" style="display: flex; flex-direction: column;">
