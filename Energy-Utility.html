@@ -1,24 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-T4KRW84LFV');
-</script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4KRW84LFV');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Energy & Utilities / Mouris Bashir</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
+  <style>
     *, *::before, *::after { box-sizing: border-box; }
 
     :root {
@@ -352,7 +351,8 @@
     }
 
     .section-label.problem { background: var(--red); }
-    .section-label.strategy { background: var(--blue); }
+    .section-label.app { background: var(--blue); }
+    .section-label.strategy { background: var(--yellow); color: var(--ink); }
     .section-label.results { background: var(--ink); }
 
     h2 {
@@ -385,6 +385,36 @@
       color: var(--green);
     }
 
+    /* Bullet List Styling */
+    .hero-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 1.8rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .hero-bullets li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+
+    .hero-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 8px;
+      height: 8px;
+      background-color: var(--green);
+      border-radius: 50%;
+    }
+
     /* Pull Quotes */
     .pull-quote {
       margin: 2rem 0;
@@ -401,6 +431,102 @@
       font-size: clamp(1.25rem, 2.8vw, 1.85rem);
       line-height: 1.3;
       font-style: italic;
+    }
+
+    /* Image Showcase Grid */
+    .creative-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin: 2rem 0;
+    }
+
+    .showcase-card {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      box-shadow: 6px 6px 0 var(--ink);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .showcase-img {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: #e2dacb;
+      overflow: hidden;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    .showcase-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .showcase-copy {
+      padding: 1rem 1.2rem;
+    }
+
+    .showcase-tag {
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .showcase-title {
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    /* App Features Grid */
+    .app-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+
+    .app-feature-card {
+      border: 2px solid var(--rule);
+      background: var(--paper);
+      padding: 1.2rem;
+      box-shadow: 5px 5px 0 var(--blue);
+    }
+
+    .app-feature-icon {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .app-feature-title {
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .app-feature-desc {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin: 0;
     }
 
     /* Shift Block Table */
@@ -727,20 +853,19 @@
       .issue-bar span:last-child { text-align: left; }
       h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
       .hero-meta, .stats { grid-template-columns: 1fr; }
-      .shift-block, .translation-grid, .video-grid, .vertical-reel-grid, .pillars, .results-grid { grid-template-columns: 1fr; }
+      .shift-block, .translation-grid, .creative-showcase, .app-features-grid, .video-grid, .vertical-reel-grid, .pillars, .results-grid { grid-template-columns: 1fr; }
       .shift-col { border-right: 0; border-bottom: 1px solid var(--rule); }
     }
   </style>
 </head>
 <body>
+
   <!-- Navigation Header -->
   <nav>
     <a href="index.html" class="nav-logo">
       <img src="https://mouris-bashir.work/M.png" alt="mb.work">
     </a>
     <div class="nav-right">
-      <div class="nav-work" tabindex="0">
-      </div>
       <a href="index.html" class="nav-link">Work</a>
       <a href="bio_gq.html" class="nav-link">About</a>
       <a href="eh5tories.html" class="nav-link">EH5tories</a>
@@ -750,7 +875,7 @@
 
   <!-- Sub-header Issue Bar -->
   <div class="issue-bar">
-    <span>Adani Group /PNG, CNG, EV Charging</span>
+    <span>Adani Total Gas / PNG, CNG, EV Charging</span>
     <span>Case Study</span>
     <span>#FuellingGoodness</span>
   </div>
@@ -766,19 +891,19 @@
       <div class="hero-meta" aria-label="Project details">
         <div class="meta-item">
           <span class="meta-label">Client</span>
-          <span class="meta-val">Adani Total Gas</span>
+          <span class="meta-val">Adani Total Gas Limited (ATGL)</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Scope</span>
-          <span class="meta-val">Consumer Communications</span>
+          <span class="meta-val">Consumer Communications & App Strategy</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Businesses</span>
-          <span class="meta-val">Adani Total Gas, Adani TotalEnergies E-Mobility Limited</span>
+          <span class="meta-val">Adani Total Gas, ATGL E-Mobility</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Category</span>
-          <span class="meta-val">Public Utilities</span>
+          <span class="meta-val">Public Utilities & Clean Energy</span>
         </div>
       </div>
     </div>
@@ -788,7 +913,7 @@
   <section class="stats" aria-label="Campaign metrics">
     <div class="stat">
       <span class="stat-num">81%</span>
-      <span class="stat-desc">App adoption</span>
+      <span class="stat-desc">App adoption boost across GAs</span>
     </div>
     <div class="stat">
       <span class="stat-num">47M+</span>
@@ -812,58 +937,114 @@
   <main class="article-shell">
     <aside class="rail">
       <strong>On This Page</strong>
-      Problem, translation method, execution, and award results.
+      Strategic pivot, app launch, translation method, and campaign impact.
       <nav>
-        <a href="#problem">The Problem</a>
-        <a href="#shift">The Strategic Shift</a>
-        <a href="#translation">Translation Method</a>
-        <a href="#multimedia">Multimedia Series</a>
-        <a href="#execution">Pillars &amp; SDGs</a>
-        <a href="#greenmosphere">Greenmosphere Initiative</a>
-        <a href="#results">Results &amp; Impact</a>
+        <a href="#problem">1. The Strategic Pivot</a>
+        <a href="#app-launch">2. My AdaniGas App Launch</a>
+        <a href="#shift">3. Content Architecture</a>
+        <a href="#translation">4. Translation Method</a>
+        <a href="#multimedia">5. Campaign Multimedia</a>
+        <a href="#greenmosphere">6. Greenmosphere</a>
+        <a href="#results">7. Strategic Results</a>
       </nav>
     </aside>
 
     <article>
-      <!-- Section: Problem -->
+      <!-- Section 1: Problem / Pivot -->
       <section class="section" id="problem">
-        <span class="section-label problem">The Strategic Pivot (Post-2021)</span>
+        <span class="section-label problem">Strategic Pivot (Post-2021)</span>
         <h2>The Core Philosophy: #FuellingGoodness</h2>
-        <p class="lede dropcap"> Prior to 2021, utility communications focused primarily on operational benefits (cost savings over LPG, safety, and uninterrupted supply, e.g., the "Ahmedabad Load Na Lo" campaign). From 2021 onwards—amplified by the joint venture with TotalEnergies—the narrative shifted:</li>
-<ul class="hero-bullets">
-<li>From Utility to Purpose: It framed piped natural gas (PNG) and compressed natural gas (CNG) not just as fuels, but as conscious environmental choices driving India's transition toward a cleaner, gas-based economy.</li>
-<li>Humanizing Clean Energy: The campaign linked everyday household actions (cooking, commuting) to broader societal impact—cleaner air, reduced carbon footprints, and community wellbeing.</li>
-<li>Beyond Gas (EV & Renewables Integration): As ATGL expanded into e-mobility (ATGL E-Mobility) and biomass (CBG), #FuellingGoodness became the unifying narrative for green mobility, EV charging hubs, and sustainable energy solutions.</li>
-   </ul>          
+        <p class="lede dropcap">Prior to 2021, utility communications focused primarily on operational benefits—cost savings over LPG, basic safety, and uninterrupted supply (e.g., the "Ahmedabad Load Na Lo" campaign). From 2021 onwards, amplified by the joint venture with TotalEnergies, the brand narrative underwent a fundamental pivot:</p>
+
+        <ul class="hero-bullets">
+          <li><strong>From Utility to Purpose:</strong> Framed piped natural gas (PNG) and compressed natural gas (CNG) not merely as transactional fuels, but as conscious environmental choices driving India's transition toward a cleaner, gas-based economy.</li>
+          <li><strong>Humanizing Clean Energy:</strong> Connected everyday household actions (cooking, daily commutes) to broader societal impact—cleaner urban air, reduced carbon footprints, and community wellbeing.</li>
+          <li><strong>Beyond Gas (EV & Renewables Integration):</strong> As ATGL expanded into e-mobility (ATGL E-Mobility) and compressed bio-gas (CBG), #FuellingGoodness became the unifying umbrella narrative for green mobility, EV charging hubs, and sustainable energy solutions.</li>
+        </ul>
+
         <div class="pull-quote">
-          <p>"#FuellingGoodness is the brand umbrella that translates the overarching group philosophy (“Growth with Goodness”) into consumer-facing city gas distribution (CGD)."</p>
+          <p>"#FuellingGoodness is the brand umbrella that translates the overarching group philosophy ('Growth with Goodness') into consumer-facing city gas distribution."</p>
         </div>
-      </section>
-      <!-- Section: Strategic Shift -->
-      <section class="section" id="shift">
-        <span class="section-label strategy">The Digital Anchor: My AdaniGas App</span>
-        <p>To support a consumer-facing brand narrative, the digital touchpoints had to evolve from basic bill-payment portals into interactive, self-service utility tools. The post-2021 revamp of the My AdaniGas mobile app directly reflected this strategy.</p>
-        <div class="shift-block">
-          <div class="shift-col">
-            <div class="shift-label">Communication Objective</div>
-            <div class="shift-item">Establish category leadership in clean energy transition.</div>
-            <div class="shift-item">Drive app downloads and shift user behavior to self-service.</div>
-            <div class="shift-item">Build consumer trust and operational credibility.</div>
-            <div class="shift-item">Create daily brand affinity beyond utility billing.</div>
-            <div class="shift-item">Efficiency improvement programs</div>
+
+        <!-- Creative Showcase Placeholder 1 -->
+        <div class="creative-showcase">
+          <div class="showcase-card">
+            <div class="showcase-img">
+              <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1000&auto=format&fit=crop" alt="Clean Energy Transition & EV Mobility">
+            </div>
+            <div class="showcase-copy">
+              <span class="showcase-tag">Green Mobility Showcase</span>
+              <div class="showcase-title">EV & CNG Clean Energy Transition Across Urban Hubs</div>
+            </div>
           </div>
-          <div class="shift-col">
-            <div class="shift-label active">Creative Execution</div>
-            <div class="shift-item active">Highlighting CO₂ offset metrics, EV charger rollouts, and bio-CNG plant launches under #FuellingGoodness</div>
-            <div class="shift-item active">Motion graphics and step-by-step video tutorials on self-billing, online connection tracking, and digital payments.</div>
-            <div class="shift-item active">Seasonal safety drives (monsoon precautions, PNG safety tips, gas leak protocols) with quick visual checklists.</div>
-            <div class="shift-item active">GFestive campaigns, eco-awareness days (World Environment Day, EV Day), and interactive trivia.</div>
-            <div class="shift-item active">Less waste, more reach — infrastructure that does more</div>
+          <div class="showcase-card">
+            <div class="showcase-img">
+              <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1000&auto=format&fit=crop" alt="PNG Piped Natural Gas Household">
+            </div>
+            <div class="showcase-copy">
+              <span class="showcase-tag">PNG Household Utility</span>
+              <div class="showcase-title">Safe, Uninterrupted Piped Natural Gas for Indian Kitchens</div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Section: Translation Method -->
+      <!-- Section 2: App Launch Section -->
+      <section class="section" id="app-launch">
+        <span class="section-label app">Digital Anchor</span>
+        <h2>The My AdaniGas App Launch.</h2>
+        <p class="lede">To support a consumer-facing brand narrative, digital touchpoints had to evolve from basic bill-payment portals into interactive, self-service utility tools. The post-2021 revamp of the My AdaniGas mobile app served as the primary digital anchor of this transformation.</p>
+
+        <!-- App Product Features Grid -->
+        <div class="app-features-grid">
+          <div class="app-feature-card">
+            <span class="app-feature-icon">UX Feature 01</span>
+            <div class="app-feature-title">Self-Billing (Meter OCR / Scan)</div>
+            <p class="app-feature-desc">Allowed consumers to scan & upload meter readings directly to generate instant bills—cutting reliance on physical meter readers and drastically reducing billing disputes.</p>
+          </div>
+          <div class="app-feature-card">
+            <span class="app-feature-icon">UX Feature 02</span>
+            <div class="app-feature-title">End-to-End PNG Onboarding</div>
+            <p class="app-feature-desc">Digitized the new connection workflow—from initial inquiry and paperless document upload to tracking installation status and receiving digital invoices.</p>
+          </div>
+          <div class="app-feature-card">
+            <span class="app-feature-icon">UX Feature 03</span>
+            <div class="app-feature-title">CNG & EV Station Locator</div>
+            <p class="app-feature-desc">Interactive map integration enabling vehicle owners to locate nearest stations, check live operating status, and optimize travel routes.</p>
+          </div>
+          <div class="app-feature-card">
+            <span class="app-feature-icon">UX Feature 04</span>
+            <div class="app-feature-title">1-Tap Emergency Hotline</div>
+            <p class="app-feature-desc">Dedicated 24/7 one-tap emergency helpline for gas leakage or pressure drops, addressing core consumer safety and trust concerns.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Strategic Shift & Content Architecture -->
+      <section class="section" id="shift">
+        <span class="section-label strategy">Content Architecture</span>
+        <h2>Social Media & Consumer Engagement.</h2>
+        <p>Starting in 2021, ATGL’s social strategy shifted from passive corporate announcements to proactive, community-driven digital engagement across LinkedIn, X (Twitter), Instagram, and YouTube.</p>
+
+        <div class="shift-block">
+          <div class="shift-col">
+            <div class="shift-label">Content Pillar &amp; Objective</div>
+            <div class="shift-item">Sustainability &amp; Category Leadership</div>
+            <div class="shift-item">Product &amp; Self-Service Utility</div>
+            <div class="shift-item">Safety &amp; Operational Credibility</div>
+            <div class="shift-item">Occasion &amp; Community Engagement</div>
+          </div>
+          <div class="shift-col">
+            <div class="shift-label active">Creative Execution</div>
+            <div class="shift-item active">CO₂ offset metrics, EV charger rollouts, and bio-CNG plant launches under #FuellingGoodness.</div>
+            <div class="shift-item active">Motion graphics &amp; step-by-step video tutorials on self-billing OCR and online connection tracking.</div>
+            <div class="shift-item active">Monsoon precaution drives, PNG safety tips, and gas leak protocols with quick visual checklists.</div>
+            <div class="shift-item active">Festive campaigns, World Environment Day, EV Day activations, and interactive trivia.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Translation Method -->
       <section class="section" id="translation">
         <span class="section-label">Translation Method</span>
         <h2>Technical inputs. Human outputs.</h2>
@@ -913,7 +1094,7 @@
         </div>
       </section>
 
-      <!-- Section: Multimedia Series -->
+      <!-- Section 5: Multimedia Series -->
       <section class="section" id="multimedia">
         <span class="section-label">Multimedia Strategy</span>
         <h2>Short-form &amp; campaign video reels.</h2>
@@ -952,60 +1133,27 @@
         </div>
       </section>
 
-      <!-- Section: Execution & Pillars -->
-      <section class="section" id="execution">
-        <span class="section-label">Execution</span>
-        <h2>Three pillars. Seven businesses.</h2>
-        <p>The work was structured around three communication workstreams, each addressing a different dimension of the sustainability story across all business units.</p>
-
-        <div class="pillars">
-          <div class="pillar">
-            <div class="pillar-num">01</div>
-            <div class="pillar-title">Environmental Responsibility</div>
-            <div class="pillar-desc">Translated renewable energy and city gas transition into relatable public language. Connected project-level activity to air quality, climate and community benefit across AGEL, ATGL, AEL and AESL.</div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-num">02</div>
-            <div class="pillar-title">Community Participation</div>
-            <div class="pillar-desc">Communicated the Greenmosphere initiative—plantation drives, school sustainability programs and energy audits—as shared public action rather than corporate CSR.</div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-num">03</div>
-            <div class="pillar-title">Cross-Business Alignment</div>
-            <div class="pillar-desc">Reviewed and aligned sustainability messaging across all seven business units. Ensured language, tone and narrative were consistent at group level while remaining authentic.</div>
-          </div>
-        </div>
-
-        <p style="margin-top: 1.6rem; font-weight: 700;">Aligned UN Sustainable Development Goals:</p>
-        <div class="pills-container">
-          <div class="pill-item">SDG 7 — Clean Energy</div>
-          <div class="pill-item">SDG 11 — Sustainable Cities</div>
-          <div class="pill-item">SDG 13 — Climate Action</div>
-          <div class="pill-item">SDG 9 — Industry &amp; Infrastructure</div>
-          <div class="pill-item">SDG 17 — Partnerships</div>
-        </div>
-      </section>
-
-      <!-- Section: Greenmosphere -->
+      <!-- Section 6: Greenmosphere Initiative -->
       <section class="section" id="greenmosphere">
         <span class="section-label">Greenmosphere</span>
-        <h2>The campaign that made renewable energy visible.</h2>
-        <p>Greenmosphere—Adani Total Gas's Low Carbon Society initiative—was the most visible expression of this communication strategy. Renewable energy projects are massive but invisible. For most citizens, renewable energy lives as a policy concept, not a lived experience.</p>
-        <p>Greenmosphere was built as a translation project. Rather than communicating megawatts and capacity additions, it spoke about air, community, future generations and everyday life. It reframed environmental responsibility from a corporate claim into a shared community effort.</p>
+        <h2>Making renewable energy visible.</h2>
+        <p>Greenmosphere—Adani Total Gas's Low Carbon Society initiative—was the most visible expression of this communication strategy. Renewable energy projects are massive but often invisible. For most citizens, renewable energy lives as a policy concept, not a lived experience.</p>
+        <p>Greenmosphere was built as a translation project. Rather than communicating megawatts and capacity additions, it spoke about air, community, future generations, and everyday life. It reframed environmental responsibility from a corporate claim into a shared community effort.</p>
 
         <div class="pull-quote">
           <p>"ESG Initiative of the Year — ET Energyworld Annual Gas Conclave. Recognised at one of India's leading energy sector forums."</p>
         </div>
       </section>
 
-      <!-- Section: Results -->
+      <!-- Section 7: Strategic Results & Value -->
       <section class="section" id="results">
-        <span class="section-label results">Strategic Value of the Social & Digital Transformation</span>
-       <p>Reduced Cost to Serve: Pushing self-billing and digital support via the app and social channels reduced customer care call volumes and field operations overhead.</p>
+        <span class="section-label results">Strategic Value &amp; Business Impact</span>
+        <p><strong>Reduced Cost to Serve:</strong> Pushing self-billing and digital support via the app and social channels reduced customer care call volumes and field operations overhead.</p>
 
-<p>First-Party Data & Direct Relationship: By transitioning users from offline/third-party channels to the native app ecosystem, ATGL built a direct digital relationship with millions of urban households.</p>
+        <p><strong>First-Party Data &amp; Direct Relationship:</strong> By transitioning users from offline/third-party channels to the native app ecosystem, ATGL built a direct digital relationship with millions of urban households.</p>
 
-<p>Brand Perception Modernization: Positioned ATGL not as a legacy pipeline operator, but as a modern, technology-driven clean energy facilitator for smart cities.</p>
+        <p><strong>Brand Perception Modernization:</strong> Positioned ATGL not as a legacy pipeline operator, but as a modern, technology-driven clean energy facilitator for smart cities.</p>
+
         <div class="results-grid">
           <div class="result-card">
             <span class="result-card-label">Content Performance</span>
@@ -1039,7 +1187,7 @@
 
   <!-- Footer -->
   <footer>
-    Adani Group · <span>Sustainability Narrative Communication</span> · Portfolio Case Study
+    Adani Total Gas Limited · <span>Sustainability Narrative &amp; App Case Study</span> · Portfolio
   </footer>
 </body>
 </html>
