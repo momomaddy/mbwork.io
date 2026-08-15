@@ -66,7 +66,19 @@
       color: #ffffff;
       text-decoration: none;
     }
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
 
+/* Fixes the giant image overflow */
+.nav-logo img {
+  display: block;
+  height: 28px; /* Constrains height to fit inside nav */
+  width: auto;  /* Maintains aspect ratio */
+  object-fit: contain;
+}
     .nav-right { display: flex; align-items: center; gap: 1.4rem; }
     .nav-link, .nav-cta {
       color: #ffffff;
