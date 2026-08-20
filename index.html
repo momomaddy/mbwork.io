@@ -493,7 +493,131 @@
   margin-top: 4px;
   flex-shrink: 0;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.pitchfork-header {
+  background-color: #121212;
+  color: #f4f1ea;
+  width: 100%;
+}
+
+/* 1. Top Section */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid #282828;
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.right-section {
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+/* Menu Lines */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #f4f1ea;
+}
+
+/* Center Branding */
+.center-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  font-family: 'Playfair Display', Didot, 'Times New Roman', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.sub-pill {
+  background-color: #d4a359;
+  color: #121212;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 600;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+
+/* Right Actions */
+.action-btn {
+  background-color: #ffffff;
+  color: #121212;
+  text-decoration: none;
+  padding: 8px 18px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  border-radius: 2px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* 2. Bottom Navigation Tier */
+.bottom-bar {
+  background-color: #1a1a1a;
+  padding: 14px 0;
+  border-bottom: 2px solid #000000;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-menu a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  transition: opacity 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #d4a359;
+}
 /* Cards 2 & 3: Media Cards */
 .media-card {
   text-decoration: none;
@@ -580,21 +704,37 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="brand-wrap">
-    <a class="brand" href="index.html" aria-label="Mouris Bashir home">
-      <span class="brand-mark">Mouris Bashir</span>
-      <span class="brand-tag">Storyteller, basically!</span>
-    </a>
-</div>
+<header class="pitchfork-header">
+  <!-- Top Level Bar -->
+  <div class="top-bar">
+    <div class="left-section">
+      <button class="menu-btn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <div class="center-section">
+      <a href="#" class="logo">MOURIS BASHIR</a>
+      <span class="sub-pill">Storyteller, basically!</span>
+    </div>
+    
+    <div class="right-section">
+      <a href="mailto:your-email@example.com" class="action-btn">MAIL ME</a>
+      <button class="search-btn" aria-label="Search">🔍</button>
+    </div>
   </div>
-  <nav class="nav" aria-label="Primary navigation">
-    <a href="#Corporate">Corporate Comms</a>
-      <a href="#Consumer">Consumer Comms</a>
-    <a href="#Executive">Executive Comms</a>
-  <a href="bio_gq.html">About</a>
-  <a href="eh5tories.html">EH5tories</a>
-  <a href="mailto:mouris.bashir@hotmail.com">Mail me</a>
+
+  <!-- Bottom Navigation Tier -->
+  <nav class="bottom-bar">
+    <ul class="nav-menu">
+      <li><a href="#">CORPORATE COMMS</a></li>
+      <li><a href="#">CONSUMER COMMS</a></li>
+      <li><a href="#">EXECUTIVE COMMS</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">EH5TORIES</a></li>
+    </ul>
   </nav>
 </header>
 
