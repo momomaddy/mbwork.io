@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4KRW84LFV');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Mouris Bashir</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #fbfbfb;
+      --ink: #111111;
+      --ink-soft: #444444;
+      --muted: #888888;
+      --line: #ececec;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 5vw 100px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── HEADER ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 44px 0 32px;
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.5;
+    }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      padding: 60px 0 70px;
+      max-width: 960px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 4.4vw, 54px);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    /* ── SECTION ROWS (Side Label + Right Content) ── */
+    .section-row {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      padding: 64px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    /* ── ABOUT INTRO BLOCK ── */
+    .about-top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 56px;
+      align-items: center;
+      padding-bottom: 70px;
+    }
+
+    .about-visual {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-text h2 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    /* ── EDUCATION GRID ── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .edu-item h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .edu-item p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── EXPERIENCE 2-COLUMN TIMELINE ── */
+    .exp-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 56px;
+    }
+
+    .exp-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .exp-entry:last-child {
+      border-bottom: 0;
+    }
+
+    .exp-details h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .exp-details p {
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .exp-year {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+
+    /* ── CIRCLE CLIENT SHOWCASE ── */
+    .client-showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      text-align: center;
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .circle-wrap {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .client-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .client-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* ── CAPABILITIES 3-COLUMN LIST ── */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+    }
+
+    .cap-col h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cap-col span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cap-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cap-list li {
+      font-size: 13px;
+      color: var(--ink-soft);
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .cap-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    /* ── AWARDS / GOLD STARS ── */
+    .awards-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .awards-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .awards-list li:last-child {
+      border-bottom: none;
+    }
+
+    .awards-list span {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* ── ETHOS / 3 PILLARS ── */
+    .ethos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 16px;
+    }
+
+    .ethos-card {
+      background: var(--bg-alt);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    .ethos-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      font-size: 20px;
+    }
+
+    .ethos-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .ethos-card p {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 100px;
+      padding-top: 36px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .footer-quote {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .section-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .about-top-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .about-visual {
+        max-width: 260px;
+        margin: 0 auto;
+      }
+      .exp-columns {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .cap-grid, .client-showcase, .ethos-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">mouris bashir</a>
+    <ul class="nav-links">
+      <li><a href="index.html">goods</a></li>
+      <li><a href="eh5tories.html">roots</a></li>
+      <li><a href="bio_gq.html">about</a></li>
+      <li><a href="mailto:mouris.bashir@hotmail.com">in</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Empowering brands through strategic wit, human clarity &amp; radical curiosity.</h1>
+  </header>
+
+  <!-- ABOUT INTRO -->
+  <div class="about-top-grid">
+    <div class="about-visual">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="Abstract Profile Visual">
+    </div>
+    <div class="about-text">
+      <h2>About</h2>
+      <p>Before I wrote my first line of copy or designed a corporate communications architecture, I sold directly to people on the front lines.</p>
+      <p>I grew up in Kashmir—a place where beauty and contradiction rarely arrive separately. Living and studying in Edinburgh taught me the complementary discipline: say less, mean more. Somewhere between those environments, I developed the primary skill that has anchored my career: paying close attention.</p>
+      <p>Over the last decade, I’ve helped startups, corporate groups, and public institutions navigate moments that matter—translating complex products and technical infrastructures into stories people understand and remember.</p>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <section class="section-row">
+    <div class="section-label">Education</div>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <h4>Economics &amp; Communications</h4>
+        <p>Edinburgh Telford College, Scotland</p>
+      </div>
+      <div class="edu-item">
+        <h4>Creative Practice &amp; Brand Systems</h4>
+        <p>Continuous Independent Study &amp; Literary Writing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section-row">
+    <div class="section-label">Experience</div>
+    <div class="exp-columns">
+      
+      <!-- Column 1 -->
+      <div>
+        <div class="exp-entry">
+          <div class="exp-details">
+            <h4>Adani Group</h4>
+            <p>Corporate Communications Consultant</p>
+          </div>
+          <span class="exp-year">2024–Pres</span>
+        </div>
+        <div class="exp-entry">
+          <div class="exp-details">
+            <h4>Adani Group</h4>
+            <p>Lead — Brand &amp; Digital Communication</p>
+          </div>
+          <span class="exp-year">2021–2024</span>
+        </div>
+        <div class="exp-entry">
+          <div class="exp-details">
+            <h4>hear.com (APAC)</h4>
+            <p>Brand &amp; Marketing Communications Lead</p>
+          </div>
+          <span class="exp-year">2020–2021</span>
+        </div>
+        <div class="exp-entry">
+          <div class="exp-details">
+            <h4>OYO Hotels &amp; Homes</h4>
+            <p>Content &amp; Integrated Communications</p>
+          </div>
+          <span class="exp-year">2019</span>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        <div class="exp-entry">
+          <div class="exp-details">
+            <h4>BookMyForex</h4>
+            <p>Founding Marketing &amp; Comms Strategist</p>
+          </div>
+          <span class="exp-year">2016–2019</span>
+        </div>
+        <div class="exp-entry">
+          <div class="exp-details">
+            <h4>AuthBridge</h4>
+            <p>Product Marketing &amp; Content Specialist</p>
+          </div>
+          <span class="exp-year">2016</span>
+        </div>
+        <div class="exp-entry">
+          <div class="exp-details">
+            <h4>Barclays</h4>
+            <p>Communication Associate</p>
+          </div>
+          <span class="exp-year">2014–2015</span>
+        </div>
+        <div class="exp-entry">
+          <div class="exp-details">
+            <h4>Police Scotland / Holyrood PR</h4>
+            <p>PR &amp; Marketing Assistant</p>
+          </div>
+          <span class="exp-year">2012</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CIRCULAR SECTOR SHOWCASE -->
+  <section class="client-showcase">
+    <div class="client-card">
+      <div class="circle-wrap">
+        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=400&auto=format&fit=crop" alt="Public Utilities & Clean Energy">
+      </div>
+      <h4>Infrastructure &amp; Utilities</h4>
+      <p>Clean mobility, piped natural gas, airports, and large-scale public transitions.</p>
+    </div>
+
+    <div class="client-card">
+      <div class="circle-wrap">
+        <img src="https://images.unsplash.com/photo-1556742049-0a670f4a4591?q=80&w=400&auto=format&fit=crop" alt="Fintech & Digital Consumer">
+      </div>
+      <h4>Consumer &amp; Fintech</h4>
+      <p>Building trust-first adoption across forex, med-tech, and hospitality hypergrowth.</p>
+    </div>
+
+    <div class="client-card">
+      <div class="circle-wrap">
+        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=400&auto=format&fit=crop" alt="Storytelling & Publications">
+      </div>
+      <h4>Culture &amp; Narrative</h4>
+      <p>EH5 Stories, essays, moment marketing, and executive brand voice stewardship.</p>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="section-row">
+    <div class="section-label">Capabilities</div>
+    <div class="cap-grid">
+      
+      <div class="cap-col">
+        <h4>Strategy</h4>
+        <span>Vision &amp; Context</span>
+        <ul class="cap-list">
+          <li>Brand Architecture</li>
+          <li>Corporate Positioning</li>
+          <li>Crisis &amp; Issues Comms</li>
+          <li>Audience Insights</li>
+          <li>Public Relations Strategy</li>
+        </ul>
+      </div>
+
+      <div class="cap-col">
+        <h4>Narrative</h4>
+        <span>In Practice</span>
+        <ul class="cap-list">
+          <li>Campaign &amp; Film Scripts</li>
+          <li>Speechwriting &amp; Op-Eds</li>
+          <li>Moment Marketing</li>
+          <li>Digital &amp; Social Content</li>
+          <li>Employee Brand Architecture</li>
+        </ul>
+      </div>
+
+      <div class="cap-col">
+        <h4>Execution</h4>
+        <span>Touchpoints</span>
+        <ul class="cap-list">
+          <li>Media Relations</li>
+          <li>App Launch Strategy</li>
+          <li>Editorial Direction</li>
+          <li>Multi-Market Localization</li>
+          <li>ESG Storytelling</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GOLD STARS / AWARDS -->
+  <section class="section-row">
+    <div class="section-label">Gold Stars</div>
+    <ul class="awards-list">
+      <li>Digies Digital Awards — Marketing Effectiveness <span>2023</span></li>
+      <li>afaqs! Foxglove Awards — Campaign Effectiveness <span>2023</span></li>
+      <li>ACEF Digital Awards — Customer Engagement &amp; Digital Campaigns <span>2023</span></li>
+      <li>Hermes Creative Awards (AMCP, USA) <span>2022</span></li>
+      <li>Social S.T.A.R.S Awards — Digital &amp; Social Media Campaigns <span>2022, 2023</span></li>
+    </ul>
+  </section>
+
+  <!-- ETHOS -->
+  <section class="section-row">
+    <div class="section-label">Ethos</div>
+    <div class="ethos-grid">
+      <div class="ethos-card">
+        <div class="ethos-icon">◇</div>
+        <h4>Strategic Wit</h4>
+        <p>Finding the natural tension where culture and brand meet—without forcing the joke.</p>
+      </div>
+      <div class="ethos-card">
+        <div class="ethos-icon">○</div>
+        <h4>Creative Compassion</h4>
+        <p>Listening for what people value before deciding what a campaign should say.</p>
+      </div>
+      <div class="ethos-card">
+        <div class="ethos-icon">▷</div>
+        <h4>Radical Optimism</h4>
+        <p>Believing clear words and thoughtful narratives can make complex institutions relatable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-quote">Creative chameleon fuelled by sharp words, good tea, and cultural curiosity.</p>
+    <ul class="footer-links">
+      <li><a href="index.html">goods</a></li>
+      <li><a href="eh5tories.html">roots</a></li>
+      <li><a href="bio_gq.html">about</a></li>
+      <li><a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
