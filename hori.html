@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4KRW84LFV');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hear.com Horizon X — Behind the Brief / Mouris Bashir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #000000;
+      --card-bg: #0c0c0c;
+      --text-main: #ffffff;
+      --text-muted: #888888;
+      --accent-green: #06c167;
+      --accent-green-dim: rgba(6, 193, 103, 0.12);
+      --border: #1e1e1e;
+      --border-focus: #2d2d2d;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 5rem;
+    }
+
+    /* Fixed Deck Navigation */
+    header.site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-mark {
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-mark span {
+      color: var(--accent-green);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text-main);
+    }
+
+    /* Slide Deck Page Container */
+    .deck-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem clamp(1rem, 4vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    /* Individual Slide Frame (Matches PDF Slides) */
+    .deck-slide {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Slide Top Bar */
+    .slide-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 2rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .slide-tag {
+      color: var(--text-muted);
+    }
+
+    .slide-brand {
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .slide-brand::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent-green);
+      border-radius: 50%;
+    }
+
+    /* Hero Slide Grid */
+    .slide-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 540px;
+    }
+
+    .slide-hero-left {
+      padding: clamp(2rem, 5vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--border);
+    }
+
+    .brief-kicker {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-green);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 440px;
+    }
+
+    .slide-hero-right {
+      background: #050505;
+      padding: clamp(2rem, 5vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .meta-card {
+      border: 1px solid var(--border);
+      background: #0e0e0e;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-title {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta-body {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* Horizontal Stat Pillars */
+    .stats-stripe {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-box {
+      padding: 1.6rem 2rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-box:last-child {
+      border-right: none;
+    }
+
+    .stat-big {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Content & Visual Split Slide (Matches "Data", "Brand", "Activation" slides) */
+    .slide-split {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      min-height: 560px;
+    }
+
+    .slide-split-text {
+      padding: 3.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--border);
+    }
+
+    .section-pill {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-green);
+      margin-bottom: 0.8rem;
+    }
+
+    .split-heading {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+    }
+
+    .split-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .slide-split-media {
+      padding: 2.5rem;
+      background: #070707;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Card Panels & Mock Grids */
+    .asset-mosaic {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .mosaic-item {
+      background: #111111;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mosaic-item img, .mosaic-item video {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mosaic-item-caption {
+      padding: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* 4-Column Step Framework */
+    .sequence-deck {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .seq-step {
+      padding: 2rem;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .seq-step:last-child {
+      border-right: none;
+    }
+
+    .seq-counter {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-green);
+      margin-bottom: 1rem;
+    }
+
+    .seq-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .seq-copy {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Editorial Pull Bar */
+    .quote-stripe {
+      padding: 2.2rem 3rem;
+      background: #080808;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .quote-stripe p {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    /* Footer */
+    footer.deck-footer {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding: 0 clamp(1rem, 4vw, 2.5rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 960px) {
+      .slide-hero, .slide-split { grid-template-columns: 1fr; }
+      .slide-hero-left, .slide-split-text { border-right: none; border-bottom: 1px solid var(--border); }
+      .stats-stripe, .sequence-deck { grid-template-columns: repeat(2, 1fr); }
+      .stat-box:nth-child(2), .seq-step:nth-child(2) { border-right: none; }
+      .stat-box:nth-child(-n+2), .seq-step:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .asset-mosaic { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .stats-stripe, .sequence-deck { grid-template-columns: 1fr; }
+      .stat-box, .seq-step { border-right: none; border-bottom: 1px solid var(--border); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Minimal Header -->
+  <header class="site-nav">
+    <a href="index.html" class="brand-mark">Mouris Bashir <span>/</span> Strategist</a>
+    <nav class="nav-links">
+      <a href="index.html">Work</a>
+      <a href="bio_gq.html">About</a>
+      <a href="mailto:mouris.bashir@hotmail.com">Contact</a>
+    </nav>
+  </header>
+
+  <main class="deck-container">
+
+    <!-- SLIDE 1: Cover / The Brief -->
+    <section class="deck-slide">
+      <div class="slide-top-bar">
+        <span class="slide-tag">Recent Work / Behind the Brief</span>
+        <span class="slide-brand">hear.com Horizon X</span>
+      </div>
+
+      <div class="slide-hero">
+        <div class="slide-hero-left">
+          <div>
+            <div class="brief-kicker">The Brief</div>
+            <h1 class="hero-title">From medical necessity to life decision.</h1>
+          </div>
+          <p class="hero-subtitle">
+            Repositioning hear.com’s flagship hardware from a stigmatized clinical prosthetic into an aspirational consumer hearable across 6 APAC markets.
+          </p>
+        </div>
+
+        <div class="slide-hero-right">
+          <div class="meta-card">
+            <div class="meta-title">The Challenge</div>
+            <div class="meta-body">
+              Users actively visited the site and completed hearing tests, but delayed action for years. Awareness wasn't broken—self-identity was. Accepting the device meant accepting aging.
+            </div>
+          </div>
+
+          <div class="meta-card">
+            <div class="meta-title">The Strategic Shift</div>
+            <div class="meta-body">
+              Borrow from premium consumer audio (Apple/AirPods). Horizon X doesn't correct a medical deficit; it restores social participation and everyday edge.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Figures Stripe -->
+      <div class="stats-stripe">
+        <div class="stat-box">
+          <span class="stat-big">39%</span>
+          <span class="stat-label">Global Sales Contribution</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-big">+19pt</span>
+          <span class="stat-label">NPS Repositioning Lift</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-big">59%</span>
+          <span class="stat-label">Sustained Gross Margin</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-big">$2B</span>
+          <span class="stat-label">Nasdaq IPO Target Valuation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Strategy / The 4-Stage Sequence -->
+    <section class="deck-slide">
+      <div class="slide-top-bar">
+        <span class="slide-tag">Strategy Sequence</span>
+        <span class="slide-brand">hear.com Horizon X</span>
+      </div>
+
+      <div class="slide-split">
+        <div class="slide-split-text">
+          <div>
+            <div class="section-pill">Narrative Architecture</div>
+            <h2 class="split-heading">Lead with recognition. Earn the right to the tech.</h2>
+          </div>
+          <p class="split-desc">
+            Rather than jumping straight to clinical audio performance, the communications sequence systematically dismantled hesitation over four distinct psychological beats.
+          </p>
+        </div>
+
+        <div class="slide-split-media">
+          <div class="mosaic-item" style="height: 100%;">
+            <video autoplay muted loop playsinline style="height: 380px; width: 100%; object-fit: cover;">
+              <source src="H010.mp4" type="video/mp4">
+            </video>
+            <div class="mosaic-item-caption">
+              <span>Horizon X Hardware Design Showcase</span>
+              <span style="color: var(--accent-green);">Direct-to-Consumer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sequence-deck">
+        <div class="seq-step">
+          <div>
+            <div class="seq-counter">01</div>
+            <div class="seq-name">Recognition</div>
+          </div>
+          <p class="seq-copy">Mirror real-world listening strain back to the customer without clinical judgment or diagnostic pressure.</p>
+        </div>
+        <div class="seq-step">
+          <div>
+            <div class="seq-counter">02</div>
+            <div class="seq-name">Reassurance</div>
+          </div>
+          <p class="seq-copy">Normalize auditory care, de-stigmatize early adoption, and frame the action as an everyday wellness choice.</p>
+        </div>
+        <div class="seq-step">
+          <div>
+            <div class="seq-counter">03</div>
+            <div class="seq-name">Confidence</div>
+          </div>
+          <p class="seq-copy">Introduce personalized consultations and audiologist backup as an empowering concierge service.</p>
+        </div>
+        <div class="seq-step">
+          <div>
+            <div class="seq-counter">04</div>
+            <div class="seq-name">Technology</div>
+          </div>
+          <p class="seq-copy">Introduce Horizon X’s “Speech Focus” &amp; “Relax Mode” features as premium lifestyle tech advantages.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Brand & Execution -->
+    <section class="deck-slide">
+      <div class="slide-top-bar">
+        <span class="slide-tag">Brand &amp; Touchpoints</span>
+        <span class="slide-brand">hear.com Horizon X</span>
+      </div>
+
+      <div class="slide-split">
+        <div class="slide-split-text">
+          <div>
+            <div class="section-pill">Execution Ecosystem</div>
+            <h2 class="split-heading">One message. Zero friction.</h2>
+          </div>
+          <p class="split-desc">
+            Performance creative, DTC landing pages, tele-audiology consultations, and unboxing collateral adhered to a single narrative: premium capability and discretion.
+          </p>
+        </div>
+
+        <div class="slide-split-media">
+          <div class="asset-mosaic">
+            <div class="mosaic-item">
+              <img src="H01.png" alt="Campaign Banner: Where Forever Young Begins">
+              <div class="mosaic-item-caption">
+                <span>Integrated Hero Asset</span>
+                <span>APAC Campaign</span>
+              </div>
+            </div>
+            <div class="mosaic-item">
+              <img src="H07.png" alt="Horizon X Charging Pocket Case">
+              <div class="mosaic-item-caption">
+                <span>Industrial Design Positioning</span>
+                <span>Pocket Form Factor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-stripe">
+        <p>"Positioning hearing care as a consumer lifestyle upgrade rather than a prosthetic drove our fastest regional growth in company history."</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Tele-Audiology & Resilience -->
+    <section class="deck-slide">
+      <div class="slide-top-bar">
+        <span class="slide-tag">DTC Resilience &amp; Growth</span>
+        <span class="slide-brand">hear.com Horizon X</span>
+      </div>
+
+      <div class="slide-split">
+        <div class="slide-split-text">
+          <div>
+            <div class="section-pill">Tele-Audiology Pivot</div>
+            <h2 class="split-heading">Protecting margins under pressure.</h2>
+          </div>
+          <p class="split-desc">
+            When global retail dipped 30% during lockdowns, pivoting communication toward digital tele-audiology consultations made APAC the fastest-growing territory by margin and volume.
+          </p>
+        </div>
+
+        <div class="slide-split-media">
+          <div class="asset-mosaic">
+            <div class="mosaic-item">
+              <img src="H04.jpg" alt="Digital Consultation Touchpoint">
+              <div class="mosaic-item-caption">
+                <span>Remote Consultation Model</span>
+                <span>India / APAC</span>
+              </div>
+            </div>
+            <div class="mosaic-item">
+              <img src="H08.jpg" alt="Screening Platform Experience">
+              <div class="mosaic-item-caption">
+                <span>Onboarding Flow Optimization</span>
+                <span>CRO Integration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-stripe">
+        <div class="stat-box">
+          <span class="stat-big">16x</span>
+          <span class="stat-label">Branded Search Surge</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-big">+17pt</span>
+          <span class="stat-label">Purchase Consideration Lift</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-big">800k+</span>
+          <span class="stat-label">Annual Consultations</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-big">20%</span>
+          <span class="stat-label">Total Global Rev (APAC)</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="deck-footer">
+    <span>Mouris Bashir · Portfolio Case Study</span>
+    <span>hear.com · Horizon X</span>
+  </footer>
+
+</body>
+</html>
