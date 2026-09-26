@@ -32,6 +32,17 @@
       --bg: #f7f4ee;
       --ink: #2b2623;
       --ink-muted: #746d67;
+      --paper:#ffffff;
+    --ink-dim:#66655f;
+    --hair:#e4e2db;
+    --masthead:#111111;
+    --red:#e8412c;
+    --blue:#1e5fd9;
+    --yellow:#e8a400;
+    --purple:#7c4dd6;
+    --teal:#0e9c8e;
+    --pink:#d9317f;
+    --green:#2f9e44;
       --clay: #df9e81;
       --clay-soft: #f1e4dc;
       --line: #e4ddd4;
@@ -307,6 +318,18 @@
     .row{grid-template-columns:1fr auto;padding:22px 0;}
     .row .tag{grid-column:1 / -1;}
     .row .thumb{display:none;}
+     /* ---------- manifesto ---------- */
+  .manifesto{
+    padding:100px 0;border-bottom:1px solid var(--hair);
+    text-align:center;
+  }
+  .manifesto p{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(28px,4.6vw,54px);
+    margin:0;letter-spacing:-0.02em;
+    color:var(--ink);
+  }
+  .manifesto p span{color:var(--ink-dim);}
 
     /* ── 3. CLOSING SECTION ── */
     .closing-section {
