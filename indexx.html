@@ -15,7 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@600;700;800;900&family=IBM+Plex+Mono:wght@500;600&family=Italiana&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@600;700;800;900&family=IBM+Plex+Mono:wght@500;600&family=Italiana&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -34,16 +34,10 @@
       --ink: #2b2826;
       --ink-dim: #6a6460;
       --ink-muted: #5e5955;
-      --hair: #ded6cc;
       --line: #d8cfc4;
-      --clay: #e09f80;
+      --clay: #df9e81;
       --clay-soft: #f4e8e1;
-      --red: #e8412c;
-      --blue: #1e5fd9;
-      --yellow: #d99100;
-      --purple: #7c4dd6;
-      --teal: #0e9c8e;
-      --green: #2f9e44;
+      --ochre: #df9e38;
       --serif: 'Italiana', 'Bodoni Moda', Georgia, serif;
       --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
     }
@@ -209,7 +203,7 @@
       line-height: 1.3;
     }
 
-    /* ── TRANSITIONAL BANNER (MATCHES HERO FONT EXACTLY) ── */
+    /* ── TRANSITIONAL BANNER ── */
     .hero-transition-band {
       text-align: center;
       max-width: 960px;
@@ -251,340 +245,130 @@
       color: var(--ink);
     }
 
-    /* ── SECTION LABEL ── */
-    .section-label {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      padding: 56px 0 20px;
+    /* ── 2. SELECTED WORK (TAYLOR HERRING ALTERNATING LAYOUT) ── */
+    .th-work-section {
+      padding: 90px 0 120px;
+      width: 100%;
     }
 
-    .section-label h2 {
+    .th-section-intro {
+      margin-bottom: 80px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .th-section-intro h2 {
       font-family: 'Archivo Black', sans-serif;
       font-size: 13px;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin: 0;
       color: var(--ink);
+      margin: 0;
     }
 
-    .section-label p {
+    .th-section-intro p {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
       color: var(--ink-dim);
       margin: 0;
     }
-/* ── AGENCY CASE STUDY MOSAIC (REFERENCE MATCH) ── */
-.mosaic-section {
-  padding: 60px 0 100px;
-  width: 100%;
-}
 
-.mosaic-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 24px 0 20px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 24px;
-}
+    .th-case-list {
+      display: flex;
+      flex-direction: column;
+      gap: 110px;
+    }
 
-.mosaic-header h2 {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin: 0;
-}
+    .th-case-row {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: clamp(30px, 6vw, 90px);
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
 
-.mosaic-header p {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px;
-  color: var(--ink-dim);
-  margin: 0;
-}
+    /* Alternating logic: Even rows reverse */
+    .th-case-row:nth-child(even) {
+      grid-template-columns: 1fr 1.15fr;
+    }
 
-.mosaic-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 6px; /* Razor-thin editorial seam */
-  background: #111111;
-  padding: 6px;
-  border-radius: 4px;
-}
+    .th-case-row:nth-child(even) .th-case-media {
+      order: 2;
+    }
 
-/* Individual Case Tile */
-.mosaic-tile {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: clamp(20px, 3.2vw, 32px);
-  text-decoration: none;
-  background-color: #1a1a1a;
-  color: #ffffff;
-}
+    .th-case-row:nth-child(even) .th-case-content {
+      order: 1;
+    }
 
-/* Background Image Layer with Zoom on Hover */
-.tile-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-  filter: brightness(0.72) saturate(0.9);
-}
+    .th-case-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: var(--clay-soft);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+    }
 
-.mosaic-tile:hover .tile-bg {
-  transform: scale(1.05);
-  filter: brightness(0.6) saturate(1);
-}
+    .th-case-media img,
+    .th-case-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-/* Dark Contrast Gradient Overlay for Text Readability */
-.mosaic-tile::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.4) 45%,
-    rgba(0, 0, 0, 0.92) 100%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
+    .th-case-row:hover .th-case-media img,
+    .th-case-row:hover .th-case-media video {
+      transform: scale(1.03);
+    }
 
-/* Typography Container Layered on Top */
-.tile-content {
-  position: relative;
-  z-index: 3;
-}
+    .th-case-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 520px;
+    }
 
-.tile-tag {
-  display: block;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #df9e81; /* Warm terracotta accent */
-  margin-bottom: 8px;
-}
+    .th-case-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(14px, 1.4vw, 17px);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--ochre);
+      margin-bottom: 16px;
+      display: block;
+    }
 
-.tile-title {
-  font-family: 'Archivo Black', -apple-system, sans-serif;
-  font-size: clamp(17px, 1.8vw, 22px);
-  font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
+    .th-case-title {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: clamp(26px, 3.2vw, 42px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: #1a1715;
+      margin: 0 0 18px;
+      transition: color 0.2s ease;
+    }
 
-.tile-desc {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12.5px;
-  font-weight: 400;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.78);
-  max-width: 95%;
-  margin: 0;
-}
+    .th-case-row:hover .th-case-title {
+      color: var(--ochre);
+    }
 
-/* Responsive Breakpoints */
-@media (max-width: 980px) {
-  .mosaic-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+    .th-case-desc {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(14px, 1.1vw, 16px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: #5c554e;
+      margin: 0;
+    }
 
-@media (max-width: 600px) {
-  .mosaic-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 0;
-    background: transparent;
-  }
-  .mosaic-tile {
-    aspect-ratio: 16 / 11;
-    border-radius: 4px;
-  }
-}
-  /* ── AGENCY MOSAIC SELECTED WORK (3 PILLARS / 6 FLAGSHIP CASES) ── */
-.mosaic-section {
-  padding: 60px 0 100px;
-  width: 100%;
-}
-
-.mosaic-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 24px 0 20px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 28px;
-}
-
-.mosaic-header h2 {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin: 0;
-}
-
-.mosaic-header p {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px;
-  color: var(--ink-dim);
-  margin: 0;
-}
-
-.mosaic-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 6px;
-  background: #111111;
-  padding: 6px;
-  border-radius: 4px;
-}
-
-/* Individual Case Study Tile */
-.mosaic-tile {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: clamp(20px, 3vw, 30px);
-  text-decoration: none;
-  background-color: #161616;
-  color: #ffffff;
-}
-
-/* Background Media & Hover Effect */
-.tile-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-  filter: brightness(0.68) saturate(0.9);
-}
-
-.mosaic-tile:hover .tile-bg {
-  transform: scale(1.05);
-  filter: brightness(0.55) saturate(1);
-}
-
-/* Contrast Shadow Gradient */
-.mosaic-tile::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.45) 0%,
-    rgba(0, 0, 0, 0.15) 35%,
-    rgba(0, 0, 0, 0.92) 100%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Top Meta Bar (Pillar & Number) */
-.tile-top {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.tile-pillar {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #df9e81; /* Warm terracotta accent */
-}
-
-.tile-num {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.08em;
-}
-
-/* Bottom Text Group */
-.tile-bottom {
-  position: relative;
-  z-index: 3;
-}
-
-.tile-client {
-  display: block;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 6px;
-}
-
-.tile-title {
-  font-family: 'Archivo Black', -apple-system, sans-serif;
-  font-size: clamp(17px, 1.7vw, 21px);
-  font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.tile-desc {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 12.5px;
-  font-weight: 400;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.82);
-  margin: 0;
-}
-
-/* Responsive Scaling */
-@media (max-width: 980px) {
-  .mosaic-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  .mosaic-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 0;
-    background: transparent;
-  }
-  .mosaic-tile {
-    aspect-ratio: 16 / 11;
-    border-radius: 4px;
-  }
-} 
     /* ── 3. CLOSING SECTION ── */
     .closing-section {
       padding: clamp(80px, 10vw, 130px) 0 40px;
@@ -670,15 +454,17 @@
     .footer-links a:hover { color: var(--ink); }
 
     /* ── RESPONSIVE RULES ── */
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; gap: 40px; }
       .hero-photo-wrap { max-width: 380px; }
-    }
-
-    @media (max-width: 760px) {
-      .row { grid-template-columns: 1fr auto; padding: 22px 0; }
-      .row .tag { grid-column: 1 / -1; }
-      .row .thumb { display: none; }
+      .th-case-list { gap: 70px; }
+      .th-case-row,
+      .th-case-row:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .th-case-row:nth-child(even) .th-case-media { order: 1; }
+      .th-case-row:nth-child(even) .th-case-content { order: 2; }
     }
 
     @media (max-width: 600px) {
@@ -740,101 +526,106 @@
     </h2>
   </section>
 
-<!-- ── 2. SELECTED WORK (6 FLAGSHIP CASE STUDIES) ── -->
-<section id="work" class="mosaic-section">
-  <div class="mosaic-header">
-    <h2>Selected Work</h2>
-    <p>Three disciplines · Six flagship stories</p>
-  </div>
+  <!-- ── 2. SELECTED WORK (TAYLOR HERRING ALTERNATING STYLE) ── -->
+  <section id="work" class="th-work-section">
+    <div class="th-section-intro">
+      <h2>Selected Work</h2>
+      <p>Six briefs, six industries, one throughline</p>
+    </div>
 
-  <div class="mosaic-grid">
+    <div class="th-case-list">
 
-    <!-- 01: ONBC (Consumer Storyteller) -->
-    <a href="ONBC.html" class="mosaic-tile">
-      <img src="ONBC4.png" alt="One Nation Billion Celebrations" class="tile-bg">
-      <div class="tile-top">
-        <span class="tile-pillar">Consumer Storyteller</span>
-        <span class="tile-num">01</span>
-      </div>
-      <div class="tile-bottom">
-        <span class="tile-client">Adani Airports · Cultural Activation</span>
-        <h3 class="tile-title">One Nation Billion Celebrations</h3>
-        <p class="tile-desc">Consumer storytelling at scale: turning national transit corridors into regional cultural stages.</p>
-      </div>
-    </a>
+      <!-- 01: ONBC (Media Left, Text Right) -->
+      <a href="ONBC.html" class="th-case-row">
+        <div class="th-case-media">
+          <img src="ONBC4.png" alt="One Nation Billion Celebrations">
+        </div>
+        <div class="th-case-content">
+          <span class="th-case-num">01</span>
+          <h3 class="th-case-title">One Nation Billion Celebrations</h3>
+          <p class="th-case-desc">
+            Consumer storytelling at scale: transforming national airport transit corridors into immersive regional cultural stages during India's festive season.
+          </p>
+        </div>
+      </a>
 
-    <!-- 02: HEAR.COM (Consumer Storyteller) -->
-    <a href="HorizonX.html" class="mosaic-tile">
-      <img src="H07.png" alt="hear.com Horizon X" class="tile-bg">
-      <div class="tile-top">
-        <span class="tile-pillar">Consumer Storyteller</span>
-        <span class="tile-num">02</span>
-      </div>
-      <div class="tile-bottom">
-        <span class="tile-client">hear.com · APAC Launch</span>
-        <h3 class="tile-title">Where Forever Young Begins</h3>
-        <p class="tile-desc">Changing how people think about hearing: reframing clinical prosthetics into active wellness technology.</p>
-      </div>
-    </a>
+      <!-- 02: HEAR.COM (Text Left, Media Right) -->
+      <a href="HorizonX.html" class="th-case-row">
+        <div class="th-case-media">
+          <img src="H07.png" alt="hear.com Horizon X">
+        </div>
+        <div class="th-case-content">
+          <span class="th-case-num">02</span>
+          <h3 class="th-case-title">Changing how people think about hearing</h3>
+          <p class="th-case-desc">
+            Category repositioning for hear.com: dismantling age-related stigma across APAC by reframing clinical hearing aids as high-performance wellness wearables.
+          </p>
+        </div>
+      </a>
 
-    <!-- 03: HUM KARKE DIKHATE HAIN (Corporate Communicator) -->
-    <a href="HKKDH.html" class="mosaic-tile">
-      <img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Hum Karke Dikhate Hain" class="tile-bg">
-      <div class="tile-top">
-        <span class="tile-pillar">Corporate Communicator</span>
-        <span class="tile-num">03</span>
-      </div>
-      <div class="tile-bottom">
-        <span class="tile-client">Adani Group · Corporate Campaign</span>
-        <h3 class="tile-title">Hum Karke Dikhate Hain</h3>
-        <p class="tile-desc">Making a complex organisation human: re-anchoring multi-sector scale in grassroots community delivery.</p>
-      </div>
-    </a>
+      <!-- 03: HUM KARKE DIKHATE HAIN (Media Left, Text Right) -->
+      <a href="HKKDH.html" class="th-case-row">
+        <div class="th-case-media">
+          <img src="https://img.youtube.com/vi/a7aJYVRuBZM/maxresdefault.jpg" alt="Hum Karke Dikhate Hain">
+        </div>
+        <div class="th-case-content">
+          <span class="th-case-num">03</span>
+          <h3 class="th-case-title">Making a complex organisation human</h3>
+          <p class="th-case-desc">
+            Corporate narrative at scale: grounding industrial infrastructure into authentic grassroots community delivery across 20+ businesses and 28+ cities.
+          </p>
+        </div>
+      </a>
 
-    <!-- 04: MAHA KUMBH (Corporate Communicator) -->
-    <a href="cultural_campaigns.html" class="mosaic-tile">
-      <img src="https://img.youtube.com/vi/ID7vw5yQIeU/maxresdefault.jpg" alt="Maha Kumbh Adani ISKCON" class="tile-bg">
-      <div class="tile-top">
-        <span class="tile-pillar">Corporate Communicator</span>
-        <span class="tile-num">04</span>
-      </div>
-      <div class="tile-bottom">
-        <span class="tile-client">Adani × ISKCON · Cultural PR</span>
-        <h3 class="tile-title">Maha Kumbh</h3>
-        <p class="tile-desc">When corporate reputation meets culture: multi-format civic storytelling at the world’s largest gathering.</p>
-      </div>
-    </a>
+      <!-- 04: MAHA KUMBH (Text Left, Media Right) -->
+      <a href="cultural_campaigns.html" class="th-case-row">
+        <div class="th-case-media">
+          <video autoplay loop muted playsinline poster="https://img.youtube.com/vi/ID7vw5yQIeU/maxresdefault.jpg">
+            <source src="mahakumbh_loop.mp4" type="video/mp4">
+            <img src="https://img.youtube.com/vi/ID7vw5yQIeU/maxresdefault.jpg" alt="Maha Kumbh Adani ISKCON">
+          </video>
+        </div>
+        <div class="th-case-content">
+          <span class="th-case-num">04</span>
+          <h3 class="th-case-title">When corporate reputation meets culture</h3>
+          <p class="th-case-desc">
+            Adani × ISKCON partnership storytelling: driving on-ground PR and digital video engagement at the world's largest human gathering.
+          </p>
+        </div>
+      </a>
 
-    <!-- 05: BLOOMBERG / OYO (Executive Comms Specialist) -->
-    <a href="execcomms.html" class="mosaic-tile">
-      <img src="execomms.jpeg" alt="Bloomberg Executive Comms" class="tile-bg">
-      <div class="tile-top">
-        <span class="tile-pillar">Executive Communications</span>
-        <span class="tile-num">05</span>
-      </div>
-      <div class="tile-bottom">
-        <span class="tile-client">Leadership Positioning · Bloomberg / OYO</span>
-        <h3 class="tile-title">One Interview. Five Stories.</h3>
-        <p class="tile-desc">Executive positioning, narrative architecture, and thought leadership for high-visibility founder transitions.</p>
-      </div>
-    </a>
+      <!-- 05: BLOOMBERG / OYO (Media Left, Text Right) -->
+      <a href="execcomms.html" class="th-case-row">
+        <div class="th-case-media">
+          <img src="execomms.jpeg" alt="Bloomberg Executive Comms">
+        </div>
+        <div class="th-case-content">
+          <span class="th-case-num">05</span>
+          <h3 class="th-case-title">One interview. Five stories.</h3>
+          <p class="th-case-desc">
+            Executive communications and founder positioning: architecting high-stakes leadership narratives for global business media, keynotes, and investor transitions.
+          </p>
+        </div>
+      </a>
 
-    <!-- 06: FARMERS 15 YEARS OF TRUST (Crisis & Corporate Resilience) -->
-    <a href="FarmPik.html" class="mosaic-tile">
-      <img src="FP3.JPG" alt="Farmers 15 Years of Trust" class="tile-bg">
-      <div class="tile-top">
-        <span class="tile-pillar">Reputation &amp; Trust</span>
-        <span class="tile-num">06</span>
-      </div>
-      <div class="tile-bottom">
-        <span class="tile-client">Corporate Comms · Rural Trust Strategy</span>
-        <h3 class="tile-title">15 Years of Trust</h3>
-        <p class="tile-desc">Communications under pressure: anchoring corporate resilience in enduring, ground-level partner trust.</p>
-      </div>
-    </a>
+      <!-- 06: FARMERS 15 YEARS OF TRUST (Text Left, Media Right) -->
+      <a href="FarmPik.html" class="th-case-row">
+        <div class="th-case-media">
+          <img src="FP3.JPG" alt="Farmers 15 Years of Trust">
+        </div>
+        <div class="th-case-content">
+          <span class="th-case-num">06</span>
+          <h3 class="th-case-title">Communications under pressure: 15 Years of Trust</h3>
+          <p class="th-case-desc">
+            Reputational resilience and crisis comms: anchoring corporate credibility through long-term partner equity and frontline farmer narratives.
+          </p>
+        </div>
+      </a>
 
-  </div>
-</section>  <!-- ── 3. CLOSING SECTION ── -->
+    </div>
+  </section>
+
+  <!-- ── 3. CLOSING SECTION ── -->
   <section class="closing-section">
     <div class="closing-badge"></div>
     <h2 class="closing-heading">
