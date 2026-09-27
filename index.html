@@ -204,7 +204,48 @@
       text-align: center;
       line-height: 1.3;
     }
+/* ── SECTORS & AVAILABILITY BLOCK ── */
+.hero-sectors {
+  margin-top: 30px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  line-height: 1.75;
+  letter-spacing: 0.05em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  max-width: 580px;
+}
 
+.hero-sectors span {
+  color: var(--clay);
+  padding: 0 4px;
+}
+
+.hero-availability {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.hero-availability::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background-color: #2f9e44; /* Clean status green */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.hero-availability:hover {
+  color: var(--clay);
+}
     /* ── 2. SELECTED WORK (TAYLOR HERRING STAGING) ── */
     .th-work-section {
       padding: 80px 0 120px;
@@ -467,29 +508,42 @@
   </nav>
 
   <!-- ── 1. HERO SECTION ── -->
-  <header class="hero">
-    <div>
-      <div class="hero-eyebrow">
-        CORPORATE · CONSUMER · EXECUTIVE COMMUNICATIONS · BRAND
-      </div>
-      <h1 class="hero-title">
-        YOUR BRAND <span class="elevated-word">has</span> A<br>
-        STORY. LET ME HELP<br>
-        YOU FIND IT, SHAPE IT,<span class="elevated-word">and</span> TELL IT.
-      </h1>
+ <!-- ── 1. HERO SECTION ── -->
+<header class="hero">
+  <div>
+    <div class="hero-eyebrow">
+      CORPORATE · CONSUMER · EXECUTIVE COMMUNICATIONS · BRAND
+    </div>
+    
+    <h1 class="hero-title">
+      YOUR BRAND <span class="elevated-word">has</span> A<br>
+      STORY. LET ME HELP<br>
+      YOU FIND IT, SHAPE IT,<span class="elevated-word">and</span> TELL IT.
+    </h1>
+
+    <div class="hero-sectors">
+      Technology + Digital <span>|</span> Energy + Infrastructure <span>|</span> Travel + Hospitality<br>
+      Fintech + FMCG <span>|</span> Consumer Platforms + D2C <span>|</span> Utility + ESG
     </div>
 
-    <div class="hero-photo-wrap">
-      <div class="stamp-accent">India<br>UK</div>
-      <div class="circle-accent">Since 2013</div>
-      <div class="hero-photo-frame">
-        <video autoplay muted loop playsinline poster="Mour1s.jpeg">
-          <source src="Ab1.MOV" type="video/mp4">
-          <img src="Mour1s.jpeg" alt="Mouris at OYO">
-        </video>
-      </div>
+    <div>
+      <a href="mailto:mouris.bashir@hotmail.com" class="hero-availability">
+        Available for select projects
+      </a>
     </div>
-  </header>
+  </div>
+
+  <div class="hero-photo-wrap">
+    <div class="stamp-accent">India<br>UK</div>
+    <div class="circle-accent">Since 2013</div>
+    <div class="hero-photo-frame">
+      <video autoplay muted loop playsinline poster="Mour1s.jpeg">
+        <source src="Ab1.MOV" type="video/mp4">
+        <img src="Mour1s.jpeg" alt="Mouris at OYO">
+      </video>
+    </div>
+  </div>
+</header>
 
   <!-- ── 2. SELECTED WORK (TAYLOR HERRING STAGING & EXAGGERATED ZOOM-OUT) ── -->
   <section id="work" class="th-work-section">
