@@ -93,29 +93,30 @@
 
     /* ── 1. HERO SECTION ── */
     .hero {
-      padding: clamp(60px, 8vw, 110px) 0 clamp(50px, 7vw, 90px);
+      padding: clamp(60px, 8vw, 110px) 0 clamp(60px, 7vw, 100px);
       display: grid;
       grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.85fr);
       gap: clamp(2.5rem, 6vw, 5rem);
       align-items: center;
       position: relative;
+      border-bottom: 1px solid var(--line);
     }
 
     .hero-eyebrow {
       font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: #2b2725;
       line-height: 1.45;
-      margin-bottom: 34px;
-      max-width: 440px;
+      margin-bottom: 30px;
+      max-width: 480px;
     }
 
     .hero-title {
       font-family: var(--serif);
-      font-size: clamp(48px, 6.2vw, 76px);
+      font-size: clamp(44px, 5.8vw, 74px);
       font-weight: 400;
       font-style: normal;
       line-height: 1.12;
@@ -202,57 +203,15 @@
       line-height: 1.3;
     }
 
-    /* ── TRANSITIONAL BANNER ── */
-    .hero-transition-band {
-      text-align: center;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: clamp(70px, 9vw, 100px) 20px clamp(80px, 10vw, 110px);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      position: relative;
-    }
-
-    .hero-transition-band .circle-dot {
-      position: absolute;
-      top: 50px;
-      left: clamp(20px, 8vw, 80px);
-      width: 24px;
-      height: 24px;
-      background: #f1bfa9;
-      border-radius: 50%;
-    }
-
-    .hero-transition-band .kicker {
-      font-size: clamp(11px, 1.1vw, 13px);
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 34px;
-      display: block;
-    }
-
-    .hero-transition-band h2 {
-      font-family: var(--serif);
-      font-size: clamp(32px, 4.4vw, 56px);
-      font-weight: 400;
-      font-style: normal;
-      line-height: 1.25;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-    }
-
-    /* ── 2. SELECTED WORK (TAYLOR HERRING FLUSH STAGING & EXAGGERATED ZOOM) ── */
+    /* ── 2. SELECTED WORK (TAYLOR HERRING STAGING) ── */
     .th-work-section {
-      padding: 90px 0 120px;
+      padding: 80px 0 120px;
       width: 100%;
     }
 
     .th-section-intro {
       margin-bottom: 70px;
-      padding-bottom: 24px;
+      padding-bottom: 20px;
       border-bottom: 1px solid var(--line);
       display: flex;
       justify-content: space-between;
@@ -262,7 +221,7 @@
     .th-section-intro h2 {
       font-family: 'Archivo Black', sans-serif;
       font-size: 13px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ink);
       margin: 0;
@@ -278,10 +237,10 @@
     .th-case-list {
       display: flex;
       flex-direction: column;
-      gap: 130px;
+      gap: 120px;
     }
 
-    /* True Taylor Herring Row */
+    /* Alternating Split Rows */
     .th-case-row {
       display: grid;
       grid-template-columns: 1.25fr 1fr;
@@ -291,7 +250,6 @@
       color: inherit;
     }
 
-    /* Alternating row inversion */
     .th-case-row:nth-child(even) {
       grid-template-columns: 1fr 1.25fr;
     }
@@ -304,41 +262,40 @@
       order: 1;
     }
 
-    /* Flush, unrounded editorial image viewport */
+    /* Media Box */
     .th-case-media {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 10;
       overflow: hidden;
-      border-radius: 0; /* Flush sharp agency edges matching Taylor Herring */
+      border-radius: 0;
       background-color: #ded7ce;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
     }
 
-    /* Initial state starts exaggerated zoomed-in */
     .th-case-media img,
     .th-case-media video {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transform: scale(1.16); /* Starts punched in */
+      transform: scale(1.15);
       transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), filter 0.85s ease;
       filter: brightness(0.96) saturate(0.95);
     }
 
-    /* On hover: Exaggerated zoom-out back to original scale */
     .th-case-row:hover .th-case-media img,
     .th-case-row:hover .th-case-media video {
-      transform: scale(1.0); /* Zooms out smoothly */
+      transform: scale(1.0);
       filter: brightness(1.0) saturate(1.05);
     }
 
+    /* Content Box */
     .th-case-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      max-width: 500px;
+      max-width: 520px;
     }
 
     .th-case-num {
@@ -347,18 +304,18 @@
       font-weight: 700;
       letter-spacing: 0.06em;
       color: var(--ochre);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       display: block;
     }
 
     .th-case-title {
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: clamp(26px, 3.1vw, 42px);
+      font-size: clamp(26px, 3vw, 40px);
       font-weight: 800;
-      line-height: 1.12;
+      line-height: 1.14;
       letter-spacing: -0.025em;
       color: #1a1715;
-      margin: 0 0 18px;
+      margin: 0 0 14px;
       transition: color 0.2s ease;
     }
 
@@ -366,9 +323,20 @@
       color: var(--ochre);
     }
 
+    .th-case-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 12px;
+      display: block;
+    }
+
     .th-case-desc {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(14px, 1.1vw, 16.5px);
+      font-size: clamp(14.5px, 1.1vw, 16.5px);
       font-weight: 400;
       line-height: 1.6;
       color: #58514b;
@@ -382,7 +350,7 @@
       flex-direction: column;
       align-items: flex-start;
       border-top: 1px solid var(--line);
-      margin-top: 60px;
+      margin-top: 40px;
     }
 
     .closing-badge {
@@ -413,8 +381,8 @@
     .closing-sub {
       font-size: 15px;
       color: var(--ink-muted);
-      max-width: 580px;
-      line-height: 1.7;
+      max-width: 680px;
+      line-height: 1.75;
       margin-bottom: 40px;
     }
 
@@ -477,8 +445,7 @@
       nav { flex-direction: column; gap: 18px; align-items: flex-start; }
       .nav-menu { width: 100%; justify-content: space-between; }
       footer { flex-direction: column; gap: 14px; align-items: flex-start; }
-      .hero-title,
-      .hero-transition-band h2 {
+      .hero-title {
         font-size: clamp(34px, 8.5vw, 56px);
       }
     }
@@ -522,27 +489,11 @@
     </div>
   </header>
 
-  <!-- ── TRANSITIONAL EDITORIAL STATEMENT ── -->
-  <section class="hero-transition-band">
-    <div class="circle-dot"></div>
-    <span class="kicker">I KNOW IT CAN BE HARD TO STAND OUT AND GROW YOUR BUSINESS</span>
-    <h2>
-      I HELP BRANDS BREAK THROUGH <span class="elevated-word">the</span> CLUTTER <span class="elevated-word">to</span> EARN ATTENTION, <span class="elevated-word">and</span> CREATE BUZZ WITH MEDIA <span class="elevated-word">and</span> CONSUMERS.
-    </h2>
-  </section>
-
-  <!-- ── What do I do? ── -->
-  <section class="hero-transition-band">
-    <div class="circle-dot"></div>
-    <span class="kicker">CORPORATE COMMUNICATIONS | CONSUMER COMMUNICATIONS | PR | BRAND STRATEGY | EXECUTIVE COMMUNICATIONS</span>
-   Technology + Digital | Energy + Infrastructure | Travel + Hospitality
-Financial Services | Consumer Platforms | AI + Sustainability
-  </section>
-
-  <!-- ── 2. SELECTED WORK (TRUE TAYLOR HERRING STAGING & EXAGGERATED ZOOM-OUT) ── -->
+  <!-- ── 2. SELECTED WORK (TAYLOR HERRING STAGING & EXAGGERATED ZOOM-OUT) ── -->
   <section id="work" class="th-work-section">
     <div class="th-section-intro">
       <h2>Selected Work</h2>
+      <p>Six briefs, six industries, one throughline</p>
     </div>
 
     <div class="th-case-list">
@@ -555,10 +506,8 @@ Financial Services | Consumer Platforms | AI + Sustainability
         <div class="th-case-content">
           <span class="th-case-num">01</span>
           <h3 class="th-case-title">One Nation Billion Celebrations</h3>
-          <p class="th-case-desc">
-Consumer PR · Brand Communications</p>
-
-<p>Consumer storytelling at scale.</p>
+          <span class="th-case-meta">Consumer PR · Brand Communications</span>
+          <p class="th-case-desc">Consumer storytelling at scale: transforming national airport transit corridors into regional cultural stages.</p>
         </div>
       </a>
 
@@ -570,10 +519,8 @@ Consumer PR · Brand Communications</p>
         <div class="th-case-content">
           <span class="th-case-num">02</span>
           <h3 class="th-case-title">Where Forever Young Begins</h3>
-          <p class="th-case-desc">
-Consumer Communications · Category Repositioning</p>
-
- <p>Changing how people think about hearing. </p>
+          <span class="th-case-meta">Consumer Communications · Category Repositioning</span>
+          <p class="th-case-desc">Changing how people think about hearing: reframing clinical hearing aids as high-performance wellness wearables.</p>
         </div>
       </a>
 
@@ -584,11 +531,9 @@ Consumer Communications · Category Repositioning</p>
         </div>
         <div class="th-case-content">
           <span class="th-case-num">03</span>
-          <h3 class="th-case-title">HUM KARKE DIKHATE HAIN</h3>
-          <p class="th-case-desc">
-           Corporate Communications · Reputation</p>
-
-Making a complex organisation human.
+          <h3 class="th-case-title">Hum Karke Dikhate Hain</h3>
+          <span class="th-case-meta">Corporate Communications · Reputation</span>
+          <p class="th-case-desc">Making a complex organisation human: grounding industrial infrastructure into authentic grassroots community delivery.</p>
         </div>
       </a>
 
@@ -602,11 +547,9 @@ Making a complex organisation human.
         </div>
         <div class="th-case-content">
           <span class="th-case-num">04</span>
-          <h3 class="th-case-title">MAHA KUMBH</h3>
-          <p class="th-case-desc">
-           Corporate PR · Reputation · Culture</p>
-
-When corporate reputation meets culture.
+          <h3 class="th-case-title">Maha Kumbh</h3>
+          <span class="th-case-meta">Corporate PR · Reputation · Culture</span>
+          <p class="th-case-desc">When corporate reputation meets culture: on-ground PR and digital video engagement at the world's largest gathering.</p>
         </div>
       </a>
 
@@ -618,10 +561,8 @@ When corporate reputation meets culture.
         <div class="th-case-content">
           <span class="th-case-num">05</span>
           <h3 class="th-case-title">Adani Group Unveils Succession Plan</h3>
-          <p class="th-case-desc">
-           Executive Communications · Thought Leadership · Crisis Communications</p>
-
-One interview. Five stories. One Narrative.
+          <span class="th-case-meta">Executive Comms · Thought Leadership · Crisis</span>
+          <p class="th-case-desc">One interview. Five stories. One narrative: architecting high-stakes leadership narratives for global media and investor transitions.</p>
         </div>
       </a>
 
@@ -633,11 +574,8 @@ One interview. Five stories. One Narrative.
         <div class="th-case-content">
           <span class="th-case-num">06</span>
           <h3 class="th-case-title">FarmPik (D2C) 15 Years of Trust</h3>
-          <p class="th-case-desc">
-
-Corporate Communications · Reputation · Crisis Communications </p>
-
-Fifteen years of trust, told through people and place.
+          <span class="th-case-meta">Corporate Comms · Reputation · Crisis</span>
+          <p class="th-case-desc">Fifteen years of trust, told through people and place: anchoring corporate credibility through long-term grassroots equity.</p>
         </div>
       </a>
 
@@ -651,7 +589,8 @@ Fifteen years of trust, told through people and place.
       Movement over <em>distribution.</em>
     </h2>
     <p class="closing-sub">
-Times have changed. So communication strategies have to either align or find a way to reach to the end audience. So, I prefer moving the content through internal voices - the allies - before it hits the street. So it does not walk to find them but fly.</p>
+      Times have changed. Communication strategies must either align or find a direct path to the audience. I prefer activating content through trusted internal allies before it hits the street—so instead of walking to find them, it flies.
+    </p>
     <a href="mailto:mouris.bashir@hotmail.com" class="closing-cta">Start a Conversation</a>
 
     <footer>
