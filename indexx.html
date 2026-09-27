@@ -49,7 +49,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       padding: 0 4vw 80px;
-      max-width: 1280px;
+      max-width: 1340px;
       margin: 0 auto;
     }
 
@@ -125,7 +125,6 @@
       margin: 0;
     }
 
-    /* Elevated Superscript Underlined Word */
     .elevated-word {
       display: inline-block;
       font-family: var(--serif);
@@ -245,14 +244,14 @@
       color: var(--ink);
     }
 
-    /* ── 2. SELECTED WORK (TAYLOR HERRING ALTERNATING LAYOUT) ── */
+    /* ── 2. SELECTED WORK (TAYLOR HERRING FLUSH STAGING & EXAGGERATED ZOOM) ── */
     .th-work-section {
       padding: 90px 0 120px;
       width: 100%;
     }
 
     .th-section-intro {
-      margin-bottom: 80px;
+      margin-bottom: 70px;
       padding-bottom: 24px;
       border-bottom: 1px solid var(--line);
       display: flex;
@@ -279,21 +278,22 @@
     .th-case-list {
       display: flex;
       flex-direction: column;
-      gap: 110px;
+      gap: 130px;
     }
 
+    /* True Taylor Herring Row */
     .th-case-row {
       display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap: clamp(30px, 6vw, 90px);
+      grid-template-columns: 1.25fr 1fr;
+      gap: clamp(40px, 7vw, 100px);
       align-items: center;
       text-decoration: none;
       color: inherit;
     }
 
-    /* Alternating logic: Even rows reverse */
+    /* Alternating row inversion */
     .th-case-row:nth-child(even) {
-      grid-template-columns: 1fr 1.15fr;
+      grid-template-columns: 1fr 1.25fr;
     }
 
     .th-case-row:nth-child(even) .th-case-media {
@@ -304,42 +304,48 @@
       order: 1;
     }
 
+    /* Flush, unrounded editorial image viewport */
     .th-case-media {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 10;
       overflow: hidden;
-      border-radius: 4px;
-      background-color: var(--clay-soft);
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+      border-radius: 0; /* Flush sharp agency edges matching Taylor Herring */
+      background-color: #ded7ce;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
     }
 
+    /* Initial state starts exaggerated zoomed-in */
     .th-case-media img,
     .th-case-media video {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(1.16); /* Starts punched in */
+      transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), filter 0.85s ease;
+      filter: brightness(0.96) saturate(0.95);
     }
 
+    /* On hover: Exaggerated zoom-out back to original scale */
     .th-case-row:hover .th-case-media img,
     .th-case-row:hover .th-case-media video {
-      transform: scale(1.03);
+      transform: scale(1.0); /* Zooms out smoothly */
+      filter: brightness(1.0) saturate(1.05);
     }
 
     .th-case-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      max-width: 520px;
+      max-width: 500px;
     }
 
     .th-case-num {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: clamp(14px, 1.4vw, 17px);
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       color: var(--ochre);
       margin-bottom: 16px;
       display: block;
@@ -347,7 +353,7 @@
 
     .th-case-title {
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      font-size: clamp(26px, 3.2vw, 42px);
+      font-size: clamp(26px, 3.1vw, 42px);
       font-weight: 800;
       line-height: 1.12;
       letter-spacing: -0.025em;
@@ -362,10 +368,10 @@
 
     .th-case-desc {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(14px, 1.1vw, 16px);
+      font-size: clamp(14px, 1.1vw, 16.5px);
       font-weight: 400;
       line-height: 1.6;
-      color: #5c554e;
+      color: #58514b;
       margin: 0;
     }
 
@@ -526,7 +532,7 @@
     </h2>
   </section>
 
-  <!-- ── 2. SELECTED WORK (TAYLOR HERRING ALTERNATING STYLE) ── -->
+  <!-- ── 2. SELECTED WORK (TRUE TAYLOR HERRING STAGING & EXAGGERATED ZOOM-OUT) ── -->
   <section id="work" class="th-work-section">
     <div class="th-section-intro">
       <h2>Selected Work</h2>
@@ -538,7 +544,7 @@
       <!-- 01: ONBC (Media Left, Text Right) -->
       <a href="ONBC.html" class="th-case-row">
         <div class="th-case-media">
-          <img src="ONBC4.png" alt="One Nation Billion Celebrations">
+          <img src="ONBC4.png" alt="One Nation Billion Celebrations" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80';">
         </div>
         <div class="th-case-content">
           <span class="th-case-num">01</span>
@@ -552,7 +558,7 @@
       <!-- 02: HEAR.COM (Text Left, Media Right) -->
       <a href="HorizonX.html" class="th-case-row">
         <div class="th-case-media">
-          <img src="H07.png" alt="hear.com Horizon X">
+          <img src="H07.png" alt="hear.com Horizon X" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1200&q=80';">
         </div>
         <div class="th-case-content">
           <span class="th-case-num">02</span>
@@ -597,7 +603,7 @@
       <!-- 05: BLOOMBERG / OYO (Media Left, Text Right) -->
       <a href="execcomms.html" class="th-case-row">
         <div class="th-case-media">
-          <img src="execomms.jpeg" alt="Bloomberg Executive Comms">
+          <img src="execomms.jpeg" alt="Bloomberg Executive Comms" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80';">
         </div>
         <div class="th-case-content">
           <span class="th-case-num">05</span>
@@ -611,7 +617,7 @@
       <!-- 06: FARMERS 15 YEARS OF TRUST (Text Left, Media Right) -->
       <a href="FarmPik.html" class="th-case-row">
         <div class="th-case-media">
-          <img src="FP3.JPG" alt="Farmers 15 Years of Trust">
+          <img src="FP3.JPG" alt="Farmers 15 Years of Trust" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80';">
         </div>
         <div class="th-case-content">
           <span class="th-case-num">06</span>
