@@ -190,11 +190,7 @@
       line-height: 1.4;
     }
 
-    /* ── HERO MEDIA ── */
-    .hero-media-wrapper {
-      margin: 60px 0 80px;
-    }
-
+    /* ── MEDIA CARD BOXES ── */
     .media-card-box {
       position: relative;
       width: 100%;
@@ -221,14 +217,42 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--ink-muted);
-      padding-top: 14px;
+      padding: 12px 2px 0;
     }
 
-    /* ── NARRATIVE STREAM (MITCH LEONARD STICKY STRUCTURE) ── */
+    /* 2-Column Tele-Audiology Image Grid */
+    .media-dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0 0;
+    }
+
+    .media-dual-grid .dual-item {
+      overflow: hidden;
+      border-radius: 4px;
+      border: 1px solid var(--hair);
+      background: #000;
+    }
+
+    .media-dual-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .media-dual-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* ── NARRATIVE STREAM ── */
     .narrative-stream {
       display: flex;
       flex-direction: column;
       gap: 70px;
+      padding-top: 50px;
       padding-bottom: 80px;
     }
 
@@ -286,7 +310,7 @@
       color: var(--ink);
     }
 
-    /* ── 2-COLUMN STORY CARDS (ROLE BREAKDOWN) ── */
+    /* ── 2-COLUMN STORY CARDS ── */
     .story-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -358,7 +382,7 @@
       color: var(--ink-dim);
     }
 
-    /* ── STRUCTURED LIST BOX (RESILIENCE) ── */
+    /* ── STRUCTURED LIST BOX ── */
     .list-box {
       background: var(--paper);
       border: 1px solid var(--line);
@@ -385,7 +409,7 @@
       margin-bottom: 4px;
     }
 
-    /* ── RESULTS GRID (NASDAQ & GROWTH) ── */
+    /* ── RESULTS GRID ── */
     .results-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -478,6 +502,7 @@
       .metric-banner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .narrative-row { grid-template-columns: 1fr; gap: 16px; }
       .story-grid, .seq-grid, .results-grid { grid-template-columns: 1fr; }
+      .media-dual-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
@@ -553,20 +578,7 @@
     </div>
   </header>
 
-  <!-- ── 2. HERO MEDIA ── -->
-  <section class="hero-media-wrapper">
-    <div class="media-card-box">
-      <video autoplay muted loop playsinline poster="H01.png">
-        <source src="H010.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="media-caption-bar">
-      <span>Horizon X Motion Showcase</span>
-      <span>Signia Xperience Platform &middot; DTC Launch</span>
-    </div>
-  </section>
-
-  <!-- ── 3. NARRATIVE STREAM (STICKY MITCH LEONARD ARCHITECTURE) ── -->
+  <!-- ── 2. NARRATIVE STREAM WITH ALL EMBEDDED MEDIA ── -->
   <main class="narrative-stream">
 
     <!-- 01: The Opportunity -->
@@ -585,6 +597,20 @@
         <p>
           The opportunity was to transform hearing care from a clinical purchase into an empowering lifestyle upgrade—positioning Horizon X not as a corrective tool for decline, but as high-performance technology restoring full participation in life’s most vital moments.
         </p>
+        <p>
+          While hear.com was scaling across 11 countries including the US and Germany, the APAC region—specifically India—presented a unique challenge. We weren't just competing with other hearing aids; we were competing with a deep-seated cultural stigma. By 2021, my strategy shifted the focus from 'clinical correction' to 'digital lifestyle,' aligning the launch with a global move toward Tele-Audiology and premium hearables like the Horizon X.
+        </p>
+
+        <!-- Product Motion Asset 01: Video H010.mp4 -->
+        <div class="media-card-box" style="margin-top: 28px;">
+          <video autoplay muted loop playsinline poster="H01.png">
+            <source src="H010.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="media-caption-bar">
+          <span>Horizon X Motion Demonstration</span>
+          <span>Design &amp; Technology Showcase</span>
+        </div>
       </div>
     </section>
 
@@ -593,34 +619,46 @@
       <div class="narrative-label">Role</div>
       <div class="narrative-body">
         <p>
-          I directed the end-to-end communication architecture—from the initial high-intent ad impression through to post-adoption app onboarding—aligning product positioning across creative, performance marketing, and regional audiology teams:
+          I owned the full communication journey—from the first ad impression through to post-adoption onboarding—across every touchpoint and every team involved in bringing Horizon X to market:
         </p>
 
         <div class="story-grid">
           <div class="story-card">
             <h3>ASP Strategy</h3>
-            <p>Positioned the Horizon line as a premium exclusive on the Signia Xperience platform to lift Average Selling Price.</p>
+            <p>Positioned the Horizon line (built on the Signia Xperience platform) as a premium "exclusive" to drive higher Average Selling Price (ASP).</p>
           </div>
           <div class="story-card">
             <h3>APAC Expansion</h3>
-            <p>Led the multi-market narrative across India and 5 APAC regions to maintain 20% YoY growth entering 2021.</p>
+            <p>Led the 6-market APAC strategy that supported hear.com's 20% year-over-year global growth rate leading into 2021.</p>
           </div>
           <div class="story-card">
             <h3>Feature Framing</h3>
-            <p>Framed "Speech Focus" and "Relax Mode" features as active lifestyle enhancements rather than clinical aids.</p>
+            <p>Framed the "Speech Focus" and "Relax Mode" features as lifestyle enhancements rather than medical necessities.</p>
           </div>
           <div class="story-card">
-            <h3>Journey Design</h3>
-            <p>Constructed a unified narrative bridge connecting paid social ads, conversion landing pages, and tele-consult calls.</p>
+            <h3>Journey Architecture</h3>
+            <p>Built the end-to-end communication journey: ad → website → consultation → onboarding.</p>
           </div>
           <div class="story-card">
-            <h3>CRO Optimization</h3>
-            <p>Iterated funnels with performance teams using multivariate A/B testing and behavioral heatmaps.</p>
+            <h3>CRO &amp; Funnel Optimization</h3>
+            <p>Worked with CRO teams using heatmaps, funnel analysis, and A/B/C/D testing to maximize lead conversion.</p>
+          </div>
+          <div class="story-card">
+            <h3>Cross-Functional Launch</h3>
+            <p>Led launch communication across marketing, frontend, UI/UX, social, audiology, and sales teams.</p>
           </div>
           <div class="story-card">
             <h3>Category Positioning</h3>
-            <p>Elevated Horizon X alongside premium consumer hearables (e.g. AirPods) to remove stigma at the checkout.</p>
+            <p>Supported positioning for Horizon X as a lifestyle-first product category alongside consumer tech.</p>
           </div>
+          <div class="story-card">
+            <h3>User Onboarding</h3>
+            <p>Designed onboarding narratives supporting first-time users through trial and app usage.</p>
+          </div>
+        </div>
+
+        <div class="editorial-quote">
+          “APAC was the fastest-growing segment by percentage, driven by the low-cost acquisition model in India and the high-tech adoption in South Korea.”
         </div>
       </div>
     </section>
@@ -630,39 +668,47 @@
       <div class="narrative-label">Sequence</div>
       <div class="narrative-body">
         <p>
-          We moved away from symptom-led clinical messaging. The customer needed to feel seen and understood before any hardware was presented:
+          We shifted communication entirely away from hearing loss and medical framing. The device was not introduced as a solution first. The user needed to feel seen before they could be moved.
+        </p>
+        <p>
+          The strategy was a four-stage communication sequence—each stage earning the right to the next:
         </p>
 
         <div class="seq-grid">
           <div class="seq-col">
             <div class="seq-num">01</div>
             <div class="seq-title">Recognition</div>
-            <div class="seq-desc">Reflect real-world conversational friction without clinical judgment or diagnostic jargon.</div>
+            <div class="seq-desc">Reflect everyday listening struggles back to the user without diagnosis or judgement.</div>
           </div>
           <div class="seq-col">
             <div class="seq-num">02</div>
             <div class="seq-title">Reassurance</div>
-            <div class="seq-desc">Normalize early intervention, dismantle stigma, and frame the choice as ordinary and proactive.</div>
+            <div class="seq-desc">Normalise hearing care, reduce stigma, make the decision feel ordinary and adult.</div>
           </div>
           <div class="seq-col">
             <div class="seq-num">03</div>
             <div class="seq-title">Confidence</div>
-            <div class="seq-desc">Position remote tele-audiology consultations as an empathetic safety net rather than a sales pitch.</div>
+            <div class="seq-desc">Introduce guided consultation and expert support as a safety net, not a sales funnel.</div>
           </div>
           <div class="seq-col">
             <div class="seq-num">04</div>
             <div class="seq-title">Technology</div>
-            <div class="seq-desc">Present Horizon X as a refined hearable, securing high customer adoption and 59% margins.</div>
+            <div class="seq-desc">Framed Horizon X as a 'hearable' featuring 'Speech Focus' to drive higher ASP and 59% margins.</div>
           </div>
         </div>
 
-        <div class="media-card-box" style="margin-top: 30px;">
-          <img src="H01.png" alt="Where Forever Young Begins campaign visual">
+        <!-- Primary Campaign Visual Asset: H01.png -->
+        <div class="media-card-box" style="margin-top: 28px;">
+          <img src="H01.png" alt="Horizon Campaign: Where Forever Young Begins">
         </div>
         <div class="media-caption-bar">
-          <span>Primary Campaign Visual</span>
-          <span>India &amp; APAC Deployment</span>
+          <span>Primary Campaign Visual: India &amp; APAC Rollout</span>
+          <span>"Where Forever Young Begins"</span>
         </div>
+
+        <p style="margin-top: 24px;">
+          Positioning a lifestyle improvement after acceptance, not treatment of a medical condition. The framing borrowed from how premium consumer technology—specifically AirPods—had been positioned: desirable, modern, quietly capable.
+        </p>
       </div>
     </section>
 
@@ -671,101 +717,133 @@
       <div class="narrative-label">Resilience</div>
       <div class="narrative-body">
         <p>
-          During global retail slowdowns in 2020, our focus on remote <strong>Tele-audiology</strong> enabled the APAC territory to outpace all other geographies by growth percentage:
+          While global retail saw a 30% decline during the pandemic, our focus on <strong>Tele-audiology</strong> allowed the APAC region to become the fastest-growing segment globally by percentage.
         </p>
+
+        <!-- Tele-Audiology Dual Image Grid: H04.jpg + H08.jpg -->
+        <div class="media-dual-grid">
+          <div class="dual-item">
+            <img src="H04.jpg" alt="Horizon X Consultation Interface">
+          </div>
+          <div class="dual-item">
+            <img src="H08.jpg" alt="Horizon X Digital Audiology Experience">
+          </div>
+        </div>
+        <div class="media-caption-bar">
+          <span>Tele-Audiology &amp; Digital DTC Consultation Model</span>
+          <span>Remote Audiologist Interface</span>
+        </div>
 
         <div class="list-box">
           <div class="list-item">
             <strong>CAC Efficiency</strong>
-            Reduced Customer Acquisition Cost by repositioning away from clinical care toward desirable wellness tech.
+            Reduced Customer Acquisition Cost by shifting narrative from 'treatment' to 'lifestyle hearables'.
           </div>
           <div class="list-item">
             <strong>LTV Optimization</strong>
-            Designed app onboarding flows that bolstered first-time trial retention and long-term user satisfaction.
+            Leveraged the Horizon App onboarding to increase long-term user retention and repeat engagement.
           </div>
           <div class="list-item">
             <strong>Market Agility</strong>
-            Scaled remote consultations across 6 APAC markets to bypass physical clinic disruption.
+            Scaled digital-first consultations across 6 APAC markets to bypass lockdown-related retail friction.
           </div>
           <div class="list-item">
-            <strong>Margin Defense</strong>
-            Sustained 59% gross margins through high-tier proprietary Horizon device sales (39% of total volume).
+            <strong>Margin Protection</strong>
+            Maintained a 59% gross margin by focusing on proprietary Horizon X sales (39% of total units).
           </div>
         </div>
 
-        <div class="media-card-box" style="margin-top: 30px;">
+        <!-- Charging Case Design Highlight: H07.png -->
+        <div class="media-card-box" style="margin-top: 28px;">
           <img src="H07.png" alt="Horizon X Charging Case">
         </div>
         <div class="media-caption-bar">
-          <span>Industrial Design Presentation</span>
-          <span>Sleek, Non-Medical Charging Architecture</span>
+          <span>Horizon X Charging Case</span>
+          <span>Design that redefined a category</span>
         </div>
       </div>
     </section>
 
-    <!-- 05: Market Impact & Nasdaq IPO -->
+    <!-- 05: Execution -->
+    <section class="narrative-row">
+      <div class="narrative-label">Execution</div>
+      <div class="narrative-body">
+        <p>
+          The execution discipline was consistency. Performance ads, website messaging, consultation communication, onboarding, and call-centre scripts were all written as chapters in the same narrative—so a user moving from a social ad to a landing page to a consultation call never felt the message shift beneath them.
+        </p>
+        <p>
+          Performance ads focused on social moments and everyday conversations rather than symptoms or clinical outcomes. Website messaging reframed hearing care around relationships and daily experience. Consultation communication matched the warmth of the external brand to build trust and continuity. Onboarding communication reinforced ease-of-use and confidence at the most vulnerable moment—when a first-time user holds a device they're not sure about.
+        </p>
+      </div>
+    </section>
+
+    <!-- 06: Market Impact & Nasdaq IPO -->
     <section class="narrative-row">
       <div class="narrative-label">Impact</div>
       <div class="narrative-body">
         <p>
-          The Horizon X launch became the flagship operational driver behind hear.com’s preparation for a <strong>$2 billion Nasdaq public listing</strong>. Shifting the category definition established the business as the world’s leading online hearing-care enterprise:
+          The Horizon X launch was the cornerstone of hear.com’s 2021 filing for a <strong>$2 billion IPO</strong>. By shifting the conversation to 'Life Decisions' rather than 'Medical Devices,' we helped position the company as the world’s largest online hearing-care provider.
         </p>
 
         <div class="results-grid">
           <div class="result-card">
-            <span class="result-label">Nasdaq Ticker</span>
+            <span class="result-label">Nasdaq Symbol</span>
             <div class="result-num">HCG</div>
-            <div class="result-sub">Assigned symbol for the US public offering.</div>
+            <div class="result-sub">Assigned ticker symbol for the 2021 US public offering.</div>
           </div>
           <div class="result-card">
             <span class="result-label">Gross Margin</span>
             <div class="result-num">59%</div>
-            <div class="result-sub">Maintained via DTC delivery economics.</div>
+            <div class="result-sub">Achieved through direct-to-consumer model efficiency.</div>
           </div>
           <div class="result-card">
-            <span class="result-label">Brand Affinity</span>
+            <span class="result-label">Brand Positioning</span>
             <div class="result-num">+19pts</div>
-            <div class="result-sub">NPS lift driven by lifestyle reframing.</div>
+            <div class="result-sub">NPS increase validating shift to lifestyle positioning.</div>
           </div>
           <div class="result-card">
             <span class="result-label">Branded Search</span>
             <div class="result-num">16x</div>
-            <div class="result-sub">Increase in search volume within 100 days.</div>
+            <div class="result-sub">Growth in branded search within 100 days of launch.</div>
           </div>
           <div class="result-card">
-            <span class="result-label">Consideration</span>
+            <span class="result-label">Purchase Consideration</span>
             <div class="result-num">+17pts</div>
-            <div class="result-sub">Growth in purchase consideration among younger demographics.</div>
+            <div class="result-sub">Lift in purchase intent across target demographics.</div>
           </div>
           <div class="result-card">
-            <span class="result-label">Category Demand</span>
+            <span class="result-label">Search Demand</span>
             <div class="result-num">+55%</div>
-            <div class="result-sub">Outperformed broader audiology market benchmarks.</div>
+            <div class="result-sub">Outperformed category-wide consumer trends.</div>
           </div>
+        </div>
+
+        <div class="editorial-quote">
+          “By repositioning hearing care as a 'lifestyle upgrade' rather than a 'medical prosthetic,' we helped hear.com achieve a dominant position across 11 global markets.”
         </div>
       </div>
     </section>
 
-    <!-- 06: Media Recognition -->
+    <!-- 07: Media Recognition -->
     <section class="narrative-row">
       <div class="narrative-label">Media</div>
       <div class="narrative-body">
         <p>
-          The launch earned international business coverage as an archetype for modern healthcare DTC innovation:
+          The Horizon X launch was recognized by global business outlets as a definitive turning point for Direct-to-Consumer (DTC) medical devices and digital-first audiology:
         </p>
 
         <div class="list-box">
           <div class="list-item">
             <strong>TechCrunch</strong>
-            Highlighted the digital-first model, referring to the platform as <em>"The Uber of Hearing Aids"</em> during the Nasdaq filing run-up.
+            Praised the "audibene model" for its digital-first approach, famously labeling the platform as <em>"The Uber of Hearing Aids"</em> during the 2021 Nasdaq filing.
           </div>
           <div class="list-item">
             <strong>Reuters</strong>
-            Reported on the financial fundamentals, detailing the $2 billion valuation and $300 million capital target.
+            Detailed the robust financial health of the organization, citing a $2 billion valuation and a $300 million IPO target.
           </div>
           <div class="list-item">
             <strong>Forbes</strong>
-            Covered the Horizon launch as an industry case study in <em>Redefining Hearing Care for the Modern Age</em>.
+            Featured the "Horizon" launch as a masterclass in <em>Redefining the Hearing Aid for the Digital Age</em>, focusing on the shift from clinical to lifestyle branding.
           </div>
         </div>
       </div>
@@ -773,7 +851,7 @@
 
   </main>
 
-  <!-- ── 4. NEXT CASE STUDY (MITCH LEONARD TRANSITION BAR) ── -->
+  <!-- ── 3. NEXT CASE STUDY (MITCH LEONARD TRANSITION BAR) ── -->
   <a href="HKKDH.html" class="next-study-anchor">
     <span class="next-kicker">Next Case Study &middot; Corporate Reputation</span>
     <div class="next-title">
@@ -782,7 +860,7 @@
     </div>
   </a>
 
-  <!-- ── 5. FOOTER ── -->
+  <!-- ── 4. FOOTER ── -->
   <footer>
     <a href="index.html">&larr; Mouris Bashir &middot; Portfolio</a>
     <span>hear.com &middot; Horizon X Launch</span>
