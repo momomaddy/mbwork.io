@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4KRW84LFV');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Communications &amp; Films — Mouris Bashir</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..600;1,400..500&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ebe5dd;                /* Warm Umbrian linen */
+      --paper: #f7f3ee;             /* Soft parchment */
+      --ink: #231f1c;               /* Deep charcoal espresso */
+      --ink-dim: #5c554e;           /* Warm earth taupe */
+      --ink-muted: #827b73;
+      --line: #d8cfc4;
+      --hair: #ded6cc;
+      --clay: #b56c4d;              /* Muted Tuscan terracotta */
+      --serif: 'EB Garamond', Garamond, 'Baskerville', Georgia, serif;
+      --body-serif: 'Newsreader', Georgia, serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 4vw 100px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── TOP NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 44px 0 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      transition: color 0.25s ease;
+    }
+
+    .nav-menu a:hover { color: var(--ink); }
+
+    /* ── CASE STUDY HEADER ── */
+    .case-header {
+      padding: clamp(60px, 8vw, 100px) 0 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .case-kicker {
+      font-family: var(--serif);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 22px;
+      display: block;
+    }
+
+    .case-title {
+      font-family: var(--serif);
+      font-size: clamp(38px, 4.8vw, 62px);
+      font-weight: 400;
+      line-height: 1.14;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink);
+      max-width: 860px;
+      margin: 0 auto 24px;
+    }
+
+    .case-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.2vw, 25px);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink-dim);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      line-height: 1.5;
+    }
+
+    .case-meta-bar {
+      display: flex;
+      justify-content: center;
+      gap: clamp(20px, 4vw, 48px);
+      font-family: var(--serif);
+      font-size: 12.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+
+    .case-meta-bar strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* ── EDITORIAL ESSAY LEDE ── */
+    .case-intro-block {
+      max-width: 740px;
+      margin: 60px auto 80px;
+      text-align: center;
+    }
+
+    .case-intro-block p {
+      font-family: var(--body-serif);
+      font-size: 17.5px;
+      line-height: 1.85;
+      color: #3b3531;
+      margin-bottom: 20px;
+    }
+
+    /* ── FILM SHOWCASE STACK ── */
+    .films-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+    }
+
+    .film-entry {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .film-heading-group {
+      text-align: left;
+    }
+
+    .film-tag {
+      font-family: var(--serif);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .film-title {
+      font-family: var(--serif);
+      font-size: clamp(25px, 2.8vw, 36px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .film-caption {
+      font-family: var(--body-serif);
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--ink-dim);
+      max-width: 700px;
+    }
+
+    /* Video Frames */
+    .video-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--hair);
+    }
+
+    .video-viewport iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Twitter / X Video Embed Staging */
+    .tweet-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: var(--paper);
+      padding: 24px;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    /* ── CLOSING FOOTER BAR ── */
+    .case-footer {
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-top: 120px;
+      padding-top: 40px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .case-footer a {
+      color: var(--ink);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .case-footer a:hover {
+      color: var(--clay);
+    }
+
+    @media (max-width: 640px) {
+      nav { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .case-meta-bar { flex-direction: column; gap: 10px; text-align: center; }
+      .films-stream { gap: 70px; }
+      .case-footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Nav -->
+  <nav>
+    <a href="index.html" class="nav-brand">Mouris Bashir</a>
+    <ul class="nav-menu">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="bio_gq.html">About</a></li>
+      <li><a href="eh5tories.html">eh5tories</a></li>
+      <li><a href="mailto:mouris.bashir@hotmail.com">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── CASE STUDY HERO ── -->
+  <header class="case-header">
+    <span class="case-kicker">Film Direction &middot; Corporate Communications</span>
+    <h1 class="case-title">Humanizing Industrial Scale</h1>
+    <p class="case-subtitle">
+      Moving energy, infrastructure, and decarbonization from technical abstractions into compelling cinematic narratives.
+    </p>
+
+    <div class="case-meta-bar">
+      <div>Sector: <strong>Energy, Utility &amp; ESG</strong></div>
+      <div>Role: <strong>Content Strategy &amp; Scripting</strong></div>
+      <div>Format: <strong>Digital Films &amp; Social Video</strong></div>
+    </div>
+  </header>
+
+  <!-- ── EDITORIAL LEDE ── -->
+  <div class="case-intro-block">
+    <p>
+      Complex infrastructure rarely connects with audiences through balance sheets or technical specs. Whether it’s wind farms in Gujarat, massive solar installations, or clean fuel networks, storytelling requires finding the human anchor inside the machine.
+    </p>
+    <p>
+      These selected corporate films and social narratives were architected to translate complex sustainability commitments into public clarity and cultural momentum.
+    </p>
+  </div>
+
+  <!-- ── FILMS SHOWCASE STREAM ── -->
+  <main class="films-stream">
+
+    <!-- 01: YouTube Film 1 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">01 &middot; Brand Narrative</span>
+        <h2 class="film-title">Building For Tomorrow</h2>
+        <p class="film-caption">
+          Translating long-term energy transition and green industrial capability into an emotive visual narrative.
+        </p>
+      </div>
+      <div class="video-viewport">
+        <iframe src="https://www.youtube.com/embed/DQzy5Zs2Xk8" title="Corporate Film 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </article>
+
+    <!-- 02: YouTube Film 2 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">02 &middot; Clean Energy Narrative</span>
+        <h2 class="film-title">The Energy Transition Story</h2>
+        <p class="film-caption">
+          Documenting the ground reality and technological innovations powering India's renewable infrastructure.
+        </p>
+      </div>
+      <div class="video-viewport">
+        <iframe src="https://www.youtube.com/embed/m45a9iOj4II" title="Corporate Film 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </article>
+
+    <!-- 03: YouTube Film 3 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">03 &middot; Grassroots Delivery</span>
+        <h2 class="film-title">Powering Progress Across Communities</h2>
+        <p class="film-caption">
+          Highlighting regional community empowerment and the social dividend of industrial infrastructure.
+        </p>
+      </div>
+      <div class="video-viewport">
+        <iframe src="https://www.youtube.com/embed/YK_-P732gwY" title="Corporate Film 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </article>
+
+    <!-- 04: YouTube Film 4 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">04 &middot; Decarbonization Roadmap</span>
+        <h2 class="film-title">Sustainable Infrastructure in Motion</h2>
+        <p class="film-caption">
+          An architectural look at environmental benchmarks and modern utility engineering.
+        </p>
+      </div>
+      <div class="video-viewport">
+        <iframe src="https://www.youtube.com/embed/lrhKfMAyUs0" title="Corporate Film 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </article>
+
+    <!-- 05: Twitter / X Film 1 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">05 &middot; Wind Energy Innovation &middot; Social Feature</span>
+        <h2 class="film-title">Harnessing The Elements</h2>
+        <p class="film-caption">
+          Social video campaign on India’s largest wind turbine installation and green energy frontiers.
+        </p>
+      </div>
+      <div class="tweet-container">
+        <blockquote class="twitter-tweet" data-media-max-width="860">
+          <a href="https://twitter.com/AdaniGreen/status/1669204912507613184"></a>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- 06: Twitter / X Film 2 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">06 &middot; Environmental Stewardship &middot; Water Positive</span>
+        <h2 class="film-title">Conserving Every Drop</h2>
+        <p class="film-caption">
+          A narrative spotlight on water neutrality and ecological stewardship inside renewable clusters.
+        </p>
+      </div>
+      <div class="tweet-container">
+        <blockquote class="twitter-tweet" data-media-max-width="860">
+          <a href="https://twitter.com/AdaniGreen/status/1630526990070718467"></a>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- 07: Twitter / X Film 3 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">07 &middot; Solar Scale &middot; Engineering Milestones</span>
+        <h2 class="film-title">The Solar Horizon</h2>
+        <p class="film-caption">
+          Capturing the engineering magnitude of ultra-mega solar parks that shape national self-reliance.
+        </p>
+      </div>
+      <div class="tweet-container">
+        <blockquote class="twitter-tweet" data-media-max-width="860">
+          <a href="https://twitter.com/AdaniGreen/status/1560825404394737666"></a>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- 08: Twitter / X Film 4 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">08 &middot; Biodiversity &middot; Living Ecosystems</span>
+        <h2 class="film-title">Living In Harmony</h2>
+        <p class="film-caption">
+          Spotlighting biodiversity preservation alongside major clean utility facilities.
+        </p>
+      </div>
+      <div class="tweet-container">
+        <blockquote class="twitter-tweet" data-media-max-width="860">
+          <a href="https://twitter.com/AdaniGreen/status/1649601417093722117"></a>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- 09: Twitter / X Film 5 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">09 &middot; Community Impact &middot; Frontline Stories</span>
+        <h2 class="film-title">The People Powering Green</h2>
+        <p class="film-caption">
+          Behind-the-scenes portraits of technicians and community stewards leading daily operations.
+        </p>
+      </div>
+      <div class="tweet-container">
+        <blockquote class="twitter-tweet" data-media-max-width="860">
+          <a href="https://twitter.com/AdaniGreen/status/1536922313043480579"></a>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- 10: Twitter / X Film 6 -->
+    <article class="film-entry">
+      <div class="film-heading-group">
+        <span class="film-tag">10 &middot; Net Zero Vision &middot; Executive Narrative</span>
+        <h2 class="film-title">Toward A Net Zero Horizon</h2>
+        <p class="film-caption">
+          Communicating capital commitment, governance milestones, and climate leadership.
+        </p>
+      </div>
+      <div class="tweet-container">
+        <blockquote class="twitter-tweet" data-media-max-width="860">
+          <a href="https://twitter.com/AdaniGreen/status/1736754375064715377"></a>
+        </blockquote>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="case-footer">
+    <a href="index.html">&larr; Back to Selected Work</a>
+    <span>Mouris Bashir &middot; Corporate Communications</span>
+    <a href="mailto:mouris.bashir@hotmail.com">Start a Conversation &rarr;</a>
+  </footer>
+
+</body>
+</html>
