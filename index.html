@@ -105,16 +105,22 @@
     }
 
     .hero-eyebrow {
-      font-family: var(--sans);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #2b2725;
-      line-height: 1.45;
-      margin-bottom: 30px;
-      max-width: 480px;
-    }
+  font-family: var(--sans);
+  font-size: clamp(10px, 0.95vw, 12px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1f1b18;
+  white-space: nowrap;        /* Guarantees single-line discipline */
+  margin-top: 24px;
+  margin-bottom: 22px;
+  display: block;
+}
+
+.hero-eyebrow span {
+  color: var(--clay);
+  padding: 0 6px;
+}
 
     .hero-title {
   font-family: var(--presto);
@@ -514,9 +520,11 @@
       STORY. LET ME HELP<br>
       YOU FIND IT, SHAPE IT,<span class="elevated-word">and</span> TELL IT.
     </h1>
-<div class="hero-eyebrow">
-  BRAND · PR & COMMUNICATIONS · CONTENT · EXECUTIVE COMMUNICATIONS
+
+    <div class="hero-eyebrow">
+      BRAND <span>·</span> PR &amp; COMMUNICATIONS <span>·</span> CONTENT <span>·</span> EXECUTIVE COMMUNICATIONS
     </div>
+
     <div class="hero-sectors">
       Technology + Digital <span>|</span> Energy + Infrastructure <span>|</span> Travel + Hospitality<br>
       Fintech + FMCG <span>|</span> Consumer Platforms + D2C <span>|</span> Utility + ESG
@@ -540,7 +548,6 @@
     </div>
   </div>
 </header>
-
   <!-- ── 2. SELECTED WORK (TAYLOR HERRING STAGING & EXAGGERATED ZOOM-OUT) ── -->
   <section id="work" class="th-work-section">
     <div class="th-section-intro">
