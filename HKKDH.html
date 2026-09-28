@@ -1,473 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-T4KRW84LFV');
-</script>
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KRW84LFV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4KRW84LFV');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hum Karke Dikhate Hain — Adani Group / Mouris Bashir</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
-    *, *::before, *::after { box-sizing: border-box; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..600;1,400..500&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --paper: #f7f1e3;
-      --paper-soft: #fffaf0;
-      --ink: #17130e;
-      --ink-soft: #423b34;
-      --muted: #766d62;
-      --rule: #211a14;
-      --red: #b92f1f;
-      --blue: #174f75;
-      --green: #32684c;
-      --yellow: #e4b93f;
-      --white: #fffdf7;
+      --bg: #ebe5dd;
+      --paper: #f7f3ee;
+      --ink: #1f1b18;
+      --ink-dim: #4d4640;
+      --ink-muted: #7d756d;
+      --line: #dcd3c8;
+      --hair: #ded6cc;
+      --clay: #b56c4d;
+      --clay-soft: #f4e8e1;
+      --serif: 'EB Garamond', Garamond, 'Baskerville', Georgia, serif;
+      --body-serif: 'Newsreader', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
     }
-
-    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      background:
-        linear-gradient(90deg, rgba(23,19,14,0.035) 1px, transparent 1px) 0 0 / 24px 24px,
-        var(--paper);
+      background-color: var(--bg);
       color: var(--ink);
-      font-family: "DM Sans", Arial, sans-serif;
-      line-height: 1.55;
-      overflow-x: hidden;
+      font-family: var(--body-serif);
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 4vw 80px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    /* Navigation Bar */
+    a { color: inherit; text-decoration: none; }
+
+    /* ── TOP NAV (EXACT FRONT-PAGE CONTINUITY) ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      height: 54px;
-      padding: 0 clamp(1rem, 4vw, 3rem);
-      background: rgba(247, 241, 227, 0.94);
-      border-bottom: 2px solid var(--rule);
-      backdrop-filter: blur(8px);
       display: flex;
-      align-items: center;
       justify-content: space-between;
-    }
-
-    .nav-logo { display: block; text-decoration: none; }
-    .nav-logo img { display: block; width: auto; height: 32px; }
-    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
-    .nav-link,
-    .nav-work-btn,
-    .nav-cta {
-      color: var(--ink);
-      font: 700 0.68rem/1 "DM Sans", Arial, sans-serif;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .nav-work { position: relative; }
-
-    .nav-work-btn {
-      display: flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0;
-      background: none;
-      border: 0;
-      cursor: pointer;
+      padding: 40px 0 30px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .nav-work-btn::after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent;
-      border-top: 5px solid currentColor;
-    }
-
-    .work-dropdown {
-      position: absolute;
-      top: calc(100% + 18px);
-      left: 50%;
-      min-width: 250px;
-      background: var(--paper-soft);
-      border: 2px solid var(--rule);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateX(-50%) translateY(-8px);
-      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-      box-shadow: 8px 8px 0 var(--ink);
-    }
-
-    .nav-work:hover .work-dropdown,
-    .nav-work:focus-within .work-dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .work-dropdown-label,
-    .work-dropdown a {
-      display: block;
-      border-bottom: 1px solid var(--rule);
-      padding: 0.75rem 1rem;
-      color: var(--ink);
-      font-size: 0.66rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .work-dropdown-label { color: var(--red); background: var(--yellow); }
-    .work-dropdown a:hover { background: var(--ink); color: var(--paper); }
-    .work-dropdown a:last-child { border-bottom: 0; }
-
-    .nav-cta {
-      padding: 0.55rem 0.75rem;
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    /* Sub-header Issue Bar */
-    .issue-bar {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.7rem clamp(1rem, 4vw, 3rem);
-      border-bottom: 1px solid var(--rule);
-      background: var(--paper-soft);
-      font-size: 0.68rem;
-      font-weight: 900;
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
+      color: var(--ink);
     }
 
-    .issue-bar span:nth-child(2) {
-      border: 1px solid var(--rule);
-      padding: 0.2rem 0.5rem;
-      background: var(--yellow);
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      list-style: none;
     }
 
-    .issue-bar span:last-child { text-align: right; }
+    .nav-menu a {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      transition: color 0.2s ease;
+    }
 
-    /* Hero Section */
-    .hero {
-      border-bottom: 2px solid var(--rule);
+    .nav-menu a:hover { color: var(--ink); }
+
+    /* ── CASE HERO ── */
+    .case-hero {
+      padding: clamp(50px, 7vw, 90px) 0 50px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover { color: var(--clay); }
+
+    .tag-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .tag-badge {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clay);
+      border: 1px solid var(--line);
       background: var(--paper);
+      padding: 4px 10px;
+      border-radius: 2px;
     }
 
-    .hero-copy {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.45fr);
-      gap: clamp(1.5rem, 4vw, 3rem);
-      align-items: end;
-      padding: clamp(1.4rem, 4vw, 3.4rem);
-      border-bottom: 2px solid var(--rule);
-    }
-
-    .kicker {
-      width: max-content;
-      max-width: 100%;
-      background: var(--red);
-      color: var(--white);
-      padding: 0.35rem 0.55rem;
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 2rem 0 1.2rem;
-      max-width: 14ch;
-      font-size: clamp(2.8rem, 5.8vw, 5.5rem);
-      line-height: 0.92;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      font-weight: 900;
-      overflow-wrap: normal;
-    }
-
-    .dek {
-      max-width: 720px;
-      margin: 0;
-      font: 400 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Libre Baskerville", Georgia, serif;
-      color: var(--ink-soft);
-    }
-
-    .hero-meta {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
-      margin-top: 0;
-      border: 2px solid var(--rule);
-      background: var(--paper-soft);
-    }
-
-    .meta-item {
-      min-height: 84px;
-      padding: 0.8rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .meta-item:last-child { border-bottom: 0; }
-
-    .meta-label {
-      display: block;
-      margin-bottom: 0.35rem;
-      color: var(--red);
-      font-size: 0.62rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .meta-val {
-      font-family: "Libre Baskerville", Georgia, serif;
-      font-size: 0.82rem;
-      line-height: 1.35;
-    }
-.hero-media {
-      background: var(--blue);
-      color: var(--white);
-    }
-
-    .cover-video {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      border-bottom: 2px solid var(--rule);
-      background: var(--ink);
-    }
-
-    .cover-video iframe,
-    .video-frame iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .cover-video::after {
-      content: "Campaign Film";
-      position: absolute;
-      left: 1rem;
-      bottom: 1rem;
-      background: var(--yellow);
+    .case-title {
+      font-family: var(--serif);
+      font-size: clamp(38px, 5.2vw, 68px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: 0.015em;
       color: var(--ink);
-      padding: 0.32rem 0.48rem;
-      font-size: 0.62rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
+      max-width: 980px;
+      margin-bottom: 24px;
     }
 
-    .cover-note {
-      padding: 1rem;
-      border-top: 0;
-      font-size: 0.76rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    /* Stats Banner */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-bottom: 2px solid var(--rule);
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .stat {
-      min-height: 150px;
-      padding: 1.2rem clamp(1rem, 2vw, 1.6rem);
-      border-right: 1px solid rgba(247, 241, 227, 0.35);
-    }
-
-    .stat:last-child { border-right: 0; }
-
-    .stat-num {
-      display: block;
-      margin-bottom: 0.6rem;
-      color: var(--yellow);
-      font-size: clamp(2.2rem, 4vw, 4.2rem);
-      font-weight: 900;
-      line-height: 0.9;
-    }
-
-    .stat-desc {
-      display: block;
-      max-width: 16rem;
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      line-height: 1.4;
-      text-transform: uppercase;
-    }
-
-    /* Article Shell & Rails */
-    .article-shell {
-      display: grid;
-      grid-template-columns: minmax(150px, 0.22fr) minmax(0, 900px) minmax(170px, 0.26fr);
-      gap: clamp(1.2rem, 3vw, 2.6rem);
-      width: min(1360px, calc(100% - 2rem));
-      margin: 0 auto;
-      padding: clamp(2rem, 5vw, 4.5rem) 0;
-    }
-
-    .rail {
-      position: sticky;
-      top: 76px;
-      align-self: start;
-      border-top: 2px solid var(--rule);
-      padding-top: 0.8rem;
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.13em;
+    .case-dek {
+      font-family: var(--body-serif);
+      font-size: clamp(18px, 2.2vw, 23px);
       line-height: 1.5;
-      text-transform: uppercase;
-    }
-
-    .rail strong {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: var(--red);
-    }
-
-    .rail nav {
-      all: unset;
-      display: block;
-      margin-top: 1.2rem;
-    }
-
-    .rail nav a {
-      display: block;
-      padding: 0.4rem 0;
-      color: var(--ink-soft);
-      text-decoration: none;
-      border-bottom: 1px dashed var(--rule);
-      font-size: 0.64rem;
-    }
-
-    .rail nav a:hover { color: var(--red); }
-
-    article {
-      background: var(--paper-soft);
-      border-left: 2px solid var(--rule);
-      border-right: 2px solid var(--rule);
-      padding: 0 clamp(1rem, 4vw, 3rem);
-    }
-
-    .section {
-      padding: clamp(2.2rem, 5vw, 4.2rem) 0;
-      border-bottom: 2px solid var(--rule);
-    }
-
-    .section:last-child { border-bottom: 0; }
-
-    .section-label {
-      display: inline-block;
-      margin-bottom: 1rem;
-      border: 1px solid var(--rule);
-      background: var(--green);
-      color: var(--white);
-      padding: 0.22rem 0.5rem;
-      font-size: 0.62rem;
-      font-weight: 900;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .section-label.challenge { background: var(--red); }
-    .section-label.solution { background: var(--blue); }
-    .section-label.system { background: var(--ink); }
-
-    h2 {
-      margin: 0 0 1.25rem;
-      font: 700 clamp(2rem, 4vw, 3.2rem)/0.98 "Libre Baskerville", Georgia, serif;
-      letter-spacing: 0;
-    }
-
-    p {
-      max-width: 720px;
-      margin: 0 0 1.15rem;
-      font: 400 1.02rem/1.78 "Libre Baskerville", Georgia, serif;
-      color: var(--ink-soft);
-    }
-
-    .lede {
-      max-width: 760px;
-      font-size: clamp(1.18rem, 2.2vw, 1.55rem);
-      line-height: 1.62;
-      color: var(--ink);
-    }
-
-    .dropcap::first-letter {
-      float: left;
-      padding: 0.18rem 0.42rem 0 0;
-      font-family: "DM Sans", Arial, sans-serif;
-      font-size: 5.4rem;
-      font-weight: 900;
-      line-height: 0.78;
-      color: var(--red);
-    }
-
-    /* Pull Quotes */
-    .pull-quote {
-      margin: 2rem 0;
-      padding: 1.2rem 0 1.2rem 1.2rem;
-      border-left: 8px solid var(--yellow);
-      border-top: 2px solid var(--rule);
-      border-bottom: 2px solid var(--rule);
-    }
-
-    .pull-quote p {
-      margin: 0;
-      max-width: 640px;
-      color: var(--ink);
-      font-size: clamp(1.25rem, 2.8vw, 1.85rem);
-      line-height: 1.3;
       font-style: italic;
+      color: var(--ink-dim);
+      max-width: 840px;
+      margin-bottom: 44px;
     }
 
-    /* Video Reels / Embedded Cards */
-    .video-grid {
+    /* ── METRIC STATS BANNER ── */
+    .metric-banner {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.4rem;
-      margin: 1.6rem 0 0.4rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .video-card {
-      border: 2px solid var(--rule);
-      background: var(--ink);
-      box-shadow: 6px 6px 0 var(--red);
+    .metric-col {
+      display: flex;
+      flex-direction: column;
     }
 
-    .video-card:nth-child(2n) { box-shadow: 6px 6px 0 var(--blue); }
-    .video-card:nth-child(3n) { box-shadow: 6px 6px 0 var(--green); }
+    .metric-figure {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4.4vw, 56px);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
 
-    .video-frame {
+    .metric-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 4px;
+    }
+
+    .metric-sub {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      line-height: 1.4;
+    }
+
+    /* ── HERO CAMPAIGN FILM ── */
+    .hero-media-wrapper {
+      margin: 60px 0 80px;
+    }
+
+    .video-frame-box {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
       background: #000;
-      border-bottom: 2px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--hair);
     }
 
-    .video-frame iframe {
+    .video-frame-box iframe {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -475,356 +214,435 @@
       border: 0;
     }
 
-    .video-caption {
-      padding: 0.65rem 0.85rem;
-      background: var(--yellow);
-      color: var(--ink);
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
+    .media-caption-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      color: var(--ink-muted);
+      padding: 12px 2px 0;
     }
 
-    /* Story & Feature Cards */
+    /* ── NARRATIVE STREAM (MITCH LEONARD STICKY PATTERN) ── */
+    .narrative-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 70px;
+      padding-bottom: 80px;
+    }
+
+    .narrative-row {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: clamp(30px, 5vw, 70px);
+      padding-top: 36px;
+      border-top: 1px solid var(--line);
+    }
+
+    .narrative-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clay);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .narrative-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background-color: var(--clay);
+      border-radius: 50%;
+    }
+
+    .narrative-body p {
+      font-size: 17px;
+      line-height: 1.82;
+      color: #3b3531;
+      margin-bottom: 20px;
+    }
+
+    .narrative-body p:last-child { margin-bottom: 0; }
+
+    .narrative-body strong {
+      font-family: var(--sans);
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .sub-heading {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin: 36px 0 12px;
+    }
+
+    .editorial-quote {
+      margin: 30px 0;
+      padding: 24px 0 24px 28px;
+      border-left: 2px solid var(--clay);
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.6vw, 32px);
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    /* ── VIDEO EMBED GRIDS ── */
+    .video-grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin: 28px 0;
+    }
+
+    .video-tile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-tile .video-frame-box {
+      border-radius: 3px;
+    }
+
+    .video-tile-caption {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      margin-top: 10px;
+    }
+
+    /* ── 2-COLUMN STORY CARDS ── */
     .story-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem;
-      margin: 1.6rem 0 0.4rem;
+      gap: 16px;
+      margin: 28px 0;
     }
 
     .story-card {
-      border: 2px solid var(--rule);
       background: var(--paper);
-      padding: 1.2rem;
-      box-shadow: 6px 6px 0 var(--yellow);
+      border: 1px solid var(--line);
+      padding: 24px;
+      border-radius: 4px;
     }
 
-    .story-card:nth-child(2n) { box-shadow: 6px 6px 0 var(--red); }
-    .story-card:nth-child(3n) { box-shadow: 6px 6px 0 var(--blue); }
-
     .story-card h3 {
-      margin: 0 0 0.5rem;
-      font-size: 0.92rem;
-      font-weight: 900;
-      letter-spacing: 0.05em;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--ink);
+      margin-bottom: 8px;
     }
 
     .story-card p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--ink-dim);
       margin: 0;
-      font-size: 0.88rem;
-      line-height: 1.55;
     }
 
-    /* Structured List Item Boxes */
+    /* ── STRUCTURED LIST BOX ── */
     .list-box {
-      margin: 1.2rem 0;
-      border: 2px solid var(--rule);
       background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      margin: 24px 0;
     }
 
     .list-item {
-      padding: 0.85rem 1.2rem;
-      border-bottom: 1px solid var(--rule);
-      font-family: "Libre Baskerville", Georgia, serif;
-      font-size: 0.92rem;
-      color: var(--ink-soft);
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--hair);
+      font-size: 15px;
+      color: var(--ink-dim);
     }
 
-    .list-item:last-child { border-bottom: 0; }
-    .list-item strong { color: var(--ink); font-family: "DM Sans", Arial, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.2rem; }
+    .list-item:last-child { border-bottom: none; }
 
-    /* Ecosystem Grid */
+    .list-item strong {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ── 3-COLUMN ECOSYSTEM GRID ── */
     .eco-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0;
-      margin: 1.6rem 0;
-      border: 2px solid var(--rule);
-      background: var(--paper);
+      gap: 16px;
+      margin: 28px 0;
     }
 
     .eco-col {
-      padding: 1.2rem;
-      border-right: 1px solid var(--rule);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 24px;
+      border-radius: 4px;
     }
-
-    .eco-col:last-child { border-right: 0; }
 
     .eco-label {
-      font-size: 0.72rem;
-      font-weight: 900;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.8rem;
+      color: var(--clay);
+      margin-bottom: 12px;
     }
 
-    .eco-item {
-      font-size: 0.82rem;
-      color: var(--ink-soft);
-      padding: 0.35rem 0;
-      border-bottom: 1px dashed var(--rule);
+    .eco-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .eco-item:last-child { border-bottom: 0; }
-
-    /* Sticky Side Card */
-    .side-card {
-      align-self: start;
-      border: 2px solid var(--rule);
-      background: var(--blue);
-      color: var(--white);
-      padding: 1rem;
-      box-shadow: 7px 7px 0 var(--yellow);
-      position: sticky;
-      top: 76px;
-    }
-
-    .side-card h3 {
-      margin: 0 0 0.8rem;
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .side-card p {
-      margin: 0 0 1rem;
-      max-width: none;
-      color: var(--white);
-      font-family: "DM Sans", Arial, sans-serif;
-      font-size: 0.85rem;
+    .eco-col li {
+      font-size: 13.5px;
+      color: var(--ink-dim);
       line-height: 1.55;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed var(--hair);
     }
 
-    .side-card p:last-child { margin-bottom: 0; }
+    .eco-col li:last-child { border-bottom: none; }
 
+    /* ── NEXT CASE STUDY JUMP BAR ── */
+    .next-study-anchor {
+      display: block;
+      margin-top: 80px;
+      padding: 60px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: opacity 0.2s ease;
+    }
+
+    .next-study-anchor:hover { opacity: 0.85; }
+
+    .next-kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clay);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .next-title {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 44px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ── FOOTER ── */
     footer {
-      padding: 2rem clamp(1rem, 4vw, 3rem);
-      border-top: 2px solid var(--rule);
-      background: var(--ink);
-      color: var(--paper);
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 900;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 40px;
+      font-family: var(--mono);
+      font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--ink-muted);
     }
 
-    footer a { color: var(--yellow); text-decoration: none; }
-
-    @media (max-width: 980px) {
-      .hero-copy { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .article-shell { grid-template-columns: 1fr; }
-      .rail, .side-card { position: static; }
-      article { border: 2px solid var(--rule); }
+    /* ── RESPONSIVE RULES ── */
+    @media (max-width: 960px) {
+      .metric-banner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .narrative-row { grid-template-columns: 1fr; gap: 16px; }
+      .video-grid-2x2, .story-grid, .eco-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 720px) {
-      nav { height: auto; min-height: 54px; align-items: flex-start; padding-top: 0.7rem; padding-bottom: 0.7rem; }
-      .nav-right { flex-wrap: wrap; justify-content: flex-end; gap: 0.8rem; }
-      .nav-link, .nav-work-btn, .nav-cta { font-size: 0.6rem; }
-      .issue-bar { grid-template-columns: 1fr; gap: 0.45rem; }
-      .issue-bar span:last-child { text-align: left; }
-      h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); }
-      .hero-meta, .stats { grid-template-columns: 1fr; }
-      .video-grid, .story-grid, .eco-grid { grid-template-columns: 1fr; }
-      .eco-col { border-right: 0; border-bottom: 1px solid var(--rule); }
+    @media (max-width: 600px) {
+      nav { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .metric-banner { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 14px; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation Header -->
- <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="https://mouris-bashir.work/M.png" alt="mb.work">
-    </a>
-    <div class="nav-right">
-      <div class="nav-work" tabindex="0">
-      </div>
-       <a href="index.html" class="nav-link">Home</a>
-      <a href="bio_gq.html" class="nav-link">About</a>
-      <a href="eh5tories.html" class="nav-link">EH5tories</a>
-      <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta">Get in touch</a>
-    </div>
+
+  <!-- ── TOP NAVIGATION (EXACT MATCH) ── -->
+  <nav>
+    <a href="index.html" class="nav-brand">Mouris Bashir</a>
+    <ul class="nav-menu">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="bio_gq.html">About</a></li>
+      <li><a href="eh5tories.html">eh5tories</a></li>
+      <li><a href="mailto:mouris.bashir@hotmail.com">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- Sub-header Issue Bar -->
-  <div class="issue-bar">
-    <span>Adani Group / Corporate Brand Custodian</span>
-    <span>Case Study</span>
-    <span>#HumKarkeDikhateHain</span>
-  </div>
+  <!-- ── 1. CASE HERO ── -->
+  <header class="case-hero">
+    <a href="index.html#work" class="back-link">&larr; Selected Work</a>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-copy">
-      <div>
-        <div class="kicker">Case Study / Brand Campaign</div>
-        <h1>Hum Karke Dikhate Hain</h1>
-        <p class="dek">Humanising infrastructure at scale, transforming a corporate brand campaign into an ongoing storytelling platform that repositions industrial assets as lived, everyday progress.</p>
-      </div>
-      <div class="hero-meta" aria-label="Project details">
-        <div class="meta-item">
-          <span class="meta-label">Brand</span>
-          <span class="meta-val">Adani Group</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Agency</span>
-          <span class="meta-val">Ogilvy India</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Role</span>
-          <span class="meta-val">Narrative Integration, Social Strategy &amp; Rollout Development</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Scope</span>
-          <span class="meta-val">20+ Businesses, 10+ Languages, 28 Cities</span>
-        </div>
-      </div>
+    <div class="tag-cluster">
+      <span class="tag-badge">Adani Group</span>
+      <span class="tag-badge">Corporate Brand Custodian</span>
+      <span class="tag-badge">Reputation Platform</span>
+      <span class="tag-badge">Ogilvy India</span>
     </div>
-       <div class="hero-media">
-      <div class="cover-video">
-        <iframe src="https://www.youtube.com/embed/a7aJYVRuBZM?si=uaUpIMONeKW5TY0T" title="Hum Karke Dikhate Hain campaign video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <h1 class="case-title">
+      Hum Karke Dikhate Hain
+    </h1>
+
+    <p class="case-dek">
+      Humanising infrastructure at scale: transforming a corporate campaign into an ongoing storytelling platform that repositions industrial assets as lived, everyday progress.
+    </p>
+
+    <!-- Metrics Banner -->
+    <div class="metric-banner">
+      <div class="metric-col">
+        <span class="metric-figure">450M+</span>
+        <span class="metric-label">Digital Views</span>
+        <span class="metric-sub">Cumulative impressions across platforms</span>
       </div>
-      <div class="cover-note">First TVC - Hum Karke Dikhate Hain</div>
+
+      <div class="metric-col">
+        <span class="metric-figure">+26%</span>
+        <span class="metric-label">Brand Awareness</span>
+        <span class="metric-sub">Verified shift in favorable public sentiment</span>
+      </div>
+
+      <div class="metric-col">
+        <span class="metric-figure">20+</span>
+        <span class="metric-label">Businesses Aligned</span>
+        <span class="metric-sub">Independently governed group business units</span>
+      </div>
+
+      <div class="metric-col">
+        <span class="metric-figure">10+</span>
+        <span class="metric-label">Regional Languages</span>
+        <span class="metric-sub">Localized execution across 28 cities</span>
+      </div>
     </div>
   </header>
 
-  <!-- Stats Grid -->
-  <section class="stats" aria-label="Campaign impact">
-    <div class="stat">
-      <span class="stat-num">450M+</span>
-      <span class="stat-desc">Campaign Views Across Digital Platforms</span>
+  <!-- ── 2. HERO CAMPAIGN FILM ── -->
+  <section class="hero-media-wrapper">
+    <div class="video-frame-box">
+      <iframe src="https://www.youtube.com/embed/a7aJYVRuBZM?si=uaUpIMONeKW5TY0T" title="Hum Karke Dikhate Hain TVC Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="stat">
-      <span class="stat-num">+26%</span>
-      <span class="stat-desc">Increase in Overall Brand Awareness</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">20+</span>
-      <span class="stat-desc">Independently Governed Businesses Aligned</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">10+</span>
-      <span class="stat-desc">Indian Languages Scaled Regionally</span>
+    <div class="media-caption-bar">
+      <span>First TVC &middot; Hum Karke Dikhate Hain</span>
+      <span>National Broadcast &amp; Digital Premiere</span>
     </div>
   </section>
 
-  <!-- Main Article Layout Shell -->
-  <main class="article-shell">
-    <aside class="rail">
-      <strong>On This Page</strong>
-      Strategic overview, films, and impact.
-      <nav>
-        <a href="#overview">Overview &amp; Challenge</a>
-        <a href="#role">Role &amp; Responsibilities</a>
-        <a href="#strategy">Two-Phase Strategy</a>
-        <a href="#tvc-films">Flagship TVC Films</a>
-        <a href="#parivartan-films">Parivartan Series</a>
-        <a href="#solution">Solution &amp; Integration</a>
-        <a href="#system">Communication System</a>
-      </nav>
-    </aside>
+  <!-- ── 3. NARRATIVE STREAM (MITCH LEONARD ARCHITECTURE) ── -->
+  <main class="narrative-stream">
 
-    <article>
-      <!-- Overview & Challenge -->
-      <section class="section" id="overview">
-        <span class="section-label challenge">The Objective</span>
-        <p class="lede dropcap">To humanise Adani’s infrastructure by making its impact personally meaningful, the campaign aimed to build trust and positive sentiment among the public, shifting perceptions from statistics to felt progress, and positioning Adani as a force for everyday prosperity and nation-building.</p>
-      </section>
+    <!-- 01: The Objective -->
+    <section class="narrative-row">
+      <div class="narrative-label">Objective</div>
+      <div class="narrative-body">
+        <p>
+          To humanise Adani’s infrastructure by making its impact personally meaningful. The campaign aimed to rebuild trust and positive sentiment among the public, shifting perceptions from cold statistical tonnage to felt progress, and positioning the Group as a consistent force for everyday prosperity and nation-building.
+        </p>
+      </div>
+    </section>
 
-       <section class="section" id="challenge">
-          <span class="section-label">The Challenge</span>
-         <p>In the wake of a period of intense public and market scrutiny, the Adani Group unveiled a multi-media campaign titled <em>‘Hum Karke Dikhate Hain’</em>. Developed by Ogilvy India, these five television commercial celebrated 35 years of service, emphasising resilience and converting challenges into opportunities.</p>
-                    <p>Challenges included breaking through cluttered media environments, overcoming category barriers of impersonal infrastructure, engaging diverse audiences, and achieving emotional resonance. Creative hurdles involved crafting relatable stories, while media constraints required broad, multi-channel reach within limited timelines and budget.</p>
-        <p>However, the primary strategic challenge was not merely awareness, but coherence. The Group operates independently governed, market-leading businesses across energy, logistics, materials, and consumer sectors. The opportunity was to transform a singular corporate statement into a believable, unified public narrative that felt consistent at a group level while remaining authentic to each business unit.</p>
-      </section>
-        <!-- Flagship TVC Films Embed Grid -->
-      <section class="section" id="tvc-films">
-        <span class="section-label">Flagship Films</span>
-        <div class="video-grid">
-          <div class="video-card">
-            <div class="video-frame">
-<iframe src="https://www.youtube.com/embed/KXSrNMJWW4c?si=8K_IMc2FvtAI_xYn" title="Pehle Pankha, Phir Bijli" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
-            </div>
-            <div class="video-caption">Pehle Pankha, Phir Bijli
-            </div>
-          </div>
-      
-          <div class="video-card">
-         <div class="video-frame">
-<iframe src="https://www.youtube.com/embed/IF8ggvMTKsA?si=HNTlyEnTDI8NZlNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-         </div>
-              <div class="video-caption">Journey of Dreams
-         </div>
-          </div>
-          <div class="video-card">
-            <div class="video-frame">
-<iframe src="https://www.youtube.com/embed/iNd7JGklnTo?si=3AviOK5-_DngxwFi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            </div>
-            <div class="video-caption">Suraj Bhaiya Hain Naa</div>
-          </div>
-          <div class="video-card">
-            <div class="video-frame">
-<iframe src="https://www.youtube.com/embed/Mk-j8nzKOrM?si=YTD45Cm9wyW6uokj" title="Aapke Safar Ke Humsafar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="video-caption">Aapke Safar Ke Humsafar</div>
-          </div>
-        </div>
-      </section>
+    <!-- 02: The Challenge -->
+    <section class="narrative-row">
+      <div class="narrative-label">Challenge</div>
+      <div class="narrative-body">
+        <p>
+          In the wake of a period of intense public and market scrutiny, the Adani Group unveiled a multi-media campaign titled <em>‘Hum Karke Dikhate Hain’</em>. Developed with Ogilvy India, these five television commercials celebrated 35 years of service, emphasizing resilience and converting challenges into opportunities.
+        </p>
+        <p>
+          Challenges included breaking through cluttered media environments, overcoming category barriers of impersonal heavy infrastructure, engaging diverse demographic audiences, and achieving emotional resonance. Creative hurdles involved crafting relatable human stories, while media constraints required broad, multi-channel reach within disciplined timelines.
+        </p>
+        <p>
+          However, the primary strategic challenge was not merely awareness, but <strong>coherence</strong>. The Group operates independently governed, market-leading businesses across energy, logistics, materials, and consumer platforms. The mandate was to transform a singular corporate motto into a believable, unified public narrative that felt consistent at a group level while remaining authentic to each business unit.
+        </p>
+      </div>
+    </section>
 
-
-      <!-- Role -->
-      <section class="section" id="role">
-        <span class="section-label">My Role</span>
-        <p>Working within the Corporate Brand Custodian team, my role was to convert a television campaign into an ongoing communication system across paid, earned, and owned media.</p>
+    <!-- 03: My Role -->
+    <section class="narrative-row">
+      <div class="narrative-label">Role</div>
+      <div class="narrative-body">
+        <p>
+          Working within the Corporate Brand Custodian team, my responsibility was to convert a high-decibel television campaign into an enduring, operational communication system across paid, earned, and owned media:
+        </p>
 
         <div class="list-box">
           <div class="list-item">
             <strong>Social Storytelling Framework</strong>
-            Developing the digital architecture to translate corporate narratives into audience-first socio-economic social content.
+            Developed the digital architecture to translate high-level corporate claims into audience-first socio-economic social content.
           </div>
           <div class="list-item">
             <strong>Cross-Business Alignment</strong>
-            Reviewing and aligning communication across 10+ business units and agency partners to ensure unified messaging.
+            Reviewed and aligned narrative rollout across 10+ business units and agency partners to ensure messaging integrity.
           </div>
           <div class="list-item">
             <strong>Credibility Management</strong>
-            Ensuring operational updates, service announcements, and daily digital communication consistently reflected the platform’s promise.
+            Ensured operational updates, service announcements, and executive communications consistently reflected the platform’s promise.
           </div>
           <div class="list-item">
             <strong>Multilingual Rollout</strong>
-            Supporting localized execution across 10+ languages and 28 regional markets.
+            Directed localized and vernacular execution across 10+ Indian languages and 28 regional markets.
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Strategy -->
-      <section class="section" id="strategy">
-        <span class="section-label">The Strategy</span>
-        <h2>The two-phase narrative evolution.</h2>
-        <p>The strategic framework moved through two distinct chapters to shift perception from stats to felt progress.</p>
+    <!-- 04: The Strategy -->
+    <section class="narrative-row">
+      <div class="narrative-label">Strategy</div>
+      <div class="narrative-body">
+        <p>
+          The strategic framework moved through two distinct chapters to deliberately shift public perception from macro statistics to felt individual progress:
+        </p>
 
         <div class="story-grid">
           <div class="story-card">
             <h3>Phase One: Scale &amp; Resilience</h3>
-            <p>Established the Group's identity around resilience, execution, and nation-building. The central thought was simple: <em>"We don't just make promises. We deliver."</em></p>
+            <p>Established the Group's identity around execution, resilience, and nation-building. The central thought was clear: <em>"We don't just make promises. We deliver."</em></p>
           </div>
           <div class="story-card">
             <h3>Phase Two: Human Storytelling</h3>
-            <p>Evolved from corporate statements to human impact. Instead of showcasing infrastructure, we showcased the lives transformed because that infrastructure existed.</p>
+            <p>Evolved from corporate statements to grassroots impact. Instead of showcasing infrastructure, we showcased the lives transformed because that infrastructure exists.</p>
           </div>
         </div>
 
-        <div class="pull-quote">
-          <p>"Infrastructure became the backdrop while people became the protagonists."</p>
+        <div class="editorial-quote">
+          “Infrastructure became the backdrop while people became the protagonists.”
         </div>
 
-        <p>Relatable protagonists and memorable lines reframed the industrial giant into an enabler of everyday progress:</p>
+        <p>
+          Relatable protagonists and memorable cultural lines reframed the industrial footprint into an everyday partner:
+        </p>
+
         <div class="list-box">
           <div class="list-item">
             <strong>Pehle Pankha, Phir Bijli</strong>
@@ -832,144 +650,215 @@
           </div>
           <div class="list-item">
             <strong>Journey of Dreams</strong>
-            Positions ports and logistics as gateways to opportunity for artisans in Kutch selling handcrafted Namda toys globally.
+            Positions ports and logistics as gateways of opportunity for artisans in Kutch selling handcrafted Namda toys globally.
           </div>
           <div class="list-item">
             <strong>Suraj Bhaiya Hain Naa</strong>
-            Showcases rural economic transformation, schools, and hospitals powered by the Khavda solar power plant.
+            Showcases rural economic transformation, schools, and healthcare powered by the Khavda renewable energy cluster.
           </div>
           <div class="list-item">
             <strong>Aapke Safar Ke Humsafar</strong>
-            Elevates airport operations with care, connection, and seamless passenger experience.
+            Elevates airport operations through care, human connection, and seamless passenger hospitality.
           </div>
         </div>
-      </section>
-      <!-- In-House Parivartan Series Embed Grid -->
-      <section class="section" id="parivartan-films">
-        <span class="section-label">In-House Films</span>
-        <h2>Human Storytelling</h2>
-        <p>Adopted the word "Parivartan" as a thematic title for several localised social impact and community development stories, highlighting transformations in rural entrepreneurship, agriculture, and women's empowerment.</p>
+      </div>
+    </section>
 
-        <div class="video-grid">
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/DV7sZQNg9w0?si=soUHqmtVVUQsr-6j" title="Parivartan Film 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- 05: Flagship TVC Films -->
+    <section class="narrative-row">
+      <div class="narrative-label">Flagship Films</div>
+      <div class="narrative-body">
+        <p>The four primary narrative films developed with Ogilvy India:</p>
+
+        <div class="video-grid-2x2">
+          <!-- Pehle Pankha -->
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/KXSrNMJWW4c?si=8K_IMc2FvtAI_xYn" title="Pehle Pankha, Phir Bijli" allowfullscreen></iframe>
             </div>
-            <div class="video-caption">Parivartan Series — Community Impact</div>
+            <div class="video-tile-caption">Pehle Pankha, Phir Bijli &middot; Green Energy</div>
           </div>
-          <div class="video-card">
-            <div class="video-frame">
-            <iframe src="https://www.youtube.com/embed/g_YeJIdBldA?si=blaO5qH9qeDH95ww" title="Parivartan Film 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+          <!-- Journey of Dreams -->
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/IF8ggvMTKsA?si=HNTlyEnTDI8NZlNw" title="Journey of Dreams" allowfullscreen></iframe>
             </div>
-            <div class="video-caption">Parivartan Series — Story 01</div>
+            <div class="video-tile-caption">Journey of Dreams &middot; Ports &amp; Logistics</div>
           </div>
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/EJryLB20dFs?si=oKzEaAe0E7WKugPD" title="Parivartan Film 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+          <!-- Suraj Bhaiya -->
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/iNd7JGklnTo?si=3AviOK5-_DngxwFi" title="Suraj Bhaiya Hain Naa" allowfullscreen></iframe>
             </div>
-            <div class="video-caption">Parivartan Series — Story 02</div>
+            <div class="video-tile-caption">Suraj Bhaiya Hain Naa &middot; Khavda Solar</div>
           </div>
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/FIIHBBq0Nhg?si=nsyvU1kOTbEWNh_D" title="Parivartan Film 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+          <!-- Humsafar -->
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/Mk-j8nzKOrM?si=YTD45Cm9wyW6uokj" title="Aapke Safar Ke Humsafar" allowfullscreen></iframe>
             </div>
-            <div class="video-caption">Parivartan Series — Story 03</div>
+            <div class="video-tile-caption">Aapke Safar Ke Humsafar &middot; Airports</div>
           </div>
         </div>
-           
-     <!-- #MundraDiaries Header -->
-  <h3>#MundraDiaries</h3>
-  <p>Documenting first-person employee perspectives and operational milestones across Mundra Port, showcasing how individual commitment builds national infrastructure.</p>
-
-  <!-- #MundraDiaries Grid -->
-  <div class="video-grid">
-    <div class="video-card">
-      <div class="video-frame">
-        <iframe src="https://www.youtube.com/embed/Kt2UZUfXtj4?si=i7tSvSihVoj5hxT8" title="MundraDiaries 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <div class="video-caption">#MUNDRADIARIES — STORY 01</div>
-    </div>
-    <div class="video-card">
-      <div class="video-frame">
-        <iframe src="https://www.youtube.com/embed/XY0FUeR4XRY?si=w2j8uDN-NDvBxyFL" title="MundraDiaries 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+
+    <!-- 06: Parivartan & Grassroots Series -->
+    <section class="narrative-row">
+      <div class="narrative-label">In-House Films</div>
+      <div class="narrative-body">
+        <h2 style="font-family: var(--serif); font-size: 28px; text-transform: uppercase; margin-bottom: 8px;">The Parivartan Series</h2>
+        <p>
+          Adopted "Parivartan" as a thematic umbrella for localized social impact and community development stories, documenting transformations in rural entrepreneurship, agriculture, and women's empowerment:
+        </p>
+
+        <!-- Parivartan Grid -->
+        <div class="video-grid-2x2">
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/DV7sZQNg9w0?si=soUHqmtVVUQsr-6j" title="Parivartan Film 1" allowfullscreen></iframe>
+            </div>
+            <div class="video-tile-caption">Parivartan Series &middot; Community Impact</div>
+          </div>
+
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/g_YeJIdBldA?si=blaO5qH9qeDH95ww" title="Parivartan Film 2" allowfullscreen></iframe>
+            </div>
+            <div class="video-tile-caption">Parivartan Series &middot; Story 01</div>
+          </div>
+
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/EJryLB20dFs?si=oKzEaAe0E7WKugPD" title="Parivartan Film 3" allowfullscreen></iframe>
+            </div>
+            <div class="video-tile-caption">Parivartan Series &middot; Story 02</div>
+          </div>
+
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/FIIHBBq0Nhg?si=nsyvU1kOTbEWNh_D" title="Parivartan Film 4" allowfullscreen></iframe>
+            </div>
+            <div class="video-tile-caption">Parivartan Series &middot; Story 03</div>
+          </div>
+        </div>
+
+        <!-- #MundraDiaries Header -->
+        <h3 class="sub-heading">#MundraDiaries</h3>
+        <p>
+          Documenting first-person employee perspectives and operational milestones across Mundra Port, showcasing how individual dedication builds national logistics capabilities:
+        </p>
+
+        <div class="video-grid-2x2">
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/Kt2UZUfXtj4?si=i7tSvSihVoj5hxT8" title="MundraDiaries 1" allowfullscreen></iframe>
+            </div>
+            <div class="video-tile-caption">#MundraDiaries &middot; Story 01</div>
+          </div>
+
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/XY0FUeR4XRY?si=w2j8uDN-NDvBxyFL" title="MundraDiaries 2" allowfullscreen></iframe>
+            </div>
+            <div class="video-tile-caption">#MundraDiaries &middot; Story 02</div>
+          </div>
+        </div>
+
+        <!-- Ports of Progress Header -->
+        <h3 class="sub-heading">Ports of Progress</h3>
+        <p>
+          Highlighting the broader socio-economic impact and regional prosperity driven by port gateways across coastal trade hubs and local fishing communities:
+        </p>
+
+        <div class="video-grid-2x2">
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/GL56gZdKbHs?si=BmBuwX7_pVcQctjM" title="Ports of Progress 1" allowfullscreen></iframe>
+            </div>
+            <div class="video-tile-caption">Ports of Progress &middot; Story 01</div>
+          </div>
+
+          <div class="video-tile">
+            <div class="video-frame-box">
+              <iframe src="https://www.youtube.com/embed/canIo50vFks?si=j4KJeXq5fLLrLOXC" title="Ports of Progress 2" allowfullscreen></iframe>
+            </div>
+            <div class="video-tile-caption">Ports of Progress &middot; Story 02</div>
+          </div>
+        </div>
+
       </div>
-      <div class="video-caption">#MUNDRADIARIES — STORY 02</div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Ports of Progress Header -->
-  <h3>Ports of Progress</h3>
-  <p>Highlighting the broader socio-economic impact and regional prosperity driven by port gateways across coastal trade hubs and local communities.</p>
-
-  <!-- Ports of Progress Grid -->
-  <div class="video-grid">
-    <div class="video-card">
-      <div class="video-frame">
-        <iframe src="https://www.youtube.com/embed/GL56gZdKbHs?si=BmBuwX7_pVcQctjM" title="Ports of Progress 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <div class="video-caption">PORTS OF PROGRESS — STORY 01</div>
-    </div>
-    <div class="video-card">
-      <div class="video-frame">
-        <iframe src="https://www.youtube.com/embed/canIo50vFks?si=j4KJeXq5fLLrLOXC" title="Ports of Progress 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <div class="video-caption">PORTS OF PROGRESS — STORY 02</div>
-    </div>
-  </div>
-
-</section>
-
-      <!-- Solution -->
-      <section class="section" id="solution">
-        <span class="section-label solution">Solution</span>
-        <p>I translated the core campaign voice into the natural language of each business unit. Infrastructure services emphasized operational reliability and safety, airports focused on passenger experience, and consumer products communicated quality and everyday usefulness. The core idea remained constant, but the expression matched each audience.</p>
-        <p>Integrated distribution across advertising, media relations, social platforms, and corporate channels ensured audiences encountered the same idea through different interactions rather than repeated ads. Messaging was sequenced across announcements, stories, and service communications to reinforce recognition over time.</p>
-      </section>
-
-      <!-- Communication System -->
-      <section class="section" id="system">
-        <span class="section-label system">System</span>
-        <p>Rather than launching isolated campaigns, we built a unified narrative platform that scaled natively across LinkedIn, Instagram, Facebook, X, and YouTube.</p>
+    <!-- 07: Solution & System -->
+    <section class="narrative-row">
+      <div class="narrative-label">Ecosystem</div>
+      <div class="narrative-body">
+        <p>
+          I translated the overarching campaign tone into the native language of each business unit. Industrial infrastructure emphasized reliability and safety, airports focused on hospitality, and consumer platforms communicated quality. The core promise was unshakeable, but the expression matched each distinct stakeholder group.
+        </p>
+        <p>
+          Rather than launching isolated campaigns, we architected a cohesive narrative engine operating across paid, owned, and earned channels:
+        </p>
 
         <div class="eco-grid">
           <div class="eco-col">
-            <div class="eco-label">Paid</div>
-            <div class="eco-item">• TVC, 80+ channels, 20,000+ spots</div>
-            <div class="eco-item">• 10 languages, 400+ GRPs</div>
-            <div class="eco-item">• Shark Tank &amp; Indian Idol placements</div>
-            <div class="eco-item">• India vs England cricket placement</div>
+            <div class="eco-label">Paid Media</div>
+            <ul>
+              <li>TVC across 80+ channels (20,000+ spots)</li>
+              <li>10 regional languages, 400+ GRPs</li>
+              <li>Shark Tank &amp; Indian Idol marquee spots</li>
+              <li>India vs England international cricket placement</li>
+            </ul>
           </div>
+
           <div class="eco-col">
-            <div class="eco-label">Owned</div>
-            <div class="eco-item">• Social platforms, group &amp; BU level</div>
-            <div class="eco-item">• 10+ vernacular ecosystems</div>
-            <div class="eco-item">• Ports of Progress storytelling</div>
-            <div class="eco-item">• Parivartan narrative platform</div>
+            <div class="eco-label">Owned Channels</div>
+            <ul>
+              <li>Group &amp; BU-level social handles</li>
+              <li>10+ vernacular digital channels</li>
+              <li>Ports of Progress narrative series</li>
+              <li>Parivartan community storytelling engine</li>
+            </ul>
           </div>
+
           <div class="eco-col">
-            <div class="eco-label">Earned</div>
-            <div class="eco-item">• Media relations &amp; corporate PR</div>
-            <div class="eco-item">• Tier 2 &amp; 3 creator activation</div>
-            <div class="eco-item">• Community narrative ownership</div>
-            <div class="eco-item">• Sentiment-driven adaptation</div>
+            <div class="eco-label">Earned Media</div>
+            <ul>
+              <li>Corporate PR &amp; national media relations</li>
+              <li>Tier 2 &amp; Tier 3 digital creator activations</li>
+              <li>Community narrative ownership &amp; CSR equity</li>
+              <li>Sentiment-driven digital message adaptation</li>
+            </ul>
           </div>
         </div>
 
-        <p>Executive leadership amplified the stories through thought-leadership channels, while shorter edits, reels, and platform-native assets extended their reach across digital audiences—creating a single corporate narrative expressed through multiple voices without losing consistency.</p>
-      </section>
-    </article>
+        <p>
+          Executive leadership amplified these stories via LinkedIn and op-eds, while short-form reels and platform-native cuts extended organic reach—creating a single corporate reputation platform expressed through dozens of authentic voices.
+        </p>
+      </div>
+    </section>
 
-    <!-- Sidebar Note -->
-    <aside class="side-card">
-      <h3>Editorial Note</h3>
-      <p><em>Hum Karke Dikhate Hain</em> established itself as the flagship corporate branding and reputation management platform for the Adani Group.</p>
-      <p>Developed with Ogilvy India, it demonstrated how emotion-first, human-centered storytelling can shift corporate reputation at scale.</p>
-    </aside>
   </main>
 
-  <!-- Footer -->
+  <!-- ── 4. NEXT CASE STUDY (TRANSITION BAR) ── -->
+  <a href="cultural_campaigns.html" class="next-study-anchor">
+    <span class="next-kicker">Next Case Study &middot; Cultural Storytelling</span>
+    <div class="next-title">
+      <span>Maha Kumbh &mdash; Through the Eyes of Bachpan</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+
+  <!-- ── 5. FOOTER ── -->
   <footer>
-    EH5 / Mouris Bashir — <a href="mailto:mouris.bashir@hotmail.com">mouris.bashir@hotmail.com</a>
+    <a href="index.html">&larr; Mouris Bashir &middot; Portfolio</a>
+    <span>Hum Karke Dikhate Hain &middot; Adani Group</span>
+    <a href="mailto:mouris.bashir@hotmail.com">Start a Conversation &rarr;</a>
   </footer>
+
 </body>
 </html>
