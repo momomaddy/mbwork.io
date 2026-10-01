@@ -39,11 +39,9 @@
       --dark-card: #184b35;
       --black-block: #121212;
       --neon-lime: #cbf532;
-      --neon-lime-soft: #e5fca1;
       --electric-blue: #2a52e2;
       --bright-pink: #e93e79;
       --bright-orange: #ef5b2b;
-      --postit-yellow: #f8e586;
       --postit-pink: #fbc7d4;
       --postit-white: #ffffff;
       --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -62,7 +60,7 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ── HAZARD / CAUTION STRIPE BANNER ── */
+    /* ── CAUTION STRIPE BANNER ── */
     .hazard-stripe-bar {
       width: 100%;
       height: 14px;
@@ -143,7 +141,7 @@
       box-shadow: 3px 3px 0 #111;
     }
 
-    /* ── SECTION 01: HERO TICKER & DOUBLE HEADLINE ── */
+    /* ── SECTION 01: HERO & DOUBLE HEADLINE ── */
     .hero-section {
       padding: clamp(40px, 6vw, 80px) 5vw 60px;
       max-width: 1240px;
@@ -441,7 +439,7 @@
       font-weight: 500;
     }
 
-    /* 4 Vibrant Colored Top Cards */
+    /* 4 Process Cards */
     .process-4-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -649,8 +647,7 @@
       background: #1a1a1a;
     }
 
-    .phone-screen img,
-    .phone-screen video {
+    .phone-screen img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -675,7 +672,109 @@
       color: var(--ink-muted);
     }
 
-    /* ── SECTION 06: NEON LIME CTA BLOCK ── */
+    /* ── SECTION 06: CAREER LEDGER & GOLD STARS (RESTORED) ── */
+    .ledger-section {
+      padding: clamp(60px, 8vw, 100px) 5vw;
+      background: #ffffff;
+      border-top: 2px solid #111;
+      border-bottom: 2px solid #111;
+    }
+
+    .ledger-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(40px, 6vw, 80px);
+    }
+
+    .ledger-heading {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      color: var(--ink);
+    }
+
+    .history-stream {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .history-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1.5px solid var(--line);
+      align-items: baseline;
+    }
+
+    .history-card:first-child {
+      border-top: 1.5px solid var(--line);
+    }
+
+    .history-role {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .history-company {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .history-dates {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--bright-orange);
+      white-space: nowrap;
+    }
+
+    .awards-stack {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .award-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1.5px solid var(--line);
+    }
+
+    .award-row:first-child {
+      border-top: 1.5px solid var(--line);
+    }
+
+    .award-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    .award-year {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--neon-lime);
+      color: #111;
+      padding: 3px 8px;
+      border-radius: 3px;
+      border: 1px solid #111;
+      white-space: nowrap;
+    }
+
+    /* ── SECTION 07: NEON LIME CTA BLOCK ── */
     .cta-neon-section {
       background: var(--neon-lime);
       color: #111111;
@@ -817,6 +916,7 @@
       .process-card { border-bottom: 2px solid #111; }
       .principles-3-grid { grid-template-columns: 1fr; }
       .phones-grid { grid-template-columns: 1fr; }
+      .ledger-inner { grid-template-columns: 1fr; gap: 50px; }
       .cta-neon-inner { grid-template-columns: 1fr; gap: 40px; }
       .producer-header { grid-template-columns: 1fr; }
     }
@@ -1001,7 +1101,7 @@
       </p>
     </div>
 
-    <!-- 4 Colored Top Cards -->
+    <!-- 4 Colored Process Cards -->
     <div class="process-4-grid">
       <div class="process-card">
         <div class="process-top-strip">
@@ -1131,7 +1231,135 @@
     </div>
   </section>
 
-  <!-- ── 06. NEON LIME CTA BLOCK ── -->
+  <!-- ── 06. CAREER HISTORY & AWARDS (RESTORED DUAL LEDGER) ── -->
+  <section class="ledger-section">
+    <div class="ledger-inner">
+
+      <!-- Left Column: Career Appointments -->
+      <div>
+        <h2 class="ledger-heading">Career History</h2>
+        <div class="history-stream">
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">Corporate &amp; Brand Communication Consultant</div>
+              <div class="history-company">Adani Group</div>
+            </div>
+            <span class="history-dates">2024&ndash;Present</span>
+          </div>
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">Lead &mdash; Brand &amp; Digital Communication</div>
+              <div class="history-company">Adani Group</div>
+            </div>
+            <span class="history-dates">2021&ndash;2024</span>
+          </div>
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">Creative Communications Strategist (APAC)</div>
+              <div class="history-company">hear.com</div>
+            </div>
+            <span class="history-dates">2020&ndash;2021</span>
+          </div>
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">PR, Social &amp; Integrated Communications</div>
+              <div class="history-company">OYO Hotels &amp; Homes</div>
+            </div>
+            <span class="history-dates">2019</span>
+          </div>
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">Founding Marketing &amp; Comms Lead</div>
+              <div class="history-company">BookMyForex</div>
+            </div>
+            <span class="history-dates">2016&ndash;2019</span>
+          </div>
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">Content Marketing Specialist</div>
+              <div class="history-company">AuthBridge</div>
+            </div>
+            <span class="history-dates">2016</span>
+          </div>
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">Communication Associate</div>
+              <div class="history-company">Barclays</div>
+            </div>
+            <span class="history-dates">2014&ndash;2015</span>
+          </div>
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">Copywriter (Freelance)</div>
+              <div class="history-company">Police Scotland</div>
+            </div>
+            <span class="history-dates">2013</span>
+          </div>
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">Marketing Associate</div>
+              <div class="history-company">Telford College</div>
+            </div>
+            <span class="history-dates">2011&ndash;2012</span>
+          </div>
+
+          <div class="history-card">
+            <div>
+              <div class="history-role">Intern</div>
+              <div class="history-company">Holyrood PR</div>
+            </div>
+            <span class="history-dates">2012</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Column: Selected Industry Honors -->
+      <div>
+        <h2 class="ledger-heading">Selected Honors</h2>
+        <div class="awards-stack">
+
+          <div class="award-row">
+            <div class="award-title">Digies Digital Awards &mdash; Marketing Effectiveness</div>
+            <span class="award-year">2023</span>
+          </div>
+
+          <div class="award-row">
+            <div class="award-title">afaqs! Foxglove Awards &mdash; Campaign Effectiveness</div>
+            <span class="award-year">2023</span>
+          </div>
+
+          <div class="award-row">
+            <div class="award-title">ACEF Digital Awards &mdash; Customer Engagement &amp; Digital Campaigns</div>
+            <span class="award-year">2023</span>
+          </div>
+
+          <div class="award-row">
+            <div class="award-title">Hermes Creative Awards (AMCP, USA) &mdash; Strategic Communications</div>
+            <span class="award-year">2022</span>
+          </div>
+
+          <div class="award-row">
+            <div class="award-title">Social S.T.A.R.S Awards &mdash; Digital &amp; Social Media Campaigns</div>
+            <span class="award-year">2022, 2023</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 07. NEON LIME CTA BLOCK ── -->
   <section class="cta-neon-section">
     <div class="cta-neon-inner">
       <div>
