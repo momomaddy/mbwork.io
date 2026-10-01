@@ -141,15 +141,11 @@
       box-shadow: 3px 3px 0 #111;
     }
 
-    /* ── SECTION 01: HERO STAGE WITH TILTED PHONES ── */
-    .hero-stage {
-      padding: clamp(40px, 6vw, 80px) 5vw 40px;
-      max-width: 1340px;
+    /* ── 01. HERO HEADLINE CONTAINER (FULL WIDTH WITH SUB-BAR) ── */
+    .hero-top-wrap {
+      padding: clamp(50px, 7vw, 90px) 5vw 40px;
+      max-width: 1280px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: clamp(30px, 4vw, 60px);
-      align-items: center;
     }
 
     .hero-tag {
@@ -162,7 +158,7 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--ink-muted);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .hero-tag::before {
@@ -174,47 +170,76 @@
     }
 
     .hero-headline {
-      font-size: clamp(38px, 5.2vw, 76px);
+      font-size: clamp(38px, 5.8vw, 76px);
       font-weight: 900;
       letter-spacing: -0.04em;
-      line-height: 1.02;
+      line-height: 1.05;
       color: #111111;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
+      max-width: 1100px;
     }
 
     .highlighter-marker {
-      background: linear-gradient(180deg, transparent 62%, var(--neon-lime) 62%);
+      background: linear-gradient(180deg, transparent 60%, var(--neon-lime) 60%);
       padding: 0 4px;
-      display: inline-block;
+      display: inline;
+    }
+
+    .hero-subbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      padding-bottom: 30px;
+      border-bottom: 1.5px solid #111111;
     }
 
     .hero-lede {
-      font-size: clamp(16px, 1.3vw, 19px);
+      font-size: clamp(16px, 1.35vw, 20px);
       font-weight: 600;
       color: var(--ink-soft);
+      max-width: 720px;
       line-height: 1.5;
-      margin-bottom: 24px;
-      max-width: 620px;
     }
 
-    /* ── 3 TOP TILTED PHONE MOCKUPS (HERO CLUSTER) ── */
+    .hero-coords {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    /* ── 02. HERO SHOWCASE STAGE: 3 TILTED PHONES (LEFT) + POST-ITS (RIGHT) ── */
+    .hero-split-stage {
+      padding: 40px 5vw 80px;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(30px, 5vw, 70px);
+      align-items: center;
+    }
+
+    /* The 3 Overlapping Phones Cluster */
     .hero-phones-cluster {
       position: relative;
       width: 100%;
       height: 480px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .tilted-phone {
       position: absolute;
-      width: 180px;
-      height: 360px;
-      border-radius: 28px;
-      padding: 7px;
+      width: 190px;
+      height: 380px;
+      border-radius: 30px;
+      padding: 8px;
       background: #000;
-      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
       display: flex;
       flex-direction: column;
       transition: transform 0.3s ease, z-index 0.3s ease;
@@ -222,37 +247,37 @@
     }
 
     .tilted-phone:hover {
-      z-index: 20 !important;
-      transform: scale(1.06) rotate(0deg) !important;
+      z-index: 25 !important;
+      transform: scale(1.05) rotate(0deg) !important;
     }
 
     .tilted-phone.phone-left {
       left: 10px;
-      top: 60px;
-      border: 3.5px solid var(--electric-blue);
+      top: 50px;
+      border: 4px solid var(--electric-blue);
       transform: rotate(-6deg);
       z-index: 2;
     }
 
     .tilted-phone.phone-center {
-      left: 140px;
-      top: 20px;
-      border: 3.5px solid var(--bright-orange);
+      left: 150px;
+      top: 15px;
+      border: 4px solid var(--bright-orange);
       transform: rotate(3deg);
       z-index: 3;
     }
 
     .tilted-phone.phone-right {
-      left: 270px;
-      top: 70px;
-      border: 3.5px solid var(--bright-pink);
-      transform: rotate(10deg);
+      left: 290px;
+      top: 65px;
+      border: 4px solid var(--bright-pink);
+      transform: rotate(11deg);
       z-index: 1;
     }
 
     .phone-island-mini {
-      width: 50px;
-      height: 12px;
+      width: 54px;
+      height: 13px;
       background: #000;
       border-radius: 12px;
       margin: 2px auto 6px;
@@ -261,7 +286,7 @@
 
     .phone-screen-inner {
       flex-grow: 1;
-      border-radius: 20px;
+      border-radius: 22px;
       overflow: hidden;
       background: #111;
       position: relative;
@@ -277,14 +302,14 @@
 
     .sound-badge-pill {
       position: absolute;
-      bottom: 8px;
+      bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.78);
       backdrop-filter: blur(4px);
       color: #fff;
       font-family: var(--mono);
-      font-size: 8px;
+      font-size: 8.5px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -294,25 +319,24 @@
       white-space: nowrap;
     }
 
-    /* ── STICKY NOTES MANIFESTO BLOCK ── */
-    .postit-band {
-      max-width: 1340px;
-      margin: 0 auto;
-      padding: 0 5vw 60px;
-      border-bottom: 1.5px solid #111;
+    /* Right Side: Post-it Stack + Narrative Block */
+    .hero-manifesto-side {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
     }
 
     .postit-stage {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 18px;
       align-items: center;
     }
 
     .postit-card {
-      width: 200px;
-      min-height: 140px;
-      padding: 20px 18px;
+      width: 175px;
+      min-height: 135px;
+      padding: 18px 16px;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
       position: relative;
       display: flex;
@@ -347,15 +371,15 @@
       position: absolute;
       top: -10px;
       left: 30%;
-      width: 70px;
-      height: 20px;
+      width: 60px;
+      height: 18px;
       background: rgba(230, 220, 195, 0.7);
       border: 1px dashed rgba(0, 0, 0, 0.2);
     }
 
     .postit-text {
       font-family: var(--hand);
-      font-size: 25px;
+      font-size: 23px;
       font-weight: 700;
       line-height: 1.15;
       color: #111;
@@ -363,7 +387,7 @@
 
     .postit-sub {
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -371,12 +395,15 @@
     }
 
     .postit-summary-text {
-      max-width: 520px;
-      font-size: 15px;
-      line-height: 1.65;
+      font-size: 15.5px;
+      line-height: 1.7;
       color: var(--ink-soft);
       font-weight: 500;
-      padding-left: 10px;
+    }
+
+    .postit-summary-text strong {
+      color: var(--ink);
+      font-weight: 800;
     }
 
     /* ── SECTION 02: DARK GREEN "MEET THE CRAFT / ROOMS" ── */
@@ -522,7 +549,6 @@
       font-weight: 500;
     }
 
-    /* 4 Process Cards */
     .process-4-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -994,8 +1020,8 @@
 
     /* ── RESPONSIVE RULES ── */
     @media (max-width: 1100px) {
-      .hero-stage { grid-template-columns: 1fr; }
-      .hero-phones-cluster { margin-top: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+      .hero-split-stage { grid-template-columns: 1fr; }
+      .hero-phones-cluster { margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
     }
 
     @media (max-width: 980px) {
@@ -1012,14 +1038,14 @@
     @media (max-width: 640px) {
       nav { padding: 14px 5vw; }
       .nav-menu { display: none; }
+      .hero-subbar { flex-direction: column; align-items: flex-start; gap: 10px; }
       .form-group-row { grid-template-columns: 1fr; }
-      .hero-phones-cluster { height: 380px; }
+      .hero-phones-cluster { height: 360px; }
       .tilted-phone { width: 140px; height: 280px; }
-      .tilted-phone.phone-left { left: 0; top: 40px; }
+      .tilted-phone.phone-left { left: 0; top: 35px; }
       .tilted-phone.phone-center { left: 95px; top: 10px; }
-      .tilted-phone.phone-right { left: 190px; top: 50px; }
+      .tilted-phone.phone-right { left: 190px; top: 45px; }
       .postit-stage { justify-content: center; }
-      .postit-summary-text { padding-left: 0; text-align: center; }
     }
   </style>
 </head>
@@ -1035,22 +1061,30 @@
       <ul class="nav-menu">
         <li><a href="index.html#work">Work</a></li>
         <li><a href="bio_gq.html">About</a></li>
+        <li><a href="eh5tories.html">eh5tories</a></li>
       </ul>
       <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta-btn">Get In Touch</a>
     </div>
   </nav>
-<!-- ── 01. HERO DOUBLE HEADLINE ── -->
-   <header class="hero-stage">
+
+  <!-- ── 01. HERO TOP ROW: FULL HEADLINE & SUBBAR ── -->
+  <section class="hero-top-wrap">
     <div class="hero-tag">Senior Brand &amp; Communications Strategist</div>
 
-    <div class="huge-headline-wrap">
-      <h1 class="hero-headline">
+    <h1 class="hero-headline">
       10+ years of helping brands turn ambitious ideas and high-stakes <span class="highlighter-marker">moments into stories people understand,</span> remember, and talk about.
-      </h1>
-      <div class="hero-subbar">
-        <div class="hero-coords">Delhi &middot; Edinburgh &middot; Global</div>
-      </div>
+    </h1>
+
+    <div class="hero-subbar">
+      <p class="hero-lede">
+        We create the content your brand would make if it were a person. Connecting boardroom strategy, cultural momentum, and human truth.
+      </p>
+      <div class="hero-coords">Delhi &middot; Edinburgh &middot; Global</div>
     </div>
+  </section>
+
+  <!-- ── 02. HERO SPLIT: 3 TILTED PHONES (LEFT) + POST-IT MANIFESTO (RIGHT) ── -->
+  <section class="hero-split-stage">
 
     <!-- The 3 Tilted Phone Mockups -->
     <div class="hero-phones-cluster">
@@ -1059,19 +1093,26 @@
       <div class="tilted-phone phone-left">
         <div class="phone-island-mini"></div>
         <div class="phone-screen-inner">
-          <video autoplay muted loop playsinline poster="Ab3.JPG">
+          <video autoplay muted loop playsinline poster="Ab4.PNG">
             <source src="Ab1.MOV" type="video/mp4">
-            <img src="Ab3.JPG" alt="Field notes and drafts">
+            <source src="Ab1.mov" type="video/quicktime">
+            <!-- Robust fallback image if video is not local -->
+            <img src="Ab4.PNG" alt="Field notes and drafts" onerror="this.src='https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&q=80'">
           </video>
           <span class="sound-badge-pill">FIELD NOTES</span>
         </div>
       </div>
 
-      <!-- Phone 2 (Center - Orange): Ab4.PNG (Vertical Portrait) -->
+      <!-- Phone 2 (Center - Orange): Ab4.PNG in Portrait Mode -->
       <div class="tilted-phone phone-center">
         <div class="phone-island-mini"></div>
         <div class="phone-screen-inner">
-          <img src="Ab3.PNG" alt="Editorial memory" style="width: 100%; height: 100%; object-fit: cover;">
+          <img 
+            src="Ab4.PNG" 
+            alt="Edinburgh Memory & Strategy" 
+            style="width: 100%; height: 100%; object-fit: cover;"
+            onerror="this.src='Ab3.JPG';"
+          >
           <span class="sound-badge-pill">EDINBURGH</span>
         </div>
       </div>
@@ -1082,38 +1123,46 @@
         <div class="phone-screen-inner">
           <video autoplay muted loop playsinline poster="Ab4.PNG">
             <source src="Ab2.MP4" type="video/mp4">
-            <img src="Ab4.PNG" alt="Brand direction">
+            <source src="Ab2.mp4" type="video/mp4">
+            <!-- Robust fallback image if video is not local -->
+            <img src="Mour1s.jpeg" alt="Brand Direction" onerror="this.src='https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80'">
           </video>
           <span class="sound-badge-pill">DIRECTION</span>
         </div>
       </div>
+
     </div>
-     <!-- Sticky Notes Manifesto ("The story is always there") -->
-    <div class="postit-stage">
-      <div class="postit-card note-1">
-        <div class="tape-strip"></div>
-        <div class="postit-text">The story is always there.</div>
-        <div class="postit-sub">01 &middot; Belief</div>
-      </div>
 
-      <div class="postit-card note-2">
-        <div class="tape-strip"></div>
-        <div class="postit-text">Even in the dullest rooms.</div>
-        <div class="postit-sub">02 &middot; Truth</div>
-      </div>
+    <!-- Right Side: Post-its + Summary Narrative -->
+    <div class="hero-manifesto-side">
+      <div class="postit-stage">
+        <div class="postit-card note-1">
+          <div class="tape-strip"></div>
+          <div class="postit-text">The story is always there.</div>
+          <div class="postit-sub">01 &middot; Belief</div>
+        </div>
 
-      <div class="postit-card note-3">
-        <div class="tape-strip"></div>
-        <div class="postit-text">You just have to dig.</div>
-        <div class="postit-sub">03 &middot; Method</div>
+        <div class="postit-card note-2">
+          <div class="tape-strip"></div>
+          <div class="postit-text">Even in the dullest rooms.</div>
+          <div class="postit-sub">02 &middot; Truth</div>
+        </div>
+
+        <div class="postit-card note-3">
+          <div class="tape-strip"></div>
+          <div class="postit-text">You just have to dig.</div>
+          <div class="postit-sub">03 &middot; Method</div>
+        </div>
       </div>
 
       <div class="postit-summary-text">
         The challenge is finding it. The good stuff rarely arrives on a silver platter. You have to dig, ask better questions, connect the dots, and look where nobody thought to look. That's what I've spent the last decade doing across <strong>Adani Group</strong>, <strong>OYO</strong>, <strong>hear.com</strong>, and <strong>BookMyForex</strong>.
       </div>
     </div>
-  </header>
-  <!-- ── 02. DARK GREEN: THE CLASSROOM OF EXPERIENCE ── -->
+
+  </section>
+
+  <!-- ── 03. DARK GREEN: THE CLASSROOM OF EXPERIENCE ── -->
   <section class="green-section">
     <div class="green-inner">
       <div class="green-eyebrow">The Experience Ecosystem</div>
@@ -1125,7 +1174,7 @@
         <div class="room-blob-card">
           <div class="blob-avatar-wrap c-blue">
             <div class="blob-photo-inner">
-              <img src="Mour1s.jpeg" alt="Frontline retail experience">
+              <img src="Mour1s.jpeg" alt="Frontline retail experience" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
             </div>
           </div>
           <h3 class="blob-card-name">Frontline Hospitality</h3>
@@ -1136,7 +1185,7 @@
         <div class="room-blob-card">
           <div class="blob-avatar-wrap c-pink">
             <div class="blob-photo-inner">
-              <img src="p1.gif" alt="Police Scotland campaign">
+              <img src="p1.gif" alt="Police Scotland campaign" onerror="this.src='https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&q=80'">
             </div>
           </div>
           <h3 class="blob-card-name">Police Scotland</h3>
@@ -1147,7 +1196,7 @@
         <div class="room-blob-card">
           <div class="blob-avatar-wrap c-orange">
             <div class="blob-photo-inner">
-              <img src="O01.png" alt="OYO Hotels & Homes">
+              <img src="O01.png" alt="OYO Hotels & Homes" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80'">
             </div>
           </div>
           <h3 class="blob-card-name">OYO Hotels</h3>
@@ -1169,7 +1218,7 @@
         <div class="room-blob-card">
           <div class="blob-avatar-wrap c-pink">
             <div class="blob-photo-inner">
-              <img src="H07.png" alt="hear.com Horizon X">
+              <img src="H07.png" alt="hear.com Horizon X" onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80'">
             </div>
           </div>
           <h3 class="blob-card-name">hear.com APAC</h3>
@@ -1191,7 +1240,7 @@
         <div class="room-blob-card">
           <div class="blob-avatar-wrap c-orange">
             <div class="blob-photo-inner">
-              <img src="ONBC4.png" alt="One Nation Billion Celebrations">
+              <img src="ONBC4.png" alt="One Nation Billion Celebrations" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80'">
             </div>
           </div>
           <h3 class="blob-card-name">Adani Airports</h3>
@@ -1211,7 +1260,7 @@
     </div>
   </section>
 
-  <!-- ── 03. "THINK LIKE A MARKETER. MOVE LIKE A PRODUCER" ── -->
+  <!-- ── 04. "THINK LIKE A MARKETER. MOVE LIKE A PRODUCER" ── -->
   <section class="producer-section">
     <div class="producer-header">
       <h2 class="producer-headline">
@@ -1223,7 +1272,7 @@
       </p>
     </div>
 
-    <!-- 4 Colored Process Cards -->
+    <!-- 4 Process Cards -->
     <div class="process-4-grid">
       <div class="process-card">
         <div class="process-top-strip">
@@ -1271,7 +1320,7 @@
     </div>
   </section>
 
-  <!-- ── 04. BLACK SECTION: THREE PRINCIPLES ── -->
+  <!-- ── 05. BLACK SECTION: THREE PRINCIPLES ── -->
   <section class="principles-black-section">
     <div class="principles-inner">
       <h2 class="black-headline">
@@ -1304,7 +1353,7 @@
     </div>
   </section>
 
-  <!-- ── 05. SMARTPHONE SHOWCASE ── -->
+  <!-- ── 06. SMARTPHONE SHOWCASE: STORIES THAT TRAVELLED ── -->
   <section class="phones-section">
     <div class="phones-title-wrap">
       <h2 class="phones-headline">
@@ -1319,7 +1368,7 @@
         <div class="smartphone-frame border-pink">
           <div class="phone-island"></div>
           <div class="phone-screen">
-            <img src="ONBC4.png" alt="One Nation Billion Celebrations terminal activation">
+            <img src="ONBC4.png" alt="One Nation Billion Celebrations terminal activation" onerror="this.src='https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80'">
           </div>
         </div>
         <div class="phone-caption-title">Adani Airports</div>
@@ -1331,7 +1380,7 @@
         <div class="smartphone-frame border-blue">
           <div class="phone-island"></div>
           <div class="phone-screen">
-            <img src="H01.png" alt="hear.com Horizon X campaign">
+            <img src="H01.png" alt="hear.com Horizon X campaign" onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80'">
           </div>
         </div>
         <div class="phone-caption-title">hear.com APAC</div>
@@ -1353,7 +1402,7 @@
     </div>
   </section>
 
-  <!-- ── 06. CAREER HISTORY & AWARDS ── -->
+  <!-- ── 07. CAREER HISTORY & AWARDS ── -->
   <section class="ledger-section">
     <div class="ledger-inner">
 
@@ -1481,7 +1530,7 @@
     </div>
   </section>
 
-  <!-- ── 07. NEON LIME CTA BLOCK ── -->
+  <!-- ── 08. NEON LIME CTA BLOCK ── -->
   <section class="cta-neon-section">
     <div class="cta-neon-inner">
       <div>
