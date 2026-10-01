@@ -80,7 +80,7 @@
       z-index: 100;
       background: rgba(251, 247, 238, 0.94);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1.5px solid var(--line);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -131,7 +131,7 @@
       text-transform: uppercase;
       padding: 8px 18px;
       border-radius: 4px;
-      border: 1px solid #111;
+      border: 1.5px solid #111;
       box-shadow: 2px 2px 0 #111;
       transition: transform 0.15s, box-shadow 0.15s;
     }
@@ -141,11 +141,21 @@
       box-shadow: 3px 3px 0 #111;
     }
 
-    /* ── 01. HERO HEADLINE CONTAINER (FULL WIDTH WITH SUB-BAR) ── */
-    .hero-top-wrap {
-      padding: clamp(50px, 7vw, 90px) 5vw 40px;
-      max-width: 1280px;
+    /* ── 01. HERO ROW: 2-COLUMN SPLIT (H1 LEFT + PHONES RIGHT) ── */
+    .hero-stage-split {
+      padding: clamp(50px, 7vw, 90px) 5vw 70px;
+      max-width: 1320px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(40px, 5vw, 80px);
+      align-items: center;
+      border-bottom: 2px solid #111111; /* Clean dividing line */
+    }
+
+    .hero-content-left {
+      display: flex;
+      flex-direction: column;
     }
 
     .hero-tag {
@@ -170,72 +180,52 @@
     }
 
     .hero-headline {
-      font-size: clamp(38px, 5.8vw, 76px);
+      font-size: clamp(38px, 4.8vw, 68px);
       font-weight: 900;
       letter-spacing: -0.04em;
       line-height: 1.05;
       color: #111111;
       margin-bottom: 24px;
-      max-width: 1100px;
     }
 
     .highlighter-marker {
-      background: linear-gradient(180deg, transparent 60%, var(--neon-lime) 60%);
+      background: linear-gradient(180deg, transparent 62%, var(--neon-lime) 62%);
       padding: 0 4px;
       display: inline;
     }
 
-    .hero-subbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      padding-bottom: 30px;
-      border-bottom: 1.5px solid #111111;
-    }
-
     .hero-lede {
-      font-size: clamp(16px, 1.35vw, 20px);
+      font-size: clamp(16px, 1.35vw, 19px);
       font-weight: 600;
       color: var(--ink-soft);
-      max-width: 720px;
-      line-height: 1.5;
+      line-height: 1.55;
+      margin-bottom: 28px;
+      max-width: 600px;
     }
 
     .hero-coords {
       font-family: var(--mono);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ink-muted);
     }
 
-    /* ── 02. HERO SHOWCASE STAGE: 3 TILTED PHONES (LEFT) + POST-ITS (RIGHT) ── */
-    .hero-split-stage {
-      padding: 40px 5vw 80px;
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(30px, 5vw, 70px);
-      align-items: center;
-    }
-
-    /* The 3 Overlapping Phones Cluster */
+    /* ── RIGHT COLUMN: 3 TILTED PHONES ── */
     .hero-phones-cluster {
       position: relative;
       width: 100%;
-      height: 480px;
+      height: 470px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
     }
 
     .tilted-phone {
       position: absolute;
-      width: 190px;
-      height: 380px;
+      width: 185px;
+      height: 370px;
       border-radius: 30px;
       padding: 8px;
       background: #000;
@@ -248,19 +238,19 @@
 
     .tilted-phone:hover {
       z-index: 25 !important;
-      transform: scale(1.05) rotate(0deg) !important;
+      transform: scale(1.06) rotate(0deg) !important;
     }
 
     .tilted-phone.phone-left {
       left: 10px;
-      top: 50px;
+      top: 55px;
       border: 4px solid var(--electric-blue);
       transform: rotate(-6deg);
       z-index: 2;
     }
 
     .tilted-phone.phone-center {
-      left: 150px;
+      left: 145px;
       top: 15px;
       border: 4px solid var(--bright-orange);
       transform: rotate(3deg);
@@ -268,7 +258,7 @@
     }
 
     .tilted-phone.phone-right {
-      left: 290px;
+      left: 280px;
       top: 65px;
       border: 4px solid var(--bright-pink);
       transform: rotate(11deg);
@@ -276,8 +266,8 @@
     }
 
     .phone-island-mini {
-      width: 54px;
-      height: 13px;
+      width: 52px;
+      height: 12px;
       background: #000;
       border-radius: 12px;
       margin: 2px auto 6px;
@@ -319,24 +309,25 @@
       white-space: nowrap;
     }
 
-    /* Right Side: Post-it Stack + Narrative Block */
-    .hero-manifesto-side {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
+    /* ── 02. MANIFESTO SECTION (POST-ITS + SUMMARY BELOW DIVIDER) ── */
+    .manifesto-section {
+      padding: 70px 5vw 80px;
+      max-width: 1320px;
+      margin: 0 auto;
     }
 
     .postit-stage {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 24px;
       align-items: center;
+      margin-bottom: 24px;
     }
 
     .postit-card {
-      width: 175px;
-      min-height: 135px;
-      padding: 18px 16px;
+      width: 200px;
+      min-height: 145px;
+      padding: 20px 18px;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
       position: relative;
       display: flex;
@@ -371,7 +362,7 @@
       position: absolute;
       top: -10px;
       left: 30%;
-      width: 60px;
+      width: 65px;
       height: 18px;
       background: rgba(230, 220, 195, 0.7);
       border: 1px dashed rgba(0, 0, 0, 0.2);
@@ -379,7 +370,7 @@
 
     .postit-text {
       font-family: var(--hand);
-      font-size: 23px;
+      font-size: 24px;
       font-weight: 700;
       line-height: 1.15;
       color: #111;
@@ -387,7 +378,7 @@
 
     .postit-sub {
       font-family: var(--mono);
-      font-size: 9.5px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -395,10 +386,12 @@
     }
 
     .postit-summary-text {
-      font-size: 15.5px;
-      line-height: 1.7;
+      max-width: 860px;
+      font-size: 16px;
+      line-height: 1.75;
       color: var(--ink-soft);
       font-weight: 500;
+      margin-top: 10px;
     }
 
     .postit-summary-text strong {
@@ -406,7 +399,7 @@
       font-weight: 800;
     }
 
-    /* ── SECTION 02: DARK GREEN "MEET THE CRAFT / ROOMS" ── */
+    /* ── SECTION 03: DARK GREEN "MEET THE CRAFT / ROOMS" ── */
     .green-section {
       background: var(--dark-green);
       color: #ffffff;
@@ -519,7 +512,7 @@
       max-width: 180px;
     }
 
-    /* ── SECTION 03: "THINK LIKE A MARKETER. MOVE LIKE A PRODUCER" ── */
+    /* ── SECTION 04: "THINK LIKE A MARKETER. MOVE LIKE A PRODUCER" ── */
     .producer-section {
       padding: clamp(60px, 8vw, 100px) 5vw;
       max-width: 1240px;
@@ -624,7 +617,7 @@
       color: var(--ink);
     }
 
-    /* ── SECTION 04: BLACK BLOCK "THREE PRINCIPLES" ── */
+    /* ── SECTION 05: BLACK BLOCK "THREE PRINCIPLES" ── */
     .principles-black-section {
       background: var(--black-block);
       color: #ffffff;
@@ -690,7 +683,7 @@
       font-weight: 400;
     }
 
-    /* ── SECTION 05: SMARTPHONE SHOWCASE ── */
+    /* ── SECTION 06: SMARTPHONE SHOWCASE ── */
     .phones-section {
       padding: clamp(60px, 8vw, 100px) 5vw;
       max-width: 1240px;
@@ -781,7 +774,7 @@
       color: var(--ink-muted);
     }
 
-    /* ── SECTION 06: CAREER LEDGER & GOLD STARS ── */
+    /* ── SECTION 07: CAREER LEDGER & GOLD STARS ── */
     .ledger-section {
       padding: clamp(60px, 8vw, 100px) 5vw;
       background: #ffffff;
@@ -883,7 +876,7 @@
       white-space: nowrap;
     }
 
-    /* ── SECTION 07: NEON LIME CTA BLOCK ── */
+    /* ── SECTION 08: NEON LIME CTA BLOCK ── */
     .cta-neon-section {
       background: var(--neon-lime);
       color: #111111;
@@ -1020,8 +1013,8 @@
 
     /* ── RESPONSIVE RULES ── */
     @media (max-width: 1100px) {
-      .hero-split-stage { grid-template-columns: 1fr; }
-      .hero-phones-cluster { margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+      .hero-stage-split { grid-template-columns: 1fr; }
+      .hero-phones-cluster { margin-top: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
     }
 
     @media (max-width: 980px) {
@@ -1038,14 +1031,14 @@
     @media (max-width: 640px) {
       nav { padding: 14px 5vw; }
       .nav-menu { display: none; }
-      .hero-subbar { flex-direction: column; align-items: flex-start; gap: 10px; }
-      .form-group-row { grid-template-columns: 1fr; }
-      .hero-phones-cluster { height: 360px; }
+      .hero-phones-cluster { height: 380px; }
       .tilted-phone { width: 140px; height: 280px; }
-      .tilted-phone.phone-left { left: 0; top: 35px; }
+      .tilted-phone.phone-left { left: 0; top: 40px; }
       .tilted-phone.phone-center { left: 95px; top: 10px; }
-      .tilted-phone.phone-right { left: 190px; top: 45px; }
+      .tilted-phone.phone-right { left: 190px; top: 50px; }
       .postit-stage { justify-content: center; }
+      .postit-summary-text { text-align: center; }
+      .form-group-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1061,28 +1054,29 @@
       <ul class="nav-menu">
         <li><a href="index.html#work">Work</a></li>
         <li><a href="bio_gq.html">About</a></li>
-        <li><a href="eh5tories.html">eh5tories</a></li>
       </ul>
       <a href="mailto:mouris.bashir@hotmail.com" class="nav-cta-btn">Get In Touch</a>
     </div>
   </nav>
 
-  <!-- ── 01. HERO TOP ROW: FULL HEADLINE & SUBBAR ── -->
-  <section class="hero-top-wrap">
-    <div class="hero-tag">Senior Brand &amp; Communications Strategist</div>
+  <!-- ── 01. HERO STAGE: 2-COLUMN SPLIT (H1 LEFT + PHONES RIGHT) ── -->
+  <header class="hero-stage-split">
+    
+    <!-- Left Column: Headline & Lede -->
+    <div class="hero-content-left">
+      <div class="hero-tag">Senior Brand &amp; Communications Strategist</div>
 
-    <h1 class="hero-headline">
-      10+ years of <span class="highlighter-marker"> <br>
+      <h1 class="hero-headline">
+        10+ years of <br>
         helping brands <br>
-        turn ambitious </span>
-    </h1>
+        turn ambitious <br>
+        <span class="highlighter-marker">ideas into stories.</span>
+      </h1>
 
-    <div class="hero-subbar">
-      <p class="hero-lede">
-        ideas and high-stakes moments into stories people understand remember, and talk about.
-      </p>
+      <div class="hero-coords">Delhi &middot; Edinburgh &middot; Global</div>
     </div>
-   <!-- The 3 Tilted Phone Mockups -->
+
+    <!-- Right Column: The 3 Tilted Phone Mockups -->
     <div class="hero-phones-cluster">
 
       <!-- Phone 1 (Left - Blue): Ab1.MOV -->
@@ -1092,7 +1086,6 @@
           <video autoplay muted loop playsinline poster="Ab4.PNG">
             <source src="Ab1.MOV" type="video/mp4">
             <source src="Ab1.mov" type="video/quicktime">
-            <!-- Robust fallback image if video is not local -->
             <img src="Ab4.PNG" alt="Field notes and drafts" onerror="this.src='https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&q=80'">
           </video>
           <span class="sound-badge-pill">FIELD NOTES</span>
@@ -1107,7 +1100,7 @@
             src="Ab4.PNG" 
             alt="Edinburgh Memory & Strategy" 
             style="width: 100%; height: 100%; object-fit: cover;"
-            onerror="this.src='Ab3.JPG';"
+            onerror="this.src='Mour1s.jpeg';"
           >
           <span class="sound-badge-pill">EDINBURGH</span>
         </div>
@@ -1120,46 +1113,40 @@
           <video autoplay muted loop playsinline poster="Ab4.PNG">
             <source src="Ab2.MP4" type="video/mp4">
             <source src="Ab2.mp4" type="video/mp4">
-            <!-- Robust fallback image if video is not local -->
-            <img src="Mour1s.jpeg" alt="Brand Direction" onerror="this.src='https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80'">
+            <img src="Mour1s.jpeg" alt="Brand direction" onerror="this.src='https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80'">
           </video>
           <span class="sound-badge-pill">DIRECTION</span>
         </div>
       </div>
-   </div>
- </section>
 
-  <!-- ── 02. HERO SPLIT: 3 TILTED PHONES (LEFT) + POST-IT MANIFESTO (RIGHT) ── -->
-  <section class="hero-split-stage">
+    </div>
+  </header>
 
-   
-    <!-- Right Side: Post-its + Summary Narrative -->
-    <div class="hero-manifesto-side">
-      <div class="postit-stage">
-        <div class="postit-card note-1">
-          <div class="tape-strip"></div>
-          <div class="postit-text">The story is always there.</div>
-          <div class="postit-sub">01 &middot; Belief</div>
-        </div>
-
-        <div class="postit-card note-2">
-          <div class="tape-strip"></div>
-          <div class="postit-text">Even in the dullest rooms.</div>
-          <div class="postit-sub">02 &middot; Truth</div>
-        </div>
-
-        <div class="postit-card note-3">
-          <div class="tape-strip"></div>
-          <div class="postit-text">You just have to dig.</div>
-          <div class="postit-sub">03 &middot; Method</div>
-        </div>
+  <!-- ── 02. MANIFESTO SECTION (POST-ITS & SUMMARY BELOW DIVIDER) ── -->
+  <section class="manifesto-section">
+    <div class="postit-stage">
+      <div class="postit-card note-1">
+        <div class="tape-strip"></div>
+        <div class="postit-text">The story is always there.</div>
+        <div class="postit-sub">01 &middot; Belief</div>
       </div>
 
-      <div class="postit-summary-text">
-        The challenge is finding it. The good stuff rarely arrives on a silver platter. You have to dig, ask better questions, connect the dots, and look where nobody thought to look. That's what I've spent the last decade doing across <strong>Adani Group</strong>, <strong>OYO</strong>, <strong>hear.com</strong>, and <strong>BookMyForex</strong>.
+      <div class="postit-card note-2">
+        <div class="tape-strip"></div>
+        <div class="postit-text">Even in the dullest rooms.</div>
+        <div class="postit-sub">02 &middot; Truth</div>
+      </div>
+
+      <div class="postit-card note-3">
+        <div class="tape-strip"></div>
+        <div class="postit-text">You just have to dig.</div>
+        <div class="postit-sub">03 &middot; Method</div>
       </div>
     </div>
 
+    <div class="postit-summary-text">
+      The challenge is finding it. The good stuff rarely arrives on a silver platter. You have to dig, ask better questions, connect the dots, and look where nobody thought to look. That's what I've spent the last decade doing across <strong>Adani Group</strong>, <strong>OYO</strong>, <strong>hear.com</strong>, and <strong>BookMyForex</strong>.
+    </div>
   </section>
 
   <!-- ── 03. DARK GREEN: THE CLASSROOM OF EXPERIENCE ── -->
@@ -1353,7 +1340,7 @@
     </div>
   </section>
 
-  <!-- ── 06. SMARTPHONE SHOWCASE: STORIES THAT TRAVELLED ── -->
+  <!-- ── 06. SMARTPHONE SHOWCASE ── -->
   <section class="phones-section">
     <div class="phones-title-wrap">
       <h2 class="phones-headline">
